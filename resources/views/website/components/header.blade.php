@@ -216,7 +216,7 @@
                         <!-- logo box start -->
                         <div class="logo-box">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ route('home') }}">
                                     <figure>
                                         <img src="assets/images/logo/logo.svg" alt="header logo">
                                     </figure>
@@ -231,28 +231,9 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li class="menu-thumb">
-                                            <a href="index.html">Home<i class="fa-solid fa-angle-down"></i></a>
-                                            <ul class="has-homemenu">
-                                                <li>
-                                                    <a href="index.html">
-                                                        <img src="assets/images/header/home-1.jpg" alt="home one">
-                                                        Eye Care Center - Home One
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-2.html">
-                                                        <img src="assets/images/header/home-2.jpg" alt="home two">
-                                                        Dental Clinic - Home Two
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-3.html">
-                                                        <img src="assets/images/header/home-3.jpg" alt="home three">
-                                                        Health Care - Home Three
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                        <li >
+                                            <a href="{{ route('home') }}">Home</a>
+                                           
                                         </li>
                                         <li>
                                             <a href="{{ route('about-us') }}">About Us</a>
