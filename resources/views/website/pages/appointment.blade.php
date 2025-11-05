@@ -1,5 +1,5 @@
 @extends("website.layout.master-layout")
-@section("title", " Contact Us | Diagnoedge")
+@section("title", " Appointment | Diagnoedge")
 @section("content")
       <!-- main start -->
             <main class="main">

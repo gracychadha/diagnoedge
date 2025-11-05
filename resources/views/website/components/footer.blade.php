@@ -89,19 +89,23 @@
                             <div class="widget-link">
                                 <ul class="link">
                                     <li>
-                                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                                        <a href="{{ route('home') }}"><i class="fa-solid fa-chevron-right"></i> Home</a>
                                     </li>
                                     <li>
-                                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+                                        <a href="{{ route('about-us') }}"><i class="fa-solid fa-chevron-right"></i>
+                                            About Us</a>
                                     </li>
                                     <li>
-                                        <a href="doctor.html"><i class="fa-solid fa-chevron-right"></i> Doctors</a>
+                                        <a href="{{ route('doctors') }}"><i class="fa-solid fa-chevron-right"></i>
+                                            Doctors</a>
                                     </li>
                                     <li>
-                                        <a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a>
+                                        <a href="{{ route('our-partners') }}"><i class="fa-solid fa-chevron-right"></i>
+                                            Partners</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                                        <a href="{{ route('contact-us') }}"><i class="fa-solid fa-chevron-right"></i>
+                                            Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -179,15 +183,18 @@
                     <div class="col-lg-6">
                         <!-- footer copyright start -->
                         <div class="copyright-text wow fadeInUp" data-wow-delay=".2s">
-                            <p class="m-0">&#169; Copyright 2025 Carenix All Rights Reserved</p>
+                            <p class="m-0">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
+                                Developed by <a href="https://vibrantick.in/" target="_blank">Vibrantick Infotech
+                                    Solutions </a></p>
                         </div>
                         <!-- footer copyright end -->
                     </div>
                     <div class="col-lg-6 text-lg-end">
                         <!-- footer bottom nav start -->
                         <ul class="footer-bottom-nav wow fadeInUp" data-wow-delay=".3s">
-                            <li><a class="line-effect" href="contact.html">Terms and Conditions</a></li>
-                            <li><a class="line-effect" href="contact.html">Privacy Policy</a></li>
+                            <li><a class="line-effect" href="{{ route('terms-conditions') }}">Terms and Conditions</a>
+                            </li>
+                            <li><a class="line-effect" href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                         </ul>
                         <!-- footer bottom nav end -->
                     </div>

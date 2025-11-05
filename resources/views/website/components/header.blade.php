@@ -4,13 +4,16 @@
         <img src="assets/images/loader.svg" alt="loader image">
     </div>
     <div class="preloader-text">
-        <p>C</p>
-        <p>a</p>
-        <p>r</p>
-        <p>e</p>
-        <p>n</p>
+        <p>d</p>
         <p>i</p>
-        <p>x</p>
+        <p>a</p>
+        <p>g</p>
+        <p>n</p>
+        <p>o</p>
+        <p>e</p>
+        <p>d</p>
+        <p>g</p>
+        <p>e</p>
     </div>
 </div>
 <!-- preloader end -->
@@ -110,7 +113,7 @@
         <!-- offcanvas contact end -->
         <!-- offcanvas button wapper start -->
         <div class="offcanvas-button-wapper">
-            <a href="appointment.html" class="theme-button style-1" aria-label="Book Appointment">
+            <a href="{{ route('appointment') }}" class="theme-button style-1" aria-label="Book Appointment">
                 <span data-text="Book Appointment">Book Appointment</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -231,14 +234,30 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li >
+                                        <li>
                                             <a href="{{ route('home') }}">Home</a>
-                                           
+
                                         </li>
                                         <li>
                                             <a href="{{ route('about-us') }}">About Us</a>
                                         </li>
                                         <li>
+                                            <a href="{{ route('doctors') }}">Doctors</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('our-partners') }}">Our Partner</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('corporate') }}">Corporate</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('career') }}">Career</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('our-blogs') }}">Our Blogs </a>
+
+                                        </li>
+                                        {{-- <li>
                                             <a href="services.html">services<i class="fa-solid fa-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="services.html">Services</a></li>
@@ -305,9 +324,9 @@
                                                 <li><a href="blog.html">Our Blog</a></li>
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                         <li>
-                                            <a href="contact.html">Contact Us</a>
+                                            <a href="{{  route('contact-us') }}">Contact Us</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -319,7 +338,8 @@
                         <div class="header-right d-flex align-items-center gap-lg-4 gap-3">
                             <!-- header button -->
                             <div class="header-button">
-                                <a href="appointment.html" class="theme-button style-1" aria-label="Book Appointment">
+                                <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                    aria-label="Book Appointment">
                                     <span data-text="Book Appointment">Book Appointment</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
