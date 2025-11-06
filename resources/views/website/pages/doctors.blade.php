@@ -18,7 +18,7 @@
                             <!-- nav start -->
                             <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Doctor</li>
                                 </ol>
                             </nav>
@@ -62,7 +62,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-1.jpg" alt="doctors image one">
                                     </figure>
@@ -90,7 +90,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Catherine Denuve</a></h3>
+                                <h3><a href="#">Dr. Catherine Denuve</a></h3>
                                 <p>Optegra Eye</p>
                             </div>
                             <!-- doctor content end -->
@@ -102,7 +102,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-2.jpg" alt="doctors image two">
                                     </figure>
@@ -130,7 +130,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Laurence Olivier</a></h3>
+                                <h3><a href="#">Dr. Laurence Olivier</a></h3>
                                 <p>Lens replacement</p>
                             </div>
                             <!-- doctor content end -->
@@ -142,7 +142,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-3.jpg" alt="doctors image three">
                                     </figure>
@@ -170,7 +170,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Susan Hopkins</a></h3>
+                                <h3><a href="#">Dr. Susan Hopkins</a></h3>
                                 <p>Cataract surgery</p>
                             </div>
                             <!-- doctor content end -->
@@ -182,7 +182,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-4.jpg" alt="doctors image four">
                                     </figure>
@@ -210,7 +210,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Keanu Reeves</a></h3>
+                                <h3><a href="#">Dr. Keanu Reeves</a></h3>
                                 <p>Clarivu eye</p>
                             </div>
                             <!-- doctor content end -->
@@ -222,7 +222,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-5.jpg" alt="doctors image five">
                                     </figure>
@@ -250,7 +250,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Robert De Niro</a></h3>
+                                <h3><a href="#">Dr. Robert De Niro</a></h3>
                                 <p>Glaucoma</p>
                             </div>
                             <!-- doctor content end -->
@@ -262,7 +262,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-6.jpg" alt="doctors image six">
                                     </figure>
@@ -290,7 +290,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Mel Gibson</a></h3>
+                                <h3><a href="#">Dr. Mel Gibson</a></h3>
                                 <p>Laboratory</p>
                             </div>
                             <!-- doctor content end -->
@@ -302,7 +302,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-7.jpg" alt="doctors image seven">
                                     </figure>
@@ -330,7 +330,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Abigail Adam</a></h3>
+                                <h3><a href="#">Dr. Abigail Adam</a></h3>
                                 <p>Laboratory</p>
                             </div>
                             <!-- doctor content end -->
@@ -342,7 +342,7 @@
                         <div class="doctor-items">
                             <!-- doctor image start -->
                             <div class="doctor-image">
-                                <a href="doctor-details.html">
+                                <a href="#">
                                     <figure class="image-anime">
                                         <img src="assets/images/doctor/doctor-8.jpg" alt="doctors image eight">
                                     </figure>
@@ -370,7 +370,7 @@
                             <!-- doctor image end -->
                             <!-- doctor content start -->
                             <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Ruth Edward</a></h3>
+                                <h3><a href="#">Dr. Ruth Edward</a></h3>
                                 <p>Laboratory</p>
                             </div>
                             <!-- doctor content end -->

@@ -31,11 +31,11 @@
                             <!-- section title end -->
                             <!-- hero button wappper start -->
                             <div class="hero-button-wappper">
-                                <a href="appointment.html" class="theme-button style-1" aria-label="Book Appointment">
+                                <a href="{{ route("appointment") }}" class="theme-button style-1" aria-label="Book Appointment">
                                     <span data-text="Book Appointment">Book Appointment</span>
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </a>
-                                <a href="services.html" class="theme-button style-2" aria-label="Our Services">
+                                <a href="{{ route("about-us") }}" class="theme-button style-2" aria-label="Our Services">
                                     <span data-text="Our Services">Our Services</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
@@ -105,7 +105,7 @@
                                 <h2>Book Appointment</h2>
                                 <p>Choose a date and time that works for you we'll take care of the rest.</p>
                                 <div class="micon-button">
-                                    <a href="appointment.html" class="read-more-btn">Request an Appointment</a>
+                                    <a href="{{ route("appointment") }}" class="read-more-btn">Request an Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                 <h2>Qualified Doctors</h2>
                                 <p>Our team of expert doctors ensures top-quality treatment every time.</p>
                                 <div class="micon-button">
-                                    <a href="doctor.html" class="read-more-btn">View All Doctor</a>
+                                    <a href="{{ route("doctors") }}" class="read-more-btn">View All Doctor</a>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                 <h2>24/7 Services</h2>
                                 <p>24/7 care you can count on anybody, anytime, anywhere.</p>
                                 <div class="micon-button">
-                                    <a href="contact.html" class="read-more-btn">Contact Us</a>
+                                    <a href="{{ route("contact-us") }}" class="read-more-btn">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                             <!-- about features wappper end-->
                             <!-- hero button wappper start -->
                             <div class="about-button-wappper">
-                                <a href="about.html" class="theme-button style-1" aria-label="More About Us">
+                                <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About Us">
                                     <span data-text="More About Us">More About Us</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
@@ -333,21 +333,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -367,22 +367,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -402,22 +402,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -437,22 +437,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -472,21 +472,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -519,21 +519,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -553,22 +553,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -588,22 +588,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -623,22 +623,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -658,21 +658,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -704,21 +704,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -738,22 +738,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -773,22 +773,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -808,22 +808,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -843,21 +843,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -923,21 +923,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -957,22 +957,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -992,22 +992,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1027,22 +1027,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1062,21 +1062,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1109,21 +1109,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1143,22 +1143,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1178,22 +1178,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1213,22 +1213,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1248,21 +1248,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1294,21 +1294,21 @@
                                             <figure><img src="assets/images/product/product-1.png" alt="product image one">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1328,22 +1328,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1363,22 +1363,22 @@
                                             <figure><img src="assets/images/product/product-2.png" alt="product image two">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            <h2><a href="#">Adjustable blood pressure machine</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1398,22 +1398,22 @@
                                             <figure><img src="assets/images/product/product-3.png"
                                                     alt="product image three"></figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
                                             </h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1433,21 +1433,21 @@
                                             <figure><img src="assets/images/product/product-4.png" alt="product image four">
                                             </figure>
                                             <div class="product-grid-action">
-                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="shop.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-bookmark"></i></a>
-                                                <a href="wishlist.html" class="icon-btn"><i
+                                                <a href="{{ route("contact-us") }}" class="icon-btn"><i
                                                         class="fa-solid fa-heart"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-grid-content">
-                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
                                             <ul class="product-price-list">
                                                 <li class="price">$120.00</li>
                                                 <li><i class="fas fa-star active"></i>4.9 (25)</li>
                                             </ul>
                                             <div class="product-buton-wapper">
-                                                <a href="cart.html" class="theme-button style-1">
+                                                <a href="{{ route("contact-us") }}" class="theme-button style-1">
                                                     <span data-text="Add To Cart">Add To Cart</span>
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </a>
@@ -1486,7 +1486,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Cataract evaluation</a></h2>
+                                            <h2><a href="#">Cataract evaluation</a></h2>
 
 
                                         </div>
@@ -1504,7 +1504,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Contact lens fitting</a></h2>
+                                            <h2><a href="#">Contact lens fitting</a></h2>
 
                                         </div>
                                     </div>
@@ -1522,7 +1522,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Dry eye treatment</a></h2>
+                                            <h2><a href="#">Dry eye treatment</a></h2>
 
                                         </div>
                                     </div>
@@ -1540,7 +1540,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Pediatric eye care</a></h2>
+                                            <h2><a href="#">Pediatric eye care</a></h2>
 
                                         </div>
                                     </div>
@@ -1558,7 +1558,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma surgery</a></h2>
+                                            <h2><a href="#">Glaucoma surgery</a></h2>
 
                                         </div>
                                     </div>
@@ -1575,7 +1575,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma &amp; cornea</a></h2>
+                                            <h2><a href="#">Glaucoma &amp; cornea</a></h2>
 
                                         </div>
                                     </div>
@@ -1618,7 +1618,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Cataract evaluation</a></h2>
+                                            <h2><a href="#">Cataract evaluation</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1634,7 +1634,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Contact lens fitting</a></h2>
+                                            <h2><a href="#">Contact lens fitting</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1651,7 +1651,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Dry eye treatment</a></h2>
+                                            <h2><a href="#">Dry eye treatment</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1668,7 +1668,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Pediatric eye care</a></h2>
+                                            <h2><a href="#">Pediatric eye care</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1685,7 +1685,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma surgery</a></h2>
+                                            <h2><a href="#">Glaucoma surgery</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1701,7 +1701,7 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma &amp; cornea</a></h2>
+                                            <h2><a href="#">Glaucoma &amp; cornea</a></h2>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1802,7 +1802,7 @@
                             <!-- why choose img 2 end -->
                             <!-- why choose about circle start -->
                             <div class="why-choose-about-circle">
-                                <a class="about-circle" href="about.html" aria-label="about circle">
+                                <a class="about-circle" href="{{ route("about-us") }}" aria-label="about circle">
                                     <img src="assets/images/shape/round-about-us.png" alt="round about us">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
@@ -1853,10 +1853,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Cataract evaluation</a></h2>
+                                            <h2><a href="#">Cataract evaluation</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1872,10 +1872,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Contact lens fitting</a></h2>
+                                            <h2><a href="#">Contact lens fitting</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1892,10 +1892,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Dry eye treatment</a></h2>
+                                            <h2><a href="#">Dry eye treatment</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1912,10 +1912,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Pediatric eye care</a></h2>
+                                            <h2><a href="#">Pediatric eye care</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1932,10 +1932,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma surgery</a></h2>
+                                            <h2><a href="#">Glaucoma surgery</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -1951,10 +1951,10 @@
                                             </figure>
                                         </div>
                                         <div class="service-content">
-                                            <h2><a href="services-details.html">Glaucoma &amp; cornea</a></h2>
+                                            <h2><a href="#">Glaucoma &amp; cornea</a></h2>
                                             <p>It is a long established fact that a reader will be distracted by the
                                                 readable content of a page when looking at its layout</p>
-                                            <a href="services-details.html" class="read-more-btn">More Details</a>
+                                            <a href="#" class="read-more-btn">More Details</a>
                                         </div>
                                     </div>
                                     <!-- service items end -->
@@ -2006,14 +2006,14 @@
                             </div>
                             <div class="portfolio-content">
                                 <div class="portfolio-title">
-                                    <h3><a href="portfolio-details.html">Transitions Lenses</a></h3>
+                                    <h3><a href="#">Transitions Lenses</a></h3>
                                     <ul class="portfolio-meta">
                                         <li>Laser Eye Surgery</li>
                                         <li>Retina Checkup</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-button-wapper">
-                                    <a href="services-details.html" class="portfolio-button-icon"
+                                    <a href="#" class="portfolio-button-icon"
                                         aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
@@ -2032,14 +2032,14 @@
                             </div>
                             <div class="portfolio-content">
                                 <div class="portfolio-title">
-                                    <h3><a href="portfolio-details.html">Visual impairment</a></h3>
+                                    <h3><a href="#">Visual impairment</a></h3>
                                     <ul class="portfolio-meta">
                                         <li>Glaucoma Surgery</li>
                                         <li>Vision Correction</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-button-wapper">
-                                    <a href="services-details.html" class="portfolio-button-icon"
+                                    <a href="#" class="portfolio-button-icon"
                                         aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
@@ -2058,14 +2058,14 @@
                             </div>
                             <div class="portfolio-content">
                                 <div class="portfolio-title">
-                                    <h3><a href="portfolio-details.html">Cochrane Eyes &amp; Vision</a></h3>
+                                    <h3><a href="#">Cochrane Eyes &amp; Vision</a></h3>
                                     <ul class="portfolio-meta">
                                         <li>Cataract Surgery</li>
                                         <li>Vision Correction</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-button-wapper">
-                                    <a href="services-details.html" class="portfolio-button-icon"
+                                    <a href="#" class="portfolio-button-icon"
                                         aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
@@ -2084,14 +2084,14 @@
                             </div>
                             <div class="portfolio-content">
                                 <div class="portfolio-title">
-                                    <h3><a href="portfolio-details.html">Computerized Eye Exam</a></h3>
+                                    <h3><a href="#">Computerized Eye Exam</a></h3>
                                     <ul class="portfolio-meta">
                                         <li>Laser Eye Surgery</li>
                                         <li>Oculoplastic Surgery</li>
                                     </ul>
                                 </div>
                                 <div class="portfolio-button-wapper">
-                                    <a href="services-details.html" class="portfolio-button-icon"
+                                    <a href="#" class="portfolio-button-icon"
                                         aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
@@ -2109,7 +2109,7 @@
                                 support your health at every stage.</p>
                             <!-- portfolio button wappper start -->
                             <div class="service-button-wappper">
-                                <a href="portfolio.html" class="theme-button style-1" aria-label="View All Portfolio">
+                                <a href="#" class="theme-button style-1" aria-label="View All Portfolio">
                                     <span data-text="View All Portfolio">View All Portfolio</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
@@ -2140,7 +2140,7 @@
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
                             <div class="blog-title">
-                                <h3><a href="blog-details.html">How do Inherited Retinal Diseases Happen?</a></h3>
+                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a></h3>
                             </div>
                             <ul class="blog-meta">
                                 <li>
@@ -2155,7 +2155,7 @@
                                 </li>
                             </ul>
                             <div class="blog-grid-image">
-                                <a href="blog-details.html">
+                                <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
                                         <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
                                     </figure>
@@ -2165,7 +2165,7 @@
                                 <p>It is a long established fact that a reader will be distracted by the readable content of
                                     a page when looking at its layout.</p>
                                 <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
                             </div>
                         </div>
@@ -2175,7 +2175,7 @@
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
                             <div class="blog-title">
-                                <h3><a href="blog-details.html">Protect your eyes from dust and disease</a></h3>
+                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
                             </div>
                             <ul class="blog-meta">
                                 <li>
@@ -2190,7 +2190,7 @@
                                 </li>
                             </ul>
                             <div class="blog-grid-image">
-                                <a href="blog-details.html">
+                                <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
                                         <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
                                     </figure>
@@ -2200,7 +2200,7 @@
                                 <p>It is a long established fact that a reader will be distracted by the readable content of
                                     a page when looking at its layout.</p>
                                 <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
                             </div>
                         </div>
@@ -2210,7 +2210,7 @@
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
                             <div class="blog-title">
-                                <h3><a href="blog-details.html">We're ready to enhance your clear vision</a></h3>
+                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
                             </div>
                             <ul class="blog-meta">
                                 <li>
@@ -2225,7 +2225,7 @@
                                 </li>
                             </ul>
                             <div class="blog-grid-image">
-                                <a href="blog-details.html">
+                                <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
                                         <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
                                     </figure>
@@ -2235,7 +2235,7 @@
                                 <p>It is a long established fact that a reader will be distracted by the readable content of
                                     a page when looking at its layout.</p>
                                 <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
                             </div>
                         </div>
@@ -2592,7 +2592,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -2639,7 +2639,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-4"
+                                                <a href="#" class="theme-button style-4"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -2682,7 +2682,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -2732,7 +2732,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -2779,7 +2779,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-4"
+                                                <a href="#" class="theme-button style-4"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -2822,7 +2822,7 @@
                                             <!-- check list end -->
                                             <!-- pricing button wapper start -->
                                             <div class="pricing-button-wapper">
-                                                <a href="pricing.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Choose Plan">
                                                     <span data-text="Choose Plan">Choose Plan</span>
                                                     <i class="fa-solid fa-arrow-right"></i>

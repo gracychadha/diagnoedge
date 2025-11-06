@@ -18,7 +18,7 @@
                             <!-- nav start -->
                             <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Our Partner</li>
                                 </ol>
                             </nav>
@@ -115,7 +115,7 @@
                             <!-- about footer start -->
                             <div class="about-footer wow fadeInUp" data-wow-delay=".4s">
                                 <div class="about-button-wappper">
-                                    <a href="about.html" class="theme-button style-1" aria-label="More About">
+                                    <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About">
                                         <span data-text="More About">More About</span>
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>

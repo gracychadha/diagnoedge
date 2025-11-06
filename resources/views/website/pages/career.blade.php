@@ -18,7 +18,7 @@
                             <!-- nav start -->
                             <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Career</li>
                                 </ol>
                             </nav>
@@ -105,7 +105,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="booking.html" class="theme-button style-2" aria-label="Book Now">
+                                                <a href="" class="theme-button style-2" aria-label="Book Now">
                                                     <span data-text="Book Now">Book Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -136,7 +136,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="booking.html" class="theme-button style-4" aria-label="Book Now">
+                                                <a href="#" class="theme-button style-4" aria-label="Book Now">
                                                     <span data-text="Book Now">Book Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -166,7 +166,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="booking.html" class="theme-button style-2" aria-label="Book Now">
+                                                <a href="#" class="theme-button style-2" aria-label="Book Now">
                                                     <span data-text="Book Now">Book Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -203,7 +203,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="career-apply.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -234,7 +234,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="career-apply.html" class="theme-button style-4"
+                                                <a href="#" class="theme-button style-4"
                                                     aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -264,7 +264,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="career-apply.html" class="theme-button style-2"
+                                                <a href="#" class="theme-button style-2"
                                                     aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>

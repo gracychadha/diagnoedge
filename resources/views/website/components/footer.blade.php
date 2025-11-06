@@ -1,5 +1,5 @@
 <!-- footer start -->
-<footer class="footer footer-1" data-img-src="assets/images/footer/footer-1-1.png">
+<footer class="footer footer-1" data-img-src="{{ asset("assets/images/footer/footer-1-1.png") }}">
     <!-- footer top start -->
     <div class="footer-top">
         <div class="container">
@@ -9,9 +9,9 @@
                     <div class="col-lg-4 col-md-12">
                         <!-- footer logo start -->
                         <div class="footer-logo wow fadeInUp" data-wow-delay=".2s">
-                            <a href="index.html">
+                            <a href="{{ route("home") }}">
                                 <figure>
-                                    <img src="assets/images/logo/logo-white.svg" alt="footer logo">
+                                    <img src="{{ asset("assets/images/logo/logo-white.svg") }}" alt="footer logo">
                                 </figure>
                             </a>
                         </div>
@@ -121,23 +121,23 @@
                             <div class="widget-link">
                                 <ul class="link">
                                     <li>
-                                        <a href="services-details.html"><i class="fa-solid fa-chevron-right"></i>
+                                        <a href="#"><i class="fa-solid fa-chevron-right"></i>
                                             Cataract Evaluation</a>
                                     </li>
                                     <li>
-                                        <a href="services-details.html"><i class="fa-solid fa-chevron-right"></i>
+                                        <a href="#"><i class="fa-solid fa-chevron-right"></i>
                                             Contact Lens Fitting</a>
                                     </li>
                                     <li>
-                                        <a href="services-details.html"><i class="fa-solid fa-chevron-right"></i> Dry
+                                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Dry
                                             Eye Treatment</a>
                                     </li>
                                     <li>
-                                        <a href="services-details.html"><i class="fa-solid fa-chevron-right"></i>
+                                        <a href="#"><i class="fa-solid fa-chevron-right"></i>
                                             Pediatric Eye Care</a>
                                     </li>
                                     <li>
-                                        <a href="services-details.html"><i class="fa-solid fa-chevron-right"></i>
+                                        <a href="#"><i class="fa-solid fa-chevron-right"></i>
                                             Glaucoma Surgery</a>
                                     </li>
                                 </ul>

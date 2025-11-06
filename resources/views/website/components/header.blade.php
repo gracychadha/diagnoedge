@@ -1,7 +1,7 @@
 <!-- preloader start -->
 <div class="preloader">
     <div class="preloader-icon">
-        <img src="assets/images/loader.svg" alt="loader image">
+        <img src="{{ asset("assets/images/loader.svg") }}" alt="loader image">
     </div>
     <div class="preloader-text">
         <p>d</p>
@@ -37,7 +37,7 @@
         <!-- offcanvas logo start -->
         <div class="offcanvas-logo">
             <figure>
-                <img src="assets/images/logo/logo.svg" alt="offcanvas logo">
+                <img src="{{ asset("assets/images/logo/logo.svg") }}" alt="offcanvas logo">
             </figure>
         </div>
         <!-- offcanvas logo emd -->
@@ -221,7 +221,7 @@
                             <div class="logo">
                                 <a href="{{ route('home') }}">
                                     <figure>
-                                        <img src="assets/images/logo/logo.svg" alt="header logo">
+                                        <img src="{{ asset("assets/images/logo/logo.svg") }}" alt="header logo">
                                     </figure>
                                 </a>
                             </div>
