@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <!-- main css  -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
 </head>
 
@@ -67,5 +70,45 @@
 <script src="{{ asset('assets/js/SmoothScroll.js') }}"></script>
 <!-- main Js -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".myProductSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            1200: { // desktops
+                slidesPerView: 4,
+            },
+            992: { // laptops & tablets landscape
+                slidesPerView: 3,
+            },
+            768: { // tablets portrait
+                slidesPerView: 2,
+            },
+            576: { // mobile large
+                slidesPerView: 1,
+            },
+            0: { // mobile small
+                slidesPerView: 1,
+            },
+        },
+
+    });
+</script>
 
 </html>

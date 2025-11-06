@@ -270,6 +270,1552 @@
         </section>
         <!-- about section end -->
 
+
+        <!-- product section start -->
+        <section class="product-section background-one pt-100 md-pt-50 pb-70 md-pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                            <span class="sub-title">Best Health Tests</span>
+                            <h2>Good health starts with regular health tests</h2>
+                        </div>
+                        <!-- section title end -->
+                    </div>
+                </div>
+                {{-- section for test packages start--}}
+                <div class="container pt-20">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- section title start -->
+                            <h5 class="text-center pt-20 pb-20">Tru Health Packages</h5>
+                            <!-- section title end -->
+                        </div>
+                        <!-- pricing tabs start -->
+                        <div class="pricing-tabs">
+                            <!-- nav start -->
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link" id="nav-male-THP-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-male-THP" type="button" role="tab" aria-controls="nav-male-THP"
+                                        aria-selected="false">For Male</button>
+                                    <button class="nav-link active" id="nav-THP-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-THP" type="button" role="tab" aria-controls="nav-THP"
+                                        aria-selected="true">Tru Health Packages</button>
+
+                                    <button class="nav-link" id="nav-female-THP-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-female-THP" type="button" role="tab"
+                                        aria-controls="nav-female-THP" aria-selected="false">For Female</button>
+                                </div>
+                            </nav>
+                            <!-- nav end -->
+                        </div>
+                        <!-- pricing tabs end -->
+                    </div>
+                </div>
+                <div class="tab-content">
+                    {{-- active tab THP --}}
+                    <div class="tab-pane fade active show" id="nav-THP" role="tabpanel" aria-labelledby="nav-THP-tab"
+                        tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+
+                    </div>
+                    {{-- male tab THP --}}
+                    <div class="tab-pane fade  show" id="nav-male-THP" role="tabpanel" aria-labelledby="nav-male-THP-tab"
+                        tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+                    </div>
+                    {{-- female tab THP --}}
+                    <div class="tab-pane fade  show" id="nav-female-THP" role="tabpanel"
+                        aria-labelledby="nav-female-THP-tab" tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+                    </div>
+                </div>
+            </div>
+
+            {{-- section for test packages start FOR Popular Tests--}}
+            <div class="container pt-60">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- pricing tabs start -->
+                        <div class="pricing-tabs">
+                            <!-- section title start -->
+                            <h5 class="text-center pt-20 pb-20">Popular Tests Packages</h5>
+                            <!-- section title end --></nav>
+                            <!-- nav start -->
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link" id="nav-male-PT-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-male-PT" type="button" role="tab" aria-controls="nav-male-PT"
+                                        aria-selected="false">For Male</button>
+                                    <button class="nav-link active" id="nav-PT-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-PT" type="button" role="tab" aria-controls="nav-PT"
+                                        aria-selected="true">Popular Tests Packages</button>
+
+                                    <button class="nav-link" id="nav-female-PT-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-female-PT" type="button" role="tab"
+                                        aria-controls="nav-female-PT" aria-selected="false">For Female</button>
+                                </div>
+                            </nav>
+                            <!-- nav end -->
+                        </div>
+                        <!-- pricing tabs end -->
+                    </div>
+                </div>
+                <div class="tab-content">
+                    {{-- active tab PT --}}
+                    <div class="tab-pane fade active show" id="nav-PT" role="tabpanel" aria-labelledby="nav-PT-tab"
+                        tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+
+                    </div>
+                    {{-- male tab PT --}}
+                    <div class="tab-pane fade  show" id="nav-male-PT" role="tabpanel" aria-labelledby="nav-male-PT-tab"
+                        tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+                    </div>
+                    {{-- female tab PT --}}
+                    <div class="tab-pane fade  show" id="nav-female-PT" role="tabpanel" aria-labelledby="nav-female-THP-tab"
+                        tabindex="0">
+                        <!-- Swiper Container Start -->
+                        <div class="swiper myProductSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller two"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Adjustable blood pressure machine</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-3.png"
+                                                    alt="product image three"></figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a>
+                                            </h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="product-tags">
+                                            <div class="product-tags-sale">
+                                                <figure><img src="assets/images/product/bestseller.png"
+                                                        alt="bestseller four"></figure>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-image">
+                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
+                                            </figure>
+                                            <div class="product-grid-action">
+                                                <a href="shop.html" class="icon-btn"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="shop.html" class="icon-btn"><i
+                                                        class="fa-solid fa-bookmark"></i></a>
+                                                <a href="wishlist.html" class="icon-btn"><i
+                                                        class="fa-solid fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-grid-content">
+                                            <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
+                                            <ul class="product-price-list">
+                                                <li class="price">$120.00</li>
+                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
+                                            </ul>
+                                            <div class="product-buton-wapper">
+                                                <a href="cart.html" class="theme-button style-1">
+                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Swiper Navigation -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper Container End -->
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-60">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title start -->
+                        <h5 class="text-center pt-20 pb-60">Test by Health Risks</h5>
+                        <!-- section title end -->
+                    </div>
+
+                    <div class="col-lg-12 services-section-1">
+                        <!-- services slider start -->
+                        <div class="swiper services-slider">
+                            <!-- swiper wrapper start -->
+                            <div class="swiper-wrapper">
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-1.png" alt="icon service one">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Cataract evaluation</a></h2>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-2.png" alt="icon service two">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Contact lens fitting</a></h2>
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-3.png"
+                                                    alt="icon service three">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Dry eye treatment</a></h2>
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-4.png"
+                                                    alt="icon service four">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Pediatric eye care</a></h2>
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-5.png"
+                                                    alt="icon service five">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Glaucoma surgery</a></h2>
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-6.png" alt="icon service six">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Glaucoma &amp; cornea</a></h2>
+
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                            </div>
+                            <!-- swiper wrapper end -->
+                            <!-- swiper actions start -->
+                            <div class="swiper-actions text-center">
+                                <div class="dot"></div>
+                            </div>
+                            <!-- swiper actions end -->
+                        </div>
+                        <!-- services slider end -->
+                    </div>
+
+                </div>
+            </div>
+            <div class="container pt-60">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title start -->
+                        <h5 class="text-center pt-20 pb-60">Test by Health Conditions</h5>
+                        <!-- section title end -->
+                    </div>
+
+                    <div class="col-lg-12 services-section-1">
+                        <!-- services slider start -->
+                        <div class="swiper services-slider">
+                            <!-- swiper wrapper start -->
+                            <div class="swiper-wrapper">
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-1.png" alt="icon service one">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Cataract evaluation</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-2.png" alt="icon service two">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Contact lens fitting</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-3.png"
+                                                    alt="icon service three">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Dry eye treatment</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-4.png"
+                                                    alt="icon service four">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Pediatric eye care</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-5.png"
+                                                    alt="icon service five">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Glaucoma surgery</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                                <!-- swiper slide start -->
+                                <div class="swiper-slide">
+                                    <!-- service items start -->
+                                    <div class="service-items">
+                                        <div class="service-icon">
+                                            <figure>
+                                                <img src="assets/images/services/icon-service-6.png" alt="icon service six">
+                                            </figure>
+                                        </div>
+                                        <div class="service-content">
+                                            <h2><a href="services-details.html">Glaucoma &amp; cornea</a></h2>
+                                        </div>
+                                    </div>
+                                    <!-- service items end -->
+                                </div>
+                                <!-- swiper slide end -->
+                            </div>
+                            <!-- swiper wrapper end -->
+                            <!-- swiper actions start -->
+                            <div class="swiper-actions text-center">
+                                <div class="dot"></div>
+                            </div>
+                            <!-- swiper actions end -->
+                        </div>
+                        <!-- services slider end -->
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- product section end -->
+
+        <!-- why-section start -->
+        <section class="why-choose-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <!-- why content start -->
+                        <div class="why-content">
+                            <!-- section-title start -->
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Why Choose Us</span>
+                                <h2>Compassion and expertise, perfectly combined</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
+                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
+                                    obcaecati accusantium.</p>
+                            </div>
+                            <!-- section-title end -->
+                            <!-- why choose box list start -->
+                            <div class="why-choose-box-list wow fadeInUp" data-wow-delay=".3s">
+                                <!-- why choose box start -->
+                                <div class="why-choose-box">
+                                    <div class="icon-box">
+                                        <figure>
+                                            <img src="assets/images/why-choose/icon-why-choose-1.png"
+                                                alt="icon why choose one">
+                                        </figure>
+                                    </div>
+                                    <div class="why-choose-box-content">
+                                        <h3>Patient centered</h3>
+                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
+                                    </div>
+                                </div>
+                                <!-- why choose box end -->
+                                <!-- why choose box start -->
+                                <div class="why-choose-box">
+                                    <div class="icon-box">
+                                        <figure>
+                                            <img src="assets/images/why-choose/icon-why-choose-2.png"
+                                                alt="icon why choose two">
+                                        </figure>
+                                    </div>
+                                    <div class="why-choose-box-content">
+                                        <h3>Emergency support</h3>
+                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
+                                    </div>
+                                </div>
+                                <!-- why choose box end -->
+                            </div>
+                            <!-- why choose box list end -->
+                            <!-- why choose list start -->
+                            <div class="why-choose-list wow fadeInUp" data-wow-delay=".4s">
+                                <ul>
+                                    <li>Strategic eye care planning</li>
+                                    <li>Highly skilled medical team</li>
+                                </ul>
+                            </div>
+                            <!-- why choose list end -->
+                        </div>
+                        <!-- why content end -->
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <!-- why choose image start -->
+                        <div class="why-choose-image">
+                            <!-- why choose img 1 start -->
+                            <div class="why-choose-img-1">
+                                <figure class="image-anime">
+                                    <img src="assets/images/why-choose/why-choose-img-1-1.jpg" alt="why choose image one">
+                                </figure>
+                            </div>
+                            <!-- why choose img 1 end -->
+                            <!-- why choose img 2 start -->
+                            <div class="why-choose-img-2">
+                                <figure class="image-anime">
+                                    <img src="assets/images/why-choose/why-choose-img-1-2.jpg" alt="why choose image two">
+                                </figure>
+                            </div>
+                            <!-- why choose img 2 end -->
+                            <!-- why choose about circle start -->
+                            <div class="why-choose-about-circle">
+                                <a class="about-circle" href="about.html" aria-label="about circle">
+                                    <img src="assets/images/shape/round-about-us.png" alt="round about us">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <!-- why choose contact circle end -->
+                        </div>
+                        <!-- why choose image end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- why-section end -->
+
         <!-- services section start -->
         <section class="services-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80"
             data-img-src="assets/images/shape/bg-shape-1.png">
@@ -429,329 +1975,6 @@
         </section>
         <!-- services section end -->
 
-        <!-- why-section start -->
-        <section class="why-choose-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why content start -->
-                        <div class="why-content">
-                            <!-- section-title start -->
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Why Choose Us</span>
-                                <h2>Compassion and expertise, perfectly combined</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                            <!-- section-title end -->
-                            <!-- why choose box list start -->
-                            <div class="why-choose-box-list wow fadeInUp" data-wow-delay=".3s">
-                                <!-- why choose box start -->
-                                <div class="why-choose-box">
-                                    <div class="icon-box">
-                                        <figure>
-                                            <img src="assets/images/why-choose/icon-why-choose-1.png"
-                                                alt="icon why choose one">
-                                        </figure>
-                                    </div>
-                                    <div class="why-choose-box-content">
-                                        <h3>Patient centered</h3>
-                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
-                                    </div>
-                                </div>
-                                <!-- why choose box end -->
-                                <!-- why choose box start -->
-                                <div class="why-choose-box">
-                                    <div class="icon-box">
-                                        <figure>
-                                            <img src="assets/images/why-choose/icon-why-choose-2.png"
-                                                alt="icon why choose two">
-                                        </figure>
-                                    </div>
-                                    <div class="why-choose-box-content">
-                                        <h3>Emergency support</h3>
-                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
-                                    </div>
-                                </div>
-                                <!-- why choose box end -->
-                            </div>
-                            <!-- why choose box list end -->
-                            <!-- why choose list start -->
-                            <div class="why-choose-list wow fadeInUp" data-wow-delay=".4s">
-                                <ul>
-                                    <li>Strategic eye care planning</li>
-                                    <li>Highly skilled medical team</li>
-                                </ul>
-                            </div>
-                            <!-- why choose list end -->
-                        </div>
-                        <!-- why content end -->
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why choose image start -->
-                        <div class="why-choose-image">
-                            <!-- why choose img 1 start -->
-                            <div class="why-choose-img-1">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-1.jpg" alt="why choose image one">
-                                </figure>
-                            </div>
-                            <!-- why choose img 1 end -->
-                            <!-- why choose img 2 start -->
-                            <div class="why-choose-img-2">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-2.jpg" alt="why choose image two">
-                                </figure>
-                            </div>
-                            <!-- why choose img 2 end -->
-                            <!-- why choose about circle start -->
-                            <div class="why-choose-about-circle">
-                                <a class="about-circle" href="about.html" aria-label="about circle">
-                                    <img src="assets/images/shape/round-about-us.png" alt="round about us">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- why choose contact circle end -->
-                        </div>
-                        <!-- why choose image end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- why-section end -->
-
-        <!-- appointment section start -->
-        @include("website.components.cta")
-        <!-- appointment section end -->
-
-        <!-- product section start -->
-        <section class="product-section background-one pt-100 md-pt-50 pb-70 md-pb-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Best Drivers</span>
-                            <h2>Complete eye care with all the you require</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-12">
-                        <!-- product grid item 1 start -->
-                        <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                            <!-- product tags start -->
-                            <div class="product-tags">
-                                <!-- product tags sale start -->
-                                <div class="product-tags-sale">
-                                    <figure>
-                                        <img src="assets/images/product/sale.png" alt="sale one">
-                                    </figure>
-                                </div>
-                                <!-- product tags sale end -->
-                            </div>
-                            <!-- product tags end -->
-                            <!-- product grid image start -->
-                            <div class="product-grid-image">
-                                <figure>
-                                    <img src="assets/images/product/product-1.png" alt="product image one">
-                                </figure>
-                                <!-- product grid action start -->
-                                <div class="product-grid-action">
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </a>
-                                    <a href="wishlist.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-                                </div>
-                                <!-- product grid action end -->
-                            </div>
-                            <!-- product grid image end -->
-                            <!-- product grid content start -->
-                            <div class="product-grid-content">
-                                <h2><a href="shop-details.html">CM 4336 RG Luxury Stethoscope</a></h2>
-                                <ul class="product-price-list">
-                                    <li class="price">$120.00</li>
-                                    <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                </ul>
-                                <div class="product-buton-wapper">
-                                    <a href="cart.html" class="theme-button style-1" aria-label="Add To Cart">
-                                        <span data-text="Add To Cart">Add To Cart</span>
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- product grid content end -->
-                        </div>
-                        <!-- product grid item 1 end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12">
-                        <!-- product grid item 1 start -->
-                        <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                            <!-- product tags start -->
-                            <div class="product-tags">
-                                <!-- product tags sale start -->
-                                <div class="product-tags-sale">
-                                    <figure>
-                                        <img src="assets/images/product/bestseller.png" alt="bestseller two">
-                                    </figure>
-                                </div>
-                                <!-- product tags sale end -->
-                            </div>
-                            <!-- product tags end -->
-                            <!-- product grid image start -->
-                            <div class="product-grid-image">
-                                <figure>
-                                    <img src="assets/images/product/product-2.png" alt="product image two">
-                                </figure>
-                                <!-- product grid action start -->
-                                <div class="product-grid-action">
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </a>
-                                    <a href="wishlist.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-                                </div>
-                                <!-- product grid action end -->
-                            </div>
-                            <!-- product grid image end -->
-                            <!-- product grid content start -->
-                            <div class="product-grid-content">
-                                <h2><a href="shop-details.html">Adjustable blood pressure machine</a></h2>
-                                <ul class="product-price-list">
-                                    <li class="price">$120.00</li>
-                                    <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                </ul>
-                                <div class="product-buton-wapper">
-                                    <a href="cart.html" class="theme-button style-1" aria-label="Add To Cart">
-                                        <span data-text="Add To Cart">Add To Cart</span>
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- product grid content end -->
-                        </div>
-                        <!-- product grid item 1 end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12">
-                        <!-- product grid item 1 start -->
-                        <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                            <!-- product tags start -->
-                            <div class="product-tags">
-                                <!-- product tags sale start -->
-                                <div class="product-tags-sale">
-                                    <figure>
-                                        <img src="assets/images/product/sale.png" alt="sale three">
-                                    </figure>
-                                </div>
-                                <!-- product tags sale end -->
-                            </div>
-                            <!-- product tags end -->
-                            <!-- product grid image start -->
-                            <div class="product-grid-image">
-                                <figure>
-                                    <img src="assets/images/product/product-3.png" alt="product image three">
-                                </figure>
-                                <!-- product grid action start -->
-                                <div class="product-grid-action">
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </a>
-                                    <a href="wishlist.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-                                </div>
-                                <!-- product grid action end -->
-                            </div>
-                            <!-- product grid image end -->
-                            <!-- product grid content start -->
-                            <div class="product-grid-content">
-                                <h2><a href="shop-details.html">Oral Lamp with 8 LED Light Bulbs</a></h2>
-                                <ul class="product-price-list">
-                                    <li class="price">$120.00</li>
-                                    <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                </ul>
-                                <div class="product-buton-wapper">
-                                    <a href="cart.html" class="theme-button style-1" aria-label="Add To Cart">
-                                        <span data-text="Add To Cart">Add To Cart</span>
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- product grid content end -->
-                        </div>
-                        <!-- product grid item 1 end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12">
-                        <!-- product grid item 1 start -->
-                        <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                            <!-- product tags start -->
-                            <div class="product-tags">
-                                <!-- product tags sale start -->
-                                <div class="product-tags-sale">
-                                    <figure>
-                                        <img src="assets/images/product/bestseller.png" alt="bestseller four">
-                                    </figure>
-                                </div>
-                                <!-- product tags sale end -->
-                            </div>
-                            <!-- product tags end -->
-                            <!-- product grid image start -->
-                            <div class="product-grid-image">
-                                <figure>
-                                    <img src="assets/images/product/product-4.png" alt="product image four">
-                                </figure>
-                                <!-- product grid action start -->
-                                <div class="product-grid-action">
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </a>
-                                    <a href="shop.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </a>
-                                    <a href="wishlist.html" class="icon-btn" aria-label="icon">
-                                        <i class="fa-solid fa-heart"></i>
-                                    </a>
-                                </div>
-                                <!-- product grid action end -->
-                            </div>
-                            <!-- product grid image end -->
-                            <!-- product grid content start -->
-                            <div class="product-grid-content">
-                                <h2><a href="shop-details.html">Zoom Microscope for Eye Surgery</a></h2>
-                                <ul class="product-price-list">
-                                    <li class="price">$120.00</li>
-                                    <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                </ul>
-                                <div class="product-buton-wapper">
-                                    <a href="cart.html" class="theme-button style-1" aria-label="Add To Cart">
-                                        <span data-text="Add To Cart">Add To Cart</span>
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- product grid content end -->
-                        </div>
-                        <!-- product grid item 1 end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- product section end -->
-
         <!-- portfolio section start -->
         <section class="portfolio-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
             <div class="container">
@@ -899,218 +2122,129 @@
             </div>
         </section>
         <!-- portfolio section end -->
-
-        <!-- testimonials section start -->
-        <section class="testimonials-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80">
+        <!-- blog section start -->
+        <section class="blog-section background-one pt-100 md-pt-80 pb-70 md-pb-50">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-1 order-2">
-                        <!-- testimonials image start -->
-                        <div class="testimonials-image wow fadeInLeft" data-wow-delay=".2s">
-                            <figure>
-                                <img src="assets/images/testimonials/testimonial-1-1.jpg" alt="testimonials image one">
-                            </figure>
-                            <div class="success-rate">
-                                <div class="success-rate-review">2K+ Review</div>
-                                <div class="success-rate-star">
-                                    <i class="fa-solid fa-star active"></i>
-                                    <i class="fa-solid fa-star active"></i>
-                                    <i class="fa-solid fa-star active"></i>
-                                    <i class="fa-solid fa-star active"></i>
-                                    <i class="fa-solid fa-star active"></i>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                            <span class="sub-title">Blog &amp; Article</span>
+                            <h2>Update with our latest trends &amp; insights</h2>
                         </div>
-                        <!-- testimonials image end -->
+                        <!-- section title end -->
                     </div>
-                    <div class="col-lg-6 order-lg-2 order-1">
-                        <div class="testimonials-wapper">
-                            <!-- section title start -->
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Our Testimonials</span>
-                                <h2>What our patient think about services</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="blog-title">
+                                <h3><a href="blog-details.html">How do Inherited Retinal Diseases Happen?</a></h3>
                             </div>
-                            <!-- section title end -->
-                            <!-- testimonials slider start -->
-                            <div class="swiper testimonials-slider">
-                                <!-- swiper wrapper start -->
-                                <div class="swiper-wrapper">
-                                    <!-- swiper slide start -->
-                                    <div class="swiper-slide">
-                                        <!-- testimonials item start -->
-                                        <div class="testimonials-item">
-                                            <div class="testimonials-meta">
-                                                <div class="testimonials-rating">
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                </div>
-                                                <div class="testimonials-quote">
-                                                    <figure>
-                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div class="testimonials-content">
-                                                <p>"Doctean is the best medical in the world I have great experience with
-                                                    them the provide authentic results & have the best environment the
-                                                    inside here. I can't express enough gratitude for the exceptional care
-                                                    experienced at doctean kudos to the remarkable team for press support!,
-                                                    I highly recommend them."</p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-1.jpg" alt="avatar one">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h3>Charlotte Walker</h3>
-                                                    <p>Founder</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- testimonials item end -->
-                                    </div>
-                                    <!-- swiper slide end -->
-                                    <!-- swiper slide start -->
-                                    <div class="swiper-slide">
-                                        <!-- testimonials item start -->
-                                        <div class="testimonials-item">
-                                            <div class="testimonials-meta">
-                                                <div class="testimonials-rating">
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                </div>
-                                                <div class="testimonials-quote">
-                                                    <figure>
-                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div class="testimonials-content">
-                                                <p>"Doctean is the best medical in the world I have great experience with
-                                                    them the provide authentic results & have the best environment the
-                                                    inside here. I can't express enough gratitude for the exceptional care
-                                                    experienced at doctean kudos to the remarkable team for press support!,
-                                                    I highly recommend them."</p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-2.jpg" alt="avatar two">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h3>James Martin</h3>
-                                                    <p>CO Founder</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- testimonials item end -->
-                                    </div>
-                                    <!-- swiper slide end -->
-                                    <!-- swiper slide start -->
-                                    <div class="swiper-slide">
-                                        <!-- testimonials item start -->
-                                        <div class="testimonials-item">
-                                            <div class="testimonials-meta">
-                                                <div class="testimonials-rating">
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                </div>
-                                                <div class="testimonials-quote">
-                                                    <figure>
-                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div class="testimonials-content">
-                                                <p>"Doctean is the best medical in the world I have great experience with
-                                                    them the provide authentic results & have the best environment the
-                                                    inside here. I can't express enough gratitude for the exceptional care
-                                                    experienced at doctean kudos to the remarkable team for press support!,
-                                                    I highly recommend them."</p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-3.jpg" alt="avatar three">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h3>Ava Lee</h3>
-                                                    <p>Head of Operations</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- testimonials item end -->
-                                    </div>
-                                    <!-- swiper slide end -->
-                                    <!-- swiper slide start -->
-                                    <div class="swiper-slide">
-                                        <!-- testimonials item start -->
-                                        <div class="testimonials-item">
-                                            <div class="testimonials-meta">
-                                                <div class="testimonials-rating">
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    <i class="fa-solid fa-star active"></i>
-                                                </div>
-                                                <div class="testimonials-quote">
-                                                    <figure>
-                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                            <div class="testimonials-content">
-                                                <p>"Doctean is the best medical in the world I have great experience with
-                                                    them the provide authentic results & have the best environment the
-                                                    inside here. I can't express enough gratitude for the exceptional care
-                                                    experienced at doctean kudos to the remarkable team for press support!,
-                                                    I highly recommend them."</p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-4.jpg" alt="avatar four">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h3>Ethan Clark</h3>
-                                                    <p>Chief Designer</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- testimonials item end -->
-                                    </div>
-                                    <!-- swiper slide end -->
-                                </div>
-                                <!-- swiper wrapper end -->
-                                <!-- swiper actions start -->
-                                <div class="swiper-actions ms-2">
-                                    <div class="dot"></div>
-                                </div>
-                                <!-- swiper actions end -->
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 14, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-grid-image">
+                                <a href="blog-details.html">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
+                                    </figure>
+                                </a>
                             </div>
-                            <!-- testimonials slider end -->
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of
+                                    a page when looking at its layout.</p>
+                                <div class="blog-grid-button">
+                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
                         </div>
+                        <!-- blog grid item 1 end -->
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="blog-title">
+                                <h3><a href="blog-details.html">Protect your eyes from dust and disease</a></h3>
+                            </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 15, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-grid-image">
+                                <a href="blog-details.html">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of
+                                    a page when looking at its layout.</p>
+                                <div class="blog-grid-button">
+                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog grid item 1 end -->
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="blog-title">
+                                <h3><a href="blog-details.html">We're ready to enhance your clear vision</a></h3>
+                            </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 17, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-grid-image">
+                                <a href="blog-details.html">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of
+                                    a page when looking at its layout.</p>
+                                <div class="blog-grid-button">
+                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog grid item 1 end -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- portfolio section end -->
-
+        <!-- blog section end -->
         <!-- marquee ticker section start -->
         <div class="marquee-ticker-section">
             <div class="marquee-ticker-box">
@@ -1181,182 +2315,6 @@
             </div>
         </div>
         <!-- marquee ticker section end -->
-
-        <!-- doctor section start -->
-        <section class="doctor-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title area start -->
-                        <div class="section-title-area">
-                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Our Doctor</span>
-                                <h2>Meet our expert eye specialists</h2>
-                            </div>
-                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                        </div>
-                        <!-- section title area end -->
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-5">
-                        <!-- doctor image wrapper start -->
-                        <div class="doctor-image-wrapper wow fadeInUp" data-wow-delay=".3s">
-                            <!-- doctor image item start -->
-                            <div class="doctor-image-item">
-                                <figure>
-                                    <img src="assets/images/doctor/doctor-1-1.png" alt="doctor image one">
-                                </figure>
-                                <div class="doctor-overlay">
-                                    <div class="doctor-overlay-content">
-                                        <h3><a href="doctor-details.html">Dr. Catherine Denuve</a></h3>
-                                        <p>Optegra Eye</p>
-                                        <div class="doctor-overlay-meta">
-                                            <div class="doctor-social-media">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" aria-label="instagram"><i
-                                                                class="fa-brands fa-instagram"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" aria-label="facebook"><i
-                                                                class="fa-brands fa-facebook-f"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" aria-label="twitter"><i
-                                                                class="fa-brands fa-x-twitter"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" aria-label="pinterest"><i
-                                                                class="fa-brands fa-pinterest-p"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="doctor-review">
-                                                <div class="doctor-review-content">
-                                                    <i class="fa-solid fa-star active"></i>
-                                                    4.9
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- doctor image item end -->
-                        </div>
-                        <!-- doctor image wrapper end -->
-                    </div>
-                    <div class="col-lg-7">
-                        <!-- doctor list start -->
-                        <div class="doctor-list">
-                            <!-- doctor item start -->
-                            <div class="doctor-item wow fadeInUp" data-wow-delay=".4s">
-                                <div class="doctor-item-image">
-                                    <figure>
-                                        <img src="assets/images/doctor/doctor-1-2.jpg" alt="doctor image two">
-                                    </figure>
-                                </div>
-                                <div class="doctor-item-content">
-                                    <h3><a href="doctor-details.html">Dr. Catherine Denuve</a></h3>
-                                    <p>Optegra Eye</p>
-                                </div>
-                            </div>
-                            <!-- doctor item end -->
-                            <!-- doctor item start -->
-                            <div class="doctor-item wow fadeInUp" data-wow-delay=".5s">
-                                <div class="doctor-item-image">
-                                    <figure>
-                                        <img src="assets/images/doctor/doctor-1-3.jpg" alt="doctor image three">
-                                    </figure>
-                                </div>
-                                <div class="doctor-item-content">
-                                    <h3><a href="doctor-details.html">Dr. Laurence Olivier</a></h3>
-                                    <p>Lens replacement</p>
-                                </div>
-                            </div>
-                            <!-- doctor item end -->
-                            <!-- doctor item start -->
-                            <div class="doctor-item wow fadeInUp" data-wow-delay=".6s">
-                                <div class="doctor-item-image">
-                                    <figure>
-                                        <img src="assets/images/doctor/doctor-1-4.jpg" alt="doctor image four">
-                                    </figure>
-                                </div>
-                                <div class="doctor-item-content">
-                                    <h3><a href="doctor-details.html">Dr. Susan Hopkins</a></h3>
-                                    <p>Cataract Surgery</p>
-                                </div>
-                            </div>
-                            <!-- doctor item end -->
-                            <!-- doctor item start -->
-                            <div class="doctor-item wow fadeInUp" data-wow-delay=".7s">
-                                <div class="doctor-item-image">
-                                    <figure>
-                                        <img src="assets/images/doctor/doctor-1-5.jpg" alt="doctor image five">
-                                    </figure>
-                                </div>
-                                <div class="doctor-item-content">
-                                    <h3><a href="doctor-details.html">Dr. Keanu Reeves</a></h3>
-                                    <p>Clarivu eye</p>
-                                </div>
-                            </div>
-                            <!-- doctor item end -->
-                        </div>
-                        <!-- doctor list end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- doctor section end -->
-
-        <!-- cta section start -->
-        <section class="cta-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-lg-6">
-                        <div class="cta-content wow fadeInUp" data-wow-delay=".2s">
-                            <!-- section title start -->
-                            <div class="section-title">
-                                <span class="sub-title">Get In Touch</span>
-                                <h2>Best eye care &amp; health clinic near your city</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                            <!-- section title end -->
-                            <!-- cta button wapper start -->
-                            <div class="cta-button-wapper">
-                                <a href="appointment.html" class="theme-button style-4" aria-label="Get Appointment">
-                                    <span data-text="Get Appointment">Get Appointment</span>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                </a>
-                                <a href="contact.html" class="theme-button style-5" aria-label="Explore More">
-                                    <span data-text="Explore More">Explore More</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- cta button wapper end -->
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- cta video wapper start -->
-                        <div class="cta-video-wapper wow fadeInUp" data-wow-delay=".2s">
-                            <a class="video-popup video-play play-center" href="https://www.youtube.com/watch?v=Y-x0efG1seA"
-                                aria-label="play video">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                            </a>
-                        </div>
-                        <!-- cta video wapper end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- cta section end -->
-
         <!-- faq section start -->
         <section class="faq-section-1 pt-100 md-pt-80">
             <div class="container">
@@ -1886,129 +2844,275 @@
             </div>
         </section>
         <!-- pricing section end -->
+        <!-- appointment section start -->
+        @include("website.components.cta")
+        <!-- appointment section end -->
 
-        <!-- blog section start -->
-        <section class="blog-section background-one pt-100 md-pt-80 pb-70 md-pb-50">
+        <!-- portfolio section end -->
+
+
+
+
+
+        <!-- cta section start -->
+        {{-- <section class="cta-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Blog &amp; Article</span>
-                            <h2>Update with our latest trends &amp; insights</h2>
+                <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="cta-content wow fadeInUp" data-wow-delay=".2s">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <span class="sub-title">Get In Touch</span>
+                                <h2>Best eye care &amp; health clinic near your city</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
+                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
+                                    obcaecati accusantium.</p>
+                            </div>
+                            <!-- section title end -->
+                            <!-- cta button wapper start -->
+                            <div class="cta-button-wapper">
+                                <a href="appointment.html" class="theme-button style-4" aria-label="Get Appointment">
+                                    <span data-text="Get Appointment">Get Appointment</span>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </a>
+                                <a href="contact.html" class="theme-button style-5" aria-label="Explore More">
+                                    <span data-text="Explore More">Explore More</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <!-- cta button wapper end -->
                         </div>
-                        <!-- section title end -->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- cta video wapper start -->
+                        <div class="cta-video-wapper wow fadeInUp" data-wow-delay=".2s">
+                            <a class="video-popup video-play play-center" href="https://www.youtube.com/watch?v=Y-x0efG1seA"
+                                aria-label="play video">
+                                <span class="icon"><i class="fa-solid fa-play"></i></span>
+                            </a>
+                        </div>
+                        <!-- cta video wapper end -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                            <div class="blog-title">
-                                <h3><a href="blog-details.html">How do Inherited Retinal Diseases Happen?</a></h3>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 14, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-grid-image">
-                                <a href="blog-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
-                                    </figure>
-                                </a>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
-                                <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+            </div>
+        </section> --}}
+        <!-- cta section end -->
+
+
+
+        
+
+
+
+
+        <!-- testimonials section start -->
+        <section class="testimonials-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <!-- testimonials image start -->
+                        <div class="testimonials-image wow fadeInLeft" data-wow-delay=".2s">
+                            <figure>
+                                <img src="assets/images/testimonials/testimonial-1-1.jpg" alt="testimonials image one">
+                            </figure>
+                            <div class="success-rate">
+                                <div class="success-rate-review">2K+ Review</div>
+                                <div class="success-rate-star">
+                                    <i class="fa-solid fa-star active"></i>
+                                    <i class="fa-solid fa-star active"></i>
+                                    <i class="fa-solid fa-star active"></i>
+                                    <i class="fa-solid fa-star active"></i>
+                                    <i class="fa-solid fa-star active"></i>
                                 </div>
                             </div>
                         </div>
-                        <!-- blog grid item 1 end -->
+                        <!-- testimonials image end -->
                     </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="blog-title">
-                                <h3><a href="blog-details.html">Protect your eyes from dust and disease</a></h3>
+                    <div class="col-lg-6 order-lg-2 order-1">
+                        <div class="testimonials-wapper">
+                            <!-- section title start -->
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Our Testimonials</span>
+                                <h2>What our patient think about services</h2>
                             </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 15, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-grid-image">
-                                <a href="blog-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
-                                    </figure>
-                                </a>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
-                                <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                            <!-- section title end -->
+                            <!-- testimonials slider start -->
+                            <div class="swiper testimonials-slider">
+                                <!-- swiper wrapper start -->
+                                <div class="swiper-wrapper">
+                                    <!-- swiper slide start -->
+                                    <div class="swiper-slide">
+                                        <!-- testimonials item start -->
+                                        <div class="testimonials-item">
+                                            <div class="testimonials-meta">
+                                                <div class="testimonials-rating">
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                </div>
+                                                <div class="testimonials-quote">
+                                                    <figure>
+                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p>"Doctean is the best medical in the world I have great experience with
+                                                    them the provide authentic results & have the best environment the
+                                                    inside here. I can't express enough gratitude for the exceptional care
+                                                    experienced at doctean kudos to the remarkable team for press support!,
+                                                    I highly recommend them."</p>
+                                            </div>
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src="assets/images/avatar/avatar-1.jpg" alt="avatar one">
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h3>Charlotte Walker</h3>
+                                                    <p>Founder</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonials item end -->
+                                    </div>
+                                    <!-- swiper slide end -->
+                                    <!-- swiper slide start -->
+                                    <div class="swiper-slide">
+                                        <!-- testimonials item start -->
+                                        <div class="testimonials-item">
+                                            <div class="testimonials-meta">
+                                                <div class="testimonials-rating">
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                </div>
+                                                <div class="testimonials-quote">
+                                                    <figure>
+                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p>"Doctean is the best medical in the world I have great experience with
+                                                    them the provide authentic results & have the best environment the
+                                                    inside here. I can't express enough gratitude for the exceptional care
+                                                    experienced at doctean kudos to the remarkable team for press support!,
+                                                    I highly recommend them."</p>
+                                            </div>
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src="assets/images/avatar/avatar-2.jpg" alt="avatar two">
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h3>James Martin</h3>
+                                                    <p>CO Founder</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonials item end -->
+                                    </div>
+                                    <!-- swiper slide end -->
+                                    <!-- swiper slide start -->
+                                    <div class="swiper-slide">
+                                        <!-- testimonials item start -->
+                                        <div class="testimonials-item">
+                                            <div class="testimonials-meta">
+                                                <div class="testimonials-rating">
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                </div>
+                                                <div class="testimonials-quote">
+                                                    <figure>
+                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p>"Doctean is the best medical in the world I have great experience with
+                                                    them the provide authentic results & have the best environment the
+                                                    inside here. I can't express enough gratitude for the exceptional care
+                                                    experienced at doctean kudos to the remarkable team for press support!,
+                                                    I highly recommend them."</p>
+                                            </div>
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src="assets/images/avatar/avatar-3.jpg" alt="avatar three">
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h3>Ava Lee</h3>
+                                                    <p>Head of Operations</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonials item end -->
+                                    </div>
+                                    <!-- swiper slide end -->
+                                    <!-- swiper slide start -->
+                                    <div class="swiper-slide">
+                                        <!-- testimonials item start -->
+                                        <div class="testimonials-item">
+                                            <div class="testimonials-meta">
+                                                <div class="testimonials-rating">
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                    <i class="fa-solid fa-star active"></i>
+                                                </div>
+                                                <div class="testimonials-quote">
+                                                    <figure>
+                                                        <img src="assets/images/testimonials/quote.png" alt="quote">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p>"Doctean is the best medical in the world I have great experience with
+                                                    them the provide authentic results & have the best environment the
+                                                    inside here. I can't express enough gratitude for the exceptional care
+                                                    experienced at doctean kudos to the remarkable team for press support!,
+                                                    I highly recommend them."</p>
+                                            </div>
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src="assets/images/avatar/avatar-4.jpg" alt="avatar four">
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h3>Ethan Clark</h3>
+                                                    <p>Chief Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonials item end -->
+                                    </div>
+                                    <!-- swiper slide end -->
                                 </div>
-                            </div>
-                        </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="blog-title">
-                                <h3><a href="blog-details.html">We're ready to enhance your clear vision</a></h3>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 17, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-grid-image">
-                                <a href="blog-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
-                                    </figure>
-                                </a>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
-                                <div class="blog-grid-button">
-                                    <a href="blog-details.html" class="read-more-btn">More Details</a>
+                                <!-- swiper wrapper end -->
+                                <!-- swiper actions start -->
+                                <div class="swiper-actions ms-2">
+                                    <div class="dot"></div>
                                 </div>
+                                <!-- swiper actions end -->
                             </div>
+                            <!-- testimonials slider end -->
                         </div>
-                        <!-- blog grid item 1 end -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- blog section end -->
     </main>
 @endsection
