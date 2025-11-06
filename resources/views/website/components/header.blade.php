@@ -79,7 +79,7 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div class="offcanvas-cta-content">
-                                <p>123 Serenity Lane, Suite 101, Hometown, CA 12345</p>
+                                <p>Baltana, Zirakpur</p>
                             </div>
                         </div>
                         <!-- offcanvas cta list end -->
@@ -89,7 +89,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="offcanvas-cta-content">
-                                <a href="mailto:info@example.com">info@example.com</a>
+                                <a href="mailto:info@diagnoedge.com">info@diagnoedge.com</a>
                             </div>
                         </div>
                         <!-- offcanvas cta list end -->
@@ -163,10 +163,10 @@
                         <div class="header-contact-info">
                             <ul>
                                 <li>
-                                    <p><i class="fa-solid fa-location-dot"></i> 123 Serenity Lane, Suite 101 UK</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Baltana , Zirakpur</p>
                                 </li>
                                 <li>
-                                    <p><i class="fa-solid fa-envelope"></i> info@example.com</p>
+                                    <p><i class="fa-solid fa-envelope"></i> info@diagnoedge.com</p>
                                 </li>
                                 <li>
                                     <p><i class="fa-solid fa-clock"></i> Mon - Fri 8:00 - 6:30</p>

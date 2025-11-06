@@ -398,7 +398,7 @@
         <!-- doctor section end -->
 
        {{-- subscribe section --}}
-       @include("website.components.subscribe")
+       @include("website.components.cta")
        {{-- subscribe section --}}
     </main>
     <!-- main end -->

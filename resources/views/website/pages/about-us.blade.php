@@ -109,412 +109,6 @@
         </section>
         <!-- about section end -->
 
-        <!-- doctor section start -->
-        <section class="doctor-section-3 pt-100 md-pt-80 pb-70 md-pb-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title area start -->
-                        <div class="section-title-area">
-                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Our Doctor</span>
-                                <h2>Meet The Talented Team Driving Our Doctors</h2>
-                            </div>
-                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                        </div>
-                        <!-- section title area end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items wow fadeInUp" data-wow-delay=".3s">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="doctor-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-1.jpg" alt="doctors image one">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.9</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Catherine Denuve</a></h3>
-                                <p>Optegra Eye</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items wow fadeInUp" data-wow-delay=".4s">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="doctor-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-2.jpg" alt="doctors image two">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Laurence Olivier</a></h3>
-                                <p>Lens replacement</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items wow fadeInUp" data-wow-delay=".5s">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="doctor-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-3.jpg" alt="doctors image three">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Susan Hopkins</a></h3>
-                                <p>Cataract surgery</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items wow fadeInUp" data-wow-delay=".6s">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="doctor-details.html">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-4.jpg" alt="doctors image four">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.7</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="doctor-details.html">Dr. Keanu Reeves</a></h3>
-                                <p>Clarivu eye</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- doctor section end -->
-
-        <!-- counter section start -->
-        <section class="counter-section-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- counter list start -->
-                        <div class="counter-list">
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".2s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="90"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Expert Doctors</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".3s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="26"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Diffrent Services</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".4s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="35"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Happy Patients</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="10"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Awards Win</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                        </div>
-                        <!-- counter list end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- counter section end -->
-
-        <!-- testimonials section start -->
-        <section class="testimonials-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Our Testimonials</span>
-                            <h2>Real Experiences Exceptional Healthcare</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore
-                                et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati
-                                accusantium.</p>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- testimonials slider three start -->
-                        <div class="swiper testimonials-slider-three">
-                            <!-- swiper wrapper start -->
-                            <div class="swiper-wrapper">
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- testimonials item start -->
-                                    <div class="testimonials-item">
-                                        <div class="testimonials-content">
-                                            <div class="testimonials-content-item">
-                                                <div class="testimonials-meta">
-                                                    <div class="testimonials-rating">
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                    </div>
-                                                    <div class="testimonials-quote">
-                                                        <figure>
-                                                            <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <h3>Patient Centered Care</h3>
-                                                <p class="desc">It is a long established fact that a reader will be
-                                                    distracted by the readable content of a page when looking at its layout.
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal
-                                                    distribution of letters, as opposed to using Content here, content here,
-                                                </p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-1.jpg"
-                                                            alt="testimonials avatar one">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h4>Mia Scott</h4>
-                                                    <p>Head of Director</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- testimonials item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- testimonials item start -->
-                                    <div class="testimonials-item">
-                                        <div class="testimonials-content">
-                                            <div class="testimonials-content-item">
-                                                <div class="testimonials-meta">
-                                                    <div class="testimonials-rating">
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                    </div>
-                                                    <div class="testimonials-quote">
-                                                        <figure>
-                                                            <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <h3>Dry Eye Treatment</h3>
-                                                <p class="desc">It is a long established fact that a reader will be
-                                                    distracted by the readable content of a page when looking at its layout.
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal
-                                                    distribution of letters, as opposed to using Content here, content here,
-                                                </p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-2.jpg"
-                                                            alt="testimonials avatar two">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h4>Liam Rodri</h4>
-                                                    <p>Product Manager</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- testimonials item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- testimonials item start -->
-                                    <div class="testimonials-item">
-                                        <div class="testimonials-content">
-                                            <div class="testimonials-content-item">
-                                                <div class="testimonials-meta">
-                                                    <div class="testimonials-rating">
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                        <i class="fa-solid fa-star active"></i>
-                                                    </div>
-                                                    <div class="testimonials-quote">
-                                                        <figure>
-                                                            <img src="assets/images/testimonials/quote.png" alt="quote">
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <h3>Contact Lens Fitting</h3>
-                                                <p class="desc">It is a long established fact that a reader will be
-                                                    distracted by the readable content of a page when looking at its layout.
-                                                    The point of using Lorem Ipsum is that it has a more-or-less normal
-                                                    distribution of letters, as opposed to using Content here, content here,
-                                                </p>
-                                            </div>
-                                            <div class="testimonials-author">
-                                                <div class="testimonials-author-image">
-                                                    <figure>
-                                                        <img src="assets/images/avatar/avatar-3.jpg"
-                                                            alt="testimonials avatar three">
-                                                    </figure>
-                                                </div>
-                                                <div class="testimonials-author-content">
-                                                    <h4>Lucas Jackson</h4>
-                                                    <p>Lead Enginee</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- testimonials item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                            </div>
-                            <!-- swiper wrapper end -->
-                            <!-- swiper actions start -->
-                            <div class="swiper-actions text-center">
-                                <div class="dot"></div>
-                            </div>
-                            <!-- swiper actions end -->
-                        </div>
-                        <!-- testimonials slider three end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- testimonials section end -->
-
         <!-- faq section start -->
         <section class="faq-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
             <div class="container">
@@ -708,6 +302,63 @@
             </div>
         </section>
         <!-- faq section end -->
+
+        <!-- counter section start -->
+        <section class="counter-section-2 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- counter list start -->
+                        <div class="counter-list">
+                            <!-- counter item start -->
+                            <div class="counter-item wow fadeInUp" data-wow-delay=".2s">
+                                <div class="counter-content">
+                                    <div class="counter-text"><span class="counter-value" data-stop="90"
+                                            data-speed="3000">0</span>+</div>
+                                    <h2 class="counter-title">Expert Doctors</h2>
+                                </div>
+                            </div>
+                            <!-- counter item end -->
+                            <!-- counter item start -->
+                            <div class="counter-item wow fadeInUp" data-wow-delay=".3s">
+                                <div class="counter-content">
+                                    <div class="counter-text"><span class="counter-value" data-stop="26"
+                                            data-speed="3000">0</span>+</div>
+                                    <h2 class="counter-title">Diffrent Services</h2>
+                                </div>
+                            </div>
+                            <!-- counter item end -->
+                            <!-- counter item start -->
+                            <div class="counter-item wow fadeInUp" data-wow-delay=".4s">
+                                <div class="counter-content">
+                                    <div class="counter-text"><span class="counter-value" data-stop="35"
+                                            data-speed="3000">0</span>+</div>
+                                    <h2 class="counter-title">Happy Patients</h2>
+                                </div>
+                            </div>
+                            <!-- counter item end -->
+                            <!-- counter item start -->
+                            <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="counter-content">
+                                    <div class="counter-text"><span class="counter-value" data-stop="10"
+                                            data-speed="3000">0</span>+</div>
+                                    <h2 class="counter-title">Awards Win</h2>
+                                </div>
+                            </div>
+                            <!-- counter item end -->
+                        </div>
+                        <!-- counter list end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- counter section end -->
+
+        <!-- testimonials section start -->
+        @include("website.components.testimonials")
+        <!-- testimonials section end -->
+
+
 
         <!-- partners section start -->
         <section class="partners-section-1 pt-100 md-pt-80 pb-100 md-pb-80">

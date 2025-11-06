@@ -38,7 +38,7 @@
                             </div>
                             <div class="footer-contact-content">
                                 <span>Send Email</span>
-                                <a href="mailto:info@example.com">info@example.com</a>
+                                <a href="mailto:info@diagnoedge.com">info@diagnoedge.com</a>
                             </div>
                         </div>
                         <!-- footer contact info end -->
