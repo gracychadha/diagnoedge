@@ -1974,7 +1974,7 @@ button:focus {
   position: relative;
   z-index: 2;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.2em;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -4551,6 +4551,7 @@ button:focus {
 }
 .header .header-top {
   position: relative;
+  background-color: #035E58;
 }
 @media (max-width: 1199px) {
   .header .header-lower {
@@ -4795,7 +4796,8 @@ button:focus {
 }
 .header .header-contact-info ul li p {
   margin-bottom: 0;
-  color: var(--black-color);
+  /* color: var(--black-color); */
+  color: #ffffff;
   font-size: 16px;
   display: -webkit-flex;
   display: -moz-flex;
@@ -4804,7 +4806,7 @@ button:focus {
   align-items: center;
 }
 .header .header-contact-info ul li p i {
-  color: var(--primary-color);
+  color: #ffffff;
   margin-right: 5px;
   width: 24px;
   height: 24px;
@@ -6847,7 +6849,7 @@ button:focus {
   background-color: var(--white-color);
   position: relative;
   margin-bottom: 30px;
-  padding: 30px;
+  padding: 15px;
   border-radius: var(--border-radius-three);
   -webkit-transition: var(--transition);
   -moz-transition: var(--transition);
@@ -11098,7 +11100,7 @@ button:focus {
 .portfolio-section-1 .portfolio-items .portfolio-image {
   position: relative;
   overflow: hidden;
-  min-height: 480px;
+  min-height: 250px;
   z-index: 1;
 }
 @media (max-width: 767px) {
@@ -13325,6 +13327,7 @@ button:focus {
 }
 .testimonials-section-1 .testimonials-image figure img {
   border-radius: var(--border-radius-three);
+  max-height:500px;
 }
 .testimonials-section-1 .testimonials-image .success-rate {
   background: var(--primary-color);
@@ -14352,4 +14355,69 @@ button:focus {
     height: 30px;
     line-height: 30px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+.banner-booknoow{
+  padding:160px 10px 10px !important;
+background:#d8e0d8;
+}
+.book-online{
+  margin-left:10px;
+  padding:15px;
+  background:#ffffff;
+}
+.lab-test-card {
+  transition: all 0.3s ease;
+}
+.lab-test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.lab-test-card img {
+  height: 150px;
+  object-fit: cover;
+}
+.badge {
+  font-size: 0.8rem;
+}
+button.btn-success {
+  background-color: #035E58;
+  border: none;
+}
+button.btn-success:hover {
+  background-color: #007a2c;
+}
+.title-card{
+  font-size:17px;
+}
+/* test cards */
+.test-section{
+  display: flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.test-card{
+  height:150px;
+  padding:20px;
+  border-radius:20px;
+  transition:0.3s ease;
+  background:#ffffff;
+}
+.test-card:hover{
+  transform:translateY(-10px);
+}
+.test-card-img img{
+width:70px;
+height:70px;
+}
+.test-card-img {
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+.test-card .title{
+  margin-top:20px;
+  font-size:18px;
+  font-weight:600;
+}
+/*# sourceMappingURL=main.css.map */

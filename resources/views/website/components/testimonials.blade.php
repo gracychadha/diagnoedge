@@ -1,12 +1,12 @@
 <!-- testimonials section start -->
 <section class="testimonials-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1 order-2">
                 <!-- testimonials image start -->
                 <div class="testimonials-image wow fadeInLeft" data-wow-delay=".2s">
                     <figure>
-                        <img src="assets/images/testimonials/testimonial-1-1.jpg" alt="testimonials image one">
+                        <img class="w-100" src="assets/images/testimonials/testimonial-1-1.jpg" alt="testimonials image one">
                     </figure>
                     <div class="success-rate">
                         <div class="success-rate-review">2K+ Review</div>

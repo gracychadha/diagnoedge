@@ -221,7 +221,7 @@
                             <div class="logo">
                                 <a href="{{ route('home') }}">
                                     <figure>
-                                        <img src="{{ asset("assets/images/logo/logo.svg") }}" alt="header logo">
+                                        <img src="{{ asset("assets/images/logo/diagno-logo.png") }}" alt="header logo">
                                     </figure>
                                 </a>
                             </div>
@@ -362,6 +362,8 @@
             </div>
         </div>
     </div>
+    
     <!-- header lower end -->
 </header>
+
 <!-- header end-->
