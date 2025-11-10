@@ -37,7 +37,7 @@
                 <!-- breadcrumb section end -->
 
                 <!-- contact section start -->
-                <section class="contact-section pt-100 md-pt-80 md-pb-50">
+                <section class="contact-section pt-70 md-pt-80 md-pb-50">
                     <div class="container">
                         <div class="row justify-content-between">
                             <div class="col-lg-5">

@@ -36,23 +36,23 @@
             <div class="widget-content">
                 <ul class="category-list">
                     <li>
-                        <a href="{{ route ("blog-details") }}"><span class="categories-name">Eye Care</span> <span
+                        <a href="{{ route("blog-details") }}"><span class="categories-name">Eye Care</span> <span
                                 class="categories-count">(18)</span></a>
                     </li>
                     <li>
-                        <a href="{{ route ("blog-details") }}"><span class="categories-name">Glasses</span> <span
+                        <a href="{{ route("blog-details") }}"><span class="categories-name">Glasses</span> <span
                                 class="categories-count">(22)</span></a>
                     </li>
                     <li>
-                        <a href="{{ route ("blog-details") }}"><span class="categories-name">Eye treatment</span> <span
+                        <a href="{{ route("blog-details") }}"><span class="categories-name">Eye treatment</span> <span
                                 class="categories-count">(10)</span></a>
                     </li>
                     <li>
-                        <a href="{{ route ("blog-details") }}"><span class="categories-name">Glaucoma</span> <span
+                        <a href="{{ route("blog-details") }}"><span class="categories-name">Glaucoma</span> <span
                                 class="categories-count">(15)</span></a>
                     </li>
                     <li>
-                        <a href="{{ route ("blog-details") }}"><span class="categories-name">Ophthalmology</span> <span
+                        <a href="{{ route("blog-details") }}"><span class="categories-name">Ophthalmology</span> <span
                                 class="categories-count">(17)</span></a>
                     </li>
                 </ul>
@@ -72,11 +72,12 @@
                 <div class="recent-post-item d-flex">
                     <div class="recent-post-image flex-shrink-0">
                         <figure class="image-anime">
-                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-1.jpg") }}" alt="recent post one">
+                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-1.jpg") }}"
+                                alt="recent post one">
                         </figure>
                     </div>
                     <div class="recent-post-content flex-grow-1 ms-3">
-                        <h4><a href="{{ route ("blog-details") }}">Signs or risk factors for eye disease</a></h4>
+                        <h4><a href="{{ route("blog-details") }}">Signs or risk factors for eye disease</a></h4>
                         <p class="post-date">
                             <i class="fa-solid fa-calendar-days"></i>
                             March 12, 2025
@@ -86,11 +87,12 @@
                 <div class="recent-post-item d-flex">
                     <div class="recent-post-image flex-shrink-0">
                         <figure class="image-anime">
-                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-2.jpg") }}" alt="recent post two">
+                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-2.jpg") }}"
+                                alt="recent post two">
                         </figure>
                     </div>
                     <div class="recent-post-content flex-grow-1 ms-3">
-                        <h4><a href="{{ route ("blog-details") }}">What Can You Do To Reduce Dry Eyes</a></h4>
+                        <h4><a href="{{ route("blog-details") }}">What Can You Do To Reduce Dry Eyes</a></h4>
                         <p class="post-date">
                             <i class="fa-solid fa-calendar-days"></i>
                             March 15, 2025
@@ -100,11 +102,12 @@
                 <div class="recent-post-item d-flex">
                     <div class="recent-post-image flex-shrink-0">
                         <figure class="image-anime">
-                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-3.jpg") }}" alt="recent post three">
+                            <img src="{{ asset("assets/images/widgets/recent-post/recent-post-3.jpg") }}"
+                                alt="recent post three">
                         </figure>
                     </div>
                     <div class="recent-post-content flex-grow-1 ms-3">
-                        <h4><a href="{{ route ("blog-details") }}">Protect Your Eyes From Dust And Disease</a></h4>
+                        <h4><a href="{{ route("blog-details") }}">Protect Your Eyes From Dust And Disease</a></h4>
                         <p class="post-date">
                             <i class="fa-solid fa-calendar-days"></i>
                             March 18, 2025

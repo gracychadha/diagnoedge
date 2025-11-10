@@ -30,9 +30,12 @@
                 </div>
             </div>
             <div class="breadcrumb-shape">
-                <img class="breadcrumb-shape-one" src="{{ asset("assets/images/shape/shape-4.png") }}" alt="breadcrumb shape one">
-                <img class="breadcrumb-shape-two" src="{{ asset("assets/images/shape/square-blue.png") }}" alt="breadcrumb shape two">
-                <img class="breadcrumb-shape-three" src="{{ asset("assets/images/shape/plus-orange.png") }}" alt="breadcrumb shape three">
+                <img class="breadcrumb-shape-one" src="{{ asset("assets/images/shape/shape-4.png") }}"
+                    alt="breadcrumb shape one">
+                <img class="breadcrumb-shape-two" src="{{ asset("assets/images/shape/square-blue.png") }}"
+                    alt="breadcrumb shape two">
+                <img class="breadcrumb-shape-three" src="{{ asset("assets/images/shape/plus-orange.png") }}"
+                    alt="breadcrumb shape three">
             </div>
         </section>
         <!-- breadcrumb section end -->
@@ -226,8 +229,8 @@
                                                 <div class="share-tag">
                                                     <span class="share-links-title">Releted Tags</span>
                                                     <ul class="tagcloud">
-                                                        <li><a href="{{ route ("blog-details") }}">Medical</a></li>
-                                                        <li><a href="{{ route ("blog-details") }}">Glasses</a></li>
+                                                        <li><a href="{{ route("blog-details") }}">Medical</a></li>
+                                                        <li><a href="{{ route("blog-details") }}">Glasses</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- share tag end -->
@@ -268,7 +271,7 @@
                                         <div class="col-md-6">
                                             <!-- nav previous start -->
                                             <div class="nav-previous">
-                                                <a href="{{ route ("blog-details") }}" rel="prev">
+                                                <a href="{{ route("blog-details") }}" rel="prev">
                                                     <span class="post-nav-icon">
                                                         <i class="fa-solid fa-chevron-left"></i>
                                                         <span class="post-nav-head">Previous Post</span>
@@ -281,7 +284,7 @@
                                         <div class="col-md-6">
                                             <!-- nav next start -->
                                             <div class="nav-next">
-                                                <a href="{{ route ("blog-details") }}" rel="next">
+                                                <a href="{{ route("blog-details") }}" rel="next">
                                                     <span class="post-nav-icon">
                                                         <span class="post-nav-head">Next Post</span>
                                                         <i class="fa-solid fa-chevron-right"></i>
@@ -533,9 +536,9 @@
                         </div>
                         <!-- blog single post end -->
                     </div>
-                   {{-- blog sidebar start --}}
-                   @include("website.components.blog-sidebar")
-                   {{-- blog sidebar end --}}
+                    {{-- blog sidebar start --}}
+                    @include("website.components.blog-sidebar")
+                    {{-- blog sidebar end --}}
                 </div>
             </div>
         </section>

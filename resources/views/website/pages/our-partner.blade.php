@@ -36,7 +36,7 @@
         </section>
         <!-- breadcrumb section end -->
         <!-- about section start -->
-        <section class="about-section-2 pt-100 md-pt-80 pb-100 md-pb-80">
+        <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
             <div class="about-shape-1">
                 <figure>
                     <img src="assets/images/about/about-shape-3.png" alt="about shape one">
@@ -47,7 +47,7 @@
                     <img src="assets/images/about/about-shape-4.png" alt="about shape two">
                 </figure>
             </div>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row align-items-center">
 
                     <div class="col-lg-6">
@@ -139,8 +139,8 @@
         </section>
         <!-- about section end -->
         <!-- why-section start -->
-        <section class="why-choose-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
+        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <!-- why content start -->

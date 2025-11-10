@@ -1,5 +1,5 @@
 <!-- testimonials section start -->
-<section class="testimonials-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80">
+<section class="testimonials-section-1 background-one pt-70 md-pt-80 pb-70 md-pb-80">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1 order-2">

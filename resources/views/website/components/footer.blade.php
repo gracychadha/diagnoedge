@@ -2,7 +2,7 @@
 <footer class="footer footer-1" data-img-src="{{ asset("assets/images/footer/footer-1-1.png") }}">
     <!-- footer top start -->
     <div class="footer-top">
-        <div class="container">
+        <div class="container-fluid">
             <!-- footer top wrap start -->
             <div class="footer-top-wrap">
                 <div class="row align-items-center">
@@ -11,7 +11,7 @@
                         <div class="footer-logo wow fadeInUp" data-wow-delay=".2s">
                             <a href="{{ route("home") }}">
                                 <figure>
-                                    <img src="{{ asset("assets/images/logo/logo-white.svg") }}" alt="footer logo">
+                                    <img src="{{ asset("assets/images/logo/diagno-white.png") }}" alt="footer logo">
                                 </figure>
                             </a>
                         </div>
@@ -51,10 +51,10 @@
     <!-- footer top end -->
     <!-- footer bottom start -->
     <div class="footer-bottom">
-        <div class="container">
+        <div class="containe-fluidr">
             <!-- footer widget wrap start -->
             <div class="footer-widget-wrap">
-                <div class="row justify-content-between">
+                <div class="row justify-content-center p-2">
                     <div class="col-xl-4 col-lg-12">
                         <!-- footer widget start -->
                         <div class="footer-widget footer-widget-about wow fadeInUp" data-wow-delay=".2s">
@@ -113,7 +113,7 @@
                         </div>
                         <!-- footer widget end -->
                     </div>
-                    <div class="col-lg-2 col-sm-6">
+                    <div class="col-lg-3 col-sm-6">
                         <!-- footer widget start -->
                         <div class="footer-widget footer-widget-services wow fadeInUp" data-wow-delay=".4s">
                             <h3 class="footer-widget-title">Our Services</h3>
@@ -176,7 +176,7 @@
     <!-- footer bottom end -->
     <!-- footer copyright start -->
     <div class="footer-copyright">
-        <div class="container">
+        <div class="container-fluid">
             <!-- footer copyright wrap start -->
             <div class="footer-copyright-wrap">
                 <div class="row align-items-center">
@@ -204,5 +204,18 @@
         </div>
     </div>
     <!-- footer copyright end -->
+    <div class="sticky-footer sticky">
+        <div class="container">
+            <!-- footer copyright wrap start -->
+            <div class="footer-copyright-wrap">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer copyright wrap end -->
+        </div>
+    </div>
 </footer>
 <!-- footer end -->

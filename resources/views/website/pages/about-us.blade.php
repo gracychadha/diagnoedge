@@ -36,8 +36,8 @@
         <!-- breadcrumb section end -->
 
         <!-- about section start -->
-        <section class="about-section-4 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
+        <section class="about-section-4 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <!-- section title start -->
@@ -52,12 +52,7 @@
                         <div class="about-content wow fadeInUp" data-wow-delay=".3s">
                             <!-- about content text start -->
                             <div class="about-content-text">
-                                <p>
-                                    It doesn't matter how organized you are — a surplus of toys will always ensure your
-                                    house is a mess waiting to happen. Fortunately, getting kids on board with the idea of
-                                    ditching their stuff is a
-                                    lot easier than it sounds.
-                                </p>
+                               
                                 <p>
                                     Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed
                                     luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget
@@ -109,200 +104,7 @@
         </section>
         <!-- about section end -->
 
-        <!-- faq section start -->
-        <section class="faq-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <!-- section title start -->
-                        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Faq's</span>
-                            <h2>Clear Answers To Your Questions</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore
-                                et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati
-                                accusantium.</p>
-                        </div>
-                        <!-- section title end -->
-                        <!-- faq image start -->
-                        <div class="faq-image wow fadeInUp" data-wow-delay=".3s">
-                            <figure class="image-anime">
-                                <img src="assets/images/faqs/faqs-3-1.jpg" alt="faq image">
-                            </figure>
-                        </div>
-                        <!-- faq image end -->
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- faq-content start -->
-                        <div class="faq-content wow fadeInUp" data-wow-delay=".2s">
-                            <!-- accordion start -->
-                            <div class="accordion" id="accordionExample">
-                                <!-- accordion item start -->
-                                <div class="accordion-item">
-                                    <!-- accordion-header start -->
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            What are common signs of serious eye problems?
-                                        </button>
-                                    </h2>
-                                    <!-- accordion header end -->
-                                    <!-- accordion collapse start -->
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <!-- accordion body start -->
-                                        <div class="accordion-body">
-                                            <div class="inner">
-                                                <div class="accordion-content">
-                                                    <p>
-                                                        It is a long established fact that a reader will be distracted by
-                                                        the readable content of a page when looking at its layout. The point
-                                                        of using Lorem Ipsum is that it has a
-                                                        more-or-less normal distribution of letters, as opposed to using
-                                                        'Content here, content here', making it look like readable English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- accordion body end -->
-                                    </div>
-                                    <!-- accordion collapse end -->
-                                </div>
-                                <!-- accordion item end -->
-                                <!-- accordion item start -->
-                                <div class="accordion-item">
-                                    <!-- accordion-header start -->
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Are contact lenses better than glasses?
-                                        </button>
-                                    </h2>
-                                    <!-- accordion header end -->
-                                    <!-- accordion collapse start -->
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                        data-bs-parent="#accordionExample">
-                                        <!-- accordion body start -->
-                                        <div class="accordion-body">
-                                            <div class="inner">
-                                                <div class="accordion-content">
-                                                    <p>
-                                                        It depends on your lifestyle. Contact lenses offer convenience for
-                                                        sports and aesthetics, while glasses are easier to maintain and
-                                                        cost-effective over time. An eye doctor can
-                                                        help you decide what suits you best.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- accordion body end -->
-                                    </div>
-                                    <!-- accordion collapse end -->
-                                </div>
-                                <!-- accordion item end -->
-                                <!-- accordion item start -->
-                                <div class="accordion-item">
-                                    <!-- accordion-header start -->
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                            Are contact lenses safe to wear every day?
-                                        </button>
-                                    </h2>
-                                    <!-- accordion header end -->
-                                    <!-- accordion collapse start -->
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <!-- accordion body start -->
-                                        <div class="accordion-body">
-                                            <div class="inner">
-                                                <div class="accordion-content">
-                                                    <p>Yes, as long as you follow proper hygiene and your eye doctor’s
-                                                        instructions. Always clean and store lenses properly, and never
-                                                        sleep in them unless advised.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- accordion body end -->
-                                    </div>
-                                    <!-- accordion collapse end -->
-                                </div>
-                                <!-- accordion item end -->
-                                <!-- accordion item start -->
-                                <div class="accordion-item">
-                                    <!-- accordion-header start -->
-                                    <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseFour" aria-expanded="false"
-                                            aria-controls="collapseFour">
-                                            How often should I get my eyes checked?
-                                        </button>
-                                    </h2>
-                                    <!-- accordion-header end -->
-                                    <!-- accordion collapse start -->
-                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                        data-bs-parent="#accordionExample">
-                                        <!-- accordion body start -->
-                                        <div class="accordion-body">
-                                            <div class="inner">
-                                                <div class="accordion-content">
-                                                    <p>
-                                                        Adults should get a comprehensive eye exam every 1 to 2 years, even
-                                                        if they have no vision issues. Children, seniors, and individuals
-                                                        with existing conditions may need more
-                                                        frequent visits.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- accordion body end -->
-                                    </div>
-                                    <!-- accordion collapse end-->
-                                </div>
-                                <!-- accordion item end -->
-                                <!-- accordion item start -->
-                                <div class="accordion-item">
-                                    <!-- accordion-header start -->
-                                    <h2 class="accordion-header" id="headingFive">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseFive" aria-expanded="false"
-                                            aria-controls="collapseFive">
-                                            Why do we respect your time and prioritize you?
-                                        </button>
-                                    </h2>
-                                    <!-- accordion-header end -->
-                                    <!-- accordion collapse start -->
-                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                        data-bs-parent="#accordionExample">
-                                        <!-- accordion body start -->
-                                        <div class="accordion-body">
-                                            <div class="inner">
-                                                <div class="accordion-content">
-                                                    <p>
-                                                        It is a long established fact that a reader will be distracted by
-                                                        the readable content of a page when looking at its layout. The point
-                                                        of using Lorem Ipsum is that it has a
-                                                        more-or-less normal distribution of letters, as opposed to using
-                                                        'Content here, content here', making it look like readable English
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- accordion body end -->
-                                    </div>
-                                    <!-- accordion collapse end-->
-                                </div>
-                                <!-- accordion item end -->
-                            </div>
-                            <!-- accordion end -->
-                        </div>
-                        <!-- faq-content end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- faq section end -->
-
+       
         <!-- counter section start -->
         <section class="counter-section-2 pb-60">
             <div class="container">
@@ -358,11 +160,13 @@
         @include("website.components.testimonials")
         <!-- testimonials section end -->
 
-
+  <!-- marquee ticker section start -->
+       @include("website.components.sticker")
+        <!-- marquee ticker section end -->
 
         <!-- partners section start -->
-        <section class="partners-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
+        <section class="partners-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- section title start -->

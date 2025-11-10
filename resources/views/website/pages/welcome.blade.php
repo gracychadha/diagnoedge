@@ -156,8 +156,8 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <img src="https://www.metropolisindia.com/newdata/images/test.svg"
-                                                class="input-icon" alt="icon" width="35" height="25">
+                                            <img src="assets/images/logo/test.svg" class="input-icon" alt="icon" width="35"
+                                                height="25">
                                         </td>
                                         <td class="search-widget-input-wrapper">
                                             <input type="text" id="already_know" class="input-box"
@@ -177,8 +177,7 @@
                                 <tbody>
                                     <tr style="padding-bottom:50px;">
                                         <td>
-                                            <img class="input-icon"
-                                                src="https://www.metropolisindia.com/newdata/images/center.svg" alt="icon"
+                                            <img class="input-icon" src="assets/images/logo/center.svg" alt="icon"
                                                 width="35" height="25">
                                         </td>
                                         <td class="search-books search-widget-input-wrapper">
@@ -202,18 +201,8 @@
 
 
         <!-- product section start -->
-        <section class="product-section background-one  md-pt-50 pb-70 md-pb-50">
+        <section class="product-section background-one pt-20  md-pt-50 pb-70 md-pb-50">
             <div class="container-fluid">
-                {{-- <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Best Health Tests</span>
-                            <h2>Good health starts with regular health tests</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div> --}}
                 {{-- section for test packages start--}}
                 <div class="container pt-20">
                     <div class="row">
@@ -763,7 +752,7 @@
             </div>
 
             {{-- section for test packages start FOR Popular Tests--}}
-            <div class="container-fluid pt-20">
+            <div class="container-fluid pt-40">
                 <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
@@ -1310,7 +1299,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid pt-20">
+            <div class="container-fluid pt-40">
                 <div class="row container">
                     <div class="col-lg-12">
                         <!-- section title start -->
@@ -1362,51 +1351,46 @@
         </section>
         <!-- product section end -->
         <!-- about section start -->
-        <section class="about-section-1 pb-40 md-pb-80 pt-40">
-            <div class="about-shape-1">
-                <figure>
-                    <img src="assets/images/about/about-shape-1.png" alt="about shape one">
-                </figure>
-            </div>
-            <div class="about-shape-2">
-                <figure>
-                    <img src="assets/images/about/about-shape-2.png" alt="about shape two">
-                </figure>
-            </div>
+        <section class="about-section-4 pt-70 md-pt-80 pb-100 md-pb-80">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-12">
+                    <div class="col-lg-5 col-md-12">
                         <!-- section title start -->
-                        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                        <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
                             <span class="sub-title">About Us</span>
-                            <h2>Personalized vision care with a patient first approach</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore
-                                et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati
-                                accusantium.</p>
+                            <h2>We're on a mission to change view of eye.</h2>
+
                         </div>
+                        <div class="about-img d-flex justify-content-center w-100">
+                            <img src="assets/images/why-choose/why-choose-img-1-2.jpg">
+                        </div>
+
+
                         <!-- section title end -->
                     </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <!-- about image start -->
-                        <div class="about-image">
-                            <!-- about img 1 start -->
-                            <div class="about-img-1 text-center">
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-1-1.jpg" alt="about image one">
-                                </figure>
-                            </div>
-                            <!-- about img 1 end -->
-                        </div>
-                        <!-- about image end -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="col-lg-7 col-md-12">
                         <!-- about content start -->
-                        <div class="about-content">
+                        <div class="about-content wow fadeInUp" data-wow-delay=".3s">
+                            <!-- about content text start -->
+                            <div class="about-content-text">
+
+                                <p>
+                                    Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed
+                                    luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget
+                                    condimentum tempor.
+                                    Praesent sollicitudin lectus ut pharetra pulvinar.
+                                </p>
+                                <p>
+                                    There are many variations of pass of lorem ipsum available but the majority have
+                                    suffered alteration in some form. Injected humour randomised words which don't look even
+                                    slightly believable you
+                                    need to be sure there isn't anything embarrassing. Praesent arcu gravida vehicula est
+                                    node maecenas loareet.
+                                </p>
+                            </div>
+                            <!-- about content text end -->
                             <!-- about features wappper start -->
                             <div class="about-features-wappper">
-                                <!-- about features item start -->
                                 <div class="about-features-item">
                                     <div class="about-features-icon">
                                         <figure>
@@ -1414,13 +1398,11 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Personalized eye exams</h3>
+                                        <h3>Personalized Eye Exams</h3>
                                         <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
                                             humour.</p>
                                     </div>
                                 </div>
-                                <!-- about features item end -->
-                                <!-- about features item start -->
                                 <div class="about-features-item">
                                     <div class="about-features-icon">
                                         <figure>
@@ -1428,56 +1410,21 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Chronic eye conditions</h3>
+                                        <h3>Chronic Eye Conditions</h3>
                                         <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
                                             humour.</p>
                                     </div>
                                 </div>
-                                <!-- about features item end -->
-                                <!-- about features item start -->
-                                <div class="about-features-item">
-                                    <div class="about-features-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-3.png" alt="icon about three">
-                                        </figure>
-                                    </div>
-                                    <div class="about-features-title">
-                                        <h3>Based vision planning</h3>
-                                        <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
-                                            humour.</p>
-                                    </div>
-                                </div>
-                                <!-- about features item end -->
                             </div>
-                            <!-- about features wappper end-->
-                            <!-- hero button wappper start -->
-                            <div class="about-button-wappper">
-                                <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About Us">
-                                    <span data-text="More About Us">More About Us</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- hero button wappper end -->
+                            <!-- about features wappper end -->
                         </div>
                         <!-- about content end -->
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <!-- about image start -->
-                        <div class="about-image">
-                            <!-- about img 2 start -->
-                            <div class="about-img-2">
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-1-2.jpg" alt="about image two">
-                                </figure>
-                            </div>
-                            <!-- about img 2 end -->
-                        </div>
-                        <!-- about image end -->
                     </div>
                 </div>
             </div>
         </section>
         <!-- about section end -->
+
         <!-- blog section start -->
         <section class="blog-section background-one pt-40 md-pt-80 pb-40 md-pb-50">
             <div class="container-fluid">
@@ -1495,10 +1442,8 @@
                     <div class="col-lg-4 col-md-12">
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a></h3>
-                            </div>
-                           
+
+
                             <div class="blog-grid-image">
                                 <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
@@ -1506,7 +1451,7 @@
                                     </figure>
                                 </a>
                             </div>
-                             <ul class="blog-meta">
+                            <ul class="blog-meta">
                                 <li>
                                     <a href="#">
                                         <i class="fa-solid fa-user"></i>
@@ -1518,9 +1463,11 @@
                                     <span>March 14, 2025</span>
                                 </li>
                             </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a></h3>
+                            </div>
                             <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
+                                <p>It is a long established fact that a reader will be distracted ....</p>
                                 <div class="blog-grid-button">
                                     <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
@@ -1531,10 +1478,8 @@
                     <div class="col-lg-4 col-md-12">
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
-                            </div>
-                           
+
+
                             <div class="blog-grid-image">
                                 <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
@@ -1542,7 +1487,7 @@
                                     </figure>
                                 </a>
                             </div>
-                             <ul class="blog-meta">
+                            <ul class="blog-meta">
                                 <li>
                                     <a href="#">
                                         <i class="fa-solid fa-user"></i>
@@ -1554,9 +1499,11 @@
                                     <span>March 15, 2025</span>
                                 </li>
                             </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
+                            </div>
                             <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
+                                <p>It is a long established fact that a reader will be distracted ...</p>
                                 <div class="blog-grid-button">
                                     <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
@@ -1567,10 +1514,8 @@
                     <div class="col-lg-4 col-md-12">
                         <!-- blog grid item 1 start -->
                         <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
-                            </div>
-                            
+
+
                             <div class="blog-grid-image">
                                 <a href="{{ route("blog-details") }}">
                                     <figure class="image-anime">
@@ -1590,9 +1535,11 @@
                                     <span>March 17, 2025</span>
                                 </li>
                             </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
+                            </div>
                             <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of
-                                    a page when looking at its layout.</p>
+                                <p>It is a long established fact that a reader will be distracted ....</p>
                                 <div class="blog-grid-button">
                                     <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
                                 </div>
@@ -3196,7 +3143,7 @@
                                 </figure>
                             </div>
                             <div class="portfolio-content">
-                               
+
                                 <div class="portfolio-button-wapper">
                                     <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -3215,7 +3162,7 @@
                                 </figure>
                             </div>
                             <div class="portfolio-content">
-                               
+
                                 <div class="portfolio-button-wapper">
                                     <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -3234,7 +3181,7 @@
                                 </figure>
                             </div>
                             <div class="portfolio-content">
-                               
+
                                 <div class="portfolio-button-wapper">
                                     <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -3268,77 +3215,10 @@
         <!-- portfolio section end -->
 
         <!-- marquee ticker section start -->
-        <div class="marquee-ticker-section">
-            <div class="marquee-ticker-box">
-                <div class="marquee-content">
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image one">
-                    </div>
-                    <p data-text="Online Consultation">
-                        Online Consultation
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image two">
-                    </div>
-                    <p data-text="Book Appointment">
-                        Book Appointment
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image three">
-                    </div>
-                    <p data-text="Quality Eyecare">
-                        Quality Eyecare
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image four">
-                    </div>
-                    <p data-text="Health Screening">
-                        Health Screening
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image five">
-                    </div>
-                    <p data-text="Emergency">
-                        Emergency
-                    </p>
-                </div>
-                <div class="marquee-content">
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image six">
-                    </div>
-                    <p data-text="Online Consultation">
-                        Online Consultation
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image seven">
-                    </div>
-                    <p data-text="Book Appointment">
-                        Book Appointment
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image eight">
-                    </div>
-                    <p data-text="Quality Eyecare">
-                        Quality Eyecare
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image nine">
-                    </div>
-                    <p data-text="Health Screening">
-                        Health Screening
-                    </p>
-                    <div class="marquee-icon">
-                        <img src="assets/images/icon-sub-heading.svg" alt="marquee image ten">
-                    </div>
-                    <p data-text="Emergency">
-                        Emergency
-                    </p>
-                </div>
-            </div>
-        </div>
+        @include("website.components.sticker")
         <!-- marquee ticker section end -->
         <!-- faq section start -->
-        <section class="faq-section-1 pt-100 md-pt-80">
+        <section class="faq-section-1 pt-70 md-pt-80">
             <div class="container">
                 <!-- faq wapper start -->
                 <div class="faq-wapper">
@@ -3493,40 +3373,7 @@
                                         <!-- accordion collapse end-->
                                     </div>
                                     <!-- accordion item end -->
-                                    <!-- accordion item start -->
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="headingFive">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                                                aria-expanded="false" aria-controls="collapseFive">
-                                                Why do we respect your time and prioritize you?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion-header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapseFive" class="accordion-collapse collapse"
-                                            aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>
-                                                            It is a long established fact that a reader will be distracted
-                                                            by the readable content of a page when looking at its layout.
-                                                            The point of using Lorem Ipsum is that it has a
-                                                            more-or-less normal distribution of letters, as opposed to using
-                                                            'Content here, content here', making it look like readable
-                                                            English
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- accordion body end -->
-                                        </div>
-                                        <!-- accordion collapse end-->
-                                    </div>
-                                    <!-- accordion item end -->
+
                                 </div>
                                 <!-- accordion end -->
                             </div>
@@ -3539,315 +3386,7 @@
         </section>
         <!-- faq section end -->
 
-        <!-- pricing section start -->
-        <section class="pricing-section-1 bg-section pt-100 md-pt-80 pb-70 md-pb-50">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title area start -->
-                        <div class="section-title-area">
-                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Plans &amp; Pricing</span>
-                                <h2>Our pricing is simple with no hidden fees</h2>
-                            </div>
-                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                        </div>
-                        <!-- section title area end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- pricing tabs start -->
-                        <div class="pricing-tabs wow fadeInUp" data-wow-delay=".3s">
-                            <!-- nav start -->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="nav-monthly-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-monthly" type="button" role="tab" aria-controls="nav-monthly"
-                                        aria-selected="true">Monthly</button>
-                                    <button class="nav-link" id="nav-yearly-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-yearly" type="button" role="tab" aria-controls="nav-yearly"
-                                        aria-selected="false">Yearly</button>
-                                </div>
-                            </nav>
-                            <!-- nav end -->
-                        </div>
-                        <!-- pricing tabs end -->
-                    </div>
-                </div>
-                <!-- tab content start -->
-                <div class="tab-content wow fadeInUp" data-wow-delay=".4s">
-                    <!-- tab pane start -->
-                    <div class="tab-pane fade active show" id="nav-monthly" role="tabpanel"
-                        aria-labelledby="nav-monthly-tab" tabindex="0">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Individual Plans</p>
-                                            <h3 class="pricing-plan-price monthly_text">$30<span>/Monthly</span></h3>
-                                            <p>This plan includes online consultation options for all users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item tagged">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">
-                                                Family Plans
-                                                <span>Popular</span>
-                                            </p>
-                                            <h3 class="pricing-plan-price monthly_text">$70<span>/Monthly</span></h3>
-                                            <p class="text-white">This plan includes online consultation options for all
-                                                users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-white">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-4" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Group Plans</p>
-                                            <h3 class="pricing-plan-price monthly_text">$90<span>/Monthly</span></h3>
-                                            <p>This plan includes online consultation options for all users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- tab pane end -->
-                    <!-- tab pane start -->
-                    <div class="tab-pane fade" id="nav-yearly" role="tabpanel" aria-labelledby="nav-yearly-tab"
-                        tabindex="0">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Individual Plans</p>
-                                            <h3 class="pricing-plan-price monthly_text">$310<span>/Yearly</span></h3>
-                                            <p>This plan includes online consultation options for all users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item tagged">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">
-                                                Family Plans
-                                                <span>Popular</span>
-                                            </p>
-                                            <h3 class="pricing-plan-price monthly_text">$790<span>/Yearly</span></h3>
-                                            <p class="text-white">This plan includes online consultation options for all
-                                                users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-white">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-4" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <!-- pricing item start -->
-                                <div class="pricing-item">
-                                    <!-- pricing content start -->
-                                    <div class="pricing-content">
-                                        <!-- pricing text start -->
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Group Plans</p>
-                                            <h3 class="pricing-plan-price monthly_text">$1030<span>/Yearly</span></h3>
-                                            <p>This plan includes online consultation options for all users</p>
-                                        </div>
-                                        <!-- pricing text end -->
-                                        <!-- pricing list start -->
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <!-- check list start -->
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Routine Checkups</li>
-                                                    <li>Medical Specialist</li>
-                                                    <li>Nutritional Guidance</li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <!-- check list end -->
-                                            <!-- pricing button wapper start -->
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Choose Plan">
-                                                    <span data-text="Choose Plan">Choose Plan</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <!-- pricing button wapper end -->
-                                        </div>
-                                        <!-- pricing list end -->
-                                    </div>
-                                    <!-- pricing content end -->
-                                </div>
-                                <!-- pricing item end -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- tab pane end -->
-                </div>
-                <!-- tab content end -->
-            </div>
-        </section>
-        <!-- pricing section end -->
+
         <!-- appointment section start -->
         @include("website.components.cta")
         <!-- appointment section end -->
