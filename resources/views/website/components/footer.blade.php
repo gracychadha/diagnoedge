@@ -51,7 +51,7 @@
     <!-- footer top end -->
     <!-- footer bottom start -->
     <div class="footer-bottom">
-        <div class="containe-fluidr">
+        <div class="containe-fluid">
             <!-- footer widget wrap start -->
             <div class="footer-widget-wrap">
                 <div class="row justify-content-center p-2">
@@ -209,8 +209,9 @@
             <!-- footer copyright wrap start -->
             <div class="footer-copyright-wrap">
                 <div class="row align-items-center">
-                    <div class="col-lg-8">
-
+                    <div class=" text-center">
+                        <p >Do you have any queries <button> Get a Call back Now</button> or Call us now at
+                             <button> +91 987 678 4545</button></p>
                     </div>
                 </div>
             </div>
