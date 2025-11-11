@@ -48,9 +48,10 @@
                                 <h2>Meet Our expert Eye Specialists</h2>
                             </div>
                             <div class="section-title-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <p align="justify">Our team at DiagnoEdge Lab is led by experienced and dedicated medical professionals who
+                                    believe that accurate diagnosis is the first step toward effective treatment. With years
+                                    of expertise in pathology and laboratory medicine, our doctors ensure every test is
+                                    performed with precision, care, and the highest quality standards.</p>
                             </div>
                         </div>
                         <!-- section title area end -->
@@ -397,9 +398,7 @@
         </section>
         <!-- doctor section end -->
 
-       {{-- subscribe section --}}
-       @include("website.components.cta")
-       {{-- subscribe section --}}
+       
     </main>
     <!-- main end -->
 @endsection

@@ -43,7 +43,7 @@
                         <!-- section title start -->
                         <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
                             <span class="sub-title">About Us</span>
-                            <h2>We're on a mission to change view of eye.</h2>
+                            <h2>About DiagnoEdge Lab</h2>
                         </div>
                         <!-- section title end -->
                     </div>
@@ -52,19 +52,20 @@
                         <div class="about-content wow fadeInUp" data-wow-delay=".3s">
                             <!-- about content text start -->
                             <div class="about-content-text">
-                               
-                                <p>
-                                    Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed
-                                    luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget
-                                    condimentum tempor.
-                                    Praesent sollicitudin lectus ut pharetra pulvinar.
+
+                                <p align="justify">
+                                    At DiagnoEdge Lab, we combine cutting-edge diagnostic technology with expert medical
+                                    insights to deliver accurate, reliable, and timely results. Our mission is to empower
+                                    better health decisions through precision testing, personalized care, and a commitment
+                                    to excellence in laboratory diagnostics.
+
+                                    
                                 </p>
-                                <p>
-                                    There are many variations of pass of lorem ipsum available but the majority have
-                                    suffered alteration in some form. Injected humour randomised words which don't look even
-                                    slightly believable you
-                                    need to be sure there isn't anything embarrassing. Praesent arcu gravida vehicula est
-                                    node maecenas loareet.
+                                <p align="justify">
+                                    We understand that every test tells a story — that’s why we ensure each report is
+                                    handled with utmost care, accuracy, and confidentiality. Whether it’s routine blood work
+                                    or advanced molecular testing, our team of qualified pathologists and lab professionals
+                                    work diligently to provide results you can trust.
                                 </p>
                             </div>
                             <!-- about content text end -->
@@ -77,9 +78,8 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Personalized Eye Exams</h3>
-                                        <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
-                                            humour.</p>
+                                        <h3>Accuracy Firs</h3>
+                                        <p>We use the latest diagnostic equipment and standardized testing protocols to ensure precise results every time.</p>
                                     </div>
                                 </div>
                                 <div class="about-features-item">
@@ -89,9 +89,8 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Chronic Eye Conditions</h3>
-                                        <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
-                                            humour.</p>
+                                        <h3>Patient-Centric Approach</h3>
+                                        <p>Your health is our priority — we focus on delivering quick turnaround times and seamless sample collection services.</p>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +103,7 @@
         </section>
         <!-- about section end -->
 
-       
+
         <!-- counter section start -->
         <section class="counter-section-2 pb-60">
             <div class="container">
@@ -160,8 +159,8 @@
         @include("website.components.testimonials")
         <!-- testimonials section end -->
 
-  <!-- marquee ticker section start -->
-       @include("website.components.sticker")
+        <!-- marquee ticker section start -->
+        @include("website.components.sticker")
         <!-- marquee ticker section end -->
 
         <!-- partners section start -->

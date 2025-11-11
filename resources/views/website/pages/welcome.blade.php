@@ -252,9 +252,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -1358,7 +1360,7 @@
                         <!-- section title start -->
                         <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
                             <span class="sub-title">About Us</span>
-                            <h2>We're on a mission to change view of eye.</h2>
+                            <h2>Precision. Care. Confidence — The Edge in Diagnostics.</h2>
 
                         </div>
                         <div class="about-img d-flex justify-content-center w-100">
@@ -1374,18 +1376,16 @@
                             <!-- about content text start -->
                             <div class="about-content-text">
 
-                                <p>
-                                    Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed
-                                    luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget
-                                    condimentum tempor.
-                                    Praesent sollicitudin lectus ut pharetra pulvinar.
+                                <p align="justify">
+                                    At Diagnoedge , we are committed to delivering accurate, reliable, and timely
+                                    diagnostic results to help doctors and patients make informed health decisions. Our
+                                    advanced laboratory is equipped with modern technology and managed by skilled
+                                    professionals who ensure every test meets the highest standards of precision and care.
                                 </p>
-                                <p>
-                                    There are many variations of pass of lorem ipsum available but the majority have
-                                    suffered alteration in some form. Injected humour randomised words which don't look even
-                                    slightly believable you
-                                    need to be sure there isn't anything embarrassing. Praesent arcu gravida vehicula est
-                                    node maecenas loareet.
+                                <p align="justify"></p>
+                                We believe in combining innovation with compassion, offering a wide range of pathology,
+                                radiology, and wellness services under one roof. Your health is our priority, and we
+                                strive to provide you with seamless, trustworthy, and affordable diagnostic solutions.
                                 </p>
                             </div>
                             <!-- about content text end -->
@@ -1398,9 +1398,9 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Personalized Eye Exams</h3>
-                                        <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
-                                            humour.</p>
+                                        <h3>Advanced Technology, Accurate Results</h3>
+                                        <p align="justify">Equipped with state-of-the-art analyzers and automated systems,
+                                            DiagnoEdge ensures precise and reliable diagnostic outcomes every time.</p>
                                     </div>
                                 </div>
                                 <div class="about-features-item">
@@ -1410,9 +1410,10 @@
                                         </figure>
                                     </div>
                                     <div class="about-features-title">
-                                        <h3>Chronic Eye Conditions</h3>
-                                        <p>There are many variations of pasrsfgses of Lorem Ipsum btmred ine form injected
-                                            humour.</p>
+                                        <h3>Expert Team, Patient-Focused Care</h3>
+                                        <p align="justify">Our team of qualified pathologists and technicians work with
+                                            dedication and empathy to deliver results that support better health decisions
+                                            and patient well-being.</p>
                                     </div>
                                 </div>
                             </div>
@@ -3096,13 +3097,14 @@
                         <!-- section title area start -->
                         <div class="section-title-area">
                             <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Our Portfolio</span>
+                                <span class="sub-title">Our Gallery</span>
                                 <h2>Explore our showcase of featured works</h2>
                             </div>
                             <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <p align="justify">Step inside DiagnoEdge Lab through our gallery. From advanced testing
+                                    equipment and
+                                    hygienic sample collection areas to our expert team at work — every image reflects our
+                                    commitment to precision, care, and excellence in diagnostics.</p>
                             </div>
                         </div>
                         <!-- section title area end -->
@@ -3228,9 +3230,9 @@
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                                 <span class="sub-title">Faq's</span>
                                 <h2>Clear answers to your questions</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <p align="justify"> At DiagnoEdge Lab, we understand that health testing can raise many
+                                    questions — from
+                                    booking appointments to understanding your reports.</p>
                             </div>
                             <!-- section title end -->
                             <!-- faq image start -->

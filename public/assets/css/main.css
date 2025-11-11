@@ -5582,9 +5582,9 @@ button:focus {
     position: relative;
     z-index: 9;
     background-color: var(--white-color);
-    width: calc(100% - 50px);
-    margin-left: 50px;
-    border-radius: 20px 0 0 80px;
+    /* width: calc(100% - 50px); */
+    /* margin-left: 50px; */
+    /* border-radius: 20px 0 0 80px; */
     padding-right: 30px;
     padding-left: 10px;
 }
@@ -16661,5 +16661,10 @@ button.btn-success:hover {
 .sticky-footer p button:hover {
     background-color: black;
     color: white;
+}
+.test-sidebar-list{
+    background-color: #ffffff;
+    display:flex;
+    flex-wrap:wrap;
 }
 /*# sourceMappingURL=main.css.map */

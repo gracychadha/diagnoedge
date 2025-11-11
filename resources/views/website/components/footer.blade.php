@@ -58,8 +58,9 @@
                     <div class="col-xl-4 col-lg-12">
                         <!-- footer widget start -->
                         <div class="footer-widget footer-widget-about wow fadeInUp" data-wow-delay=".2s">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor asin
-                                cididunt ut labore et dolore magna ali qua. Lorem ipsum dolor sit amet.</p>
+                            <p align="justify">we are dedicated to delivering accurate, reliable, and timely diagnostic services. With
+                                advanced equipment and a team of skilled professionals, we ensure precise testing and
+                                quality care to support better health outcomes for every patient.</p>
                             <!-- footer social icon start -->
                             <div class="footer-social-icon">
                                 <ul class="social-icon">
@@ -210,8 +211,9 @@
             <div class="footer-copyright-wrap">
                 <div class="row align-items-center">
                     <div class=" text-center">
-                        <p >Do you have any queries <button> Get a Call back Now</button> or Call us now at
-                             <button> +91 987 678 4545</button></p>
+                        <p>Do you have any queries <button> Get a Call back Now</button> or Call us now at
+                            <button> +91 987 678 4545</button>
+                        </p>
                     </div>
                 </div>
             </div>

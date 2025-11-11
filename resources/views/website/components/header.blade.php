@@ -37,7 +37,7 @@
         <!-- offcanvas logo start -->
         <div class="offcanvas-logo">
             <figure>
-                <img src="{{ asset("assets/images/logo/logo.svg") }}" alt="offcanvas logo">
+                <img src="{{ asset("assets/images/logo/diagno-logo.png") }}" alt="offcanvas logo">
             </figure>
         </div>
         <!-- offcanvas logo emd -->
