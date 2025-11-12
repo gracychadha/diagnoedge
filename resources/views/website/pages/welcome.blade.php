@@ -282,9 +282,12 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
+
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -308,9 +311,12 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            
+                                          <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -334,9 +340,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                          <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -360,9 +368,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -386,9 +396,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -426,9 +438,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -454,9 +468,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -480,9 +496,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -506,9 +524,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -532,9 +552,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -558,9 +580,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -597,9 +621,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -625,9 +651,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -651,9 +679,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -677,9 +707,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                           <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -703,9 +735,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>
@@ -729,9 +763,11 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            <h6 class="title-card mb-1">
-                                                Truehealth Vital with Body Vitals Check & More
-                                            </h6>
+                                          <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
                                             <p class="text-muted small mb-2">
                                                 <span class="badge bg-light text-dark border">9 Profile | 81
                                                     Parameters</span>

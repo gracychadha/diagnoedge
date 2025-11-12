@@ -65,3 +65,12 @@ Route::get('/admin-appointment', function(){
 Route::get('/admin-staff', function(){
     return view("admin.pages.admin-staff");
 })->name('admin-staff');
+Route::get('/admin-profile', function(){
+    return view("admin.pages.admin-profile");
+})->name('admin-profile');
+Route::get('/admin-patient' , function() {
+return view('admin.pages.admin-patient');
+})->name('admin-patient');
+Route::get('/admin-doctor' , function() {
+return view('admin.pages.admin-doctor');
+})->name('admin-doctor');

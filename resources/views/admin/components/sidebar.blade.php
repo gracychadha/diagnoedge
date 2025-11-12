@@ -8,9 +8,9 @@
                 <ul aria-expanded="false">
                     <li><a href="index.html">Dashboard Light</a></li>
                     <li><a href="index-2.html">Dashboard Dark</a></li>
-                    <li><a href="patient-list.html">Patient</a></li>
+                    <li><a href="{{ route('admin-patient') }}">Patient</a></li>
                     <li><a href="patient-details.html">Patient Details</a></li>
-                    <li><a href="doctor-list.html">Doctor</a></li>
+                    <li><a href="{{ route('admin-doctor') }}">Doctor</a></li>
                     <li><a href="doctor-detail.html">Doctor Detail</a></li>
                     <li><a href="page-review.html">Review</a></li>
                 </ul>
@@ -25,7 +25,7 @@
                     <span class="nav-text">Staff</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="">Staff</a></li>
+                    <li><a href="{{ route('admin-staff') }}">Staff</a></li>
                     <li><a href="staff-profile.html">Staff Profie</a></li>
                 </ul>
             </li>
@@ -34,7 +34,7 @@
                     <span class="nav-text">Apps</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="app-profile.html">Profile</a></li>
+                    <li><a href="{{ route('admin-profile') }}">Profile</a></li>
                     <li><a href="post-details.html">Post Details</a></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
                         <ul aria-expanded="false">
