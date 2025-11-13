@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="page-titles">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Website Settings</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Website  Settings</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Settings</a></li>
                         </ol>
                     </div>
