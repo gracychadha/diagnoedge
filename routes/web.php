@@ -53,24 +53,56 @@ Route::get('/appointment', function () {
 })->name('appointment');
 
 // for dashboard
-Route::get('/admin-panel' , function(){
-return view('admin.pages.dashboard');
+Route::get('/dashboard', function () {
+    return view('admin.pages.dashboard');
 })->name('admin-panel');
-Route::get('/login',function(){
-return view('admin.auth.welcome');
+Route::get('/login', function () {
+    return view('admin.auth.welcome');
 })->name("login");
-Route::get('/admin-appointment', function(){
+Route::get('/admin-appointment', function () {
     return view("admin.pages.admin-appointment");
 })->name('admin-appointment');
-Route::get('/admin-staff', function(){
+Route::get('/admin-staff', function () {
     return view("admin.pages.admin-staff");
 })->name('admin-staff');
-Route::get('/admin-profile', function(){
+Route::get('/admin-profile', function () {
     return view("admin.pages.admin-profile");
 })->name('admin-profile');
-Route::get('/admin-patient' , function() {
-return view('admin.pages.admin-patient');
+Route::get('/admin-patient', function () {
+    return view('admin.pages.admin-patient');
 })->name('admin-patient');
-Route::get('/admin-doctor' , function() {
-return view('admin.pages.admin-doctor');
+Route::get('/admin-doctor', function () {
+    return view('admin.pages.admin-doctor');
 })->name('admin-doctor');
+Route::get('/website-setting', function () {
+    return view('admin.pages.website-setting');
+})->name('website-setting');
+Route::get('/general-setting', function () {
+    return view('admin.pages.general-setting');
+})->name('general-setting');
+Route::get('/logout', function () {
+    return view('admin.pages.logout');
+})->name('logout');
+Route::get('/test-category', function () {
+    return view('admin.pages.test-category');
+})->name('category');
+Route::get('/pages', function () {
+    return view('admin.pages.pages');
+})->name('pages');
+Route::get('/test-description', function () {
+    return view('admin.pages.test-description');
+})->name('test-description');
+Route::get('/testimonial', function () {
+    return view('admin.pages.testimonial');
+})->name('testimonial');
+Route::get('/faq', function () {
+    return view('admin.pages.faq');
+})->name('faq');
+Route::get('/blog-category', function () {
+    return view('admin.pages.blog-category');
+})->name('blog-category');
+Route::get('/blog-description', function () {
+    return view('admin.pages.blog-description');
+})->name('blog-description');
+
+

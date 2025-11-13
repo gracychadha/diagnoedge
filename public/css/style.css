@@ -83,7 +83,9 @@
   --rgba-primary-7: rgba(54, 201, 95, 0.7);
   --rgba-primary-8: rgba(54, 201, 95, 0.8);
   --rgba-primary-9: rgba(54, 201, 95, 0.9); }
-
+.primary-bg{
+  background:var(--primary) !important;
+}
 .gradient_one {
   background-image: linear-gradient(to right, rgba(186, 1, 181, 0.85) 0%, rgba(103, 25, 255, 0.85) 100%); }
 
@@ -26011,5 +26013,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 @media only screen and (max-width: 1400px) {
   .product-review.style-1 {
     font-size: 12px; } }
-
+.side-nav-setting li{
+padding:10px 0 10px 5px;
+font-size:16px;
+}
+.side-nav-setting li:hover a{
+color:var(--primary);
+}
+.side-nav-setting li:active {
+background:var(--rgba-primary-1);
+}
 /*# sourceMappingURL=style.css.map */
