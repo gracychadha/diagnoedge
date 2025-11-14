@@ -6,8 +6,8 @@
         <div class="container-fluid">
             <div class="form-head d-flex mb-3 mb-md-4 align-items-start">
                 <div class="me-auto d-none d-lg-block">
-                    <h3 class="text-black font-w600">Welcome to Eres!</h3>
-                    <p class="mb-0 fs-18">Hospital Admin Dashboard Template</p>
+                    <h3 class="text-black font-w600">Welcome  <strong class="text-dark">{{ auth()->user()->name }}</strong>!</h3>
+                    <p class="mb-0 fs-18">Diagnoedge Admin Dashboard </p>
                 </div>
 
                 <div class="input-group search-area ms-auto d-inline-flex">

@@ -18,6 +18,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link href="{{ asset('vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    
     {{-- summernote --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <!-- Style Css -->

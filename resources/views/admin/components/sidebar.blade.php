@@ -1,7 +1,7 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
-            <li><a class="ai-icon" href="{{ route('admin-panel') }}" aria-expanded="false">
+            <li><a class="ai-icon" href="{{ route('dashboard') }}" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -12,7 +12,7 @@
                     <span class="nav-text">Test</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('category') }}">Test Category </a></li>
+                    <li><a href="{{ route('categories.index') }}">Test Category </a></li>
                     <li><a href="{{ route('test-services') }}">Test Services </a></li>
                     <li><a href="{{ route('test-description') }}">Test Description</a></li>
 
@@ -96,7 +96,7 @@
                 </ul>
             </li>
         </ul>
-       
+
 
     </div>
 </div>

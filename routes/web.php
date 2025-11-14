@@ -1,10 +1,18 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+
+
+
+
+//   for frontend 
 
 Route::get('/', function () {
     return view('website.pages.welcome');
 })->name('home');
+
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
 })->name('about-us');
@@ -52,13 +60,7 @@ Route::get('/appointment', function () {
     return view('website.pages.appointment');
 })->name('appointment');
 
-// for dashboard
-Route::get('/dashboard', function () {
-    return view('admin.pages.dashboard');
-})->name('admin-panel');
-Route::get('/login', function () {
-    return view('admin.auth.welcome');
-})->name("login");
+
 Route::get('/admin-appointment', function () {
     return view("admin.pages.admin-appointment");
 })->name('admin-appointment');
@@ -83,9 +85,7 @@ Route::get('/general-setting', function () {
 Route::get('/logout', function () {
     return view('admin.pages.logout');
 })->name('logout');
-Route::get('/test-category', function () {
-    return view('admin.pages.test-category');
-})->name('category');
+
 Route::get('/pages', function () {
     return view('admin.pages.pages');
 })->name('pages');
@@ -112,3 +112,26 @@ Route::get('/theme-setting', function () {
 })->name('theme-setting');
 
 
+// for backend
+
+// routes/web.php
+Route::get('/dashboard', function () {
+    return view('admin.pages.dashboard');
+})->middleware('auth')->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    // Category CRUD
+    Route::get('/test-category', [CategoryController::class, 'index'])->name('categories.index');
+    Route::post('/test-category', [CategoryController::class, 'store'])->name('categories.store');
+    Route::post('/test-category/update', [CategoryController::class, 'update'])->name('categories.update');
+    Route::post('/test-category/delete/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy'); // Use ID parameter
+
+
+
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';
