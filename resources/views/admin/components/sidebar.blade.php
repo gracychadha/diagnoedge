@@ -13,6 +13,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('category') }}">Test Category </a></li>
+                    <li><a href="{{ route('test-services') }}">Test Services </a></li>
                     <li><a href="{{ route('test-description') }}">Test Description</a></li>
 
                 </ul>
@@ -44,14 +45,14 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('admin-profile') }}">Profile</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                    {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
                         <ul aria-expanded="false">
                             <li><a href="email-compose.html">Compose</a></li>
                             <li><a href="email-inbox.html">Inbox</a></li>
                             <li><a href="email-read.html">Read</a></li>
                         </ul>
                     </li>
-                    <li><a href="app-calender.html">Calendar</a></li>
+                    <li><a href="app-calender.html">Calendar</a></li> --}}
 
                 </ul>
             </li>
@@ -65,6 +66,7 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                     <li><a href="{{ route('general-setting') }}">General Settings</a></li>
+                    <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li>
 
                 </ul>
             </li>

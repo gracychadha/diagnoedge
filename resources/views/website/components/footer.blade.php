@@ -51,14 +51,15 @@
     <!-- footer top end -->
     <!-- footer bottom start -->
     <div class="footer-bottom">
-        <div class="containe-fluid">
+        <div class="container-fluid">
             <!-- footer widget wrap start -->
             <div class="footer-widget-wrap">
-                <div class="row justify-content-center p-2">
+                <div class="row justify-content-center ">
                     <div class="col-xl-4 col-lg-12">
                         <!-- footer widget start -->
                         <div class="footer-widget footer-widget-about wow fadeInUp" data-wow-delay=".2s">
-                            <p align="justify">we are dedicated to delivering accurate, reliable, and timely diagnostic services. With
+                            <p align="justify">we are dedicated to delivering accurate, reliable, and timely diagnostic
+                                services. With
                                 advanced equipment and a team of skilled professionals, we ensure precise testing and
                                 quality care to support better health outcomes for every patient.</p>
                             <!-- footer social icon start -->
@@ -204,20 +205,35 @@
             <!-- footer copyright wrap end -->
         </div>
     </div>
+
+
     <!-- footer copyright end -->
     <div class="sticky-footer sticky">
         <div class="container">
             <!-- footer copyright wrap start -->
-            <div class="footer-copyright-wrap">
+            <div class="footer-copyright-wrap ">
                 <div class="row align-items-center">
                     <div class=" text-center">
-                        <p>Do you have any queries <button> Get a Call back Now</button> or Call us now at
-                            <button> +91 987 678 4545</button>
+                        <p>Do you have any queries <button data-bs-toggle="modal" data-bs-target="#popupCallModal"> Get
+                                a Call back Now</button> or Call us now at
+                            <button> <a href="tel:+919876784545" target="_blank">+91 987 678 4545</a></button>
                         </p>
                     </div>
                 </div>
             </div>
             <!-- footer copyright wrap end -->
+            {{-- <!-- footer copyright wrap start -->
+            <div class="footer-copyright-wrap d-none d-sm-block">
+                <div class="row align-items-center">
+                    <div class=" text-center">
+                        <p>Do you have any queries <button data-bs-toggle="modal" data-bs-target="#popupCallModal"> Get
+                                a Call back Now</button><br> or Call us now at
+                            <button> <a href="tel:+919876784545" target="_blank">+91 987 678 4545</a></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- footer copyright wrap end --> --}}
         </div>
     </div>
 </footer>

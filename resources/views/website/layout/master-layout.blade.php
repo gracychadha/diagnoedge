@@ -38,7 +38,8 @@
     {{-- main content --}}
     @yield("content")
     {{-- main content end --}}
-
+    {{-- footer popup --}}
+    @include("website.components.popup-footer")
     {{-- footer start --}}
     @include("website.components.footer")
     {{-- footer end --}}

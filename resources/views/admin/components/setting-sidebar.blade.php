@@ -5,9 +5,12 @@
                 <h4 class="card-title text-white "> Settings</h4>
             </div>
             <div class="card-body">
-                <ul aria-expanded="false" class="side-nav-setting"  class="nav nav-tabs dzm-tabs" id="myTab" role="tablist">
-                    <li><a href="javascript:voi(0)"  class="nav-link active " id="website-tab" data-bs-toggle="tab" data-bs-target="#website" role="tab" aria-selected="true"> <i class="flaticon-381-internet"></i> Website Settings</a></li>
-                    <li><a href="javascript:voi(0)"  class="nav-link  " id="general-tab" data-bs-toggle="tab" data-bs-target="#general" role="tab" aria-selected="true"><i class="flaticon-381-settings-2"></i> General Settings</a></li>
+                <ul class="side-nav-setting">
+                    <li><a href="{{ route('website-setting') }}"> <i class="flaticon-381-internet"></i> Website
+                            Settings</a></li>
+                    <li><a href="{{ route('general-setting') }}"><i class="flaticon-381-settings-2"></i> General
+                            Settings</a></li>
+                    <li><a href="{{ route('theme-setting') }}"><i class="flaticon-381-controls-3"></i> Theme Settings</a></li>
 
                 </ul>
             </div>

@@ -104,5 +104,11 @@ Route::get('/blog-category', function () {
 Route::get('/blog-description', function () {
     return view('admin.pages.blog-description');
 })->name('blog-description');
+Route::get('/test-services', function () {
+    return view('admin.pages.test-services');
+})->name('test-services');
+Route::get('/theme-setting', function () {
+    return view('admin.pages.theme-setting');
+})->name('theme-setting');
 
 

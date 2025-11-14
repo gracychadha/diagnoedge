@@ -43,10 +43,7 @@
                                             <th>Name</th>
                                             <th>Designation</th>
                                             <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Address</th>
-                                            <th>Joining Date</th>
-                                            <th class="text-end">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,220 +68,20 @@
                                             </td>
 
                                             <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
 
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/3.jpg" alt="">
+                                                <span class="me-3">
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
+                                                            class="fa fa-eye fs-18"></i></a>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Isabella</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox1"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox1"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/1.jpg" alt="">
+                                                <span class="me-3">
+                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
+                                                        data-bs-target="#editAppointment"><i
+                                                            class="fa fa-pencil fs-18 "></i></a>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Sophia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox4"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox4"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
                                                 <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
+                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Amelia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox5"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox5"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/5.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Charlotte</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox6"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox6"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Emma</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox7"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox7"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/7.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Olivia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -308,222 +105,24 @@
                                             </td>
 
                                             <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
 
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/3.jpg" alt="">
+                                                <span class="me-3">
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
+                                                            class="fa fa-eye fs-18"></i></a>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Isabella</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox1"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox1"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/1.jpg" alt="">
+                                                <span class="me-3">
+                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
+                                                        data-bs-target="#editAppointment"><i
+                                                            class="fa fa-pencil fs-18 "></i></a>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Sophia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox4"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox4"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
                                                 <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
+                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
                                                 </span>
-                                                <span class="text-nowrap ms-2">Amelia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox5"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox5"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/5.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Charlotte</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
 
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
 
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox6"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox6"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Emma</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-                                            <td class="text-primary">hello@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox7"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox7"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/7.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Olivia</span>
-                                            </td>
-                                            <td>
-                                                <span>Compounder</span>
-                                            </td>
-
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>1310 Glenwood Avenue</td>
-
-                                            <td>22 Mar 2021</td>
-                                            <td class="text-end">
-                                                <a href="staff-profile.html" class="me-3"><i
-                                                        class="fa fa-eye fs-18"></i></a>
-                                                <a href="javascript:void(0);" class="edit-staff me-3"><i
-                                                        class="fa fa-pencil fs-18 text-success"></i></a>
-                                                <a href="javascript:void(0);"><i
-                                                        class="fa fa-trash fs-18 text-danger"></i></a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -634,6 +233,140 @@
                         <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Send message</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- for view Appointment --}}
+    <div class="modal fade" id="viewAppointment" tabindex="-1" aria-labelledby="viewAppointmentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewAppointmentLabel">View Staff</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <table class="table table-bordered table-striped mb-0">
+
+                    <tr>
+                        <th>
+                            Name :
+                        </th>
+                        <td>
+                            Simran
+                        </td>
+                        <th>
+                            Email
+                        </th>
+                        <td>
+                            Admin@example.com
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Mobile :
+                        </th>
+                        <td>
+                            9090909090
+                        </td>
+                        <th>
+                            Designation
+                        </th>
+                        <td>
+                            Nurse
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Date of joining :
+                        </th>
+                        <td>
+                            12 Jan , 2001
+                        </td>
+                        <th>
+                            Age :
+                        </th>
+                        <td>
+                            23
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+                            Address
+                        </th>
+                        <td id="content" colspan="3">
+                            bla bla
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary " data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- for edit Appointment --}}
+    <div class="modal fade" id="editAppointment" tabindex="-1" aria-labelledby="editAppointment" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAppointmentLabel">Edit Staff Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Name:</label>
+                                    <input type="text" class="form-control" id="name1" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Email Id:</label>
+                                    <input type="email" class="form-control" id="email1" placeholder="Email">
+                                </div>
+                            </div>
+                              <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Mobile No:</label>
+                                    <input type="number" class="form-control" id="moblie1" placeholder="Mobile">
+                                </div>
+                            </div>
+                              <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Designation:</label>
+                                    <input type="number" class="form-control" id="moblie1" placeholder="Mobile">
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Date Of Joining:</label>
+                                    <input size="16" type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label class="col-form-label">Address :</label>
+                                    <textarea class="form-control" id="address"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
                 </div>
             </div>
         </div>

@@ -31,20 +31,13 @@
                                         <div class="row">
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
-                                                    <label class="text-label">First Name<span
+                                                    <label class="text-label">Company Name<span
                                                             class="required">*</span></label>
                                                     <input type="text" name="firstName" class="form-control"
-                                                        placeholder="Parsley" required="">
+                                                        placeholder="Diagnoedge" required="">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 mb-2">
-                                                <div class="form-group">
-                                                    <label class="text-label">Last Name<span
-                                                            class="required">*</span></label>
-                                                    <input type="text" name="lastName" class="form-control"
-                                                        placeholder="Montana" required="">
-                                                </div>
-                                            </div>
+                                           
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Email Address<span
@@ -56,9 +49,25 @@
                                             </div>
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
+                                                    <label class="text-label">Company Location<span
+                                                            class="required">*</span></label>
+                                                    <input type="text" name="location" class="form-control"
+                                                        placeholder="Haryana" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
                                                     <label class="text-label">Phone Number<span
                                                             class="required">*</span></label>
                                                     <input type="number" name="phoneNumber" class="form-control"
+                                                        placeholder="(+1)408-657-9007" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Phone Number 2<span
+                                                            class="required">*</span></label>
+                                                    <input type="number" name="phoneNumber2" class="form-control"
                                                         placeholder="(+1)408-657-9007" required="">
                                                 </div>
                                             </div>
@@ -76,45 +85,66 @@
                                             </div>
                                             <div class="col-lg-12 mb-3">
                                                 <div class="form-group">
-                                                    <label class="text-label">Where are you from<span
+                                                    <label class="text-label">About Company<span
                                                             class="required">*</span></label>
-                                                    <input type="text" name="place" class="form-control" required="">
+                                                    <textarea id="aboutCompany"></textarea>
                                                 </div>
                                             </div>
+                                           
                                             <div class="col-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h4 class="card-title">Color Picker</h4>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="row">
-                                                            <div class="col-xl-4 col-lg-6 mb-3">
-                                                                <div class="example">
-                                                                    <p class="mb-1">Simple mode</p>
-                                                                    <input type="text" class="as_colorpicker form-control"
-                                                                        value="#7ab2fa">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 col-lg-6 mb-3">
-                                                                <div class="example">
-                                                                    <p class="mb-1">Complex mode</p>
-                                                                    <input type="text"
-                                                                        class="complex-colorpicker form-control"
-                                                                        value="#fa7a7a">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-4 col-lg-6 mb-3">
-                                                                <div class="example">
-                                                                    <p class="mb-1">Gradiant mode</p>
-                                                                    <input type="text"
-                                                                        class="gradient-colorpicker form-control"
-                                                                        value="#bee0ab">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xl-12 col-xxl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Social links</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Facebook<span
+                                                            class="required">*</span></label>
+                                                    <input type="text" name="facebook" class="form-control"
+                                                        placeholder="info@facebook.com" required="">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Instagram<span
+                                                            class="required">*</span></label>
+                                                    <input type="text" name="instagram" class="form-control"
+                                                        placeholder="info@instagram.com" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Linkedin<span
+                                                            class="required">*</span></label>
+                                                    <input type="text" name="linkedin" class="form-control"
+                                                        placeholder="info@linkedin.com" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Twitter<span
+                                                            class="required">*</span></label>
+                                                    <input type="text" name="twitter" class="form-control"
+                                                        placeholder="info@twitter.com" required="">
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                           
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
                                             </div>

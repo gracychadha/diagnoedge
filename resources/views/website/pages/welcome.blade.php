@@ -311,8 +311,8 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                            
-                                          <a href="{{ route('health-package') }}">
+
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -340,7 +340,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                          <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -368,7 +368,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -396,7 +396,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -496,7 +496,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -552,7 +552,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -621,7 +621,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -707,7 +707,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                           <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -763,7 +763,7 @@
                                             </span>
                                         </div>
                                         <div class="p-3">
-                                          <a href="{{ route('health-package') }}">
+                                            <a href="{{ route('health-package') }}">
                                                 <h6 class="title-card mb-1">
                                                     Truehealth Vital with Body Vitals Check & More
                                                 </h6>
@@ -3435,49 +3435,7 @@
 
 
 
-        <!-- cta section start -->
-        {{-- <section class="cta-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-lg-6">
-                        <div class="cta-content wow fadeInUp" data-wow-delay=".2s">
-                            <!-- section title start -->
-                            <div class="section-title">
-                                <span class="sub-title">Get In Touch</span>
-                                <h2>Best eye care &amp; health clinic near your city</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                            <!-- section title end -->
-                            <!-- cta button wapper start -->
-                            <div class="cta-button-wapper">
-                                <a href="appointment.html" class="theme-button style-4" aria-label="Get Appointment">
-                                    <span data-text="Get Appointment">Get Appointment</span>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                </a>
-                                <a href="contact.html" class="theme-button style-5" aria-label="Explore More">
-                                    <span data-text="Explore More">Explore More</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- cta button wapper end -->
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- cta video wapper start -->
-                        <div class="cta-video-wapper wow fadeInUp" data-wow-delay=".2s">
-                            <a class="video-popup video-play play-center" href="https://www.youtube.com/watch?v=Y-x0efG1seA"
-                                aria-label="play video">
-                                <span class="icon"><i class="fa-solid fa-play"></i></span>
-                            </a>
-                        </div>
-                        <!-- cta video wapper end -->
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- cta section end -->
+
 
 
 
@@ -3488,5 +3446,8 @@
 
         <!-- testimonials section start -->
         @include("website.components.testimonials")
+       
+        
+
     </main>
 @endsection

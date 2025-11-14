@@ -1,14 +1,13 @@
 @extends("admin.layout.admin-master")
-@section("title", " Blog Category | Diagnoedge")
+@section("title", "Services | Diagnoedge")
 @section("content")
     <div class="content-body">
-       
         <!-- row -->
         <div class="container-fluid">
             <div class="page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Blog Category</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Test Service</a></li>
                 </ol>
             </div>
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center">
@@ -20,7 +19,7 @@
                 </div>
                 <div class="ms-auto">
                     <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">+ Add Category</a>
+                        data-bs-target="#exampleModal">+ Add Service</a>
 
                 </div>
             </div>
@@ -43,7 +42,7 @@
                                                 </div>
                                             </th>
 
-                                            <th>Category</th>
+                                            <th>Service</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -61,7 +60,7 @@
                                             </td>
                                             <td class="patient-info ps-0">
 
-                                                <span class="text-nowrap ms-2">Health Blog</span>
+                                                <span class="text-nowrap ms-2">Health Test</span>
                                             </td>
                                             <td class="text-primary">Active</td>
 
@@ -89,7 +88,7 @@
                                             </td>
                                             <td class="patient-info ps-0">
 
-                                                <span class="text-nowrap ms-2">Health Blog</span>
+                                                <span class="text-nowrap ms-2">Health Test</span>
                                             </td>
                                             <td class="text-primary">Active</td>
 
@@ -119,7 +118,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
@@ -127,8 +126,8 @@
                         <div class="row">
                             <div class="col-lg-6 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Category Name<span class="required">*</span></label>
-                                    <input type="text" name="category" class="form-control" placeholder="Parsley"
+                                    <label class="text-label">Service Name<span class="required">*</span></label>
+                                    <input type="text" name="Service" class="form-control" placeholder="Parsley"
                                         required="">
                                 </div>
                             </div>
@@ -156,7 +155,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editAppointmentLabel">Edit Category</h5>
+                        <h5 class="modal-title" id="editAppointmentLabel">Edit Service</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
@@ -165,8 +164,8 @@
                             <div class="row">
                                 <div class="col-lg-6 mb-2">
                                     <div class="form-group">
-                                        <label class="text-label">Category Name<span class="required">*</span></label>
-                                        <input type="text" name="category" class="form-control" placeholder="Parsley"
+                                        <label class="text-label">Service Name<span class="required">*</span></label>
+                                        <input type="text" name="Service" class="form-control" placeholder="Parsley"
                                             required="">
                                     </div>
                                 </div>

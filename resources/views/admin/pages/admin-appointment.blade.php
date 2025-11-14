@@ -28,6 +28,7 @@
                     <div class="card">
                         <div class="card-body p-0">
                             <div class="table-responsive">
+
                                 <table id="example5" class="table table-striped patient-list mb-4 dataTablesCard fs-14">
                                     <thead>
                                         <tr>
@@ -43,10 +44,6 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Date Of Appointment</th>
-                                            <th>From</th>
-                                            <th>To</th>
-                                            <th>Mobile</th>
-                                            <th>Consulting Doctor</th>
                                             <th>Injury/Condition</th>
                                             <th>Action</th>
                                         </tr>
@@ -70,213 +67,17 @@
                                             </td>
                                             <td class="text-primary">gabriel@gmail.com</td>
                                             <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
+
                                             <td>Fever</td>
                                             <td>
                                                 <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
+                                                            class="fa fa-eye fs-18"></i></a>
                                                 </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/2.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">JOHN D RANDOLPH</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Fever</td>
-                                            <td>
                                                 <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/3.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">JOHN D RANDOLPH</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Acne</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox4"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox4"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Asher Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Anaphylaxis</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox8"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox8"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Carter Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Angioedema</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox7"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox7"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">David Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Anxiety</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox6"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox6"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Anthony David</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Arthritis</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
+                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
+                                                        data-bs-target="#editAppointment"><i
+                                                            class="fa fa-pencil fs-18 "></i></a>
                                                 </span>
                                                 <span>
                                                     <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
@@ -301,219 +102,25 @@
                                             </td>
                                             <td class="text-primary">gabriel@gmail.com</td>
                                             <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
+
                                             <td>Fever</td>
                                             <td>
                                                 <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
+                                                            class="fa fa-eye fs-18"></i></a>
                                                 </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox2"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox2"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/2.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">JOHN D RANDOLPH</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Fever</td>
-                                            <td>
                                                 <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
+                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
+                                                        data-bs-target="#editAppointment"><i
+                                                            class="fa fa-pencil fs-18 "></i></a>
                                                 </span>
                                                 <span>
                                                     <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
                                                 </span>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/3.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">JOHN D RANDOLPH</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Acne</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox4"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox4"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Asher Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Anaphylaxis</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox8"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox8"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Carter Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Angioedema</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox7"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox7"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/4.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">David Anthony</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Anxiety</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox6"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox6"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/6.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Anthony David</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
-                                            <td>12:00</td>
-                                            <td>13:00</td>
-                                            <td class="text-primary">9876512345</td>
-                                            <td>Dr. HANI B BARADI</td>
-                                            <td>Arthritis</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="javascript:void(0);" class="edit-appointment"><i
-                                                            class="fa fa-pencil fs-18 " aria-hidden="true"></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -522,6 +129,7 @@
                 </div>
             </div>
         </div>
+        {{-- book Appointment modal --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -615,6 +223,166 @@
                                         <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
                                     </div>
                                 </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- for view Appointment --}}
+        <div class="modal fade" id="viewAppointment" tabindex="-1" aria-labelledby="viewAppointmentLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewAppointmentLabel">View Appointment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <table class="table table-bordered table-striped mb-0">
+                            
+                            <tr>
+                                <th>
+                                    Name :
+                                </th>
+                                <td>
+                                    Simran
+                                </td>
+                                <th>
+                                    Date Of Appointment
+                                </th>
+                                <td>
+                                    12 Dec , 2025
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Mobile :
+                                </th>
+                                <td>
+                                    9090909090
+                                </td>
+                                <th>
+                                    Consulting Doctor
+                                </th>
+                                <td>
+                                    Dr. Samantha
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Injury :
+                                </th>
+                                <td>
+                                    Blood clots
+                                </td>
+                                <th>
+                                    Age :
+                                </th>
+                                <td>
+                                    23
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <th>
+                                    Description
+                                </th>
+                                <td id="content" colspan="3">
+                                    bla bla
+                                </td>
+                            </tr>
+
+                        </table>
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- for edit Appointment --}}
+        <div class="modal fade" id="editAppointment" tabindex="-1" aria-labelledby="editAppointment" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editAppointmentLabel">Edit Appointment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Name:</label>
+                                        <input type="text" class="form-control" id="name1" placeholder="Name">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Date Of Appointment:</label>
+                                        <input size="16" type="date" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Mobile No:</label>
+                                        <input type="number" class="form-control" id="moblie1" placeholder="Mobile">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Email Id:</label>
+                                        <input type="email" class="form-control" id="email1" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Consulting Doctor:</label>
+                                        <select class="form-control">
+                                            <option>Dr.HANI B BARADI</option>
+                                            <option>Dr.NAJJIA N MAHMOUD</option>
+                                            <option>Dr. SANKAR NAIDU ADUSUMILLI</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Gender</label>
+                                        <select class="form-control">
+                                            <option>Female</option>
+                                            <option>Male</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Injury/Condition:</label>
+                                        <input type="text" class="form-control" id="fever" placeholder="fever">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Address :</label>
+                                        <textarea class="form-control" id="address"></textarea>
+                                    </div>
+                                </div>
+
                             </div>
 
 
