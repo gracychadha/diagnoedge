@@ -13,7 +13,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('categories.index') }}">Test Category </a></li>
-                    <li><a href="{{ route('test-services') }}">Test Services </a></li>
+                    <li><a href="{{ route('services.index') }}">Test Services </a></li>
                     <li><a href="{{ route('test-description') }}">Test Description</a></li>
 
                 </ul>

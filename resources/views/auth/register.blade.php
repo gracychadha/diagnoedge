@@ -47,7 +47,7 @@
     <div class="new-account mt-3">
         <p class="mb-0">Already have an account? <a
                 class="text-success"
-                href="{{ route('admin-panel') }}">
+                href="{{ route('login') }}">
                 {{ __('Login') }}
             </a></p>
     </div>

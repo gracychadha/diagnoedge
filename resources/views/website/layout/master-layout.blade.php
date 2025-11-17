@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield("title")</title>
+
+
     {{-- css files --}}
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
@@ -25,11 +27,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Load required libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+
 
 
 </head>
 
 <body>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
 
     {{-- header start --}}
     @include("website.components.header")
@@ -45,6 +54,11 @@
     {{-- footer end --}}
 
 </body>
+
+
+    <!-- Include the reCAPTCHA script (site key in env) -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 <!-- jQuery -->
 <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
@@ -73,6 +87,10 @@
 <script src="{{ asset('assets/js/main.js') }}"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- jQuery (already included) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
 
 <script>
     var swiper = new Swiper(".myProductSwiper", {

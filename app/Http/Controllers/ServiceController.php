@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::orderBy('id', 'DESC')->paginate(10);
+        $services = Services::orderBy('id', 'DESC')->paginate(10);
         return view('admin.pages.test-services', compact('services'));
     }
 
@@ -21,14 +22,14 @@ class ServiceController extends Controller
             'time' => 'required|string|max:50',
         ]);
 
-        Service::create($request->only('name', 'status', 'time'));
+        Services::create($request->only('name', 'status', 'time'));
 
         return redirect()->route('services.index')->with('success', 'Service created successfully.');
     }
 
     public function update(Request $request)
     {
-        $service = Service::findOrFail($request->id);
+        $service = Services::findOrFail($request->id);
 
         $request->validate([
             'name' => 'required|string|max:255|unique:services,name,' . $service->id,
@@ -41,7 +42,7 @@ class ServiceController extends Controller
         return redirect()->route('services.index')->with('success', 'Service updated successfully.');
     }
 
-    public function destroy(Service $service)
+    public function destroy(Services $service)
     {
         $service->delete();
         return redirect()->route('services.index')->with('success', 'Service deleted successfully.');

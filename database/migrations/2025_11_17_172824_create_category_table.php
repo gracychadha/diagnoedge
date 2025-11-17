@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('status', ['Active','InActive'])->default('Active');
+            $table->string('name')->unique();
+            $table->text('image')->nullable(); // Changed to text for SVG content
+            $table->enum('status', ['Active', 'InActive'])->default('Active');
+            $table->softDeletes();
             $table->timestamps();
+            
+            // Indexes
+            $table->index('name');
+            $table->index('status');
+            $table->index('created_at');
         });
     }
 

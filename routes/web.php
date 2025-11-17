@@ -1,17 +1,18 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
-
-
+use App\Http\Controllers\ServiceController;
 
 //   for frontend 
 
 Route::get('/', function () {
     return view('website.pages.welcome');
 })->name('home');
+Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
+
 
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
@@ -109,6 +110,10 @@ Route::get('/theme-setting', function () {
 })->name('theme-setting');
 
 
+
+
+
+
 // for backend
 
 // routes/web.php
@@ -118,18 +123,15 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     // Category CRUD
-    Route::get('/test-category', [CategoryController::class, 'index'])->name('categories.index');
-    Route::post('/test-category', [CategoryController::class, 'store'])->name('categories.store');
-    Route::post('/test-category/update', [CategoryController::class, 'update'])->name('categories.update');
-    Route::post('/test-category/delete/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy'); // Use ID parameter
-
-
-
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+   
+Route::prefix('test-category')->name('categories.')->group(function () {
+    Route::get('/', [CategoryController::class, 'index'])->name('index');
+    Route::post('/store', [CategoryController::class, 'store'])->name('store');
+    Route::put('/update', [CategoryController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+    
+});
+    //test services 
 
     Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
     Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
@@ -137,6 +139,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/services/delete/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -2,9 +2,28 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-   protected $fillable = ['name', 'status'];
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'image',
+        'status'
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    // Accessor to ensure SVG is properly rendered
+    public function getImageAttribute($value)
+    {
+       return $value ? $value : null;
+    }
 }
