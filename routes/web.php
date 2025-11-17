@@ -104,9 +104,6 @@ Route::get('/blog-category', function () {
 Route::get('/blog-description', function () {
     return view('admin.pages.blog-description');
 })->name('blog-description');
-Route::get('/test-services', function () {
-    return view('admin.pages.test-services');
-})->name('test-services');
 Route::get('/theme-setting', function () {
     return view('admin.pages.theme-setting');
 })->name('theme-setting');
@@ -132,6 +129,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+    Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+    Route::post('/services/update', [ServiceController::class, 'update'])->name('services.update');
+    Route::post('/services/delete/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
+
+
 });
 
 require __DIR__ . '/auth.php';

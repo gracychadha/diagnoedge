@@ -122,30 +122,32 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">Service Name<span class="required">*</span></label>
-                                    <input type="text" name="Service" class="form-control" placeholder="Parsley"
-                                        required="">
+                    <form action="{{ route('services.index') }}" method="POST" id="addService"> 
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6 mb-2">
+                                    <div class="form-group">
+                                        <label class="text-label">Service Name<span class="required">*</span></label>
+                                        <input type="text" name="Service" class="form-control" placeholder="Parsley"
+                                            required="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">Status<span class="required">*</span></label>
-                                    <select class="default-select form-control wide mb-3">
-                                        <option>Active</option>
-                                        <option>InActive</option>
-                                    </select>
+                                <div class="col-lg-6 mb-2">
+                                    <div class="form-group">
+                                        <label class="text-label">Status<span class="required">*</span></label>
+                                        <select class="default-select form-control wide mb-3">
+                                            <option>Active</option>
+                                            <option>InActive</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -5776,7 +5776,7 @@ button:focus {
 }
 @media (max-width: 1399px) {
     .main-menu ul li {
-        margin-inline-end: 25px;
+        margin-inline-end: 16px;
     }
 }
 .main-menu ul li:last-child {

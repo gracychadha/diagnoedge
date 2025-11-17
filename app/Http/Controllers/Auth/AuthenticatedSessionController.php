@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         // 2️⃣ Verify CAPTCHA with Cloudflare
         $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
             'secret' => env('TURNSTILE_SECRET'),
-// Add your secret in .env
+            // Add your secret in .env
             'response' => $request->input('cf-turnstile-response'),
             'remoteip' => $request->ip(),
         ]);
@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller
         if (!($captchaResult['success'] ?? false)) {
             return back()->withErrors(['captcha' => 'CAPTCHA verification failed.']);
         }
-//         $captchaResult = $response->json();
+        //         $captchaResult = $response->json();
 // dd($captchaResult);
 
 
