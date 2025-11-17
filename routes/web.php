@@ -123,14 +123,13 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     // Category CRUD
-   
-Route::prefix('test-category')->name('categories.')->group(function () {
-    Route::get('/', [CategoryController::class, 'index'])->name('index');
-    Route::post('/store', [CategoryController::class, 'store'])->name('store');
-    Route::put('/update', [CategoryController::class, 'update'])->name('update');
-    Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('destroy');
-    
-});
+
+    Route::prefix('test-category')->name('categories.')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::post('/store', [CategoryController::class, 'store'])->name('store');
+        Route::put('/update', [CategoryController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+    });
     //test services 
 
     Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
