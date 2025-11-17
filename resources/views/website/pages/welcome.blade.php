@@ -73,10 +73,7 @@
         z-index: 2;
     }
 
-    .form-control {
-        padding-left: 45px !important;
-        height: 45px;
-    }
+   
 
     /* intl-tel-input styling */
     .iti {
@@ -208,7 +205,7 @@
 
                     <div class="form-group position-relative my-3">
                         <span class="popupicon"><i class="fa fa-user"></i></span>
-                        <input class="form-control" type="text" id="name" name="name" placeholder="Enter Name" required>
+                        <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name" placeholder="Enter Name" required>
                     </div>
 
                     <div class="form-group position-relative my-3">
