@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::orderBy('id','DESC')->paginate(10);
+        $categories = Category::orderBy('id', 'DESC')->paginate(10);
         return view('admin.pages.test-category', compact('categories'));
     }
 
@@ -42,46 +42,46 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
-   // In CategoryController@update
-public function update(Request $request)
-{
-    $category = Category::findOrFail($request->id);
+    // In CategoryController@update
+    public function update(Request $request)
+    {
+        $category = Category::findOrFail($request->id);
 
-    $request->validate([
-        'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
-        'image' => 'nullable|file|mimes:svg|max:2048',
-        'status' => 'required|in:Active,InActive',
-    ]);
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
+            'image' => 'nullable|file|mimes:svg|max:2048',
+            'status' => 'required|in:Active,InActive',
+        ]);
 
-    $data = $request->only(['name', 'status']);
+        $data = $request->only(['name', 'status']);
 
-    if ($request->hasFile('image')) {
-        // Delete old image
-        if ($category->image && Storage::disk('public')->exists($category->image)) {
-            Storage::disk('public')->delete($category->image);
+        if ($request->hasFile('image')) {
+            // Delete old image
+            if ($category->image && Storage::disk('public')->exists($category->image)) {
+                Storage::disk('public')->delete($category->image);
+            }
+            $data['image'] = $request->file('image')->store('categories', 'public');
         }
-        $data['image'] = $request->file('image')->store('categories', 'public');
+
+        $category->update($data);
+
+        return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
-
-    $category->update($data);
-
-    return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
-}
 
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-        
+
         // Delete image file
         if ($category->image) {
             Storage::disk('public')->delete($category->image);
         }
-        
+
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
     }
 
-      public function destroyMultiple(Request $request)
+    public function destroyMultiple(Request $request)
     {
         $request->validate([
             'ids' => 'required|array',
@@ -89,7 +89,7 @@ public function update(Request $request)
         ]);
 
         $categories = Category::whereIn('id', $request->ids)->get();
-        
+
         foreach ($categories as $category) {
             // Delete image files
             if ($category->image) {

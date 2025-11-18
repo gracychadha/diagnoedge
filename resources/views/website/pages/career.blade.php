@@ -62,9 +62,9 @@
                             <!-- nav start -->
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="nav-lab-tab" data-bs-toggle="tab"
+                                    {{-- <button class="nav-link active" id="nav-lab-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-lab" type="button" role="tab" aria-controls="nav-lab"
-                                        aria-selected="true">Lab Packages</button>
+                                        aria-selected="true">Lab Packages</button> --}}
                                     <button class="nav-link" id="nav-career-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-career" type="button" role="tab" aria-controls="nav-career"
                                         aria-selected="false">Job Careers</button>
@@ -80,7 +80,7 @@
                 <div class="tab-content">
 
                     <!-- =================== LAB PACKAGES TAB =================== -->
-                    <div class="tab-pane fade active show" id="nav-lab" role="tabpanel" aria-labelledby="nav-lab-tab"
+                    <div class="tab-pane fade  " id="nav-lab" role="tabpanel" aria-labelledby="nav-lab-tab"
                         tabindex="0">
                         <div class="row align-items-center">
 
@@ -180,7 +180,7 @@
                     </div>
 
                     <!-- =================== JOB CAREER TAB =================== -->
-                    <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab"
+                    <div class="tab-pane fade active show" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab"
                         tabindex="0">
                         <div class="row align-items-center">
 
@@ -203,8 +203,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2"
-                                                    aria-label="Apply Now">
+                                                <a href="#" class="theme-button style-2" aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -234,8 +233,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-4"
-                                                    aria-label="Apply Now">
+                                                <a href="#" class="theme-button style-4" aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -264,8 +262,7 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2"
-                                                    aria-label="Apply Now">
+                                                <a href="#" class="theme-button style-2" aria-label="Apply Now">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>

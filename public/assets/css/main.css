@@ -1,8 +1,9 @@
 /* @import url("../../../css2"); */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-    --primary-color: #035e58;
+    /* --primary-color: #035e58; */
+    --primary-color: #54ad4c;
     --primary-rgb-05: rgba(3, 94, 88, 0.1);
     --white-color: #ffffff;
     --black-color: #000000;
@@ -26,6 +27,7 @@
     --extra-color-three: #fffaeb;
     --extra-color-four: #f2f4f5;
     --extra-color-five: #0c193e;
+    /* --extra-color-five: #2f592c; */
     --extra-color-six: #0e131a;
 }
 
@@ -4846,7 +4848,8 @@ button:focus {
 }
 .header .header-top {
     position: relative;
-    background-color: #035e58;
+    background: linear-gradient(40deg, #54ad4c, #1c5a80);
+    /* background-color: #035e58; */
 }
 @media (max-width: 1199px) {
     .header .header-lower {
@@ -16641,13 +16644,25 @@ button.btn-success:hover {
     position: fixed;
     bottom: 0;
     padding: 10px 0;
-    background-color: #035e58;
+    background: linear-gradient(40deg, #54ad4c, #1c5a80);
     z-index: 99999;
 }
 .sticky-footer p {
     color: white;
     margin-bottom: 0;
     font-weight: 700;
+}
+@media (max-width: 768px) {
+    .sticky-footer p button {
+        background-color: #ddf6fa;
+        color: #035e58;
+        font-size: 13px;
+        padding: 5px !important;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: 0.3s ease;
+        margin: 5px;
+    }
 }
 .main {
     position: relative;
@@ -16664,9 +16679,9 @@ button.btn-success:hover {
     background-color: black;
     color: white;
 }
-.test-sidebar-list{
+.test-sidebar-list {
     background-color: #ffffff;
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 /*# sourceMappingURL=main.css.map */

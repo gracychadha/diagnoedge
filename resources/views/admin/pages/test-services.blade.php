@@ -122,30 +122,53 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
-                    <form action="{{ route('services.index') }}" method="POST" id="addService"> 
+                    <form action="{{ route('services.store') }}" method="POST" id="addService">
+                        @csrf
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-lg-6 mb-2">
                                     <div class="form-group">
-                                        <label class="text-label">Service Name<span class="required">*</span></label>
-                                        <input type="text" name="Service" class="form-control" placeholder="Parsley"
+                                        <label class="text-label">Service Title<span class="required">*</span></label>
+                                        <input type="text" name="name" class="form-control" placeholder="Parsley"
                                             required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 mb-2">
                                     <div class="form-group">
                                         <label class="text-label">Status<span class="required">*</span></label>
-                                        <select class="default-select form-control wide mb-3">
-                                            <option>Active</option>
-                                            <option>InActive</option>
+                                        <select name="status" class="default-select form-control wide mb-3">
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="text-label">Icon<span class="required">*</span></label>
+                                        <input class="form-control" name="icon" type="file" id="formFile">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-label">Parameters<span class="required">*</span></label>
+
+                                        <div id="packagesWrapper" ></div>
+
+                                        <div class="d-flex gap-2 mt-2">
+                                            <input type="text" id="addPackage" class="form-control"
+                                                placeholder="Enter Package" />
+                                            <button type="button" class="btn btn-primary" id="addPackageBtn"> Add
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
                         </div>
                     </form>
                 </div>
@@ -191,3 +214,8 @@
         </div>
     </div>
 @endsection
+
+
+@push('scripts')
+   
+@endpush

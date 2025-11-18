@@ -21,13 +21,18 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    
+
     {{-- summernote --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
     {{-- data tables --}}
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <!-- CSS (optional but recommended for styling) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -163,6 +168,51 @@
                 assignedDoctor();
             }, 1000);
         });
+    </script>
+    <script>
+        console.log("hello entered");
+        $(document).ready(function () {
+
+            // Add package
+            $("#addPackageBtn").click(function () {
+                let value = $("#addPackage").val().trim();
+
+                if (value === "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'Please enter a package name!',
+                        confirmButtonText: 'OK'
+                    });
+                    return;
+                }
+
+                let id = Date.now();
+                // unique id
+
+                let html = `
+                <div class=" package-item d-flex align-items-center mb-2" data-id="${id}">
+                    <input type="text" name="parameters[]" class="form-control package-input" value="${value}" />
+                    <button type="button" class="btn btn-danger btn-sm ms-2 remove-package">X</button>
+                </div>
+            `;
+
+                $("#packagesWrapper").append(html);
+                $("#addPackage").val(""); // clear field
+            });
+
+            // Delete package
+            $(document).on("click", ".remove-package", function () {
+                $(this).closest(".package-item").remove();
+            });
+
+            // Edit package (auto-save)
+            $(document).on("input", ".package-input", function () {
+                // auto updates (value is stored in input itself)
+            });
+
+        });
+
     </script>
 </body>
 

@@ -6,232 +6,235 @@
     <main class="main">
         {{-- resources/views/components/booking-modal.blade.php --}}
         @props([])
-<!-- Styles -->
-<style>
-    /* Modal Outer */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background: rgba(0, 0, 0, 0.6);
-    }
+        <!-- Styles -->
+        <style>
+            /* Modal Outer */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background: rgba(0, 0, 0, 0.6);
+            }
 
-    /* Modal Content */
-    .modal-content {
-        background: #fff;
-        width: 60%;
-        max-width: 850px;
-        margin: 80px auto;
-        display: flex;
-        flex-direction: row;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
+            /* Modal Content */
+            .modal-content {
+                background: #fff;
+                width: 60%;
+                max-width: 850px;
+                margin: 80px auto;
+                display: flex;
+                flex-direction: row;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
 
-    .modal-left {
-        width: 40%;
-        background-size: cover;
-        background-position: center;
-        min-height: 400px;
-    }
+            .modal-left {
+                width: 40%;
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+            }
 
-    .modal-right {
-        width: 60%;
-        padding: 25px 20px;
-        background: #fff;
-    }
+            .modal-right {
+                width: 60%;
+                padding: 25px 20px;
+                background: #fff;
+            }
 
-    .iti--separate-dial-code .iti__selected-dial-code {
-    margin-left: 0px !important;
-}
+            .iti--separate-dial-code .iti__selected-dial-code {
+                margin-left: 0px !important;
+            }
 
-    .close {
-        float: right;
-        font-size: 30px;
-        cursor: pointer;
-        color: #666;
-        line-height: 1;
-    }
+            .close {
+                float: right;
+                font-size: 30px;
+                cursor: pointer;
+                color: #666;
+                line-height: 1;
+            }
 
-    .close:hover {
-        color: #000;
-    }
+            .close:hover {
+                color: #000;
+            }
 
-    .popupicon {
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        color: #666;
-        font-size: 15px;
-        z-index: 2;
-    }
-
-   
-
-    /* intl-tel-input styling */
-    .iti {
-        width: 100% !important;
-    }
-
-    .iti__flag-container {
-        left: 10px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-    }
-
-    .iti__selected-flag {
-        background: transparent !important;
-    }
-
-    .iti__flag {
-        transform: scale(1.2);
-    }
-
-    .iti__country-list {
-        z-index: 9999 !important;
-    }
-
-    .checkbox-group {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin: 15px 0;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-        margin-top: 2px;
-    }
-
-    .checkbox-group label {
-        font-size: 14px;
-        color: #555;
-        cursor: pointer;
-    }
-
-    .theme-button {
-        width: 100%;
-        padding: 12px;
-        border-radius: 6px;
-        background: #0b5ed7;
-        color: #fff;
-        border: none;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-
-    .theme-button:hover:not(:disabled) {
-        background: #0a4ebd;
-    }
-
-    .theme-button:disabled {
-        background: #6c757d;
-        cursor: not-allowed;
-    }
-
-    .alert-success {
-        padding: 10px;
-        background: #e6ffef;
-        border: 1px solid #c7f0d4;
-        margin-bottom: 15px;
-        border-radius: 6px;
-        color: #0f5132;
-    }
-
-    .alert-error {
-        padding: 10px;
-        background: #ffecec;
-        border: 1px solid #f5c2c2;
-        margin-bottom: 15px;
-        border-radius: 6px;
-        color: #a94442;
-    }
-
-    .alert-error ul {
-        margin: 0;
-        padding-left: 18px;
-    }
-
-    @media (max-width: 768px) {
-        .modal-content {
-            flex-direction: column;
-            width: 90%;
-            margin: 40px auto;
-        }
-
-        .modal-left {
-            width: 100%;
-            height: 200px;
-        }
-
-        .modal-right {
-            width: 100%;
-            padding: 20px 15px;
-        }
-    }
-</style>
+            .popupicon {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                color: #666;
+                font-size: 15px;
+                z-index: 2;
+            }
 
 
 
-<!-- Modal HTML -->
-<div id="bookingModal" class="modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-        <div class="modal-left" style="background-image:url('{{ asset('images/popup.png') }}');"></div>
+            /* intl-tel-input styling */
+            .iti {
+                width: 100% !important;
+            }
 
-        <div class="modal-right">
-            <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
-                <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 600;">Looking to Book a Test?</h5>
-                <span class="close" id="bookingClose">&times;</span>
-            </div>
+            .iti__flag-container {
+                left: 10px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+            }
 
-            <div class="modal-body">
-                <p style="color: #666; margin-bottom: 20px; font-size: 14px;">
-                    Please share your details — our health advisor will call you or you can call us at
-                    <span class="badge bg-primary" style="font-size:14px; margin-left: 5px;"><a href="tel:+91 987 678 4545">+91 987 678 4545</a></span>
-                </p>
+            .iti__selected-flag {
+                background: transparent !important;
+            }
 
-                <div id="alertBox"></div>
+            .iti__flag {
+                transform: scale(1.2);
+            }
 
-                <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
-                    @csrf
+            .iti__country-list {
+                z-index: 9999 !important;
+            }
 
-                    <div class="form-group position-relative my-3">
-                        <span class="popupicon"><i class="fa fa-user"></i></span>
-                        <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name" placeholder="Enter Name" required>
+            .checkbox-group {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                margin: 15px 0;
+            }
+
+            .checkbox-group input[type="checkbox"] {
+                margin-top: 2px;
+            }
+
+            .checkbox-group label {
+                font-size: 14px;
+                color: #555;
+                cursor: pointer;
+            }
+
+            .theme-button {
+                width: 100%;
+                padding: 12px;
+                border-radius: 6px;
+                background: #0b5ed7;
+                color: #fff;
+                border: none;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .theme-button:hover:not(:disabled) {
+                background: black;
+            }
+
+            .theme-button:disabled {
+                background: #6c757d;
+                cursor: not-allowed;
+            }
+
+            .alert-success {
+                padding: 10px;
+                background: #e6ffef;
+                border: 1px solid #c7f0d4;
+                margin-bottom: 15px;
+                border-radius: 6px;
+                color: #0f5132;
+            }
+
+            .alert-error {
+                padding: 10px;
+                background: #ffecec;
+                border: 1px solid #f5c2c2;
+                margin-bottom: 15px;
+                border-radius: 6px;
+                color: #a94442;
+            }
+
+            .alert-error ul {
+                margin: 0;
+                padding-left: 18px;
+            }
+
+            @media (max-width: 768px) {
+                .modal-content {
+                    flex-direction: column;
+                    width: 90%;
+                    margin: 40px auto;
+                }
+
+                .modal-left {
+                    width: 100%;
+                    height: 200px;
+                }
+
+                .modal-right {
+                    width: 100%;
+                    padding: 20px 15px;
+                }
+            }
+        </style>
+
+
+
+        <!-- Modal HTML -->
+        <div id="bookingModal" class="modal" aria-hidden="true">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+                <div class="modal-left" style="background-image:url('{{ asset('images/popup.png') }}');"></div>
+
+                <div class="modal-right">
+                    <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
+                        <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 600;">Looking to Book a Test?</h5>
+                        <span class="close" id="bookingClose">&times;</span>
                     </div>
 
-                    <div class="form-group position-relative my-3">
-                        
-                        <input class="form-control " style="padding-left : 0 !important;" type="tel" id="mobile" name="mobile" placeholder="Enter Mobile No." required>
+                    <div class="modal-body">
+                        <p style="color: #666; margin-bottom: 20px; font-size: 14px;">
+                            Please share your details — our health advisor will call you or you can call us at
+                            <span class="badge bg-primary" style="font-size:14px; margin-left: 5px;"><a
+                                    href="tel:+91 987 678 4545">+91 987 678 4545</a></span>
+                        </p>
+
+                        <div id="alertBox"></div>
+
+                        <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
+                            @csrf
+
+                            <div class="form-group position-relative my-3">
+                                <span class="popupicon"><i class="fa fa-user"></i></span>
+                                <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name"
+                                    placeholder="Enter Name" required>
+                            </div>
+
+                            <div class="form-group position-relative my-3">
+
+                                <input class="form-control " style="padding-left : 0 !important;" type="tel" id="mobile"
+                                    name="mobile" placeholder="Enter Mobile No." required>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <label for="agreeTerms">I agree to Diagnoedge labs T&C and Privacy Policy</label>
+                            </div>
+
+                            <input type="hidden" name="source" value="modal_homepage">
+
+                            <div class="form-group my-3">
+                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                                    data-callback="recaptchaCallback"></div>
+                            </div>
+
+                            <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100"
+                                disabled>Submit <i class="fa fa-paper-plane "></i></button>
+                        </form>
                     </div>
-
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                        <label for="agreeTerms">I agree to Diagnoedge labs T&C and Privacy Policy</label>
-                    </div>
-
-                    <input type="hidden" name="source" value="modal_homepage">
-
-                    <div class="form-group my-3">
-                        <div class="g-recaptcha" 
-                             data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
-                             data-callback="recaptchaCallback"></div>
-                    </div>
-
-                    <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100" disabled>Submit <i class="fa fa-paper-plane "></i></button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
@@ -497,9 +500,12 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+
                                         </div>
                                     </div>
 
@@ -528,9 +534,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -557,9 +565,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -585,9 +595,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -613,9 +625,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -641,9 +655,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -683,9 +699,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -713,9 +731,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -741,9 +761,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -769,9 +791,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -797,9 +821,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -825,9 +851,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -866,9 +894,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -896,9 +926,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -924,9 +956,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -952,9 +986,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -980,9 +1016,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1008,9 +1046,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1082,9 +1122,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -1110,9 +1152,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1136,9 +1180,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1162,9 +1208,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1188,9 +1236,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1214,9 +1264,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1254,9 +1306,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -1282,9 +1336,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1308,9 +1364,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1334,9 +1392,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1360,9 +1420,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1386,9 +1448,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1425,9 +1489,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -1453,9 +1519,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1479,9 +1547,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1505,9 +1575,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1531,9 +1603,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1557,9 +1631,11 @@
                                             </p>
                                             <hr class="my-2">
                                             <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <button class="btn btn-success w-100 fw-semibold rounded-3">
-                                                Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -3683,129 +3759,165 @@
         @include("website.components.testimonials")
 
 
-        
+
 
     </main>
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const input = document.querySelector("#mobile");
-    const iti = window.intlTelInput(input, {
-        initialCountry: "np",
-        separateDialCode: true,
-        preferredCountries: ["np", "in", "us", "gb"],
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
-    });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#mobile");
+            const iti = window.intlTelInput(input, {
+                initialCountry: "np",
+                separateDialCode: true,
+                preferredCountries: ["np", "in", "us", "gb"],
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+            });
 
-    // Apply z-index to flag container
-    const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-    if(flagContainer) {
-        flagContainer.style.zIndex = '9999';
-    }
-
-    // Apply z-index to the dropdown country list
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            const countryList = document.querySelector('.iti__country-list');
-            if(countryList) {
-                countryList.style.zIndex = '9999';
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
             }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
         });
-    });
-
-    // Observe changes in the DOM so that dropdown gets z-index when created
-    observer.observe(document.body, { childList: true, subtree: true });
-});
-</script>
+    </script>
 
 
-<!-- JS -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('bookingModal');
-    const closeBtn = document.getElementById('bookingClose');
-    const form = document.getElementById('bookingForm');
-    const submitBtn = document.getElementById('bookingSubmit');
-    const alertBox = document.getElementById('alertBox');
-    let iti;
+    <!-- JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('bookingModal');
+            const closeBtn = document.getElementById('bookingClose');
+            const form = document.getElementById('bookingForm');
+            const submitBtn = document.getElementById('bookingSubmit');
+            const alertBox = document.getElementById('alertBox');
+            let iti;
 
-   
 
-    // reCAPTCHA callback
-    window.recaptchaCallback = function() {
-        submitBtn.disabled = false;
-    }
 
-    // Open/close modal
-    function openBookingModal() {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-    function closeBookingModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        form.reset();
-        if (window.grecaptcha) grecaptcha.reset();
-        submitBtn.disabled = true;
-        alertBox.innerHTML = '';
-    }
+            // reCAPTCHA callback
+            window.recaptchaCallback = function () {
+                submitBtn.disabled = false;
+            }
 
-    closeBtn.addEventListener('click', closeBookingModal);
-    window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
-
-    // Auto-open modal after 5s on homepage
-    const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
-    if (isHomepage) setTimeout(openBookingModal, 5000);
-
-    // AJAX form submit
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Submitting...';
-
-        // Get full international number
-        if (iti) {
-            form.querySelector('#mobile').value = iti.getNumber();
-        }
-
-        const formData = new FormData(form);
-        fetch(form.action, {
-            method: "POST",
-            headers: {"Accept": "application/json","X-Requested-With": "XMLHttpRequest"},
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            submitBtn.innerHTML = 'Submit';
-            alertBox.innerHTML = '';
-
-            if (data.success) {
-                alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+            // Open/close modal
+            function openBookingModal() {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeBookingModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
                 form.reset();
                 if (window.grecaptcha) grecaptcha.reset();
                 submitBtn.disabled = true;
-                setTimeout(closeBookingModal, 5000);
-            } else {
-                let html = `<div class="alert-error"><ul>`;
-                if (data.errors) {
-                    Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
-                } else {
-                    html += `<li>${data.message || 'An error occurred'}</li>`;
-                }
-                html += `</ul></div>`;
-                alertBox.innerHTML = html;
-                if (window.grecaptcha) grecaptcha.reset();
-                submitBtn.disabled = true;
+                alertBox.innerHTML = '';
             }
-        })
-        .catch(err => {
-            console.error(err);
-            submitBtn.innerHTML = 'Submit';
-            alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
-            if (window.grecaptcha) grecaptcha.reset();
-            submitBtn.disabled = true;
+
+            closeBtn.addEventListener('click', closeBookingModal);
+            window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
+
+            // Auto-open modal after 5s on homepage
+            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
+            if (isHomepage) setTimeout(openBookingModal, 5000);
+
+            // AJAX form submit
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+
+                // Get full international number
+                if (iti) {
+                    form.querySelector('#mobile').value = iti.getNumber();
+                }
+
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: "POST",
+                    headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = '';
+
+                        if (data.success) {
+                            alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+                            form.reset();
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                            setTimeout(closeBookingModal, 5000);
+                        } else {
+                            let html = `<div class="alert-error"><ul>`;
+                            if (data.errors) {
+                                Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
+                            } else {
+                                html += `<li>${data.message || 'An error occurred'}</li>`;
+                            }
+                            html += `</ul></div>`;
+                            alertBox.innerHTML = html;
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
+                        if (window.grecaptcha) grecaptcha.reset();
+                        submitBtn.disabled = true;
+                    });
+            });
         });
-    });
-});
-</script>
+    </script>
+    <script>
+        var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?86687';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+            "enabled": true,
+            "chatButtonSetting": {
+                "backgroundColor": "#2ACA45;",
+                "ctaText": "Message Us",
+                "borderRadius": "25",
+                "marginLeft": "20",
+                "marginBottom": "30",
+                "marginRight": "50",
+                "position": "left"
+            },
+            "brandSetting": {
+                "brandName": "Diagnoedge",
+                "brandSubTitle": "Typically replies within a day",
+                "brandImg": {{ asset('assets/images/favicon.png') }},
+                "welcomeText": "Hi there!\nHow can I help you?",
+                "messageText": "Hello, I have a question about ",
+                "backgroundColor": "#2ACA45;",
+                "ctaText": "Start Chat",
+                "borderRadius": "25",
+                "autoShow": false,
+                "phoneNumber": ""
+            }
+        };
+        s.onload = function () {
+            CreateWhatsappChatWidget(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
 
 @endsection
