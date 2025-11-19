@@ -9,8 +9,8 @@
 
 
     {{-- css files --}}
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
     <!-- font awesome css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
     <!-- bootstrap css -->

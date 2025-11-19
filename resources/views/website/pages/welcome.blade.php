@@ -133,7 +133,7 @@
                 cursor: not-allowed;
             }
 
-            #bookingSubmit:disabled a{
+            #bookingSubmit:disabled a {
                 background: #6c757d;
                 cursor: not-allowed;
             }
@@ -217,7 +217,7 @@
                                     name="mobile" placeholder="Enter Mobile No." required>
                             </div>
 
-                           
+
                             <input type="hidden" name="source" value="modal_homepage">
 
                             <div class="form-group ">
@@ -3765,19 +3765,19 @@
 
     </main>
     <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
-<!--End of Tawk.to Script-->
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const input = document.querySelector("#mobile");
@@ -3931,8 +3931,8 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('bookingModal');
-            const closeBtn = document.getElementById('bookingClose');
+            const modal = document.getElementById('popupCallModal');
+            const closeBtn = document.getElementById('popupClose');
             const form = document.getElementById('bookingForm');
             const submitBtn = document.getElementById('bookingSubmit');
             const alertBox = document.getElementById('alertBox');
@@ -3944,6 +3944,7 @@
             window.recaptchaCallback = function () {
                 submitBtn.disabled = false;
             }
+
 
             // Open/close modal
             function openBookingModal() {
@@ -3962,9 +3963,6 @@
             closeBtn.addEventListener('click', closeBookingModal);
             window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
 
-            // Auto-open modal after 5s on homepage
-            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
-            if (isHomepage) setTimeout(openBookingModal, 5000);
 
             // AJAX form submit
             form.addEventListener('submit', function (e) {

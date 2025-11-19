@@ -45,7 +45,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <div class="form-floating field-inner">
-                                            <input class="form-control" id="phone" name="phone" type="text"
+                                            <input class="form-control" id="tel" name="phone" type="text"
                                                 placeholder="Phone Number Here" autocomplete="off" required="required">
                                             <label for="phone">Phone Number</label>
                                         </div>
