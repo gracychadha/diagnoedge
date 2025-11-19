@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="form-group position-relative ">
-                        <input class="form-control " style="padding-left :0px !important;" type="tel" id="phone"
+                        <input class="form-control " style="padding-left :55px !important;" type="tel" id="phone"
                             name="mobile" placeholder="Enter Mobile No." required>
                     </div>
 
