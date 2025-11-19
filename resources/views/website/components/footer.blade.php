@@ -1,4 +1,5 @@
 <!-- footer start -->
+
 <footer class="footer footer-1" data-img-src="{{ asset("assets/images/footer/footer-1-1.png") }}">
     <!-- footer top start -->
     <div class="footer-top">
