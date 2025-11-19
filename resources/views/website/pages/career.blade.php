@@ -283,8 +283,6 @@
         <!-- pricing section end -->
 
 
-        <!-- appointment section start -->
-        @include("website.components.cta")
-        <!-- appointment section end -->
+    
     </main>
 @endsection

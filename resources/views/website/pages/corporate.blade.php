@@ -70,7 +70,7 @@
                                         </figure>
                                     </div>
                                     <div class="about-year-content">
-                                        <p>Our Carenix Hospital Funded in</p>
+                                        <p>Our Diagnoedge Hospital Funded in</p>
                                         <h3>1990</h3>
                                     </div>
                                 </div>
@@ -91,27 +91,20 @@
                         <!-- about content start -->
                         <div class="about-content">
                             <!-- section title start -->
-                            
+
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">About Us</span>
-                                <h2>Where world class dentistry meets whole person wellness.</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <span class="sub-title">Corporate</span>
+                                <h2>What Are the Benefits of Corporate Wellness Programs?</h2>
+                                <p align="justify">Corporate wellness programs deliver essential benefits, from helping
+                                    employees maintain
+                                    better health to boosting productivity and decreasing absenteeism. By integrating
+                                    corporate medical check-ups, organizations can proactively address health concerns and
+                                    foster a supportive workplace culture. This investment not only enhances employee
+                                    well-being but also drives overall organizational success and cultivates a positive work
+                                    environment.</p>
                             </div>
                             <!-- section title end -->
-                            <!-- check list two col start -->
-                            <div class="check-list-two-col wow fadeInUp" data-wow-delay=".3s">
-                                <ul>
-                                    <li>Comprehensive Care Services</li>
-                                    <li>Highly Skilled Medical Team</li>
-                                    <li>Patient Centered Approach</li>
-                                    <li>Nutrition Counseling</li>
-                                    <li>Experienced Doctors</li>
-                                    <li>24/7 Virtual Care Services</li>
-                                </ul>
-                            </div>
-                            <!-- check list two col end -->
+
                             <!-- about footer start -->
                             <div class="about-footer wow fadeInUp" data-wow-delay=".4s">
                                 <div class="about-button-wappper">
@@ -148,16 +141,12 @@
                             <!-- section-title start -->
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                                 <span class="sub-title">Why Diagnoedge</span>
-                                <h2>Compassion and expertise, perfectly combined</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                                    voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                                    voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <h2>Why Choose Diagnoedge Healthcare as Your Corporate Wellness Partner?</h2>
+                                <p align="justify">Choosing Diagnoedge Healthcare as your corporate wellness partner provides you with
+                                    reliable, tailored solutions to boost employee health and productivity. Our experienced
+                                    team and extensive range of tests are designed to meet the unique needs of your
+                                    organization. With our corporate wellness packages, you can ensure your employees
+                                    receive comprehensive health support.</p>
                             </div>
                             <!-- section-title end -->
 
@@ -199,8 +188,6 @@
         <!-- why-section end -->
 
 
-        <!-- appointment section start -->
-       @include("website.components.cta")
-        <!-- appointment section end -->
+      
     </main>
 @endsection

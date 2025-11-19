@@ -1,5 +1,5 @@
 <!-- preloader start -->
-<div class="preloader">
+{{-- <div class="preloader">
     <div class="preloader-icon">
         <img src="{{ asset("assets/images/loader.svg") }}" alt="loader image">
     </div>
@@ -15,7 +15,7 @@
         <p>g</p>
         <p>e</p>
     </div>
-</div>
+</div> --}}
 <!-- preloader end -->
 
 <!-- back to top start -->

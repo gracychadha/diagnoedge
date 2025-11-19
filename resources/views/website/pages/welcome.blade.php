@@ -22,7 +22,7 @@
             }
 
             /* Modal Content */
-            .modal-content {
+            .modal-content-custom {
                 background: #fff;
                 width: 60%;
                 max-width: 850px;
@@ -73,7 +73,16 @@
                 z-index: 2;
             }
 
+            .popup-call-btn {
+                background: #54ad4c;
+                color: white;
+                padding: 5px;
+                border-radius: 10px;
+            }
 
+            .popup-call-btn:hover {
+                background: black;
+            }
 
             /* intl-tel-input styling */
             .iti {
@@ -115,24 +124,16 @@
                 cursor: pointer;
             }
 
-            .theme-button {
-                width: 100%;
-                padding: 12px;
-                border-radius: 6px;
-                background: #0b5ed7;
-                color: #fff;
-                border: none;
-                font-size: 16px;
-                font-weight: 500;
-                cursor: pointer;
-                transition: background 0.3s ease;
-            }
-
             .theme-button:hover:not(:disabled) {
                 background: black;
             }
 
             .theme-button:disabled {
+                background: #6c757d;
+                cursor: not-allowed;
+            }
+
+            #bookingSubmit:disabled a{
                 background: #6c757d;
                 cursor: not-allowed;
             }
@@ -161,7 +162,7 @@
             }
 
             @media (max-width: 768px) {
-                .modal-content {
+                .modal-content-custom {
                     flex-direction: column;
                     width: 90%;
                     margin: 40px auto;
@@ -183,20 +184,20 @@
 
         <!-- Modal HTML -->
         <div id="bookingModal" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+            <div class="modal-content modal-content-custom" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
                 <div class="modal-left" style="background-image:url('{{ asset('images/popup.png') }}');"></div>
 
                 <div class="modal-right">
                     <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
-                        <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 600;">Looking to Book a Test?</h5>
+                        <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 700;">Looking to Book a Test?</h5>
                         <span class="close" id="bookingClose">&times;</span>
                     </div>
 
-                    <div class="modal-body">
-                        <p style="color: #666; margin-bottom: 20px; font-size: 14px;">
+                    <div class="modal-body p-0">
+                        <p style="color: #666; margin-bottom: 10px; font-size: 14px;">
                             Please share your details — our health advisor will call you or you can call us at
-                            <span class="badge bg-primary" style="font-size:14px; margin-left: 5px;"><a
-                                    href="tel:+91 987 678 4545">+91 987 678 4545</a></span>
+                            <span class="popup-call-btn"><a href="tel:+919876784545" target="_blank">+91 987 678
+                                    4545</a></span>
                         </p>
 
                         <div id="alertBox"></div>
@@ -204,32 +205,33 @@
                         <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
                             @csrf
 
-                            <div class="form-group position-relative my-3">
+                            <div class="form-group position-relative ">
                                 <span class="popupicon"><i class="fa fa-user"></i></span>
                                 <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name"
                                     placeholder="Enter Name" required>
                             </div>
 
-                            <div class="form-group position-relative my-3">
+                            <div class="form-group position-relative ">
 
                                 <input class="form-control " style="padding-left : 0 !important;" type="tel" id="mobile"
                                     name="mobile" placeholder="Enter Mobile No." required>
                             </div>
 
-                            <div class="form-group checkbox-group">
-                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                                <label for="agreeTerms">I agree to Diagnoedge labs T&C and Privacy Policy</label>
-                            </div>
-
+                           
                             <input type="hidden" name="source" value="modal_homepage">
 
-                            <div class="form-group my-3">
+                            <div class="form-group ">
                                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
                                     data-callback="recaptchaCallback"></div>
                             </div>
-
-                            <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100"
-                                disabled>Submit <i class="fa fa-paper-plane "></i></button>
+                            <button type="submit" id="bookingSubmit" class="w-100" disabled>
+                                <a href="" class="theme-button style-1 w-100" aria-label="Submit">
+                                    <span data-text="Submit">Submit</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </button>
+                            {{-- <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100"
+                                disabled>Submit <i class="fa fa-paper-plane "></i></button> --}}
                         </form>
                     </div>
                 </div>
@@ -3792,6 +3794,36 @@
             observer.observe(document.body, { childList: true, subtree: true });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#phone");
+            const iti = window.intlTelInput(input, {
+                initialCountry: "np",
+                separateDialCode: true,
+                preferredCountries: ["np", "in", "us", "gb"],
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    </script>
 
 
     <!-- JS -->
@@ -3841,6 +3873,94 @@
                 // Get full international number
                 if (iti) {
                     form.querySelector('#mobile').value = iti.getNumber();
+                }
+
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: "POST",
+                    headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = '';
+
+                        if (data.success) {
+                            alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+                            form.reset();
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                            setTimeout(closeBookingModal, 5000);
+                        } else {
+                            let html = `<div class="alert-error"><ul>`;
+                            if (data.errors) {
+                                Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
+                            } else {
+                                html += `<li>${data.message || 'An error occurred'}</li>`;
+                            }
+                            html += `</ul></div>`;
+                            alertBox.innerHTML = html;
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
+                        if (window.grecaptcha) grecaptcha.reset();
+                        submitBtn.disabled = true;
+                    });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('bookingModal');
+            const closeBtn = document.getElementById('bookingClose');
+            const form = document.getElementById('bookingForm');
+            const submitBtn = document.getElementById('bookingSubmit');
+            const alertBox = document.getElementById('alertBox');
+            let iti;
+
+
+
+            // reCAPTCHA callback
+            window.recaptchaCallback = function () {
+                submitBtn.disabled = false;
+            }
+
+            // Open/close modal
+            function openBookingModal() {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeBookingModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                form.reset();
+                if (window.grecaptcha) grecaptcha.reset();
+                submitBtn.disabled = true;
+                alertBox.innerHTML = '';
+            }
+
+            closeBtn.addEventListener('click', closeBookingModal);
+            window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
+
+            // Auto-open modal after 5s on homepage
+            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
+            if (isHomepage) setTimeout(openBookingModal, 5000);
+
+            // AJAX form submit
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+
+                // Get full international number
+                if (iti) {
+                    form.querySelector('#phone').value = iti.getNumber();
                 }
 
                 const formData = new FormData(form);

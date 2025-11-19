@@ -70,7 +70,7 @@
                                         </figure>
                                     </div>
                                     <div class="about-year-content">
-                                        <p>Our Carenix Hospital Funded in</p>
+                                        <p>Our Diagnoedge Hospital Funded in</p>
                                         <h3>1990</h3>
                                     </div>
                                 </div>
@@ -91,24 +91,28 @@
                         <!-- about content start -->
                         <div class="about-content">
                             <!-- section title start -->
-                            
+
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">About Us</span>
+                                <span class="sub-title">About Partner</span>
                                 <h2>Where world class dentistry meets whole person wellness.</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <p align="justify">We collaborate with trusted and industry-leading partners who share our
+                                    commitment to
+                                    quality, innovation, and customer satisfaction. Our partnerships enable us to deliver
+                                    advanced solutions, broaden our service capabilities, and create meaningful value for
+                                    our clients. Together, we work towards a shared vision—bringing expertise, reliability,
+                                    and exceptional results to every project. Through strong collaboration and continuous
+                                    growth, our partners play a vital role in helping us achieve excellence across all our
+                                    services.</p>
                             </div>
                             <!-- section title end -->
                             <!-- check list two col start -->
                             <div class="check-list-two-col wow fadeInUp" data-wow-delay=".3s">
                                 <ul>
-                                    <li>Comprehensive Care Services</li>
-                                    <li>Highly Skilled Medical Team</li>
-                                    <li>Patient Centered Approach</li>
-                                    <li>Nutrition Counseling</li>
-                                    <li>Experienced Doctors</li>
-                                    <li>24/7 Virtual Care Services</li>
+                                    <li>Trusted Collaboration</li>
+                                    <li>Enhanced Capabilities</li>
+                                    <li>Shared Vision</li>
+                                    <li>Mutual Growth</li>
+
                                 </ul>
                             </div>
                             <!-- check list two col end -->
@@ -149,15 +153,12 @@
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                                 <span class="sub-title">Why Diagnoedge</span>
                                 <h2>Compassion and expertise, perfectly combined</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                                    voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                                    voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
+                                <p align="justify">DiagnoEdge Lab stands for accuracy, reliability, and patient-first care. With advanced
+                                    diagnostic technology, certified professionals, and stringent quality protocols, we
+                                    ensure every test delivers precise and trustworthy results. Our fast turnaround time,
+                                    transparent processes, and commitment to affordability make healthcare more accessible
+                                    for everyone. At DiagnoEdge, we don’t just provide reports—we provide clarity,
+                                    confidence, and support for better health decisions.</p>
                             </div>
                             <!-- section-title end -->
 
@@ -199,8 +200,6 @@
         <!-- why-section end -->
 
 
-       <!-- appointment section start -->
-        @include("website.components.cta")
-        <!-- appointment section end -->
+       
     </main>
 @endsection

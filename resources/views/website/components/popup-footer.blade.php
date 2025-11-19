@@ -7,38 +7,36 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="contact.php" method="POST" id="contact" novalidate="novalidate">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <div class="form-floating field-inner">
-                                    <input id="name" class="form-control" name="name" type="text" autocomplete="off"
-                                        placeholder="Name Here" required="required">
-                                    <label for="name">Name*</label>
-                                    <span class="error" id="name-error"></span>
-                                </div>
-                            </div>
-                        </div>
+                <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
+                    @csrf
 
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <div class="form-floating field-inner">
-                                    <input id="phone" class="form-control" name="phone" type="text" autocomplete="off"
-                                        placeholder="Phone Number Here" required="required">
-                                    <label for="phone">Phone Number*</label>
-                                    <span class="error" id="phone-error"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <a href="" class="theme-button style-1" aria-label="Submit">
-                                <span data-text="Submit">Submit</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="form-group position-relative ">
+                        <span class="popupicon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name"
+                            placeholder="Enter Name" required>
                     </div>
-                    <div class="ajax-response"></div>
+
+                    <div class="form-group position-relative ">
+                        <span class="popupicon"><i class="fa fa-phone"></i></span>
+                        <input class="form-control " style="padding-left :45px !important;" type="tel" id="phone"
+                            name="mobile" placeholder="Enter Mobile No." required>
+                    </div>
+
+
+                    <input type="hidden" name="source" value="modal_homepage">
+
+                    <div class="form-group ">
+                        <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                            data-callback="recaptchaCallback"></div>
+                    </div>
+                    <button type="submit" id="bookingSubmit" class="w-100" disabled>
+                        <a href="" class="theme-button style-1 w-100" aria-label="Submit">
+                            <span data-text="Submit">Submit</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </button>
+                    {{-- <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100"
+                        disabled>Submit <i class="fa fa-paper-plane "></i></button> --}}
                 </form>
             </div>
         </div>
