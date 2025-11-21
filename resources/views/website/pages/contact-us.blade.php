@@ -132,8 +132,8 @@
                                                 <div class="form-floating field-inner">
                                                     <input id="phone" class="form-control" name="phone" type="text"
                                                         autocomplete="off" placeholder="Phone Number Here"
-                                                        required="required">
-                                                    <label for="phone">Phone Number*</label>
+                                                        required="required" style="padding-left: 45px">
+                                                    {{-- <label for="phone">Phone Number*</label> --}}
                                                     <span class="error" id="phone-error"></span>
                                                 </div>
                                             </div>

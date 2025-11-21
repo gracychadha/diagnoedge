@@ -24,7 +24,7 @@
                     </div>
 
 
-                    <input type="hidden" name="source" value="modal_homepage">
+                    <input type="hidden" name="source" value="modal_homepage"> 
 
                     <div class="form-group ">
                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"

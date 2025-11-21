@@ -178,7 +178,7 @@
     </div>
     <!-- footer bottom end -->
     <!-- footer copyright start -->
-    <div class="footer-copyright">
+    <div class="footer-copyright pb-60">
         <div class="container-fluid">
             <!-- footer copyright wrap start -->
             <div class="footer-copyright-wrap">
@@ -186,7 +186,7 @@
                     <div class="col-lg-6">
                         <!-- footer copyright start -->
                         <div class="copyright-text wow fadeInUp" data-wow-delay=".2s">
-                            <p class="m-0">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
+                      <p class="m-0">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
                                 Developed by <a href="https://vibrantick.in/" target="_blank">Vibrantick Infotech
                                     Solutions </a></p>
                         </div>

@@ -196,7 +196,7 @@
                         </div>
                         <!-- header cart -->
                         <div class="header-cart">
-                            <a href="cart.html">
+                            <a href="#">
                                 cart
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span>02</span>
