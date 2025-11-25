@@ -105,14 +105,26 @@
                             </div>
                             <!-- default-form start -->
                             <div class="default-form contact-form">
-                                <form action="contact.php" method="POST" id="contact" novalidate="novalidate">
+                                @if(session('success'))
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Success!',
+                                            text: '{{ session("success") }}',
+                                            confirmButtonColor: '#3085d6',
+                                            confirmButtonText: 'OK',
+                                        });
+                                    </script>
+                                @endif
+                                <form action="{{url('/')}}/store" method="POST">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
-                                                    <input id="name" class="form-control" name="name" type="text"
+                                                    <input id="name" class="form-control" name="fullname" type="text"
                                                         autocomplete="off" placeholder="Name Here" required="required">
-                                                    <label for="name">Name*</label>
+                                                    <label for="name"><i class="fa-solid fa-user"></i> Name*</label>
                                                     <span class="error" id="name-error"></span>
                                                 </div>
                                             </div>
@@ -122,7 +134,7 @@
                                                 <div class="form-floating field-inner">
                                                     <input id="email" class="form-control" name="email" type="email"
                                                         autocomplete="off" placeholder="Email Here" required="required">
-                                                    <label for="email">Email*</label>
+                                                    <label for="email"><i class="fa-solid fa-envelope"></i> Email*</label>
                                                     <span class="error" id="email-error"></span>
                                                 </div>
                                             </div>
@@ -143,7 +155,7 @@
                                                 <div class="form-floating field-inner">
                                                     <input id="subject" class="form-control" name="subject" type="text"
                                                         autocomplete="off" placeholder="Subject Here" required="required">
-                                                    <label for="subject">Subject*</label>
+                                                    <label for="subject"><i class="fa-solid fa-pen"></i> Subject*</label>
                                                     <span class="error" id="subject-error"></span>
                                                 </div>
                                             </div>
@@ -154,14 +166,23 @@
                                                     <textarea id="message" class="form-control" name="message"
                                                         autocomplete="off" placeholder="Type Message Here"
                                                         required="required"></textarea>
-                                                    <label for="message">Message*</label>
+                                                    <label for="message"><i class="fa-solid fa-message"></i> Message*</label>
                                                     <span class="error" id="message-error"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                                                    data-callback="recaptchaCallback">
+                                                </div>
+                                            </div>
+
+                                        </div>
                                         <div class="col-lg-12">
                                             <div class="contact-btn-wapper mt-10">
-                                                <button type="submit" class="theme-button style-1" data-text="Send Message">
+                                                <button type="submit" class="theme-button style-1" data-text="Send Message"
+                                                    id="captcha-btn" disabled>
                                                     <span data-text="Send Message">Send Message</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </button>

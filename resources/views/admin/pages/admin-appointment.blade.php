@@ -43,83 +43,47 @@
                                             </th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Date Of Appointment</th>
-                                            <th>Injury/Condition</th>
+                                            <th>Phone</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox1"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox1"></label>
+                                        @foreach($appointments as $appointment)
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox text-end align-self-center">
+                                                        <div class="form-check custom-checkbox ">
+                                                            <input type="checkbox" class="form-check-input" id="customCheckBox1"
+                                                                required="">
+                                                            <label class="form-check-label" for="customCheckBox1"></label>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/1.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Matthew</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
+                                                </td>
+                                                <td class="patient-info ps-0">
+                                                    
+                                                    <span class="text-nowrap ms-2">{{ $appointment->fullname }}</span>
+                                                </td>
+                                                <td class="text-primary">{{ $appointment->email }}</td>
+                                                <td>{{ $appointment->phone }}</td>
 
-                                            <td>Fever</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
-                                                            class="fa fa-eye fs-18"></i></a>
-                                                </span>
-                                                <span class="me-3">
-                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
-                                                        data-bs-target="#editAppointment"><i
-                                                            class="fa fa-pencil fs-18 "></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox1"
-                                                            required="">
-                                                        <label class="form-check-label" for="customCheckBox1"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="patient-info ps-0">
-                                                <span>
-                                                    <img src="images/avatar/1.jpg" alt="">
-                                                </span>
-                                                <span class="text-nowrap ms-2">Matthew</span>
-                                            </td>
-                                            <td class="text-primary">gabriel@gmail.com</td>
-                                            <td>8 Aug 2021</td>
+                                               
+                                                <td>
+                                                    <span class="me-3">
+                                                        <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
+                                                                class="fa fa-eye fs-18"></i></a>
+                                                    </span>
+                                                    <span class="me-3">
+                                                        <a href="" class="edit-appointment" data-bs-toggle="modal"
+                                                            data-bs-target="#editAppointment"><i
+                                                                class="fa fa-pencil fs-18 "></i></a>
+                                                    </span>
+                                                    <span>
+                                                        <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
+                                                    </span>
+                                                </td>
+                                            </tr>
 
-                                            <td>Fever</td>
-                                            <td>
-                                                <span class="me-3">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
-                                                            class="fa fa-eye fs-18"></i></a>
-                                                </span>
-                                                <span class="me-3">
-                                                    <a href="" class="edit-appointment" data-bs-toggle="modal"
-                                                        data-bs-target="#editAppointment"><i
-                                                            class="fa fa-pencil fs-18 "></i></a>
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
-
+                                        @endforeach
 
                                     </tbody>
                                 </table>
@@ -247,7 +211,7 @@
                     </div>
                     <div class="modal-body p-0">
                         <table class="table table-bordered table-striped mb-0">
-                            
+
                             <tr>
                                 <th>
                                     Name :
@@ -302,7 +266,7 @@
                             </tr>
 
                         </table>
-                       
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>

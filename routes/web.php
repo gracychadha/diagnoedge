@@ -5,6 +5,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DoctorController;
+
 
 //   for frontend 
 
@@ -12,8 +16,6 @@ Route::get('/', function () {
     return view('website.pages.welcome');
 })->name('home');
 Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
-
-
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
 })->name('about-us');
@@ -62,9 +64,9 @@ Route::get('/appointment', function () {
 })->name('appointment');
 
 
-Route::get('/admin-appointment', function () {
-    return view("admin.pages.admin-appointment");
-})->name('admin-appointment');
+// Route::get('/admin-appointment', function () {
+//     return view("admin.pages.admin-appointment");
+// })->name('admin-appointment');
 Route::get('/admin-staff', function () {
     return view("admin.pages.admin-staff");
 })->name('admin-staff');
@@ -74,9 +76,9 @@ Route::get('/admin-profile', function () {
 Route::get('/admin-patient', function () {
     return view('admin.pages.admin-patient');
 })->name('admin-patient');
-Route::get('/admin-doctor', function () {
-    return view('admin.pages.admin-doctor');
-})->name('admin-doctor');
+// Route::get('/admin-doctor', function () {
+//     return view('admin.pages.admin-doctor');
+// })->name('admin-doctor');
 Route::get('/website-setting', function () {
     return view('admin.pages.website-setting');
 })->name('website-setting');
@@ -112,9 +114,17 @@ Route::get('/theme-setting', function () {
 
 
 
+// for appointment form
+Route::post('/appointment-store', [AppointmentController::class, 'store'])->name('appointment.store');
+// for contact form
+Route::post('/store', [ContactController::class, 'store'])->name('contact-us.store');
 
 
-// for backend
+
+
+
+
+// ALL THE ROUTES FOR BACKEND DASHBOARD
 
 // routes/web.php
 Route::get('/dashboard', function () {
@@ -143,5 +153,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+// FOR DOCTOR
+Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
+Route::get('/doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
+Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
+Route::post('/doctors/update', [DoctorController::class, 'update']);
+Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
+
+    // FOR APPOINTMENT
+    Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
+
+
 
 require __DIR__ . '/auth.php';

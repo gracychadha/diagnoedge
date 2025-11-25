@@ -214,6 +214,118 @@
         });
 
     </script>
+    <script>
+        $(document).on('click', '.viewDoctor', function () {
+
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: "{{ url('/doctors/view') }}/" + id,
+                type: "GET",
+                success: function (doctor) {
+
+                    // Fill modal data
+                    $('#v_name').text(doctor.fullname);
+                    $('#v_status').text(doctor.status == 1 ? 'Available' : 'Unavailable');
+                    $('#v_designation').text(doctor.designation);
+                    $('#v_specialization').text(doctor.specialization);
+
+                    // Image
+                    $('#v_image').attr('src', '/uploads/' + doctor.image);
+
+                    // If you have appointment count
+                    $('#v_appointments').text(doctor.appointments ?? 0);
+
+                    // Open modal
+                    $('#viewAppointment').modal('show');
+                }
+            });
+
+        });
+        // for edit_designation
+        $(document).on('click', '.editDoctor', function () {
+
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: "{{ url('/doctors/view') }}/" + id,
+                type: "GET",
+                success: function (doctor) {
+
+                    $('#edit_id').val(doctor.id);
+                    $('#edit_fullname').val(doctor.fullname);
+                    $('#edit_status').val(doctor.status);
+                    $('#edit_designation').val(doctor.designation);
+                    $('#edit_specialization').val(doctor.specialization);
+
+                    $('#edit_preview').attr('src', '/uploads/' + doctor.image);
+
+                    $('#editAppointment').modal('show');
+                }
+            });
+        });
+        $('#editDoctorForm').on('submit', function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ url('/doctors/update') }}",
+                data: formData,
+                contentType: false,
+                processData: false,
+
+                success: function (response) {
+                    Swal.fire("Updated!", "Doctor updated successfully!", "success");
+                    $('#editAppointment').modal('hide');
+                    location.reload();
+                }
+            });
+
+        });
+        $(document).on("click", ".deleteDoctor", function () {
+
+            let id = $(this).data("id");
+            let row = $(this).closest("tr");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This doctor will be permanently deleted!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ url('/doctors/delete') }}/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+
+                            Swal.fire("Deleted!", "Doctor removed successfully.", "success");
+
+                            // remove row
+                            row.fadeOut(600, function () {
+                                $(this).remove();
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
+    </script>
+
 </body>
 
 </html>

@@ -7,36 +7,31 @@
                 </a>
 
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Test</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('categories.index') }}">Test Category </a></li>
-                    <li><a href="{{ route('services.index') }}">Test Services </a></li>
-                    <li><a href="{{ route('test-description') }}">Test Description</a></li>
-
-                </ul>
-            </li>
-
-            <li><a href="{{ route('admin-appointment') }}" class="ai-icon" aria-expanded="false">
+            <li><a href="{{ route('admin-appointment.index') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-menu"></i>
                     <span class="nav-text">Appointment</span>
                 </a>
             </li>
-            <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-heart"></i>
-                    <span class="nav-text">Patient</span>
-                </a>
-            </li>
-            <li><a href="javascript:void(0);" class="ai-icon has-arrow" aria-expanded="false">
-                    <i class="flaticon-381-id-card-4"></i>
-                    <span class="nav-text">Staff</span>
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-layer-1"></i>
+                    <span class="nav-text">CMS</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('admin-staff') }}">Staff</a></li>
-                    <li><a href="{{ route('admin-doctor') }}">Doctor</a></li>
-                    {{-- <li><a href="staff-profile.html">Staff Profie</a></li> --}}
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Blogs</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('blog-category') }}">Blog category</a></li>
+                            <li><a href="{{ route('blog-description') }}">Blog Details</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('pages') }}">Pages</a></li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('faq') }}">Faqs</a></li>
+                            <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -56,6 +51,11 @@
 
                 </ul>
             </li>
+            <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-heart"></i>
+                    <span class="nav-text">Patient</span>
+                </a>
+            </li>
 
 
 
@@ -64,37 +64,40 @@
                     <span class="nav-text">Settings</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                     <li><a href="{{ route('general-setting') }}">General Settings</a></li>
                     <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li>
-
+                    <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                 </ul>
             </li>
+            <li><a href="javascript:void(0);" class="ai-icon has-arrow" aria-expanded="false">
+                    <i class="flaticon-381-id-card-4"></i>
+                    <span class="nav-text">Staff</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('admin-doctors.index') }}">Doctor</a></li>
+                    <li><a href="{{ route('admin-staff') }}">Staff</a></li>
+
+                    {{-- <li><a href="staff-profile.html">Staff Profie</a></li> --}}
+                </ul>
+            </li>
+
+
+
 
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">CMS</span>
+                    <i class="flaticon-381-notepad"></i>
+                    <span class="nav-text">Test</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
-                            <li><a href="{{ route('faq') }}">Faqs</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Blogs</a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('blog-category') }}">Blog category</a></li>
-                            <li><a href="{{ route('blog-description') }}">Blog Details</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="{{ route('pages') }}">Pages</a></li>
+                    <li><a href="{{ route('categories.index') }}">Test Category </a></li>
+                    <li><a href="{{ route('test-description') }}">Test Description</a></li>
+                    <li><a href="{{ route('services.index') }}">Test Services </a></li>
 
                 </ul>
             </li>
+
+
         </ul>
 
 

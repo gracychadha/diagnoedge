@@ -3469,13 +3469,7 @@
                                 </figure>
                             </div>
                             <div class="portfolio-content">
-                                {{-- <div class="portfolio-title">
-                                    <h3><a href="#">Transitions Lenses</a></h3>
-                                    <ul class="portfolio-meta">
-                                        <li>Laser Eye Surgery</li>
-                                        <li>Retina Checkup</li>
-                                    </ul>
-                                </div> --}}
+                                
                                 <div class="portfolio-button-wapper">
                                     <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
