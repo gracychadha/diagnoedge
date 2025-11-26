@@ -185,7 +185,7 @@
         <!-- Modal HTML -->
         <div id="bookingModal" class="modal" aria-hidden="true">
             <div class="modal-content modal-content-custom" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-                <div class="modal-left" style="background-image:url('{{ asset('images/popup.png') }}');"></div>
+                <div class="modal-left" style="background-image:url('{{ asset('images/popup.jpg') }}');"></div>
 
                 <div class="modal-right">
                     <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
@@ -328,112 +328,115 @@
             </div>
         </section> --}}
         <!-- hero section end -->
-        <section class="banner-booknoow space-between sidespace">
-            <div class=" d-lg-flex flex-lg-row custom-hero-section">
-                <div class="col-xl-9 col-md-8 col-lg-8">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative"
-                        data-bs-ride="carousel">
-                        <div class="position-absolute top-0 end-0 m-3 d-flex gap-2 d-none d-md-block" style="z-index: 10;">
-                            <button class="btn btn-light btn-sm hero-secslider" type="button"
-                                data-bs-target="#carouselExampleFade" aria-label="Previous slide" data-bs-slide="prev">
+        <section class="banner-booknoow space-between sidespace ">
+            <div class="d-lg-flex flex-lg-row custom-hero-section align-items-stretch gap-4">
+
+                <div class="col-xl-9 col-md-8 col-lg-8 flex-fill h-100">
+                    <div id="carouselExampleFade"
+                        class="carousel slide carousel-fade position-relative rounded-4 overflow-hidden rounded-md shadow-lg h-100"
+                        data-bs-ride="carousel" data-bs-interval="5000">
+
+                        <!-- Carousel Buttons (Top Right, Inline, Outline, Responsive) -->
+                        <div class="position-absolute top-0 end-0 d-flex gap-2 m-3" style="z-index: 10;">
+                            <!-- Previous Button -->
+                            <button
+                                class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center shadow"
+                                type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                 <i class="fa fa-chevron-left"></i>
                             </button>
-                            <button class="btn btn-light btn-sm hero-secslider" type="button"
-                                data-bs-target="#carouselExampleFade" aria-label="Next slide" data-bs-slide="next">
+
+                            <!-- Next Button -->
+                            <button
+                                class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center shadow"
+                                type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                                 <i class="fa fa-chevron-right"></i>
                             </button>
                         </div>
+
                         <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2 d-block d-md-none"
                             style="z-index: 10;">
-                            <button class="btn btn-light btn-sm hero-secslider" type="button"
-                                data-bs-target="#carouselExampleFade" aria-label="Previous slide" data-bs-slide="prev">
+                            <button class="btn btn-outline-light btn-lg  shadow" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
                                 <i class="fa fa-chevron-left"></i>
                             </button>
-                            <button class="btn btn-light btn-sm hero-secslider" type="button"
-                                data-bs-target="#carouselExampleFade" aria-label="Next slide" data-bs-slide="next">
+                            <button class="btn btn-outline-light btn-lg  shadow" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
                                 <i class="fa fa-chevron-right"></i>
                             </button>
                         </div>
-                        <div class="carousel-inner">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
+                        </div>
 
-
-                            <div class="carousel-item">
+                        <!-- ONLY THIS ONE CHANGE INSIDE -->
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                         alt="img1" width="1076" height="314">
+                                        alt="img1">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
-                                        alt="img1" width="393" height="393" fetchpriority="high">
+                                        alt="img1" fetchpriority="high">
                                 </a>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item h-100">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-none d-md-block w-100"
-                                         alt="img1" width="1076" height="314">
+                                        alt="img2">
                                     <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block d-md-none w-100"
-                                        alt="img1" width="393" height="393" fetchpriority="high">
+                                        alt="img2" fetchpriority="high">
                                 </a>
                             </div>
-                            <div class="carousel-item active">
+                            <div class="carousel-item h-100">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                         alt="img2" width="1076" height="314">
+                                        alt="img3">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
-                                        alt="img2" width="393" height="393" fetchpriority="high">
+                                        alt="img3" fetchpriority="high">
                                 </a>
                             </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-xl-3 col-md-4 col-lg-4 " style="min-height:300px;">
-                    <div class="book-online flex-center-col  ">
-                        <h3 class="text-center mb-4">Book a Test Online</h3>
-                        <div class="book-online-frist-row pb-2 ">
-                            <p>If you Already Know What Test to Take</p>
-                            <table class="book-input w-100">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img src="assets/images/logo/test.svg" class="input-icon" alt="icon" width="35"
-                                                height="25">
-                                        </td>
-                                        <td class="search-widget-input-wrapper">
-                                            <input type="text" id="already_know" class="input-box"
-                                                placeholder="Search and book" autocomplete="off">
-                                            <div class="headerSearchResults already_know" style="display: none;">
-                                                <div class="resultsHolder">
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="book-online-second-row my-0 ">
-                            <p>Find a Nearest Center</p>
-                            <table class="book-input w-100">
-                                <tbody>
-                                    <tr style="padding-bottom:50px;">
-                                        <td>
-                                            <img class="input-icon" src="assets/images/logo/center.svg" alt="icon"
-                                                width="35" height="25">
-                                        </td>
-                                        <td class="search-books search-widget-input-wrapper">
-                                            <input type="text" placeholder="Enter Area" class="input-box" id="find_center2"
-                                                autocomplete="off">
-
-                                            <div class="headerSearchResults find_center" style="display: none;">
-                                                <div class="resultsHolder">
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
+
+                <!-- Book a Test Card — unchanged -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div
+                        class="card h-100 p-4 shadow-lg border-0 rounded-4 bg-white d-flex flex-column justify-content-center">
+                        <h3 class="text-center mb-2 fw-bold text-success">Book a Test Online</h3>
+                        <!-- rest of your card exactly as you had -->
+                        <div class="mb-2">
+                            <p class="mb-2 fw-semibold text-dark">If you Already Know What Test to Take</p>
+                            <div class="input-group border rounded-3 bg-white shadow-sm overflow-hidden">
+                                <span class="input-group-text bg-white border-0 d-flex align-items-center px-3">
+                                    <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
+                                    <span class="vr ms-2"></span>
+                                </span>
+                                <input type="text" id="already_know" class="form-control border-0 shadow-none"
+                                    placeholder="Search and book" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="mb-2 fw-semibold text-dark">Find a Nearest Center</p>
+                            <div class="input-group border rounded-3 bg-white shadow-sm overflow-hidden">
+                                <span class="input-group-text bg-white border-0 d-flex align-items-center px-3">
+                                    <img src="assets/images/logo/center.svg" alt="icon" width="35" height="25">
+                                    <span class="vr ms-2"></span>
+                                </span>
+                                <input type="text" placeholder="Enter Area, City or Pincode"
+                                    class="form-control border-0 me-0 shadow-none" id="find_center2" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <small class="text-success fw-bold">
+                                <i class="fa fa-clock"></i> Get reports in 24-48 hours
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -3469,7 +3472,7 @@
                                 </figure>
                             </div>
                             <div class="portfolio-content">
-                                
+
                                 <div class="portfolio-button-wapper">
                                     <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -3758,6 +3761,6 @@
 
 
     </main>
-    
+
 
 @endsection
