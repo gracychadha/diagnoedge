@@ -23,7 +23,8 @@
 
 
     {{-- summernote --}}
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
+
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
     {{-- data tables --}}
@@ -66,7 +67,8 @@
     <script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/styleSwitcher.js') }}"></script>
     {{-- summernote js --}}
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
+
     <!-- Datatable -->
     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script>

@@ -1,13 +1,15 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
+
 
 
 //   for frontend 
@@ -132,15 +134,32 @@ Route::get('/dashboard', function () {
 })->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    // Category CRUD
 
-    Route::prefix('test-category')->name('categories.')->group(function () {
-        Route::get('/', [CategoryController::class, 'index'])->name('index');
-        Route::post('/store', [CategoryController::class, 'store'])->name('store');
-        Route::put('/update', [CategoryController::class, 'update'])->name('update');
-        Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('destroy');
-    });
+
+
+
+   
+ // ────────────── Tests Details ──────────────
+    Route::get('/tests', [TestController::class, 'index'])->name('admin.pages.test');
+    Route::post('/tests', [TestController::class, 'store'])->name('admin.tests.store');
+    Route::put('/tests/{test}', [TestController::class, 'update'])->name('admin.tests.update');
+    Route::delete('/tests/{test}', [TestController::class, 'destroy'])->name('admin.tests.destroy');
+
+
+
+
+ // ────────────── PARAMETERS ──────────────
+   
+    Route::get('/parameters', [ParameterController::class, 'index'])
+        ->name('admin.pages.parameter'); 
+    Route::post('/parameters', [ParameterController::class, 'store'])
+        ->name('admin.parameters.store');
+    Route::put('/parameters/{parameter}', [ParameterController::class, 'update'])
+        ->name('admin.parameters.update');
+    Route::delete('/parameters/{parameter}', [ParameterController::class, 'destroy'])
+        ->name('admin.parameters.destroy');
     //test services 
+
 
     Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
     Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
@@ -164,7 +183,7 @@ Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
 
 // FOR APPOINTMENT
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
-Route::post('/appointments/update' , [AppointmentController::class , 'update']);
+Route::post('/appointments/update', [AppointmentController::class, 'update']);
 
 
 require __DIR__ . '/auth.php';

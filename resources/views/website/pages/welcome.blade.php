@@ -107,23 +107,6 @@
                 z-index: 9999 !important;
             }
 
-            .checkbox-group {
-                display: flex;
-                align-items: flex-start;
-                gap: 8px;
-                margin: 15px 0;
-            }
-
-            .checkbox-group input[type="checkbox"] {
-                margin-top: 2px;
-            }
-
-            .checkbox-group label {
-                font-size: 14px;
-                color: #555;
-                cursor: pointer;
-            }
-
             .theme-button:hover:not(:disabled) {
                 background: black;
             }
@@ -171,6 +154,7 @@
                 .modal-left {
                     width: 100%;
                     height: 200px;
+                    display: none;
                 }
 
                 .modal-right {
@@ -328,117 +312,86 @@
             </div>
         </section> --}}
         <!-- hero section end -->
-        <section class="banner-booknoow space-between sidespace ">
-            <div class="d-lg-flex flex-lg-row custom-hero-section align-items-stretch gap-4">
+      <section class="banner-booknoow space-between sidespace">
+    <div class="container-fluid">
+        <div class="row gy-4 align-items-stretch">
 
-                <div class="col-xl-9 col-md-8 col-lg-8 flex-fill h-100">
-                    <div id="carouselExampleFade"
-                        class="carousel slide carousel-fade position-relative rounded-4 overflow-hidden rounded-md shadow-lg h-100"
-                        data-bs-ride="carousel" data-bs-interval="5000">
+            <!-- LEFT: CAROUSEL -->
+            <div class="col-xl-9 col-lg-8 col-md-12 col-12">
+                <div id="carouselExampleFade "
+                    class="carousel slide carousel-fade rounded-4 overflow-hidden shadow-lg"
+                    data-bs-ride="carousel" data-bs-interval="5000">
 
-                        <!-- Carousel Buttons (Top Right, Inline, Outline, Responsive) -->
-                        <div class="position-absolute top-0 end-0 d-flex gap-2 m-3" style="z-index: 10;">
-                            <!-- Previous Button -->
-                            <button
-                                class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center shadow"
-                                type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                                <i class="fa fa-chevron-left"></i>
-                            </button>
+                    <!-- Controls -->
+                    <div class="position-absolute top-0 end-0 d-flex gap-2 m-3" style="z-index: 10;">
+                        <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
+                            data-bs-slide="prev"><i class="fa fa-chevron-left"></i></button>
+                        <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
+                            data-bs-slide="next"><i class="fa fa-chevron-right"></i></button>
+                    </div>
 
-                            <!-- Next Button -->
-                            <button
-                                class="btn btn-outline-light btn-lg d-flex align-items-center justify-content-center shadow"
-                                type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                                <i class="fa fa-chevron-right"></i>
-                            </button>
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
                         </div>
-
-                        <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2 d-block d-md-none"
-                            style="z-index: 10;">
-                            <button class="btn btn-outline-light btn-lg  shadow" type="button" data-bs-target="#carouselExampleFade"
-                                data-bs-slide="prev">
-                                <i class="fa fa-chevron-left"></i>
-                            </button>
-                            <button class="btn btn-outline-light btn-lg  shadow" type="button" data-bs-target="#carouselExampleFade"
-                                data-bs-slide="next">
-                                <i class="fa fa-chevron-right"></i>
-                            </button>
+                        <div class="carousel-item">
+                            <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block w-100" alt="">
                         </div>
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
-                                class="active"></button>
-                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
-                        </div>
-
-                        <!-- ONLY THIS ONE CHANGE INSIDE -->
-                        <div class="carousel-inner h-100">
-                            <div class="carousel-item active h-100">
-                                <a href="" target="_blank">
-                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                        alt="img1">
-                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
-                                        alt="img1" fetchpriority="high">
-                                </a>
-                            </div>
-                            <div class="carousel-item h-100">
-                                <a href="" target="_blank">
-                                    <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-none d-md-block w-100"
-                                        alt="img2">
-                                    <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block d-md-none w-100"
-                                        alt="img2" fetchpriority="high">
-                                </a>
-                            </div>
-                            <div class="carousel-item h-100">
-                                <a href="" target="_blank">
-                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                        alt="img3">
-                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
-                                        alt="img3" fetchpriority="high">
-                                </a>
-                            </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
                         </div>
                     </div>
-                </div>
 
-                <!-- Book a Test Card — unchanged -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div
-                        class="card h-100 p-4 shadow-lg border-0 rounded-4 bg-white d-flex flex-column justify-content-center">
-                        <h3 class="text-center mb-2 fw-bold text-success">Book a Test Online</h3>
-                        <!-- rest of your card exactly as you had -->
-                        <div class="mb-2">
-                            <p class="mb-2 fw-semibold text-dark">If you Already Know What Test to Take</p>
-                            <div class="input-group border rounded-3 bg-white shadow-sm overflow-hidden">
-                                <span class="input-group-text bg-white border-0 d-flex align-items-center px-3">
-                                    <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
-                                    <span class="vr ms-2"></span>
-                                </span>
-                                <input type="text" id="already_know" class="form-control border-0 shadow-none"
-                                    placeholder="Search and book" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="mb-2">
-                            <p class="mb-2 fw-semibold text-dark">Find a Nearest Center</p>
-                            <div class="input-group border rounded-3 bg-white shadow-sm overflow-hidden">
-                                <span class="input-group-text bg-white border-0 d-flex align-items-center px-3">
-                                    <img src="assets/images/logo/center.svg" alt="icon" width="35" height="25">
-                                    <span class="vr ms-2"></span>
-                                </span>
-                                <input type="text" placeholder="Enter Area, City or Pincode"
-                                    class="form-control border-0 me-0 shadow-none" id="find_center2" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="text-center mt-2">
-                            <small class="text-success fw-bold">
-                                <i class="fa fa-clock"></i> Get reports in 24-48 hours
-                            </small>
-                        </div>
-                    </div>
                 </div>
-
             </div>
-        </section>
+
+            <!-- RIGHT: CARD -->
+            <div class="col-xl-3 col-lg-4 col-md-12 col-12">
+                <div class="card p-4 shadow-lg border-0 rounded-4 h-100">
+                    <h3 class="text-center mb-3 fw-bold text-success">Book a Test Online</h3>
+
+                    <div class="mb-2">
+                        <p class=" mb-2">If you Already Know What Test to Take</p>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
+                                <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
+                                <span class="vr ms-2"></span>
+                            </span>
+                            <input type="text" id="already_know" class="form-control  border-start-0" placeholder="Search and book" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <p class=" mb-2">Find a Nearest Center</p>
+                       <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
+                                <img src="assets/images/logo/center.svg" alt="icon" width="35" height="25">
+                                <span class="vr ms-2"></span>
+                            </span>
+                            <input type="text" placeholder="Enter Area" class="form-control  border-start-0" id="find_center2" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <small class="fw-bold text-success"><i class="fa fa-clock"></i> Get reports in 24–48 hours</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
 
 
@@ -1777,134 +1730,10 @@
         </section>
         <!-- about section end -->
 
-        <!-- blog section start -->
-        <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Blog &amp; Article</span>
-                            <h2>Update with our latest  insights</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-
-
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 14, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a>
-                                </h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ....</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-
-
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 15, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ...</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-
-
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 17, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ....</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- blog section end -->
       
+           <!-- marquee ticker section start -->
+        @include("website.components.sticker")
+        <!-- marquee ticker section end -->
 
         <!-- portfolio section start -->
         <section class="portfolio-section-1 pt-50 md-pt-80 pb-50 md-pb-80">
@@ -2027,14 +1856,114 @@
         </section>
         <!-- portfolio section end -->
 
-        <!-- marquee ticker section start -->
-        @include("website.components.sticker")
-        <!-- marquee ticker section end -->
-        <!-- faq section start -->
-        <section class="faq-section-1 pt-50 md-pt-80">
+   
+       
+
+
+        <!-- appointment section start -->
+        {{-- @include("website.components.cta") --}}
+        <!-- appointment section end -->
+
+        <!-- portfolio section end -->
+
+
+
+<section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Content -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+          <span class="sub-title">Why Choose Us?</span>
+          <h2>Why DiagnoEdge Labs?</h2>
+
+          <p class="lead">
+            DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
+          </p>
+
+          <p class="mb-3 lh-lg">
+            Our team consists of highly trained <strong>certified pathologists</strong> and 
+            <strong>experienced laboratory professionals</strong> who ensure precision, safety, and reliability in every report. 
+            We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology, Microbiology, and Preventive Health</strong>.
+          </p>
+
+          <p class="lh-lg">
+            With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides 
+            <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise monitoring, and effective treatment planning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Side - Cards -->
+      <div class="col-lg-6">
+        <div class="row g-4 align-items-center">
+
+          <!-- Big Experience Card -->
+          <div class="col-12 col-md-5">
+            <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
+                 style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
+              <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+              <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+</h3>
+              <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
+            </div>
+          </div>
+
+          <!-- 4 Small Cards -->
+          <div class="col-12 col-md-7">
+            <div class="row g-3 g-md-4">
+
+              <!-- Card 1 -->
+              <div class="col-6">
+                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                  <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+ Advanced Tests</h5>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-6">
+                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                  <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by Clinics & Hospitals</h5>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-6">
+                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                  <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled Diagnostic Experts</h5>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="col-6">
+                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                  <i class="fas fa-clipboard-check mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High Accuracy & Reliability</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- faq section start -->
+        <section class="faq-section-1 mb-5 pt-50 md-pt-80">
             <div class="container">
                 <!-- faq wapper start -->
-                <div class="faq-wapper">
+                <div class="faq-wapper py-5">
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- section title start -->
@@ -2200,29 +2129,136 @@
         <!-- faq section end -->
 
 
-        <!-- appointment section start -->
-        @include("website.components.cta")
-        <!-- appointment section end -->
-
-        <!-- portfolio section end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- testimonials section start -->
         @include("website.components.testimonials")
 
+  <!-- blog section start -->
+        <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title start -->
+                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                            <span class="sub-title">Blog &amp; Article</span>
+                            <h2>Update with our latest  insights</h2>
+                        </div>
+                        <!-- section title end -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
 
+
+                            <div class="blog-grid-image">
+                                <a href="{{ route("blog-details") }}">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
+                                    </figure>
+                                </a>
+                            </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 14, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a>
+                                </h3>
+                            </div>
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted ....</p>
+                                <div class="blog-grid-button">
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog grid item 1 end -->
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
+
+
+                            <div class="blog-grid-image">
+                                <a href="{{ route("blog-details") }}">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
+                                    </figure>
+                                </a>
+                            </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 15, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
+                            </div>
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted ...</p>
+                                <div class="blog-grid-button">
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog grid item 1 end -->
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <!-- blog grid item 1 start -->
+                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
+
+
+                            <div class="blog-grid-image">
+                                <a href="{{ route("blog-details") }}">
+                                    <figure class="image-anime">
+                                        <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
+                                    </figure>
+                                </a>
+                            </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>March 17, 2025</span>
+                                </li>
+                            </ul>
+                            <div class="blog-title">
+                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
+                            </div>
+                            <div class="blog-grid-content">
+                                <p>It is a long established fact that a reader will be distracted ....</p>
+                                <div class="blog-grid-button">
+                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog grid item 1 end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog section end -->
 
 
     </main>

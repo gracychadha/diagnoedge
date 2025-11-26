@@ -12,6 +12,29 @@
                     <span class="nav-text">Appointment</span>
                 </a>
             </li>
+
+            {{-- for health package --}}
+             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-folder-1"></i>
+                    <span class="nav-text">Health Package</span>
+                </a>
+                <ul aria-expanded="false">
+                    {{-- <li><a  href="" aria-expanded="false"> Package</a> --}}
+                    <li><a  href="{{ route('admin.pages.test') }}" aria-expanded="false"> Test Details</a>
+                       
+                    </li>
+
+                    <li><a href="{{ route('admin.pages.parameter') }}">Parameter</a></li>
+                    {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('faq') }}">Faqs</a></li>
+                            <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                        </ul>
+                    </li> --}}
+
+                </ul>
+            </li>
+            {{-- Cms --}}
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-layer-1"></i>
                     <span class="nav-text">CMS</span>
@@ -85,7 +108,7 @@
 
 
 
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-notepad"></i>
                     <span class="nav-text">Test</span>
                 </a>
@@ -95,7 +118,7 @@
                     <li><a href="{{ route('services.index') }}">Test Services </a></li>
 
                 </ul>
-            </li>
+            </li> --}}
 
 
         </ul>
