@@ -157,14 +157,14 @@ Route::middleware('auth')->group(function () {
 
 // FOR DOCTOR
 Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
-Route::get('/doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
+Route::get('/admin-doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
 Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
 Route::post('/doctors/update', [DoctorController::class, 'update']);
 Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
 
-    // FOR APPOINTMENT
-    Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
-
+// FOR APPOINTMENT
+Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
+Route::post('/appointments/update' , [AppointmentController::class , 'update']);
 
 
 require __DIR__ . '/auth.php';

@@ -360,7 +360,7 @@
                             <div class="carousel-item">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                        style="border-radius: 15px;" alt="img1" width="1076" height="314">
+                                         alt="img1" width="1076" height="314">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
                                         alt="img1" width="393" height="393" fetchpriority="high">
                                 </a>
@@ -368,7 +368,7 @@
                             <div class="carousel-item">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-none d-md-block w-100"
-                                        style="border-radius: 15px;" alt="img1" width="1076" height="314">
+                                         alt="img1" width="1076" height="314">
                                     <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block d-md-none w-100"
                                         alt="img1" width="393" height="393" fetchpriority="high">
                                 </a>
@@ -376,7 +376,7 @@
                             <div class="carousel-item active">
                                 <a href="" target="_blank">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-none d-md-block w-100"
-                                        style="border-radius: 15px;" alt="img2" width="1076" height="314">
+                                         alt="img2" width="1076" height="314">
                                     <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block d-md-none w-100"
                                         alt="img2" width="393" height="393" fetchpriority="high">
                                 </a>
@@ -387,7 +387,7 @@
 
                 </div>
                 <div class="col-xl-3 col-md-4 col-lg-4 " style="min-height:300px;">
-                    <div class="book-online flex-center-col  shadow">
+                    <div class="book-online flex-center-col  ">
                         <h3 class="text-center mb-4">Book a Test Online</h3>
                         <div class="book-online-frist-row pb-2 ">
                             <p>If you Already Know What Test to Take</p>

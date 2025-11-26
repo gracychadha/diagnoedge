@@ -16574,12 +16574,12 @@ button:focus {
     }
 }
 .banner-booknoow {
-    padding: 160px 10px 10px !important;
+    padding: 160px 10px 4px !important;
     background: #d8e0d8;
 }
 .book-online {
     margin-left: 10px;
-    padding: 15px;
+    padding: 15px 15px 4px;
     background: #ffffff;
 }
 .lab-test-card {

@@ -170,7 +170,7 @@
         });
     </script>
     <script>
-        console.log("hello entered");
+       
         $(document).ready(function () {
 
             // Add package

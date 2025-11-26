@@ -43,5 +43,28 @@ class AppointmentController extends Controller
 
     return back()->with('success', 'Your appointment has been submitted successfully!');
 }
+// FOR VIEW APPOINTMENT LEADS
+public function view($id)
+{
+    $appointments = Appointment::findOrFail($id);
+    return response()->json($appointments);
+}
+
+
+// FOR UPDATE AND EDIT
+public function update(Request $request)
+{
+$appointments = Appointment::find($request->id);
+$appointments->fullname = $request->fullname;
+$appointments->email = $request->email;
+$appointments->phone = $request->phone;
+$appointments->choosedoctor = $request->choosedoctor;
+$appointments->selectdepartment = $request->selectdepartment;
+$appointments->appointmentdate = $request->appointmentdate;
+$appointments->message = $request->message;
+
+$appointments->save();
+return response()->json(['success' => true]);
+}
 
 }

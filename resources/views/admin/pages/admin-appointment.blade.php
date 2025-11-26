@@ -60,13 +60,13 @@
                                                     </div>
                                                 </td>
                                                 <td class="patient-info ps-0">
-                                                    
+
                                                     <span class="text-nowrap ms-2">{{ $appointment->fullname }}</span>
                                                 </td>
                                                 <td class="text-primary">{{ $appointment->email }}</td>
                                                 <td>{{ $appointment->phone }}</td>
 
-                                               
+
                                                 <td>
                                                     <span class="me-3">
                                                         <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
@@ -216,53 +216,39 @@
                                 <th>
                                     Name :
                                 </th>
-                                <td>
-                                    Simran
-                                </td>
+                                <td id="a_name"></td>
                                 <th>
-                                    Date Of Appointment
+                                    Email
                                 </th>
-                                <td>
-                                    12 Dec , 2025
-                                </td>
+                                <td id="a_email"></td>
                             </tr>
                             <tr>
                                 <th>
-                                    Mobile :
+                                    Phone :
                                 </th>
-                                <td>
-                                    9090909090
-                                </td>
+                                <td id="a_phone"></td>
                                 <th>
-                                    Consulting Doctor
+                                    Choose Doctor
                                 </th>
-                                <td>
-                                    Dr. Samantha
-                                </td>
+                                <td id="a_doctor"></td>
                             </tr>
                             <tr>
                                 <th>
-                                    Injury :
+                                    Package :
                                 </th>
-                                <td>
-                                    Blood clots
-                                </td>
+                                <td id="a_selectdepartment"></td>
                                 <th>
-                                    Age :
+                                    Appointment Date :
                                 </th>
-                                <td>
-                                    23
-                                </td>
+                                <td id="a_appointmentdate"></td>
 
                             </tr>
                             <tr>
 
                                 <th>
-                                    Description
+                                    message
                                 </th>
-                                <td id="content" colspan="3">
-                                    bla bla
-                                </td>
+                                <td id="a_message" colspan="3"></td>
                             </tr>
 
                         </table>
@@ -284,78 +270,70 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="" method="POST">
+                            @csrf
                             <div class="row">
 
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Name:</label>
-                                        <input type="text" class="form-control" id="name1" placeholder="Name">
+                                        <input type="text" name="fullname" class="form-control" id="edit_fullname"
+                                            >
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <label class="col-form-label">Date Of Appointment:</label>
-                                        <input size="16" type="date" class="form-control">
+                                        <label class="col-form-label">Email:</label>
+                                        <input size="16" name="email" type="date" class="form-control" id="edit_email">
                                     </div>
                                 </div>
 
 
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <label class="col-form-label">Mobile No:</label>
-                                        <input type="number" class="form-control" id="moblie1" placeholder="Mobile">
+                                        <label class="col-form-label">Phone:</label>
+                                        <input type="number" name="phone" class="form-control" id="edit_phone"
+                                            >
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <label class="col-form-label">Email Id:</label>
-                                        <input type="email" class="form-control" id="email1" placeholder="Email">
+                                        <label class="col-form-label">Choose Doctor:</label>
+                                        <input type="text" name="choosedoctor" class="form-control"  id="edit_choosedoctor">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <label class="col-form-label">Consulting Doctor:</label>
-                                        <select class="form-control">
-                                            <option>Dr.HANI B BARADI</option>
-                                            <option>Dr.NAJJIA N MAHMOUD</option>
-                                            <option>Dr. SANKAR NAIDU ADUSUMILLI</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Gender</label>
-                                        <select class="form-control">
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                        </select>
+                                        <label class="col-form-label">Select Department:</label>
+                                        <input type="text" name="selectdepartment" class="form-control" id="edit_selectdepartment" >
                                     </div>
                                 </div>
 
+
                                 <div class="col-xl-6">
                                     <div class="form-group">
-                                        <label class="col-form-label">Injury/Condition:</label>
-                                        <input type="text" class="form-control" id="fever" placeholder="fever">
+                                        <label class="col-form-label">Appointment Date</label>
+                                        <input type="date" name="appointmentdate" class="form-control" id="edit_appointmentdate"
+                                            >
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="form-group">
-                                        <label class="col-form-label">Address :</label>
-                                        <textarea class="form-control" id="address"></textarea>
+                                        <label class="col-form-label">Message :</label>
+                                        <textarea class="form-control" name="message" id="edit_message"></textarea>
                                     </div>
                                 </div>
 
                             </div>
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
 
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
+
                 </div>
             </div>
         </div>
