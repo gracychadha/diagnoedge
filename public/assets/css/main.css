@@ -4436,6 +4436,9 @@ button:focus {
     .time {
     font-weight: 600;
 }
+.footer .footer-copyright{
+    border-top: 1px solid ;
+}
 .footer .footer-copyright .footer-copyright-wrap {
     background-color: var(--extra-color-six);
     padding-top: 15px;
@@ -15315,7 +15318,7 @@ button:focus {
 }
 .testimonials-section-2 .testimonials-item {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: var(--white-color);
     padding: 30px;
     border-radius: var(--border-radius-three);
@@ -15353,8 +15356,8 @@ button:focus {
     font-size: 16px;
 }
 .testimonials-section-2 .testimonials-item .testimonials-content {
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--border-color-one);
     position: relative;
 }
@@ -15378,13 +15381,14 @@ button:focus {
     margin-bottom: 10px;
 }
 .testimonials-section-2 .testimonials-item .testimonials-content p {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.6rem;
     margin-bottom: 0;
+    text-align:justify;
 }
 @media (max-width: 767px) {
     .testimonials-section-2 .testimonials-item .testimonials-content p {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 .testimonials-section-2 .testimonials-item .testimonials-author {
@@ -16668,7 +16672,7 @@ button.btn-success:hover {
     position: relative;
 }
 .sticky-footer p button {
-    background-color: #ddf6fa;
+    background-color: #abe4a6;
     color: #035e58;
     padding: 10px;
     border-radius: 5px;

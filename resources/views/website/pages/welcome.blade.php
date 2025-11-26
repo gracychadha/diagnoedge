@@ -443,10 +443,10 @@
 
 
         <!-- product section start -->
-        <section class="product-section background-one pt-20  md-pt-50 pb-70 md-pb-50">
+        <section class="product-section background-one pt-50  md-pt-50 pb-50 md-pb-50">
             <div class="container-fluid">
                 {{-- section for test packages start--}}
-                <div class="container pt-20">
+                <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- section title start -->
@@ -480,11 +480,11 @@
                     <div class="tab-pane fade active show" id="nav-THP" role="tabpanel" aria-labelledby="nav-THP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class=" lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -517,9 +517,9 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -548,7 +548,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class=" lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -579,7 +579,37 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                        <div class="position-relative">
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
+                                                alt="Truehealth Vital Test">
+                                            <span
+                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
+                                                0
+                                            </span>
+                                        </div>
+                                        <div class="p-3">
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
+                                            <p class="text-muted small mb-2">
+                                                <span class="badge bg-light text-dark border">9 Profile | 81
+                                                    Parameters</span>
+                                            </p>
+                                            <hr class="my-2">
+                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -609,39 +639,9 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -679,13 +679,13 @@
                     <div class="tab-pane fade  show" id="nav-male-THP" role="tabpanel" aria-labelledby="nav-male-THP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class=" lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -715,7 +715,7 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -745,7 +745,37 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                        <div class="position-relative">
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
+                                                alt="Truehealth Vital Test">
+                                            <span
+                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
+                                                0
+                                            </span>
+                                        </div>
+                                        <div class="p-3">
+                                            <a href="{{ route('health-package') }}">
+                                                <h6 class="title-card mb-1">
+                                                    Truehealth Vital with Body Vitals Check & More
+                                                </h6>
+                                            </a>
+                                            <p class="text-muted small mb-2">
+                                                <span class="badge bg-light text-dark border">9 Profile | 81
+                                                    Parameters</span>
+                                            </p>
+                                            <hr class="my-2">
+                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
+                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
+                                                aria-label="Add to Cart">
+                                                <span data-text="Add to Cart">Add to Cart</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -775,9 +805,9 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -805,39 +835,9 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -874,13 +874,13 @@
                     <div class="tab-pane fade  show" id="nav-female-THP" role="tabpanel"
                         aria-labelledby="nav-female-THP-tab" tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class=" lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
+                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
                                             <span
                                                 class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
@@ -910,7 +910,7 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -940,7 +940,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -970,7 +970,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1000,7 +1000,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1030,7 +1030,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1069,7 +1069,7 @@
             </div>
 
             {{-- section for test packages start FOR Popular Tests--}}
-            <div class="container-fluid pt-40">
+            <div class="container-fluid pt-30">
                 <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
@@ -1104,11 +1104,11 @@
                     <div class="tab-pane fade active show" id="nav-TP" role="tabpanel" aria-labelledby="nav-TP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1138,7 +1138,7 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1166,7 +1166,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1194,7 +1194,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1222,7 +1222,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1250,7 +1250,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1288,11 +1288,11 @@
                     <div class="tab-pane fade  show" id="nav-male-TP" role="tabpanel" aria-labelledby="nav-male-TP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1322,7 +1322,7 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1350,7 +1350,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1378,7 +1378,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1406,7 +1406,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1434,7 +1434,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1471,11 +1471,11 @@
                     <div class="tab-pane fade  show" id="nav-female-TP" role="tabpanel" aria-labelledby="nav-female-TP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
+                        <div class="swiper myProductSwiper pb-20">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1505,7 +1505,7 @@
 
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1533,7 +1533,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1561,7 +1561,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1589,7 +1589,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1617,7 +1617,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="lab-test-card shadow-sm border-0 rounded-4 overflow-hidden bg-white">
+                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                         <div class="position-relative">
                                             <img src="assets/images/product/test.jpg" class="img-fluid w-100"
                                                 alt="Truehealth Vital Test">
@@ -1652,7 +1652,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid pt-40">
+            <div class="container-fluid pt-30">
                 <div class="row container">
                     <div class="col-lg-12">
                         <!-- section title start -->
@@ -1704,7 +1704,7 @@
         </section>
         <!-- product section end -->
         <!-- about section start -->
-        <section class="about-section-4 pt-70 md-pt-80 pb-100 md-pb-80">
+        <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
@@ -1778,14 +1778,14 @@
         <!-- about section end -->
 
         <!-- blog section start -->
-        <section class="blog-section background-one pt-40 md-pt-80 pb-40 md-pb-50">
+        <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- section title start -->
                         <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
                             <span class="sub-title">Blog &amp; Article</span>
-                            <h2>Update with our latest trends &amp; insights</h2>
+                            <h2>Update with our latest  insights</h2>
                         </div>
                         <!-- section title end -->
                     </div>
@@ -1904,1545 +1904,10 @@
             </div>
         </section>
         <!-- blog section end -->
-        <!-- micon section start -->
-        {{-- <section class="micon-section pt-100 md-pt-80 pb-70 md-pb-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <!-- micon items start -->
-                        <div class="micon-items micon-items-one wow fadeInUp" data-wow-delay=".2s">
-                            <div class="micon-icon">
-                                <figure>
-                                    <img src="assets/images/micon/book-appointment.png" alt="micon book appointment">
-                                </figure>
-                            </div>
-                            <div class="micon-content">
-                                <h2>Book Appointment</h2>
-                                <p>Choose a date and time that works for you we'll take care of the rest.</p>
-                                <div class="micon-button">
-                                    <a href="{{ route(" appointment") }}" class="read-more-btn">Request an Appointment</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- micon items end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- micon items start -->
-                        <div class="micon-items micon-items-two wow fadeInUp" data-wow-delay=".3s">
-                            <div class="micon-icon">
-                                <figure>
-                                    <img src="assets/images/micon/qualified-doctors.png" alt="micon qualified doctors">
-                                </figure>
-                            </div>
-                            <div class="micon-content">
-                                <h2>Qualified Doctors</h2>
-                                <p>Our team of expert doctors ensures top-quality treatment every time.</p>
-                                <div class="micon-button">
-                                    <a href="{{ route(" doctors") }}" class="read-more-btn">View All Doctor</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- micon items end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- micon items start -->
-                        <div class="micon-items micon-items-three wow fadeInUp" data-wow-delay=".4s">
-                            <div class="micon-icon">
-                                <figure>
-                                    <img src="assets/images/micon/services.png" alt="micon services">
-                                </figure>
-                            </div>
-                            <div class="micon-content">
-                                <h2>24/7 Services</h2>
-                                <p>24/7 care you can count on anybody, anytime, anywhere.</p>
-                                <div class="micon-button">
-                                    <a href="{{ route(" contact-us") }}" class="read-more-btn">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- micon items end -->
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- micon section end -->
-
-
-
-
-        <!-- product section start -->
-        {{-- <section class="product-section background-one pt-100 md-pt-50 pb-70 md-pb-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Best Health Tests</span>
-                            <h2>Good health starts with regular health tests</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div>
-                <div class="container pt-20">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- section title start -->
-                            <h5 class="text-center pt-20 pb-20">Tru Health Packages</h5>
-                            <!-- section title end -->
-                        </div>
-                        <!-- pricing tabs start -->
-                        <div class="pricing-tabs">
-                            <!-- nav start -->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link" id="nav-male-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-male-THP" type="button" role="tab" aria-controls="nav-male-THP"
-                                        aria-selected="false">For Male</button>
-                                    <button class="nav-link active" id="nav-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-THP" type="button" role="tab" aria-controls="nav-THP"
-                                        aria-selected="true">Tru Health Packages</button>
-
-                                    <button class="nav-link" id="nav-female-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-female-THP" type="button" role="tab"
-                                        aria-controls="nav-female-THP" aria-selected="false">For Female</button>
-                                </div>
-                            </nav>
-                            <!-- nav end -->
-                        </div>
-                        <!-- pricing tabs end -->
-                    </div>
-                </div>
-                <div class="tab-content">
-
-                    <div class="tab-pane fade active show" id="nav-THP" role="tabpanel" aria-labelledby="nav-THP-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-
-                    </div>
-
-                    <div class="tab-pane fade  show" id="nav-male-THP" role="tabpanel" aria-labelledby="nav-male-THP-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-                    </div>
-
-                    <div class="tab-pane fade  show" id="nav-female-THP" role="tabpanel"
-                        aria-labelledby="nav-female-THP-tab" tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="container-fluid pt-20">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <!-- pricing tabs start -->
-                        <div class="pricing-tabs">
-                            <!-- section title start -->
-                            <h5 class="text-center pt-20 pb-20">Popular Tests Packages</h5>
-                            <!-- section title end --></nav>
-                            <!-- nav start -->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link" id="nav-male-PT-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-male-PT" type="button" role="tab" aria-controls="nav-male-PT"
-                                        aria-selected="false">For Male</button>
-                                    <button class="nav-link active" id="nav-PT-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-PT" type="button" role="tab" aria-controls="nav-PT"
-                                        aria-selected="true">Popular Tests Packages</button>
-
-                                    <button class="nav-link" id="nav-female-PT-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-female-PT" type="button" role="tab"
-                                        aria-controls="nav-female-PT" aria-selected="false">For Female</button>
-                                </div>
-                            </nav>
-                            <!-- nav end -->
-                        </div>
-                        <!-- pricing tabs end -->
-                    </div>
-                </div>
-                <div class="tab-content">
-
-                    <div class="tab-pane fade active show" id="nav-PT" role="tabpanel" aria-labelledby="nav-PT-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-
-                    </div>
-
-                    <div class="tab-pane fade  show" id="nav-male-PT" role="tabpanel" aria-labelledby="nav-male-PT-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-                    </div>
-
-                    <div class="tab-pane fade  show" id="nav-female-PT" role="tabpanel" aria-labelledby="nav-female-THP-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale one">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-1.png" alt="product image one">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">CM 4336 RG Luxury Stethoscope</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller two"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-2.png" alt="product image two">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Adjustable blood pressure machine</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/sale.png" alt="sale three">
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-3.png"
-                                                    alt="product image three"></figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Oral Lamp with 8 LED Light Bulbs</a>
-                                            </h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-grid-item-1 wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="product-tags">
-                                            <div class="product-tags-sale">
-                                                <figure><img src="assets/images/product/bestseller.png"
-                                                        alt="bestseller four"></figure>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-image">
-                                            <figure><img src="assets/images/product/product-4.png" alt="product image four">
-                                            </figure>
-                                            <div class="product-grid-action">
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-eye"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-bookmark"></i></a>
-                                                <a href="{{ route(" contact-us") }}" class="icon-btn"><i
-                                                        class="fa-solid fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-grid-content">
-                                            <h2><a href="#">Zoom Microscope for Eye Surgery</a></h2>
-                                            <ul class="product-price-list">
-                                                <li class="price">$120.00</li>
-                                                <li><i class="fas fa-star active"></i>4.9 (25)</li>
-                                            </ul>
-                                            <div class="product-buton-wapper">
-                                                <a href="{{ route(" contact-us") }}" class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-                    </div>
-                </div>
-            </div>
-
-            </div>
-        </section> --}}
-        <!-- product section end -->
-
-        <!-- why-section start -->
-        {{-- <section class="why-choose-section-1 pt-100 md-pt-80 pb-100 md-pb-80">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why content start -->
-                        <div class="why-content">
-                            <!-- section-title start -->
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Why Choose Us</span>
-                                <h2>Compassion and expertise, perfectly combined</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                            <!-- section-title end -->
-                            <!-- why choose box list start -->
-                            <div class="why-choose-box-list wow fadeInUp" data-wow-delay=".3s">
-                                <!-- why choose box start -->
-                                <div class="why-choose-box">
-                                    <div class="icon-box">
-                                        <figure>
-                                            <img src="assets/images/why-choose/icon-why-choose-1.png"
-                                                alt="icon why choose one">
-                                        </figure>
-                                    </div>
-                                    <div class="why-choose-box-content">
-                                        <h3>Patient centered</h3>
-                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
-                                    </div>
-                                </div>
-                                <!-- why choose box end -->
-                                <!-- why choose box start -->
-                                <div class="why-choose-box">
-                                    <div class="icon-box">
-                                        <figure>
-                                            <img src="assets/images/why-choose/icon-why-choose-2.png"
-                                                alt="icon why choose two">
-                                        </figure>
-                                    </div>
-                                    <div class="why-choose-box-content">
-                                        <h3>Emergency support</h3>
-                                        <p>There are many variations of lorem Ipsum btmred ine form injected humour.</p>
-                                    </div>
-                                </div>
-                                <!-- why choose box end -->
-                            </div>
-                            <!-- why choose box list end -->
-                            <!-- why choose list start -->
-                            <div class="why-choose-list wow fadeInUp" data-wow-delay=".4s">
-                                <ul>
-                                    <li>Strategic eye care planning</li>
-                                    <li>Highly skilled medical team</li>
-                                </ul>
-                            </div>
-                            <!-- why choose list end -->
-                        </div>
-                        <!-- why content end -->
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why choose image start -->
-                        <div class="why-choose-image">
-                            <!-- why choose img 1 start -->
-                            <div class="why-choose-img-1">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-1.jpg" alt="why choose image one">
-                                </figure>
-                            </div>
-                            <!-- why choose img 1 end -->
-                            <!-- why choose img 2 start -->
-                            <div class="why-choose-img-2">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-2.jpg" alt="why choose image two">
-                                </figure>
-                            </div>
-                            <!-- why choose img 2 end -->
-                            <!-- why choose about circle start -->
-                            <div class="why-choose-about-circle">
-                                <a class="about-circle" href="{{ route(" about-us") }}" aria-label="about circle">
-                                    <img src="assets/images/shape/round-about-us.png" alt="round about us">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- why choose contact circle end -->
-                        </div>
-                        <!-- why choose image end -->
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- why-section end -->
-
-        <!-- services section start -->
-        {{-- <section class="services-section-1 background-one pt-100 md-pt-80 pb-100 md-pb-80"
-            data-img-src="assets/images/shape/bg-shape-1.png">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title area start -->
-                        <div class="section-title-area">
-                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Our Services</span>
-                                <h2>Best explore our wellness services</h2>
-                            </div>
-                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis
-                                    dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam
-                                    obcaecati accusantium.</p>
-                            </div>
-                        </div>
-                        <!-- section title area end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- services slider start -->
-                        <div class="swiper services-slider">
-                            <!-- swiper wrapper start -->
-                            <div class="swiper-wrapper">
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-1.png" alt="icon service one">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Cataract evaluation</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-2.png" alt="icon service two">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Contact lens fitting</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-3.png"
-                                                    alt="icon service three">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Dry eye treatment</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-4.png"
-                                                    alt="icon service four">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Pediatric eye care</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-5.png"
-                                                    alt="icon service five">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Glaucoma surgery</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- service items start -->
-                                    <div class="service-items">
-                                        <div class="service-icon">
-                                            <figure>
-                                                <img src="assets/images/services/icon-service-6.png" alt="icon service six">
-                                            </figure>
-                                        </div>
-                                        <div class="service-content">
-                                            <h2><a href="#">Glaucoma &amp; cornea</a></h2>
-                                            <p>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout</p>
-                                            <a href="#" class="read-more-btn">More Details</a>
-                                        </div>
-                                    </div>
-                                    <!-- service items end -->
-                                </div>
-                                <!-- swiper slide end -->
-                            </div>
-                            <!-- swiper wrapper end -->
-                            <!-- swiper actions start -->
-                            <div class="swiper-actions text-center">
-                                <div class="dot"></div>
-                            </div>
-                            <!-- swiper actions end -->
-                        </div>
-                        <!-- services slider end -->
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- services section end -->
+      
 
         <!-- portfolio section start -->
-        <section class="portfolio-section-1 pt-40 md-pt-80 pb-40 md-pb-80">
+        <section class="portfolio-section-1 pt-50 md-pt-80 pb-50 md-pb-80">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -3566,7 +2031,7 @@
         @include("website.components.sticker")
         <!-- marquee ticker section end -->
         <!-- faq section start -->
-        <section class="faq-section-1 pt-70 md-pt-80">
+        <section class="faq-section-1 pt-50 md-pt-80">
             <div class="container">
                 <!-- faq wapper start -->
                 <div class="faq-wapper">
