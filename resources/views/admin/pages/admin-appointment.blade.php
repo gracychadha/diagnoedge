@@ -69,17 +69,21 @@
 
                                                 <td>
                                                     <span class="me-3">
-                                                        <a href="" data-bs-toggle="modal" data-bs-target="#viewAppointment"><i
-                                                                class="fa fa-eye fs-18"></i></a>
+                                                        <a href="javascript:void(0);" data-id="{{ $appointment->id }}"
+                                                            class="viewApp fa fa-eye fs-18"></i></a>
                                                     </span>
-                                                    <span class="me-3">
-                                                        <a href="" class="edit-appointment" data-bs-toggle="modal"
-                                                            data-bs-target="#editAppointment"><i
-                                                                class="fa fa-pencil fs-18 "></i></a>
-                                                    </span>
+                                                  <span class="me-3">
+                                                     <a href="javascript:void(0);" 
+   data-id="{{ $appointment->id }}" 
+   class="editApp fa fa-pencil fs-18" 
+   data-bs-toggle="modal"
+   data-bs-target="#editAppointment"></a>
+                                                  </span>
+
                                                     <span>
-                                                        <i class="fa fa-trash fs-18 text-danger" aria-hidden="true"></i>
-                                                    </span>
+   <i class="fa fa-trash fs-18 text-danger deleteApp" data-id="{{ $appointment->id }}"></i>
+</span>
+
                                                 </td>
                                             </tr>
 
@@ -270,22 +274,24 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST">
+                        <form id="updateAppointmentForm">
                             @csrf
+                            <input type="hidden" id="edit_id" name="id">
+
                             <div class="row">
 
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Name:</label>
-                                        <input type="text" name="fullname" class="form-control" id="edit_fullname"
-                                            >
+                                        <input type="text" name="fullname" class="form-control" id="edit_fullname">
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Email:</label>
-                                        <input size="16" name="email" type="date" class="form-control" id="edit_email">
+                                       <input type="email" name="email" class="form-control" id="edit_email">
+
                                     </div>
                                 </div>
 
@@ -293,20 +299,20 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Phone:</label>
-                                        <input type="number" name="phone" class="form-control" id="edit_phone"
-                                            >
+                                        <input type="number" name="phone" class="form-control" id="edit_phone">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Choose Doctor:</label>
-                                        <input type="text" name="choosedoctor" class="form-control"  id="edit_choosedoctor">
+                                        <input type="text" name="choosedoctor" class="form-control" id="edit_choosedoctor">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Select Department:</label>
-                                        <input type="text" name="selectdepartment" class="form-control" id="edit_selectdepartment" >
+                                        <input type="text" name="selectdepartment" class="form-control"
+                                            id="edit_selectdepartment">
                                     </div>
                                 </div>
 
@@ -314,8 +320,8 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Appointment Date</label>
-                                        <input type="date" name="appointmentdate" class="form-control" id="edit_appointmentdate"
-                                            >
+                                        <input type="date" name="appointmentdate" class="form-control"
+                                            id="edit_appointmentdate">
                                     </div>
                                 </div>
                                 <div class="col-xl-12">

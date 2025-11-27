@@ -3,12 +3,14 @@
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Subparameter;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\SubparameterController;
 
 
 
@@ -123,9 +125,6 @@ Route::post('/store', [ContactController::class, 'store'])->name('contact-us.sto
 
 
 
-
-
-
 // ALL THE ROUTES FOR BACKEND DASHBOARD
 
 // routes/web.php
@@ -171,19 +170,31 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+   
+    //    FOR SUB-PARAMETERS 
+    Route::get('/admin-subparameters', [SubparameterController::class, 'index'])->name('admin-subparameter.index');
+    Route::post('/subparameters/store', [SubparameterController::class, 'store'])->name('admin-subparamters.store');
+    Route::get('/subparameter/view/{id}', [SubparameterController::class, 'view']);
+    Route::post('/subparameter/update', [SubparameterController::class, 'update']);
+    Route::delete('/subaparameter/delete/{id}',[SubparameterController::class,'delete']);
+    // FOR DOCTOR
+    Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
+    Route::get('/admin-doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
+    Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
+    Route::post('/doctors/update', [DoctorController::class, 'update']);
+    Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
+      
+    // FOR APPOINTMENT
+    Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
+   // Appointment CRUD
+Route::get('/appointment/view/{id}', [AppointmentController::class, 'view']);
+Route::post('/appointment/update', [AppointmentController::class, 'update']);
+Route::delete('/appointment/delete/{id}', [AppointmentController::class, 'delete']);
+
+
 });
 
 
-// FOR DOCTOR
-Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
-Route::get('/admin-doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
-Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
-Route::post('/doctors/update', [DoctorController::class, 'update']);
-Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
-
-// FOR APPOINTMENT
-Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
-Route::post('/appointments/update', [AppointmentController::class, 'update']);
 
 
 require __DIR__ . '/auth.php';

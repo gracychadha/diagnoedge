@@ -1,7 +1,7 @@
 <div class="nav-header">
     <a href="{{ route('dashboard') }}" class="brand-logo d-flex align-items-center">
         <!-- Logo Image -->
-        <img src="{{ asset('assets/images/favicon.png') }}" alt="Logo" class="logo-abbr" >
+        {{-- <img src="{{ asset('assets/images/favicon.png') }}" alt="Logo" class="logo-abbr" > --}}
 
         <!-- Optional: Brand Title next to logo -->
         <span class="brand-title ms-2">

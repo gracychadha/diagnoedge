@@ -23,7 +23,7 @@
 
 
     {{-- summernote --}}
-   <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
 
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
@@ -82,45 +82,6 @@
             }
         });
 
-        // Function to generate slug from title
-        function generateSlug(title) {
-            return title
-                .toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                .trim()
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/-+/g, '-'); // Replace multiple hyphens with a single hyphen
-        }
-        // Auto-generate slug for Add modal
-        $('#add-title').on('input', function () {
-            var title = $(this).val();
-            var slug = generateSlug(title);
-            $('#add-slug').val(slug);
-        });
-
-        // for summernote
-        $(function () {
-            $('#place').summernote({
-                placeholder: 'Write place details here...',
-                tabsize: 2,
-                height: 200,           // editor height in px
-
-            });
-            $('#address').summernote({
-                placeholder: 'Write place details here...',
-                tabsize: 2,
-                height: 200,           // editor height in px
-
-            });
-            $('#aboutCompany').summernote({
-                placeholder: 'Write place details here...',
-                tabsize: 2,
-                height: 200,           // editor height in px
-
-            });
-        });
-    </script>
-    <script>
         function assignedDoctor() {
             /*  testimonial one function by = owl.carousel.js */
             jQuery(".assigned-doctor").owlCarousel({
@@ -170,9 +131,57 @@
                 assignedDoctor();
             }, 1000);
         });
-    </script>
-    <script>
-       
+
+        //+++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR SUMMERNOTE
+        $(function () {
+            $('#place').summernote({
+                placeholder: 'Write place details here...',
+                tabsize: 2,
+                height: 200,           // editor height in px
+
+            });
+            $('#address').summernote({
+                placeholder: 'Write place details here...',
+                tabsize: 2,
+                height: 200,           // editor height in px
+
+            });
+            $('#aboutCompany').summernote({
+                placeholder: 'Write place details here...',
+                tabsize: 2,
+                height: 200,           // editor height in px
+
+            });
+            $('#subparameterDexcription').summernote({
+                placeholder: 'Write details here...',
+                tabsize: 2,
+                height: 200,           // editor height in px
+
+            });
+        });
+        // FUNCTIONS TO CREATE SLUG
+        function generateSlug(title) {
+            return title
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .trim()
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-'); // Replace multiple hyphens with a single hyphen
+        }
+        // Auto-generate slug for Add modal
+        $('#add-title').on('input', function () {
+            var title = $(this).val();
+            var slug = generateSlug(title);
+            $('#add-slug').val(slug);
+        });
+        $('#edit_title').on('input', function () {
+            var title = $(this).val();
+            var slug = generateSlug(title);
+            $('#edit_slug').val(slug);
+        });
+        // +++++++++++++++++++++++++++++++++++++++++++++++++
+        // ADD PACKAGE 
         $(document).ready(function () {
 
             // Add package
@@ -214,9 +223,8 @@
             });
 
         });
-
-    </script>
-    <script>
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR DOCTOR CRUD 
         $(document).on('click', '.viewDoctor', function () {
 
             var id = $(this).data('id');
@@ -244,7 +252,6 @@
             });
 
         });
-        // for edit_designation
         $(document).on('click', '.editDoctor', function () {
 
             var id = $(this).data('id');
@@ -324,6 +331,216 @@
             });
 
         });
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR SUB PARAMETERS CRUD
+        $(document).on('click', '.viewSubparameter', function () {
+            var id = $(this).data('id');
+            $.ajax({
+                url: "{{ url('/subparameter/view') }}/" + id,
+                type: "GET",
+                success: function (subparameter) {
+
+                    // Fill modal data
+                    $('#v_title').text(subparameter.title);
+                    $('#v_slug').text(subparameter.slug);
+                    $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
+                    $('#v_description').text(subparameter.description);
+                    $('#v_parameter').text(subparameter.parameter_title);
+
+
+                    // Open modal
+                    $('#viewSubparameter').modal('show');
+                }
+            });
+
+        });
+        $(document).on('click', '.editSubparameter', function () {
+
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: "{{ url('/subparameter/view') }}/" + id,
+                type: "GET",
+                success: function (subparameter) {
+
+                    $('#edit_id').val(subparameter.id);
+                    $('#edit_title').val(subparameter.title);
+                    $('#edit_slug').val(subparameter.slug);
+                    $('#edit_status').val(subparameter.status);
+                    $('#edit_description').val(subparameter.description);
+                    // $('#edit_parameter_id').val(subparameter.parameter_id);
+                    $('#edit_parameter_id').val(subparameter.parameter_id).trigger('change');
+
+
+                    $('#editSubparmeter').modal('show');
+                }
+            });
+        });
+        $('#editSubparameterForm').on('submit', function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ url('/subparameter/update') }}",
+                data: formData,
+                contentType: false,
+                processData: false,
+
+                success: function (response) {
+                    Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
+                    $('#editSubparmeter').modal('hide');
+                    location.reload();
+                }
+            });
+
+
+        });
+        $(document).on("click", ".deleteSubparameter", function () {
+
+            let id = $(this).data("id");
+            let row = $(this).closest("tr");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This Sub-parameter will be permanently deleted!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ url('/subaparameter/delete') }}/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+
+                            Swal.fire("Deleted!", "Sub-parameter removed successfully.", "success");
+
+                            // remove row
+                            row.fadeOut(600, function () {
+                                $(this).remove();
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR APPOINTMENT CRUD
+        $(document).ready(function () {
+            $('.viewApp').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/appointment/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#a_name').text(res.fullname);
+                        $('#a_email').text(res.email);
+                        $('#a_phone').text(res.phone);
+                        $('#a_doctor').text(res.choosedoctor);
+                        $('#a_selectdepartment').text(res.selectdepartment);
+                        $('#a_appointmentdate').text(res.appointmentdate);
+                        $('#a_message').html(res.message);
+
+                        $('#viewAppointment').modal('show');
+                    }
+                });
+            });
+            $('.editApp').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/appointment/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#edit_id').val(res.id);
+                        $('#edit_fullname').val(res.fullname);
+                        $('#edit_email').val(res.email);
+                        $('#edit_phone').val(res.phone);
+                        $('#edit_choosedoctor').val(res.choosedoctor);
+                        $('#edit_selectdepartment').val(res.selectdepartment);
+                        $('#edit_appointmentdate').val(res.appointmentdate);
+                        $('#edit_message').val(res.message);
+
+                        $('#editAppointment').modal('show');
+                    }
+                });
+            });
+            $('#updateAppointmentForm').submit(function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: "/appointment/update",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
+                        $('#editAppointment').modal('hide');
+                        location.reload();
+                    }
+                });
+
+            });
+            $('.deleteApp').click(function () {
+
+                let id = $(this).data("id");
+                let row = $(this).closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This Appointment will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            url: "{{ url('/appointment/delete') }}/" + id,
+                            type: "DELETE",
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function (response) {
+
+                                Swal.fire("Deleted!", "Appointment Query removed successfully.", "success");
+
+                                // remove row
+                                row.fadeOut(600, function () {
+                                    $(this).remove();
+                                });
+                            }
+                        });
+
+                    }
+                });
+
+            });
+        });
+        //+++++++++++++++++++++++++++++++++++++++
+
+
 
 
     </script>

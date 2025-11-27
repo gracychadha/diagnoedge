@@ -214,8 +214,7 @@
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </button>
-                            {{-- <button type="submit" id="bookingSubmit" class="theme-button theme-button style-1 w-100"
-                                disabled>Submit <i class="fa fa-paper-plane "></i></button> --}}
+
                         </form>
                     </div>
                 </div>
@@ -312,84 +311,87 @@
             </div>
         </section> --}}
         <!-- hero section end -->
-      <section class="banner-booknoow space-between sidespace">
-    <div class="container-fluid">
-        <div class="row gy-4 align-items-stretch">
+        <section class="banner-booknoow space-between sidespace">
+            <div class="container-fluid">
+                <div class="row gy-4 align-items-stretch">
 
-            <!-- LEFT: CAROUSEL -->
-            <div class="col-xl-9 col-lg-8 col-md-12 col-12">
-                <div id="carouselExampleFade "
-                    class="carousel slide carousel-fade rounded-4 overflow-hidden shadow-lg"
-                    data-bs-ride="carousel" data-bs-interval="5000">
+                    <!-- LEFT: CAROUSEL -->
+                    <div class="col-xl-9 col-lg-8 col-md-12 col-12">
+                        <div id="carouselExampleFade "
+                            class="carousel slide carousel-fade rounded-4 overflow-hidden shadow-lg" data-bs-ride="carousel"
+                            data-bs-interval="5000">
 
-                    <!-- Controls -->
-                    <div class="position-absolute top-0 end-0 d-flex gap-2 m-3" style="z-index: 10;">
-                        <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="prev"><i class="fa fa-chevron-left"></i></button>
-                        <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="next"><i class="fa fa-chevron-right"></i></button>
+                            <!-- Controls -->
+                            <div class="position-absolute top-0 end-0 d-flex gap-2 m-3" style="z-index: 10;">
+                                <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="prev"><i class="fa fa-chevron-left"></i></button>
+                                <button class="btn btn-outline-light btn-lg" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="next"><i class="fa fa-chevron-right"></i></button>
+                            </div>
+
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
+                            </div>
+
+                            <!-- Slides -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block w-100" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
-                    </div>
+                    <!-- RIGHT: CARD -->
+                    <div class="col-xl-3 col-lg-4 col-md-12 col-12">
+                        <div class="card p-4 shadow-lg border-0 rounded-4 h-100">
+                            <h3 class="text-center mb-3 fw-bold text-success">Book a Test Online</h3>
 
-                    <!-- Slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/breadcrumb/banner-diagno.jpg" class="d-block w-100" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/breadcrumb/banner-diagno.png" class="d-block w-100" alt="">
+                            <div class="mb-2">
+                                <p class=" mb-2">If you Already Know What Test to Take</p>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
+                                        <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
+                                        <span class="vr ms-2"></span>
+                                    </span>
+                                    <input type="text" id="already_know" class="form-control  border-start-0"
+                                        placeholder="Search and book" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <p class=" mb-2">Find a Nearest Center</p>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
+                                        <img src="assets/images/logo/center.svg" alt="icon" width="35" height="25">
+                                        <span class="vr ms-2"></span>
+                                    </span>
+                                    <input type="text" placeholder="Enter Area" class="form-control  border-start-0"
+                                        id="find_center2" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-2">
+                                <small class="fw-bold text-success"><i class="fa fa-clock"></i> Get reports in 24–48
+                                    hours</small>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-
-            <!-- RIGHT: CARD -->
-            <div class="col-xl-3 col-lg-4 col-md-12 col-12">
-                <div class="card p-4 shadow-lg border-0 rounded-4 h-100">
-                    <h3 class="text-center mb-3 fw-bold text-success">Book a Test Online</h3>
-
-                    <div class="mb-2">
-                        <p class=" mb-2">If you Already Know What Test to Take</p>
-                        <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
-                                <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
-                                <span class="vr ms-2"></span>
-                            </span>
-                            <input type="text" id="already_know" class="form-control  border-start-0" placeholder="Search and book" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="mb-2">
-                        <p class=" mb-2">Find a Nearest Center</p>
-                       <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
-                                <img src="assets/images/logo/center.svg" alt="icon" width="35" height="25">
-                                <span class="vr ms-2"></span>
-                            </span>
-                            <input type="text" placeholder="Enter Area" class="form-control  border-start-0" id="find_center2" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-2">
-                        <small class="fw-bold text-success"><i class="fa fa-clock"></i> Get reports in 24–48 hours</small>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
 
 
@@ -1730,8 +1732,8 @@
         </section>
         <!-- about section end -->
 
-      
-           <!-- marquee ticker section start -->
+
+        <!-- marquee ticker section start -->
         @include("website.components.sticker")
         <!-- marquee ticker section end -->
 
@@ -1856,110 +1858,108 @@
         </section>
         <!-- portfolio section end -->
 
-   
-       
 
+        <section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+            <div class="container">
+                <div class="row align-items-center">
 
-        <!-- appointment section start -->
-        {{-- @include("website.components.cta") --}}
-        <!-- appointment section end -->
+                    <!-- Left Content -->
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                            <span class="sub-title">Why Choose Us?</span>
+                            <h2>Why DiagnoEdge Labs?</h2>
 
-        <!-- portfolio section end -->
+                            <p class="lead">
+                                DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
+                            </p>
 
+                            <p class="mb-3 lh-lg">
+                                Our team consists of highly trained <strong>certified pathologists</strong> and
+                                <strong>experienced laboratory professionals</strong> who ensure precision, safety, and
+                                reliability in every report.
+                                We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology,
+                                    Microbiology, and Preventive Health</strong>.
+                            </p>
 
+                            <p class="lh-lg">
+                                With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides
+                                <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise
+                                monitoring, and effective treatment planning.
+                            </p>
+                        </div>
+                    </div>
 
-<section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
-  <div class="container">
-    <div class="row align-items-center">
+                    <!-- Right Side - Cards -->
+                    <div class="col-lg-6">
+                        <div class="row g-4 align-items-center">
 
-      <!-- Left Content -->
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-          <span class="sub-title">Why Choose Us?</span>
-          <h2>Why DiagnoEdge Labs?</h2>
+                            <!-- Big Experience Card -->
+                            <div class="col-12 col-md-5">
+                                <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
+                                    style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
+                                    <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                                    <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+
+                                    </h3>
+                                    <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
+                                </div>
+                            </div>
 
-          <p class="lead">
-            DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
-          </p>
+                            <!-- 4 Small Cards -->
+                            <div class="col-12 col-md-7">
+                                <div class="row g-3 g-md-4">
 
-          <p class="mb-3 lh-lg">
-            Our team consists of highly trained <strong>certified pathologists</strong> and 
-            <strong>experienced laboratory professionals</strong> who ensure precision, safety, and reliability in every report. 
-            We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology, Microbiology, and Preventive Health</strong>.
-          </p>
+                                    <!-- Card 1 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+
+                                                Advanced Tests</h5>
+                                        </div>
+                                    </div>
 
-          <p class="lh-lg">
-            With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides 
-            <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise monitoring, and effective treatment planning.
-          </p>
-        </div>
-      </div>
+                                    <!-- Card 2 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by
+                                                Clinics & Hospitals</h5>
+                                        </div>
+                                    </div>
 
-      <!-- Right Side - Cards -->
-      <div class="col-lg-6">
-        <div class="row g-4 align-items-center">
+                                    <!-- Card 3 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled
+                                                Diagnostic Experts</h5>
+                                        </div>
+                                    </div>
 
-          <!-- Big Experience Card -->
-          <div class="col-12 col-md-5">
-            <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
-                 style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
-              <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-              <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+</h3>
-              <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
+                                    <!-- Card 4 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-clipboard-check mb-3"
+                                                style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High
+                                                Accuracy & Reliability</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- 4 Small Cards -->
-          <div class="col-12 col-md-7">
-            <div class="row g-3 g-md-4">
-
-              <!-- Card 1 -->
-              <div class="col-6">
-                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                  <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+ Advanced Tests</h5>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="col-6">
-                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                  <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by Clinics & Hospitals</h5>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="col-6">
-                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                  <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled Diagnostic Experts</h5>
-                </div>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="col-6">
-                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                     style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                  <i class="fas fa-clipboard-check mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                  <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High Accuracy & Reliability</h5>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
- <!-- faq section start -->
+        <!-- faq section start -->
         <section class="faq-section-1 mb-5 pt-50 md-pt-80">
             <div class="container">
                 <!-- faq wapper start -->
@@ -2128,11 +2128,7 @@
         </section>
         <!-- faq section end -->
 
-
-        <!-- testimonials section start -->
-        @include("website.components.testimonials")
-
-  <!-- blog section start -->
+        <!-- blog section start -->
         <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
             <div class="container-fluid">
                 <div class="row">
@@ -2140,7 +2136,7 @@
                         <!-- section title start -->
                         <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
                             <span class="sub-title">Blog &amp; Article</span>
-                            <h2>Update with our latest  insights</h2>
+                            <h2>Update with our latest insights</h2>
                         </div>
                         <!-- section title end -->
                     </div>
@@ -2259,7 +2255,8 @@
             </div>
         </section>
         <!-- blog section end -->
-
+        <!-- testimonials section start -->
+        @include("website.components.testimonials")
 
     </main>
 

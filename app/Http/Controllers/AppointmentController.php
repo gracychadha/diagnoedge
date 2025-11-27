@@ -9,7 +9,7 @@ class AppointmentController extends Controller
 {
     // TO FETCH ALL THE DATA OF APPOINTMENT
     public function index(){
-        $appointments = Appointment::all();
+        $appointments = Appointment::orderBy('id' , 'desc')->get();
         return view('admin.pages.admin-appointment' , compact('appointments'));
     }
 
@@ -65,6 +65,11 @@ $appointments->message = $request->message;
 
 $appointments->save();
 return response()->json(['success' => true]);
+}
+public function delete($id)
+{
+    Appointment::findOrFail($id)->delete();
+    return response()->json(['success' => true]);
 }
 
 }
