@@ -25971,4 +25971,10 @@ color:var(--primary);
 .side-nav-setting li:active {
 background:var(--rgba-primary-1);
 }
+#DZSubscriptionModal {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
 /*# sourceMappingURL=style.css.map */

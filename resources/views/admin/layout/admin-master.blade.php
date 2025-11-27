@@ -25,6 +25,8 @@
     {{-- summernote --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.css" rel="stylesheet">
 
+
+
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
     {{-- data tables --}}
