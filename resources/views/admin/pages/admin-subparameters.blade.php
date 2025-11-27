@@ -158,7 +158,7 @@ $parameters = \App\Models\Parameter::where('status', 'active')->orderBy('title')
                                 <div class="form-group">
                                     <label class="col-form-label">Parameter <small
                                             class="text-muted">(Multiple)</small></label>
-                                    <select name="parameter_id" class="form-control default-select">
+                                    <select name="subparameter_id" class="form-control default-select">
                                         <option value="">— No Parameter —</option>
                                         @foreach($parameters as $parameter)
                                             <option value="{{ $parameter->id }}">{{ $parameter->title }}</option>

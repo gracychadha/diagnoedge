@@ -21,7 +21,7 @@
                 <ul aria-expanded="false">
                     {{-- <li><a  href="" aria-expanded="false"> Package</a> --}}
                         
-                        <li><a href="#">Packages</a></li>
+                        <li><a href="{{ route('packages.index') }}">Packages</a></li>
                         <li><a href="{{ route('admin-subparameter.index') }}">Sub Parameter</a></li>
                         <li><a href="{{ route('admin.pages.parameter') }}">Child Parameter</a></li>
                         <li><a  href="{{ route('admin.pages.test') }}" aria-expanded="false"> Test Details</a>

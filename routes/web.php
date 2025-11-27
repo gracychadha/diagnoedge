@@ -11,6 +11,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SubparameterController;
+use App\Http\Controllers\PackageController;
 
 
 
@@ -68,9 +69,7 @@ Route::get('/appointment', function () {
 })->name('appointment');
 
 
-// Route::get('/admin-appointment', function () {
-//     return view("admin.pages.admin-appointment");
-// })->name('admin-appointment');
+
 Route::get('/admin-staff', function () {
     return view("admin.pages.admin-staff");
 })->name('admin-staff');
@@ -80,9 +79,6 @@ Route::get('/admin-profile', function () {
 Route::get('/admin-patient', function () {
     return view('admin.pages.admin-patient');
 })->name('admin-patient');
-// Route::get('/admin-doctor', function () {
-//     return view('admin.pages.admin-doctor');
-// })->name('admin-doctor');
 Route::get('/website-setting', function () {
     return view('admin.pages.website-setting');
 })->name('website-setting');
@@ -124,39 +120,32 @@ Route::post('/appointment-store', [AppointmentController::class, 'store'])->name
 Route::post('/store', [ContactController::class, 'store'])->name('contact-us.store');
 
 
-
+// +++++++++++++++++++++++++++++++++++++++++++++++
 // ALL THE ROUTES FOR BACKEND DASHBOARD
-
-// routes/web.php
+// +++++++++++++++++++++++++++++++++++++++++++++++
 Route::get('/dashboard', function () {
     return view('admin.pages.dashboard');
 })->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
-
-
-
-   
- // ────────────── Tests Details ──────────────
+    // ────────────── Tests Details ──────────────
     Route::get('/tests', [TestController::class, 'index'])->name('admin.pages.test');
     Route::post('/tests', [TestController::class, 'store'])->name('admin.tests.store');
     Route::put('/tests/{test}', [TestController::class, 'update'])->name('admin.tests.update');
     Route::delete('/tests/{test}', [TestController::class, 'destroy'])->name('admin.tests.destroy');
 
+    // ────────────── PARAMETERS ──────────────
 
-
-
- // ────────────── PARAMETERS ──────────────
-   
     Route::get('/parameters', [ParameterController::class, 'index'])
-        ->name('admin.pages.parameter'); 
+        ->name('admin.pages.parameter');
     Route::post('/parameters', [ParameterController::class, 'store'])
         ->name('admin.parameters.store');
     Route::put('/parameters/{parameter}', [ParameterController::class, 'update'])
         ->name('admin.parameters.update');
     Route::delete('/parameters/{parameter}', [ParameterController::class, 'destroy'])
         ->name('admin.parameters.destroy');
+
     //test services 
 
 
@@ -170,27 +159,29 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-   
-    //    FOR SUB-PARAMETERS 
+
+
+    //FOR SUB-PARAMETERS 
     Route::get('/admin-subparameters', [SubparameterController::class, 'index'])->name('admin-subparameter.index');
     Route::post('/subparameters/store', [SubparameterController::class, 'store'])->name('admin-subparamters.store');
     Route::get('/subparameter/view/{id}', [SubparameterController::class, 'view']);
     Route::post('/subparameter/update', [SubparameterController::class, 'update']);
-    Route::delete('/subaparameter/delete/{id}',[SubparameterController::class,'delete']);
+    Route::delete('/subaparameter/delete/{id}', [SubparameterController::class, 'delete']);
     // FOR DOCTOR
     Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
     Route::get('/admin-doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
     Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
     Route::post('/doctors/update', [DoctorController::class, 'update']);
     Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
-      
     // FOR APPOINTMENT
     Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
-   // Appointment CRUD
-Route::get('/appointment/view/{id}', [AppointmentController::class, 'view']);
-Route::post('/appointment/update', [AppointmentController::class, 'update']);
-Route::delete('/appointment/delete/{id}', [AppointmentController::class, 'delete']);
-
+    Route::get('/appointment/view/{id}', [AppointmentController::class, 'view']);
+    Route::post('/appointment/update', [AppointmentController::class, 'update']);
+    Route::delete('/appointment/delete/{id}', [AppointmentController::class, 'delete']);
+    // FOR PACKAGES 
+    Route::get('/admin-packages', [PackageController::class, 'index'])->name('packages.index');
+    Route::post('/admin-packages/store', [PackageController::class, 'store'])->name('packages.store');
+    Route::get('/admin-packages/view/{id}', [PackageController::class, 'view']);
 
 });
 

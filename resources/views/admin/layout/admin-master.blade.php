@@ -538,7 +538,25 @@
 
             });
         });
-        //+++++++++++++++++++++++++++++++++++++++
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR PACKAGES CRUD 
+        $(document).on('click', '.viewPackage', function () {
+            var id = $(this).data(id);
+            $.ajax({
+                url: "{{ url('/admin-packages/view') }}/" + id,
+                type: "GET",
+                success: function (packages) {
+                    $('#v_title').text(packages.title);
+                    $('#v_slug').text(subparameter.slug);
+                    $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
+                    $('#v_description').text(subparameter.description);
+                    $('#v_parameter').text(subparameter.parameter_title);
+                    // open modal
+                     $('#viewPackage').modal('show');
+                }
+
+            });
+        });
 
 
 
