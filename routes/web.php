@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SubparameterController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\MailController;
 
 
 

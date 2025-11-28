@@ -110,7 +110,7 @@ $parameters = \App\Models\Parameter::where('status', 'active')->orderBy('title')
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addAppointmentLabel">Add Doctor Details</h5>
+                    <h5 class="modal-title" id="addAppointmentLabel">Add Sub-parameter Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>

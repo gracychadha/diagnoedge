@@ -1,8 +1,8 @@
 <!-- preloader start -->
-<div class="preloader">
-    {{-- <div class="preloader-icon">
+{{-- <div class="preloader">
+    <div class="preloader-icon">
         <img src="{{ asset("assets/images/loader.svg") }}" alt="loader image">
-    </div> --}}
+    </div>
     <div class="preloader-text">
         <p>d</p>
         <p>i</p>
@@ -15,7 +15,7 @@
         <p>g</p>
         <p>e</p>
     </div>
-</div>
+</div> --}}
 <!-- preloader end -->
 
 <!-- back to top start -->

@@ -1,6 +1,20 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    {{-- Global Error Message Here --}}
+    @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+
 
     <form method="POST" action="{{ route('login') }}" id="loginForm">
         @csrf
@@ -10,7 +24,7 @@
             <label class="form-label">Email</label>
             <input id="email" class="form-control" placeholder="Enter Email" type="email" name="email"
                 :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
+            {{-- <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" /> --}}
         </div>
 
         <!-- Password -->
@@ -18,7 +32,7 @@
             <label class="form-label">Password</label>
             <input id="password" class="form-control" placeholder="Enter Password" type="password" name="password"
                 required autocomplete="current-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
+            {{-- <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" /> --}}
         </div>
 
         <!-- Remember Me -->
@@ -26,15 +40,13 @@
             <div class="form-group">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox"
-                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
-                        name="remember">
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
                     <span class="ms-2 text-sm text-gray-600">{{ __(key: 'Remember me') }}</span>
                 </label>
             </div>
             <div class="form-group">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                        href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
@@ -43,7 +55,8 @@
 
         <!-- Cloudflare Turnstile CAPTCHA -->
         <div class="mb-4">
-           <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITEKEY') }}" data-callback="onCaptchaSuccess"></div>
+            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITEKEY') }}" data-callback="onCaptchaSuccess">
+            </div>
 
         </div>
 

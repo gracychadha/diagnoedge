@@ -161,6 +161,7 @@
                 height: 200,           // editor height in px
 
             });
+
         });
         // FUNCTIONS TO CREATE SLUG
         function generateSlug(title) {
@@ -346,7 +347,9 @@
                     $('#v_title').text(subparameter.title);
                     $('#v_slug').text(subparameter.slug);
                     $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
-                    $('#v_description').text(subparameter.description);
+                    $('#v_description').text(
+                        $('<div>').html(subparameter.description).text()
+                    );
                     $('#v_parameter').text(subparameter.parameter_title);
 
 
@@ -369,7 +372,15 @@
                     $('#edit_title').val(subparameter.title);
                     $('#edit_slug').val(subparameter.slug);
                     $('#edit_status').val(subparameter.status);
-                    $('#edit_description').val(subparameter.description);
+                    $('#edit_description').summernote({
+                        placeholder: 'Write details here...',
+                        tabsize: 2,
+                        height: 200
+                    });
+
+                    // Set summernote HTML content
+                    $('#edit_description').summernote('code', subparameter.description);
+
                     // $('#edit_parameter_id').val(subparameter.parameter_id);
                     $('#edit_parameter_id').val(subparameter.parameter_id).trigger('change');
 
@@ -551,10 +562,14 @@
                     $('#v_title').text(packages.title);
                     $('#v_slug').text(subparameter.slug);
                     $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
-                    $('#v_description').text(subparameter.description);
+                    $('#v_description').text(
+                        $('<div>').html(subparameter.description).text()
+                    );
+                    // it will store only plane text into div
+
                     $('#v_parameter').text(subparameter.parameter_title);
                     // open modal
-                     $('#viewPackage').modal('show');
+                    $('#viewPackage').modal('show');
                 }
 
             });

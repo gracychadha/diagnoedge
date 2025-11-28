@@ -399,7 +399,7 @@
 
         <!-- product section start -->
         <section class="product-section background-one pt-50  md-pt-50 pb-50 md-pb-50">
-            <div class="container-fluid">
+            <div class="container">
                 {{-- section for test packages start--}}
                 <div class="container ">
                     <div class="row">
@@ -1024,7 +1024,7 @@
             </div>
 
             {{-- section for test packages start FOR Popular Tests--}}
-            <div class="container-fluid pt-30">
+            <div class="container pt-30">
                 <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
@@ -1607,7 +1607,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid pt-30">
+            <div class="container pt-30">
                 <div class="row container">
                     <div class="col-lg-12">
                         <!-- section title start -->
@@ -1616,13 +1616,13 @@
                         <!-- section title end -->
                     </div>
 
-                    <div class=" row test-section services-section-1">
+                    <div class=" row test-section services-section-1 justify-content-center">
                         <div class="col-lg-2 test-card shadow ">
                             <div class="test-card-img">
                                 <img src="assets/images/services/icon-service-1.png">
                             </div>
                             <div class="title text-center">
-                                Eye Test
+                                Heart Test
                             </div>
                         </div>
                         <div class="col-lg-2 test-card shadow ">
@@ -1630,7 +1630,7 @@
                                 <img src="assets/images/services/icon-service-1.png">
                             </div>
                             <div class="title text-center">
-                                Eye Test
+                                Kidney Test
                             </div>
                         </div>
                         <div class="col-lg-2 test-card shadow ">
@@ -1638,7 +1638,7 @@
                                 <img src="assets/images/services/icon-service-2.png">
                             </div>
                             <div class="title text-center">
-                                Eye Test
+                                Thyroid Test
                             </div>
                         </div>
                         <div class="col-lg-2 test-card shadow ">
@@ -1646,7 +1646,15 @@
                                 <img src="assets/images/services/icon-service-3.png">
                             </div>
                             <div class="title text-center">
-                                Eye Test
+                                Lungs Test
+                            </div>
+                        </div>
+                        <div class="col-lg-2 test-card shadow ">
+                            <div class="test-card-img">
+                                <img src="assets/images/services/icon-service-3.png">
+                            </div>
+                            <div class="title text-center">
+                                Bone Test
                             </div>
                         </div>
 
@@ -1660,7 +1668,7 @@
         <!-- product section end -->
         <!-- about section start -->
         <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <!-- section title start -->
@@ -1737,227 +1745,6 @@
         @include("website.components.sticker")
         <!-- marquee ticker section end -->
 
-        <!-- portfolio section start -->
-        <section class="portfolio-section-1 pt-50 md-pt-80 pb-50 md-pb-80">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title area start -->
-                        <div class="section-title-area">
-                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
-                                <span class="sub-title">Our Gallery</span>
-                                <h2>Explore our showcase of featured works</h2>
-                            </div>
-                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
-                                <p align="justify">Step inside DiagnoEdge Lab through our gallery. From advanced testing
-                                    equipment and
-                                    hygienic sample collection areas to our expert team at work — every image reflects our
-                                    commitment to precision, care, and excellence in diagnostics.</p>
-                            </div>
-                        </div>
-                        <!-- section title area end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <!-- portfolio items start -->
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".3s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-1.jpg" alt="portfolio image one">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- portfolio items end -->
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- portfolio items start -->
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".4s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-2.jpg" alt="portfolio image two">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- portfolio items end -->
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- portfolio items start -->
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".5s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-3.jpg" alt="portfolio image three">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- portfolio items end -->
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- portfolio items start -->
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".6s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-4.jpg" alt="portfolio image four">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- portfolio items end -->
-                    </div>
-                </div>
-                {{-- <div class="row">
-                    <div class="col-lg-12">
-                        <!-- more portfolio content start -->
-                        <div class="more-portfolio-content wow fadeInUp" data-wow-delay=".7s">
-                            <p>From preventive care to specialized treatments, our wide range of services is designed to
-                                support your health at every stage.</p>
-                            <!-- portfolio button wappper start -->
-                            <div class="service-button-wappper">
-                                <a href="#" class="theme-button style-1" aria-label="View All Portfolio">
-                                    <span data-text="View All Portfolio">View All Portfolio</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- portfolio button wappper end -->
-                        </div>
-                        <!-- more portfolio content end -->
-                    </div>
-                </div> --}}
-            </div>
-        </section>
-        <!-- portfolio section end -->
-
-
-        <section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
-            <div class="container">
-                <div class="row align-items-center">
-
-                    <!-- Left Content -->
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Why Choose Us?</span>
-                            <h2>Why DiagnoEdge Labs?</h2>
-
-                            <p class="lead">
-                                DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
-                            </p>
-
-                            <p class="mb-3 lh-lg">
-                                Our team consists of highly trained <strong>certified pathologists</strong> and
-                                <strong>experienced laboratory professionals</strong> who ensure precision, safety, and
-                                reliability in every report.
-                                We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology,
-                                    Microbiology, and Preventive Health</strong>.
-                            </p>
-
-                            <p class="lh-lg">
-                                With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides
-                                <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise
-                                monitoring, and effective treatment planning.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Right Side - Cards -->
-                    <div class="col-lg-6">
-                        <div class="row g-4 align-items-center">
-
-                            <!-- Big Experience Card -->
-                            <div class="col-12 col-md-5">
-                                <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
-                                    style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
-                                    <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                                    <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+
-                                    </h3>
-                                    <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
-                                </div>
-                            </div>
-
-                            <!-- 4 Small Cards -->
-                            <div class="col-12 col-md-7">
-                                <div class="row g-3 g-md-4">
-
-                                    <!-- Card 1 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+
-                                                Advanced Tests</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 2 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by
-                                                Clinics & Hospitals</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 3 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled
-                                                Diagnostic Experts</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 4 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-clipboard-check mb-3"
-                                                style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High
-                                                Accuracy & Reliability</h5>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
         <!-- faq section start -->
         <section class="faq-section-1 mb-5 pt-50 md-pt-80">
@@ -2128,9 +1915,286 @@
         </section>
         <!-- faq section end -->
 
+        <section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Left Content -->
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                            <span class="sub-title">Why Choose Us?</span>
+                            <h2>Why DiagnoEdge Labs?</h2>
+
+                            <p class="lead">
+                                DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
+                            </p>
+
+                            <p class="mb-3 lh-lg">
+                                Our team consists of highly trained <strong>certified pathologists</strong> and
+                                <strong>experienced laboratory professionals</strong> who ensure precision, safety, and
+                                reliability in every report.
+                                We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology,
+                                    Microbiology, and Preventive Health</strong>.
+                            </p>
+
+                            <p class="lh-lg">
+                                With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides
+                                <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise
+                                monitoring, and effective treatment planning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Cards -->
+                    <div class="col-lg-6">
+                        <div class="row g-4 align-items-center">
+
+                            <!-- Big Experience Card -->
+                            <div class="col-12 col-md-5">
+                                <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
+                                    style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
+                                    <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                                    <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+
+                                    </h3>
+                                    <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
+                                </div>
+                            </div>
+
+                            <!-- 4 Small Cards -->
+                            <div class="col-12 col-md-7">
+                                <div class="row g-3 g-md-4">
+
+                                    <!-- Card 1 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+
+                                                Advanced Tests</h5>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by
+                                                Clinics & Hospitals</h5>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled
+                                                Diagnostic Experts</h5>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 4 -->
+                                    <div class="col-6">
+                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
+                                            <i class="fas fa-clipboard-check mb-3"
+                                                style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High
+                                                Accuracy & Reliability</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- portfolio section start -->
+        <section class="portfolio-section-1 pt-50 md-pt-80 pb-50 md-pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section title area start -->
+                        <div class="section-title-area">
+                            <div class="section-title wow fadeInLeft" data-wow-delay=".2s">
+                                <span class="sub-title">Our Gallery</span>
+                                <h2>Explore our showcase of featured works</h2>
+                            </div>
+                            <div class="section-title-content wow fadeInRight" data-wow-delay=".2s">
+                                <p align="justify">Step inside DiagnoEdge Lab through our gallery. From advanced testing
+                                    equipment and
+                                    hygienic sample collection areas to our expert team at work — every image reflects our
+                                    commitment to precision, care, and excellence in diagnostics.</p>
+                            </div>
+                        </div>
+                        <!-- section title area end -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!-- portfolio items start -->
+                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".3s">
+                            <div class="portfolio-image">
+                                <figure>
+                                    <img src="assets/images/portfolio/portfolio-1-1.jpg" alt="portfolio image one">
+                                </figure>
+                            </div>
+                            <div class="portfolio-content">
+
+                                <div class="portfolio-button-wapper">
+                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio items end -->
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- portfolio items start -->
+                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".4s">
+                            <div class="portfolio-image">
+                                <figure>
+                                    <img src="assets/images/portfolio/portfolio-1-2.jpg" alt="portfolio image two">
+                                </figure>
+                            </div>
+                            <div class="portfolio-content">
+
+                                <div class="portfolio-button-wapper">
+                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio items end -->
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- portfolio items start -->
+                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".5s">
+                            <div class="portfolio-image">
+                                <figure>
+                                    <img src="assets/images/portfolio/portfolio-1-3.jpg" alt="portfolio image three">
+                                </figure>
+                            </div>
+                            <div class="portfolio-content">
+
+                                <div class="portfolio-button-wapper">
+                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio items end -->
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- portfolio items start -->
+                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".6s">
+                            <div class="portfolio-image">
+                                <figure>
+                                    <img src="assets/images/portfolio/portfolio-1-4.jpg" alt="portfolio image four">
+                                </figure>
+                            </div>
+                            <div class="portfolio-content">
+
+                                <div class="portfolio-button-wapper">
+                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- portfolio items end -->
+                    </div>
+                </div>
+                {{-- <div class="row">
+                    <div class="col-lg-12">
+                        <!-- more portfolio content start -->
+                        <div class="more-portfolio-content wow fadeInUp" data-wow-delay=".7s">
+                            <p>From preventive care to specialized treatments, our wide range of services is designed to
+                                support your health at every stage.</p>
+                            <!-- portfolio button wappper start -->
+                            <div class="service-button-wappper">
+                                <a href="#" class="theme-button style-1" aria-label="View All Portfolio">
+                                    <span data-text="View All Portfolio">View All Portfolio</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <!-- portfolio button wappper end -->
+                        </div>
+                        <!-- more portfolio content end -->
+                    </div>
+                </div> --}}
+            </div>
+        </section>
+        <!-- portfolio section end -->
+
+
+
+        <section class="accredit-sec py-5" style="background:#e6f5e9;">
+            <div class="container">
+
+                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                    <span class="sub-title">Accreditations & Certifications</span>
+                    <h2>Why Trust Our Quality Standards?</h2>
+                    <p class="lead">We follow globally recognized testing standards ensuring precision, safety, and
+                        accuracy.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+
+
+
+                    <!-- NABL Accredited -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                            <h6 class="fw-bold">NABL Accredited Labs</h6>
+                        </div>
+                    </div>
+
+                    <!-- CAP Certified -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-microscope mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                            <h6 class="fw-bold">CAP Certified</h6>
+                        </div>
+                    </div>
+
+                    <!-- ISO Certification -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-clipboard-check mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                            <h6 class="fw-bold">ISO 9001:2015</h6>
+                        </div>
+                    </div>
+
+                    <!-- Daily QC Monitoring -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-chart-line mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                            <h6 class="fw-bold">600+ Instruments<br>Real-Time QC Monitoring</h6>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+
         <!-- blog section start -->
         <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- section title start -->

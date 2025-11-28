@@ -50,7 +50,7 @@
                                     </thead>
                                     <tbody>
 
-
+ @forelse($packages as $sub)
                                         <tr>
                                             <td>
                                                 <div class="checkbox text-end align-self-center">
@@ -119,8 +119,9 @@
                                                 </span>
                                             </td>
                                         </tr>
+                                        @empty
 
-
+@endforelse
                                     </tbody>
                                 </table>
                             </div>

@@ -37,7 +37,7 @@
         <!-- breadcrumb section end -->
         <!-- pricing section start -->
         <section class="pricing-section-1 bg-section pt-70 md-pt-80 pb-70 md-pb-50">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- section title area start -->

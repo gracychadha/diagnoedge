@@ -38,7 +38,7 @@
 
         <!-- blog section start -->
         <section class="blog-section pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="blog-posts row">

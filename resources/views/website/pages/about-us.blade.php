@@ -37,7 +37,7 @@
 
         <!-- about section start -->
         <section class="about-section-4 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-md-12">
                         <!-- section title start -->

@@ -186,7 +186,7 @@
                     <div class="col-lg-6">
                         <!-- footer copyright start -->
                         <div class="copyright-text wow fadeInUp" data-wow-delay=".2s">
-                      <p class="m-0">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
+                            <p class="m-0">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
                                 Developed by <a href="https://vibrantick.in/" target="_blank">Vibrantick Infotech
                                     Solutions </a></p>
                         </div>
@@ -215,9 +215,21 @@
             <div class="footer-copyright-wrap ">
                 <div class="row align-items-center">
                     <div class=" text-center">
-                        <p>Do you have any queries <button data-bs-toggle="modal" data-bs-target="#popupCallModal"> Get
-                                a Call back Now</button> or Call us now at
-                            <button> <a href="tel:+919876784545" target="_blank">+91 987 678 4545</a></button>
+                        <p>Do you have any queries
+                            {{-- <button data-bs-toggle="modal" data-bs-target="#popupCallModal"> Get
+                                a Call back Now</button> --}}
+                            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#popupCallModal"  class="theme-button style-1 sticky-f-btn" aria-label="Get a Call Back">
+                                <span data-text="Get a Call Back">Get a Call Back</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            or Call us now at
+                            {{-- <button>
+                                <a href="tel:+919876784545" target="_blank">+91 987 678 4545</a>
+                            </button> --}}
+                            <a href="tel:+919876784545" class="theme-button style-1" aria-label="+91 987 678 4545" target="_blank">
+                                <span data-text="+91 987 678 4545">+91 987 678 4545</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </p>
                     </div>
                 </div>

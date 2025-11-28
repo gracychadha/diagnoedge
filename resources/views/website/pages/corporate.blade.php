@@ -47,7 +47,7 @@
                     <img src="assets/images/about/about-shape-4.png" alt="about shape two">
                 </figure>
             </div>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row align-items-center">
 
                     <div class="col-lg-6">
@@ -133,7 +133,7 @@
         <!-- about section end -->
         <!-- why-section start -->
         <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <!-- why content start -->

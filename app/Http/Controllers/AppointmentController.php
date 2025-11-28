@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use App\Mail\AppointmentConfirmation;
+use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -27,11 +30,27 @@ class AppointmentController extends Controller
             'message' => 'nullable|string|max:5000',
         ]);
 
-        // Convert dd-mm-yyyy → yyyy-mm-dd
-        $appointmentdate = \Carbon\Carbon::createFromFormat('d-m-Y', $request->appointmentdate)
-            ->format('Y-m-d');
+        $request->validate([
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'choosedoctor' => 'required|string|max:255',
+            'selectdepartment' => 'required|string|max:255',
+            'appointmentdate' => 'required',
+            'message' => 'nullable|string|max:5000',
+        ]);
 
-        Appointment::create([
+       
+        try {
+            $appointmentdate = Carbon::parse($request->appointmentdate)->format('Y-m-d');
+        } catch (\Exception $e) {
+            // fallback: try parsing d-m-Y if users send that format
+            $appointmentdate = Carbon::createFromFormat('d-m-Y', $request->appointmentdate)->format('Y-m-d');
+        }
+
+
+        // Save to DB
+        $appointment = Appointment::create([
             'fullname' => $request->fullname,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -42,7 +61,16 @@ class AppointmentController extends Controller
             'ip' => $request->ip(),
         ]);
 
-        return back()->with('success', 'Your appointment has been submitted successfully!');
+        // Send confirmation email (synchronous)
+        try {
+            Mail::to($appointment->email)->send(new AppointmentConfirmation($appointment));
+        } catch (\Exception $e) {
+            \Log::error('Appointment email failed: ' . $e->getMessage());
+            // optionally set a flash message for email failure
+            return back()->with('success', 'Your appointment has been submitted. Will get back to you soon');
+        }
+
+        return back()->with('success', 'Your appointment has been submitted successfully! Check your email for the details.');
     }
     // FOR VIEW APPOINTMENT LEADS
     public function view($id)
