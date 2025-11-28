@@ -3,6 +3,10 @@
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WebsiteSetting;
+use App\Http\Controllers\SystemSetting;
+use App\Http\Controllers\CaptchaSettingController;
+use App\Http\Controllers\HealthRiskController;
 use App\Models\Subparameter;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParameterController;
@@ -80,9 +84,7 @@ Route::get('/admin-profile', function () {
 Route::get('/admin-patient', function () {
     return view('admin.pages.admin-patient');
 })->name('admin-patient');
-Route::get('/website-setting', function () {
-    return view('admin.pages.website-setting');
-})->name('website-setting');
+
 Route::get('/general-setting', function () {
     return view('admin.pages.general-setting');
 })->name('general-setting');
@@ -147,6 +149,34 @@ Route::middleware('auth')->group(function () {
     Route::delete('/parameters/{parameter}', [ParameterController::class, 'destroy'])
         ->name('admin.parameters.destroy');
 
+    // ────────────── Health Risks ──────────────
+    Route::get('/health-risks', [HealthRiskController::class, 'index'])
+        ->name('health-risks.index');
+
+    Route::post('/health-risks', [HealthRiskController::class, 'store'])
+        ->name('health-risks.store');
+
+    Route::put('/health-risks/{healthRisk}', [HealthRiskController::class, 'update'])
+        ->name('health-risks.update');
+
+    Route::delete('/health-risks/{healthRisk}', [HealthRiskController::class, 'destroy'])
+        ->name('health-risks.destroy');
+
+
+    // ────────────── Health Package/ sub parameter ──────────────
+    Route::get('/admin-subparameters', [SubparameterController::class, 'index'])
+        ->name('admin-subparameters.index');
+
+    Route::post('/admin-subparameters', [SubparameterController::class, 'store'])
+        ->name('admin-subparameters.store');
+
+    Route::put('/admin-subparameters/{healthRisk}', [SubparameterController::class, 'update'])
+        ->name('admin-subparameters.update');
+
+    Route::delete('/admin-subparameters/{healthRisk}', [SubparameterController::class, 'destroy'])
+        ->name('admin-subparameters.destroy');
+
+
     //test services 
 
 
@@ -162,28 +192,56 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    //FOR SUB-PARAMETERS 
-    Route::get('/admin-subparameters', [SubparameterController::class, 'index'])->name('admin-subparameter.index');
-    Route::post('/subparameters/store', [SubparameterController::class, 'store'])->name('admin-subparamters.store');
-    Route::get('/subparameter/view/{id}', [SubparameterController::class, 'view']);
-    Route::post('/subparameter/update', [SubparameterController::class, 'update']);
-    Route::delete('/subaparameter/delete/{id}', [SubparameterController::class, 'delete']);
+
     // FOR DOCTOR
     Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
     Route::get('/admin-doctors', [DoctorController::class, 'index'])->name('admin-doctors.index');
     Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
     Route::post('/doctors/update', [DoctorController::class, 'update']);
     Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
+
+
     // FOR APPOINTMENT
     Route::get('/appointments', [AppointmentController::class, 'index'])->name('admin-appointment.index');
     Route::get('/appointment/view/{id}', [AppointmentController::class, 'view']);
     Route::post('/appointment/update', [AppointmentController::class, 'update']);
     Route::delete('/appointment/delete/{id}', [AppointmentController::class, 'delete']);
+
+
     // FOR PACKAGES 
     Route::get('/admin-packages', [PackageController::class, 'index'])->name('packages.index');
     Route::post('/admin-packages/store', [PackageController::class, 'store'])->name('packages.store');
     Route::get('/admin-packages/view/{id}', [PackageController::class, 'view']);
 
+
+
+
+    // ────────────── Website Setting ──────────────
+
+    Route::get('/website-setting', [WebsiteSetting::class, 'index'])
+        ->name('website-setting');
+
+    Route::put('/website-setting', [WebsiteSetting::class, 'update'])
+        ->name('website-setting.update');
+
+
+
+    // ────────────── Website Setting ──────────────
+
+    Route::get('/system-setting', [SystemSetting::class, 'index'])
+        ->name('system-setting');
+
+    Route::put('/system-setting', [SystemSetting::class, 'update'])
+        ->name('system-setting.update');
+
+
+    // ────────────── General/ Captcha Setting ──────────────
+
+    Route::get('/general-setting', [CaptchaSettingController::class, 'index'])
+        ->name('general-setting');
+
+    Route::put('/general-setting', [CaptchaSettingController::class, 'update'])
+        ->name('general-setting.update');
 });
 
 

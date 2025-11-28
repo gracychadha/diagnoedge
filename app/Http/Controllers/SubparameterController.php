@@ -1,89 +1,79 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Subparameter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SubparameterController extends Controller
 {
-
-
-    // FOR FETCH ALL THE DATA
-
     public function index()
     {
-        $subparameter = Subparameter::orderBy('id', 'desc')->get();
-
-        return view('admin.pages.admin-subparameters', compact('subparameter'));
+        $subparameters = Subparameter::latest()->get();
+        return view('admin.pages.admin-subparameters', compact('subparameters'));
     }
 
-
-    // FOR VIEW THE DATA OF SUB-PARAMETERS
-    public function view($id)
-    {
-        $subparameter = Subparameter::with('parameter')->findOrFail($id);
-
-        return response()->json([
-            'id' => $subparameter->id,
-            'title' => $subparameter->title,
-            'slug' => $subparameter->slug,
-            'status' => $subparameter->status,
-            'description' => $subparameter->description,
-            'parameter_id' => $subparameter->parameter_id,
-            'parameter_title' => $subparameter->parameter->title ?? '—',
-        ]);
-    }
-
-
-    // TO STORE DATA OF SUB PARAMETER
     public function store(Request $request)
     {
-        // Validation
         $request->validate([
-            'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255',
-            'status' => 'required|in:active,inactive',
-            'description' => 'required|string|max:255',
-            'parameter_id' => 'nullable|string|max:5000',
+            'title'           => 'required|string|max:255|unique:subparameters,title',
+            'parameter_id'    => 'required|array|min:1',
+            'parameter_id.*'  => 'exists:parameters,id',
+            'price'           => 'nullable|numeric|min:0',
+            'image'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'test_ids'        => 'nullable|array',
+            'test_ids.*'      => 'exists:tests,id',
+            'description'     => 'nullable|string',
+            'status'          => 'required|in:active,inactive',
         ]);
 
+        $data = $request->all();
 
-        // Store in DB
-        Subparameter::create([
-            'title' => $request->title,
-            'slug' => $request->slug,
-            'status' => $request->status,
-            'description' => $request->description,
-            'parameter_id' => $request->parameter_id,
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('subparameters', 'public');
+        }
+
+        Subparameter::create($data);
+
+        return back()->with('success', 'Subparameter created successfully!');
+    }
+
+    public function update(Request $request, Subparameter $subparameter)
+    {
+        $request->validate([
+            'title'           => 'required|string|max:255|unique:subparameters,title,' . $subparameter->id,
+            'parameter_id'    => 'required|array|min:1',
+            'parameter_id.*'  => 'exists:parameters,id',
+            'price'           => 'nullable|numeric|min:0',
+            'image'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'test_ids'        => 'nullable|array',
+            'test_ids.*'      => 'exists:tests,id',
+            'description'     => 'nullable|string',
+            'status'          => 'required|in:active,inactive',
         ]);
 
-        return redirect()->back()->with('success', 'Sub-Parameter Added Successfully');
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            if ($subparameter->image) {
+                Storage::disk('public')->delete($subparameter->image);
+            }
+            $data['image'] = $request->file('image')->store('subparameters', 'public');
+        }
+
+        $subparameter->update($data);
+
+        return back()->with('success', 'Subparameter updated successfully!');
     }
 
-
-    // FOR EDIT DATA OF SUB PARAMETER
-    public function update(Request $request)
+    public function destroy(Subparameter $subparameter)
     {
-        $subparameter = Subparameter::find($request->id);
-
-        $subparameter->title = $request->title;
-        $subparameter->slug = $request->slug;
-        $subparameter->status = $request->status;
-        $subparameter->description = $request->description;
-        $subparameter->parameter_id = $request->parameter_id;
-
-        $subparameter->save();
-
-        return response()->json(['success' => true]);
-    }
-
-
-    // DELETE SUB-PARAMETER
-    public function delete($id)
-    {
-        $subparameter = Subparameter::findOrFail($id);
+        if ($subparameter->image) {
+            Storage::disk('public')->delete($subparameter->image);
+        }
         $subparameter->delete();
 
-        return response()->json(['success' => true]);
+        return back()->with('success', 'Subparameter deleted successfully!');
     }
 }

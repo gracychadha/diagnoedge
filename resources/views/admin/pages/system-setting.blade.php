@@ -1,63 +1,118 @@
 @extends("admin.layout.admin-master")
 @section("title", "System Settings | Diagnoedge")
+
 @section("content")
     <div class="content-body">
         <div class="container-fluid">
             <div class="page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">System Settings</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Settings</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Appearance</a></li>
                 </ol>
             </div>
-            <!-- row -->
+
+            <!-- Success Alert -->
+            @if(session('success'))
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: '{{ session('success') }}',
+                        timer: 4000,
+                        timerProgressBar: true,
+                    });
+                </script>
+            @endif
+
             <div class="row">
-                <div class="col-xl-12 col-xxl-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">System Settings</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <label class="text-label">Site Key<span class="required">*</span></label>
-                                            <input type="text" name="site" class="form-control" placeholder="Site key"
-                                                required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <label class="text-label">Secret Key<span class="required">*</span></label>
-                                            <input type="text" name="secret" class="form-control" placeholder="Secret"
-                                                required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <label class="text-label">Domain<span class="required">*</span></label>
-                                            <input type="email" class="form-control" id="inputGroupPrepend2"
-                                                aria-describedby="inputGroupPrepend2" placeholder="Domain" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <label class="text-label">Is Active<span class="required">*</span></label>
-                                            <input type="number" name="phoneNumber" class="form-control"
-                                                placeholder="(+1)408-657-9007" required="">
-                                        </div>
+                @include("admin.components.setting-sidebar")
+                <div class="col-lg-9 ps-0">
+                    <form action="{{ route('system-setting.update') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Logo & Appearance Settings</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <!-- Black Logo -->
+                                <div class="row mb-4">
+                                    <div class="col-lg-6">
+                                        <label>Black Logo (Main Logo)</label>
+                                        <input type="file" name="black_logo" class="form-control" accept="image/*">
+                                        @if($setting->black_logo)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $setting->black_logo) }}" width="150"
+                                                    class="img-thumbnail">
+                                                <small class="text-muted">Current Black Logo</small>
+                                            </div>
+                                        @endif
                                     </div>
 
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                                    <!-- White Logo -->
+                                    <div class="col-lg-6">
+                                        <label>White Logo (For Dark Background)</label>
+                                        <input type="file" name="white_logo" class="form-control" accept="image/*">
+                                        @if($setting->white_logo)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $setting->white_logo) }}" width="150"
+                                                    class="img-thumbnail">
+                                                <small class="text-muted">Current White Logo</small>
+                                            </div>
+                                        @endif
                                     </div>
+                                </div>
+
+                                <!-- Backend & Favicon -->
+                                <div class="row mb-4">
+                                    <div class="col-lg-6">
+                                        <label>Backend Panel Logo (Login Page)</label>
+                                        <input type="file" name="backend_logo" class="form-control" accept="image/*">
+                                        @if($setting->backend_logo)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $setting->backend_logo) }}" width="120"
+                                                    class="img-thumbnail">
+                                                <small class="text-muted">Current Backend Logo</small>
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <label>Favicon</label>
+                                        <input type="file" name="favicon" class="form-control" accept=".png,.ico,.jpg">
+                                        @if($setting->favicon)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $setting->favicon) }}" width="64" height="64"
+                                                    class="img-thumbnail">
+                                                <small class="text-muted">Current Favicon</small>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- Helpdesk Number -->
+                                <div class="row mb-4">
+                                    <div class="col-lg-6">
+                                        <label>Helpdesk / Support Number</label>
+                                        <input type="text" name="helpdesk_number" class="form-control"
+                                            value="{{ old('helpdesk_number', $setting->helpdesk_number) }}"
+                                            placeholder="+91 98765 43210">
+                                    </div>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        Save All Settings
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-          
         </div>
     </div>
+
 @endsection

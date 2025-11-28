@@ -1,307 +1,300 @@
+{{-- resources/views/admin/pages/admin-subparameters.blade.php --}}
 @extends("admin.layout.admin-master")
-@section("title", "Sub Parameters | Diagnoedge")
+
+@section("title", "Health Packages / Sub Parameters | Diagnoedge")
+
 @section("content")
     <div class="content-body">
-        <!-- row -->
         <div class="container-fluid">
+
             <div class="page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                    <li class="breadcrumb-item  active"><a href="javascript:void(0)">Sub Parameters</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Health Packages</li>
                 </ol>
             </div>
 
-            <div class="form-head d-flex mb-3 mb-md-4 align-items-start">
-                <div class="me-auto d-lg-block">
-                    <a href="javascript:void(0);" class="btn btn-primary btn-rounded" data-bs-toggle="modal"
-                        data-bs-target="#addAppointment">+ Add New</a>
+            <!-- Header -->
+            <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
+                <div class="input-group search-area w-25">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search packages...">
+                    <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
                 </div>
-                <div class="input-group search-area ms-auto d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
-                    <div class="input-group-append">
-                        <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
-                    </div>
-                </div>
+                <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addModal">
+                    + Add Health Package
+                </button>
             </div>
-            <div class="row">
-                <div class="col-xl-12">
+
+            <!-- Success Message -->
+            @if(session('success'))
+                <script>Swal.fire('Success!', '{{ session('success') }}', 'success');</script>
+            @endif
+
+            <!-- Table -->
+            <div class="card">
+                <div class="card-body p-0">
                     <div class="table-responsive">
-                        <table id="example5"
-                            class="table shadow-hover doctor-list table-bordered mb-4 dataTablesCard fs-14">
+                        <table class="table table-striped" id="packageTable">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <div class="checkbox align-self-center">
-                                            <div class="form-check custom-checkbox ">
-                                                <input type="checkbox" class="form-check-input" id="checkAll" required="">
-                                                <label class="form-check-label" for="checkAll"></label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    <th>#</th>
                                     <th>Title</th>
+                                    <th>Main Parameters</th>
+                                    <th>Price</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($subparameter as $sub)
-
+                                @forelse($subparameters as $index => $sub)
                                     <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ Str::limit($sub->title, 40) }}</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="checkbox text-end align-self-center">
-                                                    <div class="form-check custom-checkbox ">
-                                                        <input type="checkbox" class="form-check-input">
-                                                        <label class="form-check-label"></label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @forelse($sub->parameters as $param)
+                                                <span class="badge bg-info me-1">{{ $param->title }}</span>
+                                            @empty
+                                                <span class="text-muted">—</span>
+                                            @endforelse
                                         </td>
-                                        <td class="fw-600">{{ Str::limit($sub->title, 40) }}</td>
+                                        <td><strong>₹{{ number_format($sub->price ?? 0, 2) }}</strong></td>
                                         <td>
                                             <span
                                                 class="badge light badge-{{ $sub->status == 'active' ? 'success' : 'danger' }}">
                                                 {{ ucfirst($sub->status) }}
                                             </span>
                                         </td>
-
-                                        <td>
-                                            <span class="me-3">
-                                                <a href="javascript:void(0);" class="viewSubparameter" data-id="{{ $sub->id }}">
-                                                    <i class="fa fa-eye fs-18"></i>
-                                                </a>
-                                            </span>
-                                            <span class="me-3">
-                                                <a href="javascript:void(0)" class="editSubparameter" data-id="{{ $sub->id }}"><i
-                                                        class="fa fa-pencil fs-18 "></i></a>
-                                            </span>
-                                            <span>
-                                                <a href="javascript:void(0);" class="deleteSubparameter" data-id="{{ $sub->id }}">
-                                                    <i class="fa fa-trash fs-18 text-danger"></i>
-                                                </a>
-                                            </span>
-
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
+                                                data-bs-target="#view{{ $sub->id }}" title="View">
+                                                View
+                                            </button>
+                                            <button class="btn btn-sm btn-warning light" data-bs-toggle="modal"
+                                                data-bs-target="#edit{{ $sub->id }}" title="Edit">
+                                                Edit
+                                            </button>
+                                            <form action="{{ route('admin-subparameters.destroy', $sub) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger light delete-btn"
+                                                    title="Delete">
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </td>
-
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center py-5 text-muted">
-                                            <i class="fas fa-cogs fa-3x mb-3 text-muted"></i>
-                                            <p>No Sub Parameter found. Click "+ Add Sub Parameter" to create one.</p>
-                                        </td>
+                                        <td colspan="6" class="text-center py-5 text-muted">No health packages found.</td>
                                     </tr>
                                 @endforelse
                             </tbody>
-
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {{-- SElECT PARAMETERS FROM DATABASE FOR THIS --}}
-   @php
-$parameters = \App\Models\Parameter::where('status', 'active')->orderBy('title')->get();
-@endphp
 
-    {{-- ADD DOCTOR MODAL --}}
-    <div class="modal fade" id="addAppointment" tabindex="-1" aria-labelledby="addAppointment" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addAppointmentLabel">Add Sub-parameter Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    @if(session('success'))
-                        <script>
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success!',
-                                text: '{{ session("success") }}',
-                                confirmButtonColor: '#3085d6',
-                                confirmButtonText: 'OK',
-                            });
-                        </script>
-                    @endif
-                    <form action="{{ url('/subparameters/store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="form-group">
-                                    <label class="col-form-label">Title:</label>
-                                    <input type="text" name="title" class="form-control" id="add-title"
-                                        placeholder="Sub-parameter Title">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 ">
-                                <div class="form-group">
-                                    <label class="col-form-label">Slug<span class="required"> (Auto-generate)</span></label>
-                                    <input type="text" id="add-slug" name="slug" class="form-control"
-                                        placeholder="Auto generate by title" required="">
-                                </div>
-                            </div>
+    {{-- Load Data --}}
+    @php
+        $parameters = \App\Models\Parameter::where('status', 'active')->orderBy('title')->get();
+        $tests = \App\Models\Test::orderBy('title')->get();
+    @endphp
 
-                            <div class="col-xl-6">
-                                <div class="form-group">
-                                    <label class="col-form-label">Status:</label>
-                                    <select class="form-control" name="status">
-                                        <option value="active">Active</option>
-                                        <option value="inactive">Inactive</option>
-
-                                    </select>
-                                </div>
+    {{-- ADD MODAL --}}
+    <div class="modal fade" id="addModal">
+        <div class="modal-dialog modal-xl">
+            <form action="{{ route('admin-subparameters.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Health Package</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label>Title <span class="text-danger">*</span></label>
+                                <input type="text" name="title" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="col-form-label">Parameter <small
-                                            class="text-muted">(Multiple)</small></label>
-                                    <select name="subparameter_id" class="form-control default-select">
-                                        <option value="">— No Parameter —</option>
-                                        @foreach($parameters as $parameter)
-                                            <option value="{{ $parameter->id }}">{{ $parameter->title }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <label>Price (₹)</label>
+                                <input type="number" step="0.01" name="price" class="form-control" value="0">
                             </div>
-                            <div class="col-xl-12">
-                                <div class="form-group">
-                                    <label class="col-form-label">Description:</label>
-                                    <textarea type="text" name="description" class="form-control" id="subparameterDexcription"
-                                        placeholder="Description"></textarea>
-                                </div>
+                            <div class="col-md-6">
+                                <label>Main Parameters <span class="text-danger">*</span></label>
+                                <select name="parameter_id[]" multiple class="form-control" style="height:200px;" required>
+                                    @foreach($parameters as $p)
+                                        <option value="{{ $p->id }}">{{ $p->title }}</option>
+                                    @endforeach
+                                </select>
+                                <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="col-12 d-flex justify-content-end">
-                            <button type="button" class="btn btn-danger light me-3" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Add</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    {{-- VIEW DOCTOR MODAL --}}
-    <div class="modal fade" id="viewSubparameter" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-centered">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">View Subparameter</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <table class="table table-bordered table-striped mb-0">
-                    <tr>
-                        <th>Title :</th>
-                        <td id="v_title"></td>
-
-                        <th>Slug :</th>
-                        <td id="v_slug"></td>
-                    </tr>
-
-                    <tr>
-                        <th>Status :</th>
-                        <td id="v_status"></td>
-
-                        <th>Parameter :</th>
-                        <td id="v_parameter"></td>
-                    </tr>
-
-                    <tr>
-                        <th>Description :</th>
-                        <td colspan="3" id="v_description"></td>
-                    </tr>
-                </table>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    {{-- EDIT DOCTOR MODAL--}}
-    <div class="modal fade" id="editSubparmeter" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-centered">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Subparameter Details </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <form id="editSubparameterForm" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" id="edit_id" name="id">
-
-                    <div class="modal-body">
-                        <div class="row">
-
-                            <div class="col-xl-6">
-                               <div class="form-group">
-                                 <label class="col-form-group">Title</label>
-                                <input type="text" id="edit_title" name="title" class="form-control">
-                               </div>
+                            <div class="col-md-6">
+                                <label>Linked Tests</label>
+                                <select name="test_ids[]" multiple class="form-control" style="height:200px;">
+                                    @foreach($tests as $test)
+                                        <option value="{{ $test->id }}">{{ $test->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="col-xl-6">
-                                <div class="form-group">
-                                    <label class="col-form-group">Slug</label>
-                                <input type="text" id="edit_slug" name="slug" class="form-control">
-                                </div>
+                            <div class="col-md-6">
+                                <label>Image</label>
+                                <input type="file" name="image" class="form-control" accept="image/*">
                             </div>
-                            <div class="col-xl-6">
-                                <div class="form-group">
-                                    
-    <label class="col-form-group">Child Parameter</label>
-    <select id="edit_parameter_id" name="parameter_id" class="form-control default-select">
-       
-        @foreach($parameters as $param)
-            <option value="{{ $param->id }}">
-                {{ $param->title }}
-            </option>
-        @endforeach
-    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6">
-                               <div class="form-group">
-                                 <label class="col-form-group">Status</label>
-                                <select id="edit_status" name="status" class="form-control">
+                            <div class="col-md-6">
+                                <label>Status</label>
+                                <select name="status" class="form-control">
                                     <option value="active">Active</option>
                                     <option value="inactive">Inactive</option>
                                 </select>
-                               </div>
                             </div>
-
-                            <div class="col-xl-12">
-                               <div class="form-group">
-                                 <label class="col-form-group">Description</label>
-                                <textarea type="text" id="edit_description" name="description" class="form-control"></textarea>
-
-                               </div>
+                            <div class="col-12">
+                                <label>Description</label>
+                                <textarea name="description" class="summernote"></textarea>
                             </div>
-
-                           
-
                         </div>
                     </div>
-
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Package</button>
                     </div>
-
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 
+    {{-- VIEW & EDIT MODALS --}}
+    @foreach($subparameters as $sub)
+        <!-- View Modal -->
+        <div class="modal fade" id="view{{ $sub->id }}">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>{{ $sub->title }}</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Parameters:</strong>
+                            @forelse($sub->parameters as $p)<span class="badge bg-info me-1">{{ $p->title }}</span>@empty —
+                            @endforelse
+                        </p>
+                        <p><strong>Price:</strong> ₹{{ number_format($sub->price ?? 0, 2) }}</p>
+                        <p><strong>Status:</strong> <span
+                                class="badge badge-{{ $sub->status == 'active' ? 'success' : 'danger' }}">{{ ucfirst($sub->status) }}</span>
+                        </p>
+                        @if($sub->image)<img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded"
+                        style="max-height:300px;">@endif
+                        @if($sub->description)
+                        <div class="mt-3 border p-3 bg-light">{!! $sub->description !!}</div>@endif
+                        @if($sub->tests->count())
+                            <p class="mt-3"><strong>Tests:</strong>
+                                @foreach($sub->tests as $t)<span class="badge bg-primary me-1">{{ $t->title }}</span>@endforeach
+                            </p>
+                        @endif
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal">Close</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <!-- Edit Modal -->
+        <div class="modal fade" id="edit{{ $sub->id }}">
+            <div class="modal-dialog modal-xl">
+                <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
+                    @csrf @method('PUT')
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Edit: {{ $sub->title }}</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-md-6"><label>Title *</label><input type="text" name="title"
+                                        value="{{ $sub->title }}" class="form-control" required></div>
+                                <div class="col-md-6"><label>Price</label><input type="number" name="price"
+                                        value="{{ $sub->price ?? 0 }}" class="form-control"></div>
+
+                                <!-- FIXED: Main Parameters -->
+                                <div class="col-md-6">
+                                    <label>Main Parameters <span class="text-danger">*</span></label>
+                                    <select name="parameter_id[]" multiple class="form-control" style="height:200px;" required>
+                                        @foreach($parameters as $p)
+                                            <option value="{{ $p->id }}" {{ is_array($sub->parameter_id) && in_array($p->id, $sub->parameter_id) ? 'selected' : '' }}>
+                                                {{ $p->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
+                                </div>
+
+                                <!-- Linked Tests (Correct) -->
+                                <div class="col-md-6">
+                                    <label>Linked Tests</label>
+                                    <select name="test_ids[]" multiple class="form-control" style="height:200px;">
+                                        @foreach($tests as $t)
+                                            <option value="{{ $t->id }}" {{ $sub->tests->contains($t->id) ? 'selected' : '' }}>
+                                                {{ $t->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>Image</label>
+                                    <input type="file" name="image" class="form-control">
+                                    @if($sub->image)
+                                        <div class="mt-2">
+                                            <img src="{{ Storage::url($sub->image) }}" class="rounded" style="max-height:100px;">
+                                            <small class="text-muted d-block">Current image</small>
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control">
+                                        <option value="active" {{ $sub->status == 'active' ? 'selected' : '' }}>Active</option>
+                                        <option value="inactive" {{ $sub->status == 'inactive' ? 'selected' : '' }}>Inactive
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label>Description</label>
+                                    <textarea name="description" class="summernote">{{ $sub->description }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Update Package</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endforeach
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+            $('.summernote').summernote({ height: 200 });
+            $('#searchInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $("#packageTable tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $('.delete-btn').click(function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                Swal.fire({
+                    title: 'Delete?', text: "This cannot be undone!", icon: 'warning',
+                    showCancelButton: true, confirmButtonText: 'Yes, delete!'
+                }).then((result) => { if (result.isConfirmed) form.submit(); });
+            });
+        });
+    </script>
+@endpush

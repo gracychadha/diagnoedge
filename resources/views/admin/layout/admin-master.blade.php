@@ -36,6 +36,8 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      {{-- for the push style of the pages --}}
+    @stack('style')
 </head>
 
 <body>
@@ -73,6 +75,8 @@
 
     <!-- Datatable -->
     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    {{-- for the push script of the pages --}}
+    @stack('scripts')
     <script>
         // for description to adjust in cell
         document.addEventListener("DOMContentLoaded", function () {
@@ -155,13 +159,12 @@
                 height: 200,           // editor height in px
 
             });
-            $('#subparameterDexcription').summernote({
-                placeholder: 'Write details here...',
-                tabsize: 2,
-                height: 200,           // editor height in px
+            // $('#subparameterDexcription').summernote({
+            //     placeholder: 'Write details here...',
+            //     tabsize: 2,
+            //     height: 200,           // editor height in px
 
-            });
-
+            // });
         });
         // FUNCTIONS TO CREATE SLUG
         function generateSlug(title) {
@@ -185,47 +188,47 @@
         });
         // +++++++++++++++++++++++++++++++++++++++++++++++++
         // ADD PACKAGE 
-        $(document).ready(function () {
+        // $(document).ready(function () {
 
-            // Add package
-            $("#addPackageBtn").click(function () {
-                let value = $("#addPackage").val().trim();
+        //     // Add package
+        //     $("#addPackageBtn").click(function () {
+        //         let value = $("#addPackage").val().trim();
 
-                if (value === "") {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Oops...',
-                        text: 'Please enter a package name!',
-                        confirmButtonText: 'OK'
-                    });
-                    return;
-                }
+        //         if (value === "") {
+        //             Swal.fire({
+        //                 icon: 'warning',
+        //                 title: 'Oops...',
+        //                 text: 'Please enter a package name!',
+        //                 confirmButtonText: 'OK'
+        //             });
+        //             return;
+        //         }
 
-                let id = Date.now();
-                // unique id
+        //         let id = Date.now();
+        //         // unique id
 
-                let html = `
-                <div class=" package-item d-flex align-items-center mb-2" data-id="${id}">
-                    <input type="text" name="parameters[]" class="form-control package-input" value="${value}" />
-                    <button type="button" class="btn btn-danger btn-sm ms-2 remove-package">X</button>
-                </div>
-            `;
+        //         let html = `
+        //         <div class=" package-item d-flex align-items-center mb-2" data-id="${id}">
+        //             <input type="text" name="parameters[]" class="form-control package-input" value="${value}" />
+        //             <button type="button" class="btn btn-danger btn-sm ms-2 remove-package">X</button>
+        //         </div>
+        //     `;
 
-                $("#packagesWrapper").append(html);
-                $("#addPackage").val(""); // clear field
-            });
+        //         $("#packagesWrapper").append(html);
+        //         $("#addPackage").val(""); // clear field
+        //     });
 
-            // Delete package
-            $(document).on("click", ".remove-package", function () {
-                $(this).closest(".package-item").remove();
-            });
+        //     // Delete package
+        //     $(document).on("click", ".remove-package", function () {
+        //         $(this).closest(".package-item").remove();
+        //     });
 
-            // Edit package (auto-save)
-            $(document).on("input", ".package-input", function () {
-                // auto updates (value is stored in input itself)
-            });
+        //     // Edit package (auto-save)
+        //     $(document).on("input", ".package-input", function () {
+        //         // auto updates (value is stored in input itself)
+        //     });
 
-        });
+        // });
         // ++++++++++++++++++++++++++++++++++++++++++++++++++
         // FOR DOCTOR CRUD 
         $(document).on('click', '.viewDoctor', function () {
@@ -336,119 +339,109 @@
         });
         // ++++++++++++++++++++++++++++++++++++++++++++++++++
         // FOR SUB PARAMETERS CRUD
-        $(document).on('click', '.viewSubparameter', function () {
-            var id = $(this).data('id');
-            $.ajax({
-                url: "{{ url('/subparameter/view') }}/" + id,
-                type: "GET",
-                success: function (subparameter) {
+        // $(document).on('click', '.viewSubparameter', function () {
+        //     var id = $(this).data('id');
+        //     $.ajax({
+        //         url: "{{ url('/subparameter/view') }}/" + id,
+        //         type: "GET",
+        //         success: function (subparameter) {
 
-                    // Fill modal data
-                    $('#v_title').text(subparameter.title);
-                    $('#v_slug').text(subparameter.slug);
-                    $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
-                    $('#v_description').text(
-                        $('<div>').html(subparameter.description).text()
-                    );
-                    $('#v_parameter').text(subparameter.parameter_title);
+        //             // Fill modal data
+        //             $('#v_title').text(subparameter.title);
+        //             $('#v_slug').text(subparameter.slug);
+        //             $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
+        //             $('#v_description').text(subparameter.description);
+        //             $('#v_parameter').text(subparameter.parameter_title);
 
 
-                    // Open modal
-                    $('#viewSubparameter').modal('show');
-                }
-            });
+        //             // Open modal
+        //             $('#viewSubparameter').modal('show');
+        //         }
+        //     });
 
-        });
-        $(document).on('click', '.editSubparameter', function () {
+        // });
+        // $(document).on('click', '.editSubparameter', function () {
 
-            var id = $(this).data('id');
+        //     var id = $(this).data('id');
 
-            $.ajax({
-                url: "{{ url('/subparameter/view') }}/" + id,
-                type: "GET",
-                success: function (subparameter) {
+        //     $.ajax({
+        //         url: "{{ url('/subparameter/view') }}/" + id,
+        //         type: "GET",
+        //         success: function (subparameter) {
 
-                    $('#edit_id').val(subparameter.id);
-                    $('#edit_title').val(subparameter.title);
-                    $('#edit_slug').val(subparameter.slug);
-                    $('#edit_status').val(subparameter.status);
-                    $('#edit_description').summernote({
-                        placeholder: 'Write details here...',
-                        tabsize: 2,
-                        height: 200
-                    });
-
-                    // Set summernote HTML content
-                    $('#edit_description').summernote('code', subparameter.description);
-
-                    // $('#edit_parameter_id').val(subparameter.parameter_id);
-                    $('#edit_parameter_id').val(subparameter.parameter_id).trigger('change');
+        //             $('#edit_id').val(subparameter.id);
+        //             $('#edit_title').val(subparameter.title);
+        //             $('#edit_slug').val(subparameter.slug);
+        //             $('#edit_status').val(subparameter.status);
+        //             $('#edit_description').val(subparameter.description);
+        //             // $('#edit_parameter_id').val(subparameter.parameter_id);
+        //             $('#edit_parameter_id').val(subparameter.parameter_id).trigger('change');
 
 
-                    $('#editSubparmeter').modal('show');
-                }
-            });
-        });
-        $('#editSubparameterForm').on('submit', function (e) {
-            e.preventDefault();
+        //             $('#editSubparmeter').modal('show');
+        //         }
+        //     });
+        // });
+        // $('#editSubparameterForm').on('submit', function (e) {
+        //     e.preventDefault();
 
-            let formData = new FormData(this);
+        //     let formData = new FormData(this);
 
-            $.ajax({
-                type: "POST",
-                url: "{{ url('/subparameter/update') }}",
-                data: formData,
-                contentType: false,
-                processData: false,
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "{{ url('/subparameter/update') }}",
+        //         data: formData,
+        //         contentType: false,
+        //         processData: false,
 
-                success: function (response) {
-                    Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
-                    $('#editSubparmeter').modal('hide');
-                    location.reload();
-                }
-            });
+        //         success: function (response) {
+        //             Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
+        //             $('#editSubparmeter').modal('hide');
+        //             location.reload();
+        //         }
+        //     });
 
 
-        });
-        $(document).on("click", ".deleteSubparameter", function () {
+        // });
+        // $(document).on("click", ".deleteSubparameter", function () {
 
-            let id = $(this).data("id");
-            let row = $(this).closest("tr");
+        //     let id = $(this).data("id");
+        //     let row = $(this).closest("tr");
 
-            Swal.fire({
-                title: "Are you sure?",
-                text: "This Sub-parameter will be permanently deleted!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
+        //     Swal.fire({
+        //         title: "Are you sure?",
+        //         text: "This Sub-parameter will be permanently deleted!",
+        //         icon: "warning",
+        //         showCancelButton: true,
+        //         confirmButtonColor: "#d33",
+        //         cancelButtonColor: "#3085d6",
+        //         confirmButtonText: "Yes, delete it!"
+        //     }).then((result) => {
 
-                if (result.isConfirmed) {
+        //         if (result.isConfirmed) {
 
-                    $.ajax({
-                        url: "{{ url('/subaparameter/delete') }}/" + id,
-                        type: "DELETE",
-                        data: {
-                            _token: "{{ csrf_token() }}"
-                        },
-                        success: function (response) {
+        //             $.ajax({
+        //                 url: "{{ url('/subaparameter/delete') }}/" + id,
+        //                 type: "DELETE",
+        //                 data: {
+        //                     _token: "{{ csrf_token() }}"
+        //                 },
+        //                 success: function (response) {
 
-                            Swal.fire("Deleted!", "Sub-parameter removed successfully.", "success");
+        //                     Swal.fire("Deleted!", "Sub-parameter removed successfully.", "success");
 
-                            // remove row
-                            row.fadeOut(600, function () {
-                                $(this).remove();
-                            });
-                        }
-                    });
+        //                     // remove row
+        //                     row.fadeOut(600, function () {
+        //                         $(this).remove();
+        //                     });
+        //                 }
+        //             });
 
-                }
-            });
+        //         }
+        //     });
 
-        });
-        //+++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // });
+        // //+++++++++++++++++++++++++++++++++++++++++++++++++++++
         // FOR APPOINTMENT CRUD
         $(document).ready(function () {
             $('.viewApp').click(function () {
@@ -562,14 +555,10 @@
                     $('#v_title').text(packages.title);
                     $('#v_slug').text(subparameter.slug);
                     $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
-                    $('#v_description').text(
-                        $('<div>').html(subparameter.description).text()
-                    );
-                    // it will store only plane text into div
-
+                    $('#v_description').text(subparameter.description);
                     $('#v_parameter').text(subparameter.parameter_title);
                     // open modal
-                    $('#viewPackage').modal('show');
+                     $('#viewPackage').modal('show');
                 }
 
             });

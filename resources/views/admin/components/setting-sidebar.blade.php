@@ -8,9 +8,12 @@
                 <ul class="side-nav-setting">
                     <li><a href="{{ route('website-setting') }}"> <i class="flaticon-381-internet"></i> Website
                             Settings</a></li>
+                    <li><a href="{{ route('system-setting') }}"> <i class="flaticon-381-internet"></i> System
+                            Settings</a></li>
                     <li><a href="{{ route('general-setting') }}"><i class="flaticon-381-settings-2"></i> General
                             Settings</a></li>
-                    <li><a href="{{ route('theme-setting') }}"><i class="flaticon-381-controls-3"></i> Theme Settings</a></li>
+                    <li><a href="{{ route('theme-setting') }}"><i class="flaticon-381-controls-3"></i> Theme
+                            Settings</a></li>
 
                 </ul>
             </div>

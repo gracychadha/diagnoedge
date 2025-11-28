@@ -14,20 +14,20 @@
             </li>
 
             {{-- for health package --}}
-             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-folder-1"></i>
                     <span class="nav-text">Health Package</span>
                 </a>
                 <ul aria-expanded="false">
-                    {{-- <li><a  href="" aria-expanded="false"> Package</a> --}}
-                        
-                        <li><a href="{{ route('packages.index') }}">Packages</a></li>
-                        <li><a href="{{ route('admin-subparameter.index') }}">Sub Parameter</a></li>
-                        <li><a href="{{ route('admin.pages.parameter') }}">Child Parameter</a></li>
-                        <li><a  href="{{ route('admin.pages.test') }}" aria-expanded="false"> Test Details</a>
-                           
-                        </li>
-                
+                    {{-- <li><a href="" aria-expanded="false"> Package</a> --}}
+                    <li><a href="{{ route('admin.pages.test') }}"> Test Details</a></li>
+                    <li><a href="{{ route('admin.pages.parameter') }}">Parameter</a></li>
+                    <li><a href="{{ route('health-risks.index') }}">Health Risk</a></li>
+                    {{-- <li><a href="{{ route('packages.index') }}">Packages</a></li> --}}
+                    <li><a href="{{ route('admin-subparameters.index') }}">Sub Parameter/Health Package</a></li>
+
+
+
                 </ul>
             </li>
             {{-- Cms --}}
