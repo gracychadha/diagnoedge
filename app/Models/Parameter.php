@@ -19,7 +19,7 @@ class Parameter extends Model
 
     protected $casts = [
         'detail_id' => 'array',
-        'price' => 'decimal:2'
+        'price'     => 'decimal:2'
     ];
 
     protected static function booted()
@@ -42,5 +42,17 @@ class Parameter extends Model
     {
         return $this->belongsToMany(Test::class, 'parameter_test', 'parameter_id', 'test_id')
                     ->withTimestamps();
+    }
+
+    // ADD THIS SCOPE - THIS IS WHAT WAS MISSING!
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    // Optional: also add inactive scope (very useful)
+    public function scopeInactive($query)
+    {
+        return $query->where('status', 'inactive');
     }
 }

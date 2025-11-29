@@ -36,123 +36,148 @@
         <!-- breadcrumb section end -->
 
         <!-- about section start -->
-        <section class="about-section-4 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-12">
-                        <!-- section title start -->
-                        <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">About Us</span>
-                            <h2>About DiagnoEdge Lab</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                    <div class="col-lg-7 col-md-12">
-                        <!-- about content start -->
-                        <div class="about-content wow fadeInUp" data-wow-delay=".3s">
-                            <!-- about content text start -->
-                            <div class="about-content-text">
+        @php
+            $aboutSection = \App\Models\AboutSection::where('is_active', true)->first();
+        @endphp
 
-                                <p align="justify">
-                                    At DiagnoEdge Lab, we combine cutting-edge diagnostic technology with expert medical
-                                    insights to deliver accurate, reliable, and timely results. Our mission is to empower
-                                    better health decisions through precision testing, personalized care, and a commitment
-                                    to excellence in laboratory diagnostics.
-
-                                    
-                                </p>
-                                <p align="justify">
-                                    We understand that every test tells a story — that’s why we ensure each report is
-                                    handled with utmost care, accuracy, and confidentiality. Whether it’s routine blood work
-                                    or advanced molecular testing, our team of qualified pathologists and lab professionals
-                                    work diligently to provide results you can trust.
-                                </p>
+        @if($aboutSection)
+            <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12">
+                            <!-- section title start -->
+                            <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">{{ $aboutSection->sub_title }}</span>
+                                <h2>{{ $aboutSection->main_title }}</h2>
                             </div>
-                            <!-- about content text end -->
-                            <!-- about features wappper start -->
-                            <div class="about-features-wappper">
-                                <div class="about-features-item">
-                                    <div class="about-features-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-1.png" alt="icon about one">
-                                        </figure>
+                            <div class="about-img d-flex justify-content-center w-100">
+                                @if($aboutSection->image)
+                                    <img src="{{ asset('storage/' . $aboutSection->image) }}" alt="About Us" class="img-fluid">
+                                @else
+                                    <img src="{{ asset('assets/images/why-choose/why-choose-img-1-2.jpg') }}" alt="About Us"
+                                        class="img-fluid">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12">
+                            <!-- about content start -->
+                            <div class="about-content wow fadeInUp" data-wow-delay=".3s">
+                                <!-- about content text start -->
+                                <div class="about-content-text">
+                                    <p align="justify">{!! nl2br(e($aboutSection->description_1)) !!}</p>
+                                    @if($aboutSection->description_2)
+                                        <p align="justify">{!! nl2br(e($aboutSection->description_2)) !!}</p>
+                                    @endif
+                                </div>
+                                <!-- about features wrapper start -->
+                                <div class="about-features-wappper">
+                                    <div class="about-features-item">
+                                        <div class="about-features-icon">
+                                            <figure>
+                                                @if($aboutSection->icon_1)
+                                                    <img src="{{ asset('storage/' . $aboutSection->icon_1) }}"
+                                                        alt="{{ $aboutSection->feature_1_title }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/about/icon-about-1.png') }}"
+                                                        alt="{{ $aboutSection->feature_1_title }}">
+                                                @endif
+                                            </figure>
+                                        </div>
+                                        <div class="about-features-title">
+                                            <h3>{{ $aboutSection->feature_1_title }}</h3>
+                                            <p align="justify">{!! nl2br(e($aboutSection->feature_1_description)) !!}</p>
+                                        </div>
                                     </div>
-                                    <div class="about-features-title">
-                                        <h3>Accuracy Firs</h3>
-                                        <p>We use the latest diagnostic equipment and standardized testing protocols to ensure precise results every time.</p>
+                                    <div class="about-features-item">
+                                        <div class="about-features-icon">
+                                            <figure>
+                                                @if($aboutSection->icon_2)
+                                                    <img src="{{ asset('storage/' . $aboutSection->icon_2) }}"
+                                                        alt="{{ $aboutSection->feature_2_title }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/about/icon-about-2.png') }}"
+                                                        alt="{{ $aboutSection->feature_2_title }}">
+                                                @endif
+                                            </figure>
+                                        </div>
+                                        <div class="about-features-title">
+                                            <h3>{{ $aboutSection->feature_2_title }}</h3>
+                                            <p align="justify">{!! nl2br(e($aboutSection->feature_2_description)) !!}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="about-features-item">
-                                    <div class="about-features-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-2.png" alt="icon about two">
-                                        </figure>
-                                    </div>
-                                    <div class="about-features-title">
-                                        <h3>Patient-Centric Approach</h3>
-                                        <p>Your health is our priority — we focus on delivering quick turnaround times and seamless sample collection services.</p>
-                                    </div>
-                                </div>
                             </div>
-                            <!-- about features wappper end -->
                         </div>
-                        <!-- about content end -->
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!-- about section end -->
 
 
         <!-- counter section start -->
-        <section class="counter-section-2 pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- counter list start -->
-                        <div class="counter-list">
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".2s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="90"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Expert Doctors</h2>
+        @php
+            $counter = \App\Models\Counter::first();
+
+        @endphp
+
+        @if($counter)
+            <section class="counter-section-2 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- counter list start -->
+                            <div class="counter-list">
+                                <!-- Counter 1 -->
+                                <div class="counter-item wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="counter-content">
+                                        <div class="counter-text">
+                                            <span class="counter-value" data-stop="{{ $counter->count1 }}"
+                                                data-speed="3000">0</span>+
+                                        </div>
+                                        <h2 class="counter-title">{{ $counter->title1 }}</h2>
+                                    </div>
+                                </div>
+
+                                <!-- Counter 2 -->
+                                <div class="counter-item wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="counter-content">
+                                        <div class="counter-text">
+                                            <span class="counter-value" data-stop="{{ $counter->count2 }}"
+                                                data-speed="3000">0</span>+
+                                        </div>
+                                        <h2 class="counter-title">{{ $counter->title2 }}</h2>
+                                    </div>
+                                </div>
+
+                                <!-- Counter 3 -->
+                                <div class="counter-item wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="counter-content">
+                                        <div class="counter-text">
+                                            <span class="counter-value" data-stop="{{ $counter->count3 }}"
+                                                data-speed="3000">0</span>+
+                                        </div>
+                                        <h2 class="counter-title">{{ $counter->title3 }}</h2>
+                                    </div>
+                                </div>
+
+                                <!-- Counter 4 -->
+                                <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="counter-content">
+                                        <div class="counter-text">
+                                            <span class="counter-value" data-stop="{{ $counter->count4 }}"
+                                                data-speed="3000">0</span>+
+                                        </div>
+                                        <h2 class="counter-title">{{ $counter->title4 }}</h2>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".3s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="26"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Diffrent Services</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".4s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="35"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Happy Patients</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
-                            <!-- counter item start -->
-                            <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
-                                <div class="counter-content">
-                                    <div class="counter-text"><span class="counter-value" data-stop="10"
-                                            data-speed="3000">0</span>+</div>
-                                    <h2 class="counter-title">Awards Win</h2>
-                                </div>
-                            </div>
-                            <!-- counter item end -->
+                            <!-- counter list end -->
                         </div>
-                        <!-- counter list end -->
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!-- counter section end -->
 
         <!-- testimonials section start -->
@@ -164,110 +189,55 @@
         <!-- marquee ticker section end -->
 
         <!-- partners section start -->
-        <section class="partners-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Our Partners</span>
-                            <h2>Partners Who Trust Industrie</h2>
-                        </div>
-                        <!-- section title end -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <!-- partners slider start -->
-                        <div class="swiper partners-slider">
-                            <!-- swiper wrapper start -->
-                            <div class="swiper-wrapper">
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-1.png" alt="partners one">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-2.png" alt="partners two">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-3.png" alt="partners three">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-4.png" alt="partners four">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-5.png" alt="partners five">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
-                                <!-- swiper slide start -->
-                                <div class="swiper-slide">
-                                    <!-- partners item start -->
-                                    <div class="partners-item">
-                                        <div class="partners-image text-center">
-                                            <figure>
-                                                <img src="assets/images/partners/partners-6.png" alt="partners six">
-                                            </figure>
-                                        </div>
-                                    </div>
-                                    <!-- partners item end -->
-                                </div>
-                                <!-- swiper slide end -->
+        @php
+            $partners = \App\Models\Partner::where('status', 'active')->get();
+        @endphp
+
+        @if($partners->count() > 0)
+            <section class="partners-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- section title start -->
+                            <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Our Partners</span>
+                                <h2>Partners Who Trust Diagnoedge</h2>
                             </div>
-                            <!-- swiper wrapper end -->
+                            <!-- section title end -->
                         </div>
-                        <!-- partners slider end -->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- partners slider start -->
+                            <div class="swiper partners-slider">
+                                <!-- swiper wrapper start -->
+                                <div class="swiper-wrapper">
+                                    @foreach($partners as $partner)
+                                        <!-- swiper slide start -->
+                                        <div class="swiper-slide">
+                                            <!-- partners item start -->
+                                            <div class="partners-item">
+                                                <div class="partners-image text-center">
+                                                    <figure>
+                                                        <img src="{{ asset('storage/' . $partner->image) }}" alt="Partner Logo"
+                                                            class="img-fluid" loading="lazy"
+                                                            onerror="this.src='{{ asset('assets/images/partners/placeholder.png') }}'">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <!-- partners item end -->
+                                        </div>
+                                        <!-- swiper slide end -->
+                                    @endforeach
+                                </div>
+                                <!-- swiper wrapper end -->
+                            </div>
+                            <!-- partners slider end -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!-- partners section end -->
     </main>
 @endsection

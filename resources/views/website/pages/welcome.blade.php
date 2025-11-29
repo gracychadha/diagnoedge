@@ -1667,77 +1667,82 @@
         </section>
         <!-- product section end -->
         <!-- about section start -->
-        <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-12">
-                        <!-- section title start -->
-                        <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">About Us</span>
-                            <h2>Precision. Care. Confidence — The Edge in Diagnostics.</h2>
+        @php
+            $aboutSection = \App\Models\AboutSection::where('is_active', true)->first();
+        @endphp
 
-                        </div>
-                        <div class="about-img d-flex justify-content-center w-100">
-                            <img src="assets/images/why-choose/why-choose-img-1-2.jpg">
-                        </div>
-
-
-                        <!-- section title end -->
-                    </div>
-                    <div class="col-lg-7 col-md-12">
-                        <!-- about content start -->
-                        <div class="about-content wow fadeInUp" data-wow-delay=".3s">
-                            <!-- about content text start -->
-                            <div class="about-content-text">
-
-                                <p align="justify">
-                                    At Diagnoedge , we are committed to delivering accurate, reliable, and timely
-                                    diagnostic results to help doctors and patients make informed health decisions. Our
-                                    advanced laboratory is equipped with modern technology and managed by skilled
-                                    professionals who ensure every test meets the highest standards of precision and care.
-                                </p>
-                                <p align="justify"></p>
-                                We believe in combining innovation with compassion, offering a wide range of pathology,
-                                radiology, and wellness services under one roof. Your health is our priority, and we
-                                strive to provide you with seamless, trustworthy, and affordable diagnostic solutions.
-                                </p>
+        @if($aboutSection)
+            <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12">
+                            <!-- section title start -->
+                            <div class="section-title mb-20 wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">{{ $aboutSection->sub_title }}</span>
+                                <h2>{{ $aboutSection->main_title }}</h2>
                             </div>
-                            <!-- about content text end -->
-                            <!-- about features wappper start -->
-                            <div class="about-features-wappper">
-                                <div class="about-features-item">
-                                    <div class="about-features-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-1.png" alt="icon about one">
-                                        </figure>
+                            <div class="about-img d-flex justify-content-center w-100">
+                                @if($aboutSection->image)
+                                    <img src="{{ asset('storage/' . $aboutSection->image) }}" alt="About Us" class="img-fluid">
+                                @else
+                                    <img src="{{ asset('assets/images/why-choose/why-choose-img-1-2.jpg') }}" alt="About Us"
+                                        class="img-fluid">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12">
+                            <!-- about content start -->
+                            <div class="about-content wow fadeInUp" data-wow-delay=".3s">
+                                <!-- about content text start -->
+                                <div class="about-content-text">
+                                    <p align="justify">{!! nl2br(e($aboutSection->description_1)) !!}</p>
+                                    @if($aboutSection->description_2)
+                                        <p align="justify">{!! nl2br(e($aboutSection->description_2)) !!}</p>
+                                    @endif
+                                </div>
+                                <!-- about features wrapper start -->
+                                <div class="about-features-wappper">
+                                    <div class="about-features-item">
+                                        <div class="about-features-icon">
+                                            <figure>
+                                                @if($aboutSection->icon_1)
+                                                    <img src="{{ asset('storage/' . $aboutSection->icon_1) }}"
+                                                        alt="{{ $aboutSection->feature_1_title }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/about/icon-about-1.png') }}"
+                                                        alt="{{ $aboutSection->feature_1_title }}">
+                                                @endif
+                                            </figure>
+                                        </div>
+                                        <div class="about-features-title">
+                                            <h3>{{ $aboutSection->feature_1_title }}</h3>
+                                            <p align="justify">{!! nl2br(e($aboutSection->feature_1_description)) !!}</p>
+                                        </div>
                                     </div>
-                                    <div class="about-features-title">
-                                        <h3>Advanced Technology, Accurate Results</h3>
-                                        <p align="justify">Equipped with state-of-the-art analyzers and automated systems,
-                                            DiagnoEdge ensures precise and reliable diagnostic outcomes every time.</p>
+                                    <div class="about-features-item">
+                                        <div class="about-features-icon">
+                                            <figure>
+                                                @if($aboutSection->icon_2)
+                                                    <img src="{{ asset('storage/' . $aboutSection->icon_2) }}"
+                                                        alt="{{ $aboutSection->feature_2_title }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/about/icon-about-2.png') }}"
+                                                        alt="{{ $aboutSection->feature_2_title }}">
+                                                @endif
+                                            </figure>
+                                        </div>
+                                        <div class="about-features-title">
+                                            <h3>{{ $aboutSection->feature_2_title }}</h3>
+                                            <p align="justify">{!! nl2br(e($aboutSection->feature_2_description)) !!}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="about-features-item">
-                                    <div class="about-features-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-2.png" alt="icon about two">
-                                        </figure>
-                                    </div>
-                                    <div class="about-features-title">
-                                        <h3>Expert Team, Patient-Focused Care</h3>
-                                        <p align="justify">Our team of qualified pathologists and technicians work with
-                                            dedication and empathy to deliver results that support better health decisions
-                                            and patient well-being.</p>
-                                    </div>
-                                </div>
                             </div>
-                            <!-- about features wappper end -->
                         </div>
-                        <!-- about content end -->
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!-- about section end -->
 
 
@@ -1922,89 +1927,77 @@
                     <!-- Left Content -->
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                            <span class="sub-title">Why Choose Us?</span>
-                            <h2>Why DiagnoEdge Labs?</h2>
+                            <span class="sub-title text-success fw-bold">
+                                {{ App\Models\WhyChooseUsSection::first()?->sub_title ?? 'Why Choose Us?' }}
+                            </span>
 
-                            <p class="lead">
-                                DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.
-                            </p>
+                            <h2 class="mt-2">
+                                {{ App\Models\WhyChooseUsSection::first()?->main_title ?? 'Why DiagnoEdge Labs?' }}
+                            </h2>
 
-                            <p class="mb-3 lh-lg">
-                                Our team consists of highly trained <strong>certified pathologists</strong> and
-                                <strong>experienced laboratory professionals</strong> who ensure precision, safety, and
-                                reliability in every report.
-                                We specialize in advanced diagnostics including <strong>Oncology, Cardiology, Endocrinology,
-                                    Microbiology, and Preventive Health</strong>.
-                            </p>
+                            <div class="lead ">
+                                {!! App\Models\WhyChooseUsSection::first()?->description_1 ?? 'DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.' !!}
+                            </div>
 
-                            <p class="lh-lg">
-                                With cutting-edge technology and a commitment to accuracy, DiagnoEdge Labs provides
-                                <strong>comprehensive diagnostic solutions</strong> designed for early detection, precise
-                                monitoring, and effective treatment planning.
-                            </p>
+                            @if(App\Models\WhyChooseUsSection::first()?->description_2)
+                                <div class=" lh-lg">
+                                    {!! App\Models\WhyChooseUsSection::first()?->description_2 !!}
+                                </div>
+                            @endif
+
                         </div>
                     </div>
 
                     <!-- Right Side - Cards -->
                     <div class="col-lg-6">
+                        @php
+                            $section = App\Models\WhyChooseUsSection::first();
+                        @endphp
+
                         <div class="row g-4 align-items-center">
 
                             <!-- Big Experience Card -->
                             <div class="col-12 col-md-5">
                                 <div class="text-center p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center"
                                     style="background: #ffffff; border: 4px solid #54ad4c; min-height: 280px;">
-                                    <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                                    <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">10+
+                                    @if($section?->big_card_image)
+                                        <img src="{{ asset('storage/' . $section->big_card_image) }}" class="mb-3"
+                                            style="width: 90px; height: 90px; object-fit: contain;">
+                                    @else
+                                        <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                                    @endif
+
+                                    <h3 class="fw-bold mb-0" style="color: #1c5a80; font-size: 4.5rem; line-height: 1;">
+                                        {{ $section?->big_card_value ?? '10+' }}
                                     </h3>
-                                    <p class="text-muted fw-medium mt-2 fs-5">Years of Excellence</p>
+                                    <p class="text-muted fw-medium mt-2 fs-5">
+                                        {{ $section?->big_card_description ?? 'Years of Excellence' }}
+                                    </p>
                                 </div>
                             </div>
 
-                            <!-- 4 Small Cards -->
+                            <!-- 4 Small Feature Cards -->
                             <div class="col-12 col-md-7">
                                 <div class="row g-3 g-md-4">
+                                    @for($i = 1; $i <= 4; $i++)
+                                        @if($section?->{"small_card_{$i}_title"})
+                                            <div class="col-6">
+                                                <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
+                                                    style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 140px;">
+                                                    @if($section?->{"small_card_{$i}_image"})
+                                                        <img src="{{ asset('storage/' . $section->{"small_card_{$i}_image"}) }}"
+                                                            class="mb-3" style="width: 56px; height: 56px; object-fit: contain;">
+                                                    @else
+                                                        <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
+                                                    @endif
 
-                                    <!-- Card 1 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-flask mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">50+
-                                                Advanced Tests</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 2 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-hospital mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Trusted by
-                                                Clinics & Hospitals</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 3 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-user-md mb-3" style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">Skilled
-                                                Diagnostic Experts</h5>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 4 -->
-                                    <div class="col-6">
-                                        <div class="text-center p-4 rounded-4 shadow h-100 d-flex flex-column justify-content-center"
-                                            style="background: #ffffff; border-top: 6px solid #54ad4c; min-height: 130px;">
-                                            <i class="fas fa-clipboard-check mb-3"
-                                                style="font-size: 2.4rem; color: #54ad4c;"></i>
-                                            <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">High
-                                                Accuracy & Reliability</h5>
-                                        </div>
-                                    </div>
-
+                                                    <h5 class="fw-bold mb-0" style="color: #1c5a80; font-size: 1.05rem;">
+                                                        {{ $section->{"small_card_{$i}_title"} }}
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endfor
                                 </div>
                             </div>
 

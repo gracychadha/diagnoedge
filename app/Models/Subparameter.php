@@ -8,14 +8,30 @@ use Illuminate\Support\Str;
 class Subparameter extends Model
 {
     protected $fillable = [
-        'title', 'slug', 'parameter_id', 'test_ids', 'price', 'image', 'description', 'status'
+        'title',
+        'slug',
+        'parameter_id',
+        'test_ids',
+        'price',
+        'image',
+        'description',
+        'status'
     ];
 
     protected $casts = [
         'parameter_id' => 'array',
         'test_ids'     => 'array',
+        'price'        => 'decimal:2'
     ];
 
+    protected static function booted()
+    {
+        static::saving(function ($model) {
+            $model->slug = Str::slug($model->title);
+        });
+    }
+
+    // ACCESSORS - Keep them (they work fine)
     public function getParametersAttribute()
     {
         return Parameter::whereIn('id', $this->parameter_id ?? [])->get();
@@ -26,8 +42,15 @@ class Subparameter extends Model
         return Test::whereIn('id', $this->test_ids ?? [])->get();
     }
 
-    protected static function booted()
+    // THIS IS THE MISSING SCOPE - ADD IT!
+    public function scopeActive($query)
     {
-        static::saving(fn($m) => $m->slug = Str::slug($m->title));
+        return $query->where('status', 'active');
+    }
+
+    public function scopeInactive($query)
+    {
+        return $query->where('status', 'inactive');
     }
 }
+   

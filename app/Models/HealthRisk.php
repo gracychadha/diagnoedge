@@ -7,7 +7,18 @@ use Illuminate\Support\Str;
 
 class HealthRisk extends Model
 {
-    protected $fillable = ['title', 'slug', 'icon', 'parameter_id', 'status', 'description'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'icon',
+        'parameter_id',  // This will now be JSON array
+        'status',
+        'description'
+    ];
+
+    protected $casts = [
+        'parameter_id' => 'array',  // THIS IS CRITICAL
+    ];
 
     public static function boot()
     {
@@ -27,5 +38,11 @@ class HealthRisk extends Model
                 $model->slug = $originalSlug . '-' . $count++;
             }
         });
+    }
+
+    // Optional: Get related parameters easily
+    public function parameters()
+    {
+        return Parameter::whereIn('id', $this->parameter_id ?? [])->get();
     }
 }

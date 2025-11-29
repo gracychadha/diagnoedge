@@ -7,6 +7,8 @@ use App\Http\Controllers\WebsiteSetting;
 use App\Http\Controllers\SystemSetting;
 use App\Http\Controllers\CaptchaSettingController;
 use App\Http\Controllers\HealthRiskController;
+use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogController;
 use App\Models\Subparameter;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParameterController;
@@ -14,8 +16,18 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\SubparameterController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\CounterController;
+use App\Http\Controllers\SiteImagesController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\AboutSectionController;
+use App\Http\Controllers\SliderImageController;
+use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\MailController;
 
 
@@ -98,18 +110,12 @@ Route::get('/pages', function () {
 Route::get('/test-description', function () {
     return view('admin.pages.test-description');
 })->name('test-description');
-Route::get('/testimonial', function () {
-    return view('admin.pages.testimonial');
-})->name('testimonial');
-Route::get('/faq', function () {
-    return view('admin.pages.faq');
-})->name('faq');
-Route::get('/blog-category', function () {
-    return view('admin.pages.blog-category');
-})->name('blog-category');
+
+
 Route::get('/blog-description', function () {
     return view('admin.pages.blog-description');
 })->name('blog-description');
+
 Route::get('/theme-setting', function () {
     return view('admin.pages.theme-setting');
 })->name('theme-setting');
@@ -170,11 +176,144 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin-subparameters', [SubparameterController::class, 'store'])
         ->name('admin-subparameters.store');
 
-    Route::put('/admin-subparameters/{healthRisk}', [SubparameterController::class, 'update'])
+    Route::put('/admin-subparameters/{subparameter}', [SubparameterController::class, 'update'])
         ->name('admin-subparameters.update');
 
-    Route::delete('/admin-subparameters/{healthRisk}', [SubparameterController::class, 'destroy'])
+    Route::delete('/admin-subparameters/{subparameter}', [SubparameterController::class, 'destroy'])
         ->name('admin-subparameters.destroy');
+
+
+
+    // ────────────── faqs for the health packages ──────────────
+
+
+    Route::get('/faqspackages', [FaqsController::class, 'index'])->name('faqspackages.index');
+    Route::post('/faqspackages', [FaqsController::class, 'store'])->name('faqspackages.store');
+    Route::put('/faqspackages/{faqspackage}', [FaqsController::class, 'update'])->name('faqspackages.update');
+    Route::delete('/faqspackages/{faqspackage}', [FaqsController::class, 'destroy'])->name('faqspackages.destroy');
+
+
+
+    // ────────────── Blog Category ──────────────
+    Route::get('/blog-categories', [BlogCategoryController::class, 'index'])
+        ->name('blog-categories.index');
+
+    Route::post('/blog-categories', [BlogCategoryController::class, 'store'])
+        ->name('blog-categories.store');
+
+    Route::put('/blog-categories/{blogCategory}', [BlogCategoryController::class, 'update'])
+        ->name('blog-categories.update');
+
+    Route::delete('/blog-categories/{blogCategory}', [BlogCategoryController::class, 'destroy'])
+        ->name('blog-categories.destroy');
+
+
+    // ────────────── Blog Posts ──────────────
+    Route::get('/blogs', [BlogController::class, 'index'])
+        ->name('blogs.index');
+
+    Route::post('/blogs', [BlogController::class, 'store'])
+        ->name('blogs.store');
+
+    Route::put('/blogs/{blog}', [BlogController::class, 'update'])
+        ->name('blogs.update');
+
+    Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])
+        ->name('blogs.destroy');
+
+
+    // ────────────── Testimonials ──────────────
+    Route::get('/testimonials', [TestimonialController::class, 'index'])
+        ->name('testimonials.index');
+
+    Route::post('/testimonials', [TestimonialController::class, 'store'])
+        ->name('testimonials.store');
+
+    Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])
+        ->name('testimonials.update');
+
+    Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])
+        ->name('testimonials.destroy');
+
+
+    // ────────────── FAQs ──────────────
+    Route::get('/faqs', [FaqController::class, 'index'])
+        ->name('faqs.index');
+
+    Route::post('/faqs', [FaqController::class, 'store'])
+        ->name('faqs.store');
+
+    Route::put('/faqs/{faq}', [FaqController::class, 'update'])
+        ->name('faqs.update');
+
+    Route::delete('/faqs/{faq}', [FaqController::class, 'destroy'])
+        ->name('faqs.destroy');
+
+
+    // ────────────── Partners ──────────────
+    Route::get('/partners', [PartnerController::class, 'index'])
+        ->name('partners.index');
+
+    Route::post('/partners', [PartnerController::class, 'store'])
+        ->name('partners.store');
+
+    Route::put('/partners/{partner}', [PartnerController::class, 'update'])
+        ->name('partners.update');
+
+    Route::delete('/partners/{partner}', [PartnerController::class, 'destroy'])
+        ->name('partners.destroy');
+
+    // ────────────── Counter ──────────────
+    Route::get('/counters', [CounterController::class, 'index'])->name('counters.index');
+    Route::put('/counters', [CounterController::class, 'update'])->name('counters.update');
+
+    // ────────────── Ads and Popup image ──────────────
+
+    Route::get('/site-images', [SiteImagesController::class, 'index'])
+        ->name('site-images.index');
+
+    Route::put('/site-images/popup', [SiteImagesController::class, 'updatePopup'])
+        ->name('site-images.update-popup');
+
+    Route::put('/site-images/ads', [SiteImagesController::class, 'updateAds'])
+        ->name('site-images.update-ads');
+
+        // ────────────── Gallery ──────────────
+Route::get('/gallery', [GalleryController::class, 'index'])
+    ->name('gallery.index');
+
+Route::post('/gallery', [GalleryController::class, 'store'])
+    ->name('gallery.store');
+
+Route::put('/gallery/{gallery}', [GalleryController::class, 'update'])
+    ->name('gallery.update');
+
+Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])
+    ->name('gallery.destroy');
+
+
+    
+        // ────────────── About Section ──────────────
+Route::get('/about-section', [AboutSectionController::class, 'index'])->name('about-section.index');
+Route::put('/about-section', [AboutSectionController::class, 'update'])->name('about-section.update');
+
+
+// ────────────── SLIDER IMAGES ──────────────
+Route::get('/sliderimage', [SliderImageController::class, 'index'])
+    ->name('sliderimage.index');
+Route::post('/sliderimage', [SliderImageController::class, 'store'])
+    ->name('sliderimage.store');
+Route::put('/sliderimage/{sliderImage}', [SliderImageController::class, 'update'])
+    ->name('sliderimage.update');
+Route::delete('/sliderimage/{sliderImage}', [SliderImageController::class, 'destroy'])
+    ->name('sliderimage.destroy');
+
+ // ────────────── WHY CHOOSE US SECTION ──────────────
+Route::get('/whychooseus-section', [WhyChooseUsSectionController::class, 'index'])
+    ->name('whychooseus.section');
+
+Route::put('/whychooseus-section/{section}', [WhyChooseUsSectionController::class, 'update'])
+    ->name('whychooseus.section.update');
 
 
     //test services 

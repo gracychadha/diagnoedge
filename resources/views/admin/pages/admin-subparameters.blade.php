@@ -67,18 +67,18 @@
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
                                                 data-bs-target="#view{{ $sub->id }}" title="View">
-                                                View
+                                                <i class="fas fa-eye"></i>
                                             </button>
                                             <button class="btn btn-sm btn-warning light" data-bs-toggle="modal"
                                                 data-bs-target="#edit{{ $sub->id }}" title="Edit">
-                                                Edit
+                                                <i class="fas fa-edit"></i>
                                             </button>
                                             <form action="{{ route('admin-subparameters.destroy', $sub) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger light delete-btn"
                                                     title="Delete">
-                                                    Delete
+                                                    <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>
                                         </td>
@@ -168,35 +168,91 @@
     {{-- VIEW & EDIT MODALS --}}
     @foreach($subparameters as $sub)
         <!-- View Modal -->
-        <div class="modal fade" id="view{{ $sub->id }}">
-            <div class="modal-dialog modal-lg">
+        <div class="modal fade" id="view{{ $sub->id }}" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-centered">
                 <div class="modal-content">
+
                     <div class="modal-header">
-                        <h5>{{ $sub->title }}</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                        <h5 class="modal-title">Package Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">
-                        <p><strong>Parameters:</strong>
-                            @forelse($sub->parameters as $p)<span class="badge bg-info me-1">{{ $p->title }}</span>@empty —
-                            @endforelse
-                        </p>
-                        <p><strong>Price:</strong> ₹{{ number_format($sub->price ?? 0, 2) }}</p>
-                        <p><strong>Status:</strong> <span
-                                class="badge badge-{{ $sub->status == 'active' ? 'success' : 'danger' }}">{{ ucfirst($sub->status) }}</span>
-                        </p>
-                        @if($sub->image)<img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded"
-                        style="max-height:300px;">@endif
-                        @if($sub->description)
-                        <div class="mt-3 border p-3 bg-light">{!! $sub->description !!}</div>@endif
+
+                    <!-- Table Layout -->
+                    <table class="table table-bordered table-striped mb-0">
+
+                        <tr>
+                            <th>Title :</th>
+                            <td>{{ $sub->title }}</td>
+
+                            <th>Slug :</th>
+                            <td><code>{{ $sub->slug ?? '—' }}</code></td>
+                        </tr>
+
+                        <tr>
+                            <th>Price :</th>
+                            <td><strong>₹{{ number_format($sub->price ?? 0, 2) }}</strong></td>
+
+                            <th>Status :</th>
+                            <td>
+                                <span class="badge bg-{{ $sub->status == 'active' ? 'success' : 'danger' }}">
+                                    {{ ucfirst($sub->status) }}
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Parameters :</th>
+                            <td colspan="3">
+                                @forelse($sub->parameters as $p)
+                                    <span class="badge bg-info me-1 mb-1">{{ $p->title }}</span>
+                                @empty
+                                    <em class="text-muted">No parameters linked</em>
+                                @endforelse
+                            </td>
+                        </tr>
+
                         @if($sub->tests->count())
-                            <p class="mt-3"><strong>Tests:</strong>
-                                @foreach($sub->tests as $t)<span class="badge bg-primary me-1">{{ $t->title }}</span>@endforeach
-                            </p>
+                            <tr>
+                                <th>Tests :</th>
+                                <td colspan="3">
+                                    @foreach($sub->tests as $t)
+                                        <span class="badge bg-primary me-1 mb-1">{{ $t->title }}</span>
+                                    @endforeach
+                                </td>
+                            </tr>
+                        @endif
+
+                        <tr>
+                            <th>Image :</th>
+                            <td colspan="3">
+                                @if($sub->image)
+                                    <img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded" style="max-height:300px;">
+                                @else
+                                    <em class="text-muted">No image uploaded</em>
+                                @endif
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Extra Sections -->
+                    <div class="p-3">
+                        @if($sub->description)
+                            <p><strong>Description:</strong></p>
+                            <div class="border p-3 rounded mb-3 bg-light">
+                                {!! $sub->description !!}
+                            </div>
                         @endif
                     </div>
-                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal">Close</button></div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
                 </div>
             </div>
         </div>
+
 
         <!-- Edit Modal -->
         <!-- Edit Modal -->

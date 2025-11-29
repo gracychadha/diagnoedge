@@ -26,6 +26,8 @@
                     {{-- <li><a href="{{ route('packages.index') }}">Packages</a></li> --}}
                     <li><a href="{{ route('admin-subparameters.index') }}">Sub Parameter/Health Package</a></li>
 
+                      <li><a href="{{ route('faqspackages.index') }}">Faqs</a></li>
+
 
 
                 </ul>
@@ -38,16 +40,27 @@
                 <ul aria-expanded="false">
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Blogs</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('blog-category') }}">Blog category</a></li>
-                            <li><a href="{{ route('blog-description') }}">Blog Details</a></li>
+                            <li><a href="{{ route('blog-categories.index') }}">Blog category</a></li>
+                            <li><a href="{{ route('blogs.index') }}">Blog Details</a></li>
 
                         </ul>
                     </li>
-                    <li><a href="{{ route('pages') }}">Pages</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
+                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('faq') }}">Faqs</a></li>
-                            <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                            <li><a href="{{ route('about-section.index') }}">About Us</a></li>
+                            <li><a href="{{ route('counters.index') }}">Counter</a></li>
+                            <li><a href="{{ route('site-images.index') }}">Ads & Popup</a></li>
+                            <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
+                            <li><a href="{{ route('sliderimage.index') }}">Slider</a></li>
+                            <li><a href="{{ route('whychooseus.section') }}">Why Choose Us</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Pages</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('faqs.index') }}">Faqs</a></li>
+                            <li><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
+                            <li><a href="{{ route('partners.index') }}">Partner</a></li>
                         </ul>
                     </li>
 
@@ -84,6 +97,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('general-setting') }}">General Settings</a></li>
+                    <li><a href="{{ route('system-setting') }}">System Setting</a></li>
                     <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li>
                     <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                 </ul>
@@ -99,22 +113,6 @@
                     {{-- <li><a href="staff-profile.html">Staff Profie</a></li> --}}
                 </ul>
             </li>
-
-
-
-
-
-            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Test</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('categories.index') }}">Test Category </a></li>
-                    <li><a href="{{ route('test-description') }}">Test Description</a></li>
-                    <li><a href="{{ route('services.index') }}">Test Services </a></li>
-
-                </ul>
-            </li> --}}
 
 
         </ul>
