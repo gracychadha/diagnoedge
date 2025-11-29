@@ -25,7 +25,7 @@ return new class extends Migration
         // ──────────────────────────────────────────────────────────────
         // 2. Migrate data from old columns → new JSON columns
         // ──────────────────────────────────────────────────────────────
-        // Only if the old columns actually exist
+
         if (Schema::hasColumn('subparameters', 'parameter_id')) {
             DB::statement("UPDATE subparameters 
                            SET parameter_id_json = JSON_ARRAY(parameter_id) 
@@ -33,8 +33,6 @@ return new class extends Migration
         }
 
         if (Schema::hasColumn('subparameters', 'test_ids')) {
-            // If old test_ids was a comma-separated string or something, adjust accordingly
-            // Example if it was comma-separated: "1,2,3"
             DB::statement("UPDATE subparameters 
                            SET test_ids_json = CASE 
                                WHEN test_ids IS NULL OR test_ids = '' THEN JSON_ARRAY()
