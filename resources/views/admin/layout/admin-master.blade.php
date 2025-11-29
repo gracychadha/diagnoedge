@@ -498,7 +498,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function (response) {
-                        Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
+                        Swal.fire("Updated!", "Appointment updated successfully!", "success");
                         $('#editAppointment').modal('hide');
                         location.reload();
                     }
@@ -545,6 +545,105 @@
             });
         });
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // FOR Contact CRUD
+        $(document).ready(function () {
+            $('.viewContact').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/contacts/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#c_name').text(res.fullname);
+                        $('#c_email').text(res.email);
+                        $('#c_phone').text(res.phone);
+                        $('#c_subject').text(res.subject);
+                        $('#c_message').html(res.message);
+
+                        $('#viewContact').modal('show');
+                    }
+                });
+            });
+            $('.editContact').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/contacts/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#edit_id').val(res.id);
+                        $('#edit_fullname').val(res.fullname);
+                        $('#edit_email').val(res.email);
+                        $('#edit_phone').val(res.phone);
+                        $('#edit_subject').val(res.subject);
+                        $('#edit_message').val(res.message);
+
+                        $('#editContact').modal('show');
+                    }
+                });
+            });
+            $('#updateContactForm').submit(function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: "/contacts/update",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        Swal.fire("Updated!", "Contact Lead updated successfully!", "success");
+                        $('#editContact').modal('hide');
+                        location.reload();
+                    }
+                });
+
+            });
+            $('.deleteApp').click(function () {
+
+                let id = $(this).data("id");
+                let row = $(this).closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This Contact Lead will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            url: "{{ url('/contacts/delete') }}/" + id,
+                            type: "DELETE",
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function (response) {
+
+                                Swal.fire("Deleted!", "Contact Query removed successfully.", "success");
+
+                                // remove row
+                                row.fadeOut(600, function () {
+                                    $(this).remove();
+                                });
+                            }
+                        });
+
+                    }
+                });
+
+            });
+        });
+        
         // FOR PACKAGES CRUD 
         $(document).on('click', '.viewPackage', function () {
             var id = $(this).data(id);

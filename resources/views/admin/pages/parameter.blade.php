@@ -45,7 +45,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Title</th>
-                                        <th>Slug</th>
+                                        {{-- <th>Slug</th> --}}
                                         <th>Price</th>
                                         <th>Status</th>
                                         {{-- <th>Created</th> --}}
@@ -57,7 +57,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td class="">{{ Str::limit($param->title, 40) }}</td>
-                                            <td><code>{{ $param->slug }}</code></td>
+                                            {{-- <td><code>{{ $param->slug }}</code></td> --}}
                                             <td><strong>₹{{ number_format($param->price, 2) }}</strong></td>
                                             
                                             <td>

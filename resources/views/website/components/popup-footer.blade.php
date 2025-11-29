@@ -30,7 +30,7 @@
                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
                             data-callback="recaptchaCallback"></div>
                     </div>
-                    <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100" disabled>
+                    <button type="submit" id="popupsubmit" class="theme-button style-1 w-100" disabled>
                         <span data-text="Submit">Submit</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>

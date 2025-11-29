@@ -4,283 +4,292 @@
 @section("title", "Test Details | Diagnoedge")
 
 @section("content")
-<div class="content-body">
-    <div class="container-fluid">
+    <div class="content-body">
+        <div class="container-fluid">
 
-        <!-- Breadcrumb -->
-        <div class="page-titles">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Test Details</li>
-            </ol>
-        </div>
-
-        <!-- Header: Search + Add Button -->
-        <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
-            <div class="input-group search-area w-25">
-                <input type="text" id="searchInput" class="form-control" placeholder="Search tests...">
-                <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
+            <!-- Breadcrumb -->
+            <div class="page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Test Details</li>
+                </ol>
             </div>
-            <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addTestModal">
-                + Add Test
-            </button>
-        </div>
 
-        <!-- Success Toast -->
-        @if(session('success'))
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 5000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    });
-                    Toast.fire({
-                        icon: 'success',
-                        title: '{{ session('success') }}'
-                    });
-                });
-            </script>
-        @endif
+            <!-- Header: Search + Add Button -->
+            <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
+                <div class="input-group search-area w-25">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search tests...">
+                    <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
+                </div>
+                <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addTestModal">
+                    + Add Test
+                </button>
+            </div>
 
-        <!-- Table -->
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table table-striped" id="testTable">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th width="80">Icon</th>
-                                <th>Title</th>
-                                <th width="120">Status</th>
-                                <th width="160">Created At</th>
-                                <th width="160" class="text-center">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($tests as $test)
+            <!-- Success Toast -->
+            @if(session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const Toast = Swal.mixin({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: '{{ session("success") }}',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK',
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        });
+                        Toast.fire({
+                            icon: 'success',
+                            title: '{{ session('success') }}'
+                        });
+                    });
+                </script>
+            @endif
+
+            <!-- Table -->
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="testTable">
+                            <thead>
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>
-                                        
-                                        @if($test->icon)
-                                            <img src="{{ asset('storage/' . $test->icon) }}" alt="{{ $test->title }}" width="50" class="rounded">
-                                        @else
-                                            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width:50px;height:50px;">
-                                                <i class="fas fa-vial text-muted fs-4"></i>
-                                            </div>
-                                        @endif
-                                    </td>
-                                    <td class="fw-600">{{ $test->title }}</td>
-                                    <td>
-                                        <span class="badge light badge-{{ $test->status == 'active' ? 'success' : 'danger' }}">
-                                            {{ ucfirst($test->status) }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <small>{{ $test->created_at->format('d M, Y') }}</small>
-                                    </td>
-                                    <td class="text-center">
-                                        <button class="btn btn-sm btn-info light" data-bs-toggle="modal" data-bs-target="#viewModal{{ $test->id }}">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-warning light" data-bs-toggle="modal" data-bs-target="#editModal{{ $test->id }}">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <form action="{{ route('admin.tests.destroy', $test) }}" method="POST" class="d-inline">
-                                            @csrf @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger light delete-btn" title="Delete">
-                                                <i class="fas fa-trash"></i>
+                                    <th>#</th>
+                                    <th width="80">Icon</th>
+                                    <th>Title</th>
+                                    <th width="120">Status</th>
+                                    <th width="160">Created At</th>
+                                    <th width="160" class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($tests as $test)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>
+
+                                            @if($test->icon)
+                                                <img src="{{ asset('storage/' . $test->icon) }}" alt="{{ $test->title }}" width="50"
+                                                    class="rounded">
+                                            @else
+                                                <div class="bg-light rounded d-flex align-items-center justify-content-center"
+                                                    style="width:50px;height:50px;">
+                                                    <i class="fas fa-vial text-muted fs-4"></i>
+                                                </div>
+                                            @endif
+                                        </td>
+                                        <td class="fw-600">{{ $test->title }}</td>
+                                        <td>
+                                            <span
+                                                class="badge light badge-{{ $test->status == 'active' ? 'success' : 'danger' }}">
+                                                {{ ucfirst($test->status) }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <small>{{ $test->created_at->format('d M, Y') }}</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
+                                                data-bs-target="#viewModal{{ $test->id }}">
+                                                <i class="fas fa-eye"></i>
                                             </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="5" class="text-center py-5 text-muted">
-                                        <i class="fas fa-vial fa-3x mb-3"></i><br>
-                                        No tests found. Click "+ Add Test" to create one.
-                                    </td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Add Modal -->
-<div class="modal fade" id="addTestModal">
-    <div class="modal-dialog modal-lg">
-        <form action="{{ route('admin.tests.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add New Test</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row g-3">
-                        <div class="col-lg-8">
-                            <label>Test Title <span class="text-danger">*</span></label>
-                            <input type="text" name="title" class="form-control" placeholder="e.g. Complete Blood Count" required>
-                        </div>
-                        <div class="col-lg-4">
-                            <label>Status <span class="text-danger">*</span></label>
-                            <select name="status" class="form-control" required>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <label>Icon (Optional)</label>
-                            <input type="file" name="icon" class="form-control" accept="image/*">
-                            <small class="text-muted">Recommended: 100x100px PNG/JPG</small>
-                        </div>
+                                            <button class="btn btn-sm btn-warning light" data-bs-toggle="modal"
+                                                data-bs-target="#editModal{{ $test->id }}">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <form action="{{ route('admin.tests.destroy', $test) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger light delete-btn"
+                                                    title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="6" class="text-center py-5 text-muted">
+                                            <i class="fas fa-vial fa-3x mb-3"></i><br>
+                                            No tests found. Click "+ Add Test" to create one.
+                                        </td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Test</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- View & Edit Modals -->
-@foreach($tests as $test)
-    <!-- View Modal -->
-    <div class="modal fade" id="viewModal{{ $test->id }}">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">{{ $test->title }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-bordered mb-0">
-                        <tr>
-                            <th width="150">Title</th>
-                            <td>{{ $test->title }}</td>
-                        </tr>
-                        <tr>
-                            <th>Icon</th>
-                            <td>
-                                @if($test->icon)
-                                    <img src="{{ asset('storage/' . $test->icon) }}" width="100" class="rounded">
-                                @else
-                                    <span class="text-muted">No icon uploaded</span>
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Status</th>
-                            <td>
-                                <span class="badge badge-{{ $test->status == 'active' ? 'success' : 'danger' }}">
-                                    {{ ucfirst($test->status) }}
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Created</th>
-                            <td>{{ $test->created_at->format('d M Y, h:i A') }}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Edit Modal -->
-    <div class="modal fade" id="editModal{{ $test->id }}">
+    <!-- Add Modal -->
+    <div class="modal fade" id="addTestModal">
         <div class="modal-dialog modal-lg">
-            <form action="{{ route('admin.tests.update', $test) }}" method="POST" enctype="multipart/form-data">
-                @csrf @method('PUT')
+            <form action="{{ route('admin.tests.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Edit Test</h5>
+                        <h5 class="modal-title">Add New Test</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row g-3">
                             <div class="col-lg-8">
                                 <label>Test Title <span class="text-danger">*</span></label>
-                                <input type="text" name="title" value="{{ $test->title }}" class="form-control" required>
+                                <input type="text" name="title" class="form-control" placeholder="e.g. Complete Blood Count"
+                                    required>
                             </div>
                             <div class="col-lg-4">
                                 <label>Status <span class="text-danger">*</span></label>
                                 <select name="status" class="form-control" required>
-                                    <option value="active" {{ $test->status == 'active' ? 'selected' : '' }}>Active</option>
-                                    <option value="inactive" {{ $test->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label>Change Icon (Leave blank to keep current)</label>
+                                <label>Icon (Optional)</label>
                                 <input type="file" name="icon" class="form-control" accept="image/*">
-                                @if($test->icon)
-                                    <div class="mt-3">
-                                        <img src="{{ asset('storage/' . $test->icon) }}" width="80" class="rounded">
-                                        <small class="text-muted d-block">Current icon</small>
-                                    </div>
-                                @endif
+                                <small class="text-muted">Recommended: 100x100px PNG/JPG</small>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Test</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Test</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-@endforeach
+
+    <!-- View & Edit Modals -->
+    @foreach($tests as $test)
+        <!-- View Modal -->
+        <div class="modal fade" id="viewModal{{ $test->id }}">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ $test->title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered mb-0">
+                            <tr>
+                                <th width="150">Title</th>
+                                <td>{{ $test->title }}</td>
+                            </tr>
+                            <tr>
+                                <th>Icon</th>
+                                <td>
+                                    @if($test->icon)
+                                        <img src="{{ asset('storage/' . $test->icon) }}" width="100" class="rounded">
+                                    @else
+                                        <span class="text-muted">No icon uploaded</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>
+                                    <span class="badge badge-{{ $test->status == 'active' ? 'success' : 'danger' }}">
+                                        {{ ucfirst($test->status) }}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Created</th>
+                                <td>{{ $test->created_at->format('d M Y, h:i A') }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editModal{{ $test->id }}">
+            <div class="modal-dialog modal-lg">
+                <form action="{{ route('admin.tests.update', $test) }}" method="POST" enctype="multipart/form-data">
+                    @csrf @method('PUT')
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Test</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-lg-8">
+                                    <label>Test Title <span class="text-danger">*</span></label>
+                                    <input type="text" name="title" value="{{ $test->title }}" class="form-control" required>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>Status <span class="text-danger">*</span></label>
+                                    <select name="status" class="form-control" required>
+                                        <option value="active" {{ $test->status == 'active' ? 'selected' : '' }}>Active</option>
+                                        <option value="inactive" {{ $test->status == 'inactive' ? 'selected' : '' }}>Inactive
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label>Change Icon (Leave blank to keep current)</label>
+                                    <input type="file" name="icon" class="form-control" accept="image/*">
+                                    @if($test->icon)
+                                        <div class="mt-3">
+                                            <img src="{{ asset('storage/' . $test->icon) }}" width="80" class="rounded">
+                                            <small class="text-muted d-block">Current icon</small>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Update Test</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endforeach
 @endsection
 
 @push('scripts')
-<script>
-$(function () {
-    // Search functionality
-    $('#searchInput').on('keyup', function () {
-        var value = $(this).val().toLowerCase();
-        $("#testTable tbody tr").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-    });
+    <script>
+        $(function () {
+            // Search functionality
+            $('#searchInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $("#testTable tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
 
-    // SweetAlert2 Delete Confirmation (Same as FAQs)
-    $('.delete-btn').click(function (e) {
-        e.preventDefault();
-        var form = $(this).closest('form');
+            // SweetAlert2 Delete Confirmation (Same as FAQs)
+            $('.delete-btn').click(function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
 
-        Swal.fire({
-            title: 'Delete Test?',
-            text: "This action cannot be undone!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                form.submit();
-            }
+                Swal.fire({
+                    title: 'Delete Test?',
+                    text: "This action cannot be undone!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
 @endpush

@@ -61,8 +61,8 @@
                             </div>
                             <!-- about images top end -->
                             <!-- about images bottom start -->
-                            <div class="about-images-bottom">
-                                <!-- about year counter start -->
+                            {{-- <div class="about-images-bottom">
+                                
                                 <div class="about-year-counter wow fadeInLeft" data-wow-delay=".3s">
                                     <div class="about-year-icon">
                                         <figure>
@@ -74,16 +74,14 @@
                                         <h3>1990</h3>
                                     </div>
                                 </div>
-                                <!-- about year counter end -->
-                                <!-- about year images start -->
+                               
                                 <div class="about-year-images wow fadeInRight" data-wow-delay=".4s">
                                     <figure class="image-anime">
                                         <img src="assets/images/about/about-2-2.jpg" alt="about two">
                                     </figure>
                                 </div>
-                                <!-- about year images end -->
-                            </div>
-                            <!-- about images bottom end -->
+                                
+                            </div> --}}
                         </div>
                         <!-- about images box end -->
                     </div>
@@ -142,62 +140,58 @@
             </div>
         </section>
         <!-- about section end -->
-        <!-- why-section start -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why content start -->
-                        <div class="why-content">
-                            <!-- section-title start -->
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Why Diagnoedge</span>
-                                <h2>Compassion and expertise, perfectly combined</h2>
-                                <p align="justify">DiagnoEdge Lab stands for accuracy, reliability, and patient-first care. With advanced
-                                    diagnostic technology, certified professionals, and stringent quality protocols, we
-                                    ensure every test delivers precise and trustworthy results. Our fast turnaround time,
-                                    transparent processes, and commitment to affordability make healthcare more accessible
-                                    for everyone. At DiagnoEdge, we don’t just provide reports—we provide clarity,
-                                    confidence, and support for better health decisions.</p>
+          <!-- partners section start -->
+        @php
+            $partners = \App\Models\Partner::where('status', 'active')->get();
+        @endphp
+
+        @if($partners->count() > 0)
+            <section class="partners-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- section title start -->
+                            <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Our Partners</span>
+                                <h2>Partners Who Trust Diagnoedge</h2>
                             </div>
-                            <!-- section-title end -->
-
-
+                            <!-- section title end -->
                         </div>
-                        <!-- why content end -->
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why choose image start -->
-                        <div class="why-choose-image">
-                            <!-- why choose img 1 start -->
-                            <div class="why-choose-img-1">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-1.jpg" alt="why choose image one">
-                                </figure>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- partners slider start -->
+                            <div class="swiper partners-slider">
+                                <!-- swiper wrapper start -->
+                                <div class="swiper-wrapper">
+                                    @foreach($partners as $partner)
+                                        <!-- swiper slide start -->
+                                        <div class="swiper-slide">
+                                            <!-- partners item start -->
+                                            <div class="partners-item">
+                                                <div class="partners-image text-center">
+                                                    <figure>
+                                                        <img src="{{ asset('storage/' . $partner->image) }}" alt="Partner Logo"
+                                                            class="img-fluid" loading="lazy"
+                                                            onerror="this.src='{{ asset('assets/images/partners/placeholder.png') }}'">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <!-- partners item end -->
+                                        </div>
+                                        <!-- swiper slide end -->
+                                    @endforeach
+                                </div>
+                                <!-- swiper wrapper end -->
                             </div>
-                            <!-- why choose img 1 end -->
-                            <!-- why choose img 2 start -->
-                            <div class="why-choose-img-2">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-2.jpg" alt="why choose image two">
-                                </figure>
-                            </div>
-                            <!-- why choose img 2 end -->
-                            <!-- why choose about circle start -->
-                            <div class="why-choose-about-circle">
-                                <a class="about-circle" href="{{ route('about-us') }}" aria-label="about circle">
-                                    <img src="assets/images/shape/round-about-us.png" alt="round about us">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- why choose contact circle end -->
+                            <!-- partners slider end -->
                         </div>
-                        <!-- why choose image end -->
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- why-section end -->
+            </section>
+        @endif
+        <!-- partners section end -->
+      
 
 
        

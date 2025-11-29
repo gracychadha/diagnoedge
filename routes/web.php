@@ -10,6 +10,8 @@ use App\Http\Controllers\HealthRiskController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
 use App\Models\Subparameter;
+use App\Models\Gallery;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\ServiceController;
@@ -31,12 +33,19 @@ use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\MailController;
 
 
+// FOR FETCH DATA IN FRONTEND
+Route::get('/doctors', [DoctorController::class, 'frontendDoctors'])->name('doctors');
+Route::get('/', [GalleryController::class, 'frontendGallery'])->name('welcome');
+
 
 //   for frontend 
 
 Route::get('/', function () {
-    return view('website.pages.welcome');
+    $gallery = Gallery::where('status', 'active')->get();
+    return view('website.pages.welcome', compact('gallery'));
 })->name('home');
+
+
 Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
@@ -46,7 +55,8 @@ Route::get('/contact-us', function () {
     return view('website.pages.contact-us');
 })->name('contact-us');
 Route::get('/doctors', function () {
-    return view('website.pages.doctors');
+    $doctors = Doctor::where('status', '1')->get();
+    return view('website.pages.doctors', compact('doctors'));
 })->name('doctors');
 Route::get('/our-partners', function () {
     return view('website.pages.our-partner');
@@ -278,42 +288,42 @@ Route::middleware('auth')->group(function () {
     Route::put('/site-images/ads', [SiteImagesController::class, 'updateAds'])
         ->name('site-images.update-ads');
 
-        // ────────────── Gallery ──────────────
-Route::get('/gallery', [GalleryController::class, 'index'])
-    ->name('gallery.index');
+    // ────────────── Gallery ──────────────
+    Route::get('/gallery', [GalleryController::class, 'index'])
+        ->name('gallery.index');
 
-Route::post('/gallery', [GalleryController::class, 'store'])
-    ->name('gallery.store');
+    Route::post('/gallery', [GalleryController::class, 'store'])
+        ->name('gallery.store');
 
-Route::put('/gallery/{gallery}', [GalleryController::class, 'update'])
-    ->name('gallery.update');
+    Route::put('/gallery/{gallery}', [GalleryController::class, 'update'])
+        ->name('gallery.update');
 
-Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])
-    ->name('gallery.destroy');
-
-
-    
-        // ────────────── About Section ──────────────
-Route::get('/about-section', [AboutSectionController::class, 'index'])->name('about-section.index');
-Route::put('/about-section', [AboutSectionController::class, 'update'])->name('about-section.update');
+    Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])
+        ->name('gallery.destroy');
 
 
-// ────────────── SLIDER IMAGES ──────────────
-Route::get('/sliderimage', [SliderImageController::class, 'index'])
-    ->name('sliderimage.index');
-Route::post('/sliderimage', [SliderImageController::class, 'store'])
-    ->name('sliderimage.store');
-Route::put('/sliderimage/{sliderImage}', [SliderImageController::class, 'update'])
-    ->name('sliderimage.update');
-Route::delete('/sliderimage/{sliderImage}', [SliderImageController::class, 'destroy'])
-    ->name('sliderimage.destroy');
 
- // ────────────── WHY CHOOSE US SECTION ──────────────
-Route::get('/whychooseus-section', [WhyChooseUsSectionController::class, 'index'])
-    ->name('whychooseus.section');
+    // ────────────── About Section ──────────────
+    Route::get('/about-section', [AboutSectionController::class, 'index'])->name('about-section.index');
+    Route::put('/about-section', [AboutSectionController::class, 'update'])->name('about-section.update');
 
-Route::put('/whychooseus-section/{section}', [WhyChooseUsSectionController::class, 'update'])
-    ->name('whychooseus.section.update');
+
+    // ────────────── SLIDER IMAGES ──────────────
+    Route::get('/sliderimage', [SliderImageController::class, 'index'])
+        ->name('sliderimage.index');
+    Route::post('/sliderimage', [SliderImageController::class, 'store'])
+        ->name('sliderimage.store');
+    Route::put('/sliderimage/{sliderImage}', [SliderImageController::class, 'update'])
+        ->name('sliderimage.update');
+    Route::delete('/sliderimage/{sliderImage}', [SliderImageController::class, 'destroy'])
+        ->name('sliderimage.destroy');
+
+    // ────────────── WHY CHOOSE US SECTION ──────────────
+    Route::get('/whychooseus-section', [WhyChooseUsSectionController::class, 'index'])
+        ->name('whychooseus.section');
+
+    Route::put('/whychooseus-section/{section}', [WhyChooseUsSectionController::class, 'update'])
+        ->name('whychooseus.section.update');
 
 
     //test services 
@@ -353,6 +363,11 @@ Route::put('/whychooseus-section/{section}', [WhyChooseUsSectionController::clas
     Route::get('/admin-packages/view/{id}', [PackageController::class, 'view']);
 
 
+    // FOR CONTACT 
+    Route::get('/contacts', [ContactController::class, 'index'])->name('admin-contact.index');
+    Route::get('/contacts/view/{id}', [ContactController::class, 'view']);
+    Route::post('/contacts/update', [ContactController::class, 'update']);
+    Route::delete('/contacts/delete/{id}', [ContactController::class, 'delete']);
 
 
     // ────────────── Website Setting ──────────────

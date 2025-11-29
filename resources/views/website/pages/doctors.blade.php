@@ -48,7 +48,8 @@
                                 <h2>Meet Our expert Eye Specialists</h2>
                             </div>
                             <div class="section-title-content">
-                                <p align="justify">Our team at DiagnoEdge Lab is led by experienced and dedicated medical professionals who
+                                <p align="justify">Our team at DiagnoEdge Lab is led by experienced and dedicated medical
+                                    professionals who
                                     believe that accurate diagnosis is the first step toward effective treatment. With years
                                     of expertise in pathology and laboratory medicine, our doctors ensure every test is
                                     performed with precision, care, and the highest quality standards.</p>
@@ -58,326 +59,51 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-1.jpg" alt="doctors image one">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
+                    @forelse ($doctors as $doc)
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                            <!-- doctor items start -->
+                            <div class="doctor-items">
+                                <!-- doctor image start -->
+                                <div class="doctor-image">
+                                    <a href="#">
+                                        <figure class="image-anime">
+                                            <img src="{{ asset('uploads/'.$doc->image) }}" alt="doctors image one">
+                                        </figure>
+                                    </a>
+                                    {{-- <div class="doctor-share">
+                                        <ul class="social-icon social-vertical">
+                                            <li>
+                                                <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div> --}}
+                                    {{-- <div class="doctor-review">
+                                        <p><i class="fas fa-star active"></i> 4.9</p>
+                                    </div> --}}
                                 </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.9</p>
+                                <!-- doctor image end -->
+                                <!-- doctor content start -->
+                                <div class="doctor-content">
+                                    <h3><a href="#">{{ $doc->fullname }}</a></h3>
+                                    <p>{{ $doc->designation }} | {{ $doc->specialization }}</p>
                                 </div>
+                                <!-- doctor content end -->
                             </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Catherine Denuve</a></h3>
-                                <p>Optegra Eye</p>
-                            </div>
-                            <!-- doctor content end -->
+                            <!-- doctor items end -->
                         </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-2.jpg" alt="doctors image two">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
+                        @empty
+                        <div class="text-center w-100 py-5">
+                                <h4>No Doctor images to show</h4>
                             </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Laurence Olivier</a></h3>
-                                <p>Lens replacement</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-3.jpg" alt="doctors image three">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Susan Hopkins</a></h3>
-                                <p>Cataract surgery</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-4.jpg" alt="doctors image four">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.7</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Keanu Reeves</a></h3>
-                                <p>Clarivu eye</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-5.jpg" alt="doctors image five">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.9</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Robert De Niro</a></h3>
-                                <p>Glaucoma</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-6.jpg" alt="doctors image six">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Mel Gibson</a></h3>
-                                <p>Laboratory</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-7.jpg" alt="doctors image seven">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.8</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Abigail Adam</a></h3>
-                                <p>Laboratory</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <!-- doctor items start -->
-                        <div class="doctor-items">
-                            <!-- doctor image start -->
-                            <div class="doctor-image">
-                                <a href="#">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/doctor/doctor-8.jpg" alt="doctors image eight">
-                                    </figure>
-                                </a>
-                                <div class="doctor-share">
-                                    <ul class="social-icon social-vertical">
-                                        <li>
-                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="doctor-share-icon">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                </div>
-                                <div class="doctor-review">
-                                    <p><i class="fas fa-star active"></i> 4.7</p>
-                                </div>
-                            </div>
-                            <!-- doctor image end -->
-                            <!-- doctor content start -->
-                            <div class="doctor-content">
-                                <h3><a href="#">Dr. Ruth Edward</a></h3>
-                                <p>Laboratory</p>
-                            </div>
-                            <!-- doctor content end -->
-                        </div>
-                        <!-- doctor items end -->
-                    </div>
+                    @endforelse
+                    
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -398,7 +124,7 @@
         </section>
         <!-- doctor section end -->
 
-       
+
     </main>
     <!-- main end -->
 @endsection

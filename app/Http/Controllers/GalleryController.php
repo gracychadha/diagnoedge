@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
+    // TO FTECH IN FRONTEND
+    public function frontendGallery()
+    {
+        $gallery = Gallery::where('status', 'active')->get();
+        return view('website.pages.welcome', compact('gallery'));
+    }
+
     public function index()
     {
         $gallery = Gallery::latest()->get();
@@ -18,17 +25,17 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image'   => 'required|image|mimes:png,jpg,jpeg,webp|max:5048',
+            'image' => 'required|image|mimes:png,jpg,jpeg,webp|max:5048',
             'caption' => 'nullable|string|max:255',
-            'status'  => 'required|in:active,inactive'
+            'status' => 'required|in:active,inactive'
         ]);
 
         $path = $request->file('image')->store('gallery', 'public');
 
         Gallery::create([
-            'image'   => $path,
+            'image' => $path,
             'caption' => $request->caption,
-            'status'  => $request->status
+            'status' => $request->status
         ]);
 
         return back()->with('success', 'Image added to gallery!');
@@ -37,14 +44,14 @@ class GalleryController extends Controller
     public function update(Request $request, Gallery $gallery)
     {
         $request->validate([
-            'image'   => 'nullable|image|mimes:png,jpg,jpeg,webp|max:5048',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,webp|max:5048',
             'caption' => 'nullable|string|max:255',
-            'status'  => 'required|in:active,inactive'
+            'status' => 'required|in:active,inactive'
         ]);
 
         $data = [
             'caption' => $request->caption,
-            'status'  => $request->status
+            'status' => $request->status
         ];
 
         if ($request->hasFile('image')) {

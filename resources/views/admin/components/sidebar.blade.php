@@ -12,6 +12,11 @@
                     <span class="nav-text">Appointment</span>
                 </a>
             </li>
+            <li><a href="{{ route('admin-contact.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-list"></i>
+                    <span class="nav-text">Contact Leads</span>
+                </a>
+            </li>
 
             {{-- for health package --}}
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -83,11 +88,11 @@
 
                 </ul>
             </li>
-            <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
+            {{-- <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-heart"></i>
                     <span class="nav-text">Patient</span>
                 </a>
-            </li>
+            </li> --}}
 
 
 

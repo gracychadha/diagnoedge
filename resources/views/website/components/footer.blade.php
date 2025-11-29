@@ -216,17 +216,14 @@
                 <div class="row align-items-center">
                     <div class=" text-center">
                         <p>Do you have any queries
-                            {{-- <button data-bs-toggle="modal" data-bs-target="#popupCallModal"> Get
-                                a Call back Now</button> --}}
-                            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#popupCallModal"  class="theme-button style-1 sticky-f-btn" aria-label="Get a Call Back">
+                           
+                            <a href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#popupCallModal"  class=" sticky-btn theme-button style-1 sticky-f-btn" aria-label="Get a Call Back">
                                 <span data-text="Get a Call Back">Get a Call Back</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                             or Call us now at
-                            {{-- <button>
-                                <a href="tel:+919876784545" target="_blank">+91 987 678 4545</a>
-                            </button> --}}
-                            <a href="tel:+919876784545" class="theme-button style-1" aria-label="+91 987 678 4545" target="_blank">
+                           
+                            <a href="tel:+919876784545"  class="theme-button style-1 sticky-btn" aria-label="+91 987 678 4545" target="_blank">
                                 <span data-text="+91 987 678 4545">+91 987 678 4545</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>

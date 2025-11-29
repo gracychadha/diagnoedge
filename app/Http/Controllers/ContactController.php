@@ -7,29 +7,67 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+
+
+    // TO FETCH ALL THE DATA OF Contact
+    public function index()
+    {
+        $contact = Contact::orderBy('id', 'desc')->get();
+        return view('admin.pages.admin-contact', compact('contact'));
+    }
+    // to store
     public function store(Request $request)
     {
-       
-    // Validation
-    $request->validate([
-        'fullname'         => 'required|string|max:255',
-        'email'            => 'required|email|max:255',
-        'phone'            => 'required|string|max:20',
-        'subject'          => 'required|string|max:255',
-        'message'          => 'nullable|string|max:5000',
-    ]);
 
-  
+        // Validation
+        $request->validate([
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'subject' => 'required|string|max:255',
+            'message' => 'nullable|string|max:5000',
+        ]);
 
-    Contact::create([
-        'fullname'         => $request->fullname,
-        'email'            => $request->email,
-        'phone'            => $request->phone,
-        'subject'          => $request->subject,
-        'message'          => $request->message,
-        'ip'               => $request->ip(),
-    ]);
 
-    return redirect()->back()->with('success', 'Thankyou for contacting us , We will get back to you soon !!!!');
+
+        Contact::create([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'ip' => $request->ip(),
+        ]);
+
+        return redirect()->back()->with('success', 'Thankyou for contacting us , We will get back to you soon !!!!');
     }
+
+    // TO VIEW ALL THE DATA
+    public function view($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return response()->json($contact);
+    }
+
+    // FOR UPDATE AND EDIT
+    public function update(Request $request)
+    {
+        $contact = Contact::find($request->id);
+        $contact->fullname = $request->fullname;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+
+        $contact->save();
+        return response()->json(['success' => true]);
+    }
+
+    // TO DELETE
+     public function delete($id)
+    {
+        Contact::findOrFail($id)->delete();
+        return response()->json(['success' => true]);
+    }
+
 }

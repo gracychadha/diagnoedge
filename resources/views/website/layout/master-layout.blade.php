@@ -308,92 +308,7 @@
         });
     });
 
-    // POPUP MODAL FORM SCRIPT
-    document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('popupCallModal');
-        const closeBtn = document.getElementById('popupClose');
-        const form = document.getElementById('bookingForm');
-        const submitBtn = document.getElementById('bookingSubmit');
-        const alertBox = document.getElementById('alertBox');
-        let iti;
-
-
-
-        // reCAPTCHA callback
-        window.recaptchaCallback = function () {
-            submitBtn.disabled = false;
-        }
-
-
-        // Open/close modal
-        function openBookingModal() {
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeBookingModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            form.reset();
-            if (window.grecaptcha) grecaptcha.reset();
-            submitBtn.disabled = true;
-            alertBox.innerHTML = '';
-        }
-
-        closeBtn.addEventListener('click', closeBookingModal);
-        window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
-
-
-        // AJAX form submit
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Submitting...';
-
-            // Get full international number
-            if (iti) {
-                form.querySelector('#phone').value = iti.getNumber();
-            }
-
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: "POST",
-                headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
-                body: formData
-            })
-                .then(res => res.json())
-                .then(data => {
-                    submitBtn.innerHTML = 'Submit';
-                    alertBox.innerHTML = '';
-
-                    if (data.success) {
-                        alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
-                        form.reset();
-                        if (window.grecaptcha) grecaptcha.reset();
-                        submitBtn.disabled = true;
-                        setTimeout(closeBookingModal, 5000);
-                    } else {
-                        let html = `<div class="alert-error"><ul>`;
-                        if (data.errors) {
-                            Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
-                        } else {
-                            html += `<li>${data.message || 'An error occurred'}</li>`;
-                        }
-                        html += `</ul></div>`;
-                        alertBox.innerHTML = html;
-                        if (window.grecaptcha) grecaptcha.reset();
-                        submitBtn.disabled = true;
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    submitBtn.innerHTML = 'Submit';
-                    alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
-                    if (window.grecaptcha) grecaptcha.reset();
-                    submitBtn.disabled = true;
-                });
-        });
-    });
-
+   
     // DATE PICKER FOR APPOINTMENT FORM
     flatpickr("#appointmentdate", {
         altInput: true,
@@ -409,20 +324,40 @@
             if (captchaBtn) {
                 captchaBtn.disabled = false;
             }
-        };
+        }; 
     });
-    // CAPTCHA BTN ENABLE DISABLE LOGIC
-    document.addEventListener("DOMContentLoaded", function () {
-        window.recaptchaCallback = function () {
-            const captchaBtn = document.getElementById('captcha-btn2');
-            if (captchaBtn) {
-                captchaBtn.disabled = false;
-            }
-        };
-    });
+    
 </script>
 
 
+<script>
+    var swiper = new Swiper(".myGallerySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
 
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+        320: { slidesPerView: 1 },
+        576: { slidesPerView: 2 },
+        991: { slidesPerView: 3 }
+    }
+});
+
+</script>
 
 </html>

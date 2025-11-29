@@ -43,7 +43,7 @@
                                         <th>#</th>
                                         <th>Icon</th>
                                         <th>Title</th>
-                                        <th>Slug</th>
+                                        {{-- <th>Slug</th> --}}
                                         {{-- <th>Parameters</th> --}}
                                         <th>Status</th>
                                         <th class="text-center">Actions</th>
@@ -63,7 +63,7 @@
                                                 @endif
                                             </td>
                                             <td class="">{{ Str::limit($risk->title, 25) }}</td>
-                                            <td><code class="text-dark">{{ $risk->slug }}</code></td>
+                                            {{-- <td><code class="text-dark">{{ $risk->slug }}</code></td> --}}
                                             {{-- <td>
                                                 @php
                                                     $paramIds = is_array($risk->parameter_id) ? $risk->parameter_id : json_decode($risk->parameter_id, true);

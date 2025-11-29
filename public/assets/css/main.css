@@ -16732,4 +16732,14 @@ button.btn-success:hover {
 }
 
 
+@media only screen and (max-width : 666px){
+  .sticky-footer p{
+    font-size:13px;
+  }
+  .sticky-footer .sticky-btn{
+padding: 5px !important;
+    height: 30px !important;
+    margin-bottom: 10px !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */

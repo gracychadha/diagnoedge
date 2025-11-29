@@ -7,6 +7,16 @@ use App\Models\Doctor;
 class DoctorController extends Controller
 {
 
+    // TO FTECH IN FRONTEND
+    public function frontendDoctors()
+    {
+        $doctors = Doctor::where('status', '1')->get(); 
+
+        return view('website.pages.doctors', compact('doctors'));
+    }
+
+
+
     // to fetch data 
 
     public function index()
