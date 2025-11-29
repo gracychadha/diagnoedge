@@ -38,7 +38,6 @@
         .iti {
             width: 100%;
         }
-        
     </style>
 
 </head>
@@ -220,6 +219,10 @@
         observer.observe(document.body, { childList: true, subtree: true });
     });
 
+
+    function recaptchaCallback() {
+        document.getElementById('bookingSubmit').disabled = false;
+    }
     // BOOKING MODAL FORM SCRIPT
     document.addEventListener('DOMContentLoaded', function () {
         const modal = document.getElementById('bookingModal');
@@ -231,10 +234,7 @@
 
 
 
-        // reCAPTCHA callback
-        window.recaptchaCallback = function () {
-            submitBtn.disabled = false;
-        }
+        
 
         // Open/close modal
         function openBookingModal() {
@@ -308,7 +308,7 @@
         });
     });
 
-   
+
     // DATE PICKER FOR APPOINTMENT FORM
     flatpickr("#appointmentdate", {
         altInput: true,
@@ -324,39 +324,39 @@
             if (captchaBtn) {
                 captchaBtn.disabled = false;
             }
-        }; 
+        };
     });
-    
+
 </script>
 
 
 <script>
     var swiper = new Swiper(".myGallerySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    loop: true,
+        slidesPerView: 3,
+        spaceBetween: 25,
+        loop: true,
 
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
 
-    breakpoints: {
-        320: { slidesPerView: 1 },
-        576: { slidesPerView: 2 },
-        991: { slidesPerView: 3 }
-    }
-});
+        breakpoints: {
+            320: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            991: { slidesPerView: 3 }
+        }
+    });
 
 </script>
 

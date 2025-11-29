@@ -82,17 +82,17 @@
 
 										<td>
 											<span class="me-3">
-												<a href="javascript:void(0);" class="viewDoctor" data-id="{{ $doctor->id }}">
+												<a href="javascript:void(0);" class="viewDoctor btn btn-sm btn-info light" data-id="{{ $doctor->id }}">
 													<i class="fa fa-eye fs-18"></i>
 												</a>
 											</span>
 											<span class="me-3">
-												<a href="javascript:void(0)" class="editDoctor" data-id="{{ $doctor->id }}"><i
+												<a href="javascript:void(0)" class="editDoctor btn btn-sm btn-warning light" data-id="{{ $doctor->id }}"><i
 														class="fa fa-pencil fs-18 "></i></a>
 											</span>
 											<span>
-												<a href="javascript:void(0);" class="deleteDoctor" data-id="{{ $doctor->id }}">
-													<i class="fa fa-trash fs-18 text-danger"></i>
+												<a href="javascript:void(0);" class="deleteDoctor btn btn-sm btn-danger light" data-id="{{ $doctor->id }}">
+													<i class="fa fa-trash fs-18 "></i>
 												</a>
 											</span>
 

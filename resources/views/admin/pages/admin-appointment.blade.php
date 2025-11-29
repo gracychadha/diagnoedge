@@ -70,18 +70,17 @@
                                                 <td>
                                                     <span class="me-3">
                                                         <a href="javascript:void(0);" data-id="{{ $appointment->id }}"
-                                                            class="viewApp fa fa-eye fs-18"></i></a>
+                                                            class="viewApp btn btn-sm btn-info light "><i class=" fa fa-eye fs-18"></i></a>
                                                     </span>
                                                   <span class="me-3">
                                                      <a href="javascript:void(0);" 
    data-id="{{ $appointment->id }}" 
-   class="editApp fa fa-pencil fs-18" 
-   data-bs-toggle="modal"
-   data-bs-target="#editAppointment"></a>
+   class="editApp btn btn-sm btn-warning light"><i class="fa fa-pencil fs-18" ></i></a>
                                                   </span>
 
                                                     <span>
-   <i class="fa fa-trash fs-18 text-danger deleteApp" data-id="{{ $appointment->id }}"></i>
+                                                        <a class="btn btn-sm btn-danger light deleteApp">
+   <i class="fa fa-trash fs-18 " data-id="{{ $appointment->id }}"></i></a>
 </span>
 
                                                 </td>
