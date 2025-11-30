@@ -1,16 +1,16 @@
 <div class="nav-header">
     <a href="{{ route('dashboard') }}" class="brand-logo d-flex align-items-center">
         <!-- Logo Image -->
-        {{-- <img src="{{ asset('assets/images/favicon.png') }}" alt="Logo" class="logo-abbr" > --}}
+        {{-- <img src="{{ asset('assets/images/favicon.png') }}" alt="Logo" class="logo-abbr"> --}}
 
         <!-- Optional: Brand Title next to logo -->
         <span class="brand-title ms-2">
-           <img src="{{ asset('assets/images/logo/diagno-logo.png') }}" alt="">
+            <img src="{{ asset('assets/images/logo/diagno-logo.png') }}" alt="">
         </span>
     </a>
 
     <div class="nav-control">
-        <div class="hamburger" >
+        <div class="hamburger">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
@@ -28,7 +28,7 @@
                 </div>
 
                 <ul class="navbar-nav header-right">
-                   
+
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
                             <i id="icon-light" class="fas fa-sun"></i>
@@ -37,10 +37,15 @@
                     </li>
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="javascript:;" role="button" data-bs-toggle="dropdown">
-                            <img src="images/profile/12.png" width="20" alt="" />
+                            <img src="{{ auth()->user()->profile_photo_path
+    ? Storage::url(auth()->user()->profile_photo_path)
+    : asset('admin/images/avatar.png') }}" class="rounded-circle me-2" width="40" height="40"
+                                style="object-fit: cover;" alt="{{ auth()->user()->name }}">
+
                             <div class="header-info">
                                 <span>Hello, <strong class="">{{ auth()->user()->name }}</strong></span>
                             </div>
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a href="app-profile.html" class="dropdown-item ai-icon">

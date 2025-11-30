@@ -54,18 +54,18 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('sliderimage.index') }}">Slider</a></li>
                             <li><a href="{{ route('about-section.index') }}">About Us</a></li>
-                              <li><a href="{{ route('whychooseus.section') }}">Why Choose Us</a></li>
-                            <li><a href="#">Accreditations</a></li>
+                            <li><a href="{{ route('whychooseus.section') }}">Why Choose Us</a></li>
+                            <li><a href="{{ route('accreditations.index') }}">Accreditations</a></li>
                             <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
                             <li><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
                             <li><a href="{{ route('faqs.index') }}">Faqs</a></li>
-                          
+
                         </ul>
                     </li>
 
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">About Us Page</a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Know Us Better</a></li>
+                            <li><a href="{{ route('about-section-two.index') }}">Know Us Better</a></li>
                             <li><a href="{{ route('counters.index') }}">Counter</a></li>
                             <li><a href="#">What Makes Us Different</a></li>
                         </ul>
@@ -73,7 +73,7 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Partner Page</a>
                         <ul aria-expanded="false">
                             <li><a href="#">Our Partners</a></li>
-                              <li><a href="{{ route('partners.index') }}">Partner Image</a></li>
+                            <li><a href="{{ route('partners.index') }}">Partner Image</a></li>
                         </ul>
                     </li>
                     <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
@@ -82,30 +82,38 @@
 
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Job Career</a>
                         <ul aria-expanded="false">
-                            
-                             <li><a href="{{ route('jobcareer.index') }}">Add Vacency</a></li>
-                          
+
+                            <li><a href="{{ route('jobcareer.index') }}">Add Vacency</a></li>
+
                         </ul>
                     </li>
 
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Management</span>
                 </a>
-                <li class="nav-item">
-    <a class="nav-link {{ request()->is('profile*') ? 'active' : '' }}" href="{{ route('profile') }}">
-        <i class="fa fa-user-circle"></i> My Profile
-    </a>
-</li>
-               
-            </li>
-            {{-- <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-heart"></i>
-                    <span class="nav-text">Patient</span>
-                </a>
+
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('profile.index') }}">Profile</a></li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                        <ul aria-expanded="false">
+                            <li><a href="email-compose.html">Compose</a></li>
+                            <li><a href="email-inbox.html">Inbox</a></li>
+                            <li><a href="email-read.html">Read</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="app-calender.html">Calendar</a></li>
+
+                </ul>
             </li> --}}
+
+            <li><a href="{{ route('profile') }}" class="ai-icon" aria-expanded="false">
+                    <i class="fa fa-user-circle"></i>
+                    <span class="nav-text">My Profile</span>
+                </a>
+            </li>
 
 
 

@@ -2143,58 +2143,36 @@
 
 
 
-        <section class="accredit-sec py-5" style="background:#e6f5e9;">
-            <div class="container">
+       <section class="accredit-sec py-5" style="background:#e6f5e9;">
+    <div class="container">
+        @php
+            $section = App\Models\AccreditationSection::first();
+        @endphp
 
-                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                    <span class="sub-title">Accreditations & Certifications</span>
-                    <h2>Why Trust Our Quality Standards?</h2>
-                    <p class="lead">We follow globally recognized testing standards ensuring precision, safety, and
-                        accuracy.</p>
-                </div>
+        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+            <span class="sub-title">Accreditations & Certifications</span>
+            <h2>Why Trust Our Quality Standards?</h2>
+            <p class="lead">We follow globally recognized testing standards ensuring precision, safety, and accuracy.</p>
+        </div>
 
-                <div class="row g-4 justify-content-center">
-
-
-
-                    <!-- NABL Accredited -->
+        <div class="row g-4 justify-content-center">
+            @foreach(range(1, 4) as $i)
+                @if($section->{"title$i"})
                     <div class="col-md-4 col-lg-3">
                         <div class="feature-card text-center p-4">
-                            <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                            <h6 class="fw-bold">NABL Accredited Labs</h6>
+                            @if($section->{"icon$i"})
+                                <img src="{{ Storage::url($section->{"icon$i"}) }}" alt="{{ $section->{"title$i"} }}" class="mb-3" style="width: 4.5rem; height: 4.5rem; object-fit: contain;">
+                            @else
+                                <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                            @endif
+                            <h6 class="fw-bold">{{ $section->{"title$i"} }}</h6>
                         </div>
                     </div>
-
-                    <!-- CAP Certified -->
-                    <div class="col-md-4 col-lg-3">
-                        <div class="feature-card text-center p-4">
-                            <i class="fas fa-microscope mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                            <h6 class="fw-bold">CAP Certified</h6>
-                        </div>
-                    </div>
-
-                    <!-- ISO Certification -->
-                    <div class="col-md-4 col-lg-3">
-                        <div class="feature-card text-center p-4">
-                            <i class="fas fa-clipboard-check mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                            <h6 class="fw-bold">ISO 9001:2015</h6>
-                        </div>
-                    </div>
-
-                    <!-- Daily QC Monitoring -->
-                    <div class="col-md-4 col-lg-3">
-                        <div class="feature-card text-center p-4">
-                            <i class="fas fa-chart-line mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                            <h6 class="fw-bold">600+ Instruments<br>Real-Time QC Monitoring</h6>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-            </div>
-        </section>
+                @endif
+            @endforeach
+        </div>
+    </div>
+</section>
 
 
         <!-- blog section start -->

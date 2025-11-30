@@ -2,14 +2,14 @@
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AccreditationController;
 use App\Http\Controllers\WebsiteSetting;
 use App\Http\Controllers\SystemSetting;
 use App\Http\Controllers\CaptchaSettingController;
 use App\Http\Controllers\HealthRiskController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
-use App\Models\Subparameter;
+use App\Http\Controllers\AboutSectionTwoController;
 use App\Models\Gallery;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +31,6 @@ use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SliderImageController;
 use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\JobCareerController;
-use App\Http\Controllers\Auth\PasswordController;
-use App\Http\Controllers\MailController;
 
 
 // FOR FETCH DATA IN FRONTEND
@@ -347,6 +345,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/jobcareer/{jobCareer}', [JobCareerController::class, 'destroy'])
         ->name('jobcareer.destroy');
 
+    // ────────────── ACCREDITATIONS SECTION ──────────────
+    Route::get('/accreditations', [AccreditationController::class, 'index'])
+        ->name('accreditations.index');
+
+    Route::get('/accreditations/edit', [AccreditationController::class, 'edit'])
+        ->name('accreditations.edit');
+
+    Route::put('/accreditations', [AccreditationController::class, 'update'])
+        ->name('accreditations.update');
+
+    // ────────────── ABOUT SECTION TWO (Know Us Better) ──────────────
+    Route::get('/about-section-two', [AboutSectionTwoController::class, 'index'])
+        ->name('about-section-two.index');
+
+    Route::get('/about-section-two/edit', [AboutSectionTwoController::class, 'edit'])
+        ->name('about-section-two.edit');
+
+    Route::put('/about-section-two', [AboutSectionTwoController::class, 'update'])
+        ->name('about-section-two.update');
+
 
     //test services 
 
@@ -358,16 +376,16 @@ Route::middleware('auth')->group(function () {
 
 
     // ────────────── Profile ──────────────  
-   Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])
-         ->name('profile');
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])
+        ->name('profile');
 
     Route::patch('/profile', [App\Http\Controllers\ProfileController::class, 'update'])
-         ->name('profile.update');
+        ->name('profile.update');
 
     Route::put('/profile/password', [App\Http\Controllers\Auth\PasswordController::class, 'update'])
-         ->name('password.update');
+        ->name('password.update');
 
-         
+
 
     // FOR DOCTOR
     Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');

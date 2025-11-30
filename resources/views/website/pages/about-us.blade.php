@@ -36,110 +36,69 @@
         <!-- breadcrumb section end -->
 
         <!-- about section start -->
-        <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="about-shape-1">
-                <figure>
-                    <img src="assets/images/about/about-shape-3.png" alt="about shape one">
-                </figure>
-            </div>
-            <div class="about-shape-2">
-                <figure>
-                    <img src="assets/images/about/about-shape-4.png" alt="about shape two">
-                </figure>
-            </div>
-            <div class="container">
-                <div class="row align-items-center">
+      @php $about = App\Models\AboutSectionTwo::where('is_active', true)->first(); @endphp
 
-                    <div class="col-lg-6">
-                        <!-- about images box start -->
-                        <div class="about-images-box">
-                            <!-- about images top start -->
-                            <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-2-1.jpg" alt="about one">
-                                </figure>
-                            </div>
-                            <!-- about images top end -->
-                            <!-- about images bottom start -->
-                            <div class="about-images-bottom">
-                                <!-- about year counter start -->
-                                <div class="about-year-counter wow fadeInLeft" data-wow-delay=".3s">
-                                    <div class="about-year-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-4.png" alt="icon why choose four">
-                                        </figure>
-                                    </div>
-                                    <div class="about-year-content">
-                                        <p>Our Diagnoedge Hospital Funded in</p>
-                                        <h3>1990</h3>
-                                    </div>
-                                </div>
-                                <!-- about year counter end -->
-                                <!-- about year images start -->
-                                <div class="about-year-images wow fadeInRight" data-wow-delay=".4s">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/about/about-2-2.jpg" alt="about two">
-                                    </figure>
-                                </div>
-                                <!-- about year images end -->
-                            </div>
-                            <!-- about images bottom end -->
-                        </div>
-                        <!-- about images box end -->
+@if($about)
+<section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
+    @if($about->shape_1)<div class="about-shape-1"><img src="{{ Storage::url($about->shape_1) }}" alt=""></div>@endif
+    @if($about->shape_2)<div class="about-shape-2"><img src="{{ Storage::url($about->shape_2) }}" alt=""></div>@endif
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-images-box">
+                    <div class="about-images-top wow fadeInUp">
+                        <img src="{{ $about->image_top ? Storage::url($about->image_top) : asset('assets/images/about/about-2-1.jpg') }}" alt="">
                     </div>
-                    <div class="col-lg-6">
-                        <!-- about content start -->
-                        <div class="about-content">
-                            <!-- section title start -->
-
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Know Us Better</span>
-                                <h2>Delivering Precision Diagnostics With Compassion and Innovation</h2>
-                                <p align="justify">
-                                    Diagnoedge Lab is committed to providing accurate, reliable, and advanced diagnostic
-                                    services
-                                    to support better healthcare decisions. With cutting-edge technology, skilled
-                                    professionals,
-                                    and a patient-centered approach, we deliver high-quality laboratory testing that ensures
-                                    timely
-                                    and trustworthy results. Our focus on innovation, excellence, and continuous improvement
-                                    enables
-                                    us to serve hospitals, clinics, corporate sectors, and individuals with unmatched
-                                    efficiency and
-                                    care. Since our establishment, we have strived to bring world-class diagnostics closer
-                                    to the
-                                    community and enhance overall wellness through precise testing and compassionate
-                                    service.
-                                </p>
+                    <div class="about-images-bottom">
+                        <div class="about-year-counter wow fadeInLeft">
+                            <div class="about-year-icon">
+                                <img src="{{ $about->founded_image ? Storage::url($about->founded_image) : asset('assets/images/about/icon-about-4.png') }}" alt="">
                             </div>
-
-                            <!-- section title end -->
-
-                            <!-- about footer start -->
-                            <div class="about-footer wow fadeInUp" data-wow-delay=".4s">
-                                <div class="about-button-wappper">
-                                    <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About">
-                                        <span data-text="More About">More About</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                                <div class="about-contact-box">
-                                    <div class="icon-box">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </div>
-                                    <div class="about-contact-box-content">
-                                        <p>For Emergency, Call Now</p>
-                                        <a href="tel:+19876543210">+1 234 467 88</a>
-                                    </div>
-                                </div>
+                            <div class="about-year-content">
+                                <p>Our Diagnoedge Hospital Funded in</p>
+                                <h3>{{ $about->founded_year }}</h3>
                             </div>
-                            <!-- about footer end -->
                         </div>
-                        <!-- about content end -->
+                        <div class="about-year-images wow fadeInRight">
+                            <img src="{{ $about->image_bottom ? Storage::url($about->image_bottom) : asset('assets/images/about/about-2-2.jpg') }}" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-title wow fadeInUp">
+                        <span class="sub-title">{{ $about->sub_title }}</span>
+                        <h2>{{ $about->main_title }}</h2>
+                        <p align="justify">{!! nl2br(e($about->description_1)) !!}</p>
+                        @if($about->description_2)
+                            <p align="justify">{!! nl2br(e($about->description_2)) !!}</p>
+                        @endif
+                    </div>
+
+                    <div class="about-footer wow fadeInUp">
+                        <div class="about-button-wappper">
+                            <a href="{{ route('about-us') }}" class="theme-button style-1">
+                                <span data-text="More About">More About</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="about-contact-box">
+                            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <div class="about-contact-box-content">
+                                <p>For Emergency, Call Now</p>
+                                <a href="tel:+123446788">+1 234 467 88</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endif
         <!-- about section end -->
 
 
