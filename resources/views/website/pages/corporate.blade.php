@@ -35,159 +35,133 @@
             </div>
         </section>
         <!-- breadcrumb section end -->
-        <!-- about section start -->
-        <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="about-shape-1">
-                <figure>
-                    <img src="assets/images/about/about-shape-3.png" alt="about shape one">
-                </figure>
-            </div>
-            <div class="about-shape-2">
-                <figure>
-                    <img src="assets/images/about/about-shape-4.png" alt="about shape two">
-                </figure>
-            </div>
-            <div class="container">
-                <div class="row align-items-center">
 
-                    <div class="col-lg-6">
-                        <!-- about images box start -->
-                        <div class="about-images-box">
-                            <!-- about images top start -->
-                            <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-2-1.jpg" alt="about one">
-                                </figure>
-                            </div>
-                            <!-- about images top end -->
-                            <!-- about images bottom start -->
-                            <div class="about-images-bottom">
-                                <!-- about year counter start -->
-                                <div class="about-year-counter wow fadeInLeft" data-wow-delay=".3s">
-                                    <div class="about-year-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-4.png" alt="icon why choose four">
-                                        </figure>
-                                    </div>
-                                    <div class="about-year-content">
-                                        <p>Our Diagnoedge Hospital Funded in</p>
-                                        <h3>1990</h3>
-                                    </div>
-                                </div>
-                                <!-- about year counter end -->
-                                <!-- about year images start -->
-                                <div class="about-year-images wow fadeInRight" data-wow-delay=".4s">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/about/about-2-2.jpg" alt="about two">
-                                    </figure>
-                                </div>
-                                <!-- about year images end -->
-                            </div>
-                            <!-- about images bottom end -->
-                        </div>
-                        <!-- about images box end -->
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- about content start -->
-                        <div class="about-content">
-                            <!-- section title start -->
-
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Corporate</span>
-                                <h2>What Are the Benefits of Corporate Wellness Programs?</h2>
-                                <p align="justify">Corporate wellness programs deliver essential benefits, from helping
-                                    employees maintain
-                                    better health to boosting productivity and decreasing absenteeism. By integrating
-                                    corporate medical check-ups, organizations can proactively address health concerns and
-                                    foster a supportive workplace culture. This investment not only enhances employee
-                                    well-being but also drives overall organizational success and cultivates a positive work
-                                    environment.</p>
-                            </div>
-                            <!-- section title end -->
-
-                            <!-- about footer start -->
-                            <div class="about-footer wow fadeInUp" data-wow-delay=".4s">
-                                <div class="about-button-wappper">
-                                    <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About">
-                                        <span data-text="More About">More About</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                                <div class="about-contact-box">
-                                    <div class="icon-box">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </div>
-                                    <div class="about-contact-box-content">
-                                        <p>For Emergency, Call Now</p>
-                                        <a href="tel:+19876543210">+1 234 467 88</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- about footer end -->
-                        </div>
-                        <!-- about content end -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about section end -->
-        <!-- why-section start -->
+        <!-- SECTION 1: Benefits of Corporate Wellness Programs -->
         <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
             <div class="container">
                 <div class="row align-items-center">
+
+                    <!-- IMAGE LEFT -->
                     <div class="col-lg-6 col-md-12">
-                        <!-- why content start -->
+                        <figure class="image-anime">
+                            <img src="{{ asset('images/avatar/img3.jpg') }}" style="border-radius: 20px;"
+                                alt="Corporate Wellness">
+                        </figure>
+
+                    </div>
+
+                    <!-- CONTENT RIGHT -->
+                    <div class="col-lg-6 col-md-12">
                         <div class="why-content">
-                            <!-- section-title start -->
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Why Diagnoedge</span>
-                                <h2>Why Choose Diagnoedge Healthcare as Your Corporate Wellness Partner?</h2>
-                                <p align="justify">Choosing Diagnoedge Healthcare as your corporate wellness partner provides you with
-                                    reliable, tailored solutions to boost employee health and productivity. Our experienced
-                                    team and extensive range of tests are designed to meet the unique needs of your
-                                    organization. With our corporate wellness packages, you can ensure your employees
-                                    receive comprehensive health support.</p>
+                                <span class="sub-title">Corporate Wellness</span>
+                                <h2>What Are the Benefits of Corporate Wellness Programs?</h2>
+                                <p align="justify">
+                                    Corporate wellness programs at Diagnoedge Healthcare deliver multiple benefits, helping
+                                    employees maintain better health, boosting productivity, and reducing absenteeism. By
+                                    incorporating regular corporate medical check-ups and wellness initiatives,
+                                    organizations can proactively address health concerns and create a supportive workplace
+                                    culture. Investing in employee wellness not only improves individual well-being but also
+                                    strengthens overall organizational performance and fosters a positive work environment.
+                                </p>
                             </div>
-                            <!-- section-title end -->
-
-
                         </div>
-                        <!-- why content end -->
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why choose image start -->
-                        <div class="why-choose-image">
-                            <!-- why choose img 1 start -->
-                            <div class="why-choose-img-1">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-1.jpg" alt="why choose image one">
-                                </figure>
-                            </div>
-                            <!-- why choose img 1 end -->
-                            <!-- why choose img 2 start -->
-                            <div class="why-choose-img-2">
-                                <figure class="image-anime">
-                                    <img src="assets/images/why-choose/why-choose-img-1-2.jpg" alt="why choose image two">
-                                </figure>
-                            </div>
-                            <!-- why choose img 2 end -->
-                            <!-- why choose about circle start -->
-                            <div class="why-choose-about-circle">
-                                <a class="about-circle" href="{{ route('about-us') }}" aria-label="about circle">
-                                    <img src="assets/images/shape/round-about-us.png" alt="round about us">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- why choose contact circle end -->
-                        </div>
-                        <!-- why choose image end -->
-                    </div>
+
                 </div>
             </div>
         </section>
-        <!-- why-section end -->
+
+        <!-- SECTION 2: Corporate Health Check-ups -->
+        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- CONTENT LEFT -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="why-content">
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Health Check-ups</span>
+                                <h2>Benefits of Corporate Health Check-ups</h2>
+                                <p align="justify">
+                                    Corporate health check-ups provide early detection of health issues, enabling timely
+                                    intervention and better overall well-being. Regular check-ups encourage employees to
+                                    take proactive steps toward their health, resulting in fewer sick days and higher
+                                    workplace productivity. Investing in employee health fosters a culture of wellness,
+                                    teamwork, and long-term organizational growth.
+                                </p>
+                                <div class="check-list">
+                                    <ul>
+                                        <li>Early health issue detection</li>
+                                        <li>Preventive care for well-being</li>
+                                        <li>Reduced absenteeism</li>
+                                        <li>Boosted workplace productivity</li>
+                                    </ul>
+                                </div>
 
 
-      
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE RIGHT -->
+                    <div class="col-lg-6 col-md-12">
+                        <figure class="image-anime">
+                            <img src="{{ asset('assets/images/video-gallery/video-gallery-7.jpg')}}"
+                                style="border-radius: 20px;" alt="Health Check-ups">
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- SECTION 3: The Diagnoedge Advantage -->
+        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- IMAGE RIGHT -->
+                    <div class="col-lg-6 col-md-12">
+                        <figure class="image-anime">
+                            <img src="{{ asset('images/avatar/img4.jpg') }}" style="border-radius: 20px;"
+                                alt="Diagnoedge Advantage">
+                        </figure>
+                    </div>
+                    <!-- CONTENT LEFT -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="why-content">
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">The Diagnoedge Advantage</span>
+                                <h2>Distinctive Features of Diagnoedge Healthcare</h2>
+                                <p align="justify">
+                                    Diagnoedge Healthcare stands out due to its combination of advanced diagnostic
+                                    technology, certified professionals, and personalized care. Our commitment to accuracy
+                                    and timely results ensures reliable health insights for all employees.
+                                </p>
+                                <p align="justify">
+                                    We provide innovative health solutions, tailored to your organization’s unique needs.
+                                    Whether it’s routine check-ups, preventive screenings, or specialized testing, our team
+                                    ensures a patient-centered, convenient, and effective healthcare experience. With
+                                    Diagnoedge Healthcare, your employees receive trustworthy diagnostics, compassionate
+                                    care, and expert guidance — supporting both individual well-being and organizational
+                                    growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
     </main>
 @endsection

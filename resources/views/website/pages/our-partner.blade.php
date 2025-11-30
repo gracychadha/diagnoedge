@@ -37,16 +37,7 @@
         <!-- breadcrumb section end -->
         <!-- about section start -->
         <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
-            <div class="about-shape-1">
-                <figure>
-                    <img src="assets/images/about/about-shape-3.png" alt="about shape one">
-                </figure>
-            </div>
-            <div class="about-shape-2">
-                <figure>
-                    <img src="assets/images/about/about-shape-4.png" alt="about shape two">
-                </figure>
-            </div>
+
             <div class="container">
                 <div class="row align-items-center">
 
@@ -56,13 +47,13 @@
                             <!-- about images top start -->
                             <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
                                 <figure class="image-anime">
-                                    <img src="assets/images/about/about-2-1.jpg" alt="about one">
+                                    <img src="assets/images/about/about-2-2.jpg" alt="about one">
                                 </figure>
                             </div>
                             <!-- about images top end -->
                             <!-- about images bottom start -->
                             {{-- <div class="about-images-bottom">
-                                
+
                                 <div class="about-year-counter wow fadeInLeft" data-wow-delay=".3s">
                                     <div class="about-year-icon">
                                         <figure>
@@ -74,13 +65,13 @@
                                         <h3>1990</h3>
                                     </div>
                                 </div>
-                               
+
                                 <div class="about-year-images wow fadeInRight" data-wow-delay=".4s">
                                     <figure class="image-anime">
                                         <img src="assets/images/about/about-2-2.jpg" alt="about two">
                                     </figure>
                                 </div>
-                                
+
                             </div> --}}
                         </div>
                         <!-- about images box end -->
@@ -91,48 +82,32 @@
                             <!-- section title start -->
 
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">About Partner</span>
-                                <h2>Where world class dentistry meets whole person wellness.</h2>
-                                <p align="justify">We collaborate with trusted and industry-leading partners who share our
-                                    commitment to
-                                    quality, innovation, and customer satisfaction. Our partnerships enable us to deliver
-                                    advanced solutions, broaden our service capabilities, and create meaningful value for
-                                    our clients. Together, we work towards a shared vision—bringing expertise, reliability,
-                                    and exceptional results to every project. Through strong collaboration and continuous
-                                    growth, our partners play a vital role in helping us achieve excellence across all our
-                                    services.</p>
+                                <span class="sub-title">Our Partners</span>
+                                <h2>Empowering Diagnostics Through Strong & Trusted Partnerships</h2>
+                                <p align="justify">
+                                    At Diagnoedge Lab, we proudly collaborate with leading healthcare providers, diagnostic
+                                    innovators,
+                                    and technology partners who share our dedication to accuracy, reliability, and
+                                    patient-centered care.
+                                    Through these strategic partnerships, we enhance our testing capabilities, introduce
+                                    cutting-edge diagnostic
+                                    solutions, and ensure faster, more efficient service delivery. Together, we work to
+                                    raise the standard of
+                                    laboratory diagnostics and contribute to better health outcomes for the communities we
+                                    serve.
+                                </p>
                             </div>
-                            <!-- section title end -->
-                            <!-- check list two col start -->
+
                             <div class="check-list-two-col wow fadeInUp" data-wow-delay=".3s">
                                 <ul>
-                                    <li>Trusted Collaboration</li>
-                                    <li>Enhanced Capabilities</li>
-                                    <li>Shared Vision</li>
-                                    <li>Mutual Growth</li>
-
+                                    <li>Trusted Healthcare Partnerships</li>
+                                    <li>Advanced Diagnostic Support</li>
+                                    <li>Shared Commitment to Quality</li>
+                                    <li>Growth Through Collaboration</li>
                                 </ul>
                             </div>
-                            <!-- check list two col end -->
-                            <!-- about footer start -->
-                            <div class="about-footer wow fadeInUp" data-wow-delay=".4s">
-                                <div class="about-button-wappper">
-                                    <a href="{{ route("about-us") }}" class="theme-button style-1" aria-label="More About">
-                                        <span data-text="More About">More About</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                                <div class="about-contact-box">
-                                    <div class="icon-box">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </div>
-                                    <div class="about-contact-box-content">
-                                        <p>For Emergency, Call Now</p>
-                                        <a href="tel:+19876543210">+1 234 467 88</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- about footer end -->
+
+
                         </div>
                         <!-- about content end -->
                     </div>
@@ -140,7 +115,8 @@
             </div>
         </section>
         <!-- about section end -->
-          <!-- partners section start -->
+
+        <!-- partners section start -->
         @php
             $partners = \App\Models\Partner::where('status', 'active')->get();
         @endphp
@@ -191,9 +167,45 @@
             </section>
         @endif
         <!-- partners section end -->
-      
 
 
-       
+        <!-- Why Partner With Us -->
+        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- CONTENT LEFT -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="why-content">
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Why Partner With Us</span>
+                                <h2>Why Choose Diagnoedge Healthcare as Your Corporate Wellness Partner?</h2>
+                                <p align="justify">
+                                    Choosing Diagnoedge Healthcare as your corporate wellness partner provides reliable,
+                                    tailored solutions to enhance employee health and workplace productivity. Our
+                                    experienced medical team, state-of-the-art diagnostic facilities, and comprehensive
+                                    range of tests are designed to meet the unique needs of your organization. With our
+                                    corporate wellness packages, you can ensure that every employee receives complete health
+                                    support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE RIGHT -->
+                    <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime rounded-sm">
+                                <img src="{{ asset('images/avatar/img2.jpg') }}" style="border-radius: 20px;" alt="Corporate Health Partner">
+                            </figure>
+                      
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
     </main>
 @endsection

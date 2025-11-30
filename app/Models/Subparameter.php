@@ -24,6 +24,7 @@ class Subparameter extends Model
         'price'        => 'decimal:2'
     ];
 
+    // Auto generate slug
     protected static function booted()
     {
         static::saving(function ($model) {
@@ -31,7 +32,7 @@ class Subparameter extends Model
         });
     }
 
-    // ACCESSORS - Keep them (they work fine)
+    // ACCESSORS — PERFECT
     public function getParametersAttribute()
     {
         return Parameter::whereIn('id', $this->parameter_id ?? [])->get();
@@ -42,7 +43,7 @@ class Subparameter extends Model
         return Test::whereIn('id', $this->test_ids ?? [])->get();
     }
 
-    // THIS IS THE MISSING SCOPE - ADD IT!
+    // SCOPES — VERY USEFUL
     public function scopeActive($query)
     {
         return $query->where('status', 'active');
@@ -52,5 +53,16 @@ class Subparameter extends Model
     {
         return $query->where('status', 'inactive');
     }
+
+    // EXTRA HELPER: Check if subparameter has a specific parameter
+    public function hasParameter($parameterId)
+    {
+        return is_array($this->parameter_id) && in_array($parameterId, $this->parameter_id);
+    }
+
+    // EXTRA HELPER: Check if subparameter has a specific test
+    public function hasTest($testId)
+    {
+        return is_array($this->test_ids) && in_array($testId, $this->test_ids);
+    }
 }
-   
