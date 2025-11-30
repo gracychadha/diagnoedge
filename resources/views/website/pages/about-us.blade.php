@@ -35,7 +35,7 @@
         </section>
         <!-- breadcrumb section end -->
 
-       <!-- about section start -->
+        <!-- about section start -->
         <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
             <div class="about-shape-1">
                 <figure>
@@ -92,19 +92,26 @@
                         <div class="about-content">
                             <!-- section title start -->
 
-                          <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-    <span class="sub-title">Know Us Better</span>
-    <h2>Delivering Precision Diagnostics With Compassion and Innovation</h2>
-    <p align="justify">
-        Diagnoedge Lab is committed to providing accurate, reliable, and advanced diagnostic services 
-        to support better healthcare decisions. With cutting-edge technology, skilled professionals, 
-        and a patient-centered approach, we deliver high-quality laboratory testing that ensures timely 
-        and trustworthy results. Our focus on innovation, excellence, and continuous improvement enables 
-        us to serve hospitals, clinics, corporate sectors, and individuals with unmatched efficiency and 
-        care. Since our establishment, we have strived to bring world-class diagnostics closer to the 
-        community and enhance overall wellness through precise testing and compassionate service.
-    </p>
-</div>
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Know Us Better</span>
+                                <h2>Delivering Precision Diagnostics With Compassion and Innovation</h2>
+                                <p align="justify">
+                                    Diagnoedge Lab is committed to providing accurate, reliable, and advanced diagnostic
+                                    services
+                                    to support better healthcare decisions. With cutting-edge technology, skilled
+                                    professionals,
+                                    and a patient-centered approach, we deliver high-quality laboratory testing that ensures
+                                    timely
+                                    and trustworthy results. Our focus on innovation, excellence, and continuous improvement
+                                    enables
+                                    us to serve hospitals, clinics, corporate sectors, and individuals with unmatched
+                                    efficiency and
+                                    care. Since our establishment, we have strived to bring world-class diagnostics closer
+                                    to the
+                                    community and enhance overall wellness through precise testing and compassionate
+                                    service.
+                                </p>
+                            </div>
 
                             <!-- section title end -->
 
@@ -201,7 +208,7 @@
         @endif
         <!-- counter section end -->
 
-       
+
         <!-- marquee ticker section start -->
         {{-- @include("website.components.sticker") --}}
         <!-- marquee ticker section end -->
@@ -214,18 +221,23 @@
                         <!-- why content start -->
                         <div class="why-content">
                             <!-- section-title start -->
-<div class="section-title wow fadeInUp" data-wow-delay=".2s">
-    <span class="sub-title">What Makes Us Different</span>
-    <h2>Precision, Trust, and Unmatched Diagnostic Excellence</h2>
-    <p align="justify">
-        At Diagnoedge Lab, we combine advanced laboratory technology with a patient-focused approach 
-        to deliver highly accurate diagnostic results. Our processes are guided by strict quality 
-        standards, modern equipment, and a team of skilled professionals who ensure reliability at 
-        every step. From seamless sample collection to transparent reporting, we aim to make 
-        diagnostics simple, fast, and dependable for individuals, doctors, and healthcare organizations. 
-        Choosing Diagnoedge means choosing clarity, accuracy, and a partner committed to your well-being.
-    </p>
-</div>
+                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">What Makes Us Different</span>
+                                <h2>Precision, Trust, and Unmatched Diagnostic Excellence</h2>
+                                <p align="justify">
+                                    At Diagnoedge Lab, we combine advanced laboratory technology with a patient-focused
+                                    approach
+                                    to deliver highly accurate diagnostic results. Our processes are guided by strict
+                                    quality
+                                    standards, modern equipment, and a team of skilled professionals who ensure reliability
+                                    at
+                                    every step. From seamless sample collection to transparent reporting, we aim to make
+                                    diagnostics simple, fast, and dependable for individuals, doctors, and healthcare
+                                    organizations.
+                                    Choosing Diagnoedge means choosing clarity, accuracy, and a partner committed to your
+                                    well-being.
+                                </p>
+                            </div>
 
                             <!-- section-title end -->
 
@@ -236,13 +248,13 @@
                     <div class="col-lg-6 col-md-12">
                         <!-- why choose image start -->
                         <div class="">
-                           
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-2-1.jpg" alt="why choose image one">
-                                </figure>
-                           
-                           
-                            
+
+                            <figure class="image-anime">
+                                <img src="assets/images/about/about-2-1.jpg" style="border-radius: 20px;" alt="why choose image one">
+                            </figure>
+
+
+
                         </div>
                         <!-- why choose image end -->
                     </div>
@@ -251,7 +263,7 @@
         </section>
         <!-- why-section end -->
 
-         <!-- testimonials section start -->
+        <!-- testimonials section start -->
         @include("website.components.testimonials")
         <!-- testimonials section end -->
 

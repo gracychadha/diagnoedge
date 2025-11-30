@@ -31,7 +31,7 @@
                     {{-- <li><a href="{{ route('packages.index') }}">Packages</a></li> --}}
                     <li><a href="{{ route('admin-subparameters.index') }}">Sub Parameter/Health Package</a></li>
 
-                      <li><a href="{{ route('faqspackages.index') }}">Faqs</a></li>
+                    <li><a href="{{ route('faqspackages.index') }}">Faqs</a></li>
 
 
 
@@ -50,22 +50,41 @@
 
                         </ul>
                     </li>
-                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Section</a>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Home Page</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('about-section.index') }}">About Us</a></li>
-                            <li><a href="{{ route('counters.index') }}">Counter</a></li>
-                            <li><a href="{{ route('site-images.index') }}">Ads & Popup</a></li>
-                            <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
                             <li><a href="{{ route('sliderimage.index') }}">Slider</a></li>
-                            <li><a href="{{ route('whychooseus.section') }}">Why Choose Us</a></li>
+                            <li><a href="{{ route('about-section.index') }}">About Us</a></li>
+                              <li><a href="{{ route('whychooseus.section') }}">Why Choose Us</a></li>
+                            <li><a href="#">Accreditations</a></li>
+                            <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
+                            <li><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
+                            <li><a href="{{ route('faqs.index') }}">Faqs</a></li>
+                          
                         </ul>
                     </li>
-                    
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Pages</a>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">About Us Page</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('faqs.index') }}">Faqs</a></li>
-                            <li><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
-                            <li><a href="{{ route('partners.index') }}">Partner</a></li>
+                            <li><a href="#">Know Us Better</a></li>
+                            <li><a href="{{ route('counters.index') }}">Counter</a></li>
+                            <li><a href="#">What Makes Us Different</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Partner Page</a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Our Partners</a></li>
+                              <li><a href="{{ route('partners.index') }}">Partner Image</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
+
+                    </li>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Job Career</a>
+                        <ul aria-expanded="false">
+                            
+                             <li><a href="{{ route('jobcareer.index') }}">Add Vacency</a></li>
+                          
                         </ul>
                     </li>
 

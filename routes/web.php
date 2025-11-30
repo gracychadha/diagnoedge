@@ -30,6 +30,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SliderImageController;
 use App\Http\Controllers\WhyChooseUsSectionController;
+use App\Http\Controllers\JobCareerController;
 use App\Http\Controllers\MailController;
 
 
@@ -326,6 +327,24 @@ Route::middleware('auth')->group(function () {
         ->name('whychooseus.section.update');
 
 
+    // ────────────── JOB CAREER (Job Openings) ──────────────
+    Route::get('/jobcareer', [JobCareerController::class, 'index'])
+        ->name('jobcareer.index');
+
+    Route::get('/jobcareer/create', [JobCareerController::class, 'create'])
+        ->name('jobcareer.create');
+
+    Route::post('/jobcareer', [JobCareerController::class, 'store'])
+        ->name('jobcareer.store');
+
+    Route::get('/jobcareer/{jobCareer}/edit', [JobCareerController::class, 'edit'])
+        ->name('jobcareer.edit');
+
+    Route::put('/jobcareer/{jobCareer}', [JobCareerController::class, 'update'])
+        ->name('jobcareer.update');
+
+    Route::delete('/jobcareer/{jobCareer}', [JobCareerController::class, 'destroy'])
+        ->name('jobcareer.destroy');
     //test services 
 
 
