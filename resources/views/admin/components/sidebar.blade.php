@@ -94,18 +94,12 @@
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Management</span>
                 </a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('admin-profile') }}">Profile</a></li>
-                    {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false">
-                            <li><a href="email-compose.html">Compose</a></li>
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="app-calender.html">Calendar</a></li> --}}
-
-                </ul>
+                <li class="nav-item">
+    <a class="nav-link {{ request()->is('profile*') ? 'active' : '' }}" href="{{ route('profile') }}">
+        <i class="fa fa-user-circle"></i> My Profile
+    </a>
+</li>
+               
             </li>
             {{-- <li><a href="{{ route('admin-patient') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-heart"></i>

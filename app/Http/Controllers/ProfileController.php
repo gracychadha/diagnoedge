@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\Storage;
+
 class ProfileController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('admin.pages.profile', [
             'user' => $request->user(),
         ]);
     }
@@ -24,17 +26,32 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
+
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        // Save all normal fields
+        $user->fill($request->safe()->only(['name', 'email', 'phone', 'bio']));
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            // Delete old photo
+            if ($user->profile_photo_path) {
+                Storage::disk('public')->delete($user->profile_photo_path);
+            }
+            // Store new photo
+            $user->profile_photo_path = $request->file('photo')->store('profile-photos', 'public');
         }
 
-        $request->user()->save();
+        // Reset email verification if email changed
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $user->save();
+
+        return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**

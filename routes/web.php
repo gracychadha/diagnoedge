@@ -31,6 +31,7 @@ use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SliderImageController;
 use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\JobCareerController;
+use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\MailController;
 
 
@@ -345,6 +346,8 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/jobcareer/{jobCareer}', [JobCareerController::class, 'destroy'])
         ->name('jobcareer.destroy');
+
+
     //test services 
 
 
@@ -354,12 +357,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/services/delete/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 
+    // ────────────── Profile ──────────────  
+   Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])
+         ->name('profile');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::patch('/profile', [App\Http\Controllers\ProfileController::class, 'update'])
+         ->name('profile.update');
 
+    Route::put('/profile/password', [App\Http\Controllers\Auth\PasswordController::class, 'update'])
+         ->name('password.update');
 
+         
 
     // FOR DOCTOR
     Route::post('/doctors/store', [DoctorController::class, 'store'])->name('admin-doctor.store');
