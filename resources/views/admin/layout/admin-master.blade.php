@@ -36,7 +36,8 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      {{-- for the push style of the pages --}}
+    
+    {{-- for the push style of the pages --}}
     @stack('style')
 </head>
 
@@ -643,7 +644,7 @@
 
             });
         });
-        
+
         // FOR PACKAGES CRUD 
         $(document).on('click', '.viewPackage', function () {
             var id = $(this).data(id);
@@ -657,7 +658,7 @@
                     $('#v_description').text(subparameter.description);
                     $('#v_parameter').text(subparameter.parameter_title);
                     // open modal
-                     $('#viewPackage').modal('show');
+                    $('#viewPackage').modal('show');
                 }
 
             });

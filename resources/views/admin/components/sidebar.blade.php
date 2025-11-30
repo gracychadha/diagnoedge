@@ -43,8 +43,8 @@
                     <span class="nav-text">CMS</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Blogs</a>
-                        <ul aria-expanded="false">
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">Blogs</a>
+                        <ul class="" aria-expanded="false">
                             <li><a href="{{ route('blog-categories.index') }}">Blog category</a></li>
                             <li><a href="{{ route('blogs.index') }}">Blog Details</a></li>
 

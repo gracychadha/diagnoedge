@@ -208,7 +208,7 @@
                                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
                                     data-callback="recaptchaCallback"></div>
                             </div>
-                            <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100" >
+                            <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100">
                                 <span data-text="Submit">Submit</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -2026,77 +2026,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="row">
-                    <div class="col-lg-3">
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".3s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-1.jpg" alt="portfolio image one">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".4s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-2.jpg" alt="portfolio image two">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".5s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-3.jpg" alt="portfolio image three">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="portfolio-items wow fadeInUp" data-wow-delay=".6s">
-                            <div class="portfolio-image">
-                                <figure>
-                                    <img src="assets/images/portfolio/portfolio-1-4.jpg" alt="portfolio image four">
-                                </figure>
-                            </div>
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-button-wapper">
-                                    <a href="#" class="portfolio-button-icon" aria-label="portfolio button icon">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="gallery-section ">
                     <div class="container">
 
@@ -2143,36 +2072,38 @@
 
 
 
-       <section class="accredit-sec py-5" style="background:#e6f5e9;">
-    <div class="container">
-        @php
-            $section = App\Models\AccreditationSection::first();
-        @endphp
+        <section class="accredit-sec py-5" style="background:#e6f5e9;">
+            <div class="container">
+                @php
+                    $section = App\Models\AccreditationSection::first();
+                @endphp
 
-        <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-            <span class="sub-title">Accreditations & Certifications</span>
-            <h2>Why Trust Our Quality Standards?</h2>
-            <p class="lead">We follow globally recognized testing standards ensuring precision, safety, and accuracy.</p>
-        </div>
+                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                    <span class="sub-title">Accreditations & Certifications</span>
+                    <h2>Why Trust Our Quality Standards?</h2>
+                    <p class="lead">We follow globally recognized testing standards ensuring precision, safety, and
+                        accuracy.</p>
+                </div>
 
-        <div class="row g-4 justify-content-center">
-            @foreach(range(1, 4) as $i)
-                @if($section->{"title$i"})
-                    <div class="col-md-4 col-lg-3">
-                        <div class="feature-card text-center p-4">
-                            @if($section->{"icon$i"})
-                                <img src="{{ Storage::url($section->{"icon$i"}) }}" alt="{{ $section->{"title$i"} }}" class="mb-3" style="width: 4.5rem; height: 4.5rem; object-fit: contain;">
-                            @else
-                                <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
-                            @endif
-                            <h6 class="fw-bold">{{ $section->{"title$i"} }}</h6>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
-</section>
+                <div class="row g-4 justify-content-center">
+                    @foreach(range(1, 4) as $i)
+                        @if($section->{"title$i"})
+                            <div class="col-md-4 col-lg-3">
+                                <div class="feature-card text-center p-4">
+                                    @if($section->{"icon$i"})
+                                        <img src="{{ Storage::url($section->{"icon$i"}) }}" alt="{{ $section->{"title$i"} }}"
+                                            class="mb-3" style="width: 4.5rem; height: 4.5rem; object-fit: contain;">
+                                    @else
+                                        <i class="fas fa-award mb-3" style="font-size: 4.5rem; color: #54ad4c;"></i>
+                                    @endif
+                                    <h6 class="fw-bold">{{ $section->{"title$i"} }}</h6>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </section>
 
 
         <!-- blog section start -->

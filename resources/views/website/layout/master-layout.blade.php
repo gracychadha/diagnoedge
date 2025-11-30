@@ -332,7 +332,7 @@
 
 <script>
     var swiper = new Swiper(".myGallerySwiper", {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 25,
         loop: true,
 
