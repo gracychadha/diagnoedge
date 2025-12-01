@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('fullname');
             $table->string('email');
             $table->string('phone');
-            $table->string('choosedoctor');
+            $table->string('choosedoctor')->nullable();
             $table->string('selectdepartment');
             $table->date('appointmentdate');
             $table->text('message')->nullable();

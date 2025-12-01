@@ -33,6 +33,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Include the reCAPTCHA script (site key in env) -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
         .iti {
@@ -64,8 +66,7 @@
 </body>
 
 
-<!-- Include the reCAPTCHA script (site key in env) -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 
 <!-- jQuery -->
@@ -99,8 +100,176 @@
 <!-- jQuery (already included) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-
+{{-- for the push script of the pages --}}
+@stack('scripts')
 <script>
+    window.footerCaptcha = function () {
+        const btn = document.getElementById('bookingSubmit1');
+        if (btn) btn.disabled = false;
+    };
+    let iti1;
+    // INTEL FLAG SCRIPT FOR PHONE ID
+    document.addEventListener('DOMContentLoaded', function () {
+        const input = document.querySelector("#mobile1");
+        iti1 = window.intlTelInput(input, {
+            initialCountry: "auto",
+            nationalMode: false,
+            separateDialCode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            geoIpLookup: function (callback) {
+                fetch('https://ipapi.co/json')
+                    .then(response => response.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback('us'));
+            }
+        });
+
+        // Apply z-index to flag container
+        const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+        if (flagContainer) {
+            flagContainer.style.zIndex = '9999';
+        }
+
+        // Apply z-index to the dropdown country list
+        const observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                const countryList = document.querySelector('.iti__country-list');
+                if (countryList) {
+                    countryList.style.zIndex = '9999';
+                }
+            });
+        });
+
+        // Observe changes in the DOM so that dropdown gets z-index when created
+        observer.observe(document.body, { childList: true, subtree: true });
+    });
+
+    document.getElementById("bookingForm1").addEventListener("submit", function (e) {
+        document.querySelector("#mobile1").value = iti1.getNumber();
+    });
+
+
+    // form submission for footer popup
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const modal = document.getElementById('popupCallModal');
+        const closeBtn = document.getElementById('popupClose');
+        const form = document.getElementById('bookingForm1');
+        const submitBtn = document.getElementById('bookingSubmit1');
+        const alertBox = document.getElementById('alertBox1');
+
+        function closeBookingModal() {
+
+            // Close Bootstrap modal properly
+            let modalInstance = bootstrap.Modal.getInstance(modal);
+            if (!modalInstance) {
+                modalInstance = new bootstrap.Modal(modal);
+            }
+            modalInstance.hide();
+
+            // Reset form
+            form.reset();
+
+            // Reset captcha
+            if (window.grecaptcha) grecaptcha.reset();
+
+            // Disable submit
+            submitBtn.disabled = true;
+
+            // Clear alerts
+            alertBox.innerHTML = '';
+
+
+            // Reset captcha
+            if (window.grecaptcha) grecaptcha.reset();
+
+            // Disable submit button again
+            submitBtn.disabled = true;
+
+            // Clear messages
+            alertBox.innerHTML = '';
+
+            // Re-enable page scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        function openBookingModal() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeBtn.addEventListener('click', closeBookingModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeBookingModal();
+        });
+
+        const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
+        if (isHomepage) setTimeout(openBookingModal, 5000);
+
+        // AJAX SUBMIT
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting...';
+
+            // intlTelInput update
+            if (iti1) {
+                form.querySelector('#mobile1').value = iti1.getNumber();
+            }
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    submitBtn.innerHTML = 'Submit';
+                    alertBox.innerHTML = '';
+
+                    if (data.success) {
+
+                        // Show success message briefly before closing
+                        alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+
+                        // Close modal immediately after short delay (optional)
+                        setTimeout(() => {
+                            closeBookingModal();
+                        }, 1000);
+
+                    } else {
+                        let html = `<div class="alert-error"><ul>`;
+                        if (data.errors) {
+                            Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
+                        } else {
+                            html += `<li>${data.message || 'An error occurred'}</li>`;
+                        }
+                        html += `</ul></div>`;
+                        alertBox.innerHTML = html;
+
+                        if (window.grecaptcha) grecaptcha.reset();
+                        submitBtn.disabled = true;
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    submitBtn.innerHTML = 'Submit';
+                    alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
+                    if (window.grecaptcha) grecaptcha.reset();
+                    submitBtn.disabled = true;
+                });
+        });
+
+    });
+
+
+
     // SWIPER  FOR PRODUCT
     var swiper = new Swiper(".myProductSwiper", {
         slidesPerView: 4,
@@ -149,188 +318,7 @@
         s0.parentNode.insertBefore(s1, s0);
     })();
 
-    // INTEL FLAG SCRIPT FOR MOBILE
-    document.addEventListener('DOMContentLoaded', function () {
-        const input = document.querySelector("#mobile");
-        const iti = window.intlTelInput(input, {
-            initialCountry: "auto",
 
-            geoIpLookup: function (callback) {
-                fetch('https://ipapi.co/json')
-                    .then(response => response.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback('us'));
-            }
-
-
-        });
-
-        // Apply z-index to flag container
-        const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-        if (flagContainer) {
-            flagContainer.style.zIndex = '9999';
-        }
-
-        // Apply z-index to the dropdown country list
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                const countryList = document.querySelector('.iti__country-list');
-                if (countryList) {
-                    countryList.style.zIndex = '9999';
-                }
-            });
-        });
-
-        // Observe changes in the DOM so that dropdown gets z-index when created
-        observer.observe(document.body, { childList: true, subtree: true });
-    });
-
-    // INTEL FLAG SCRIPT FOR PHONE ID
-    document.addEventListener('DOMContentLoaded', function () {
-        const input = document.querySelector("#phone");
-        const iti = window.intlTelInput(input, {
-            initialCountry: "auto",
-
-            geoIpLookup: function (callback) {
-                fetch('https://ipapi.co/json')
-                    .then(response => response.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback('us'));
-            }
-        });
-
-        // Apply z-index to flag container
-        const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-        if (flagContainer) {
-            flagContainer.style.zIndex = '9999';
-        }
-
-        // Apply z-index to the dropdown country list
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                const countryList = document.querySelector('.iti__country-list');
-                if (countryList) {
-                    countryList.style.zIndex = '9999';
-                }
-            });
-        });
-
-        // Observe changes in the DOM so that dropdown gets z-index when created
-        observer.observe(document.body, { childList: true, subtree: true });
-    });
-
-
-    function recaptchaCallback() {
-        document.getElementById('bookingSubmit').disabled = false;
-    }
-    // BOOKING MODAL FORM SCRIPT
-    document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('bookingModal');
-        const closeBtn = document.getElementById('bookingClose');
-        const form = document.getElementById('bookingForm');
-        const submitBtn = document.getElementById('bookingSubmit');
-        const alertBox = document.getElementById('alertBox');
-        let iti;
-
-
-
-        
-
-        // Open/close modal
-        function openBookingModal() {
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeBookingModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            form.reset();
-            if (window.grecaptcha) grecaptcha.reset();
-            submitBtn.disabled = true;
-            alertBox.innerHTML = '';
-        }
-
-        closeBtn.addEventListener('click', closeBookingModal);
-        window.addEventListener('click', (e) => { if (e.target === modal) closeBookingModal(); });
-
-        // Auto-open modal after 5s on homepage
-        const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
-        if (isHomepage) setTimeout(openBookingModal, 5000);
-
-        // AJAX form submit
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Submitting...';
-
-            // Get full international number
-            if (iti) {
-                form.querySelector('#mobile').value = iti.getNumber();
-            }
-
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: "POST",
-                headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
-                body: formData
-            })
-                .then(res => res.json())
-                .then(data => {
-                    submitBtn.innerHTML = 'Submit';
-                    alertBox.innerHTML = '';
-
-                    if (data.success) {
-                        alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
-                        form.reset();
-                        if (window.grecaptcha) grecaptcha.reset();
-                        submitBtn.disabled = true;
-                        setTimeout(closeBookingModal, 5000);
-                    } else {
-                        let html = `<div class="alert-error"><ul>`;
-                        if (data.errors) {
-                            Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
-                        } else {
-                            html += `<li>${data.message || 'An error occurred'}</li>`;
-                        }
-                        html += `</ul></div>`;
-                        alertBox.innerHTML = html;
-                        if (window.grecaptcha) grecaptcha.reset();
-                        submitBtn.disabled = true;
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    submitBtn.innerHTML = 'Submit';
-                    alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
-                    if (window.grecaptcha) grecaptcha.reset();
-                    submitBtn.disabled = true;
-                });
-        });
-    });
-
-
-    // DATE PICKER FOR APPOINTMENT FORM
-    flatpickr("#appointmentdate", {
-        altInput: true,
-        altFormat: "d-m-Y",
-        dateFormat: "d-m-Y",  // output format: 2025-11-21
-        minDate: "today",
-        allowInput: true,
-    });
-    // CAPTCHA BTN ENABLE DISABLE LOGIC
-    document.addEventListener("DOMContentLoaded", function () {
-        window.recaptchaCallback = function () {
-            const captchaBtn = document.getElementById('captcha-btn');
-            if (captchaBtn) {
-                captchaBtn.disabled = false;
-            }
-        };
-    });
-
-</script>
-
-
-<script>
     var swiper = new Swiper(".myGallerySwiper", {
         slidesPerView: 4,
         spaceBetween: 25,
@@ -357,6 +345,7 @@
             991: { slidesPerView: 3 }
         }
     });
+
 
 </script>
 

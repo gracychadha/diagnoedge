@@ -12,6 +12,11 @@
                     <span class="nav-text">Appointment</span>
                 </a>
             </li>
+            <li><a href="{{ route('admin-booking.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-menu"></i>
+                    <span class="nav-text">Booking Leads</span>
+                </a>
+            </li>
             <li><a href="{{ route('admin-contact.index') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-list"></i>
                     <span class="nav-text">Contact Leads</span>
@@ -68,6 +73,12 @@
                             <li><a href="{{ route('about-section-two.index') }}">Know Us Better</a></li>
                             <li><a href="{{ route('counters.index') }}">Counter</a></li>
                             <li><a href="#">What Makes Us Different</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Corporate Page</a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Benefits</a></li>
+                           
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Partner Page</a>

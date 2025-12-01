@@ -116,15 +116,19 @@
                                         });
                                     </script>
                                 @endif
-                                <form action="{{url('/')}}/store" method="POST">
+                                <form action="{{url('/')}}/store" method="POST" id="contactForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
                                                     <input id="name" class="form-control" name="fullname" type="text"
-                                                        autocomplete="off" placeholder="Name Here" required="required">
+                                                        autocomplete="off" placeholder="Name Here" required="required"
+                                                        value="{{ old('fullname') }}">
                                                     <label for="name"><i class="fa-solid fa-user"></i> Name*</label>
+                                                    @error('fullname')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
                                                     <span class="error" id="name-error"></span>
                                                 </div>
                                             </div>
@@ -133,8 +137,12 @@
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
                                                     <input id="email" class="form-control" name="email" type="email"
-                                                        autocomplete="off" placeholder="Email Here" required="required">
+                                                        autocomplete="off" placeholder="Email Here" required="required"
+                                                        value="{{ old('email') }}">
                                                     <label for="email"><i class="fa-solid fa-envelope"></i> Email*</label>
+                                                    @error('email')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
                                                     <span class="error" id="email-error"></span>
                                                 </div>
                                             </div>
@@ -142,9 +150,13 @@
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
-                                                    <input id="phone" class="form-control" name="phone" type="text"
+                                                    <input id="tel" class="form-control" name="phone" type="text"
                                                         autocomplete="off" placeholder="Phone Number Here"
-                                                        required="required" style="padding-left: 45px">
+                                                        required="required" style="padding-left: 45px"
+                                                        value="{{ old('phone') }}">
+                                                    @error('phone')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
                                                     {{-- <label for="phone">Phone Number*</label> --}}
                                                     <span class="error" id="phone-error"></span>
                                                 </div>
@@ -154,8 +166,12 @@
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
                                                     <input id="subject" class="form-control" name="subject" type="text"
-                                                        autocomplete="off" placeholder="Subject Here" required="required">
+                                                        autocomplete="off" placeholder="Subject Here" required="required"
+                                                        value="{{ old('subject') }}">
                                                     <label for="subject"><i class="fa-solid fa-pen"></i> Subject*</label>
+                                                    @error('subject')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
                                                     <span class="error" id="subject-error"></span>
                                                 </div>
                                             </div>
@@ -165,8 +181,12 @@
                                                 <div class="form-floating field-inner">
                                                     <textarea id="message" class="form-control" name="message"
                                                         autocomplete="off" placeholder="Type Message Here"
-                                                        required="required"></textarea>
-                                                    <label for="message"><i class="fa-solid fa-message"></i> Message*</label>
+                                                        required="required">{{ old('message') }}</textarea>
+                                                    @error('message')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+                                                    <label for="message"><i class="fa-solid fa-message"></i>
+                                                        Message*</label>
                                                     <span class="error" id="message-error"></span>
                                                 </div>
                                             </div>
@@ -224,3 +244,54 @@
     <!-- main end -->
 
 @endsection
+{{-- ADD SCRIPT THERE ONLY FO CONTACT BLADE --}}
+@push('scripts')
+    <script>
+        window.recaptchaCallback = function () {
+            const btn = document.getElementById('captcha-btn');
+            if (btn) btn.disabled = false;
+        };
+
+        let iti;
+        // INTEL FLAG SCRIPT FOR PHONE ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#tel");
+            iti = window.intlTelInput(input, {
+                initialCountry: "auto",
+                nationalMode: false,
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                geoIpLookup: function (callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(response => response.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback('us'));
+                }
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            document.querySelector("#tel").value = iti.getNumber();
+        });
+
+    </script>
+@endpush

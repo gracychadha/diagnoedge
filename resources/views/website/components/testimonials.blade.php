@@ -12,7 +12,7 @@
                 <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
                     <span class="sub-title">Our Testimonials</span>
                     <h2>What Our Patients Say About Us</h2>
-                    <p class="text-muted">Real experiences from patients who trusted Diagnoedge for accurate diagnostics and caring service.</p>
+                    <p class="text-muted lead">Real experiences from patients who trusted Diagnoedge for accurate diagnostics and caring service.</p>
                 </div>
                 <!-- section title end -->
             </div>

@@ -67,7 +67,7 @@
                                 @endif
 
 
-                                <form action="{{ url('/appointment-store') }}" method="POST">
+                                <form action="{{ url('/appointment-store') }}" method="POST" id="appointmentForm">
                                     <!-- #region -->
 
                                     @csrf
@@ -77,7 +77,11 @@
                                                 <div class="form-floating field-inner">
                                                     <input class="form-control" id="fullname" name="fullname"
                                                         placeholder="Full Name Here" type="text" autocomplete="off"
-                                                        required="required">
+                                                        required="required" value="{{ old('fullname') }}">
+                                                    @error('fullname')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+
                                                     <label for="fullname"><i class="fa-solid fa-user"></i> Name</label>
                                                 </div>
                                             </div>
@@ -87,7 +91,11 @@
                                                 <div class="form-floating field-inner">
                                                     <input class="form-control" id="email" name="email"
                                                         placeholder="Email Here" type="email" autocomplete="off"
-                                                        required="required">
+                                                        required="required"  value="{{ old('email') }}">
+                                                    @error('email')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+
                                                     <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
                                                 </div>
                                             </div>
@@ -95,13 +103,16 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
-                                                    <input class="form-control" id="phone" name="phone" type="text"
-                                                        autocomplete="off" required="required">
-                                                    {{-- <label for="phone">Phone Number</label> --}}
+                                                    <input class="form-control" id="phone1" name="phone" type="text"
+                                                        autocomplete="off" required="required"  value="{{ old(key: 'phone') }}">
+                                                    @error('phone')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-12">
+                                        {{-- <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating">
                                                     <select class="form-select" id="choosedoctor" name="choosedoctor"
@@ -116,18 +127,29 @@
                                                         Doctor</label>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating">
-                                                    <select class="form-select" id="selectdepartment"
-                                                        name="selectdepartment" aria-label="Select Department">
-                                                        <option value="" disabled selected>Select Package | Test</option>
+                                                   <select class="form-select" id="selectdepartment" name="selectdepartment">
+    <option value="" disabled>Select Package | Test</option>
 
-                                                        <option value="Tru Health Package">Tru Health Package</option>
-                                                        <option value="Health Risk">Health Risk</option>
-                                                        <option value="Test by Health care">Test by Health care</option>
-                                                    </select>
+    <option value="Tru Health Package"
+        {{ old('selectdepartment') == 'Tru Health Package' ? 'selected' : '' }}>
+        Tru Health Package
+    </option>
+
+    <option value="Health Risk"
+        {{ old('selectdepartment') == 'Health Risk' ? 'selected' : '' }}>
+        Health Risk
+    </option>
+
+    <option value="Test by Health care"
+        {{ old('selectdepartment') == 'Test by Health care' ? 'selected' : '' }}>
+        Test by Health care
+    </option>
+</select>
+
                                                     <label for="selectdepartment"><i class="fa-solid fa-file-medical"></i>
                                                         Select Package </label>
                                                 </div>
@@ -136,11 +158,17 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
-                                                    <input class="form-control" id="appointmentdate"
-                                                        placeholder="dd-mm-yyyy" name="appointmentdate" type="date"
-                                                        autocomplete="off" required="required">
-                                                    <label for="appointmentdate"><i class="fa-solid fa-calendar-days"></i>
-                                                        Appointment Date</label>
+                                                    <input class="form-control"
+       id="appointmentdate"
+       name="appointmentdate"
+       placeholder="dd-mm-yyyy"
+       autocomplete="off"
+       required="required"
+       type="text"
+       value="{{ old('appointmentdate') }}">
+
+                                                   <label for="appointmentdate"><i class="fa-solid fa-calendar-days"></i> Appointment Date</label>
+
 
                                                 </div>
                                             </div>
@@ -152,7 +180,7 @@
                                                 <div class="form-floating field-inner">
                                                     <textarea id="message" class="form-control" name="message"
                                                         placeholder="Messege Here" autocomplete="off"
-                                                        required="required"></textarea>
+                                                        required="required"  > {{ old('message') }}</textarea>
                                                     <label for="message"><i class="fa-solid fa-message"></i> Message</label>
                                                 </div>
                                             </div>
@@ -160,7 +188,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
-                                                    data-callback="recaptchaCallback">
+                                                    data-callback="appointmentCaptcha">
                                                 </div>
                                             </div>
 
@@ -208,3 +236,67 @@
     <!-- main end -->
 
 @endsection
+{{-- SCRIPT ADD THERE ONLY FOR APPOINTMENT BLADE --}}
+@push('scripts')
+    <script>
+        window.appointmentCaptcha = function () {
+            const btn = document.getElementById('captcha-btn2');
+            if (btn) btn.disabled = false;
+        };
+
+        let iti;
+        // INTEL FLAG SCRIPT FOR PHONE ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#phone1");
+            iti = window.intlTelInput(input, {
+                initialCountry: "auto",
+                nationalMode: false,
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                geoIpLookup: function (callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(response => response.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback('us'));
+                }
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+            document.querySelector("#phone1").value = iti.getNumber();
+        });
+      
+        // DATE PICKER FOR APPOINTMENT FORM
+      flatpickr("#appointmentdate", {
+    altInput: true,
+    altFormat: "d-m-Y",
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    allowInput: true,
+    altInputClass: "form-control flatpickr-input",
+
+    onReady: function(selectedDates, dateStr, instance) {
+        instance.altInput.setAttribute("placeholder", "dd-mm-yyyy");
+    }
+});
+ </script>
+@endpush

@@ -21,11 +21,27 @@ class ContactController extends Controller
 
         // Validation
         $request->validate([
-            'fullname' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'subject' => 'required|string|max:255',
-            'message' => 'nullable|string|max:5000',
+            'fullname' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+            'email' => [
+                'required',
+                'regex:/^[^<>{}()*$!;:=\[\]]+$/'
+            ],
+            'phone' => [
+                'required',
+                'regex:/^\+91[6-9]\d{9}$/'
+            ],
+            'subject' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+            'message' => [
+                'nullable',
+                'max:5000',
+                'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'
+            ],
         ]);
 
 
@@ -64,7 +80,7 @@ class ContactController extends Controller
     }
 
     // TO DELETE
-     public function delete($id)
+    public function delete($id)
     {
         Contact::findOrFail($id)->delete();
         return response()->json(['success' => true]);

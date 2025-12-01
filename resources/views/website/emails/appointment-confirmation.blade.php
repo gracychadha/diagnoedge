@@ -89,22 +89,17 @@
                                     <td style="border-bottom:1px solid #d0d7e6;">Email</td>
                                     <td style="border-bottom:1px solid #d0d7e6;">{{ $appointment->email }}</td>
                                 </tr>
-                                {{-- row --}}
-                                <tr>
-                                    <td style="border-bottom:1px solid #d0d7e6;">Doctor</td>
-                                    <td style="border-bottom:1px solid #d0d7e6;">{{ $appointment->choosedoctor }}</td>
-
-                                </tr>
+                               
 
                                 <!-- Row 1 -->
-                                <tr style="background:#e8eef9; font-weight:bold; color:#2e3f5a;">
+                                <tr >
                                     <td style="border-bottom:1px solid #d0d7e6;">Package / Test</td>
                                     <td style="border-bottom:1px solid #d0d7e6;">{{ $appointment->selectdepartment }}
                                     </td>
                                 </tr>
 
                                 <!-- Header Row -->
-                                <tr>
+                                <tr style="background:#e8eef9; font-weight:bold; color:#2e3f5a;">
                                     <td style="border-bottom:1px solid #d0d7e6;">Appointment Date</td>
                                     <td style="border-bottom:1px solid #d0d7e6;">
                                         {{ \Carbon\Carbon::parse($appointment->appointmentdate)->format('d M, Y') }}

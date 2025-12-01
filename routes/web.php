@@ -46,7 +46,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
+
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
 })->name('about-us');
@@ -137,7 +137,8 @@ Route::get('/theme-setting', function () {
 Route::post('/appointment-store', [AppointmentController::class, 'store'])->name('appointment.store');
 // for contact form
 Route::post('/store', [ContactController::class, 'store'])->name('contact-us.store');
-
+// for booking
+Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
 
 // +++++++++++++++++++++++++++++++++++++++++++++++
 // ALL THE ROUTES FOR BACKEND DASHBOARD
@@ -413,6 +414,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/contacts/view/{id}', [ContactController::class, 'view']);
     Route::post('/contacts/update', [ContactController::class, 'update']);
     Route::delete('/contacts/delete/{id}', [ContactController::class, 'delete']);
+
+    // FOR BOOKING FORM
+    Route::get('/booking-lead', [BookingController::class, 'index'])->name('admin-booking.index');
+    Route::delete('/booking-lead/delete/{id}', [BookingController::class, 'delete']);
+ 
+
 
 
     // ────────────── Website Setting ──────────────

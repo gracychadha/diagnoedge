@@ -20,31 +20,47 @@ class AppointmentController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'fullname' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'choosedoctor' => 'required|string|max:255',
-            'selectdepartment' => 'required|string|max:255',
-            'appointmentdate' => 'required',
-            'message' => 'nullable|string|max:5000',
-        ]);
+
 
         $request->validate([
-            'fullname' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'choosedoctor' => 'required|string|max:255',
-            'selectdepartment' => 'required|string|max:255',
-            'appointmentdate' => 'required',
-            'message' => 'nullable|string|max:5000',
+            'fullname' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+            'email' => [
+                'required',
+                'regex:/^[^<>{}()*$!;:=\[\]]+$/'
+            ],
+            'phone' => [
+                'required',
+                'regex:/^\+91[6-9]\d{9}$/'
+            ],
+
+
+            'choosedoctor' => 'nullable|string|max:255',
+
+            'selectdepartment' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+
+            'appointmentdate' => [
+                'required',
+                'date'
+            ],
+
+
+            'message' => [
+                'nullable',
+                'max:5000',
+                'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'
+            ],
         ]);
 
-       
+
         try {
             $appointmentdate = Carbon::parse($request->appointmentdate)->format('Y-m-d');
         } catch (\Exception $e) {
-            // fallback: try parsing d-m-Y if users send that format
             $appointmentdate = Carbon::createFromFormat('d-m-Y', $request->appointmentdate)->format('Y-m-d');
         }
 

@@ -16,7 +16,7 @@
     --border-radius-two: 10px;
     --border-radius-three: 20px;
     --title-fonts: "Nunito", sans-serif;
-    --body-fonts: "Poppins", sans-serif;
+    --body-fonts: "Nunito", sans-serif;
     --transition: all 0.5s ease-in-out;
     --box-shadow: 0 14px 28px -20px rgba(16, 24, 40, 0.24);
     --background-one: #f9f9ff;
@@ -16653,6 +16653,11 @@ button.btn-success:hover {
 .myProductSwiper {
     min-height: 350px;
 }
+@media screen and (max-width:767px){
+    .myProductSwiper {
+        padding:10px  10px 20px !important;
+    }
+}
 .sticky-footer {
     width: 100%;
     position: fixed;
@@ -16743,3 +16748,31 @@ padding: 5px !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+    @media screen and (max-width:767px){
+        .test-section{
+            padding:10px;
+        }
+        .pricing-tabs .nav-tabs button {
+            padding:10px;
+            font-size: 13px;
+        }
+        .pricing-tabs{
+            margin-bottom: 10px;
+        }
+        .about-content-text{
+            padding-top:20px;
+        }
+        .marquee-ticker-section{
+            padding:20px 0;
+        }
+        p{
+            font-size:15px;
+        }
+    }
+    .accordion-content p{
+text-align: justify;
+    }
+    .text-justify{
+        text-align:justify;
+    }

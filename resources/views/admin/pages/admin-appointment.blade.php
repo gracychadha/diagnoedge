@@ -79,8 +79,8 @@
                                                   </span>
 
                                                     <span>
-                                                        <a class="btn btn-sm btn-danger light deleteApp">
-   <i class="fa fa-trash fs-18 " data-id="{{ $appointment->id }}"></i></a>
+                                                        <a class="btn btn-sm btn-danger light deleteContact" data-id="{{ $appointment->id }}">
+   <i class="fa fa-trash fs-18 " ></i></a>
 </span>
 
                                                 </td>
@@ -231,19 +231,16 @@
                                 </th>
                                 <td id="a_phone"></td>
                                 <th>
-                                    Choose Doctor
-                                </th>
-                                <td id="a_doctor"></td>
-                            </tr>
-                            <tr>
-                                <th>
                                     Package :
                                 </th>
                                 <td id="a_selectdepartment"></td>
+                            </tr>
+                            <tr>
+                               
                                 <th>
                                     Appointment Date :
                                 </th>
-                                <td id="a_appointmentdate"></td>
+                                <td id="a_appointmentdate"  colspan="3"></td>
 
                             </tr>
                             <tr>
@@ -298,15 +295,15 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Phone:</label>
-                                        <input type="number" name="phone" class="form-control" id="edit_phone">
+                                        <input type="number" name="phone" class="form-control" id="edit_phone1">
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
+                                {{-- <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Choose Doctor:</label>
                                         <input type="text" name="choosedoctor" class="form-control" id="edit_choosedoctor">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Select Department:</label>
@@ -344,3 +341,109 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+<script>
+     $(document).ready(function () {
+            $('.viewApp').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/appointment/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#a_name').text(res.fullname);
+                        $('#a_email').text(res.email);
+                        $('#a_phone').text(res.phone);
+                        $('#a_doctor').text(res.choosedoctor);
+                        $('#a_selectdepartment').text(res.selectdepartment);
+                        $('#a_appointmentdate').text(res.appointmentdate);
+                        $('#a_message').html(res.message);
+
+                        $('#viewAppointment').modal('show');
+                    }
+                });
+            });
+            $('.editApp').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/appointment/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#edit_id').val(res.id);
+                        $('#edit_fullname').val(res.fullname);
+                        $('#edit_email').val(res.email);
+                        $('#edit_phone1').val(res.phone);
+                        // $('#edit_choosedoctor').val(res.choosedoctor);
+                        $('#edit_selectdepartment').val(res.selectdepartment);
+                        $('#edit_appointmentdate').val(res.appointmentdate);
+                        $('#edit_message').val(res.message);
+
+                        $('#editAppointment').modal('show');
+                    }
+                });
+            });
+            $('#updateAppointmentForm').submit(function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: "/appointment/update",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        Swal.fire("Updated!", "Appointment updated successfully!", "success");
+                        $('#editAppointment').modal('hide');
+                        location.reload();
+                    }
+                });
+
+            });
+            $('.deleteContact').click(function () {
+
+                let id = $(this).data("id");
+                let row = $(this).closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This Appointment will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            url: "{{ url('/appointment/delete') }}/" + id,
+                            type: "DELETE",
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function (response) {
+
+                                Swal.fire("Deleted!", "Appointment Query removed successfully.", "success");
+
+                                // remove row
+                                row.fadeOut(600, function () {
+                                    $(this).remove();
+                                });
+                            }
+                        });
+
+                    }
+                });
+
+            });
+        });
+       
+</script>
+@endpush

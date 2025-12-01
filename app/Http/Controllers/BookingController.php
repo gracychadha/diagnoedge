@@ -7,26 +7,45 @@ use App\Models\Booking;
 
 class BookingController extends Controller
 {
-   public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'mobile' => 'required',
-        'agreeTerms' => 'accepted',
-        'g-recaptcha-response' => 'required',
-    ]);
+    // TO FETCH ALL THE DATA OF BOOKING FORM
+    public function index()
+    {
+        $bookings = Booking::orderBy('id', 'desc')->get();
+        return view('admin.pages.admin-booking', compact('bookings'));
+    }
 
-    // Save to database
-    Booking::create([
-        'name' => $request->name,
-        'mobile' => $request->mobile,
-        'source' => $request->source,
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+            'mobile' => [
+                'required',
+                'regex:/^\+91[6-9]\d{9}$/'
+            ],
+            'g-recaptcha-response' => 'required',
+        ]);
 
-    return response()->json([
-        'success' => true,
-        'message' => 'Thank you! Our health advisor will contact you shortly.'
-    ]);
-}
+        // Save to database
+        Booking::create([
+            'name' => $request->name,
+            'mobile' => $request->mobile,
+            'source' => $request->source,
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Thank you! Our health advisor will contact you shortly.'
+        ]);
+    }
+    // to delete
+   
+      public function delete($id)
+    {
+        Booking::findOrFail($id)->delete();
+        return response()->json(['success' => true]);
+    }
 
 }

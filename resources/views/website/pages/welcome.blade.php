@@ -164,8 +164,6 @@
             }
         </style>
 
-
-
         <!-- Modal HTML -->
         <div id="bookingModal" class="modal" aria-hidden="true">
             <div class="modal-content modal-content-custom" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
@@ -206,9 +204,9 @@
 
                             <div class="form-group ">
                                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
-                                    data-callback="recaptchaCallback"></div>
+                                    data-callback="popupCaptcha"></div>
                             </div>
-                            <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100">
+                            <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100" disabled>
                                 <span data-text="Submit">Submit</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -219,6 +217,7 @@
                 </div>
             </div>
         </div>
+
 
 
 
@@ -391,13 +390,8 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
         <!-- product section start -->
-        <section class="product-section background-one pt-50  md-pt-50 pb-50 md-pb-50">
+        <section class="product-section background-one pt-50  md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 {{-- section for test packages start--}}
                 <div class="container ">
@@ -434,7 +428,7 @@
                     <div class="tab-pane fade active show" id="nav-THP" role="tabpanel" aria-labelledby="nav-THP-tab"
                         tabindex="0">
                         <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper pb-20">
+                        <div class="swiper myProductSwiper pb-20 p-sm-10">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
 
@@ -1023,7 +1017,7 @@
             </div>
 
             {{-- section for test packages start FOR Popular Tests--}}
-            <div class="container pt-30">
+            <div class="container pt-30 md-pt-10">
                 <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
@@ -1606,11 +1600,11 @@
                     </div>
                 </div>
             </div>
-            <div class="container pt-30">
-                <div class="row container">
+            <div class="container pt-30 md-pt-10">
+                <div class=" container">
                     <div class="col-lg-12">
                         <!-- section title start -->
-                        <h5 class="text-center pt-20 pb-30">Test by Health Risks</h5>
+                        <h5 class="text-center  pb-30 md-pb-10">Test by Health Risks</h5>
 
                         <!-- section title end -->
                     </div>
@@ -1671,7 +1665,7 @@
         @endphp
 
         @if($aboutSection)
-            <section class="about-section-4 pt-50 md-pt-80 pb-50 md-pb-80">
+            <section class="about-section-4 pt-50 md-pt-30 pb-50 md-pb-30">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5 col-md-12">
@@ -1751,7 +1745,7 @@
 
 
         <!-- faq section start -->
-        <section class="faq-section-1 mb-5 pt-50 md-pt-80">
+        <section class="faq-section-1 mb-5 pt-50 md-pt-30">
             <div class="container">
                 <!-- faq wapper start -->
                 <div class="faq-wapper py-5">
@@ -1934,7 +1928,7 @@
                                 {{ App\Models\WhyChooseUsSection::first()?->main_title ?? 'Why DiagnoEdge Labs?' }}
                             </h2>
 
-                            <div class="lead ">
+                            <div class="lead">
                                 {!! App\Models\WhyChooseUsSection::first()?->description_1 ?? 'DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.' !!}
                             </div>
 
@@ -2008,7 +2002,7 @@
         </section>
 
         <!-- portfolio section start -->
-        <section class="portfolio-section-1 pt-50 md-pt-80 pb-50 md-pb-80">
+        <section class="portfolio-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -2107,7 +2101,7 @@
 
 
         <!-- blog section start -->
-        <section class="blog-section background-one pt-50 md-pt-80 pb-50 md-pb-50">
+        <section class="blog-section background-one pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -2236,7 +2230,86 @@
         <!-- testimonials section start -->
         @include("website.components.testimonials")
 
+
+
+
     </main>
 
 
 @endsection
+{{-- SCRIPT ADD THERE ONLY FOR APPOINTMENT BLADE --}}
+@push('scripts')
+
+    <script>
+
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const paragraphs = document.querySelectorAll("p");
+
+        //     function applyStyles() {
+        //         const isMobile = window.innerWidth <= 767;
+
+        //         paragraphs.forEach(p => {
+        //             p.style.fontSize = isMobile ? "15px" : "16px";  // mobile smaller
+        //             p.style.fontFamily = "Nunito, sans-serif";
+
+        //         });
+        //     }
+
+        //     // Apply once on load
+        //     applyStyles();
+
+        //     // Apply again when screen is resized
+        //     window.addEventListener("resize", applyStyles);
+        // });
+
+        window.popupCaptcha = function () {
+            const btn = document.getElementById('bookingSubmit');
+            if (btn) btn.disabled = false;
+        };
+
+        let iti;
+        // INTEL FLAG SCRIPT FOR PHONE ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#mobile");
+            iti = window.intlTelInput(input, {
+                initialCountry: "auto",
+                nationalMode: false,
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                geoIpLookup: function (callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(response => response.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback('us'));
+                }
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        document.getElementById("bookingForm").addEventListener("submit", function (e) {
+            document.querySelector("#mobile").value = iti.getNumber();
+        });
+
+
+
+    </script>
+@endpush
