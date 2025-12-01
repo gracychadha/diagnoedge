@@ -112,7 +112,7 @@ Route::get('/general-setting', function () {
 })->name('general-setting');
 Route::get('/logout', function () {
     return view('admin.pages.logout');
-})->name('logout');
+})->name('logout.page');
 
 Route::get('/pages', function () {
     return view('admin.pages.pages');
