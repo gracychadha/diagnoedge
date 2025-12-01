@@ -379,8 +379,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'edit'])
         ->name('profile');
 
-    Route::patch('/profile', [App\Http\Controllers\ProfileController::class, 'update'])
-        ->name('profile.update');
+    // Route::patch('/profile', [App\Http\Controllers\ProfileController::class, 'update'])
+    //     ->name('profile.update');
 
     Route::put('/profile/password', [App\Http\Controllers\Auth\PasswordController::class, 'update'])
         ->name('password.update');
