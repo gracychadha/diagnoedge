@@ -2087,7 +2087,7 @@
 
                 <div class="row g-4 justify-content-center">
                     @foreach(range(1, 4) as $i)
-                        @if($section->{"title$i"})
+                        @if($section && $section->{"title$i"})
                             <div class="col-md-4 col-lg-3">
                                 <div class="feature-card text-center p-4">
                                     @if($section->{"icon$i"})
