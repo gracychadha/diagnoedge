@@ -37,7 +37,7 @@
         <!-- breadcrumb section end -->
 
         <!-- SECTION 1: Benefits of Corporate Wellness Programs -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row align-items-center">
 
@@ -73,7 +73,7 @@
         </section>
 
         <!-- SECTION 2: Corporate Health Check-ups -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row align-items-center">
 
@@ -119,7 +119,7 @@
 
 
         <!-- SECTION 3: The Diagnoedge Advantage -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row align-items-center">
 
@@ -131,7 +131,7 @@
                         </figure>
                     </div>
                     <!-- CONTENT LEFT -->
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12 md-pt-30">
                         <div class="why-content">
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                                 <span class="sub-title">The Diagnoedge Advantage</span>

@@ -16769,6 +16769,13 @@ padding: 5px !important;
         p{
             font-size:15px;
         }
+        .custom-padding--md-20{
+            padding: 20px;
+        }
+        .custom-padding--md-10{
+            padding: 10px;
+        }
+        
     }
     .accordion-content p{
 text-align: justify;

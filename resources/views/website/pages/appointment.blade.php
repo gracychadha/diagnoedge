@@ -37,7 +37,7 @@
         <!-- breadcrumb section end -->
 
         <!-- appointment section start -->
-        <section class="appointment-section-4 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="appointment-section-4 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row flex-lg-row-reverse justify-content-between align-items-center">
                     <div class="col-lg-6 col-md-12">

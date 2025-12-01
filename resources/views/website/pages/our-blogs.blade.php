@@ -37,151 +37,126 @@
         <!-- breadcrumb section end -->
 
         <!-- blog section start -->
-        <section class="blog-section pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="blog-section pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="blog-posts row">
-                            <div class="single-blog-post col-lg-6">
-                                <div class="post-image">
-                                    <a href="{{ route("blog-details") }}">
-                                        <figure>
-                                            <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <ul class="post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa-solid fa-user"></i>
-                                                <span>By: Admin</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            <span>March 14, 2025</span>
-                                        </li>
-                                    </ul>
-                                    <h2><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a>
-                                    </h2>
-                                    <p>
-                                        There are many variations of passages of Lorem Ipsum available....
-                                    </p>
-                                    <div class="blog-list-button">
-                                        <a href="{{ route("blog-details") }}" class="theme-button style-1"
-                                            aria-label="Read Mores">
-                                            <span data-text="Read Mores">Read Mores</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="col-lg-6">
+                                <div class="single-blog-post">
+                                    <div class="post-image">
+                                        <a href="{{ route("blog-details") }}">
+                                            <figure>
+                                                <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
+                                            </figure>
                                         </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <ul class="post-meta">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-solid fa-user"></i>
+                                                    <span>By: Admin</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <span>March 14, 2025</span>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases
+                                                Happen?</a>
+                                        </h2>
+                                        <p>
+                                            There are many variations of passages of Lorem Ipsum available....
+                                        </p>
+                                        <div class="blog-list-button">
+                                            <a href="{{ route("blog-details") }}" class="theme-button style-1"
+                                                aria-label="Read Mores">
+                                                <span data-text="Read Mores">Read Mores</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-blog-post col-lg-6">
-                                <div class="post-image">
-                                    <a href="{{ route("blog-details") }}">
-                                        <figure>
-                                            <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <ul class="post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa-solid fa-user"></i>
-                                                <span>By: Admin</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            <span>March 15, 2025</span>
-                                        </li>
-                                    </ul>
-                                    <h2><a href="{{ route("blog-details") }}">Which innovations the eye care industry?</a>
-                                    </h2>
-                                    <p>
-                                        There are many variations of passages of Lorem Ipsum available....
-                                    </p>
-                                    <div class="blog-list-button">
-                                        <a href="{{ route("blog-details") }}" class="theme-button style-1"
-                                            aria-label="Read Mores">
-                                            <span data-text="Read Mores">Read Mores</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="col-lg-6">
+                                <div class="single-blog-post ">
+                                    <div class="post-image">
+                                        <a href="{{ route("blog-details") }}">
+                                            <figure>
+                                                <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
+                                            </figure>
                                         </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <ul class="post-meta">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-solid fa-user"></i>
+                                                    <span>By: Admin</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <span>March 15, 2025</span>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="{{ route("blog-details") }}">Which innovations the eye care
+                                                industry?</a>
+                                        </h2>
+                                        <p>
+                                            There are many variations of passages of Lorem Ipsum available....
+                                        </p>
+                                        <div class="blog-list-button">
+                                            <a href="{{ route("blog-details") }}" class="theme-button style-1"
+                                                aria-label="Read Mores">
+                                                <span data-text="Read Mores">Read Mores</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-blog-post col-lg-6">
-                                <div class="post-image">
-                                    <a href="{{ route("blog-details") }}">
-                                        <figure>
-                                            <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <ul class="post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa-solid fa-user"></i>
-                                                <span>By: Admin</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            <span>March 16, 2025</span>
-                                        </li>
-                                    </ul>
-                                    <h2><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a>
-                                    </h2>
-                                    <p>
-                                        There are many variations of passages of Lorem Ipsum available....
-                                    </p>
-                                    <div class="blog-list-button">
-                                        <a href="{{ route("blog-details") }}" class="theme-button style-1"
-                                            aria-label="Read Mores">
-                                            <span data-text="Read Mores">Read Mores</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="col-lg-6">
+                                <div class="single-blog-post ">
+                                    <div class="post-image">
+                                        <a href="{{ route("blog-details") }}">
+                                            <figure>
+                                                <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
+                                            </figure>
                                         </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <ul class="post-meta">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa-solid fa-user"></i>
+                                                    <span>By: Admin</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <span>March 16, 2025</span>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="{{ route("blog-details") }}">We're ready to enhance your clear
+                                                vision</a>
+                                        </h2>
+                                        <p>
+                                            There are many variations of passages of Lorem Ipsum available....
+                                        </p>
+                                        <div class="blog-list-button">
+                                            <a href="{{ route("blog-details") }}" class="theme-button style-1"
+                                                aria-label="Read Mores">
+                                                <span data-text="Read Mores">Read Mores</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-blog-post col-lg-6">
-                                <div class="post-image">
-                                    <a href="{{ route("blog-details") }}">
-                                        <figure>
-                                            <img src="assets/images/blog/blog-4.jpg" alt="blog image four">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <ul class="post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa-solid fa-user"></i>
-                                                <span>By: Admin</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            <span>March 17, 2025</span>
-                                        </li>
-                                    </ul>
-                                    <h2><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a>
-                                    </h2>
-                                    <p>
-                                        There are many variations of passages of Lorem Ipsum available....
-                                    </p>
-                                    <div class="blog-list-button">
-                                        <a href="{{ route("blog-details") }}" class="theme-button style-1"
-                                            aria-label="Read Mores">
-                                            <span data-text="Read Mores">Read Mores</span>
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
                         <!-- pagination start -->
                         <div class="pagination mt-0 md-pb-40">

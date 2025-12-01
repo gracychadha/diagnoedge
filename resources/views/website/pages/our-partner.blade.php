@@ -36,7 +36,7 @@
         </section>
         <!-- breadcrumb section end -->
         <!-- about section start -->
-        <section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="about-section-2 pt-50 md-pt-30 pb-50 ">
 
             <div class="container">
                 <div class="row align-items-center">
@@ -76,7 +76,7 @@
                         </div>
                         <!-- about images box end -->
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 md-pt-30">
                         <!-- about content start -->
                         <div class="about-content">
                             <!-- section title start -->
@@ -122,7 +122,7 @@
         @endphp
 
         @if($partners->count() > 0)
-            <section class="partners-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+            <section class="partners-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -170,7 +170,7 @@
 
 
         <!-- Why Partner With Us -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row align-items-center">
 

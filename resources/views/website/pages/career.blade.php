@@ -36,7 +36,7 @@
         </section>
         <!-- breadcrumb section end -->
         <!-- pricing section start -->
-        <section class="pricing-section-1 bg-section pt-70 md-pt-80 pb-70 md-pb-50">
+        <section class="pricing-section-1 bg-section pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

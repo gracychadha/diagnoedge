@@ -36,69 +36,74 @@
         <!-- breadcrumb section end -->
 
         <!-- about section start -->
-      @php $about = App\Models\AboutSectionTwo::where('is_active', true)->first(); @endphp
+        @php $about = App\Models\AboutSectionTwo::where('is_active', true)->first(); @endphp
 
-@if($about)
-<section class="about-section-2 pt-70 md-pt-80 pb-70 md-pb-80">
-    @if($about->shape_1)<div class="about-shape-1"><img src="{{ Storage::url($about->shape_1) }}" alt=""></div>@endif
-    @if($about->shape_2)<div class="about-shape-2"><img src="{{ Storage::url($about->shape_2) }}" alt=""></div>@endif
+        @if($about)
+            <section class="about-section-2 pt-50 md-pt-30 pb-50 md-pb-30">
+                @if($about->shape_1)
+                <div class="about-shape-1"><img src="{{ Storage::url($about->shape_1) }}" alt=""></div>@endif
+                @if($about->shape_2)
+                <div class="about-shape-2"><img src="{{ Storage::url($about->shape_2) }}" alt=""></div>@endif
 
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="about-images-box">
-                    <div class="about-images-top wow fadeInUp">
-                        <img src="{{ $about->image_top ? Storage::url($about->image_top) : asset('assets/images/about/about-2-1.jpg') }}" alt="">
-                    </div>
-                    <div class="about-images-bottom">
-                        <div class="about-year-counter wow fadeInLeft">
-                            <div class="about-year-icon">
-                                <img src="{{ $about->founded_image ? Storage::url($about->founded_image) : asset('assets/images/about/icon-about-4.png') }}" alt="">
-                            </div>
-                            <div class="about-year-content">
-                                <p>Our Diagnoedge Hospital Funded in</p>
-                                <h3>{{ $about->founded_year }}</h3>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-images-box">
+                                <div class="about-images-top wow fadeInUp">
+                                    <img src="{{ $about->image_top ? Storage::url($about->image_top) : asset('assets/images/about/about-2-1.jpg') }}"
+                                        alt="">
+                                </div>
+                                <div class="about-images-bottom">
+                                    <div class="about-year-counter wow fadeInLeft">
+                                        <div class="about-year-icon">
+                                            <img src="{{ $about->founded_image ? Storage::url($about->founded_image) : asset('assets/images/about/icon-about-4.png') }}"
+                                                alt="">
+                                        </div>
+                                        <div class="about-year-content">
+                                            <p>Our Diagnoedge Hospital Funded in</p>
+                                            <h3>{{ $about->founded_year }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="about-year-images wow fadeInRight">
+                                        <img src="{{ $about->image_bottom ? Storage::url($about->image_bottom) : asset('assets/images/about/about-2-2.jpg') }}"
+                                            alt="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="about-year-images wow fadeInRight">
-                            <img src="{{ $about->image_bottom ? Storage::url($about->image_bottom) : asset('assets/images/about/about-2-2.jpg') }}" alt="">
+
+                        <div class="col-lg-6 md-pt-30">
+                            <div class="about-content">
+                                <div class="section-title wow fadeInUp">
+                                    <span class="sub-title">{{ $about->sub_title }}</span>
+                                    <h2>{{ $about->main_title }}</h2>
+                                    <p align="justify">{!! nl2br(e($about->description_1)) !!}</p>
+                                    @if($about->description_2)
+                                        <p align="justify">{!! nl2br(e($about->description_2)) !!}</p>
+                                    @endif
+                                </div>
+
+                                <div class="about-footer wow fadeInUp">
+                                    <div class="about-button-wappper">
+                                        <a href="{{ route('about-us') }}" class="theme-button style-1">
+                                            <span data-text="More About">More About</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="about-contact-box">
+                                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                                        <div class="about-contact-box-content">
+                                            <p>For Emergency, Call Now</p>
+                                            <a href="tel:+123446788">+1 234 467 88</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="about-content">
-                    <div class="section-title wow fadeInUp">
-                        <span class="sub-title">{{ $about->sub_title }}</span>
-                        <h2>{{ $about->main_title }}</h2>
-                        <p align="justify">{!! nl2br(e($about->description_1)) !!}</p>
-                        @if($about->description_2)
-                            <p align="justify">{!! nl2br(e($about->description_2)) !!}</p>
-                        @endif
-                    </div>
-
-                    <div class="about-footer wow fadeInUp">
-                        <div class="about-button-wappper">
-                            <a href="{{ route('about-us') }}" class="theme-button style-1">
-                                <span data-text="More About">More About</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="about-contact-box">
-                            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                            <div class="about-contact-box-content">
-                                <p>For Emergency, Call Now</p>
-                                <a href="tel:+123446788">+1 234 467 88</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@endif
+            </section>
+        @endif
         <!-- about section end -->
 
 
@@ -109,7 +114,7 @@
         @endphp
 
         @if($counter)
-            <section class="counter-section-2 pb-60">
+            <section class="counter-section-2 pb-60 md-pb-10">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -173,7 +178,7 @@
         <!-- marquee ticker section end -->
 
         <!-- why-section start -->
-        <section class="why-choose-section-1 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
@@ -209,7 +214,8 @@
                         <div class="">
 
                             <figure class="image-anime">
-                                <img src="assets/images/about/about-2-1.jpg" style="border-radius: 20px;" alt="why choose image one">
+                                <img src="assets/images/about/about-2-1.jpg" style="border-radius: 20px;"
+                                    alt="why choose image one">
                             </figure>
 
 

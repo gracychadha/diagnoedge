@@ -37,7 +37,7 @@
         <!-- breadcrumb section end -->
 
         <!-- doctor section start -->
-        <section class="doctor-section-3 pt-70 md-pt-80 pb-70 md-pb-80">
+        <section class="doctor-section-3 pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

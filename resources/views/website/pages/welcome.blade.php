@@ -1942,7 +1942,7 @@
                     </div>
 
                     <!-- Right Side - Cards -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 custom-padding--md-20">
                         @php
                             $section = App\Models\WhyChooseUsSection::first();
                         @endphp
@@ -2079,7 +2079,7 @@
                         accuracy.</p>
                 </div>
 
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4 justify-content-center custom-padding--md-10">
                     @foreach(range(1, 4) as $i)
                         @if($section && $section->{"title$i"})
                             <div class="col-md-4 col-lg-3">
