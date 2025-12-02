@@ -8,6 +8,7 @@
         @props([])
         <!-- Styles -->
         <style>
+           
             /* Modal Outer */
             .modal {
                 display: none;
@@ -2243,25 +2244,6 @@
     <script>
 
 
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const paragraphs = document.querySelectorAll("p");
-
-        //     function applyStyles() {
-        //         const isMobile = window.innerWidth <= 767;
-
-        //         paragraphs.forEach(p => {
-        //             p.style.fontSize = isMobile ? "15px" : "16px";  // mobile smaller
-        //             p.style.fontFamily = "Nunito, sans-serif";
-
-        //         });
-        //     }
-
-        //     // Apply once on load
-        //     applyStyles();
-
-        //     // Apply again when screen is resized
-        //     window.addEventListener("resize", applyStyles);
-        // });
 
         window.popupCaptcha = function () {
             const btn = document.getElementById('bookingSubmit');

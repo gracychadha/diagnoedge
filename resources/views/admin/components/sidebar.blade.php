@@ -77,7 +77,8 @@
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Corporate Page</a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Benefits</a></li>
+                            <li><a href="{{ route('admin-corporate.index') }}">Benefits</a></li>
+                            <li><a href="{{ route('admin-corporate-service.index') }}">Services</a></li>
                            
                         </ul>
                     </li>

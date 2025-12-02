@@ -1,6 +1,6 @@
 <!-- popup call back Modal -->
-<div class="modal fade" id="popupCallModal" tabindex="-1" aria-labelledby="popupCallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="popupCallModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="dialog" aria-modal="true" aria-labelledby="popupCallModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title fs-5" id="popupCallModalLabel">Book a Home Visit Now !</h2>

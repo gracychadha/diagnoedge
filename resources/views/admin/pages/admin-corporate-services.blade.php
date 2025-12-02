@@ -1,6 +1,6 @@
 @extends("admin.layout.admin-master")
 
-@section("title", "Corporate benefits | Diagnoedge")
+@section("title", "Corporate Services | Diagnoedge")
 
 @section("content")
     <div class="content-body">
@@ -8,7 +8,7 @@
             <div class="page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Benefit Section Section</li>
+                    <li class="breadcrumb-item active">Services Section Section</li>
                 </ol>
             </div>
 
@@ -28,17 +28,17 @@
                 <div class="col-12">
                     <div class="card border shadow-sm h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0"><i class="fas fa-info-circle"></i> Corporate Benefits Section</h5>
+                            <h5 class="mb-0"><i class="fas fa-info-circle"></i> Corporate Services Section</h5>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" name="is_active" value="1" 
-                                       {{ old('is_active', $corporateBenefits->is_active) ? 'checked' : '' }}>
+                                       {{ old('is_active', $CorporateServices->is_active) ? 'checked' : '' }}>
                                 <label class="form-check-label">Enable Section</label>
                             </div>
                         </div>
                         <div class="card-body">
 
 
-                            <form action="{{ route('admin-corporate.update') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin-corporate-service.update') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -49,13 +49,13 @@
                                         <div class="mb-4">
                                             <label class="form-label fw-bold">Main Image</label>
 
-                                            @if($corporateBenefits->image && \Illuminate\Support\Facades\Storage::disk('public')->exists($corporateBenefits->image))
+                                            @if($CorporateServices->image && \Illuminate\Support\Facades\Storage::disk('public')->exists($CorporateServices->image))
                                                 <div class="position-relative mb-3">
-                                                    <img src="{{ asset('storage/' . $corporateBenefits->image) }}"
+                                                    <img src="{{ asset('storage/' . $CorporateServices->image) }}"
                                                          class="img-fluid rounded shadow-sm" 
                                                          style="max-height: 300px; width: 100%; object-fit: cover;"
                                                          alt="Main Image"
-                                                         onerror="this.style.display='none'; console.log('Image failed to load: {{ $corporateBenefits->image }}')">
+                                                         onerror="this.style.display='none'; console.log('Image failed to load: {{ $CorporateServices->image }}')">
                                                     <small class="text-success d-block mt-1">
                                                         <i class="fas fa-check-circle"></i> Image loaded successfully
                                                     </small>
@@ -66,7 +66,7 @@
                                                     <div class="text-center">
                                                         <i class="fas fa-image text-muted" style="font-size: 60px;"></i>
                                                         <p class="text-muted mt-2 mb-0">No image uploaded</p>
-                                                        @if($corporateBenefits->image)
+                                                        @if($CorporateServices->image)
                                                             <p class="text-warning small mt-1 mb-0">
                                                                 <i class="fas fa-exclamation-triangle"></i> 
                                                                 Image file not found in storage
@@ -94,7 +94,7 @@
                                             <label class="form-label fw-bold">Sub Title <span class="text-danger">*</span></label>
                                             <input type="text" name="sub_title" 
                                                    class="form-control @error('sub_title') is-invalid @enderror"
-                                                   value="{{ old('sub_title', $corporateBenefits->sub_title) }}" required>
+                                                   value="{{ old('sub_title', $CorporateServices->sub_title) }}" required>
                                             @error('sub_title')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -105,7 +105,7 @@
                                             <label class="form-label fw-bold">Main Title <span class="text-danger">*</span></label>
                                             <textarea name="main_title" 
                                                       class="form-control @error('main_title') is-invalid @enderror" 
-                                                      rows="2" required>{{ old('main_title', $corporateBenefits->main_title) }}</textarea>
+                                                      rows="2" required>{{ old('main_title', $CorporateServices->main_title) }}</textarea>
                                             @error('main_title')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -115,7 +115,7 @@
                                             <label class="form-label fw-bold">Primary Description <span class="text-danger">*</span></label>
                                             <textarea name="description" 
                                                       class="form-control @error('description') is-invalid @enderror" 
-                                                      rows="4" required>{{ old('description', $corporateBenefits->description) }}</textarea>
+                                                      rows="4" required>{{ old('description', $CorporateServices->description) }}</textarea>
                                             @error('description')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror

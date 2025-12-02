@@ -31,6 +31,8 @@ use App\Http\Controllers\AboutSectionController;
 use App\Http\Controllers\SliderImageController;
 use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\JobCareerController;
+use App\Http\Controllers\CorporateBenefitController;
+use App\Http\Controllers\CorporateServiceController;
 
 
 // FOR FETCH DATA IN FRONTEND
@@ -418,7 +420,17 @@ Route::middleware('auth')->group(function () {
     // FOR BOOKING FORM
     Route::get('/booking-lead', [BookingController::class, 'index'])->name('admin-booking.index');
     Route::delete('/booking-lead/delete/{id}', [BookingController::class, 'delete']);
- 
+
+
+    // FOR CORPORATE 
+    Route::get('/corporate-benefit', [CorporateBenefitController::class, 'index'])
+        ->name('admin-corporate.index');
+    Route::put('/corporate-benefit', [CorporateBenefitController::class, 'update'])->name('admin-corporate.update');
+    
+    // FOR CORPORATE 
+    Route::get('/corporate-services', [CorporateServiceController::class, 'index'])
+        ->name('admin-corporate-service.index');
+    Route::put('/corporate-services', [CorporateServiceController::class, 'update'])->name('admin-corporate-service.update');
 
 
 
