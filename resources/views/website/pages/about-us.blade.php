@@ -173,59 +173,103 @@
         <!-- counter section end -->
 
 
-        <!-- marquee ticker section start -->
-        {{-- @include("website.components.sticker") --}}
-        <!-- marquee ticker section end -->
+        @php
+
+            $makes = \App\Models\AboutMake::first();
+        @endphp
 
         <!-- why-section start -->
-        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why content start -->
-                        <div class="why-content">
-                            <!-- section-title start -->
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">What Makes Us Different</span>
-                                <h2>Precision, Trust, and Unmatched Diagnostic Excellence</h2>
-                                <p align="justify">
-                                    At Diagnoedge Lab, we combine advanced laboratory technology with a patient-focused
-                                    approach
-                                    to deliver highly accurate diagnostic results. Our processes are guided by strict
-                                    quality
-                                    standards, modern equipment, and a team of skilled professionals who ensure reliability
-                                    at
-                                    every step. From seamless sample collection to transparent reporting, we aim to make
-                                    diagnostics simple, fast, and dependable for individuals, doctors, and healthcare
-                                    organizations.
-                                    Choosing Diagnoedge means choosing clarity, accuracy, and a partner committed to your
-                                    well-being.
-                                </p>
+        @if($makes)
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <!-- why content start -->
+                            <div class="why-content">
+                                <!-- section-title start -->
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">{{ $makes->sub_title }}</span>
+                                    <h2>{{ $makes->main_title }}</h2>
+                                    <p align="justify">
+                                        {{ $makes->description }}
+                                    </p>
+                                </div>
+
+                                <!-- section-title end -->
+
+
                             </div>
-
-                            <!-- section-title end -->
-
-
+                            <!-- why content end -->
                         </div>
-                        <!-- why content end -->
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <!-- why choose image start -->
-                        <div class="">
+                        <div class="col-lg-6 col-md-12">
+                            <!-- why choose image start -->
+                            <div class="">
 
-                            <figure class="image-anime">
-                                <img src="assets/images/about/about-2-1.jpg" style="border-radius: 20px;"
-                                    alt="why choose image one">
-                            </figure>
+                                <figure class="image-anime">
+                                    <img src="{{  Storage::url($makes->image)  }}" style="border-radius: 20px;"
+                                        alt="why choose image one">
+                                </figure>
 
 
 
+                            </div>
+                            <!-- why choose image end -->
                         </div>
-                        <!-- why choose image end -->
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @else
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                                                <!-- why content start -->
+                            <div class="why-content">
+                                <!-- section-title start -->
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">What Makes Us Different</span>
+                                    <h2>Precision, Trust, and Unmatched Diagnostic Excellence</h2>
+                                    <p align="justify">
+                                        At Diagnoedge Lab, we combine advanced laboratory technology with a patient-focused
+                                        approach
+                                        to deliver highly accurate diagnostic results. Our processes are guided by strict
+                                        quality
+                                        standards, modern equipment, and a team of skilled professionals who ensure reliability
+                                        at
+                                        every step. From seamless sample collection to transparent reporting, we aim to make
+                                        diagnostics simple, fast, and dependable for individuals, doctors, and healthcare
+                                        organizations.
+                                        Choosing Diagnoedge means choosing clarity, accuracy, and a partner committed to your
+                                        well-being.
+                                    </p>
+                                </div>
+
+                                <!-- section-title end -->
+
+
+                            </div>
+                            <!-- why content end -->
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <!-- why choose image start -->
+                            <div class="">
+
+                                <figure class="image-anime">
+                                    <img src="assets/images/about/about-2-1.jpg" style="border-radius: 20px;"
+                                        alt="why choose image one">
+                                </figure>
+
+
+
+                            </div>
+                            <!-- why choose image end -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
         <!-- why-section end -->
 
         <!-- testimonials section start -->

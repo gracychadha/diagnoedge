@@ -36,84 +36,107 @@
         </section>
         <!-- breadcrumb section end -->
         <!-- about section start -->
-        <section class="about-section-2 pt-50 md-pt-30 pb-50 ">
 
-            <div class="container">
-                <div class="row align-items-center">
+        @php
+            $partnersabout = App\Models\PartnerAbout::first();
+        @endphp
+        @if($partnersabout)
+            <section class="about-section-2 pt-50 md-pt-30 pb-50 ">
 
-                    <div class="col-lg-6">
-                        <!-- about images box start -->
-                        <div class="about-images-box">
-                            <!-- about images top start -->
-                            <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
-                                <figure class="image-anime">
-                                    <img src="assets/images/about/about-2-2.jpg" alt="about one">
-                                </figure>
-                            </div>
-                            <!-- about images top end -->
-                            <!-- about images bottom start -->
-                            {{-- <div class="about-images-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
 
-                                <div class="about-year-counter wow fadeInLeft" data-wow-delay=".3s">
-                                    <div class="about-year-icon">
-                                        <figure>
-                                            <img src="assets/images/about/icon-about-4.png" alt="icon why choose four">
-                                        </figure>
-                                    </div>
-                                    <div class="about-year-content">
-                                        <p>Our Diagnoedge Hospital Funded in</p>
-                                        <h3>1990</h3>
-                                    </div>
-                                </div>
-
-                                <div class="about-year-images wow fadeInRight" data-wow-delay=".4s">
+                        <div class="col-lg-6">
+                            <!-- about images box start -->
+                            <div class="about-images-box">
+                                <!-- about images top start -->
+                                <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
                                     <figure class="image-anime">
-                                        <img src="assets/images/about/about-2-2.jpg" alt="about two">
+                                        <img src="assets/images/about/about-2-2.jpg" alt="about one">
                                     </figure>
                                 </div>
+                                <!-- about images top end -->
 
-                            </div> --}}
-                        </div>
-                        <!-- about images box end -->
-                    </div>
-                    <div class="col-lg-6 md-pt-30">
-                        <!-- about content start -->
-                        <div class="about-content">
-                            <!-- section title start -->
-
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Our Partners</span>
-                                <h2>Empowering Diagnostics Through Strong & Trusted Partnerships</h2>
-                                <p align="justify">
-                                    At Diagnoedge Lab, we proudly collaborate with leading healthcare providers, diagnostic
-                                    innovators,
-                                    and technology partners who share our dedication to accuracy, reliability, and
-                                    patient-centered care.
-                                    Through these strategic partnerships, we enhance our testing capabilities, introduce
-                                    cutting-edge diagnostic
-                                    solutions, and ensure faster, more efficient service delivery. Together, we work to
-                                    raise the standard of
-                                    laboratory diagnostics and contribute to better health outcomes for the communities we
-                                    serve.
-                                </p>
                             </div>
-
-                            <div class="check-list-two-col wow fadeInUp" data-wow-delay=".3s">
-                                <ul>
-                                    <li>Trusted Healthcare Partnerships</li>
-                                    <li>Advanced Diagnostic Support</li>
-                                    <li>Shared Commitment to Quality</li>
-                                    <li>Growth Through Collaboration</li>
-                                </ul>
-                            </div>
-
-
+                            <!-- about images box end -->
                         </div>
-                        <!-- about content end -->
+                        <div class="col-lg-6 md-pt-30">
+                            <!-- about content start -->
+                            <div class="about-content">
+                                <!-- section title start -->
+
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">{{ $partnersabout->sub_title }}</span>
+                                    <h2>{{ $partnersabout->main_title }}</h2>
+                                    <p align="justify">
+                                        {{ $partnersabout->description }}
+                                    </p>
+                                </div>
+
+                                {{-- <div class="check-list-two-col wow fadeInUp" data-wow-delay=".3s">
+                                    <ul>
+                                        <li>Trusted Healthcare Partnerships</li>
+                                        <li>Advanced Diagnostic Support</li>
+                                        <li>Shared Commitment to Quality</li>
+                                        <li>Growth Through Collaboration</li>
+                                    </ul>
+                                </div> --}}
+
+
+                            </div>
+                            <!-- about content end -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @else
+            <section class="about-section-2 pt-50 md-pt-30 pb-50 ">
+
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6">
+                            <!-- about images box start -->
+                            <div class="about-images-box">
+                                <!-- about images top start -->
+                                <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
+                                    <figure class="image-anime">
+                                        <img src="{{  Storage::url(path: $partnersabout->image)  }}" alt="about one">
+                                    </figure>
+                                </div>
+                                <!-- about images top end -->
+
+                            </div>
+                            <!-- about images box end -->
+                        </div>
+                        <div class="col-lg-6 md-pt-30">
+                            <!-- about content start -->
+                            <div class="about-content">
+                                <!-- section title start -->
+
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">Our Partners</span>
+                                    <h2>Empowering Diagnostics Through Strong & Trusted Partnerships</h2>
+                                    <p align="justify">
+                                        At Diagnoedge Lab, we proudly collaborate with leading healthcare providers, diagnostic
+                                        innovators, and technology partners who share our dedication to accuracy, reliability,
+                                        and patient-centered care. Through these strategic partnerships, we enhance our testing
+                                        capabilities, introduce cutting-edge diagnostic solutions, and ensure faster, more
+                                        efficient service delivery. Together, we work to raise the standard of laboratory
+                                        diagnostics and contribute to better health outcomes for the communities we serve.
+                                    </p>
+                                </div>
+
+
+
+
+                            </div>
+                            <!-- about content end -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
         <!-- about section end -->
 
         <!-- partners section start -->
@@ -165,6 +188,28 @@
                     </div>
                 </div>
             </section>
+        @else
+            <section class="partners-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- section title start -->
+                            <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                                <span class="sub-title">Our Partners</span>
+                                <h2>Partners Who Trust Diagnoedge</h2>
+                            </div>
+                            <!-- section title end -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-center w-100 py-5">
+                                <h4>No Partners to show</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         @endif
         <!-- partners section end -->
 
@@ -194,10 +239,11 @@
 
                     <!-- IMAGE RIGHT -->
                     <div class="col-lg-6 col-md-12">
-                            <figure class="image-anime rounded-sm">
-                                <img src="{{ asset('images/avatar/img2.jpg') }}" style="border-radius: 20px;" alt="Corporate Health Partner">
-                            </figure>
-                      
+                        <figure class="image-anime rounded-sm">
+                            <img src="{{ asset('images/avatar/img2.jpg') }}" style="border-radius: 20px;"
+                                alt="Corporate Health Partner">
+                        </figure>
+
                     </div>
 
                 </div>

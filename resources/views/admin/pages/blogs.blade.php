@@ -37,7 +37,7 @@
                                     <th>Image</th>
                                     <th>Title</th>
                                     <th>Author</th>
-                                    <th>Categories</th>
+                                    {{-- <th>Categories</th> --}}
                                     <th>Published</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -59,11 +59,11 @@
                                         </td>
                                         <td><strong>{{ Str::limit($blog->title, 40) }}</strong></td>
                                         <td>{{ $blog->author }}</td>
-                                        <td>
+                                        {{-- <td>
                                             @foreach($blog->categories as $cat)
                                                 <span class="badge bg-info me-1">{{ $cat->name }}</span>
                                             @endforeach
-                                        </td>
+                                        </td> --}}
                                         <td>{{ $blog->published_at?->format('d M Y') ?? '—' }}</td>
                                         <td>
                                             <span
@@ -218,7 +218,7 @@
                             <td colspan="3">
                                 @if($blog->image)
                                     <img src="{{ asset('storage/' . $blog->image) }}" class="img-fluid rounded"
-                                        style="max-height:300px;">
+                                        style="max-height:200px;">
                                 @else
                                     <em class="text-muted">No image uploaded</em>
                                 @endif

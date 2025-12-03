@@ -33,6 +33,9 @@ use App\Http\Controllers\WhyChooseUsSectionController;
 use App\Http\Controllers\JobCareerController;
 use App\Http\Controllers\CorporateBenefitController;
 use App\Http\Controllers\CorporateServiceController;
+use App\Http\Controllers\AboutMakeController;
+use App\Http\Controllers\PartnerAboutController;
+use App\Http\Controllers\WhyPartnerController;
 
 
 // FOR FETCH DATA IN FRONTEND
@@ -431,6 +434,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/corporate-services', [CorporateServiceController::class, 'index'])
         ->name('admin-corporate-service.index');
     Route::put('/corporate-services', [CorporateServiceController::class, 'update'])->name('admin-corporate-service.update');
+    
+    
+    // WHAT MAKES US DIFFERENT ABOUT SECTION
+    Route::get('/About-makes-us-different', [AboutMakeController::class, 'index'])
+        ->name('admin-about-makes.index');
+    Route::put('/About-makes-us-different', [AboutMakeController::class, 'update'])->name('admin-about-makes.update');
+    
+    // PARTNER ABOUT SECTION
+    Route::get('/partner-about', [PartnerAboutController::class, 'index'])
+        ->name('admin-partner-about.index');
+    Route::put('/partner-about', [PartnerAboutController::class, 'update'])->name('admin-partner-about.update');
+
+        // PARTNER ABOUT SECTION
+        Route::get('/why-partner', [WhyPartnerController::class, 'index'])
+            ->name('admin-why-partner.index');
+        Route::put('/why-partner', [WhyPartnerController::class, 'update'])->name('admin-why-partner.update');
 
 
 

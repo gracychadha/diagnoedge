@@ -8,7 +8,6 @@
         @props([])
         <!-- Styles -->
         <style>
-           
             /* Modal Outer */
             .modal {
                 display: none;
@@ -1744,7 +1743,9 @@
         @include("website.components.sticker")
         <!-- marquee ticker section end -->
 
-
+        @php
+            $faqs = \App\Models\Faq::where('status', 'active')->get();
+        @endphp
         <!-- faq section start -->
         <section class="faq-section-1 mb-5 pt-50 md-pt-30">
             <div class="container">
@@ -1775,132 +1776,73 @@
                                 <!-- accordion start -->
                                 <div class="accordion" id="accordionExample">
                                     <!-- accordion item start -->
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                What are common signs of serious eye problems?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapseOne" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>
-                                                            It is a long established fact that a reader will be distracted
-                                                            by the readable content of a page when looking at its layout.
-                                                            The point of using Lorem Ipsum is that it has a
-                                                            more-or-less normal distribution of letters, as opposed to using
-                                                            'Content here, content here', making it look like readable
-                                                            English
-                                                        </p>
+                                    @forelse($faqs as $faq)
+                                        @php
+                                            $id = 'faq_' . $loop->index;
+                                        @endphp
+                                        <div class="accordion-item">
+                                            <!-- accordion-header start -->
+                                            <h2 class="accordion-header" id="heading_{{ $id }}">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse_{{ $id }}" aria-expanded="true"
+                                                    aria-controls="collapse_{{ $id }}">
+                                                    {{ $faq->question }}
+                                                </button>
+                                            </h2>
+                                            <!-- accordion header end -->
+                                            <!-- accordion collapse start -->
+                                            <div id="collapse_{{ $id }}"
+                                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                                aria-labelledby="heading_{{ $id }}" data-bs-parent="#accordionExample">
+                                                <!-- accordion body start -->
+                                                <div class="accordion-body">
+                                                    <div class="inner">
+                                                        <div class="accordion-content">
+                                                            <p>
+                                                                {{ strip_tags($faq->answer) }}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <!-- accordion body end -->
                                             </div>
-                                            <!-- accordion body end -->
+                                            <!-- accordion collapse end -->
                                         </div>
-                                        <!-- accordion collapse end -->
-                                    </div>
-                                    <!-- accordion item end -->
-                                    <!-- accordion item start -->
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                Are contact lenses better than glasses?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>
-                                                            It depends on your lifestyle. Contact lenses offer convenience
-                                                            for sports and aesthetics, while glasses are easier to maintain
-                                                            and cost-effective over time. An eye doctor
-                                                            can help you decide what suits you best.
-                                                        </p>
+                                    @empty
+                                        <div class="accordion-item">
+                                            <!-- accordion-header start -->
+                                            <h2 class="accordion-header" id="">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse_" aria-expanded="true" aria-controls="collapse_">
+                                                    How do you ensure the accuracy of your test results?
+                                                </button>
+                                            </h2>
+                                            <!-- accordion header end -->
+                                            <!-- accordion collapse start -->
+                                            <div id="collapse_"
+                                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                                aria-labelledby="heading_" data-bs-parent="#accordionExample">
+                                                <!-- accordion body start -->
+                                                <div class="accordion-body">
+                                                    <div class="inner">
+                                                        <div class="accordion-content">
+                                                            <p>
+                                                                Healthcare ensures the accuracy of test results through a
+                                                                stringent quality control process that includes regular
+                                                                calibration of equipment, external and internal quality checks,
+                                                                and adherence to international standards.
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <!-- accordion body end -->
                                             </div>
-                                            <!-- accordion body end -->
+                                            <!-- accordion collapse end -->
                                         </div>
-                                        <!-- accordion collapse end -->
-                                    </div>
+
+                                    @endforelse
                                     <!-- accordion item end -->
-                                    <!-- accordion item start -->
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="headingThree">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
-                                                Are contact lenses safe to wear every day?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapseThree" class="accordion-collapse collapse"
-                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>Yes, as long as you follow proper hygiene and your eye doctor’s
-                                                            instructions. Always clean and store lenses properly, and never
-                                                            sleep in them unless advised.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- accordion body end -->
-                                        </div>
-                                        <!-- accordion collapse end -->
-                                    </div>
-                                    <!-- accordion item end -->
-                                    <!-- accordion item start -->
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="headingFour">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                                aria-expanded="false" aria-controls="collapseFour">
-                                                How often should I get my eyes checked?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion-header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapseFour" class="accordion-collapse collapse"
-                                            aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>
-                                                            Adults should get a comprehensive eye exam every 1 to 2 years,
-                                                            even if they have no vision issues. Children, seniors, and
-                                                            individuals with existing conditions may need more
-                                                            frequent visits.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- accordion body end -->
-                                        </div>
-                                        <!-- accordion collapse end-->
-                                    </div>
-                                    <!-- accordion item end -->
+
 
                                 </div>
                                 <!-- accordion end -->
@@ -1913,7 +1855,7 @@
             </div>
         </section>
         <!-- faq section end -->
-
+        {{-- why choose us section --}}
         <section class="portfolio-section-1 py-5" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
             <div class="container">
                 <div class="row align-items-center">
@@ -2066,7 +2008,7 @@
         <!-- portfolio section end -->
 
 
-
+        {{-- accredetittaion section start --}}
         <section class="accredit-sec py-5" style="background:#e6f5e9;">
             <div class="container">
                 @php
@@ -2100,7 +2042,11 @@
             </div>
         </section>
 
+        {{-- end --}}
 
+        @php
+            $blogs = \App\Models\Blog::where('status', 'active')->get();
+        @endphp
         <!-- blog section start -->
         <section class="blog-section background-one pt-50 md-pt-30 pb-50 md-pb-30">
             <div class="container">
@@ -2115,115 +2061,53 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
+                    @forelse($blogs as $blog)
+                        <div class="col-lg-4 col-md-12">
+                            <!-- blog grid item 1 start -->
+
+                            <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".3s">
 
 
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
+                                <div class="blog-grid-image">
+                                    <a href="{{ route("blog-details") }}">
+                                        <figure class="image-anime">
+                                            <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
+                                        </figure>
                                     </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 14, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">How do Inherited Retinal Diseases Happen?</a>
-                                </h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ....</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                </div>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-user"></i>
+                                            <span>{{ $blog->author }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span>{{ \Carbon\Carbon::parse($blog->published_at)->format('d-M-Y') }}
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div class="blog-title">
+                                    <h3><a href="{{ route("blog-details") }}">{{ $blog->title }}</a>
+                                    </h3>
+                                </div>
+                                <div class="blog-grid-content">
+                                    <p>{{ Str::limit(strip_tags($blog->description), 80) }}...</p>
+                                    <div class="blog-grid-button">
+                                        <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                    </div>
                                 </div>
                             </div>
+
+
+                            <!-- blog grid item 1 end -->
                         </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".4s">
-
-
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-2.jpg" alt="blog image two">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 15, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">Protect your eyes from dust and disease</a></h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ...</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
-                                </div>
-                            </div>
+                    @empty
+                        <div class="text-center w-100 py-5">
+                            <h4>No Blogs to show</h4>
                         </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <!-- blog grid item 1 start -->
-                        <div class="blog-grid-item-1 wow fadeInUp" data-wow-delay=".5s">
-
-
-                            <div class="blog-grid-image">
-                                <a href="{{ route("blog-details") }}">
-                                    <figure class="image-anime">
-                                        <img src="assets/images/blog/blog-3.jpg" alt="blog image three">
-                                    </figure>
-                                </a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Admin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>March 17, 2025</span>
-                                </li>
-                            </ul>
-                            <div class="blog-title">
-                                <h3><a href="{{ route("blog-details") }}">We're ready to enhance your clear vision</a></h3>
-                            </div>
-                            <div class="blog-grid-content">
-                                <p>It is a long established fact that a reader will be distracted ....</p>
-                                <div class="blog-grid-button">
-                                    <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog grid item 1 end -->
-                    </div>
+                    @endforelse
                 </div>
             </div>
         </section>

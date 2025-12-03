@@ -48,6 +48,9 @@
                     <span class="nav-text">CMS</span>
                 </a>
                 <ul aria-expanded="false">
+                     <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
+
+                    </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">Blogs</a>
                         <ul class="" aria-expanded="false">
                             <li><a href="{{ route('blog-categories.index') }}">Blog category</a></li>
@@ -72,25 +75,25 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('about-section-two.index') }}">Know Us Better</a></li>
                             <li><a href="{{ route('counters.index') }}">Counter</a></li>
-                            <li><a href="#">What Makes Us Different</a></li>
+                            <li><a href="{{ route('admin-about-makes.index') }}">What Makes Us Different</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Partner Page</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('admin-partner-about.index') }}">Our Partners</a></li>
+                            <li><a href="{{ route('partners.index') }}">Partner Image</a></li>
+                            <li><a href="{{ route('admin-why-partner.index') }}">Why Partners</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Corporate Page</a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('admin-corporate.index') }}">Benefits</a></li>
                             <li><a href="{{ route('admin-corporate-service.index') }}">Services</a></li>
-                           
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Partner Page</a>
-                        <ul aria-expanded="false">
-                            <li><a href="#">Our Partners</a></li>
-                            <li><a href="{{ route('partners.index') }}">Partner Image</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
 
+                        </ul>
                     </li>
+                   
 
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Job Career</a>
                         <ul aria-expanded="false">
