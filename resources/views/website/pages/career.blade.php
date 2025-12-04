@@ -79,105 +79,8 @@
                 <!-- tab content start -->
                 <div class="tab-content">
 
-                    <!-- =================== LAB PACKAGES TAB =================== -->
-                    <div class="tab-pane fade  " id="nav-lab" role="tabpanel" aria-labelledby="nav-lab-tab"
-                        tabindex="0">
-                        <div class="row align-items-center">
 
-                            <!-- Basic Health Checkup -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Basic Health Checkup</p>
-                                            <h3 class="pricing-plan-price">₹999<span>/Per Test</span></h3>
-                                            <p>Ideal for individuals looking for a quick and essential health assessment.
-                                            </p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Blood Sugar & CBC</li>
-                                                    <li>Lipid Profile</li>
-                                                    <li>Urine Routine</li>
-                                                    <li>Doctor Consultation</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="" class="theme-button style-2" aria-label="Book Now">
-                                                    <span data-text="Book Now">Book Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Comprehensive Health Plan -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item tagged">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Comprehensive Health Plan <span>Popular</span></p>
-                                            <h3 class="pricing-plan-price">₹2499<span>/Full Body</span></h3>
-                                            <p class="text-white">Get advanced diagnostics for complete health evaluation.
-                                            </p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-white">What's included?</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Thyroid & Liver Function</li>
-                                                    <li>Kidney Profile</li>
-                                                    <li>Vitamin D & B12</li>
-                                                    <li>ECG & X-Ray</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-4" aria-label="Book Now">
-                                                    <span data-text="Book Now">Book Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Premium Wellness Package -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Premium Wellness Package</p>
-                                            <h3 class="pricing-plan-price">₹4999<span>/Full Body</span></h3>
-                                            <p>Advanced preventive package designed for executives and families.</p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-black">What's included?</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Full Body Scan</li>
-                                                    <li>Cardiac Risk Marker</li>
-                                                    <li>Hormone Panel</li>
-                                                    <li>Nutrition Consultation</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Book Now">
-                                                    <span data-text="Book Now">Book Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                     <!-- =================== JOB CAREER TAB =================== -->
                     <div class="tab-pane fade active show" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab"
@@ -203,15 +106,74 @@
                                                 </ul>
                                             </div>
                                             <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Apply Now">
+                                                <a href="#" class="theme-button style-2" aria-label="Apply Now"
+                                                    data-bs-toggle="modal" data-bs-target="#applyJobModal">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Job Apply Modal -->
+                            <div class="modal fade" id="applyJobModal" tabindex="-1" aria-labelledby="applyJobModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="applyJobModalLabel">Apply for Lab Technician</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="modal-body">
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Full Name <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" name="name" class="form-control" required>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Email <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="email" name="email" class="form-control" required>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Phone Number <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="text" name="phone" class="form-control" required>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Upload Resume (PDF only) <span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="file" name="resume" class="form-control" accept=".pdf"
+                                                        required>
+                                                </div>
+
+                                                <input type="hidden" name="job_title" value="Lab Technician">
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Submit Application</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <!-- Phlebotomist -->
                             <div class="col-lg-4 col-md-12">
@@ -283,6 +245,6 @@
         <!-- pricing section end -->
 
 
-    
+
     </main>
 @endsection

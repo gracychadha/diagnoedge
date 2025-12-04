@@ -13155,6 +13155,7 @@ button:focus {
 .pricing-section-1 .pricing-item.tagged {
     background-color: var(--primary-color);
 }
+
 .pricing-section-1 .pricing-item.tagged .pricing-content .pricing-text {
     border-color: var(--white-color);
 }

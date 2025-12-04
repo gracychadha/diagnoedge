@@ -36,85 +36,159 @@
         </section>
         <!-- breadcrumb section end -->
 
-        <!-- SECTION 1: Benefits of Corporate Wellness Programs -->
-        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
-            <div class="container">
-                <div class="row align-items-center">
 
-                    <!-- IMAGE LEFT -->
-                    <div class="col-lg-6 col-md-12">
-                        <figure class="image-anime">
-                            <img src="{{ asset('images/avatar/img3.jpg') }}" style="border-radius: 20px;"
-                                alt="Corporate Wellness">
-                        </figure>
+        @php
+            $benefits = \App\Models\CorporateBenefit::first();
+        @endphp
 
-                    </div>
+        @if($benefits)
+            <!-- SECTION 1: Benefits of Corporate Wellness Programs -->
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
 
-                    <!-- CONTENT RIGHT -->
-                    <div class="col-lg-6 col-md-12">
-                        <div class="why-content">
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Corporate Wellness</span>
-                                <h2>What Are the Benefits of Corporate Wellness Programs?</h2>
-                                <p align="justify">
-                                    Corporate wellness programs at Diagnoedge Healthcare deliver multiple benefits, helping
-                                    employees maintain better health, boosting productivity, and reducing absenteeism. By
-                                    incorporating regular corporate medical check-ups and wellness initiatives,
-                                    organizations can proactively address health concerns and create a supportive workplace
-                                    culture. Investing in employee wellness not only improves individual well-being but also
-                                    strengthens overall organizational performance and fosters a positive work environment.
-                                </p>
-                            </div>
+                        <!-- IMAGE LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime">
+                                <img src="{{ Storage::url(path: $benefits->image)}}" style="border-radius: 20px;"
+                                    alt="Corporate Wellness">
+                            </figure>
+
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: Corporate Health Check-ups -->
-        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
-            <div class="container">
-                <div class="row align-items-center">
-
-                    <!-- CONTENT LEFT -->
-                    <div class="col-lg-6 col-md-12">
-                        <div class="why-content">
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Health Check-ups</span>
-                                <h2>Benefits of Corporate Health Check-ups</h2>
-                                <p align="justify">
-                                    Corporate health check-ups provide early detection of health issues, enabling timely
-                                    intervention and better overall well-being. Regular check-ups encourage employees to
-                                    take proactive steps toward their health, resulting in fewer sick days and higher
-                                    workplace productivity. Investing in employee health fosters a culture of wellness,
-                                    teamwork, and long-term organizational growth.
-                                </p>
-                                <div class="check-list">
-                                    <ul>
-                                        <li>Early health issue detection</li>
-                                        <li>Preventive care for well-being</li>
-                                        <li>Reduced absenteeism</li>
-                                        <li>Boosted workplace productivity</li>
-                                    </ul>
+                        <!-- CONTENT RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">{{ $benefits->sub_title }}</span>
+                                    <h2>{{ $benefits->main_title }}</h2>
+                                    <p align="justify">
+                                        {{ $benefits->description }}
+                                    </p>
                                 </div>
-
-
                             </div>
                         </div>
-                    </div>
 
-                    <!-- IMAGE RIGHT -->
-                    <div class="col-lg-6 col-md-12">
-                        <figure class="image-anime">
-                            <img src="{{ asset('assets/images/video-gallery/video-gallery-7.jpg')}}"
-                                style="border-radius: 20px;" alt="Health Check-ups">
-                        </figure>
                     </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
+        @else
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- IMAGE LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime">
+                                <img src="{{ asset('images/avatar/img3.jpg') }}" style="border-radius: 20px;"
+                                    alt="Corporate Wellness">
+                            </figure>
+
+                        </div>
+
+                        <!-- CONTENT RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">Corporate Wellness</span>
+                                    <h2>What Are the Benefits of Corporate Wellness Programs?</h2>
+                                    <p align="justify">
+                                        Corporate wellness programs at Diagnoedge Healthcare deliver multiple benefits, helping
+                                        employees maintain better health, boosting productivity, and reducing absenteeism. By
+                                        incorporating regular corporate medical check-ups and wellness initiatives,
+                                        organizations can proactively address health concerns and create a supportive workplace
+                                        culture. Investing in employee wellness not only improves individual well-being but also
+                                        strengthens overall organizational performance and fosters a positive work environment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        @php
+            $services = App\Models\CorporateService::first();
+        @endphp
+        @if($services)
+            <!-- SECTION 2: Corporate Health Check-ups -->
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- CONTENT LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">{{ $services->sub_title }}</span>
+                                    <h2>{{ $services->main_title }}</h2>
+                                    <p align="justify">
+                                        {{ $services->description }}
+                                    </p>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IMAGE RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime">
+                                <img src="{{ Storage::url(path:$services->image)}}"
+                                    style="border-radius: 20px;" alt="Health Check-ups">
+                            </figure>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        @else
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- CONTENT LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">Health Check-ups</span>
+                                    <h2>Benefits of Corporate Health Check-ups</h2>
+                                    <p align="justify">
+                                        Corporate health check-ups provide early detection of health issues, enabling timely
+                                        intervention and better overall well-being. Regular check-ups encourage employees to
+                                        take proactive steps toward their health, resulting in fewer sick days and higher
+                                        workplace productivity. Investing in employee health fosters a culture of wellness,
+                                        teamwork, and long-term organizational growth.
+                                    </p>
+                                    <div class="check-list">
+                                        <ul>
+                                            <li>Early health issue detection</li>
+                                            <li>Preventive care for well-being</li>
+                                            <li>Reduced absenteeism</li>
+                                            <li>Boosted workplace productivity</li>
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IMAGE RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime">
+                                <img src="{{ asset('assets/images/video-gallery/video-gallery-7.jpg')}}"
+                                    style="border-radius: 20px;" alt="Health Check-ups">
+                            </figure>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        @endif
 
 
 
@@ -131,7 +205,7 @@
                         </figure>
                     </div>
                     <!-- CONTENT LEFT -->
-                    <div class="col-lg-6 col-md-12 md-pt-30">
+                    <div class="col-lg-6 col-md-12 md-pt-30 ">
                         <div class="why-content">
                             <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                                 <span class="sub-title">The Diagnoedge Advantage</span>

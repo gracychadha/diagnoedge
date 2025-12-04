@@ -219,7 +219,7 @@
                 <div class="mt-4">
                     <h6><strong>Description:</strong></h6>
                     <div class="border p-3 rounded bg-light">
-                        {!! nl2br(e($job->description)) !!}
+                        {!! $job->description !!}
                     </div>
                 </div>
                 @endif

@@ -101,7 +101,7 @@
                                 <!-- about images top start -->
                                 <div class="about-images-top wow fadeInUp" data-wow-delay=".2s">
                                     <figure class="image-anime">
-                                        <img src="{{  Storage::url(path: $partnersabout->image)  }}" alt="about one">
+                                        <img src="assets/images/about/about-1-1.jpg" alt="about one">
                                     </figure>
                                 </div>
                                 <!-- about images top end -->
@@ -213,44 +213,81 @@
         @endif
         <!-- partners section end -->
 
+        @php
+            $whyPartners = \App\Models\WhyPartner::first();
+        @endphp
 
-        <!-- Why Partner With Us -->
-        <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
-            <div class="container">
-                <div class="row align-items-center">
 
-                    <!-- CONTENT LEFT -->
-                    <div class="col-lg-6 col-md-12">
-                        <div class="why-content">
-                            <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                                <span class="sub-title">Why Partner With Us</span>
-                                <h2>Why Choose Diagnoedge Healthcare as Your Corporate Wellness Partner?</h2>
-                                <p align="justify">
-                                    Choosing Diagnoedge Healthcare as your corporate wellness partner provides reliable,
-                                    tailored solutions to enhance employee health and workplace productivity. Our
-                                    experienced medical team, state-of-the-art diagnostic facilities, and comprehensive
-                                    range of tests are designed to meet the unique needs of your organization. With our
-                                    corporate wellness packages, you can ensure that every employee receives complete health
-                                    support.
-                                </p>
+
+
+        @if($whyPartners)
+            <!-- Why Partner With Us -->
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- CONTENT LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">{{ $whyPartners->sub_title }}</span>
+                                    <h2>{{ $whyPartners->main_title }}</h2>
+                                    <p align="justify">
+                                        {{ $whyPartners->description }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- IMAGE RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime rounded-sm">
+                                <img src="{{  Storage::url(path: $whyPartners->image)  }}" style="border-radius: 20px;"
+                                    alt="Corporate Health Partner">
+                            </figure>
+
+                        </div>
+
                     </div>
-
-                    <!-- IMAGE RIGHT -->
-                    <div class="col-lg-6 col-md-12">
-                        <figure class="image-anime rounded-sm">
-                            <img src="{{ asset('images/avatar/img2.jpg') }}" style="border-radius: 20px;"
-                                alt="Corporate Health Partner">
-                        </figure>
-
-                    </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
+        @else
+            <section class="why-choose-section-1 pt-50 md-pt-30 pb-50 md-pb-30">
+                <div class="container">
+                    <div class="row align-items-center">
 
+                        <!-- CONTENT LEFT -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="why-content">
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">Why Partner With Us</span>
+                                    <h2>Why Choose Diagnoedge Healthcare as Your Corporate Wellness Partner?</h2>
+                                    <p align="justify">
+                                        Choosing Diagnoedge Healthcare as your corporate wellness partner provides reliable,
+                                        tailored solutions to enhance employee health and workplace productivity. Our
+                                        experienced medical team, state-of-the-art diagnostic facilities, and comprehensive
+                                        range of tests are designed to meet the unique needs of your organization. With our
+                                        corporate wellness packages, you can ensure that every employee receives complete health
+                                        support.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- IMAGE RIGHT -->
+                        <div class="col-lg-6 col-md-12">
+                            <figure class="image-anime rounded-sm">
+                                <img src="{{ asset('images/avatar/img2.jpg') }}" style="border-radius: 20px;"
+                                    alt="Corporate Health Partner">
+                            </figure>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        @endif
 
 
     </main>

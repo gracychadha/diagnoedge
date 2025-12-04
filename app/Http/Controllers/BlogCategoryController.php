@@ -9,14 +9,17 @@ class BlogCategoryController extends Controller
 {
     public function index()
     {
+
+
         $categories = BlogCategory::latest()->get();
         return view('admin.pages.blog-categories', compact('categories'));
     }
 
+
     public function store(Request $request)
     {
         $request->validate([
-            'name'   => 'required|string|max:255|unique:blog_categories,name',
+            'name' => 'required|string|max:255|unique:blog_categories,name',
             'status' => 'required|in:active,inactive'
         ]);
 
@@ -28,7 +31,7 @@ class BlogCategoryController extends Controller
     public function update(Request $request, BlogCategory $blogCategory)
     {
         $request->validate([
-            'name'   => 'required|string|max:255|unique:blog_categories,name,' . $blogCategory->id,
+            'name' => 'required|string|max:255|unique:blog_categories,name,' . $blogCategory->id,
             'status' => 'required|in:active,inactive'
         ]);
 

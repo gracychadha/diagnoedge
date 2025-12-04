@@ -98,9 +98,15 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Job Career</a>
                         <ul aria-expanded="false">
 
-                            <li><a href="{{ route('jobcareer.index') }}">Add Vacency</a></li>
+                            <li><a href="{{ route('jobcareer.index') }}">Add Vacancy</a></li>
 
                         </ul>
+                    </li>
+                    <li><a class="" href="{{ route('admin-privacy-policy.index') }}" aria-expanded="false">Privacy Policy</a>
+                       
+                    </li>
+                    <li><a class="" href="{{ route('admin-terms-condition.index') }}" aria-expanded="false">Terms Conditions</a>
+                       
                     </li>
 
                 </ul>
@@ -139,7 +145,8 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('general-setting') }}">General Settings</a></li>
                     <li><a href="{{ route('system-setting') }}">System Setting</a></li>
-                    <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li>
+                    <li><a href="{{ route('seo-setting.index') }}">SEO Setting</a></li>
+                    {{-- <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li> --}}
                     <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                 </ul>
             </li>

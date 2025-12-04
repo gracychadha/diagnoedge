@@ -14,18 +14,26 @@ class BlogController extends Controller
         $blogs = Blog::with('categories')->latest()->get();
         return view('admin.pages.blogs', compact('blogs'));
     }
+    // for slug
+    public function details($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+
+        return view('website.pages.blog-details', compact('blog'));
+    }
+
 
     public function store(Request $request)
     {
         $request->validate([
-            'title'         => 'required|string|max:255',
-            'author'        => 'required|string|max:100',
-            'category_ids'  => 'required|array',
-            'category_ids.*'=> 'exists:blog_categories,id',
-            'description'   => 'required',
-            'image'         => 'required|image|mimes:png,jpg,jpeg,webp|max:2048',
-            'published_at'  => 'required|date',
-            'status'        => 'required|in:active,inactive'
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:100',
+            'category_ids' => 'required|array',
+            'category_ids.*' => 'exists:blog_categories,id',
+            'description' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg,webp|max:2048',
+            'published_at' => 'required|date',
+            'status' => 'required|in:active,inactive'
         ]);
 
         $data = $request->all();
@@ -44,20 +52,21 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $request->validate([
-            'title'         => 'required|string|max:255',
-            'author'        => 'required|string|max:100',
-            'category_ids'  => 'required|array',
-            'category_ids.*'=> 'exists:blog_categories,id',
-            'description'   => 'required',
-            'image'         => 'nullable|image|mimes:png,jpg,jpeg,webp|max:2048',
-            'published_at'  => 'required|date',
-            'status'        => 'required|in:active,inactive'
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:100',
+            'category_ids' => 'required|array',
+            'category_ids.*' => 'exists:blog_categories,id',
+            'description' => 'required',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,webp|max:2048',
+            'published_at' => 'required|date',
+            'status' => 'required|in:active,inactive'
         ]);
 
         $data = $request->all();
 
         if ($request->hasFile('image')) {
-            if ($blog->image) Storage::disk('public')->delete($blog->image);
+            if ($blog->image)
+                Storage::disk('public')->delete($blog->image);
             $data['image'] = $request->file('image')->store('blogs', 'public');
         }
 

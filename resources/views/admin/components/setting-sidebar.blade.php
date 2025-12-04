@@ -6,13 +6,15 @@
             </div>
             <div class="card-body">
                 <ul class="side-nav-setting">
-                    <li><a href="{{ route('website-setting') }}"> <i class="flaticon-381-internet"></i> Website
+                    <li><a href="{{ route('general-setting') }}"><i class="flaticon-381-settings-2"></i> General
                             Settings</a></li>
                     <li><a href="{{ route('system-setting') }}"><i class="fa-brands fa-centos"></i> System
                             Settings</a></li>
-                    <li><a href="{{ route('general-setting') }}"><i class="flaticon-381-settings-2"></i> General
+                    <li><a href="{{ route('seo-setting.index') }}"><i class="fa-brands fa-centos"></i> SEO
                             Settings</a></li>
-                    <li><a href="{{ route('theme-setting') }}"><i class="flaticon-381-controls-3"></i> Theme
+                    {{-- <li><a href="{{ route('theme-setting') }}"><i class="flaticon-381-controls-3"></i> Theme
+                            Settings</a></li> --}}
+                    <li><a href="{{ route('website-setting') }}"> <i class="flaticon-381-internet"></i> Website
                             Settings</a></li>
 
                 </ul>

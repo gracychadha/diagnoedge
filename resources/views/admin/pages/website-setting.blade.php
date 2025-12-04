@@ -77,7 +77,7 @@
                             </div>
                             <div class="text-end">
                                 <button type="submit" class="btn btn-primary px-5">
-                                    Save General Settings
+                                    Save 
                                 </button>
                             </div>
                         </div>

@@ -36,6 +36,10 @@ use App\Http\Controllers\CorporateServiceController;
 use App\Http\Controllers\AboutMakeController;
 use App\Http\Controllers\PartnerAboutController;
 use App\Http\Controllers\WhyPartnerController;
+use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\TermsConditionController;
+use App\Http\Controllers\SeoSettingController;
+use App\Http\Controllers\SeoPageController;
 
 
 // FOR FETCH DATA IN FRONTEND
@@ -78,15 +82,15 @@ Route::get('/privacy-policy', function () {
 Route::get('/terms-conditions', function () {
     return view('website.pages.terms-conditions');
 })->name('terms-conditions');
+// All blogs page
 Route::get('/our-blogs', function () {
     return view('website.pages.our-blogs');
 })->name('our-blogs');
-// route for blog detail page
-Route::prefix('/our-blogs')->group(function () {
-    Route::get('/blog-details', function () {
-        return view('website.pages.blog-details');
-    })->name('blog-details');
-});
+
+// Blog detail page
+Route::get('/our-blogs/{slug}', [BlogController::class, 'details'])
+    ->name('blog-details');
+
 Route::get('/health-package', function () {
     return view('website.pages.health-package');
 })->name('health-package');
@@ -372,12 +376,6 @@ Route::middleware('auth')->group(function () {
         ->name('about-section-two.update');
 
 
-    //test services 
-
-
-    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
-    Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
-    Route::post('/services/update', [ServiceController::class, 'update'])->name('services.update');
     Route::post('/services/delete/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 
@@ -391,6 +389,12 @@ Route::middleware('auth')->group(function () {
     Route::put('/profile/password', [App\Http\Controllers\Auth\PasswordController::class, 'update'])
         ->name('profile.password.update');
 
+    //test services 
+
+
+    Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+    Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+    Route::post('/services/update', [ServiceController::class, 'update'])->name('services.update');
 
 
     // FOR DOCTOR
@@ -429,29 +433,55 @@ Route::middleware('auth')->group(function () {
     Route::get('/corporate-benefit', [CorporateBenefitController::class, 'index'])
         ->name('admin-corporate.index');
     Route::put('/corporate-benefit', [CorporateBenefitController::class, 'update'])->name('admin-corporate.update');
-    
+
     // FOR CORPORATE 
     Route::get('/corporate-services', [CorporateServiceController::class, 'index'])
         ->name('admin-corporate-service.index');
     Route::put('/corporate-services', [CorporateServiceController::class, 'update'])->name('admin-corporate-service.update');
-    
-    
+
+
     // WHAT MAKES US DIFFERENT ABOUT SECTION
     Route::get('/About-makes-us-different', [AboutMakeController::class, 'index'])
         ->name('admin-about-makes.index');
     Route::put('/About-makes-us-different', [AboutMakeController::class, 'update'])->name('admin-about-makes.update');
-    
+
     // PARTNER ABOUT SECTION
     Route::get('/partner-about', [PartnerAboutController::class, 'index'])
         ->name('admin-partner-about.index');
     Route::put('/partner-about', [PartnerAboutController::class, 'update'])->name('admin-partner-about.update');
 
-        // PARTNER ABOUT SECTION
-        Route::get('/why-partner', [WhyPartnerController::class, 'index'])
-            ->name('admin-why-partner.index');
-        Route::put('/why-partner', [WhyPartnerController::class, 'update'])->name('admin-why-partner.update');
+    //WHY PARTNER  SECTION
+    Route::get('/why-partner', [WhyPartnerController::class, 'index'])
+        ->name('admin-why-partner.index');
+    Route::put('/why-partner', [WhyPartnerController::class, 'update'])->name('admin-why-partner.update');
+
+    // PRIVACY POLICY CONTENT
+    Route::get('/privacy-policy-content', [PrivacyPolicyController::class, 'index'])
+        ->name('admin-privacy-policy.index');
+
+    Route::put('/privacy-policy/update', [PrivacyPolicyController::class, 'update'])
+        ->name('admin-privacy-policy.update');
+
+    // TERMS CONDITION POLICY CONTENT
+    Route::get('/terms-condition-content', [TermsConditionController::class, 'index'])
+        ->name('admin-terms-condition.index');
+
+    Route::put('/terms-condition/update', [TermsConditionController::class, 'update'])
+        ->name('admin-terms-condition.update');
+
+    // SEO Pages
+    Route::post('/seo-pages/store', [SeoPageController::class, 'store'])->name('seo-pages.store');
+    Route::get('/seo-pages', [SeoPageController::class, 'index'])->name('seo-pages.index');
+    Route::post('/seo-pages/update', [SeoPageController::class, 'update']);
+    Route::delete('/seo-pages/delete/{id}', [SeoPageController::class, 'delete']);
 
 
+    // SEO SETTING
+    Route::post('/seo-setting/store', [SeoSettingController::class, 'store'])->name('seo-setting.store');
+    Route::get('/seo-setting', [SeoSettingController::class, 'index'])->name('seo-setting.index');
+    Route::get('/seo-setting/view/{id}', [SeoSettingController::class, 'view']);
+    Route::post('/seo-setting/update', [SeoSettingController::class, 'update']);
+    Route::delete('/seo-setting/delete/{id}', [SeoSettingController::class, 'delete']);
 
     // ────────────── Website Setting ──────────────
 

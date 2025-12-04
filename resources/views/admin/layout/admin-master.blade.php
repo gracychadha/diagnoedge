@@ -36,7 +36,7 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     {{-- for the push style of the pages --}}
     @stack('style')
 </head>
@@ -567,7 +567,109 @@
 
 
     </script>
+    <script>
+        $(document).on('click', '.viewSeoSetting', function () {
 
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: "{{ url('/seo-setting/view') }}/" + id,
+                type: "GET",
+                success: function (seo) {
+
+                    // Fill modal data
+                    $('#v_title').text(seo.title);
+                    $('#v_page').text(seo.page);
+                    $('#v_description').text(seo.description);
+                    $('#v_keywords').text(seo.keywords);
+
+
+                    // Open modal
+                    $('#viewAppointment').modal('show');
+                }
+            });
+
+        });
+        $(document).on('click', '.editSeoSetting', function () {
+
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: "{{ url('/seo-setting/view') }}/" + id,
+                type: "GET",
+                success: function (seo) {
+
+                    $('#edit_id').val(seo.id);
+                    $('#edit_title').val(seo.title);
+                    $('#edit_page').val(seo.page);
+                    $('#edit_description').val(seo.description);
+                    $('#edit_keywords').val(seo.keywords);
+
+
+                    $('#editAppointment').modal('show');
+                }
+            });
+        });
+        $('#editDoctorForm').on('submit', function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ url('/seo-setting/update') }}",
+                data: formData,
+                contentType: false,
+                processData: false,
+
+                success: function (response) {
+                    Swal.fire("Updated!", "Seo Setting updated successfully!", "success");
+                    $('#editAppointment').modal('hide');
+                    location.reload();
+                }
+            });
+
+        });
+        $(document).on("click", ".deleteSeoSetting", function () {
+
+            let id = $(this).data("id");
+            let row = $(this).closest("tr");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This SEO will be permanently deleted!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ url('/seo-setting/delete') }}/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+
+                            Swal.fire("Deleted!", "Seo Setting removed successfully.", "success");
+
+                            // remove row
+                            row.fadeOut(600, function () {
+                                $(this).remove();
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>

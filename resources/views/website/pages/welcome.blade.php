@@ -2069,9 +2069,9 @@
 
 
                                 <div class="blog-grid-image">
-                                    <a href="{{ route("blog-details") }}">
+                                    <a href="{{ route('blog-details', $blog->slug) }}">
                                         <figure class="image-anime">
-                                            <img src="assets/images/blog/blog-1.jpg" alt="blog image one">
+                                            <img src="{{ Storage::url(path:$blog->image) }}" alt="blog image one">
                                         </figure>
                                     </a>
                                 </div>
@@ -2089,13 +2089,13 @@
                                     </li>
                                 </ul>
                                 <div class="blog-title">
-                                    <h3><a href="{{ route("blog-details") }}">{{ $blog->title }}</a>
+                                    <h3><a href="{{ route('blog-details', $blog->slug) }}">{{ $blog->title }}</a>
                                     </h3>
                                 </div>
                                 <div class="blog-grid-content">
                                     <p>{{ Str::limit(strip_tags($blog->description), 80) }}...</p>
                                     <div class="blog-grid-button">
-                                        <a href="{{ route("blog-details") }}" class="read-more-btn">More Details</a>
+                                        <a href="{{ route('blog-details', $blog->slug) }}" class="read-more-btn">More Details</a>
                                     </div>
                                 </div>
                             </div>
