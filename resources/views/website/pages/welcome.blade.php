@@ -1732,35 +1732,8 @@
                                         <!-- accordion collapse end -->
                                     </div>
                                 @empty
-                                    <div class="accordion-item">
-                                        <!-- accordion-header start -->
-                                        <h2 class="accordion-header" id="">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse_" aria-expanded="true" aria-controls="collapse_">
-                                                How do you ensure the accuracy of your test results?
-                                            </button>
-                                        </h2>
-                                        <!-- accordion header end -->
-                                        <!-- accordion collapse start -->
-                                        <div id="collapse_"
-                                            class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
-                                            aria-labelledby="heading_" data-bs-parent="#accordionExample">
-                                            <!-- accordion body start -->
-                                            <div class="accordion-body">
-                                                <div class="inner">
-                                                    <div class="accordion-content">
-                                                        <p>
-                                                            Healthcare ensures the accuracy of test results through a
-                                                            stringent quality control process that includes regular
-                                                            calibration of equipment, external and internal quality checks,
-                                                            and adherence to international standards.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- accordion body end -->
-                                        </div>
-                                        <!-- accordion collapse end -->
+                                    <div class="container">
+                                        <p>No Faqs</p>
                                     </div>
 
                                 @endforelse
