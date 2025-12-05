@@ -669,6 +669,48 @@
 
         });
 
+
+        // booking delelte
+          $(document).on("click", ".deleteBook", function () {
+
+            let id = $(this).data("id");
+            let row = $(this).closest("tr");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This Booking Lead will be permanently deleted!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ url('/booking-lead/delete') }}/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+
+                            Swal.fire("Deleted!", "Booking Query removed successfully.", "success");
+
+                            // remove row
+                            row.fadeOut(600, function () {
+                                $(this).remove();
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+   
+
     </script>
 </body>
 

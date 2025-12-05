@@ -70,7 +70,7 @@
 
 
                                                     <span>
-                                                        <a class="btn btn-sm btn-danger light deleteApp"
+                                                        <a class="btn btn-sm btn-danger light deleteBook"
                                                             data-id="{{ $booking->id }}">
                                                             <i class="fa fa-trash fs-18"></i>
                                                         </a>
@@ -99,47 +99,3 @@
 
     </div>
 @endsection
-@push('scripts')
-    <script>
-
-        $(document).on("click", ".deleteApp", function () {
-
-            let id = $(this).data("id");
-            let row = $(this).closest("tr");
-
-            Swal.fire({
-                title: "Are you sure?",
-                text: "This Contact Lead will be permanently deleted!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-
-                if (result.isConfirmed) {
-
-                    $.ajax({
-                        url: "{{ url('/contacts/delete') }}/" + id,
-                        type: "DELETE",
-                        data: {
-                            _token: "{{ csrf_token() }}"
-                        },
-                        success: function (response) {
-
-                            Swal.fire("Deleted!", "Contact Query removed successfully.", "success");
-
-                            // remove row
-                            row.fadeOut(600, function () {
-                                $(this).remove();
-                            });
-                        }
-                    });
-
-                }
-            });
-
-        });
-    </script>
-
-@endpush

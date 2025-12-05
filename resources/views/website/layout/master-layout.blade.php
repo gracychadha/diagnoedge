@@ -4,8 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @php
+        $seo = getSeo(Request::path()); 
+    @endphp
 
-    <title>@yield("title")</title>
+    <title>{{ $seo->title ?? 'Diagnoedge' }}</title>
+    <meta name="description" content="{{ $seo->description ?? '' }}">
+    <meta name="keywords" content="{{ $seo->keywords ?? '' }}">
+
+    
 
 
     {{-- css files --}}
@@ -39,6 +46,18 @@
     <style>
         .iti {
             width: 100%;
+        }
+
+        /* Mobile Fix */
+        @media (max-width: 768px) {
+            .talk-to-us-btn {
+                bottom: 90px !important;
+                /* Move above footer */
+                right: 15px !important;
+                /* Adjust position */
+                transform: scale(0.9);
+                /* Optional: Slightly smaller button */
+            }
         }
     </style>
 
@@ -194,7 +213,7 @@
         }
 
         function openBookingModal() {
-           
+
             document.body.style.overflow = 'hidden';
         }
 

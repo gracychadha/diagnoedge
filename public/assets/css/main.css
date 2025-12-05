@@ -4438,6 +4438,12 @@ button:focus {
 }
 .footer .footer-copyright{
     border-top: 1px solid ;
+    padding-bottom:60px;
+}
+@media screen and (max-width:768px){
+    .footer .footer-copyright{
+        padding-bottom:70px;
+    }
 }
 .footer .footer-copyright .footer-copyright-wrap {
     background-color: var(--extra-color-six);
@@ -16682,6 +16688,12 @@ button.btn-success:hover {
         font-weight: 500;
         transition: 0.3s ease;
         margin: 5px;
+    }
+    .sticky-footer{
+        padding:10px 0 30px;
+    }
+    .slider-prev{
+        display:none;
     }
 }
 .main {

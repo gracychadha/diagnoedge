@@ -177,7 +177,7 @@
     </div>
     <!-- footer bottom end -->
     <!-- footer copyright start -->
-    <div class="footer-copyright pb-60">
+    <div class="footer-copyright ">
         <div class="container-fluid">
             <!-- footer copyright wrap start -->
             <div class="footer-copyright-wrap">
