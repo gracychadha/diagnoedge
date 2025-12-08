@@ -1603,7 +1603,7 @@
                                         class="img-fluid">
                                 @endif
                             </div>
-                        </div>
+                        </div>  
 
                         <!-- RIGHT SIDE -->
                         <div class="col-lg-7 col-md-12">
