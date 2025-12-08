@@ -76,11 +76,6 @@
         </div>
 
 
-
-
-
-
-
         <!-- hero section end -->
         <section class="banner-booknoow space-between sidespace">
             <div class="container-fluid">
@@ -1378,6 +1373,9 @@
                     </div>
                 </div>
             </div>
+
+
+            
             <div class="container pt-30 md-pt-10">
                 <div class=" container">
                     <div class="col-lg-12">

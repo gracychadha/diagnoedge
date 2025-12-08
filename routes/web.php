@@ -62,6 +62,9 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::get('/package-detail', function () {
+    return view('website.pages.package-detail');
+})->name('package-detail');
 
 Route::get('/about-us', function () {
     return view('website.pages.about-us');
