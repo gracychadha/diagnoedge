@@ -1,7 +1,7 @@
 <!-- preloader start -->
 {{-- <div class="preloader">
     <div class="preloader-icon">
-        <img src="{{ asset("assets/images/loader.svg") }}" alt="loader image">
+        <img src="{{ asset(" assets/images/loader.svg") }}" alt="loader image">
     </div>
     <div class="preloader-text">
         <p>d</p>
@@ -56,7 +56,8 @@
         <!-- menu outer end -->
         <!-- offcanvas about start -->
         <div class="offcanvas-about d-none d-xl-block">
-            <p align="justify">There are many variations of passages available sure there majority have suffered alteration in some form
+            <p align="justify">There are many variations of passages available sure there majority have suffered
+                alteration in some form
                 by inject humour or randomised words which don't look even slightly believable.</p>
         </div>
         <!-- offcanvas about end -->
@@ -184,8 +185,9 @@
                             <form action="#">
                                 <div class="form-group mb-0">
                                     <div class="form-floating field-inner">
-                                        <input id="search" name="search" class="form-control white-field"
+                                        <input id="already_know2" name="search" class="form-control white-field"
                                             placeholder="Keywords here...." type="text" autocomplete="off">
+                                        {{-- <div id="searchResult2" class=" bg-white border "></div> --}}
                                         <label for="search">Search </label>
                                         <button type="submit" aria-label="submit">
                                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -362,7 +364,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- header lower end -->
 </header>
 

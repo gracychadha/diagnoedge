@@ -138,8 +138,11 @@
                                         <img src="assets/images/logo/test.svg" alt="icon" width="35" height="25">
                                         <span class="vr ms-2"></span>
                                     </span>
-                                    <input type="text" id="already_know" class="form-control  border-start-0"
+                                    <input type="text" id="already_know" class=" form-control border-start-0"
                                         placeholder="Search and book" autocomplete="off">
+                                   
+                                    <div id="searchResult" class=" bg-white border rounded w-100"></div>
+
                                 </div>
                             </div>
 
@@ -1388,7 +1391,7 @@
                         $tests = \App\Models\Test::where('status', 'active')->get()
                     @endphp
                     <div class=" row test-section services-section-1 justify-content-center">
-                       
+
 
 
 
@@ -2359,4 +2362,5 @@
 
 
     </script>
+
 @endpush

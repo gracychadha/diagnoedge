@@ -40,6 +40,13 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SeoPageController;
+use App\Http\Controllers\SearchController;
+
+
+// for search
+Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
+
+
 
 
 // FOR FETCH DATA IN FRONTEND

@@ -75,7 +75,9 @@
                         <!-- pricing tabs end -->
                     </div>
                 </div>
-               
+                @php
+                    $jobs = \App\Models\JobCareer::where('is_active', '1')->get();
+                @endphp
 
                 <!-- tab content start -->
                 <div class="tab-content">
@@ -88,38 +90,60 @@
                         <div class="row align-items-center">
 
                             <!-- Lab Technician -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Lab Technician</p>
-                                            <h3 class="pricing-plan-price">Full Time<span> (On-site)</span></h3>
-                                            <p>Perform diagnostic tests and ensure high-quality lab reporting.</p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-black">Job Details</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Experience: 1–3 Years</li>
-                                                    <li>Qualification: B.Sc / DMLT</li>
-                                                    <li>Location: New Delhi</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Apply Now"
-                                                    data-bs-toggle="modal" data-bs-target="">
-                                                    <span data-text="Apply Now">Apply Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
+                            @forelse ($jobs as $job)
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="pricing-item">
+                                        <div class="pricing-content">
+                                            <div class="pricing-text">
+                                                <p class="pricing-plan-title">
+                                                    {{ $job->title ? $job->title : 'Lab Technician' }}
+                                                </p>
+                                                <h3 class="pricing-plan-price">{{ $job->type ? $job->type : 'Full Time' }}
+                                                    @if ($job->is_featured)
+                                                        <span> Urgent </span>
+                                                    @endif
 
+
+
+                                                </h3>
+                                                <p align="justify">Join our team of dedicated healthcare professionals and make
+                                                    a real impact in
+                                                    patient care.</p>
+                                            </div>
+                                            <div class="pricing-list">
+                                                <div class="check-list mb-3">
+                                                    @if ($job->description)
+                                                        {!! $job->description !!}
+                                                    @else
+                                                        <p>No details</p>
+                                                    @endif
+                                                </div>
+                                                {{-- <p class="text-black">Job Details</p>
+                                                <div class="check-list mb-30">
+                                                    <ul>
+                                                        <li>Experience: 1–3 Years</li>
+                                                        <li>Qualification: B.Sc / DMLT</li>
+                                                        <li>Location: New Delhi</li>
+                                                    </ul>
+                                                </div> --}}
+                                                <div class="pricing-button-wapper">
+                                                    <a href="#" class="theme-button style-2" aria-label="Apply Now"
+                                                        data-bs-toggle="modal" data-bs-target="">
+                                                        <span data-text="Apply Now">Apply Now</span>
+                                                        <i class="fa-solid fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @empty
+                                <p>No career JObs Found</p>
+                            @endforelse
                             <!-- Job Apply Modal -->
-                            {{-- <div class="modal fade" id="applyJobModal" tabindex="-1" aria-labelledby="applyJobModalLabel"
-                                aria-hidden="true">
+                            {{-- <div class="modal fade" id="applyJobModal" tabindex="-1"
+                                aria-labelledby="applyJobModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
 
@@ -175,64 +199,7 @@
                             </div> --}}
 
 
-                            <!-- Phlebotomist -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item ">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Phlebotomist <span>Urgent</span></p>
-                                            <h3 class="pricing-plan-price">Contract<span> (Field Work)</span></h3>
-                                            <p class="text-white">Responsible for collecting blood samples and patient
-                                                coordination.</p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-white">Job Details</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Experience: 0–2 Years</li>
-                                                    <li>Qualification: DMLT / Certified Phlebotomy</li>
-                                                    <li>Location: Multiple Cities</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-4" aria-label="Apply Now">
-                                                    <span data-text="Apply Now">Apply Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Pathologist -->
-                            <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item">
-                                    <div class="pricing-content">
-                                        <div class="pricing-text">
-                                            <p class="pricing-plan-title">Pathologist (MD)</p>
-                                            <h3 class="pricing-plan-price">Senior<span> (Consultant)</span></h3>
-                                            <p>Supervise lab operations, review reports, and ensure diagnostic accuracy.</p>
-                                        </div>
-                                        <div class="pricing-list">
-                                            <p class="text-black">Job Details</p>
-                                            <div class="check-list mb-30">
-                                                <ul>
-                                                    <li>Experience: 5+ Years</li>
-                                                    <li>Qualification: MD Pathology</li>
-                                                    <li>Location: Gurgaon / Noida</li>
-                                                </ul>
-                                            </div>
-                                            <div class="pricing-button-wapper">
-                                                <a href="#" class="theme-button style-2" aria-label="Apply Now">
-                                                    <span data-text="Apply Now">Apply Now</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
 
                         </div>
                     </div>

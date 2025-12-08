@@ -5,14 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- @php
-        $seo = getSeo(Request::path()); 
+    $seo = getSeo(Request::path());
     @endphp --}}
 
     <title>@yield('title')</title>
-    {{-- <meta name="description" content="{{ $seo->description ?? '' }}">
+    {{--
+    <meta name="description" content="{{ $seo->description ?? '' }}">
     <meta name="keywords" content="{{ $seo->keywords ?? '' }}"> --}}
 
-    
+
 
 
     {{-- css files --}}
@@ -367,6 +368,38 @@
 
 
 
+    function autoSearch(inputId, resultId) {
+        document.getElementById(inputId).addEventListener('keyup', function () {
+
+            let keyword = this.value.toLowerCase();
+
+            if (keyword.length < 2) {
+                document.getElementById(resultId).innerHTML = '';
+                return;
+            }
+
+            fetch(`/search-all?keyword=` + keyword)
+                .then(res => res.json())
+                .then(data => {
+                    let output = "";
+
+                    if (data.results.length > 0) {
+                        data.results.forEach(item => {
+                            output += `
+                            <div class="p-2 w-100 border-bottom">
+                                ${item.title}
+                            </div>`;
+                        });
+                    } else {
+                        output = `<div class="p-2 text-danger">No related option found</div>`;
+                    }
+
+                    document.getElementById(resultId).innerHTML = output;
+                });
+        });
+    }
+    autoSearch('already_know', 'searchResult');
+    autoSearch('already_know2', 'searchResult2');
 
 
 </script>
