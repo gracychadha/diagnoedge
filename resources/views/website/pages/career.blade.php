@@ -75,6 +75,7 @@
                         <!-- pricing tabs end -->
                     </div>
                 </div>
+               
 
                 <!-- tab content start -->
                 <div class="tab-content">
@@ -82,7 +83,6 @@
 
 
 
-                    <!-- =================== JOB CAREER TAB =================== -->
                     <div class="tab-pane fade active show" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab"
                         tabindex="0">
                         <div class="row align-items-center">
@@ -107,7 +107,7 @@
                                             </div>
                                             <div class="pricing-button-wapper">
                                                 <a href="#" class="theme-button style-2" aria-label="Apply Now"
-                                                    data-bs-toggle="modal" data-bs-target="#applyJobModal">
+                                                    data-bs-toggle="modal" data-bs-target="">
                                                     <span data-text="Apply Now">Apply Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
                             <!-- Job Apply Modal -->
-                            <div class="modal fade" id="applyJobModal" tabindex="-1" aria-labelledby="applyJobModalLabel"
+                            {{-- <div class="modal fade" id="applyJobModal" tabindex="-1" aria-labelledby="applyJobModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -172,12 +172,12 @@
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                             <!-- Phlebotomist -->
                             <div class="col-lg-4 col-md-12">
-                                <div class="pricing-item tagged">
+                                <div class="pricing-item ">
                                     <div class="pricing-content">
                                         <div class="pricing-text">
                                             <p class="pricing-plan-title">Phlebotomist <span>Urgent</span></p>

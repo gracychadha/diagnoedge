@@ -77,10 +77,13 @@
                                 <div class="section-title wow fadeInUp">
                                     <span class="sub-title">{{ $about->sub_title }}</span>
                                     <h2>{{ $about->main_title }}</h2>
-                                    <p align="justify">{!! nl2br(e($about->description_1)) !!}</p>
-                                    @if($about->description_2)
-                                        <p align="justify">{!! nl2br(e($about->description_2)) !!}</p>
-                                    @endif
+                                 <p align="justify">{!! $about->description_1 ? $about->description_1 : '' !!}</p>
+
+
+@if($about->description_2)
+    <p align="justify">{!! $about->description_2 ? $about->description_2 : '' !!}</p>
+
+@endif
                                 </div>
 
                                 <div class="about-footer wow fadeInUp">

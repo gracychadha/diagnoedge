@@ -13222,6 +13222,53 @@ button:focus {
 .pricing-section-1 .pricing-item:hover .pricing-content .pricing-text::before {
     width: 100%;
 }
+/* for even */
+/* EVEN pricing cards styled like tagged */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-item {
+    background-color: var(--primary-color);
+}
+
+/* Text border + before bar */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-item .pricing-content .pricing-text {
+    border-color: var(--white-color);
+}
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-item .pricing-content .pricing-text::before {
+    background-color: var(--white-color);
+}
+
+/* Title */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-plan-title {
+    color: var(--white-color);
+}
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-plan-title span {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+/* Price */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-plan-price {
+    color: var(--white-color);
+}
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-plan-price span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white-color);
+}
+
+/* List */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-list {
+    color: var(--white-color);
+}
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-list ul li::before {
+    color: var(--white-color);
+}
+
+/* Hover */
+.pricing-section-1 .col-lg-4:nth-child(even) .pricing-item:hover {
+    background-color: var(--primary-color);
+}
+
 .pricing-section-2 .pricing-title-box {
     position: sticky;
     top: 120px;
@@ -16796,3 +16843,157 @@ text-align: justify;
     .text-justify{
         text-align:justify;
     }
+      /* Modal Outer */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background: rgba(0, 0, 0, 0.6);
+            }
+
+            /* Modal Content */
+            .modal-content-custom {
+                background: #fff;
+                
+                max-width: 850px;
+                margin: 80px auto;
+                display: flex;
+                flex-direction: row;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .modal-left {
+                width: 50%;
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+            }
+
+            .modal-right {
+                width: 50%;
+                padding: 25px 20px;
+                background: #fff;
+            }
+
+            .iti--separate-dial-code .iti__selected-dial-code {
+                margin-left: 0px !important;
+            }
+
+            .close {
+                float: right;
+                font-size: 30px;
+                cursor: pointer;
+                color: #666;
+                line-height: 1;
+            }
+
+            .close:hover {
+                color: #000;
+            }
+
+            .popupicon {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                color: #666;
+                font-size: 15px;
+                z-index: 2;
+            }
+
+            .popup-call-btn {
+                background: #54ad4c;
+                color: white;
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            .popup-call-btn:hover {
+                background: black;
+            }
+
+            /* intl-tel-input styling */
+            .iti {
+                width: 100% !important;
+            }
+
+            .iti__flag-container {
+                left: 10px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+            }
+
+            .iti__selected-flag {
+                background: transparent !important;
+            }
+
+            .iti__flag {
+                transform: scale(1.2);
+            }
+
+            .iti__country-list {
+                z-index: 9999 !important;
+            }
+
+            .theme-button:hover:not(:disabled) {
+                background: black;
+            }
+
+            .theme-button:disabled {
+                background: #6c757d;
+                cursor: not-allowed;
+            }
+
+            #bookingSubmit:disabled a {
+                background: #6c757d;
+                cursor: not-allowed;
+            }
+
+            .alert-success {
+                padding: 10px;
+                background: #e6ffef;
+                border: 1px solid #c7f0d4;
+                margin-bottom: 15px;
+                border-radius: 6px;
+                color: #0f5132;
+            }
+
+            .alert-error {
+                padding: 10px;
+                background: #ffecec;
+                border: 1px solid #f5c2c2;
+                margin-bottom: 15px;
+                border-radius: 6px;
+                color: #a94442;
+            }
+
+            .alert-error ul {
+                margin: 0;
+                padding-left: 18px;
+            }
+
+            @media (max-width: 768px) {
+                .modal-content-custom {
+                    flex-direction: column;
+                    width: 90%;
+                    margin: 40px auto;
+                }
+
+                .modal-left {
+                    width: 100%;
+                    height: 200px;
+                    display: none;
+                }
+
+                .modal-right {
+                    width: 100%;
+                    padding: 20px 15px;
+                }
+            }

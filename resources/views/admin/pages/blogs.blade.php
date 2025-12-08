@@ -104,7 +104,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-lg">
             <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -171,7 +171,7 @@
     @foreach($blogs as $blog)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $blog->id }}" tabindex="-1">
-            <div class="modal-dialog modal-xl modal-centered">
+            <div class="modal-dialog modal-lg modal-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -246,7 +246,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $blog->id }}">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog modal-lg">
                 <form action="{{ route('blogs.update', $blog) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

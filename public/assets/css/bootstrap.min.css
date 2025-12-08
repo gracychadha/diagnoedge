@@ -5460,12 +5460,12 @@ fieldset:disabled .btn {
 }
 @media (min-width: 992px) {
     .modal-lg,
-    .modal-xl {
+    .modal-lg {
         --bs-modal-width: 800px;
     }
 }
 @media (min-width: 1200px) {
-    .modal-xl {
+    .modal-lg {
         --bs-modal-width: 1140px;
     }
 }

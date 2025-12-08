@@ -104,7 +104,7 @@
 
     {{-- ADD MODAL --}}
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-lg">
             <form action="{{ route('admin-subparameters.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -257,7 +257,7 @@
         <!-- Edit Modal -->
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $sub->id }}">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog modal-lg">
                 <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

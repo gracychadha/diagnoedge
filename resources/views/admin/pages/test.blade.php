@@ -91,10 +91,10 @@
                                             <small>{{ $test->created_at->format('d M, Y') }}</small>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
+                                            {{-- <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
                                                 data-bs-target="#viewModal{{ $test->id }}">
                                                 <i class="fas fa-eye"></i>
-                                            </button>
+                                            </button> --}}
                                             <button class="btn btn-sm btn-warning light" data-bs-toggle="modal"
                                                 data-bs-target="#editModal{{ $test->id }}">
                                                 <i class="fas fa-edit"></i>
@@ -169,17 +169,17 @@
     @foreach($tests as $test)
         <!-- View Modal -->
         <div class="modal fade" id="viewModal{{ $test->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{ $test->title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <table class="table table-bordered mb-0">
+                        <table class="table table-bordered table-striped mb-0">
                             <tr>
                                 <th width="150">Title</th>
-                                <td>{{ $test->title }}</td>
+                                <td colspan="3">{{ $test->title }}</td>
                             </tr>
                             <tr>
                                 <th>Icon</th>
@@ -198,8 +198,7 @@
                                         {{ ucfirst($test->status) }}
                                     </span>
                                 </td>
-                            </tr>
-                            <tr>
+                           
                                 <th>Created</th>
                                 <td>{{ $test->created_at->format('d M Y, h:i A') }}</td>
                             </tr>
@@ -214,7 +213,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="editModal{{ $test->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-centered">
                 <form action="{{ route('admin.tests.update', $test) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

@@ -6,213 +6,70 @@
     <main class="main">
         {{-- resources/views/components/booking-modal.blade.php --}}
         @props([])
-        <!-- Styles -->
-        <style>
-            /* Modal Outer */
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 9999;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background: rgba(0, 0, 0, 0.6);
-            }
 
-            /* Modal Content */
-            .modal-content-custom {
-                background: #fff;
-                width: 60%;
-                max-width: 850px;
-                margin: 80px auto;
-                display: flex;
-                flex-direction: row;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
 
-            .modal-left {
-                width: 40%;
-                background-size: cover;
-                background-position: center;
-                min-height: 400px;
-            }
+        @php
+            $popImage = \App\Models\SiteSetting::where('popup_enabled', 1)->first();
 
-            .modal-right {
-                width: 60%;
-                padding: 25px 20px;
-                background: #fff;
-            }
-
-            .iti--separate-dial-code .iti__selected-dial-code {
-                margin-left: 0px !important;
-            }
-
-            .close {
-                float: right;
-                font-size: 30px;
-                cursor: pointer;
-                color: #666;
-                line-height: 1;
-            }
-
-            .close:hover {
-                color: #000;
-            }
-
-            .popupicon {
-                position: absolute;
-                top: 50%;
-                left: 10px;
-                transform: translateY(-50%);
-                color: #666;
-                font-size: 15px;
-                z-index: 2;
-            }
-
-            .popup-call-btn {
-                background: #54ad4c;
-                color: white;
-                padding: 5px;
-                border-radius: 10px;
-            }
-
-            .popup-call-btn:hover {
-                background: black;
-            }
-
-            /* intl-tel-input styling */
-            .iti {
-                width: 100% !important;
-            }
-
-            .iti__flag-container {
-                left: 10px !important;
-                top: 50% !important;
-                transform: translateY(-50%) !important;
-            }
-
-            .iti__selected-flag {
-                background: transparent !important;
-            }
-
-            .iti__flag {
-                transform: scale(1.2);
-            }
-
-            .iti__country-list {
-                z-index: 9999 !important;
-            }
-
-            .theme-button:hover:not(:disabled) {
-                background: black;
-            }
-
-            .theme-button:disabled {
-                background: #6c757d;
-                cursor: not-allowed;
-            }
-
-            #bookingSubmit:disabled a {
-                background: #6c757d;
-                cursor: not-allowed;
-            }
-
-            .alert-success {
-                padding: 10px;
-                background: #e6ffef;
-                border: 1px solid #c7f0d4;
-                margin-bottom: 15px;
-                border-radius: 6px;
-                color: #0f5132;
-            }
-
-            .alert-error {
-                padding: 10px;
-                background: #ffecec;
-                border: 1px solid #f5c2c2;
-                margin-bottom: 15px;
-                border-radius: 6px;
-                color: #a94442;
-            }
-
-            .alert-error ul {
-                margin: 0;
-                padding-left: 18px;
-            }
-
-            @media (max-width: 768px) {
-                .modal-content-custom {
-                    flex-direction: column;
-                    width: 90%;
-                    margin: 40px auto;
-                }
-
-                .modal-left {
-                    width: 100%;
-                    height: 200px;
-                    display: none;
-                }
-
-                .modal-right {
-                    width: 100%;
-                    padding: 20px 15px;
-                }
-            }
-        </style>
+        @endphp
 
         <!-- Modal HTML -->
         <div id="bookingModal" class="modal" aria-hidden="true">
-            <div class="modal-content modal-content-custom" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-                <div class="modal-left" style="background-image:url('{{ asset('images/popup.jpg') }}');"></div>
+            <div class="modal-dialog  modal-lg">
 
-                <div class="modal-right">
-                    <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
-                        <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 700;">Looking to Book a Test?</h5>
-                        <span class="close" id="bookingClose">&times;</span>
+
+                <div class="modal-content modal-content-custom" role="dialog" aria-modal="true"
+                    aria-labelledby="bookingTitle">
+                    <div class="modal-left"
+                        style="background-image: url('{{ $popImage && $popImage->popup_image ? asset('storage/' . $popImage->popup_image) : asset('images/popup.jpg') }}');">
                     </div>
 
-                    <div class="modal-body p-0">
-                        <p style="color: #666; margin-bottom: 10px; font-size: 14px;">
-                            Please share your details — our health advisor will call you or you can call us at
-                            <span class="popup-call-btn"><a href="tel:+919876784545" target="_blank">+91 987 678
-                                    4545</a></span>
-                        </p>
+                    <div class="modal-right">
+                        <div class="modal-header d-flex justify-content-between align-items-center" style="padding:8px 0;">
+                            <h5 id="bookingTitle" style="margin: 0; color: #333; font-weight: 700;">Looking to Book a Test?
+                            </h5>
+                            <span class="close" id="bookingClose">&times;</span>
+                        </div>
 
-                        <div id="alertBox"></div>
+                        <div class="modal-body p-0">
+                            <p style="color: #666; margin-bottom: 10px; font-size: 14px;">
+                                Please share your details — our health advisor will call you or you can call us at
+                                <span class="popup-call-btn"><a href="tel:+919876784545" target="_blank">+91 987 678
+                                        4545</a></span>
+                            </p>
 
-                        <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
-                            @csrf
+                            <div id="alertBox"></div>
 
-                            <div class="form-group position-relative ">
-                                <span class="popupicon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" style="padding-left: 45px;" type="text" id="name" name="name"
-                                    placeholder="Enter Name" required>
-                            </div>
+                            <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
+                                @csrf
 
-                            <div class="form-group position-relative ">
+                                <div class="form-group position-relative ">
+                                    <span class="popupicon"><i class="fa fa-user"></i></span>
+                                    <input class="form-control" style="padding-left: 45px;" type="text" id="name"
+                                        name="name" placeholder="Enter Name" required>
+                                </div>
 
-                                <input class="form-control " style="padding-left : 55px !important;" type="tel" id="mobile"
-                                    name="mobile" placeholder="Enter Mobile No." required>
-                            </div>
+                                <div class="form-group position-relative ">
 
-
-                            <input type="hidden" name="source" value="modal_homepage">
-
-                            <div class="form-group ">
-                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
-                                    data-callback="popupCaptcha"></div>
-                            </div>
-                            <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100" disabled>
-                                <span data-text="Submit">Submit</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                                    <input class="form-control " style="padding-left : 55px !important;" type="tel"
+                                        id="mobile" name="mobile" placeholder="Enter Mobile No." required>
+                                </div>
 
 
-                        </form>
+                                <input type="hidden" name="source" value="modal_homepage">
+
+                                <div class="form-group ">
+                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                                        data-callback="popupCaptcha"></div>
+                                </div>
+                                <button type="submit" id="bookingSubmit" class="theme-button style-1 w-100" disabled>
+                                    <span data-text="Submit">Submit</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1527,47 +1384,39 @@
                         <!-- section title end -->
                     </div>
 
+                    @php
+                        $tests = \App\Models\Test::where('status', 'active')->get()
+                    @endphp
                     <div class=" row test-section services-section-1 justify-content-center">
-                        <div class="col-lg-2 test-card shadow ">
-                            <div class="test-card-img">
-                                <img src="assets/images/services/icon-service-1.png">
+                       
+
+
+
+                        @if($tests->isNotEmpty())
+                            @foreach ($tests as $test)
+                                <div class="col-lg-2 test-card shadow">
+                                    <div class="test-card-img">
+                                        <img
+                                            src="{{ $test->icon ? Storage::url($test->icon) : asset('assets/images/services/icon-service-1.png') }}">
+                                    </div>
+                                    <div class="title text-center">
+                                        {{ $test->title ?? 'No Title Available' }}
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+
+                            <div class="col-lg-2 test-card shadow">
+                                <div class="test-card-img">
+                                    <img src="{{ asset('assets/images/services/icon-service-1.png') }}">
+                                </div>
+                                <div class="title text-center">
+                                    Eye Test
+                                </div>
                             </div>
-                            <div class="title text-center">
-                                Heart Test
-                            </div>
-                        </div>
-                        <div class="col-lg-2 test-card shadow ">
-                            <div class="test-card-img">
-                                <img src="assets/images/services/icon-service-1.png">
-                            </div>
-                            <div class="title text-center">
-                                Kidney Test
-                            </div>
-                        </div>
-                        <div class="col-lg-2 test-card shadow ">
-                            <div class="test-card-img">
-                                <img src="assets/images/services/icon-service-2.png">
-                            </div>
-                            <div class="title text-center">
-                                Thyroid Test
-                            </div>
-                        </div>
-                        <div class="col-lg-2 test-card shadow ">
-                            <div class="test-card-img">
-                                <img src="assets/images/services/icon-service-3.png">
-                            </div>
-                            <div class="title text-center">
-                                Lungs Test
-                            </div>
-                        </div>
-                        <div class="col-lg-2 test-card shadow ">
-                            <div class="test-card-img">
-                                <img src="assets/images/services/icon-service-3.png">
-                            </div>
-                            <div class="title text-center">
-                                Bone Test
-                            </div>
-                        </div>
+                        @endif
+
+
 
                     </div>
 
@@ -1603,7 +1452,7 @@
                                         class="img-fluid">
                                 @endif
                             </div>
-                        </div>  
+                        </div>
 
                         <!-- RIGHT SIDE -->
                         <div class="col-lg-7 col-md-12">
@@ -1876,7 +1725,7 @@
                                     @if(!$hasCards)
                                         <div class="col-12">
                                             <div class="text-center py-4">
-                                                <h4>No gallery images to show</h4>
+                                                <h4>No data cards to show</h4>
                                             </div>
                                         </div>
                                     @endif
@@ -2089,18 +1938,21 @@
 
     <script>
 
-
-
         window.popupCaptcha = function () {
             const btn = document.getElementById('bookingSubmit');
             if (btn) btn.disabled = false;
         };
-
-        let iti;
+        let iti1;
         // INTEL FLAG SCRIPT FOR PHONE ID
         document.addEventListener('DOMContentLoaded', function () {
+
+            setTimeout(function () {
+                var myModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+                myModal.show();
+            }, 3000);
+
             const input = document.querySelector("#mobile");
-            iti = window.intlTelInput(input, {
+            iti1 = window.intlTelInput(input, {
                 initialCountry: "auto",
                 nationalMode: false,
                 separateDialCode: true,
@@ -2134,9 +1986,376 @@
         });
 
         document.getElementById("bookingForm").addEventListener("submit", function (e) {
-            document.querySelector("#mobile").value = iti.getNumber();
+            document.querySelector("#mobile").value = iti1.getNumber();
         });
 
+        // form submission for footer popup
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const modal = document.getElementById('bookingModal');
+            const closeBtn = document.getElementById('bookingClose');
+            const form = document.getElementById('bookingForm');
+            const submitBtn = document.getElementById('bookingSubmit');
+            const alertBox = document.getElementById('alertBox');
+
+            function closeBookingModal() {
+
+                // Close Bootstrap modal properly
+                let modalInstance = bootstrap.Modal.getInstance(modal);
+                if (!modalInstance) {
+                    modalInstance = new bootstrap.Modal(modal);
+                }
+                modalInstance.hide();
+
+                // Reset form
+                form.reset();
+
+                // Reset captcha
+                if (window.grecaptcha) grecaptcha.reset();
+
+                // Disable submit
+                submitBtn.disabled = true;
+
+                // Clear alerts
+                alertBox.innerHTML = '';
+
+
+                // Reset captcha
+                if (window.grecaptcha) grecaptcha.reset();
+
+                // Disable submit button again
+                submitBtn.disabled = true;
+
+                // Clear messages
+                alertBox.innerHTML = '';
+
+                // Re-enable page scroll
+                document.body.style.overflow = 'auto';
+            }
+
+            function openBookingModal1() {
+
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeBtn.addEventListener('click', closeBookingModal);
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) closeBookingModal();
+            });
+
+            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
+            if (isHomepage) setTimeout(openBookingModal1, 5000);
+
+            // AJAX SUBMIT
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+
+                // intlTelInput update
+                if (iti1) {
+                    form.querySelector('#mobile').value = iti1.getNumber();
+                }
+
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "X-Requested-With": "XMLHttpRequest"
+                    },
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = '';
+
+                        if (data.success) {
+
+                            // Show success message briefly before closing
+                            alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+
+                            // Close modal immediately after short delay (optional)
+                            setTimeout(() => {
+                                closeBookingModal();
+                            }, 1000);
+
+                        } else {
+                            let html = `<div class="alert-error"><ul>`;
+                            if (data.errors) {
+                                Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
+                            } else {
+                                html += `<li>${data.message || 'An error occurred'}</li>`;
+                            }
+                            html += `</ul></div>`;
+                            alertBox.innerHTML = html;
+
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
+                        if (window.grecaptcha) grecaptcha.reset();
+                        submitBtn.disabled = true;
+                    });
+            });
+
+        });
+
+
+
+
+
+
+
+        window.footerCaptcha = function () {
+            const btn = document.getElementById('bookingSubmit1');
+            if (btn) btn.disabled = false;
+        };
+        let iti1;
+        // INTEL FLAG SCRIPT FOR PHONE ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#mobile1");
+            iti1 = window.intlTelInput(input, {
+                initialCountry: "auto",
+                nationalMode: false,
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                geoIpLookup: function (callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(response => response.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback('us'));
+                }
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        document.getElementById("bookingForm1").addEventListener("submit", function (e) {
+            document.querySelector("#mobile1").value = iti1.getNumber();
+        });
+
+
+        // form submission for footer popup
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const modal = document.getElementById('popupCallModal');
+            const closeBtn = document.getElementById('popupClose');
+            const form = document.getElementById('bookingForm1');
+            const submitBtn = document.getElementById('bookingSubmit1');
+            const alertBox = document.getElementById('alertBox1');
+
+            function closeBookingModal() {
+
+                // Close Bootstrap modal properly
+                let modalInstance = bootstrap.Modal.getInstance(modal);
+                if (!modalInstance) {
+                    modalInstance = new bootstrap.Modal(modal);
+                }
+                modalInstance.hide();
+
+                // Reset form
+                form.reset();
+
+                // Reset captcha
+                if (window.grecaptcha) grecaptcha.reset();
+
+                // Disable submit
+                submitBtn.disabled = true;
+
+                // Clear alerts
+                alertBox.innerHTML = '';
+
+
+                // Reset captcha
+                if (window.grecaptcha) grecaptcha.reset();
+
+                // Disable submit button again
+                submitBtn.disabled = true;
+
+                // Clear messages
+                alertBox.innerHTML = '';
+
+                // Re-enable page scroll
+                document.body.style.overflow = 'auto';
+            }
+
+            function openBookingModal() {
+
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeBtn.addEventListener('click', closeBookingModal);
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) closeBookingModal();
+            });
+
+            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
+            if (isHomepage) setTimeout(openBookingModal, 5000);
+
+            // AJAX SUBMIT
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+
+                // intlTelInput update
+                if (iti1) {
+                    form.querySelector('#mobile1').value = iti1.getNumber();
+                }
+
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "X-Requested-With": "XMLHttpRequest"
+                    },
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = '';
+
+                        if (data.success) {
+
+                            // Show success message briefly before closing
+                            alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
+
+                            // Close modal immediately after short delay (optional)
+                            setTimeout(() => {
+                                closeBookingModal();
+                            }, 1000);
+
+                        } else {
+                            let html = `<div class="alert-error"><ul>`;
+                            if (data.errors) {
+                                Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
+                            } else {
+                                html += `<li>${data.message || 'An error occurred'}</li>`;
+                            }
+                            html += `</ul></div>`;
+                            alertBox.innerHTML = html;
+
+                            if (window.grecaptcha) grecaptcha.reset();
+                            submitBtn.disabled = true;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        submitBtn.innerHTML = 'Submit';
+                        alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
+                        if (window.grecaptcha) grecaptcha.reset();
+                        submitBtn.disabled = true;
+                    });
+            });
+
+        });
+
+
+
+        // SWIPER  FOR PRODUCT
+        var swiper = new Swiper(".myProductSwiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1200: { // desktops
+                    slidesPerView: 4,
+                },
+                992: { // laptops & tablets landscape
+                    slidesPerView: 3,
+                },
+                768: { // tablets portrait
+                    slidesPerView: 2,
+                },
+                576: { // mobile large
+                    slidesPerView: 1,
+                },
+                0: { // mobile small
+                    slidesPerView: 1,
+                },
+            },
+
+        });
+
+        // Start of Tawk.to Script
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+
+        var swiper = new Swiper(".myGallerySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 25,
+            loop: true,
+
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            breakpoints: {
+                320: { slidesPerView: 1 },
+                576: { slidesPerView: 2 },
+                991: { slidesPerView: 3 }
+            }
+        });
 
 
     </script>

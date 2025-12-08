@@ -57,7 +57,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-info btn-lg w-100">
-                                <i class="fas fa-save"></i> Update Popup Only
+                                <i class="fas fa-save"></i> Update
                             </button>
                         </form>
                     </div>
@@ -103,7 +103,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-warning btn-lg w-100 text-dark">
-                                <i class="fas fa-save"></i> Update Banner Only
+                                <i class="fas fa-save"></i> Update
                             </button>
                         </form>
                     </div>
