@@ -1,5 +1,5 @@
 @extends("website.layout.master-layout")
-@section("title", "CBC Test | Complete Blood Count | Book Online")
+@section("title", "{{ $package->title }}")
 
 @push('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />

@@ -84,6 +84,16 @@ Route::get('/package/{slug}', function ($slug) {
     return view('website.pages.package-detail', compact('package'));
 })->name('parameter-detail');
 
+//health risk
+Route::get('/healthrisk/{slug}', function ($slug) {
+    $package = \App\Models\HealthRisk::where('slug', $slug)
+                                       ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
+                                       ->where('status', 'active')
+                                       ->firstOrFail();
+
+    return view('website.pages.healthrisk', compact('package'));
+})->name('healthrisk');
+
 
 Route::get('/about-us', function () {
     return view('website.pages.about-us');

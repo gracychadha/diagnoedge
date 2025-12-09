@@ -532,40 +532,37 @@
                     </div>
 
                     @php
-                        $tests = \App\Models\Test::where('status', 'active')->get()
-                    @endphp
-                    <div class=" row test-section services-section-1 justify-content-center">
+    $healthRisks = \App\Models\HealthRisk::where('status', 'active')->get();
+@endphp
 
+                  <div class="row test-section services-section-1 justify-content-center">
 
+    @if($healthRisks->isNotEmpty())
+        @foreach ($healthRisks as $risk)
+            <div class="col-lg-2 test-card shadow">
+                <div class="test-card-img">
+                    <img
+                        src="{{ $risk->icon ? Storage::url($risk->icon) : asset('assets/images/services/icon-service-1.png') }}">
+                </div>
+              <div class="title text-center">
+    <a href="{{ route('healthrisk', $risk->slug ?? Str::slug($risk->title)) }}">
+        {{ $risk->title ?? 'No Title Available' }}
+    </a>
+</div>
 
+            </div>
+        @endforeach
+    @else
+        <div class="col-lg-2 test-card shadow">
+            <div class="test-card-img">
+                <img src="{{ asset('assets/images/services/icon-service-1.png') }}">
+            </div>
+            <div class="title text-center">No Health Risks Available</div>
+        </div>
+    @endif
 
-                        @if($tests->isNotEmpty())
-                            @foreach ($tests as $test)
-                                <div class="col-lg-2 test-card shadow">
-                                    <div class="test-card-img">
-                                        <img
-                                            src="{{ $test->icon ? Storage::url($test->icon) : asset('assets/images/services/icon-service-1.png') }}">
-                                    </div>
-                                    <div class="title text-center">
-                                        {{ $test->title ?? 'No Title Available' }}
-                                    </div>
-                                </div>
-                            @endforeach
-                        @else
+</div>
 
-                            <div class="col-lg-2 test-card shadow">
-                                <div class="test-card-img">
-                                    <img src="{{ asset('assets/images/services/icon-service-1.png') }}">
-                                </div>
-                                <div class="title text-center">
-                                    Eye Test
-                                </div>
-                            </div>
-                        @endif
-
-
-
-                    </div>
 
                 </div>
             </div>
