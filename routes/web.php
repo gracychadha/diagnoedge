@@ -41,7 +41,7 @@ use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
-
+use App\Models\Parameter;
 
 // for search
 Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
@@ -62,9 +62,15 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/package-detail', function () {
-    return view('website.pages.package-detail');
-})->name('package-detail');
+Route::get('/package/{slug}', function ($slug) {
+    $package = Parameter::where('slug', $slug)
+                        ->orWhere('slug', null)
+                        ->where('title', 'LIKE', "%$slug%")
+                        ->where('status', 'active')
+                        ->firstOrFail();
+
+    return view('website.pages.package-detail', compact('package'));
+})->name('parameter-detail');
 
 Route::get('/about-us', function () {
     return view('website.pages.about-us');

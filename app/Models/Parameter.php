@@ -11,10 +11,11 @@ class Parameter extends Model
         'title',
         'slug',
         'description',
-        'detail_id',
         'overview',
+        'icon',
         'price',
-        'status'
+        'status',
+        'detail_id'           // ← this is your JSON column
     ];
 
     protected $casts = [
@@ -25,34 +26,25 @@ class Parameter extends Model
     protected static function booted()
     {
         static::creating(function ($parameter) {
-            if (!$parameter->slug) {
-                $parameter->slug = Str::slug($parameter->title);
-            }
+            $parameter->slug = $parameter->slug ?? Str::slug($parameter->title);
         });
 
         static::updating(function ($parameter) {
-            if ($parameter->isDirty('title') && !$parameter->isDirty('slug')) {
+            if ($parameter->isDirty('title')) {
                 $parameter->slug = Str::slug($parameter->title);
             }
         });
     }
 
-    // Relationship for tests
-    public function tests()
-    {
-        return $this->belongsToMany(Test::class, 'parameter_test', 'parameter_id', 'test_id')
-                    ->withTimestamps();
-    }
-
-    // ADD THIS SCOPE - THIS IS WHAT WAS MISSING!
+    // Optional scopes (keep if you use them elsewhere)
     public function scopeActive($query)
     {
         return $query->where('status', 'active');
     }
 
-    // Optional: also add inactive scope (very useful)
     public function scopeInactive($query)
     {
         return $query->where('status', 'inactive');
     }
+
 }

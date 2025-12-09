@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Parameter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ParameterController extends Controller
 {
@@ -24,10 +25,19 @@ class ParameterController extends Controller
             'overview'    => 'nullable|string',
             'detail_id'   => 'nullable|array',
             'detail_id.*' => 'integer|exists:tests,id',
+            'icon'        => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
         ]);
 
+        // Generate slug
         $validated['slug'] = Str::slug($validated['title']);
-        $validated['detail_id'] = $validated['detail_id'] ?? [];
+
+        // Handle icon upload
+        if ($request->hasFile('icon')) {
+            $validated['icon'] = $request->file('icon')->store('package-icons', 'public');
+        }
+
+        // Save selected test IDs as JSON array
+        $validated['detail_id'] = $request->filled('detail_id') ? $request->detail_id : [];
 
         Parameter::create($validated);
 
@@ -45,13 +55,25 @@ class ParameterController extends Controller
             'overview'    => 'nullable|string',
             'detail_id'   => 'nullable|array',
             'detail_id.*' => 'integer|exists:tests,id',
+            'icon'        => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
         ]);
 
+        // Update slug only when title changes
         if ($request->filled('title') && $request->title !== $parameter->title) {
             $validated['slug'] = Str::slug($validated['title']);
         }
 
-        $validated['detail_id'] = $validated['detail_id'] ?? [];
+        // Handle icon replacement
+        if ($request->hasFile('icon')) {
+            // Delete old icon
+            if ($parameter->icon && Storage::disk('public')->exists($parameter->icon)) {
+                Storage::disk('public')->delete($parameter->icon);
+            }
+            $validated['icon'] = $request->file('icon')->store('package-icons', 'public');
+        }
+
+        // Save selected test IDs
+        $validated['detail_id'] = $request->filled('detail_id') ? $request->detail_id : [];
 
         $parameter->update($validated);
 
@@ -61,7 +83,12 @@ class ParameterController extends Controller
 
     public function destroy(Parameter $parameter)
     {
+        if ($parameter->icon && Storage::disk('public')->exists($parameter->icon)) {
+            Storage::disk('public')->delete($parameter->icon);
+        }
+
         $parameter->delete();
+
         return back()->with('success', 'Parameter deleted successfully!');
     }
 }
