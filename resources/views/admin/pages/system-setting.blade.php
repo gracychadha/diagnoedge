@@ -104,7 +104,7 @@
 
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-primary btn-lg px-5">
-                                        Save All Settings
+                                        Save 
                                     </button>
                                 </div>
                             </div>

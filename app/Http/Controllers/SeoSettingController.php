@@ -6,6 +6,55 @@ use Illuminate\Http\Request;
 use App\Models\SeoSetting;
 class SeoSettingController extends Controller
 {
+
+    function getSeo()
+    {
+        $url = request()->path();  // "/" or "about-us" or "services/web-dev"
+
+        // Remove trailing slash and lowercase
+        $cleanUrl = strtolower(trim($url, '/'));   // "/" -> "", "about-us" -> "about-us"
+
+        // Get slug (last part)
+        $slug = Str::afterLast($cleanUrl, '/');    // same as cleanUrl unless nested route
+
+        // ----------------------------------------------------
+        // HOME PAGE ("" means root "/")
+        // ----------------------------------------------------
+        if ($cleanUrl === '' || $url === '/') {
+            $seo = SeoSetting::where('page', 'home')->first();
+
+            return $seo ?: (object) [
+                'title' => 'Welcome to Diagnoedge',
+                'keywords' => '',
+                'description' => ''
+            ];
+        }
+
+        // ----------------------------------------------------
+        // 1. Match slug (last part)
+        // ----------------------------------------------------
+        $seo = SeoSetting::where('page', $slug)->first();
+
+        // ----------------------------------------------------
+        // 2. Match full path (example: services/web-dev)
+        // ----------------------------------------------------
+        if (!$seo) {
+            $seo = SeoSetting::where('page', $cleanUrl)->first();
+        }
+
+        // ----------------------------------------------------
+        // DEFAULT SEO IF NOTHING FOUND
+        // ----------------------------------------------------
+        return $seo ?: (object) [
+            'title' => 'Welcome to Diagnoedge',
+            'keywords' => '',
+            'description' => ''
+        ];
+    }
+
+
+
+
     //
 
     public function index()
@@ -31,10 +80,10 @@ class SeoSettingController extends Controller
             'page' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'keywords' => 'required|string|max:255',
-           
+
         ]);
 
-        
+
 
         // Store in DB
         SeoSetting::create([
@@ -42,7 +91,7 @@ class SeoSettingController extends Controller
             'page' => $request->page,
             'description' => $request->description,
             'keywords' => $request->keywords,
-            
+
         ]);
 
         return redirect()->back()->with('success', 'SEO Setting Added Successfully');
@@ -56,7 +105,7 @@ class SeoSettingController extends Controller
         $seoSettings->description = $request->description;
         $seoSettings->keywords = $request->keywords;
 
-      
+
         $seoSettings->save();
 
         return response()->json(['success' => true]);
@@ -66,7 +115,7 @@ class SeoSettingController extends Controller
     {
         $seoSettings = SeoSetting::findOrFail($id);
 
-      
+
 
         $seoSettings->delete();
 

@@ -48,7 +48,7 @@
                     <span class="nav-text">CMS</span>
                 </a>
                 <ul aria-expanded="false">
-                     <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
+                    <li><a class="" href="{{ route('site-images.index') }}" aria-expanded="false">Ads & Popup</a>
 
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">Blogs</a>
@@ -93,7 +93,7 @@
 
                         </ul>
                     </li>
-                   
+
 
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Job Career</a>
                         <ul aria-expanded="false">
@@ -102,34 +102,18 @@
 
                         </ul>
                     </li>
-                    <li><a class="" href="{{ route('admin-privacy-policy.index') }}" aria-expanded="false">Privacy Policy</a>
-                       
+                    <li><a class="" href="{{ route('admin-privacy-policy.index') }}" aria-expanded="false">Privacy
+                            Policy</a>
+
                     </li>
-                    <li><a class="" href="{{ route('admin-terms-condition.index') }}" aria-expanded="false">Terms Conditions</a>
-                       
+                    <li><a class="" href="{{ route('admin-terms-condition.index') }}" aria-expanded="false">Terms
+                            Conditions</a>
+
                     </li>
 
                 </ul>
             </li>
-            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Management</span>
-                </a>
-
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('profile.index') }}">Profile</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false">
-                            <li><a href="email-compose.html">Compose</a></li>
-                            <li><a href="email-inbox.html">Inbox</a></li>
-                            <li><a href="email-read.html">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="app-calender.html">Calendar</a></li>
-
-                </ul>
-            </li> --}}
-
+          
             <li><a href="{{ route('profile') }}" class="ai-icon" aria-expanded="false">
                     <i class="fa fa-user-circle"></i>
                     <span class="nav-text">My Profile</span>
@@ -146,7 +130,6 @@
                     <li><a href="{{ route('general-setting') }}">General Settings</a></li>
                     <li><a href="{{ route('system-setting') }}">System Setting</a></li>
                     <li><a href="{{ route('seo-setting.index') }}">SEO Setting</a></li>
-                    {{-- <li><a href="{{ route('theme-setting') }}">Theme Settings</a></li> --}}
                     <li><a href="{{ route('website-setting') }}">Website Settings</a></li>
                 </ul>
             </li>
@@ -156,11 +139,28 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('admin-doctors.index') }}">Doctor</a></li>
-                    {{-- <li><a href="{{ route('admin-staff') }}">Staff</a></li> --}}
 
-                    {{-- <li><a href="staff-profile.html">Staff Profie</a></li> --}}
                 </ul>
             </li>
+            <li>
+                <div class="custom-btn-logout">
+                    <a href="#" class="dropdown-item ai-icon"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-white" width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        <span class="ms-2">Logout </span>
+                    </a>
+                </div>
+            </li>
+            <p class="p-3 text-center">
+                Admin Panel Version <span class="text-theme">1.0.0</span> <br>
+                 Last Updated: <span  class="text-theme">Dec 2025 </span>
+            </p>
 
 
         </ul>

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Faqspackage extends Model
+class FaqsPackage extends Model
 {
     protected $table = 'package_faqs';
 

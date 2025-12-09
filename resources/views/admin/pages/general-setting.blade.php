@@ -62,7 +62,7 @@
             </div>
             <div class="text-end">
                 <button type="submit" class="btn btn-success px-5">
-                    Save Cloudflare Captcha
+                    Save 
                 </button>
             </div>
         </div>
@@ -103,7 +103,7 @@
             </div>
             <div class="text-end">
                 <button type="submit" class="btn btn-success px-5">
-                    Save Google Captcha
+                    Save 
                 </button>
             </div>
         </div>

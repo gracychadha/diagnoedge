@@ -474,7 +474,7 @@
                         $('#edit_id').val(res.id);
                         $('#edit_fullname').val(res.fullname);
                         $('#edit_email').val(res.email);
-                        $('#edit_phone').val(res.phone);
+                        $('#edit_mobile').val(res.phone);
                         $('#edit_subject').val(res.subject);
                         $('#edit_message').val(res.message);
 

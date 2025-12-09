@@ -136,7 +136,7 @@
                                     <input type="text" id="already_know" class=" form-control border-start-0"
                                         placeholder="Search and book" autocomplete="off">
                                    
-                                    <div id="searchResult" class=" bg-white border rounded w-100"></div>
+                                    <div id="searchResult" class=" bg-white border rounded"></div>
 
                                 </div>
                             </div>
@@ -2282,83 +2282,7 @@
 
 
 
-        // SWIPER  FOR PRODUCT
-        var swiper = new Swiper(".myProductSwiper", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                1200: { // desktops
-                    slidesPerView: 4,
-                },
-                992: { // laptops & tablets landscape
-                    slidesPerView: 3,
-                },
-                768: { // tablets portrait
-                    slidesPerView: 2,
-                },
-                576: { // mobile large
-                    slidesPerView: 1,
-                },
-                0: { // mobile small
-                    slidesPerView: 1,
-                },
-            },
-
-        });
-
-        // Start of Tawk.to Script
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-
-
-        var swiper = new Swiper(".myGallerySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 25,
-            loop: true,
-
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-
-            breakpoints: {
-                320: { slidesPerView: 1 },
-                576: { slidesPerView: 2 },
-                991: { slidesPerView: 3 }
-            }
-        });
-
-
+       
     </script>
 
 @endpush

@@ -128,7 +128,7 @@
                                                 </div> --}}
                                                 <div class="pricing-button-wapper">
                                                     <a href="#" class="theme-button style-2" aria-label="Apply Now"
-                                                        data-bs-toggle="modal" data-bs-target="">
+                                                        data-bs-toggle="modal" data-bs-target="#applyJobModal">
                                                         <span data-text="Apply Now">Apply Now</span>
                                                         <i class="fa-solid fa-arrow-right"></i>
                                                     </a>
@@ -142,13 +142,16 @@
                                 <p>No career JObs Found</p>
                             @endforelse
                             <!-- Job Apply Modal -->
-                            {{-- <div class="modal fade" id="applyJobModal" tabindex="-1"
-                                aria-labelledby="applyJobModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
+
+                            <div class="modal fade" id="applyJobModal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="dialog" aria-modal="true"
+                                    aria-labelledby="applyJobModal">
+
                                     <div class="modal-content">
 
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="applyJobModalLabel">Apply for Lab Technician</h5>
+                                            <h5 class="modal-title" id="applyJobModalLabel">Apply for Lab Technician
+                                            </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -189,17 +192,18 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-primary">Submit Application</button>
+                                                <button type="submit" class="btn btn-primary">Submit
+                                                    Application</button>
                                             </div>
 
                                         </form>
 
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
 
-                           
+
 
                         </div>
                     </div>
@@ -215,3 +219,9 @@
 
     </main>
 @endsection
+@push('scripts')
+    <script>
+
+
+    </script>
+@endpush

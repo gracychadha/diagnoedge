@@ -118,7 +118,7 @@
                             </div>
                             <div class="text-end">
                                 <button type="submit" class="btn btn-success px-5">
-                                    Save Social Links
+                                    Save 
                                 </button>
                             </div>
                         </div>

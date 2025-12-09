@@ -187,7 +187,7 @@
                                     <div class="form-floating field-inner">
                                         <input id="already_know2" name="search" class="form-control white-field"
                                             placeholder="Keywords here...." type="text" autocomplete="off">
-                                        {{-- <div id="searchResult2" class=" bg-white border "></div> --}}
+                                        <div id="searchResult2" class=" "></div>
                                         <label for="search">Search </label>
                                         <button type="submit" aria-label="submit">
                                             <i class="fa-solid fa-magnifying-glass"></i>

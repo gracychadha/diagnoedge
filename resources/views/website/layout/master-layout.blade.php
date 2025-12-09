@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- @php
-    $seo = getSeo(Request::path());
-    @endphp --}}
+    @php
+        $seo = getSeo(request()->path());
+    @endphp
 
-    <title>@yield('title')</title>
-    {{--
-    <meta name="description" content="{{ $seo->description ?? '' }}">
-    <meta name="keywords" content="{{ $seo->keywords ?? '' }}"> --}}
 
+    {{-- <title>@yield('title')</title> --}}
+
+    <title>{{ $seo->title ?? 'Welcome to Diagnoedge'}}</title>
+    <meta name="keywords" content="{{ $seo->keywords ?? 'Diagnoedge'}}">
+    <meta name="description" content="{{ $seo->description  ?? 'Diagnoedge'}}">
 
 
 
@@ -128,7 +129,7 @@
         const btn = document.getElementById('bookingSubmit1');
         if (btn) btn.disabled = false;
     };
-    let iti1;
+   
     // INTEL FLAG SCRIPT FOR PHONE ID
     document.addEventListener('DOMContentLoaded', function () {
         const input = document.querySelector("#mobile1");
@@ -339,7 +340,7 @@
         s0.parentNode.insertBefore(s1, s0);
     })();
 
-
+    // gallery swiper
     var swiper = new Swiper(".myGallerySwiper", {
         slidesPerView: 4,
         spaceBetween: 25,
@@ -368,7 +369,7 @@
     });
 
 
-
+    // search
     function autoSearch(inputId, resultId) {
         document.getElementById(inputId).addEventListener('keyup', function () {
 
@@ -387,7 +388,7 @@
                     if (data.results.length > 0) {
                         data.results.forEach(item => {
                             output += `
-                            <div class="p-2 w-100 border-bottom">
+                            <div class="p-2 w-100 border-bottom result-item">
                                 ${item.title}
                             </div>`;
                         });

@@ -41558,5 +41558,21 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     padding-left: 6.2rem !important;
     position: relative;
 }
+.custom-btn-logout{
+background:#36c95f;
+font-size: 16px;
+    margin: 5px 0;
+    border-radius: 0 1rem 4rem 0
+}
+.custom-btn-logout a{
+    color: white !important; 
+}
+.text-theme{
+    color:#36c95f;
+}
 
+
+.side-nav-setting li.active a {
+   color:var(--primary) !important;
+}
 /*# sourceMappingURL=style.css.map */

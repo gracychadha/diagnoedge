@@ -68,14 +68,14 @@
 
                                 <!-- Overview Tab -->
                                 <div class="tab-pane fade show active" id="overview">
-                                    <div class="row align-items-center g-5">
+                                    <div class="row align-items-center g-5 p-3">
                                         <div class="col-lg-4 text-center">
                                             <div class="position-relative d-inline-block">
                                                 <img src="{{ Auth::user()->profile_photo_url }}"
                                                     class="rounded-circle shadow-lg border border-4 border-white"
                                                     width="180" height="180" style="cover" alt="Profile">
                                                 <span
-                                                    class="position-absolute bottom-0 end-0 badge bg-success rounded-pill px-3 py-2">Online</span>
+                                                    class="position-absolute bottom-0 end-0 badge bg-success rounded-pill px-3 py-2">Active</span>
                                             </div>
                                             <h4 class="mt-4">{{ Auth::user()->name }}</h4>
                                             <p class="text-muted">Administrator</p>
@@ -83,20 +83,20 @@
                                             </p>
                                         </div>
 
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-8 card p-4 shadow">
                                             <h5 class="fw-bold mb-3">Personal Information</h5>
                                             <hr>
                                             <div class="row g-3">
-                                                <div class="col-sm-4"><strong>Name</strong></div>
+                                                <div class="col-sm-4"><strong>Name :</strong></div>
                                                 <div class="col-sm-8">{{ Auth::user()->name }}</div>
 
-                                                <div class="col-sm-4"><strong>Email</strong></div>
+                                                <div class="col-sm-4"><strong>Email :</strong></div>
                                                 <div class="col-sm-8">{{ Auth::user()->email }}</div>
 
-                                                <div class="col-sm-4"><strong>Phone</strong></div>
+                                                <div class="col-sm-4"><strong>Phone :</strong></div>
                                                 <div class="col-sm-8">{{ Auth::user()->phone ?? 'Not set' }}</div>
 
-                                                <div class="col-sm-4"><strong>Bio</strong></div>
+                                                <div class="col-sm-4"><strong>Bio :</strong></div>
                                                 <div class="col-sm-8">{{ Auth::user()->bio ?? 'No bio added.' }}</div>
                                             </div>
                                         </div>
@@ -153,7 +153,7 @@
 
                                         <div class="text-center mt-5">
                                             <button type="submit" class="btn btn-success btn-lg px-6">
-                                                Update Profile
+                                                Update 
                                             </button>
                                         </div>
                                     </form>
@@ -186,7 +186,7 @@
 
                                                 <div class="text-center">
                                                     <button type="submit" class="btn btn-primary btn-lg px-6">
-                                                        Change Password
+                                                        Change 
                                                     </button>
                                                 </div>
                                         </div>

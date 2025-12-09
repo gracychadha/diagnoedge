@@ -32,8 +32,7 @@ if (!function_exists('getSeo')) {
             return $seo;
         }
 
-        // 5 Fallback default SEO (optional)
-        return SeoSetting::where('page', 'default')->first();
+     
     }
 
 

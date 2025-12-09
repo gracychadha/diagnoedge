@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="ms-auto">
-                    <a href="javascript:void(0);" class="btn btn-light btn-rounded ">Delete Selected</a>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded ">Delete Selected</a>
                 </div>
             </div>
             <div class="row">
@@ -178,7 +178,7 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Phone:</label>
-                                        <input type="number" name="phone" class="form-control" id="edit_phone">
+                                        <input type="text" name="phone" class="form-control" id="edit_mobile">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">

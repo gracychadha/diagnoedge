@@ -21,7 +21,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // to create  user
         $this->call(AdminUserSeeder::class);
+
+        // to create seo pages 
+        $this->call(SeoPagesSeeder::class);
 
     }
 }

@@ -20,7 +20,9 @@
                 <div class="ms-auto">
                     <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">+ Book Appointment</a>
-                    <a href="doctor-list.html" class="btn btn-primary btn-rounded">Doctor Schedule</a>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded " data-bs-toggle="modal"
+                        data-bs-target="">Delete Selected</a>
+                    
                 </div>
             </div>
             <div class="row">
@@ -106,98 +108,100 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Title:</label>
-                                        <select class="form-control">
-                                            <option>Miss</option>
-                                            <option>Mr.</option>
-                                            <option>Mrs.</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Name:</label>
-                                        <input type="text" class="form-control" id="name1" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Last Name:</label>
-                                        <input type="text" class="form-control" id="name2" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Date Of Appointment:</label>
-                                        <input size="16" type="date" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <label class="form-label mt-3">Form<span class="text-danger">*</span></label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="09:30"><span
-                                            class="input-group-text"><i class="fas fa-clock"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <label class="form-label mt-3">To<span class="text-danger">*</span></label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="10:30"><span
-                                            class="input-group-text"><i class="fas fa-clock"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Address :</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Mobile No:</label>
-                                        <input type="number" class="form-control" id="moblie1" placeholder="Mobile">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Email Id:</label>
-                                        <input type="email" class="form-control" id="email1" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Consulting Doctor:</label>
-                                        <select class="form-control">
-                                            <option>Dr.HANI B BARADI</option>
-                                            <option>Dr.NAJJIA N MAHMOUD</option>
-                                            <option>Dr. SANKAR NAIDU ADUSUMILLI</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Injury/Condition:</label>
-                                        <input type="text" class="form-control" id="fever" placeholder="fever">
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Note:</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
-                                    </div>
-                                </div>
-                            </div>
+                         <form action="{{ url('/appointment-store') }}" method="POST" id="appointmentForm">
+                                    <!-- #region -->
+
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating field-inner">
+                                                    <input class="form-control" id="fullname" name="fullname"
+                                                        placeholder="Full Name Here" type="text" autocomplete="off"
+                                                        required="required" value="{{ old('fullname') }}">
+                                                    @error('fullname')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <label for="fullname"><i class="fa-solid fa-user"></i> Name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating field-inner">
+                                                    <input class="form-control" id="email" name="email"
+                                                        placeholder="Email Here" type="email" autocomplete="off"
+                                                        required="required"  value="{{ old('email') }}">
+                                                    @error('email')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating field-inner">
+                                                    <input class="form-control"  name="phone" type="text"
+                                                        autocomplete="off" required="required"  value="{{ old(key: 'phone') }}">
+                                                    @error('phone')
+                                                        <div class="text-danger small">{{ $message }}</div>
+                                                    @enderror
+ <label for="phone"><i class="fa-solid fa-phone"></i> Phone</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating">
+                                                    <select class="form-select" id="choosedoctor" name="choosedoctor"
+                                                        aria-label="Choose Doctor">
+                                                        <option value="" disabled selected>Choose Doctor</option>
+
+                                                        <option value="Dr. Catherine Denuve">Dr. Catherine Denuve</option>
+                                                        <option value="Dr. Laurence Olivier">Dr. Laurence Olivier</option>
+                                                        <option value="Dr. Susan Hopkins">Dr. Susan Hopkins</option>
+                                                    </select>
+                                                    <label for="choosedoctor"><i class="fa-solid fa-user-doctor"></i> Choose
+                                                        Doctor</label>
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                        
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating field-inner">
+                                                    <input class="form-control" id="appointmentdate"   name="appointmentdate"  placeholder="dd-mm-yyyy"
+                                                            autocomplete="off"    required="required"  type="text" value="{{ old('appointmentdate') }}">
+                                                   <label for="appointmentdate"><i class="fa-solid fa-calendar-days"></i> Appointment Date</label>
 
 
-                        </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="form-floating field-inner">
+                                                    <textarea id="message" class="form-control" name="message"
+                                                        placeholder="Messege Here" autocomplete="off"
+                                                        required="required"  > {{ old('message') }}</textarea>
+                                                    <label for="message"><i class="fa-solid fa-message"></i> Message</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                      
+
+                                    </div>
+                                </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
