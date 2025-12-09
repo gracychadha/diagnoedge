@@ -86,12 +86,11 @@
                             </p>
 
                             {{-- Button --}}
-                            {{-- Button --}}
-<a href="{{ route('parameter-detail', $param->slug ?? Str::slug($param->title)) }}"
-    class="theme-button style-1">
-    <span data-text="Add To Cart">Add To Cart</span>
-    <i class="fa-solid fa-arrow-right"></i>
-</a>
+                            <a href="{{ route('parameter-detail', $param->slug ?? Str::slug($param->title)) }}"
+                                class="theme-button style-1">
+                                <span data-text="Add To Cart">Add To Cart</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
 
                         </div>
                     </div>
