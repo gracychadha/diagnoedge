@@ -62,6 +62,18 @@ Route::get('/', function () {
 })->name('home');
 
 
+// for the sub parameter or health detail
+Route::get('/health-packages/{slug}', function ($slug) {
+    $package = \App\Models\Subparameter::where('slug', $slug)
+                                       ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
+                                       ->where('status', 'active')
+                                       ->firstOrFail();
+
+    return view('website.pages.health-packages-detail', compact('package'));
+})->name('health-package.detail');
+
+// for the parameter detail
+
 Route::get('/package/{slug}', function ($slug) {
     $package = Parameter::where('slug', $slug)
                         ->orWhere('slug', null)
@@ -71,6 +83,7 @@ Route::get('/package/{slug}', function ($slug) {
 
     return view('website.pages.package-detail', compact('package'));
 })->name('parameter-detail');
+
 
 Route::get('/about-us', function () {
     return view('website.pages.about-us');

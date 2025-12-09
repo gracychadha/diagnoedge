@@ -165,629 +165,175 @@
         </section>
         <!-- product section start -->
         <section class="product-section background-one pt-50  md-pt-30 pb-50 md-pb-30">
-            <div class="container">
-                {{-- section for test packages start--}}
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- section title start -->
-                            <h5 class="text-center pt-10 pb-10">Tru Health Packages</h5>
-                            <!-- section title end -->
-                        </div>
-                        <!-- pricing tabs start -->
-                        <div class="pricing-tabs">
-                            <!-- nav start -->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link" id="nav-male-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-male-THP" type="button" role="tab" aria-controls="nav-male-THP"
-                                        aria-selected="false">For Male</button>
-                                    <button class="nav-link active" id="nav-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-THP" type="button" role="tab" aria-controls="nav-THP"
-                                        aria-selected="true">Tru Health Packages</button>
-
-                                    <button class="nav-link" id="nav-female-THP-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-female-THP" type="button" role="tab"
-                                        aria-controls="nav-female-THP" aria-selected="false">For Female</button>
-                                </div>
-                            </nav>
-                            <!-- nav end -->
-                        </div>
-                        <!-- pricing tabs end -->
+         <div class="container">
+    {{-- Tru Health Packages Section --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h5 class="text-center pt-10 pb-10">Tru Health Packages</h5>
+            </div>
+            <div class="pricing-tabs">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For Male</button>
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">Tru Health Packages</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For Female</button>
                     </div>
-                </div>
-                <div class="tab-content">
-                    {{-- active tab THP --}}
-                    <div class="tab-pane fade active show" id="nav-THP" role="tabpanel" aria-labelledby="nav-THP-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper pb-20 p-sm-10">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                </nav>
+            </div>
+        </div>
+    </div>
 
-                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
+    @php
+        $packages = \App\Models\Subparameter::where('status', 'active')
+                                           ->latest()
+                                           ->get();
+    @endphp
 
-                                        </div>
-                                    </div>
+    <div class="tab-content">
 
-
+        {{-- All Tru Health Packages --}}
+        <div class="tab-pane fade active show" id="nav-THP">
+            <div class="swiper myProductSwiper pb-20 p-sm-10">
+                <div class="swiper-wrapper">
+                    @forelse($packages as $pkg)
+                        <div class="swiper-slide">
+                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                <div class="position-relative">
+                                  <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">  <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
+                                         class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
+                                    <span class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
+                                        {{ rand(15, 50) }}
+                                    </span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
+                                <div class="p-3">
+                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                        <h6 class="title-card mb-1">
+                                            {{ Str::limit($pkg->title, 60) }}
+                                        </h6>
+                                    </a>
 
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
+                                    @php
+                                        $testCount = is_array($pkg->test_ids) ? count($pkg->test_ids) : 0;
+                                        $parameterCount = is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0;
+                                        
 
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endphp
 
+                                    @if($testCount > 0)
+                                        <p class="text-muted small mb-2">
+                                            <span class="badge bg-light text-dark border">
+                                                {{ $testCount }} Profile | {{ $parameterCount  }} Parameters
+                                            </span>
+                                        </p>
+                                    @endif
+
+                                    <hr class="my-2">
+                                    <p class="fw-semibold fs-6 mb-3">
+                                        Rs. {{ number_format((float)($pkg->price ?? 0)) }}
+                                    </p>
+                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                        <span data-text="Add to Cart">Add to Cart</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
-
                         </div>
-                        <!-- Swiper Container End -->
-
-                    </div>
-                    {{-- male tab THP --}}
-                    <div class="tab-pane fade  show" id="nav-male-THP" role="tabpanel" aria-labelledby="nav-male-THP-tab"
-                        tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-
-                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
+                    @empty
+                        <div class="swiper-slide">
+                            <div class="text-center py-5 w-100 text-muted">
+                                No packages available
                             </div>
-
                         </div>
-                        <!-- Swiper Container End -->
-                    </div>
-                    {{-- female tab THP --}}
-                    <div class="tab-pane fade  show" id="nav-female-THP" role="tabpanel"
-                        aria-labelledby="nav-female-THP-tab" tabindex="0">
-                        <!-- Swiper Container Start -->
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-
-                                    <div class=" lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test1.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                        <div class="position-relative">
-                                            <img src="assets/images/product/test.jpg" class="img-fluid w-100"
-                                                alt="Truehealth Vital Test">
-                                            <span
-                                                class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="p-3">
-                                            <a href="{{ route('health-package') }}">
-                                                <h6 class="title-card mb-1">
-                                                    Truehealth Vital with Body Vitals Check & More
-                                                </h6>
-                                            </a>
-                                            <p class="text-muted small mb-2">
-                                                <span class="badge bg-light text-dark border">9 Profile | 81
-                                                    Parameters</span>
-                                            </p>
-                                            <hr class="my-2">
-                                            <p class="fw-semibold fs-6 mb-3">Rs.3500</p>
-                                            <a href="{{ route('appointment') }}" class="theme-button style-1"
-                                                aria-label="Add to Cart">
-                                                <span data-text="Add to Cart">Add to Cart</span>
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- Swiper Container End -->
-                    </div>
+                    @endforelse
                 </div>
             </div>
+        </div>
+
+        {{-- Male Tab--}}
+        <div class="tab-pane fade" id="nav-male-THP">
+            <div class="swiper myProductSwiper pb-20">
+                <div class="swiper-wrapper">
+                    @forelse($packages as $pkg)
+                        <div class="swiper-slide">
+                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                <div class="position-relative">
+                                    <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test1.jpg') }}"
+                                         class="img-fluid w-100" alt="{{ $pkg->title }}">
+                                    <span class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">
+                                        M
+                                    </span>
+                                </div>
+                                <div class="p-3">
+                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                        <h6 class="title-card mb-1">
+                                            {{ Str::limit($pkg->title, 60) }}
+                                        </h6>
+                                    </a>
+                                    <p class="text-muted small mb-2">
+                                        <span class="badge bg-light text-dark border">
+                                            {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile | {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }} Parameters
+                                        </span>
+                                    </p>
+                                    <hr class="my-2">
+                                    <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float)($pkg->price ?? 0)) }}</p>
+                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                        <span data-text="Add to Cart">Add to Cart</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="swiper-slide text-center py- py-5 text-muted w-100">No male packages</div>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+
+        {{-- Female Tab --}}
+        <div class="tab-pane fade" id="nav-female-THP">
+            <div class="swiper myProductSwiper pb-20">
+                <div class="swiper-wrapper">
+                    @forelse($packages as $pkg)
+                        <div class="swiper-slide">
+                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                <div class="position-relative">
+                                  <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">  <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
+                                         class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
+                                    <span class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">
+                                        F
+                                    </span>
+                                </div>
+                                <div class="p-3">
+                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                        <h6 class="title-card mb-1">
+                                            {{ Str::limit($pkg->title, 60) }}
+                                        </h6>
+                                    </a>
+                                    <p class="text-muted small mb-2">
+                                        <span class="badge bg-light text-dark border">
+                                            {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile | {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }} Parameters
+                                        </span>
+                                    </p>
+                                    <hr class="my-2">
+                                    <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float)($pkg->price ?? 0)) }}</p>
+                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                        <span data-text="Add to Cart">Add to Cart</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="swiper-slide text-center py-5 text-muted w-100">No female packages</div>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
             {{-- section for test packages start FOR Popular Tests --}}
             <div class="container pt-30 md-pt-10">

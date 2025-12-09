@@ -58,7 +58,9 @@
                     <div class="col-lg-3">
                         <div class="sticky-top" style="top: 100px;">
                             <div class="list-group rounded-4 overflow-hidden smooth-card mb-4">
-                                <a href="#details" class="list-group-item list-group-item-action py-3 nav-item">Test
+                                <a href="#title" class="list-group-item list-group-item-action py-3 nav-item">Test
+                                   Packages</a>
+                                <a href="#detail" class="list-group-item list-group-item-action py-3 nav-item">Test
                                     Details</a>
                                 <a href="#overview"
                                     class="list-group-item list-group-item-action py-3 nav-item">Overview</a>
@@ -96,7 +98,7 @@
                     <div class="col-lg-6">
 
                         <!-- Test Details -->
-                        <section id="details" class="bg-white rounded-4 p-4 mb-5 shadow-sm">
+                        <section id="title" class="bg-white rounded-4 p-4 mb-5 shadow-sm">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <p class="text-muted mb-0"></p>
                                 <p class="text-muted mb-0">134+ booked in last 3 days</p>
@@ -111,7 +113,9 @@
                                     ->get();
 
                                 // Fetch FAQs from packages_faqs table
-                               $faqs = $package->faqs ?? collect();
+                               $faqs = \App\Models\FaqsPackage::where('parameter_id', $package->id)
+        ->with('parameter') 
+        ->get();
                             @endphp
 
                             <h3 class="text-center fw-bold mb-4">{{ $package->title }}</h3>
@@ -145,6 +149,14 @@
                                 </div>
                             </div>
                         </section>
+                        <!-- detail -->
+                        <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5">
+                            <h2 class="h4 fw-bold mb-4">Detail</h2>
+                            <p class="lead text-muted">
+                                {!! $package->detail ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
+                            </p>
+
+                        </section>
 
                         <!-- Overview -->
                         <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5">
@@ -174,8 +186,9 @@
                                             <div id="faq{{ $index }}"
                                                 class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                                                 data-bs-parent="#faqAccordion">
-                                                <div class="accordion-body">
-                                                    {!! nl2br(e($faq->answer)) !!}
+                                                <div class="accordion-body bg-light text-dark">
+                                                    {!! $faq->answer !!}
+
                                                 </div>
                                             </div>
                                         </div>
