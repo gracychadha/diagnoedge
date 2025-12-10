@@ -13,7 +13,7 @@
 
     <title>{{ $seo->title ?? 'Welcome to Diagnoedge'}}</title>
     <meta name="keywords" content="{{ $seo->keywords ?? 'Diagnoedge'}}">
-    <meta name="description" content="{{ $seo->description  ?? 'Diagnoedge'}}">
+    <meta name="description" content="{{ $seo->description ?? 'Diagnoedge'}}">
 
 
 
@@ -129,7 +129,7 @@
         const btn = document.getElementById('bookingSubmit1');
         if (btn) btn.disabled = false;
     };
-   
+
     // INTEL FLAG SCRIPT FOR PHONE ID
     document.addEventListener('DOMContentLoaded', function () {
         const input = document.querySelector("#mobile1");
@@ -388,9 +388,9 @@
                     if (data.results.length > 0) {
                         data.results.forEach(item => {
                             output += `
-                            <div class="p-2 w-100 border-bottom result-item">
-                                ${item.title}
-                            </div>`;
+                              <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item">
+        ${item.title}
+    </a>`;
                         });
                     } else {
                         output = `<div class="p-2 text-danger">No related option found</div>`;

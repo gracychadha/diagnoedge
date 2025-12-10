@@ -376,10 +376,10 @@
                                 @forelse($packages as $package)
                                     <div class="swiper-slide">
                                         <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                            <div class="position-relative text-center py-4 bg-light">
+                                            <div class="position-relative text-center  bg-light">
                                                 <!-- ICON instead of big image -->
                                                  <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                    width="80" height="80" class="rounded-circle border p-3 shadow-sm"
+                                                     class="w-100"
                                                     alt="{{ $package->title }}"></a>
 
                                                 <!-- Discount badge (optional) -->
@@ -390,15 +390,15 @@
                                             </div>
 
                                             <div class="p-3">
-                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><h6 class="title-card mb-1">
+                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><h6 class="title-card mb-3">
                                                     {{ Str::limit($package->title, 60) }}
                                                 </h6></a>
 
                                                 @if($package->detail_id && is_array($package->detail_id) && count($package->detail_id) > 0)
-                                                    <p class="text-muted small mb-2">
+                                                    <p class="text-muted small pb-3 border-bottom-grey">
                                                         <span class="badge bg-light text-dark border">
                                                             {{ count($package->detail_id) }}
-                                                            Test{{ count($package->detail_id) > 1 ? 's' : '' }}
+                                                            Test{{ count($package->detail_id) > 1 ? 's' : '' }} | Parameter 1   
                                                         </span>
                                                     </p>
                                                 @endif

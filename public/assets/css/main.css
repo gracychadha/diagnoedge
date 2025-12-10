@@ -16658,7 +16658,7 @@ button:focus {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 .lab-test-card img {
-    height: 150px;
+    /* height: 150px; */
     object-fit: cover;
 }
 .badge {
@@ -17071,3 +17071,6 @@ text-align: justify;
     border: 1px solid #ccc !important;  /* add border only when needed */
 }
 
+.border-bottom-grey{
+    border-bottom:1px solid #a9adb0bf;
+}

@@ -42,7 +42,7 @@ use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
-
+use App\Http\Controllers\UserRegisterController;
 // for search
 Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
 
@@ -65,9 +65,9 @@ Route::get('/', function () {
 // for the sub parameter or health detail
 Route::get('/health-packages/{slug}', function ($slug) {
     $package = \App\Models\Subparameter::where('slug', $slug)
-                                       ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
-                                       ->where('status', 'active')
-                                       ->firstOrFail();
+        ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
+        ->where('status', 'active')
+        ->firstOrFail();
 
     return view('website.pages.health-packages-detail', compact('package'));
 })->name('health-package.detail');
@@ -76,10 +76,10 @@ Route::get('/health-packages/{slug}', function ($slug) {
 
 Route::get('/package/{slug}', function ($slug) {
     $package = Parameter::where('slug', $slug)
-                        ->orWhere('slug', null)
-                        ->where('title', 'LIKE', "%$slug%")
-                        ->where('status', 'active')
-                        ->firstOrFail();
+        ->orWhere('slug', null)
+        ->where('title', 'LIKE', "%$slug%")
+        ->where('status', 'active')
+        ->firstOrFail();
 
     return view('website.pages.package-detail', compact('package'));
 })->name('parameter-detail');
@@ -87,9 +87,9 @@ Route::get('/package/{slug}', function ($slug) {
 //health risk
 Route::get('/healthrisk/{slug}', function ($slug) {
     $package = \App\Models\HealthRisk::where('slug', $slug)
-                                       ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
-                                       ->where('status', 'active')
-                                       ->firstOrFail();
+        ->orWhere('slug', null)->whereRaw("LOWER(title) = ?", [strtolower(str_replace('-', ' ', $slug))])
+        ->where('status', 'active')
+        ->firstOrFail();
 
     return view('website.pages.healthrisk', compact('package'));
 })->name('healthrisk');
@@ -191,11 +191,32 @@ Route::post('/book-test', [BookingController::class, 'store'])->name('book.test'
 // +++++++++++++++++++++++++++++++++++++++++++++++
 // ALL THE ROUTES FOR BACKEND DASHBOARD
 // +++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
-    return view('admin.pages.dashboard');
+
+    $totalLeads = \App\Models\Contact::count();
+    $appointmentLeads = \App\Models\Appointment::count();
+    $doctorCount = \App\Models\Doctor::count();
+
+    return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount'));
+
+
 })->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    // FOR user creation
+    Route::get('/register', [UserRegisterController::class, 'index'])->name('register.index');
+    Route::post('/register/store', [UserRegisterController::class, 'store'])->name('register.store');
+
+
 
     // ────────────── Tests Details ──────────────
     Route::get('/tests', [TestController::class, 'index'])->name('admin.pages.test');
@@ -521,6 +542,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/seo-setting/view/{id}', [SeoSettingController::class, 'view']);
     Route::post('/seo-setting/update', [SeoSettingController::class, 'update']);
     Route::delete('/seo-setting/delete/{id}', [SeoSettingController::class, 'delete']);
+
+
 
     // ────────────── Website Setting ──────────────
 

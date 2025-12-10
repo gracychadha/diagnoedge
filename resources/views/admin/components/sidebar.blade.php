@@ -142,6 +142,15 @@
 
                 </ul>
             </li>
+            <li><a href="javascript:void(0);" class="ai-icon has-arrow" aria-expanded="false">
+                    <i class="flaticon-381-id-card-4"></i>
+                    <span class="nav-text">User</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('register.index') }}">Add User</a></li>
+
+                </ul>
+            </li>
             <li>
                 <div class="custom-btn-logout">
                     <a href="#" class="dropdown-item ai-icon"

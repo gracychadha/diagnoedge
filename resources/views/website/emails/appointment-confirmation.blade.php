@@ -23,8 +23,8 @@
                                 <tr>
                                     <!-- LOGO LEFT -->
                                     <td width="50%" align="left" style="vertical-align:middle;">
-                                       <a href="https://diagnoedge.vibrantick.org" target="_blank">
-                                         <img src="https://diagnoedge.vibrantick.org/assets/images/logo/diagno-logo.png"
+                                       <a href="https://diagnoedgelabs.com/" target="_blank">
+                                         <img src="https://diagnoedgelabs.com/assets/images/logo/diagno-logo.png"
                                             width="150" alt="Diagnoedge Logo" style="display:block;">
                                        </a>
                                     </td>
@@ -41,7 +41,7 @@
                                                 <td><a href="tel:+91 98765 12345" target="_blank">📞 +91 98765 12345</a></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="mailto:info@diagnoedge.com" target="_blank">✉️ info@diagnoedge.com</a></td>
+                                                <td><a href="mailto:info@diagnoedgelabs.com" target="_blank">✉️ info@diagnoedgelabs.com</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -131,7 +131,7 @@
                     <!-- Contact Button -->
                     <tr>
                         <td align="center" style="padding-bottom:25px;">
-                            <a href="https://diagnoedge.vibrantick.org/contact-us" style="background:#4CAF50; color:#ffffff; padding:12px 25px; border-radius:4px;
+                            <a href="https://diagnoedgelabs.com/contact-us" style="background:#4CAF50; color:#ffffff; padding:12px 25px; border-radius:4px;
                                        text-decoration:none; font-size:14px; display:inline-block;" target="_blank">
                                 Contact Us
                             </a>

@@ -27,6 +27,5 @@ class DatabaseSeeder extends Seeder
 
         // to create seo pages 
         $this->call(SeoPagesSeeder::class);
-
     }
 }

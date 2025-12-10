@@ -6,7 +6,8 @@
         <div class="container-fluid">
             <div class="form-head d-flex mb-3 mb-md-4 align-items-start">
                 <div class="me-auto d-none d-lg-block">
-                    <h3 class="text-black font-w600">Welcome  <strong class="text-dark">{{ auth()->user()->name }}</strong>!</h3>
+                    <h3 class="text-black font-w600">Welcome <strong class="text-dark">{{ auth()->user()->name }}</strong>!
+                    </h3>
                     <p class="mb-0 fs-18">Diagnoedge Admin Dashboard </p>
                 </div>
 
@@ -23,9 +24,9 @@
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <div class="media-body">
-                                    <p class="mb-1">Total Patient</p>
+                                    <p class="mb-1">Total Appointments</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">783k</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">{{ $appointmentLeads }}</h2>
                                         <div>
                                             <svg width="28" height="19" viewbox="0 0 28 19" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +67,7 @@
                                 <div class="media-body">
                                     <p class="mb-1">Doctor</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">76</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">{{ $doctorCount }}</h2>
                                         <div>
                                             <svg width="28" height="19" viewbox="0 0 28 19" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -105,9 +106,9 @@
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <div class="media-body">
-                                    <p class="mb-1">Appointment</p>
+                                    <p class="mb-1">Contact Leads</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">76</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">{{ $totalLeads }}</h2>
                                         <div>
                                             <svg width="28" height="19" viewbox="0 0 28 19" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -171,9 +172,9 @@
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <div class="media-body">
-                                    <p class="mb-1">Hospital Earning</p>
+                                    <p class="mb-1">Appointments</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">$56k</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 me-3">{{ $appointmentLeads }}</h2>
                                         <div>
                                             <svg width="28" height="19" viewbox="0 0 28 19" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +231,7 @@
                     <div class="card">
                         <div class="card-header d-sm-flex d-block border-0 pb-0">
                             <h3 class="fs-20 mb-3 mb-sm-0 text-black">Patient Statistic</h3>
-                            <div class="card-action card-tabs mt-3 mt-sm-0 mt-3 mt-sm-0">
+                            <div class="card-action card-tabs  mt-sm-0 mt-3 mt-sm-0">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#monthly" role="tab">

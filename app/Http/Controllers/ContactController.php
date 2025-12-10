@@ -7,6 +7,12 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+    // Total Count
+    public function countLead()
+    {
+        $totalLeads = Contact::count();
+        return view('admin.pages.dashboard' , compact('totalLeads'));
+    }
 
 
     // TO FETCH ALL THE DATA OF Contact
