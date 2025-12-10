@@ -88,8 +88,8 @@
 
                                 <div class="about-footer wow fadeInUp">
                                     <div class="about-button-wappper">
-                                        <a href="{{ route('about-us') }}" class="theme-button style-1">
-                                            <span data-text="More About">More About</span>
+                                        <a href="{{ route('contact-us') }}" class="theme-button style-1">
+                                            <span data-text="More About">Contact Us</span>
                                             <i class="fa-solid fa-arrow-right"></i>
                                         </a>
                                     </div>

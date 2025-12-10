@@ -270,130 +270,40 @@
                     <div class="card">
                         <div class="card-header border-0 pb-0">
                             <h3 class="fs-20 mb-0 text-black">Top Rated Doctors</h3>
-                            <a href="page-review.html" class="text-primary font-w500">View more >></a>
+                            <a href="" class="text-primary font-w500">View more >></a>
                         </div>
                         <div class="card-body">
-                            <div class="assigned-doctor owl-carousel">
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/5.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 4.2</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Alexandro Jr.</a></h5>
-                                        <span class="text-primary mb-2 d-block">Dentist</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
+                            <div class="assigned-doctor owl-carousel align-items-center">
+                                @if($doctors->count() > 0)
+
+                                    @foreach ($doctors as $doctor)
+                                        <div class="items">
+                                            <div class="text-center">
+                                                <img src="{{ asset('uploads/' . $doctor->image) }}" alt="Doctor Image">
+
+                                                <div class="dr-star"><i class="las la-star"></i> 5</div>
+
+                                                <h5 class="fs-16 mb-1 font-w600">
+                                                    <a class="text-black" href="#">
+                                                        Dr. {{ $doctor->fullname ?: 'No Name' }}
+                                                    </a>
+                                                </h5>
+
+                                                <span class="text-primary mb-2 d-block">
+                                                    {{ $doctor->designation ?: 'No Designation' }}
+                                                </span>
+
+                                                <p class="fs-12">
+                                                    Specialization: {{ $doctor->specialization ?: 'No Data' }}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/1.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 4.1</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Samantha</a></h5>
-                                        <span class="text-primary mb-2 d-block">Physical Therapy</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/2.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 4.3</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Aliandro M</a></h5>
-                                        <span class="text-primary mb-2 d-block">Nursing</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/3.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 4.4</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Samuel</a></h5>
-                                        <span class="text-primary mb-2 d-block">Gynecologist</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/4.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 3.2</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Melinda</a></h5>
-                                        <span class="text-primary mb-2 d-block">Dentist</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/1.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 4.2</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Alexandro Jr.</a></h5>
-                                        <span class="text-primary mb-2 d-block">Dentist</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/2.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 2.2</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Aliandro M</a></h5>
-                                        <span class="text-primary mb-2 d-block">Nursing</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="items">
-                                    <div class="text-center">
-                                        <img src="images/doctors/3.jpg" alt="">
-                                        <div class="dr-star"><i class="las la-star"></i> 1.2</div>
-                                        <h5 class="fs-16 mb-1 font-w600"><a class="text-black" href="page-review.html">Dr.
-                                                Samuel</a></h5>
-                                        <span class="text-primary mb-2 d-block">Gynecologist</span>
-                                        <p class="fs-12">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <div class="social-media">
-                                            <a href="javascript:void(0);"><i class="lab la-instagram"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a>
-                                            <a href="javascript:void(0);"><i class="lab la-twitter"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endforeach
+
+                                @else
+                                    <p class="text-center text-muted">No doctors present.</p>
+                                @endif
+                               
                             </div>
                         </div>
                     </div>

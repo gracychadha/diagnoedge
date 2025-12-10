@@ -18,8 +18,8 @@
                     </div>
                 </div>
                 <div class="ms-auto">
-                    <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">+ Book Appointment</a>
+                    {{-- <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">+ Book Appointment</a> --}}
                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
 
                     

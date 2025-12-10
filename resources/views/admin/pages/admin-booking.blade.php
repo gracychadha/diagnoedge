@@ -20,7 +20,7 @@
                 <div class="ms-auto">
                     <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">+ Book Appointment</a>
-                    <a href="doctor-list.html" class="btn btn-primary btn-rounded">Doctor Schedule</a>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
                 </div>
             </div>
             <div class="row">
@@ -49,12 +49,12 @@
                                     <tbody>
                                         @forelse($bookings as $booking)
                                             <tr>
-                                                <td>
+                                                 <td>
                                                     <div class="checkbox text-end align-self-center">
                                                         <div class="form-check custom-checkbox ">
-                                                            <input type="checkbox" class="form-check-input" id="customCheckBox1"
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $booking->id }}"
                                                                 required="">
-                                                            <label class="form-check-label" for="customCheckBox1"></label>
+                                                            <label class="form-check-label" for="checkbox"></label>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -82,7 +82,7 @@
                                         @empty
                                             <tr>
                                                 <td colspan="6" class="text-center py-5 text-muted">
-                                                    <i class="fas fa-vial fa-3x mb-3"></i><br>
+
                                                     No Booking Leads Found
                                                 </td>
                                             </tr>
@@ -99,3 +99,116 @@
 
     </div>
 @endsection
+@push('scripts')
+    <script>
+        // booking delelte
+        $(document).on("click", ".deleteBook", function () {
+
+            let id = $(this).data("id");
+            let row = $(this).closest("tr");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This Booking Lead will be permanently deleted!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "{{ url('/booking-lead/delete') }}/" + id,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+
+                            Swal.fire("Deleted!", "Booking Query removed successfully.", "success");
+
+                            // remove row
+                            row.fadeOut(600, function () {
+                                $(this).remove();
+                            });
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
+        $(document).ready(function () {
+
+            // SELECT ALL
+            $("#checkAll").on("change", function () {
+                $(".checkItem").prop("checked", $(this).prop("checked"));
+            });
+
+            // DELETE SELECTED
+            $('.deleteSelected').click(function () {
+
+                let selected = [];
+
+                $(".checkItem:checked").each(function () {
+                    selected.push($(this).val());
+                });
+
+                console.log("Selected IDs:", selected); // debug
+
+                if (selected.length === 0) {
+                    Swal.fire("Oops!", "Please select at least one Booking.", "warning");
+                    return;
+                }
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Selected Booking will be deleted permanently!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete selected!"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            url: "/booking-leads/delete-selected",
+
+                            type: "POST",
+                            data: {
+                                ids: selected,
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function (response) {
+                                Swal.fire("Deleted!", "Selected Booking removed.", "success");
+
+                                selected.forEach(id => {
+                                    $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                        $(this).remove();
+                                    });
+                                });
+                            },
+                            error: function (xhr) {
+                                console.log(xhr.responseText);
+                                Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                            }
+                        });
+
+                    }
+                });
+
+            });
+
+        });
+
+
+
+
+    </script>
+@endpush

@@ -18,8 +18,8 @@ class TestController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'  => 'required|string|max:255',
-            'icon'   => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'title' => 'required|string|max:255',
+            'icon' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'status' => 'required|in:active,inactive'
         ]);
 
@@ -37,8 +37,8 @@ class TestController extends Controller
     public function update(Request $request, Test $test)
     {
         $request->validate([
-            'title'  => 'required|string|max:255',
-            'icon'   => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'title' => 'required|string|max:255',
+            'icon' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'status' => 'required|in:active,inactive'
         ]);
 
@@ -64,5 +64,15 @@ class TestController extends Controller
         $test->delete();
 
         return back()->with('success', 'Test deleted!');
+    }
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        Test::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 }

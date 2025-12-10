@@ -17,7 +17,10 @@
     </div>
 </div> --}}
 <!-- preloader end -->
-
+@php
+    $settings = App\Models\Setting::first();
+    $socials = $settings->social_links;
+@endphp
 <!-- back to top start -->
 <button id="back-top" class="back-to-top" aria-label="back to top">
     <i class="fa-solid fa-chevron-up"></i>
@@ -80,7 +83,7 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div class="offcanvas-cta-content">
-                                <p>Baltana, Zirakpur</p>
+                                <p>{{ $settings->location ?? 'Batlana , Zirakpur' }}</p>
                             </div>
                         </div>
                         <!-- offcanvas cta list end -->
@@ -90,7 +93,8 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="offcanvas-cta-content">
-                                <a href="mailto:info@diagnoedge.com">info@diagnoedge.com</a>
+                                <a href="mailto:{{ $settings->email ?? 'info@diagnoedgelabs.com' }}" target="_blank">{{
+                                    $settings->email ?? 'info@diagnoedgelabs.com' }}</a>
                             </div>
                         </div>
                         <!-- offcanvas cta list end -->
@@ -100,7 +104,8 @@
                                 <i class="fa-solid fa-phone-volume"></i>
                             </div>
                             <div class="offcanvas-cta-content">
-                                <a href="tel:123446788">+1 234 467 88</a>
+                                <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}"
+                                    target="_blank">{{ $settings->phone1 ?? '+91 90909 90909' }}</a>
                             </div>
                         </div>
                         <!-- offcanvas cta list end -->
@@ -127,18 +132,38 @@
                 <!-- widget content start -->
                 <div class="widget-content">
                     <ul class="social-icon">
-                        <li>
-                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                        </li>
+
+                        @if(!empty($socials['facebook']))
+                            <li>
+                                <a href="{{ $socials['facebook'] }}" target="_blank">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(!empty($socials['instagram']))
+                            <li>
+                                <a href="{{ $socials['instagram'] }}" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(!empty($socials['linkedin']))
+                            <li>
+                                <a href="{{ $socials['linkedin'] }}" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(!empty($socials['twitter']))
+                            <li>
+                                <a href="{{ $socials['twitter'] }}" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 <!-- widget content end -->
@@ -164,10 +189,12 @@
                         <div class="header-contact-info">
                             <ul>
                                 <li>
-                                    <p><i class="fa-solid fa-location-dot"></i> Baltana , Zirakpur</p>
+                                    <p><i class="fa-solid fa-location-dot"></i>
+                                        {{ $settings->location ?? 'Batlana , Zirakpur' }}</p>
                                 </li>
                                 <li>
-                                    <p><i class="fa-solid fa-envelope"></i> info@diagnoedge.com</p>
+                                    <p><i class="fa-solid fa-envelope"></i> {{ $settings->email ??
+                                        'info@diagnoedgelabs.com' }}</p>
                                 </li>
                                 <li>
                                     <p><i class="fa-solid fa-clock"></i> Mon - Fri 8:00 - 6:30</p>
@@ -259,74 +286,7 @@
                                             <a href="{{ route('our-blogs') }}">Our Blogs </a>
 
                                         </li>
-                                        {{-- <li>
-                                            <a href="services.html">services<i class="fa-solid fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="services-details.html">Services Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="about.html">Pages<i class="fa-solid fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="appointment.html">Appointment</a></li>
-                                                <li class="has-dropdown">
-                                                    <a href="doctor.html">Doctors <i
-                                                            class="fa-solid fa-chevron-right"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="doctor.html">Doctors</a></li>
-                                                        <li><a href="doctor-details.html">Doctors Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="portfolio.html">Portfolio <i
-                                                            class="fa-solid fa-chevron-right"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="shop.html">Shop <i
-                                                            class="fa-solid fa-chevron-right"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown">
-                                                    <a href="doctor.html">Gallery <i
-                                                            class="fa-solid fa-chevron-right"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="image-gallery.html">Image Gallery</a></li>
-                                                        <li><a href="video-gallery.html">Video Gallery</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="testimonials.html">Testimonials</a></li>
-                                                <li><a href="faq.html">Faq's</a></li>
-                                                <li><a href="error.html">404 Error</a></li>
-                                                <li class="has-dropdown">
-                                                    <a href="sign-in.html">Authentication <i
-                                                            class="fa-solid fa-chevron-right"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="sign-in.html">Sign In </a></li>
-                                                        <li><a href="register.html">Register</a></li>
-                                                        <li><a href="forget-password.html">Forgot Password</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="blog.html">Blog <i class="fa-solid fa-chevron-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li> --}}
+
                                         <li>
                                             <a href="{{  route('contact-us') }}">Contact Us</a>
                                         </li>

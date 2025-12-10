@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="ms-auto">
-                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded ">Delete Selected</a>
+                     <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
                 </div>
             </div>
             <div class="row">
@@ -51,9 +51,9 @@
                                                 <td>
                                                     <div class="checkbox text-end align-self-center">
                                                         <div class="form-check custom-checkbox ">
-                                                            <input type="checkbox" class="form-check-input" id="customCheckBox1"
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $lead->id }}"
                                                                 required="">
-                                                            <label class="form-check-label" for="customCheckBox1"></label>
+                                                            <label class="form-check-label" for="checkbox"></label>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -209,3 +209,165 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+<script>
+      $(document).ready(function () {
+            $('.viewContact').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/contacts/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#c_name').text(res.fullname);
+                        $('#c_email').text(res.email);
+                        $('#c_phone').text(res.phone);
+                        $('#c_subject').text(res.subject);
+                        $('#c_message').html(res.message);
+
+                        $('#viewContact').modal('show');
+                    }
+                });
+            });
+            $('.editContact').click(function () {
+                let id = $(this).data('id');
+
+                $.ajax({
+                    url: "/contacts/view/" + id,
+                    type: "GET",
+                    success: function (res) {
+                        $('#edit_id').val(res.id);
+                        $('#edit_fullname').val(res.fullname);
+                        $('#edit_email').val(res.email);
+                        $('#edit_mobile').val(res.phone);
+                        $('#edit_subject').val(res.subject);
+                        $('#edit_message').val(res.message);
+
+                        $('#editContact').modal('show');
+                    }
+                });
+            });
+            $('#updateContactForm').submit(function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(this);
+
+                $.ajax({
+                    url: "/contacts/update",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        Swal.fire("Updated!", "Contact Lead updated successfully!", "success");
+                        $('#editContact').modal('hide');
+                        location.reload();
+                    }
+                });
+
+            });
+            $('.deleteApp').click(function () {
+
+                let id = $(this).data("id");
+                let row = $(this).closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This Contact Lead will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            url: "{{ url('/contacts/delete') }}/" + id,
+                            type: "DELETE",
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function (response) {
+
+                                Swal.fire("Deleted!", "Contact Query removed successfully.", "success");
+
+                                // remove row
+                                row.fadeOut(600, function () {
+                                    $(this).remove();
+                                });
+                            }
+                        });
+
+                    }
+                });
+
+            });
+        });
+
+        // SELECT ALL
+    $("#checkAll").on("change", function () {
+        $(".checkItem").prop("checked", $(this).prop("checked"));
+    });
+
+    // DELETE SELECTED
+    $('.deleteSelected').click(function () {
+
+        let selected = [];
+
+        $(".checkItem:checked").each(function () {
+            selected.push($(this).val());
+        });
+
+        if (selected.length === 0) {
+            Swal.fire("Oops!", "Please select at least one contact.", "warning");
+            return;
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Selected Contact will be deleted permanently!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete selected!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                   url: "/contacts/delete-selected",
+
+                    type: "POST",
+                    data: {
+                        ids: selected,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function (response) {
+                        Swal.fire("Deleted!", "Selected contact removed.", "success");
+
+                        selected.forEach(id => {
+                            $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                $(this).remove();
+                            });
+                        });
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                    }
+                });
+
+            }
+        });
+
+    });
+
+
+</script>
+@endpush

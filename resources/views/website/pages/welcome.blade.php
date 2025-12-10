@@ -165,175 +165,194 @@
         </section>
         <!-- product section start -->
         <section class="product-section background-one pt-50  md-pt-30 pb-50 md-pb-30">
-         <div class="container">
-    {{-- Tru Health Packages Section --}}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h5 class="text-center pt-10 pb-10">Tru Health Packages</h5>
-            </div>
-            <div class="pricing-tabs">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For Male</button>
-                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">Tru Health Packages</button>
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For Female</button>
+            <div class="container">
+                {{-- Tru Health Packages Section --}}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 class="text-center pt-10 pb-10">Tru Health Packages</h5>
+                        </div>
+                        <div class="pricing-tabs">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For
+                                        Male</button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">Tru
+                                        Health Packages</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For
+                                        Female</button>
+                                </div>
+                            </nav>
+                        </div>
                     </div>
-                </nav>
-            </div>
-        </div>
-    </div>
+                </div>
 
-    @php
-        $packages = \App\Models\Subparameter::where('status', 'active')
-                                           ->latest()
-                                           ->get();
-    @endphp
+                @php
+                    $packages = \App\Models\Subparameter::where('status', 'active')
+                        ->latest()
+                        ->get();
+                @endphp
 
-    <div class="tab-content">
+                <div class="tab-content">
 
-        {{-- All Tru Health Packages --}}
-        <div class="tab-pane fade active show" id="nav-THP">
-            <div class="swiper myProductSwiper pb-20 p-sm-10">
-                <div class="swiper-wrapper">
-                    @forelse($packages as $pkg)
-                        <div class="swiper-slide">
-                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                <div class="position-relative">
-                                  <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">  <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
-                                         class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
-                                    <span class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
-                                        {{ rand(15, 50) }}
-                                    </span>
-                                </div>
-                                <div class="p-3">
-                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                        <h6 class="title-card mb-1">
-                                            {{ Str::limit($pkg->title, 60) }}
-                                        </h6>
-                                    </a>
+                    {{-- All Tru Health Packages --}}
+                    <div class="tab-pane fade active show" id="nav-THP">
+                        <div class="swiper myProductSwiper pb-20 p-sm-10">
+                            <div class="swiper-wrapper">
+                                @forelse($packages as $pkg)
+                                    <div class="swiper-slide">
+                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                            <div class="position-relative">
+                                                <a
+                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                                    <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
+                                                        class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
+                                                <span
+                                                    class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
+                                                    {{ rand(15, 50) }}
+                                                </span>
+                                            </div>
+                                            <div class="p-3">
+                                                <a
+                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                                    <h6 class="title-card mb-1">
+                                                        {{ Str::limit($pkg->title, 60) }}
+                                                    </h6>
+                                                </a>
 
-                                    @php
-                                        $testCount = is_array($pkg->test_ids) ? count($pkg->test_ids) : 0;
-                                        $parameterCount = is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0;
-                                        
+                                                @php
+                                                    $testCount = is_array($pkg->test_ids) ? count($pkg->test_ids) : 0;
+                                                    $parameterCount = is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0;
 
-                                    @endphp
 
-                                    @if($testCount > 0)
-                                        <p class="text-muted small mb-2">
-                                            <span class="badge bg-light text-dark border">
-                                                {{ $testCount }} Profile | {{ $parameterCount  }} Parameters
-                                            </span>
-                                        </p>
-                                    @endif
+                                                @endphp
 
-                                    <hr class="my-2">
-                                    <p class="fw-semibold fs-6 mb-3">
-                                        Rs. {{ number_format((float)($pkg->price ?? 0)) }}
-                                    </p>
-                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                        <span data-text="Add to Cart">Add to Cart</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
+                                                @if($testCount > 0)
+                                                    <p class="text-muted small mb-2">
+                                                        <span class="badge bg-light text-dark border">
+                                                            {{ $testCount }} Profile | {{ $parameterCount  }} Parameters
+                                                        </span>
+                                                    </p>
+                                                @endif
+
+                                                <hr class="my-2">
+                                                <p class="fw-semibold fs-6 mb-3">
+                                                    Rs. {{ number_format((float) ($pkg->price ?? 0)) }}
+                                                </p>
+                                                <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                                    <span data-text="Add to Cart">Add to Cart</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="swiper-slide">
+                                        <div class="text-center py-5 w-100 text-muted">
+                                            No packages available
+                                        </div>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
-                    @empty
-                        <div class="swiper-slide">
-                            <div class="text-center py-5 w-100 text-muted">
-                                No packages available
+                    </div>
+
+                    {{-- Male Tab--}}
+                    <div class="tab-pane fade" id="nav-male-THP">
+                        <div class="swiper myProductSwiper pb-20">
+                            <div class="swiper-wrapper">
+                                @forelse($packages as $pkg)
+                                    <div class="swiper-slide">
+                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                            <div class="position-relative">
+                                                <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test1.jpg') }}"
+                                                    class="img-fluid w-100" alt="{{ $pkg->title }}">
+                                                <span
+                                                    class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">
+                                                    M
+                                                </span>
+                                            </div>
+                                            <div class="p-3">
+                                                <a
+                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                                    <h6 class="title-card mb-1">
+                                                        {{ Str::limit($pkg->title, 60) }}
+                                                    </h6>
+                                                </a>
+                                                <p class="text-muted small mb-2">
+                                                    <span class="badge bg-light text-dark border">
+                                                        {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile |
+                                                        {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }}
+                                                        Parameters
+                                                    </span>
+                                                </p>
+                                                <hr class="my-2">
+                                                <p class="fw-semibold fs-6 mb-3">Rs.
+                                                    {{ number_format((float) ($pkg->price ?? 0)) }}</p>
+                                                <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                                    <span data-text="Add to Cart">Add to Cart</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="swiper-slide text-center py- py-5 text-muted w-100">No male packages</div>
+                                @endforelse
                             </div>
                         </div>
-                    @endforelse
+                    </div>
+
+                    {{-- Female Tab --}}
+                    <div class="tab-pane fade" id="nav-female-THP">
+                        <div class="swiper myProductSwiper pb-20">
+                            <div class="swiper-wrapper">
+                                @forelse($packages as $pkg)
+                                    <div class="swiper-slide">
+                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
+                                            <div class="position-relative">
+                                                <a
+                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                                    <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
+                                                        class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
+                                                <span
+                                                    class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">
+                                                    F
+                                                </span>
+                                            </div>
+                                            <div class="p-3">
+                                                <a
+                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
+                                                    <h6 class="title-card mb-1">
+                                                        {{ Str::limit($pkg->title, 60) }}
+                                                    </h6>
+                                                </a>
+                                                <p class="text-muted small mb-2">
+                                                    <span class="badge bg-light text-dark border">
+                                                        {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile |
+                                                        {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }}
+                                                        Parameters
+                                                    </span>
+                                                </p>
+                                                <hr class="my-2">
+                                                <p class="fw-semibold fs-6 mb-3">Rs.
+                                                    {{ number_format((float) ($pkg->price ?? 0)) }}</p>
+                                                <a href="{{ route('appointment') }}" class="theme-button style-1">
+                                                    <span data-text="Add to Cart">Add to Cart</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="swiper-slide text-center py-5 text-muted w-100">No female packages</div>
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-
-        {{-- Male Tab--}}
-        <div class="tab-pane fade" id="nav-male-THP">
-            <div class="swiper myProductSwiper pb-20">
-                <div class="swiper-wrapper">
-                    @forelse($packages as $pkg)
-                        <div class="swiper-slide">
-                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                <div class="position-relative">
-                                    <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test1.jpg') }}"
-                                         class="img-fluid w-100" alt="{{ $pkg->title }}">
-                                    <span class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">
-                                        M
-                                    </span>
-                                </div>
-                                <div class="p-3">
-                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                        <h6 class="title-card mb-1">
-                                            {{ Str::limit($pkg->title, 60) }}
-                                        </h6>
-                                    </a>
-                                    <p class="text-muted small mb-2">
-                                        <span class="badge bg-light text-dark border">
-                                            {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile | {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }} Parameters
-                                        </span>
-                                    </p>
-                                    <hr class="my-2">
-                                    <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float)($pkg->price ?? 0)) }}</p>
-                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                        <span data-text="Add to Cart">Add to Cart</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @empty
-                        <div class="swiper-slide text-center py- py-5 text-muted w-100">No male packages</div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-
-        {{-- Female Tab --}}
-        <div class="tab-pane fade" id="nav-female-THP">
-            <div class="swiper myProductSwiper pb-20">
-                <div class="swiper-wrapper">
-                    @forelse($packages as $pkg)
-                        <div class="swiper-slide">
-                            <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                <div class="position-relative">
-                                  <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">  <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
-                                         class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
-                                    <span class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">
-                                        F
-                                    </span>
-                                </div>
-                                <div class="p-3">
-                                   <a href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                        <h6 class="title-card mb-1">
-                                            {{ Str::limit($pkg->title, 60) }}
-                                        </h6>
-                                    </a>
-                                    <p class="text-muted small mb-2">
-                                        <span class="badge bg-light text-dark border">
-                                            {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile | {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }} Parameters
-                                        </span>
-                                    </p>
-                                    <hr class="my-2">
-                                    <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float)($pkg->price ?? 0)) }}</p>
-                                    <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                        <span data-text="Add to Cart">Add to Cart</span>
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @empty
-                        <div class="swiper-slide text-center py-5 text-muted w-100">No female packages</div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
 
             {{-- section for test packages start FOR Popular Tests --}}
             <div class="container pt-30 md-pt-10">
@@ -378,9 +397,10 @@
                                         <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                             <div class="position-relative text-center  bg-light">
                                                 <!-- ICON instead of big image -->
-                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                     class="w-100"
-                                                    alt="{{ $package->title }}"></a>
+                                                <a
+                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img
+                                                        src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
+                                                        class="w-100" alt="{{ $package->title }}"></a>
 
                                                 <!-- Discount badge (optional) -->
                                                 <span
@@ -390,15 +410,18 @@
                                             </div>
 
                                             <div class="p-3">
-                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><h6 class="title-card mb-3">
-                                                    {{ Str::limit($package->title, 60) }}
-                                                </h6></a>
+                                                <a
+                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
+                                                    <h6 class="title-card mb-3">
+                                                        {{ Str::limit($package->title, 60) }}
+                                                    </h6>
+                                                </a>
 
                                                 @if($package->detail_id && is_array($package->detail_id) && count($package->detail_id) > 0)
                                                     <p class="text-muted small pb-3 border-bottom-grey">
                                                         <span class="badge bg-light text-dark border">
                                                             {{ count($package->detail_id) }}
-                                                            Test{{ count($package->detail_id) > 1 ? 's' : '' }} | Parameter 1   
+                                                            Test{{ count($package->detail_id) > 1 ? 's' : '' }} | Parameter 1
                                                         </span>
                                                     </p>
                                                 @endif
@@ -435,14 +458,19 @@
                                     <div class="swiper-slide">
                                         <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                             <div class="position-relative text-center py-4 bg-light">
-                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                    width="80" height="80" class="rounded-circle border p-3 shadow-sm"
-                                                    alt="{{ $package->title }}"></a>
+                                                <a
+                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img
+                                                        src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
+                                                        width="80" height="80" class="rounded-circle border p-3 shadow-sm"
+                                                        alt="{{ $package->title }}"></a>
                                                 <span
                                                     class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">M</span>
                                             </div>
                                             <div class="p-3">
-                                                <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"> <h6 class="title-card mb-1">{{ Str::limit($package->title, 60) }}</h6></a>
+                                                <a
+                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
+                                                    <h6 class="title-card mb-1">{{ Str::limit($package->title, 60) }}</h6>
+                                                </a>
                                                 @if($package->detail_id && is_array($package->detail_id))
                                                     <p class="text-muted small mb-2">
                                                         <span
@@ -451,7 +479,8 @@
                                                     </p>
                                                 @endif
                                                 <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float) $package->price) }}
+                                                <p class="fw-semibold fs-6 mb-3">Rs.
+                                                    {{ number_format((float) $package->price) }}
                                                 </p>
                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"
                                                     class="theme-button style-1">
@@ -480,23 +509,29 @@
                                     <div class="swiper-slide">
                                         <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
                                             <div class="position-relative text-center py-4 bg-light">
-                                                   <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"> <img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                    width="80" height="80" class="rounded-circle border p-3 shadow-sm"
-                                                    alt="{{ $package->title }}"></a>
+                                                <a
+                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
+                                                    <img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
+                                                        width="80" height="80" class="rounded-circle border p-3 shadow-sm"
+                                                        alt="{{ $package->title }}"></a>
                                                 <span
                                                     class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">F</span>
                                             </div>
                                             <div class="p-3">
                                                 <h6 class="title-card mb-1">{{ Str::limit($package->title, 60) }}</h6>
                                                 @if($package->detail_id && is_array($package->detail_id))
-                                                       <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"> <p class="text-muted small mb-2">
-                                                        <span
-                                                            class="badge bg-light text-dark border">{{ count($package->detail_id) }}
-                                                            Tests</span>
-                                                    </p></a>
+                                                    <a
+                                                        href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
+                                                        <p class="text-muted small mb-2">
+                                                            <span
+                                                                class="badge bg-light text-dark border">{{ count($package->detail_id) }}
+                                                                Tests</span>
+                                                        </p>
+                                                    </a>
                                                 @endif
                                                 <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs. {{ number_format((float) $package->price) }}
+                                                <p class="fw-semibold fs-6 mb-3">Rs.
+                                                    {{ number_format((float) $package->price) }}
                                                 </p>
                                                 <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"
                                                     class="theme-button style-1">
@@ -532,36 +567,36 @@
                     </div>
 
                     @php
-    $healthRisks = \App\Models\HealthRisk::where('status', 'active')->get();
-@endphp
+                        $healthRisks = \App\Models\HealthRisk::where('status', 'active')->get();
+                    @endphp
 
-                  <div class="row test-section services-section-1 justify-content-center">
+                    <div class="row test-section services-section-1 justify-content-center">
 
-    @if($healthRisks->isNotEmpty())
-        @foreach ($healthRisks as $risk)
-            <div class="col-lg-2 test-card shadow">
-                <div class="test-card-img">
-                    <img
-                        src="{{ $risk->icon ? Storage::url($risk->icon) : asset('assets/images/services/icon-service-1.png') }}">
-                </div>
-              <div class="title text-center">
-    <a href="{{ route('healthrisk', $risk->slug ?? Str::slug($risk->title)) }}">
-        {{ $risk->title ?? 'No Title Available' }}
-    </a>
-</div>
+                        @if($healthRisks->isNotEmpty())
+                            @foreach ($healthRisks as $risk)
+                                <div class="col-lg-2 test-card shadow">
+                                    <div class="test-card-img">
+                                        <img
+                                            src="{{ $risk->icon ? Storage::url($risk->icon) : asset('assets/images/services/icon-service-1.png') }}">
+                                    </div>
+                                    <div class="title text-center">
+                                        <a href="{{ route('healthrisk', $risk->slug ?? Str::slug($risk->title)) }}">
+                                            {{ $risk->title ?? 'No Title Available' }}
+                                        </a>
+                                    </div>
 
-            </div>
-        @endforeach
-    @else
-        <div class="col-lg-2 test-card shadow">
-            <div class="test-card-img">
-                <img src="{{ asset('assets/images/services/icon-service-1.png') }}">
-            </div>
-            <div class="title text-center">No Health Risks Available</div>
-        </div>
-    @endif
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="col-lg-2 test-card shadow">
+                                <div class="test-card-img">
+                                    <img src="{{ asset('assets/images/services/icon-service-1.png') }}">
+                                </div>
+                                <div class="title text-center">No Health Risks Available</div>
+                            </div>
+                        @endif
 
-</div>
+                    </div>
 
 
                 </div>
@@ -959,8 +994,9 @@
                         $section?->title2,
                         $section?->title3,
                         $section?->title4,
-                    ]);
+                    ])->filter();
                 @endphp
+
 
                 <div class="section-title wow fadeInUp" data-wow-delay=".2s">
                     <span class="sub-title">Accreditations & Certifications</span>

@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\JobCareerApplicationController;
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
@@ -43,6 +44,7 @@ use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
 use App\Http\Controllers\UserRegisterController;
+use App\Http\Controllers\CareerController;
 // for search
 Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
 
@@ -115,6 +117,11 @@ Route::get('/corporate', function () {
 Route::get('/career', function () {
     return view('website.pages.career');
 })->name('career');
+Route::get('/career-form/{slug}', [JobCareerController::class, 'apply'])->name('career-form');
+
+
+Route::post('/career-form/submit', [JobCareerApplicationController::class, 'store'])->name('career-form.store');
+
 Route::get('/privacy-policy', function () {
     return view('website.pages.privacy-policy');
 })->name('privacy-policy');
@@ -204,8 +211,12 @@ Route::get('/dashboard', function () {
     $totalLeads = \App\Models\Contact::count();
     $appointmentLeads = \App\Models\Appointment::count();
     $doctorCount = \App\Models\Doctor::count();
+    // to fetch all doctor
+    $doctors = Doctor::orderBy('id', 'desc')->get();
 
-    return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount'));
+    return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount', 'doctors'));
+
+
 })->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -221,6 +232,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/tests', [TestController::class, 'store'])->name('admin.tests.store');
     Route::put('/tests/{test}', [TestController::class, 'update'])->name('admin.tests.update');
     Route::delete('/tests/{test}', [TestController::class, 'destroy'])->name('admin.tests.destroy');
+    Route::post('/tests/delete-selected', [TestController::class, 'deleteSelected'])
+        ->name('tests.delete-selected');
 
     // ────────────── PARAMETERS ──────────────
 
@@ -461,6 +474,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
     Route::post('/doctors/update', [DoctorController::class, 'update']);
     Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
+    Route::post('/doctors/delete-selected', [DoctorController::class, 'deleteSelected'])
+        ->name('doctors.delete-selected');
 
 
     // FOR APPOINTMENT
@@ -482,10 +497,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/contacts/view/{id}', [ContactController::class, 'view']);
     Route::post('/contacts/update', [ContactController::class, 'update']);
     Route::delete('/contacts/delete/{id}', [ContactController::class, 'delete']);
+    Route::post('/contacts/delete-selected', [ContactController::class, 'deleteSelected'])
+        ->name('contacts.delete-selected');
 
     // FOR BOOKING FORM
     Route::get('/booking-lead', [BookingController::class, 'index'])->name('admin-booking.index');
     Route::delete('/booking-lead/delete/{id}', [BookingController::class, 'delete']);
+    Route::post('/booking-leads/delete-selected', [BookingController::class, 'deleteSelected'])
+        ->name('booking-leads.delete-selected');
 
 
     // FOR CORPORATE 

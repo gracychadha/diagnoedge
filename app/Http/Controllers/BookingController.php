@@ -41,11 +41,22 @@ class BookingController extends Controller
         ]);
     }
     // to delete
-   
-      public function delete($id)
+
+    public function delete($id)
     {
         Booking::findOrFail($id)->delete();
         return response()->json(['success' => true]);
+    }
+
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        Booking::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 
 }

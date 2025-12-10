@@ -12,16 +12,19 @@
 			</div>
 
 			<div class="form-head d-flex mb-3 mb-md-4 align-items-start">
-				<div class="me-auto d-lg-block">
-					<a href="javascript:void(0);" class="btn btn-primary btn-rounded" data-bs-toggle="modal"
-						data-bs-target="#addAppointment">+ Add New</a>
-				</div>
-				<div class="input-group search-area ms-auto d-inline-flex me-2">
+				<div class="input-group search-area me-auto d-inline-flex ">
 					<input type="text" class="form-control" placeholder="Search here">
 					<div class="input-group-append">
 						<button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
 					</div>
 				</div>
+				<div class="ms-auto d-lg-block">
+					<a href="javascript:void(0);" class="btn btn-primary btn-rounded" data-bs-toggle="modal"
+						data-bs-target="#addAppointment">+ Add New</a>
+					<a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
+
+				</div>
+
 			</div>
 			<div class="row">
 				<div class="col-xl-12">
@@ -49,16 +52,12 @@
 
 									<tr>
 										<td>
-											<div class="d-flex align-items-center">
-												<div class="checkbox text-end align-self-center">
-													<div class="form-check custom-checkbox ">
-														<input type="checkbox" class="form-check-input">
-														<label class="form-check-label"></label>
-													</div>
+											<div class="checkbox text-end align-self-center">
+												<div class="form-check custom-checkbox ">
+													<input type="checkbox" class="form-check-input checkItem"
+														value="{{ $doctor->id }}" required="">
+													<label class="form-check-label" for="checkbox"></label>
 												</div>
-
-
-
 											</div>
 										</td>
 										<td>
@@ -82,16 +81,18 @@
 
 										<td>
 											<span class="me-3">
-												<a href="javascript:void(0);" class="viewDoctor btn btn-sm btn-info light" data-id="{{ $doctor->id }}">
+												<a href="javascript:void(0);" class="viewDoctor btn btn-sm btn-info light"
+													data-id="{{ $doctor->id }}">
 													<i class="fa fa-eye fs-18"></i>
 												</a>
 											</span>
 											<span class="me-3">
-												<a href="javascript:void(0)" class="editDoctor btn btn-sm btn-warning light" data-id="{{ $doctor->id }}"><i
-														class="fa fa-pencil fs-18 "></i></a>
+												<a href="javascript:void(0)" class="editDoctor btn btn-sm btn-warning light"
+													data-id="{{ $doctor->id }}"><i class="fa fa-pencil fs-18 "></i></a>
 											</span>
 											<span>
-												<a href="javascript:void(0);" class="deleteDoctor btn btn-sm btn-danger light" data-id="{{ $doctor->id }}">
+												<a href="javascript:void(0);" class="deleteDoctor btn btn-sm btn-danger light"
+													data-id="{{ $doctor->id }}">
 													<i class="fa fa-trash fs-18 "></i>
 												</a>
 											</span>
@@ -284,3 +285,182 @@
 	</div>
 
 @endsection
+@push('scripts')
+	<script>
+		$(document).on('click', '.viewDoctor', function () {
+
+			var id = $(this).data('id');
+
+			$.ajax({
+				url: "{{ url('/doctors/view') }}/" + id,
+				type: "GET",
+				success: function (doctor) {
+
+					// Fill modal data
+					$('#v_name').text(doctor.fullname);
+					$('#v_status').text(doctor.status == 1 ? 'Available' : 'Unavailable');
+					$('#v_designation').text(doctor.designation);
+					$('#v_specialization').text(doctor.specialization);
+
+					// Image
+					$('#v_image').attr('src', '/uploads/' + doctor.image);
+
+					// If you have appointment count
+					$('#v_appointments').text(doctor.appointments ?? 0);
+
+					// Open modal
+					$('#viewAppointment').modal('show');
+				}
+			});
+
+		});
+		$(document).on('click', '.editDoctor', function () {
+
+			var id = $(this).data('id');
+
+			$.ajax({
+				url: "{{ url('/doctors/view') }}/" + id,
+				type: "GET",
+				success: function (doctor) {
+
+					$('#edit_id').val(doctor.id);
+					$('#edit_fullname').val(doctor.fullname);
+					$('#edit_status').val(doctor.status);
+					$('#edit_designation').val(doctor.designation);
+					$('#edit_specialization').val(doctor.specialization);
+
+					$('#edit_preview').attr('src', '/uploads/' + doctor.image);
+
+					$('#editAppointment').modal('show');
+				}
+			});
+		});
+		$('#editDoctorForm').on('submit', function (e) {
+			e.preventDefault();
+
+			let formData = new FormData(this);
+
+			$.ajax({
+				type: "POST",
+				url: "{{ url('/doctors/update') }}",
+				data: formData,
+				contentType: false,
+				processData: false,
+
+				success: function (response) {
+					Swal.fire("Updated!", "Doctor updated successfully!", "success");
+					$('#editAppointment').modal('hide');
+					location.reload();
+				}
+			});
+
+		});
+		$(document).on("click", ".deleteDoctor", function () {
+
+			let id = $(this).data("id");
+			let row = $(this).closest("tr");
+
+			Swal.fire({
+				title: "Are you sure?",
+				text: "This doctor will be permanently deleted!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#3085d6",
+				confirmButtonText: "Yes, delete it!"
+			}).then((result) => {
+
+				if (result.isConfirmed) {
+
+					$.ajax({
+						url: "{{ url('/doctors/delete') }}/" + id,
+						type: "DELETE",
+						data: {
+							_token: "{{ csrf_token() }}"
+						},
+						success: function (response) {
+
+							Swal.fire("Deleted!", "Doctor removed successfully.", "success");
+
+							// remove row
+							row.fadeOut(600, function () {
+								$(this).remove();
+							});
+						}
+					});
+
+				}
+			});
+
+		});
+
+		$(document).ready(function () {
+
+			// SELECT ALL
+			$("#checkAll").on("change", function () {
+				$(".checkItem").prop("checked", $(this).prop("checked"));
+			});
+
+			// DELETE SELECTED
+			$('.deleteSelected').click(function () {
+
+				let selected = [];
+
+				$(".checkItem:checked").each(function () {
+					selected.push($(this).val());
+				});
+
+				console.log("Selected IDs:", selected); // debug
+
+				if (selected.length === 0) {
+					Swal.fire("Oops!", "Please select at least one doctors.", "warning");
+					return;
+				}
+
+				Swal.fire({
+					title: "Are you sure?",
+					text: "Selected doctor will be deleted permanently!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#d33",
+					cancelButtonColor: "#3085d6",
+					confirmButtonText: "Yes, delete selected!"
+				}).then((result) => {
+
+					if (result.isConfirmed) {
+
+						$.ajax({
+							url: "/doctors/delete-selected",
+
+							type: "POST",
+							data: {
+								ids: selected,
+								_token: "{{ csrf_token() }}"
+							},
+							success: function (response) {
+								Swal.fire("Deleted!", "Selected doctor removed.", "success");
+
+								selected.forEach(id => {
+									$(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+										$(this).remove();
+									});
+								});
+							},
+							error: function (xhr) {
+								console.log(xhr.responseText);
+								Swal.fire("Error!", "Something went wrong. Check console.", "error");
+							}
+						});
+
+					}
+				});
+
+			});
+
+		});
+
+
+
+
+	</script>
+@endpush

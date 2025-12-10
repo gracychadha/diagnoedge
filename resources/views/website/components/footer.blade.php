@@ -1,5 +1,8 @@
 <!-- footer start -->
-
+@php
+    $settings = App\Models\Setting::first();
+    $socials = $settings->social_links;
+@endphp
 <footer class="footer footer-1" data-img-src="{{ asset("assets/images/footer/footer-1-1.png") }}">
     <!-- footer top start -->
     <div class="footer-top">
@@ -26,7 +29,8 @@
                             </div>
                             <div class="footer-contact-content">
                                 <span>Have Any Question?</span>
-                                <a href="tel:123446788">+1 234 467 88</a>
+                                <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}"
+                                    target="_blank">{{ $settings->phone1 ?? '+91 90909 90909' }}</a>
                             </div>
                         </div>
                         <!-- footer contact info end -->
@@ -39,7 +43,8 @@
                             </div>
                             <div class="footer-contact-content">
                                 <span>Send Email</span>
-                                <a href="mailto:info@diagnoedge.com">info@diagnoedge.com</a>
+                                <a href="mailto:{{ $settings->email ?? 'info@diagnolabs.com' }}">{{ $settings->email ??
+                                    'info@diagnolabs.com' }}</a>
                             </div>
                         </div>
                         <!-- footer contact info end -->
@@ -66,19 +71,42 @@
                             <!-- footer social icon start -->
                             <div class="footer-social-icon">
                                 <ul class="social-icon">
-                                    <li>
-                                        <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                                    </li>
+
+                                    @if(!empty($socials['facebook']))
+                                        <li>
+                                            <a href="{{ $socials['facebook'] }}" target="_blank">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if(!empty($socials['instagram']))
+                                        <li>
+                                            <a href="{{ $socials['instagram'] }}" target="_blank">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if(!empty($socials['linkedin']))
+                                        <li>
+                                            <a href="{{ $socials['linkedin'] }}" target="_blank">
+                                                <i class="fa-brands fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if(!empty($socials['twitter']))
+                                        <li>
+                                            <a href="{{ $socials['twitter'] }}" target="_blank">
+                                                <i class="fa-brands fa-x-twitter"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
                                 </ul>
+
+
                             </div>
                             <!-- footer social icon end -->
                         </div>
@@ -134,14 +162,16 @@
                                             Book Appointment</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('privacy-policy') }}"><i class="fa-solid fa-chevron-right"></i> 
+                                        <a href="{{ route('privacy-policy') }}"><i
+                                                class="fa-solid fa-chevron-right"></i>
                                             Privacy Policy</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('terms-conditions') }}"><i class="fa-solid fa-chevron-right"></i>
+                                        <a href="{{ route('terms-conditions') }}"><i
+                                                class="fa-solid fa-chevron-right"></i>
                                             Terms &amp; Conditions</a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
                             <!-- widget link end -->
@@ -185,13 +215,14 @@
                     <div class="col-lg-12">
                         <!-- footer copyright start -->
                         <div class="copyright-text wow fadeInUp" data-wow-delay=".2s">
-                            <p class="m-0 text-center">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge </a> |
+                            <p class="m-0 text-center">&copy; <?= date('Y') ?> <a href="{{ route('home') }}"> Diagnoedge
+                                </a> |
                                 Developed by <a href="https://vibrantick.in/" target="_blank">Vibrantick Infotech
                                     Solutions </a></p>
                         </div>
                         <!-- footer copyright end -->
                     </div>
-                    
+
                 </div>
             </div>
             <!-- footer copyright wrap end -->
@@ -215,9 +246,9 @@
                             </a>
                             or Call us now at
 
-                            <a href="tel:+919876784545" class="theme-button style-1 sticky-btn"
-                                aria-label="+91 987 678 4545" target="_blank">
-                                <span data-text="+91 987 678 4545">+91 987 678 4545</span>
+                            <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}" class="theme-button style-1 sticky-btn" aria-label="{{ $settings->phone1 ?? '+91 90909 90909' }}" target="_blank">
+                                <span
+                                    data-text="{{ $settings->phone1 ?? '+91 90909 90909' }}">{{ $settings->phone1 ?? '+91 90909 90909' }}</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </p>

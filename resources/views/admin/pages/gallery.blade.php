@@ -102,7 +102,7 @@
                         <div class="col-12">
                             <label>Image <span class="text-danger">*</span></label>
                             <input type="file" name="image" class="form-control" accept="image/*" required>
-                            <small class="text-muted">Recommended: 1200x800px • Max 2MB</small>
+                            <small class="text-muted">Recommended: 576x576px • Max 2MB</small>
                         </div>
                         <div class="col-12">
                             <label>Caption / Alt Text (Optional)</label>

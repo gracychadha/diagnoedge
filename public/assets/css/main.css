@@ -550,10 +550,10 @@ input[type="checkbox"] {
     color: var(--black-color);
 }
 .accordion .accordion-item .accordion-header .accordion-button {
-    background: transparent;
+    background: #0c193e;
     border: none;
     margin-bottom: 0;
-    color: var(--black-color);
+    color: #fff;
     padding: 20px 80px 20px 20px;
     font-size: 18px;
     line-height: 1.6rem;
@@ -590,7 +590,7 @@ input[type="checkbox"] {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    color: var(--black-color);
+    color: #fff;
 }
 .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
     background: var(--extra-color-five);

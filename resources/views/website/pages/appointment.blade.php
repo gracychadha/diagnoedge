@@ -131,23 +131,21 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating">
-                                                   <select class="form-select" id="selectdepartment" name="selectdepartment">
-    <option value="" disabled>Select Package | Test</option>
+                                                    @php
+    $packages = \App\Models\Subparameter::where('status', 'active')->get();
+@endphp
 
-    <option value="Tru Health Package"
-        {{ old('selectdepartment') == 'Tru Health Package' ? 'selected' : '' }}>
-        Tru Health Package
-    </option>
+<select class="form-select" id="selectdepartment" name="selectdepartment">
+    <option value="" disabled selected>Select Package | Test</option>
 
-    <option value="Health Risk"
-        {{ old('selectdepartment') == 'Health Risk' ? 'selected' : '' }}>
-        Health Risk
-    </option>
-
-    <option value="Test by Health care"
-        {{ old('selectdepartment') == 'Test by Health care' ? 'selected' : '' }}>
-        Test by Health care
-    </option>
+    @forelse($packages as $package)
+        <option value="{{ $package->title }}"
+            {{ old('selectdepartment') == $package->id ? 'selected' : '' }}>
+            {{ $package->title }}
+        </option>
+         @empty
+        <option value="" disabled>No active tests/packages found</option>
+    @endforelse
 </select>
 
                                                     <label for="selectdepartment"><i class="fa-solid fa-file-medical"></i>

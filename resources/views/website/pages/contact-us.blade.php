@@ -49,12 +49,17 @@
                         <!-- section title end -->
                         <!-- contact item wrapper start -->
                         <div class="contact-item-wrapper">
+                            @php
+                                $settings = App\Models\Setting::first();
+                                $socials = $settings->social_links;
+                            @endphp
                             <!-- contact items start -->
                             <div class="contact-item wow fadeInUp" data-wow-delay=".5s">
                                 <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
                                 <div class="contact-content">
                                     <p>Call Now</p>
-                                    <h3>+1 234 467 88</h3>
+                                    <h3><a href="{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}"
+                                            target="_blank">{{ $settings->phone1 ?? '+91 90909 90909' }}</a></h3>
                                 </div>
                             </div>
                             <!-- contact items end -->
@@ -63,7 +68,9 @@
                                 <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div class="contact-content">
                                     <p>Email</p>
-                                    <h3>info@diagnoedge.com</h3>
+                                    <h3><a href="mailto:{{ $settings->email ?? 'info@diagnolabs.com' }}">{{ $settings->email
+                                            ??
+                                            'info@diagnolabs.com' }}</a></h3>
                                 </div>
                             </div>
                             <!-- contact items end -->
@@ -72,7 +79,7 @@
                                 <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                                 <div class="contact-content">
                                     <p>Address</p>
-                                    <h3>SCO. 8, Kalgidhar Enclave, Baltana, Zirakpur(PB)</h3>
+                                    <h3>{{ $settings->location ?? 'SCO. 8, Kalgidhar Enclave, Baltana, Zirakpur(PB)' }}</h3>
                                 </div>
                             </div>
                             <!-- contact items end -->
@@ -82,24 +89,43 @@
                         <div class="contact-social-links wow fadeInUp" data-wow-delay=".6s">
                             <span class="follow-text">Follow Us Today :</span>
                             <ul class="social-icon">
-                                <li>
-                                    <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-label="pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                                </li>
+                                @if(!empty($socials['facebook']))
+                                    <li>
+                                        <a href="{{ $socials['facebook'] }}" target="_blank">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(!empty($socials['instagram']))
+                                    <li>
+                                        <a href="{{ $socials['instagram'] }}" target="_blank">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(!empty($socials['linkedin']))
+                                    <li>
+                                        <a href="{{ $socials['linkedin'] }}" target="_blank">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(!empty($socials['twitter']))
+                                    <li>
+                                        <a href="{{ $socials['twitter'] }}" target="_blank">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 ">
                         <!-- contact form box start -->
-                        <div class="contact-form-box">
+                        <div class="contact-form-box shadow">
                             <div class="section-title">
                                 <h2>Send us a message</h2>
                             </div>
@@ -229,9 +255,11 @@
                         <!-- google map iframe start -->
                         <div class="google-map-iframe">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.1234567890123!2d76.814000!3d30.734500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fedf0abcdef01%3A0x1234567890abcdef!2sSCO%208%2C%20Kalgidhar%20Enclave%2C%20Baltana%2C%20Zirakpur%2C%20Punjab%2C%20India%20140603!5e0!3m2!1sen!2sin!4v0000000000000!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.4029934748426!2d76.82146917552163!3d30.642608274613707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feb8e4afcb9d1%3A0x44d2c0bd3ccf22a1!2sBaltana%2C%20Zirakpur%2C%20Punjab%20140303!5e0!3m2!1sen!2sin!4v1733825123456!5m2!1sen!2sin"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" title="Kalgidhar Enclave Baltana Map"></iframe>
+                                referrerpolicy="no-referrer-when-downgrade" title="Baltana Zirakpur Map">
+                            </iframe>
+
 
                         </div>
                         <!-- google map iframe end -->

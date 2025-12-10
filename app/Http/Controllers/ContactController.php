@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function countLead()
     {
         $totalLeads = Contact::count();
-        return view('admin.pages.dashboard' , compact('totalLeads'));
+        return view('admin.pages.dashboard', compact('totalLeads'));
     }
 
 
@@ -90,6 +90,16 @@ class ContactController extends Controller
     {
         Contact::findOrFail($id)->delete();
         return response()->json(['success' => true]);
+    }
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        Contact::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 
 }

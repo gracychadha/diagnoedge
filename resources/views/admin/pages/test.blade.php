@@ -21,9 +21,13 @@
                     <input type="text" id="searchInput" class="form-control" placeholder="Search tests...">
                     <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
                 </div>
-                <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addTestModal">
-                    + Add Test
-                </button>
+                <div class="ms-auto">
+                    <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addTestModal">
+                        + Add Test
+                    </button>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
+                </div>
+
             </div>
 
             <!-- Success Toast -->
@@ -56,7 +60,14 @@
                         <table class="table table-striped" id="testTable">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>
+                                        <div class="checkbox text-end align-self-center">
+                                            <div class="form-check custom-checkbox ">
+                                                <input type="checkbox" class="form-check-input" id="checkAll" required="">
+                                                <label class="form-check-label" for="checkAll"></label>
+                                            </div>
+                                        </div>
+                                    </th>
                                     <th width="80">Icon</th>
                                     <th>Title</th>
                                     <th width="120">Status</th>
@@ -67,7 +78,19 @@
                             <tbody>
                                 @forelse($tests as $test)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td class="d-flex">
+                                             {{ $loop->iteration }}
+                                            <div class="checkbox text-end align-self-center ms-2">
+                                                  
+                                                        <div class="form-check custom-checkbox ">
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $test->id }}"
+                                                                required="">
+                                                            <label class="form-check-label" for="checkbox"></label>
+                                                        </div>
+                                                    </div>
+                                         
+
+                                        </td>
                                         <td>
 
                                             @if($test->icon)
@@ -198,7 +221,7 @@
                                         {{ ucfirst($test->status) }}
                                     </span>
                                 </td>
-                           
+
                                 <th>Created</th>
                                 <td>{{ $test->created_at->format('d M Y, h:i A') }}</td>
                             </tr>
@@ -290,5 +313,67 @@
                 });
             });
         });
+        // SELECT ALL
+        $("#checkAll").on("change", function () {
+            $(".checkItem").prop("checked", $(this).prop("checked"));
+        });
+
+        // DELETE SELECTED
+        $('.deleteSelected').click(function () {
+
+            let selected = [];
+
+            $(".checkItem:checked").each(function () {
+                selected.push($(this).val());
+            });
+
+            console.log("Selected IDs:", selected); // debug
+
+            if (selected.length === 0) {
+                Swal.fire("Oops!", "Please select at least one Test.", "warning");
+                return;
+            }
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Selected test will be deleted permanently!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete selected!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "/tests/delete-selected",
+
+                        type: "POST",
+                        data: {
+                            ids: selected,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+                            Swal.fire("Deleted!", "Selected test removed.", "success");
+
+                            selected.forEach(id => {
+                                $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                    $(this).remove();
+                                });
+                            });
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.responseText);
+                            Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
     </script>
 @endpush

@@ -101,6 +101,15 @@ class DoctorController extends Controller
 
         return response()->json(['success' => true]);
     }
+  public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
 
+        Doctor::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
+    }
 
 }
