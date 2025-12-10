@@ -206,8 +206,6 @@ Route::get('/dashboard', function () {
     $doctorCount = \App\Models\Doctor::count();
 
     return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount'));
-
-
 })->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -470,7 +468,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/appointment/view/{id}', [AppointmentController::class, 'view']);
     Route::post('/appointment/update', [AppointmentController::class, 'update']);
     Route::delete('/appointment/delete/{id}', [AppointmentController::class, 'delete']);
-
+    Route::post('/appointments/delete-selected', [AppointmentController::class, 'deleteSelected'])
+        ->name('appointments.delete-selected');
 
     // FOR PACKAGES 
     Route::get('/admin-packages', [PackageController::class, 'index'])->name('packages.index');

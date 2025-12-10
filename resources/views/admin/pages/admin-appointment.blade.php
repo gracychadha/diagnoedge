@@ -20,8 +20,8 @@
                 <div class="ms-auto">
                     <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">+ Book Appointment</a>
-                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded " data-bs-toggle="modal"
-                        data-bs-target="">Delete Selected</a>
+                   <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
+
                     
                 </div>
             </div>
@@ -55,9 +55,9 @@
                                                 <td>
                                                     <div class="checkbox text-end align-self-center">
                                                         <div class="form-check custom-checkbox ">
-                                                            <input type="checkbox" class="form-check-input" id="customCheckBox1"
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $appointment->id }}"
                                                                 required="">
-                                                            <label class="form-check-label" for="customCheckBox1"></label>
+                                                            <label class="form-check-label" for="checkbox"></label>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -348,6 +348,7 @@
 @push('scripts')
 <script>
      $(document).ready(function () {
+
             $('.viewApp').click(function () {
                 let id = $(this).data('id');
 
@@ -447,7 +448,82 @@
                 });
 
             });
+      $("#checkAll").on("change", function () {
+    $(".checkItem").prop("checked", $(this).prop("checked"));
+});
+
+// for multiple #3085d6
+
+
         });
-       
+    
+$(document).ready(function () {
+
+    // SELECT ALL
+    $("#checkAll").on("change", function () {
+        $(".checkItem").prop("checked", $(this).prop("checked"));
+    });
+
+    // DELETE SELECTED
+    $('.deleteSelected').click(function () {
+
+        let selected = [];
+
+        $(".checkItem:checked").each(function () {
+            selected.push($(this).val());
+        });
+
+        console.log("Selected IDs:", selected); // debug
+
+        if (selected.length === 0) {
+            Swal.fire("Oops!", "Please select at least one appointment.", "warning");
+            return;
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Selected appointments will be deleted permanently!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete selected!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                   url: "/appointments/delete-selected",
+
+                    type: "POST",
+                    data: {
+                        ids: selected,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function (response) {
+                        Swal.fire("Deleted!", "Selected appointments removed.", "success");
+
+                        selected.forEach(id => {
+                            $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                $(this).remove();
+                            });
+                        });
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                    }
+                });
+
+            }
+        });
+
+    });
+
+});
+
+ 
+
+
 </script>
 @endpush

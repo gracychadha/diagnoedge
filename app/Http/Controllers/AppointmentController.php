@@ -7,6 +7,8 @@ use App\Models\Appointment;
 use App\Mail\AppointmentConfirmation;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+use Exception;
 
 class AppointmentController extends Controller
 {
@@ -60,7 +62,7 @@ class AppointmentController extends Controller
 
         try {
             $appointmentdate = Carbon::parse($request->appointmentdate)->format('Y-m-d');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $appointmentdate = Carbon::createFromFormat('d-m-Y', $request->appointmentdate)->format('Y-m-d');
         }
 
@@ -80,8 +82,8 @@ class AppointmentController extends Controller
         // Send confirmation email (synchronous)
         try {
             Mail::to($appointment->email)->send(new AppointmentConfirmation($appointment));
-        } catch (\Exception $e) {
-            \Log::error('Appointment email failed: ' . $e->getMessage());
+        } catch (Exception $e) {
+            Log::error('Appointment email failed: ' . $e->getMessage());
             // optionally set a flash message for email failure
             return back()->with('success', 'Your appointment has been submitted. Will get back to you soon');
         }
@@ -116,5 +118,18 @@ class AppointmentController extends Controller
         Appointment::findOrFail($id)->delete();
         return response()->json(['success' => true]);
     }
+
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        Appointment::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
+    }
+
+
 
 }
