@@ -1,5 +1,4 @@
 <?php
-use App\Http\Controllers\JobCareerApplicationController;
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookingController;
@@ -38,13 +37,14 @@ use App\Http\Controllers\AboutMakeController;
 use App\Http\Controllers\PartnerAboutController;
 use App\Http\Controllers\WhyPartnerController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\RolePermissionController;
 use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
 use App\Http\Controllers\UserRegisterController;
-use App\Http\Controllers\CareerController;
+
 // for search
 Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
 
@@ -117,11 +117,6 @@ Route::get('/corporate', function () {
 Route::get('/career', function () {
     return view('website.pages.career');
 })->name('career');
-Route::get('/career-form/{slug}', [JobCareerController::class, 'apply'])->name('career-form');
-
-
-Route::post('/career-form/submit', [JobCareerApplicationController::class, 'store'])->name('career-form.store');
-
 Route::get('/privacy-policy', function () {
     return view('website.pages.privacy-policy');
 })->name('privacy-policy');
@@ -211,29 +206,22 @@ Route::get('/dashboard', function () {
     $totalLeads = \App\Models\Contact::count();
     $appointmentLeads = \App\Models\Appointment::count();
     $doctorCount = \App\Models\Doctor::count();
-    // to fetch all doctor
-    $doctors = Doctor::orderBy('id', 'desc')->get();
+
+    $doctors = \App\Models\Doctor::all(); // ✅ Add this line
 
     return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount', 'doctors'));
-
-
 })->middleware('auth')->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
 
-    // FOR user creation
-    Route::get('/register', [UserRegisterController::class, 'index'])->name('register.index');
-    Route::post('/register/store', [UserRegisterController::class, 'store'])->name('register.store');
-
-
+   
 
     // ────────────── Tests Details ──────────────
     Route::get('/tests', [TestController::class, 'index'])->name('admin.pages.test');
     Route::post('/tests', [TestController::class, 'store'])->name('admin.tests.store');
     Route::put('/tests/{test}', [TestController::class, 'update'])->name('admin.tests.update');
     Route::delete('/tests/{test}', [TestController::class, 'destroy'])->name('admin.tests.destroy');
-    Route::post('/tests/delete-selected', [TestController::class, 'deleteSelected'])
-        ->name('tests.delete-selected');
 
     // ────────────── PARAMETERS ──────────────
 
@@ -460,6 +448,58 @@ Route::middleware('auth')->group(function () {
     Route::put('/profile/password', [App\Http\Controllers\Auth\PasswordController::class, 'update'])
         ->name('profile.password.update');
 
+
+    // ────────────── Roles & Permissions Page ──────────────    
+    // Separate pages for Roles and Permissions
+    Route::get('/roles', [RolePermissionController::class, 'rolesIndex'])
+        ->name('roles.index');
+
+    Route::get('/permissions', [RolePermissionController::class, 'permissionsIndex'])
+        ->name('permissions.index');
+
+    // Permissions CRUD
+    Route::post('/permissions', [RolePermissionController::class, 'storePermission'])
+        ->name('permissions.store');
+
+    Route::put('/permissions/{permission}', [RolePermissionController::class, 'updatePermission'])
+        ->name('permissions.update');
+
+    Route::delete('/permissions/{permission}', [RolePermissionController::class, 'destroyPermission'])
+        ->name('permissions.destroy');
+
+    // Roles CRUD
+    Route::post('/roles', [RolePermissionController::class, 'storeRole'])
+        ->name('roles.store');
+
+    Route::put('/roles/{role}', [RolePermissionController::class, 'updateRole'])
+        ->name('roles.update');
+
+    Route::delete('/roles/{role}', [RolePermissionController::class, 'destroyRole'])
+        ->name('roles.destroy');
+
+    // Assign permissions to role
+    Route::put('/roles/{role}/permissions', [RolePermissionController::class, 'updateRolePermissions'])
+        ->name('roles.permissions.update');
+
+    // ────────────── user page ──────────────   
+    // User Management Routes
+    Route::get('/users', [UserRegisterController::class, 'index'])
+        ->name('admin-register.index');
+
+    Route::post('/users', [UserRegisterController::class, 'store'])
+        ->name('admin-register.store');
+
+    Route::put('/users/{user}', [UserRegisterController::class, 'update'])
+        ->name('admin-register.update');
+
+    Route::delete('/users/{user}', [UserRegisterController::class, 'destroy'])
+        ->name('admin-register.destroy');
+
+    Route::put('/users/{user}/role', [UserRegisterController::class, 'updateRole'])
+        ->name('admin-register.role.update');
+
+    Route::get('/users/{user}', [UserRegisterController::class, 'show'])
+        ->name('admin-register.show');
     //test services 
 
 
@@ -474,8 +514,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/doctors/view/{id}', [DoctorController::class, 'view']);
     Route::post('/doctors/update', [DoctorController::class, 'update']);
     Route::delete('/doctors/delete/{id}', [DoctorController::class, 'delete']);
-    Route::post('/doctors/delete-selected', [DoctorController::class, 'deleteSelected'])
-        ->name('doctors.delete-selected');
 
 
     // FOR APPOINTMENT
@@ -497,14 +535,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/contacts/view/{id}', [ContactController::class, 'view']);
     Route::post('/contacts/update', [ContactController::class, 'update']);
     Route::delete('/contacts/delete/{id}', [ContactController::class, 'delete']);
-    Route::post('/contacts/delete-selected', [ContactController::class, 'deleteSelected'])
-        ->name('contacts.delete-selected');
 
     // FOR BOOKING FORM
     Route::get('/booking-lead', [BookingController::class, 'index'])->name('admin-booking.index');
     Route::delete('/booking-lead/delete/{id}', [BookingController::class, 'delete']);
-    Route::post('/booking-leads/delete-selected', [BookingController::class, 'deleteSelected'])
-        ->name('booking-leads.delete-selected');
 
 
     // FOR CORPORATE 
