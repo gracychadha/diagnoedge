@@ -17,10 +17,7 @@
     </div>
 </div> --}}
 <!-- preloader end -->
-@php
-    $settings = App\Models\Setting::first();
-    $socials = $settings->social_links;
-@endphp
+
 <!-- back to top start -->
 <button id="back-top" class="back-to-top" aria-label="back to top">
     <i class="fa-solid fa-chevron-up"></i>
@@ -40,7 +37,7 @@
         <!-- offcanvas logo start -->
         <div class="offcanvas-logo">
             <figure>
-                <img src="{{ asset("assets/images/logo/diagno-logo.png") }}" alt="offcanvas logo">
+                <img src="{{ $settings->black_logo ? asset('storage/' . $settings->black_logo) : asset('assets/images/logo/diagno-logo.png') }}" alt="offcanvas logo">
             </figure>
         </div>
         <!-- offcanvas logo emd -->
@@ -250,7 +247,7 @@
                             <div class="logo">
                                 <a href="{{ route('home') }}">
                                     <figure>
-                                        <img src="{{ asset("assets/images/logo/diagno-logo.png") }}" alt="header logo">
+                                        <img src="{{ $settings->black_logo ? asset('storage/' . $settings->black_logo) : asset('assets/images/logo/diagno-logo.png') }}" alt="header logo">
                                     </figure>
                                 </a>
                             </div>

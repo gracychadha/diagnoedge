@@ -12,15 +12,23 @@
             
             @can('view-appointments')
             <li><a href="{{ route('admin-appointment.index') }}" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-menu"></i>
+                   <i class="flaticon-381-calendar"></i>
                     <span class="nav-text">Appointment</span>
+                </a>
+            </li>   
+            @endcan
+            
+            @can('view-applications')
+            <li><a href="{{ route('admin-applications.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-menu"></i>
+                    <span class="nav-text">Applications</span>
                 </a>
             </li>
             @endcan
             
             @can('view-booking-leads')
             <li><a href="{{ route('admin-booking.index') }}" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-menu"></i>
+                    <i class="flaticon-381-clock"></i>
                     <span class="nav-text">Booking Leads</span>
                 </a>
             </li>
@@ -222,7 +230,8 @@
             
             @canany(['manage-users', 'manage-roles', 'manage-permissions'])
             <li><a href="javascript:void(0);" class="ai-icon has-arrow" aria-expanded="false">
-                    <i class="flaticon-381-id-card-4"></i>
+                   <i class="flaticon-381-id-card"></i>
+
                     <span class="nav-text">User Management</span>
                 </a>
                 <ul aria-expanded="false">

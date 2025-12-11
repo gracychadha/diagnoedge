@@ -46,16 +46,18 @@
         <div class="container py-5">
 
             {{-- HEADER SECTION --}}
-            <div class="d-flex align-items-start gap-4 mb-5">
-                <img src="{{ $package->icon ? Storage::url($package->icon) : asset('assets/images/services/icon-service-1.png') }}"
-                    class="rounded" style="width:100px; height:100px; object-fit:contain;">
+            <div class="p-4 bg-white rounded-4 shadow-sm h-100 smooth-card mb-5">
+                <div class="d-flex align-items-start gap-4 ">
+                    <img src="{{ $package->icon ? Storage::url($package->icon) : asset('assets/images/services/icon-service-1.png') }}"
+                        class="rounded" style="width:100px; height:100px; object-fit:contain;">
 
-                <div>
-                    <h3 class="fw-bold">{{ $package->title }}</h3>
+                    <div>
+                        <h3 class="fw-bold">{{ $package->title }}</h3>
 
-                    @if($package->description)
-                        <p class="text-muted">{!! $package->description !!}</p>
-                    @endif
+                        @if($package->description)
+                            <p class="text-muted">{!! $package->description !!}</p>
+                        @endif
+                    </div>
                 </div>
             </div>
 
@@ -66,19 +68,20 @@
                     : (is_array($package->parameter_id) ? $package->parameter_id : []);
 
                 $parameters = \App\Models\Parameter::whereIn('id', $parameterIds)->get();
+               
             @endphp
-
+  
             {{-- PARAMETERS --}}
             <h4 class="fw-bold mb-4">Related Tests ({{ count($parameters) }})</h4>
 
             <div class="row gy-4">
 
                 @foreach($parameters as $param)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
                         <div class="p-4 bg-white rounded-4 shadow-sm h-100 smooth-card">
 
                             {{-- Parameter Title --}}
-                            <h6 class="fw-bold mb-2">{{ $param->title }}</h6>
+                            <h6 class="fw-bold mb-2"><a href="{{ route('parameter-detail', $param->slug ?? Str::slug($param->title)) }}">{{ $param->title }}</a></h6>
 
                             {{-- Price --}}
                             <p class="fw-semibold text-success fs-5 mb-2">

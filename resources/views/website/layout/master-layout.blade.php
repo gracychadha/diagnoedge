@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php
         $seo = getSeo(request()->path());
+        // setting
+        $settings = App\Models\Setting::first();
+        $socials = $settings->social_links;
     @endphp
 
 
@@ -18,8 +21,12 @@
 
 
     {{-- css files --}}
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="{{ $settings->favicon ? asset('storage/' . $settings->favicon) : asset('assets/images/logo/d.png') }}"
+        type="image/x-icon">
+    <link rel="icon"
+        href="{{ $settings->favicon ? asset('storage/' . $settings->favicon) : asset('assets/images/logo/d.png') }}"
+        type="image/x-icon">
     <!-- font awesome css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
     <!-- bootstrap css -->

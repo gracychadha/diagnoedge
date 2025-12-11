@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
     <link href="{{ asset('vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" />
 
@@ -39,6 +40,14 @@
 
     {{-- for the push style of the pages --}}
     @stack('style')
+    <style>
+        .DZ-theme-btn.DZ-bt-buy-now{
+            display: none;
+        }
+        .DZ-theme-btn.DZ-bt-support-now{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -187,160 +196,7 @@
             var slug = generateSlug(title);
             $('#edit_slug').val(slug);
         });
-        // +++++++++++++++++++++++++++++++++++++++++++++++++
-        // ADD PACKAGE 
-        // $(document).ready(function () {
-
-        //     // Add package
-        //     $("#addPackageBtn").click(function () {
-        //         let value = $("#addPackage").val().trim();
-
-        //         if (value === "") {
-        //             Swal.fire({
-        //                 icon: 'warning',
-        //                 title: 'Oops...',
-        //                 text: 'Please enter a package name!',
-        //                 confirmButtonText: 'OK'
-        //             });
-        //             return;
-        //         }
-
-        //         let id = Date.now();
-        //         // unique id
-
-        //         let html = `
-        //         <div class=" package-item d-flex align-items-center mb-2" data-id="${id}">
-        //             <input type="text" name="parameters[]" class="form-control package-input" value="${value}" />
-        //             <button type="button" class="btn btn-danger btn-sm ms-2 remove-package">X</button>
-        //         </div>
-        //     `;
-
-        //         $("#packagesWrapper").append(html);
-        //         $("#addPackage").val(""); // clear field
-        //     });
-
-        //     // Delete package
-        //     $(document).on("click", ".remove-package", function () {
-        //         $(this).closest(".package-item").remove();
-        //     });
-
-        //     // Edit package (auto-save)
-        //     $(document).on("input", ".package-input", function () {
-        //         // auto updates (value is stored in input itself)
-        //     });
-
-        // });
-        // ++++++++++++++++++++++++++++++++++++++++++++++++++
-        // FOR DOCTOR CRUD 
-        // ++++++++++++++++++++++++++++++++++++++++++++++++++
-        // FOR SUB PARAMETERS CRUD
-        // $(document).on('click', '.viewSubparameter', function () {
-        //     var id = $(this).data('id');
-        //     $.ajax({
-        //         url: "{{ url('/subparameter/view') }}/" + id,
-        //         type: "GET",
-        //         success: function (subparameter) {
-
-        //             // Fill modal data
-        //             $('#v_title').text(subparameter.title);
-        //             $('#v_slug').text(subparameter.slug);
-        //             $('#v_status').text(subparameter.status == 'active' ? 'Active' : 'Inactive');
-        //             $('#v_description').text(subparameter.description);
-        //             $('#v_parameter').text(subparameter.parameter_title);
-
-
-        //             // Open modal
-        //             $('#viewSubparameter').modal('show');
-        //         }
-        //     });
-
-        // });
-        // $(document).on('click', '.editSubparameter', function () {
-
-        //     var id = $(this).data('id');
-
-        //     $.ajax({
-        //         url: "{{ url('/subparameter/view') }}/" + id,
-        //         type: "GET",
-        //         success: function (subparameter) {
-
-        //             $('#edit_id').val(subparameter.id);
-        //             $('#edit_title').val(subparameter.title);
-        //             $('#edit_slug').val(subparameter.slug);
-        //             $('#edit_status').val(subparameter.status);
-        //             $('#edit_description').val(subparameter.description);
-        //             // $('#edit_parameter_id').val(subparameter.parameter_id);
-        //             $('#edit_parameter_id').val(subparameter.parameter_id).trigger('change');
-
-
-        //             $('#editSubparmeter').modal('show');
-        //         }
-        //     });
-        // });
-        // $('#editSubparameterForm').on('submit', function (e) {
-        //     e.preventDefault();
-
-        //     let formData = new FormData(this);
-
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "{{ url('/subparameter/update') }}",
-        //         data: formData,
-        //         contentType: false,
-        //         processData: false,
-
-        //         success: function (response) {
-        //             Swal.fire("Updated!", "Sub Parameter updated successfully!", "success");
-        //             $('#editSubparmeter').modal('hide');
-        //             location.reload();
-        //         }
-        //     });
-
-
-        // });
-        // $(document).on("click", ".deleteSubparameter", function () {
-
-        //     let id = $(this).data("id");
-        //     let row = $(this).closest("tr");
-
-        //     Swal.fire({
-        //         title: "Are you sure?",
-        //         text: "This Sub-parameter will be permanently deleted!",
-        //         icon: "warning",
-        //         showCancelButton: true,
-        //         confirmButtonColor: "#d33",
-        //         cancelButtonColor: "#3085d6",
-        //         confirmButtonText: "Yes, delete it!"
-        //     }).then((result) => {
-
-        //         if (result.isConfirmed) {
-
-        //             $.ajax({
-        //                 url: "{{ url('/subaparameter/delete') }}/" + id,
-        //                 type: "DELETE",
-        //                 data: {
-        //                     _token: "{{ csrf_token() }}"
-        //                 },
-        //                 success: function (response) {
-
-        //                     Swal.fire("Deleted!", "Sub-parameter removed successfully.", "success");
-
-        //                     // remove row
-        //                     row.fadeOut(600, function () {
-        //                         $(this).remove();
-        //                     });
-        //                 }
-        //             });
-
-        //         }
-        //     });
-
-        // });
-        // //+++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // FOR APPOINTMENT CRUD
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // FOR Contact CRUD
-       
+      
         // FOR PACKAGES CRUD 
         $(document).on('click', '.viewPackage', function () {
             var id = $(this).data(id);
@@ -363,8 +219,7 @@
 
 
 
-    </script>
-    <script>
+    
         $(document).on('click', '.viewSeoSetting', function () {
 
             var id = $(this).data('id');
@@ -467,7 +322,7 @@
         });
 
 
-       
+
 
     </script>
 </body>

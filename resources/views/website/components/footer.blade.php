@@ -1,8 +1,5 @@
 <!-- footer start -->
-@php
-    $settings = App\Models\Setting::first();
-    $socials = $settings->social_links;
-@endphp
+
 <footer class="footer footer-1" data-img-src="{{ asset("assets/images/footer/footer-1-1.png") }}">
     <!-- footer top start -->
     <div class="footer-top">
@@ -15,7 +12,7 @@
                         <div class="footer-logo wow fadeInUp" data-wow-delay=".2s">
                             <a href="{{ route("home") }}">
                                 <figure>
-                                    <img src="{{ asset("assets/images/logo/diagno-white.png") }}" alt="footer logo">
+                                    <img src="{{ $settings->white_logo   ? asset('storage/' . $settings->white_logo   ) : asset('assets/images/logo/diagno-white.png') }}" alt="footer logo">
                                 </figure>
                             </a>
                         </div>

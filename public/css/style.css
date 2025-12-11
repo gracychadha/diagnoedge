@@ -41575,4 +41575,8 @@ font-size: 16px;
 .side-nav-setting li.active a {
    color:var(--primary) !important;
 }
+ #example5 th{
+            background: #36c95f;
+            color:white;
+        }
 /*# sourceMappingURL=style.css.map */

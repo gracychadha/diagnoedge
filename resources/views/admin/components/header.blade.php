@@ -3,9 +3,12 @@
         <!-- Logo Image -->
         {{-- <img src="{{ asset('assets/images/favicon.png') }}" alt="Logo" class="logo-abbr"> --}}
 
+        @php
+          $settings = App\Models\Setting::first();
+        @endphp
         <!-- Optional: Brand Title next to logo -->
         <span class="brand-title ms-2">
-            <img src="{{ asset('assets/images/logo/diagno-logo.png') }}" alt="">
+            <img src="{{ $settings->backend_logo ? asset('storage/' . $settings->backend_logo) : asset('assets/images/logo/diagno-logo.png') }}" alt="img">
         </span>
     </a>
 

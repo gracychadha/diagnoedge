@@ -16686,6 +16686,7 @@ button.btn-success:hover {
     border-radius: 20px;
     transition: 0.3s ease;
     background: #ffffff;
+    border-top: 6px solid #54ad4c;
 }
 .test-card:hover {
     transform: translateY(-10px);
@@ -17073,4 +17074,7 @@ text-align: justify;
 
 .border-bottom-grey{
     border-bottom:1px solid #a9adb0bf;
+}
+.swiper-wrapper{
+    justify-content:center;
 }

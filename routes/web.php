@@ -44,6 +44,11 @@ use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
 use App\Http\Controllers\UserRegisterController;
+use App\Http\Controllers\JobCareerApplicationController;
+
+
+
+
 
 // for search
 Route::get('/search-all', [SearchController::class, 'searchAll'])->name('search.all');
@@ -77,14 +82,18 @@ Route::get('/health-packages/{slug}', function ($slug) {
 // for the parameter detail
 
 Route::get('/package/{slug}', function ($slug) {
+
     $package = Parameter::where('slug', $slug)
-        ->orWhere('slug', null)
-        ->where('title', 'LIKE', "%$slug%")
+        ->orWhere(function ($q) use ($slug) {
+            $q->whereNull('slug')
+                ->where('title', 'LIKE', "%{$slug}%");
+        })
         ->where('status', 'active')
         ->firstOrFail();
 
     return view('website.pages.package-detail', compact('package'));
 })->name('parameter-detail');
+
 
 //health risk
 Route::get('/healthrisk/{slug}', function ($slug) {
@@ -117,6 +126,11 @@ Route::get('/corporate', function () {
 Route::get('/career', function () {
     return view('website.pages.career');
 })->name('career');
+Route::get('/career-form/{slug}', [JobCareerController::class, 'apply'])
+    ->name('career-form');
+
+Route::post('/career-form', [JobApplicationController::class, 'store'])->name('career-form.store');
+
 Route::get('/privacy-policy', function () {
     return view('website.pages.privacy-policy');
 })->name('privacy-policy');
@@ -207,7 +221,7 @@ Route::get('/dashboard', function () {
     $appointmentLeads = \App\Models\Appointment::count();
     $doctorCount = \App\Models\Doctor::count();
 
-    $doctors = \App\Models\Doctor::all(); // ✅ Add this line
+    $doctors = \App\Models\Doctor::all();
 
     return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount', 'doctors'));
 })->middleware('auth')->name('dashboard');
@@ -215,7 +229,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-   
+
 
     // ────────────── Tests Details ──────────────
     Route::get('/tests', [TestController::class, 'index'])->name('admin.pages.test');
@@ -596,7 +610,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/seo-setting/delete/{id}', [SeoSettingController::class, 'delete']);
 
 
-
+    // For CAREER
+    Route::get('/applications', [JobCareerApplicationController::class, 'index'])->name('admin-applications.index');
+    Route::get('/applications/view/{id}', [JobCareerApplicationController::class, 'view']);
+    Route::post('/applications/update', [JobCareerApplicationController::class, 'update']);
+    Route::delete('/applications/delete/{id}', [JobCareerApplicationController::class, 'delete']);
+    Route::post('/applications/delete-selected', [JobCareerApplicationController::class, 'deleteSelected'])
+        ->name('applications.delete-selected');
     // ────────────── Website Setting ──────────────
 
     Route::get('/website-setting', [WebsiteSetting::class, 'index'])

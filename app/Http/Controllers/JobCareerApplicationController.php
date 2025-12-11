@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class JobCareerApplicationController extends Controller
 {
+
+    // TO FETCH ALL THE DATA OF Career Application
+    public function index()
+    {
+        $application = JobCareerApplication::orderBy('id', 'desc')->get();
+        return view('admin.pages.admin-job-application', compact('application'));
+    }
+
     //
     public function store(Request $request)
     {
@@ -41,5 +49,45 @@ class JobCareerApplicationController extends Controller
 
 
         return back()->with('success', 'Your application has been submitted successfully!');
+    }
+    // FOR VIEW JobCareerApplication LEADS
+    public function view($id)
+    {
+        $application = JobCareerApplication::findOrFail($id);
+        return response()->json($application);
+    }
+
+    // FOR UPDATE AND EDIT
+    public function update(Request $request)
+    {
+        $application = JobCareerApplication::find($request->id);
+        $application->fullname = $request->fullname;
+        $application->email = $request->email;
+        $application->phone = $request->phone;
+        $application->address = $request->address;
+        $application->details = $request->details;
+        $application->resume = $request->resume;
+
+
+        $application->save();
+        return response()->json(['success' => true]);
+    }
+
+
+    public function delete($id)
+    {
+        JobCareerApplication::findOrFail($id)->delete();
+        return response()->json(['success' => true]);
+    }
+
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        JobCareerApplication::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 }

@@ -105,8 +105,11 @@
                                 <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></button>
                             </div>
 
+                            @php
+                                $sliders = App\Models\SliderImage::where('status', 'active')->get();
+                            @endphp
                             <!-- Slides -->
-                            <div class="carousel-inner">
+                            {{-- <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="assets/images/lab/banner-1.png" class="d-block w-100" alt="">
                                 </div>
@@ -116,7 +119,27 @@
                                 <div class="carousel-item">
                                     <img src="assets/images/lab/banner-3.png" class="d-block w-100" alt="">
                                 </div>
+                            </div> --}}
+                            <div class="carousel-inner">
+                                @forelse($sliders as $key => $slide)
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        <img src="{{ asset('storage/' . $slide->image) }}" class="d-block w-100"
+                                            alt="Slider Image">
+                                    </div>
+                                @empty
+                                    {{-- fallback default slides --}}
+                                    <div class="carousel-item active">
+                                        <img src="assets/images/lab/banner-1.png" class="d-block w-100" alt="">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/lab/banner-2.png" class="d-block w-100" alt="">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/lab/banner-3.png" class="d-block w-100" alt="">
+                                    </div>
+                                @endforelse
                             </div>
+
 
                         </div>
                     </div>
@@ -228,8 +251,8 @@
                                                 @endphp
 
                                                 @if($testCount > 0)
-                                                    <p class="text-muted small mb-2">
-                                                        <span class="badge bg-light text-dark border">
+                                                    <p class="text-muted small pb-3 border-bottom-grey">
+                                                        <span class="badge bg-light text-dark border ">
                                                             {{ $testCount }} Profile | {{ $parameterCount  }} Parameters
                                                         </span>
                                                     </p>
@@ -288,7 +311,8 @@
                                                 </p>
                                                 <hr class="my-2">
                                                 <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) ($pkg->price ?? 0)) }}</p>
+                                                    {{ number_format((float) ($pkg->price ?? 0)) }}
+                                                </p>
                                                 <a href="{{ route('appointment') }}" class="theme-button style-1">
                                                     <span data-text="Add to Cart">Add to Cart</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -336,7 +360,8 @@
                                                 </p>
                                                 <hr class="my-2">
                                                 <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) ($pkg->price ?? 0)) }}</p>
+                                                    {{ number_format((float) ($pkg->price ?? 0)) }}
+                                                </p>
                                                 <a href="{{ route('appointment') }}" class="theme-button style-1">
                                                     <span data-text="Add to Cart">Add to Cart</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
@@ -1460,7 +1485,11 @@
         });
 
 
-
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#bookingModal").modal("show");
+            }, 3000);
+        });
 
     </script>
 
