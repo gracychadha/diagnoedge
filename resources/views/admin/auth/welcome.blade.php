@@ -61,10 +61,10 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="text-center mb-3">
-                                        <a href="index.html"><img src="images/logo-full.png" alt=""></a>
+                                        <a href=""><img src="images/logo-full.png" alt=""></a>
                                     </div>
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="index.html">
+                                    <form action="">
                                         <div class="form-group">
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-control" value="hello@example.com">
@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <a href="page-forgot-password.html">Forgot Password?</a>
+                                                <a href="">Forgot Password?</a>
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -96,7 +96,7 @@
                                     </form>
                                     <div class="new-account mt-3">
                                         <p class="mb-0">Don't have an account? <a class="text-primary"
-                                                href="page-register.html">Sign up</a></p>
+                                                href="">Sign up</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +115,8 @@
     <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <script src="js/custom.min.js"></script>
     <script src="js/deznav-init.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    {{-- <script src="js/demo.js"></script> --}}
+    {{-- <script src="js/styleSwitcher.js"></script> --}}
 
     <!-- Form step init -->
     <script src="vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
