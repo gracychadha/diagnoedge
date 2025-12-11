@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo/d.png') }}">
 
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link class="main-css" href="css/style.css" rel="stylesheet">
@@ -34,6 +34,14 @@
     
 	<!-- Material color picker -->
     <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+     <style>
+        .DZ-theme-btn.DZ-bt-buy-now{
+            display: none;
+        }
+        .DZ-theme-btn.DZ-bt-support-now{
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="vh-100">
