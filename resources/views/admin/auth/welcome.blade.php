@@ -41,6 +41,12 @@
         .DZ-theme-btn.DZ-bt-support-now{
             display: none;
         }
+        .sidebar-right .sidebar-right-trigger{
+            display: none !important;
+        }
+        .dz-demo-panel .dz-demo-trigger{
+            display: none !important;
+        }
     </style>
 </head>
 
