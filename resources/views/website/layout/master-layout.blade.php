@@ -22,10 +22,10 @@
 
     {{-- css files --}}
     <link rel="shortcut icon"
-        href="{{ $settings->black_logo ? asset('storage/' . $settings->black_logo) : asset('assets/images/logo/d.png') }}"
+        href="{{ $settings->favicon ? asset('storage/' . $settings->favicon) : asset('assets/images/logo/d.png') }}"
         type="image/x-icon">
     <link rel="icon"
-        href="{{ $settings->black_logo ? asset('storage/' . $settings->black_logo) : asset('assets/images/logo/d.png') }}"
+        href="{{ $settings->favicon ? asset('storage/' . $settings->favicon) : asset('assets/images/logo/d.png') }}"
         type="image/x-icon">
     <!-- font awesome css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
