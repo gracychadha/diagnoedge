@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/d.png') }}" type="image/x-icon">
     <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet">
 
@@ -36,6 +36,9 @@
             justify-content: center;
             padding: 50px 30px;
             min-height: 100vh;
+        }
+        #DZScript{
+            display: none !important;
         }
     </style>
 </head>
@@ -71,7 +74,7 @@
     <script src="{{ asset('js/custom.min.js') }}"></script>
     <script src="{{ asset('js/deznav-init.js') }}"></script>
     <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+    {{-- <script src="{{ asset('js/styleSwitcher.js') }}"></script> --}}
 
 </body>
 
