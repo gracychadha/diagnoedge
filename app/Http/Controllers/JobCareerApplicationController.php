@@ -16,16 +16,33 @@ class JobCareerApplicationController extends Controller
         return view('admin.pages.admin-job-application', compact('application'));
     }
 
-    //
+    //  
     public function store(Request $request)
     {
         $request->validate([
             'job_slug' => 'required|exists:job_careers,slug',
-            'fullname' => 'required|string|max:255',
-            'email' => 'required|email',
-            'phone' => 'required|string|max:20',
-            'address' => 'required|string|max:255',
-            'details' => 'nullable|string',
+            'fullname' => [
+                'required',
+                'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
+            ],
+            'email' =>[
+                'required',
+                'regex:/^[^<>{}()*$!;:=\[\]]+$/'
+            ],
+            'phone' => [
+                'required',
+                'regex:/^\+91[6-9]\d{9}$/'
+            ],
+            'address' => [
+                'nullable',
+                'max:5000',
+                'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'
+            ],
+            'details' =>[
+                'nullable',
+                'max:5000',
+                'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'
+            ],
             'resume' => 'nullable|file|mimes:pdf,doc,docx|max:5120', // 5MB
         ]);
         $resumePath = null;

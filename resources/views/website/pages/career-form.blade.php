@@ -1,5 +1,6 @@
 @extends("website.layout.master-layout")
 @section("title", " Career Form | Diagnoedge")
+
 @section("content")
     {{-- main section --}}
     <main class="main">
@@ -75,10 +76,10 @@
                                     <input type="hidden" name="job_id" value="{{ $job->id }}">
                                     <input type="hidden" name="job_title" value="{{ $job->title }}">
 
-                                    <div class="row g-4">
+                                    <div class="row g-4 bg-light pb-4">
 
                                         {{-- ---------------- LEFT SIDE (Job Details) ---------------- --}}
-                                        <div class="col-lg-6 bg-light p-4 rounded">
+                                        <div class="col-lg-6  pe-4 rounded">
                                             {{-- <h5 class="fw-bold mb-3">Job Details</h5> --}}
 
                                             <div class="mb-3">
@@ -86,39 +87,6 @@
                                                 <input class="form-control" value="{{ $job->title }}" readonly>
                                             </div>
 
-
-
-                                            <div class="mb-3">
-                                                <label class="form-label fw-semibold">Job Type</label>
-                                                <input class="form-control" value="{{ $job->type }}" readonly>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label fw-semibold">Location</label>
-                                                <input class="form-control" value="{{ $job->location }}" readonly>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label fw-semibold">Experience</label>
-                                                <input class="form-control" value="{{ $job->experience }}" readonly>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label fw-semibold">Qualification</label>
-                                                <input class="form-control" value="{{ $job->qualification }}" readonly>
-                                            </div>
-
-                                            @if($job->salary_range)
-                                                <div class="mb-3">
-                                                    <label class="form-label fw-semibold">Salary Range</label>
-                                                    <input class="form-control" value="{{ $job->salary_range }}" readonly>
-                                                </div>
-                                            @endif
-                                        </div>
-
-                                        {{-- ---------------- RIGHT SIDE (Your Details) ---------------- --}}
-                                        <div class="col-lg-6 bg-light p-4 rounded">
-                                            {{-- <h5 class="fw-bold mb-3">Your Details</h5> --}}
 
                                             <div class="mb-3">
                                                 <label class="form-label fw-semibold">Full Name *</label>
@@ -129,18 +97,49 @@
                                             </div>
 
                                             <div class="mb-3">
+                                                <label class="form-label fw-semibold">Phone *</label>
+                                                <input class="form-control" name="phone" type="text" required id="phone"
+                                                    placeholder="Enter your phone number" value="{{ old('phone') }}">
+                                                @error('phone') <small class="text-danger">{{ $message }}</small> @enderror
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label fw-semibold">Job Location</label>
+                                                <input class="form-control" value="{{ $job->location }}" readonly>
+                                            </div>
+
+
+
+                                            {{-- <div class="mb-3">
+                                                <label class="form-label fw-semibold">Qualification</label>
+                                                <input class="form-control" value="{{ $job->qualification }}" readonly>
+                                            </div> --}}
+
+                                            @if($job->salary_range)
+                                                <div class="">
+                                                    <label class="form-label fw-semibold">Salary Range</label>
+                                                    <input class="form-control" value="{{ $job->salary_range }}" readonly>
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                        {{-- ---------------- RIGHT SIDE (Your Details) ---------------- --}}
+                                        <div class="col-lg-6 ps-4 rounded">
+                                            {{-- <h5 class="fw-bold mb-3">Your Details</h5> --}}
+                                            <div class="mb-3">
+                                                <label class="form-label fw-semibold">Job Type</label>
+                                                <input class="form-control" value="{{ $job->type }}" readonly>
+                                            </div>
+
+
+                                            <div class="mb-3">
                                                 <label class="form-label fw-semibold">Email *</label>
                                                 <input class="form-control" name="email" type="email" required
                                                     placeholder="Enter your email" value="{{ old('email') }}">
                                                 @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label fw-semibold">Phone *</label>
-                                                <input class="form-control" name="phone" type="text" required
-                                                    placeholder="Enter your phone number" value="{{ old('phone') }}">
-                                                @error('phone') <small class="text-danger">{{ $message }}</small> @enderror
-                                            </div>
+
 
                                             <div class="mb-3">
                                                 <label class="form-label fw-semibold">Address *</label>
@@ -149,15 +148,11 @@
                                                 @error('address') <small class="text-danger">{{ $message }}</small>
                                                 @enderror
                                             </div>
-
                                             <div class="mb-3">
-                                                <label class="form-label fw-semibold">Additional Details</label>
-                                                <textarea class="form-control" name="details" rows="3"
-                                                    placeholder="Write something...">{{ old('details') }}</textarea>
-                                                @error('details') <small class="text-danger">{{ $message }}</small>
-                                                @enderror
+                                                <label class="form-label fw-semibold">Experience</label>
+                                                <input class="form-control" value="{{ $job->experience }}" readonly>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="">
                                                 <label class="form-label fw-semibold">Upload Resume (PDF, DOC, DOCX)</label>
                                                 <input class="form-control" type="file" name="resume"
                                                     accept=".pdf,.doc,.docx">
@@ -165,9 +160,20 @@
                                             </div>
 
 
+
+
                                         </div>
                                         <div class="col-12">
-                                            <div class="form-group">
+                                           
+                                                <label class="form-label fw-semibold">Additional Details</label>
+                                                <textarea class="form-control" name="details" rows="6"
+                                                    placeholder="Write something..." style="height:200px;">{{ old('details') }}</textarea>
+                                                @error('details') <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-label">
                                                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
                                                     data-callback="recaptchaCallback">
                                                 </div>
@@ -177,7 +183,7 @@
 
                                         {{-- SUBMIT BUTTON CENTERED --}}
                                         <div class="col-lg-12">
-                                            <div class="contact-btn-wapper mt-10">
+                                            <div class="contact-btn-wapper mt-0">
                                                 <button type="submit" class="theme-button style-1" data-text="Submit"
                                                     id="captcha-btn" disabled>
                                                     <span data-text="Submit">Submit</span>
@@ -211,5 +217,44 @@
             const btn = document.getElementById('captcha-btn');
             if (btn) btn.disabled = false;
         };
+        // INTEL FLAG SCRIPT FOR PHONE ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector("#phone");
+            iti = window.intlTelInput(input, {
+                initialCountry: "auto",
+                nationalMode: false,
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                geoIpLookup: function (callback) {
+                    fetch('https://ipapi.co/json')
+                        .then(response => response.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback('us'));
+                }
+            });
+
+            // Apply z-index to flag container
+            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
+            if (flagContainer) {
+                flagContainer.style.zIndex = '9999';
+            }
+
+            // Apply z-index to the dropdown country list
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const countryList = document.querySelector('.iti__country-list');
+                    if (countryList) {
+                        countryList.style.zIndex = '9999';
+                    }
+                });
+            });
+
+            // Observe changes in the DOM so that dropdown gets z-index when created
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+
+        document.getElementById("JobForm").addEventListener("submit", function (e) {
+            document.querySelector("#phone").value = iti.getNumber();
+        });
     </script>
 @endpush

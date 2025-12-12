@@ -91,7 +91,7 @@
                                                 <div class="form-floating field-inner">
                                                     <input class="form-control" id="email" name="email"
                                                         placeholder="Email Here" type="email" autocomplete="off"
-                                                        required="required"  value="{{ old('email') }}">
+                                                        required="required" value="{{ old('email') }}">
                                                     @error('email')
                                                         <div class="text-danger small">{{ $message }}</div>
                                                     @enderror
@@ -104,7 +104,8 @@
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
                                                     <input class="form-control" id="phone1" name="phone" type="text"
-                                                        autocomplete="off" required="required"  value="{{ old(key: 'phone') }}">
+                                                        autocomplete="off" required="required"
+                                                        value="{{ old(key: 'phone') }}">
                                                     @error('phone')
                                                         <div class="text-danger small">{{ $message }}</div>
                                                     @enderror
@@ -132,22 +133,21 @@
                                             <div class="form-group">
                                                 <div class="form-floating">
                                                     @php
-    $packages = \App\Models\Subparameter::where('status', 'active')->get();
-@endphp
+                                                        $packages = \App\Models\Subparameter::where('status', 'active')->get();
+                                                    @endphp
 
-<select class="form-select" id="selectdepartment" name="selectdepartment">
-    <option value="" disabled selected>Select Package | Test</option>
+                                                    <select class="form-select" id="selectdepartment"
+                                                        name="selectdepartment">
+                                                        <option value="" disabled selected>Select Package | Test</option>
 
-    @forelse($packages as $package)
-        <option value="{{ $package->title }}"
-            {{ old('selectdepartment') == $package->id ? 'selected' : '' }}>
-            {{ $package->title }}
-        </option>
-         @empty
-        <option value="" disabled>No active tests/packages found</option>
-    @endforelse
-</select>
-
+                                                        @forelse($packages as $package)
+                                                            <option value="{{ Str::limit($package->title, 22) }}">
+                                                               {{ Str::limit($package->title, 25) }}
+                                                            </option>
+                                                        @empty
+                                                            <option value="" disabled>No active tests/packages found</option>
+                                                        @endforelse
+                                                    </select>
                                                     <label for="selectdepartment"><i class="fa-solid fa-file-medical"></i>
                                                         Select Package </label>
                                                 </div>
@@ -156,16 +156,12 @@
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="form-floating field-inner">
-                                                    <input class="form-control"
-       id="appointmentdate"
-       name="appointmentdate"
-       placeholder="dd-mm-yyyy"
-       autocomplete="off"
-       required="required"
-       type="text"
-       value="{{ old('appointmentdate') }}">
+                                                    <input class="form-control" id="appointmentdate" name="appointmentdate"
+                                                        placeholder="dd-mm-yyyy" autocomplete="off" required="required"
+                                                        type="text" value="{{ old('appointmentdate') }}">
 
-                                                   <label for="appointmentdate"><i class="fa-solid fa-calendar-days"></i> Appointment Date</label>
+                                                    <label for="appointmentdate"><i class="fa-solid fa-calendar-days"></i>
+                                                        Appointment Date</label>
 
 
                                                 </div>
@@ -178,7 +174,7 @@
                                                 <div class="form-floating field-inner">
                                                     <textarea id="message" class="form-control" name="message"
                                                         placeholder="Messege Here" autocomplete="off"
-                                                        required="required"  > {{ old('message') }}</textarea>
+                                                        required="required"> {{ old('message') }}</textarea>
                                                     <label for="message"><i class="fa-solid fa-message"></i> Message</label>
                                                 </div>
                                             </div>
@@ -282,19 +278,19 @@
         document.getElementById("appointmentForm").addEventListener("submit", function (e) {
             document.querySelector("#phone1").value = iti.getNumber();
         });
-      
-        // DATE PICKER FOR APPOINTMENT FORM
-      flatpickr("#appointmentdate", {
-    altInput: true,
-    altFormat: "d-m-Y",
-    dateFormat: "Y-m-d",
-    minDate: "today",
-    allowInput: true,
-    altInputClass: "form-control flatpickr-input",
 
-    onReady: function(selectedDates, dateStr, instance) {
-        instance.altInput.setAttribute("placeholder", "dd-mm-yyyy");
-    }
-});
- </script>
+        // DATE PICKER FOR APPOINTMENT FORM
+        flatpickr("#appointmentdate", {
+            altInput: true,
+            altFormat: "d-m-Y",
+            dateFormat: "Y-m-d",
+            minDate: "today",
+            allowInput: true,
+            altInputClass: "form-control flatpickr-input",
+
+            onReady: function (selectedDates, dateStr, instance) {
+                instance.altInput.setAttribute("placeholder", "dd-mm-yyyy");
+            }
+        });
+    </script>
 @endpush

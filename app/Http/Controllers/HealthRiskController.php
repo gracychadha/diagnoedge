@@ -90,4 +90,14 @@ class HealthRiskController extends Controller
 
         return back()->with('success', 'Health Risk deleted successfully!');
     }
+     public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        HealthRisk::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
+    }
 }

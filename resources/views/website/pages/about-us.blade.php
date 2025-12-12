@@ -281,3 +281,6 @@
 
     </main>
 @endsection
+
+@push('scripts')
+@endpush

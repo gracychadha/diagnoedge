@@ -98,7 +98,7 @@
                     <div class="col-lg-6">
 
                         <!-- Test Details -->
-                        <section id="title" class="bg-white rounded-4 p-4 mb-5 shadow-sm">
+                        <section id="title" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <p class="text-muted mb-0"></p>
                                 <p class="text-muted mb-0">134+ booked in last 3 days</p>
@@ -150,7 +150,7 @@
                             </div>
                         </section>
                         <!-- detail -->
-                        <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5">
+                        <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-4">Detail</h2>
                             <p class="lead text-muted">
                                 {!! $package->detail ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
@@ -159,7 +159,7 @@
                         </section>
 
                         <!-- Overview -->
-                        <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5">
+                        <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-4">Overview</h2>
                             <p class="lead text-muted">
                                 {!! $package->overview ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
@@ -169,7 +169,7 @@
 
                         <!-- FAQs -->
                         <!-- Dynamic FAQs from packages_faqs table -->
-                        <section id="faq" class="p-4 bg-white">
+                        <section id="faq" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-3">Frequently Asked Questions </h2>
 
                             @if($faqs->count() > 0)
@@ -211,8 +211,9 @@
                                    <i class="fas fa-rupee-sign text-success"></i>
                                 <span class="fs-3 fw-bold">{{ number_format((float)$package->price) }}</span>
                                 </div>
-                                <a href="#" class="btn btn-success w-100 fw-semibold py-2 rounded-3">
-                                    Add to cart
+                                <a href="#" class="theme-button style-1 w-100">
+                                    <span data-text="Add to Cart">Add to Cart</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
 
@@ -226,8 +227,9 @@
                                         Book any blood test or health checkup<br>
                                         and get tested at the comfort of your home
                                     </p>
-                                    <a href="#" class="btn btn-success fw-semibold py-2 px-4 rounded-3">
-                                        Get Instant Call Back
+                                     <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}" class="theme-button style-1 w-100">
+                                        <span data-text="Get  Instant Call Back">Get  Instant Call Back</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>

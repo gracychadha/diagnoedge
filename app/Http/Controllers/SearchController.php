@@ -15,10 +15,7 @@ class SearchController extends Controller
             return response()->json(['results' => [], 'message' => 'No related option found']);
         }
 
-        // $tests = \App\Models\Test::where('status', 'active')
-        //     ->whereRaw('LOWER(title) LIKE ?', ["%{$keyword}%"])
-        //     ->select('id', 'title', \DB::raw("'test' as type"))
-        //     ->get();
+
 
         // Search packages
         $packages = \App\Models\Package::where('status', 'active')
@@ -27,12 +24,14 @@ class SearchController extends Controller
             ->get()
             ->map(function ($item) {
                 $item->url = route('package-details', $item->slug);
+                return $item;
             });
+
 
 
         // Search healthRisks
         $healthRisks = \App\Models\HealthRisk::where('status', 'active')
-            ->whereRaw('Lower(title) LIKE ?', ["%{$keyword}%"])
+            ->whereRaw('LOWER(title) LIKE ?', ["%{$keyword}%"])
             ->select('id', 'title', 'slug', \DB::raw("'healthrisk' as type"))
             ->get()
             ->map(function ($item) {

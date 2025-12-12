@@ -41,9 +41,12 @@
                 </div>
             </div>
             <div class="breadcrumb-shape">
-                <img class="breadcrumb-shape-one" src="{{ asset('assets/images/shape/shape-4.png') }}" alt="breadcrumb shape one">
-                <img class="breadcrumb-shape-two" src="{{ asset('assets/images/shape/square-blue.png') }}" alt="breadcrumb shape two">
-                <img class="breadcrumb-shape-three" src="{{ asset('assets/images/shape/plus-orange.png') }}" alt="breadcrumb shape three">
+                <img class="breadcrumb-shape-one" src="{{ asset('assets/images/shape/shape-4.png') }}"
+                    alt="breadcrumb shape one">
+                <img class="breadcrumb-shape-two" src="{{ asset('assets/images/shape/square-blue.png') }}"
+                    alt="breadcrumb shape two">
+                <img class="breadcrumb-shape-three" src="{{ asset('assets/images/shape/plus-orange.png') }}"
+                    alt="breadcrumb shape three">
             </div>
         </section>
 
@@ -55,9 +58,12 @@
                     <div class="col-lg-3">
                         <div class="sticky-top" style="top: 100px;">
                             <div class="list-group rounded-4 overflow-hidden smooth-card mb-4">
-                                <a href="#title" class="list-group-item list-group-item-action py-3 nav-item">Health Packages</a>
-                                <a href="#detail" class="list-group-item list-group-item-action py-3 nav-item">Health Included</a>
-                                <a href="#overview" class="list-group-item list-group-item-action py-3 nav-item">Overview</a>
+                                <a href="#title" class="list-group-item list-group-item-action py-3 nav-item">Health
+                                    Packages</a>
+                                <a href="#detail" class="list-group-item list-group-item-action py-3 nav-item">Health
+                                    Included</a>
+                                <a href="#overview"
+                                    class="list-group-item list-group-item-action py-3 nav-item">Overview</a>
                                 <a href="#faq" class="list-group-item list-group-item-action py-3 nav-item">FAQs</a>
                             </div>
 
@@ -91,38 +97,38 @@
                     <!-- Main Content -->
                     <div class="col-lg-6">
 
-                      @php
-    // Decode test_ids → array of test IDs
-    $testIds = is_string($package->test_ids)
-        ? json_decode($package->test_ids, true)
-        : (is_array($package->test_ids) ? $package->test_ids : []);
+                        @php
+                            // Decode test_ids → array of test IDs
+                            $testIds = is_string($package->test_ids)
+                                ? json_decode($package->test_ids, true)
+                                : (is_array($package->test_ids) ? $package->test_ids : []);
 
-    $includedTests = \App\Models\Test::whereIn('id', $testIds)
-        ->select('id', 'title', 'icon')
-        ->inRandomOrder()
-        ->get();
+                            $includedTests = \App\Models\Test::whereIn('id', $testIds)
+                                ->select('id', 'title', 'icon')
+                                ->inRandomOrder()
+                                ->get();
 
-    // Decode parameter_id → array of parameter IDs
-    $parameterIds = is_string($package->parameter_id)
-        ? json_decode($package->parameter_id, true)
-        : (is_array($package->parameter_id) ? $package->parameter_id : []);
+                            // Decode parameter_id → array of parameter IDs
+                            $parameterIds = is_string($package->parameter_id)
+                                ? json_decode($package->parameter_id, true)
+                                : (is_array($package->parameter_id) ? $package->parameter_id : []);
 
-    $parameters = \App\Models\Parameter::whereIn('id', $parameterIds)
-        ->select('id', 'title', 'slug')
-        ->get()
-        ->map(function ($param) {
-            $param->slug = $param->slug ?? \Illuminate\Support\Str::slug($param->title);
-            return $param;
-        });
+                            $parameters = \App\Models\Parameter::whereIn('id', $parameterIds)
+                                ->select('id', 'title', 'slug')
+                                ->get()
+                                ->map(function ($param) {
+                                    $param->slug = $param->slug ?? \Illuminate\Support\Str::slug($param->title);
+                                    return $param;
+                                });
 
-   $faqs = \App\Models\FaqsPackage::where('subparameter_id', $package->id)
-        ->with('subparameter') 
-        ->get();
-@endphp
+                            $faqs = \App\Models\FaqsPackage::where('subparameter_id', $package->id)
+                                ->with('subparameter')
+                                ->get();
+                        @endphp
 
 
                         <!-- Test Details -->
-                        <section id="title" class="bg-white rounded-13 p-4 mb-5 shadow-sm">
+                        <section id="title" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <p class="text-muted mb-0"></p>
                                 <p class="text-muted mb-0">134+ booked in last 3 days</p>
@@ -160,7 +166,7 @@
                         </section>
 
                         <!-- Overview -->
-                        <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5">
+                        <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-4">Overview</h2>
                             <p class="lead text-muted">
                                 {!! $package->overview ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
@@ -168,15 +174,17 @@
                         </section>
 
                         <!-- Included Parameters (Dynamic + Clickable) -->
-                        <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5">
+                        <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h5 class="mb-4"> Health Parameters</h5>
 
                             <div class="row gy-3">
                                 @foreach($parameters as $parameter)
                                     <div class="col-md-6">
                                         <a href="{{ route('parameter-detail', $parameter->slug) }}"
-                                           class="border rounded p-3 d-block text-decoration-none hover-bg-light">
-                                            <strong>{{ $parameter->title }}</strong>
+                                            class=" rounded p-3 d-block text-decoration-none  bg-light">
+                                            <img src="{{ asset('assets/images/icon-d.png') }}"> <strong
+                                                class="ps-2">{{ $parameter->title }}</strong>
+
                                             @if($parameter->total_tests)
                                                 <span class="text-muted ms-2">({{ $parameter->total_tests }} Parameters)</span>
                                             @endif
@@ -187,25 +195,25 @@
                         </section>
 
                         <!-- FAQs -->
-                        <section id="faq" class="p-4 bg-white">
+                        <section id="faq" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-3">Frequently Asked Questions</h2>
 
                             @if($faqs->count() > 0)
                                 <div class="accordion" id="faqAccordion">
                                     @foreach($faqs as $index => $faq)
-                                        <div class="accordion-item border rounded mb-3">
+                                        <div class="accordion-item border rounded mb-3  ">
                                             <h2 class="accordion-header">
-                                                <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }} bg-light text-dark"
-                                                        type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#faq{{ $index }}">
+                                                <button
+                                                    class="accordion-button {{ $loop->first ? '' : 'collapsed' }} bg-light text-dark"
+                                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ $index }}">
                                                     {{ $faq->question }}
                                                 </button>
                                             </h2>
                                             <div id="faq{{ $index }}"
-                                                 class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }} text-dark "
-                                                 data-bs-parent="#faqAccordion">
+                                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }} text-dark "
+                                                data-bs-parent="#faqAccordion">
                                                 <div class="accordion-body bg-light " style="color: #000">
-                                                   {!! $faq->answer !!}
+                                                    {!! $faq->answer !!}
 
                                                 </div>
                                             </div>
@@ -221,14 +229,17 @@
                     <!-- Right Sidebar -->
                     <div class="col-lg-3">
                         <div class="sticky-top" style="top: 100px;">
-                            <div class="bg-white rounded-4 p-4 text-center border border-success shadow-sm mb-4" style="border-width:2px;">
+                            <div class="bg-white rounded-4 p-4 text-center border border-success shadow-sm mb-4"
+                                style="border-width:2px;">
                                 <h4 class="fw-semibold mb-3">{{ $package->title }}</h4>
                                 <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
                                     <i class="fas fa-rupee-sign text-success"></i>
                                     <span class="fs-3 fw-bold">{{ number_format((float) $package->price) }}</span>
                                 </div>
-                                <a href="#" class="btn btn-success w-100 fw-semibold py-2 rounded-3">
-                                    Add to cart
+
+                                <a href="#" class="theme-button style-1 w-100">
+                                    <span data-text="Add to Cart">Add to Cart</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
 
@@ -241,14 +252,16 @@
                                         Book any blood test or health checkup<br>
                                         and get tested at the comfort of your home
                                     </p>
-                                    <a href="#" class="btn btn-success fw-semibold py-2 px-4 rounded-3">
-                                        Get Instant Call Back
+                                    <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}" class="theme-button style-1 w-100">
+                                        <span data-text="Get  Instant Call Back">Get  Instant Call Back</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="smooth-card">
-                                <img src="{{ asset('assets/images/blog/blog-4.jpg') }}" alt="Blog Image" class="img-fluid rounded-4">
+                                <img src="{{ asset('assets/images/blog/blog-4.jpg') }}" alt="Blog Image"
+                                    class="img-fluid rounded-4">
                             </div>
                         </div>
                     </div>

@@ -129,7 +129,7 @@ Route::get('/career', function () {
 Route::get('/career-form/{slug}', [JobCareerController::class, 'apply'])
     ->name('career-form');
 
-Route::post('/career-form', [JobApplicationController::class, 'store'])->name('career-form.store');
+Route::post('/career-form', [JobCareerApplicationController::class, 'store'])->name('career-form.store');
 
 Route::get('/privacy-policy', function () {
     return view('website.pages.privacy-policy');
@@ -215,15 +215,88 @@ Route::post('/book-test', [BookingController::class, 'store'])->name('book.test'
 
 
 
+
+
 Route::get('/dashboard', function () {
 
     $totalLeads = \App\Models\Contact::count();
     $appointmentLeads = \App\Models\Appointment::count();
     $doctorCount = \App\Models\Doctor::count();
-
+    $applicationLeads = \App\Models\JobCareerApplication::count();
     $doctors = \App\Models\Doctor::all();
+    $users = \App\Models\User::all();
 
-    return view('admin.pages.dashboard', compact('totalLeads', 'appointmentLeads', 'doctorCount', 'doctors'));
+    // CONTACT LEADS MONTHLY
+    $contact = \App\Models\Contact::select(
+        DB::raw('COUNT(id) as count'),
+        DB::raw('MONTHNAME(created_at) as month'),
+        DB::raw('MONTH(created_at) as month_no')
+    )
+        ->groupBy('month', 'month_no')
+        ->orderBy('month_no')
+        ->get();
+
+    // APPOINTMENT MONTHLY
+    $appointment = \App\Models\Appointment::select(
+        DB::raw('COUNT(id) as count'),
+        DB::raw('MONTHNAME(created_at) as month'),
+        DB::raw('MONTH(created_at) as month_no')
+    )
+        ->groupBy('month', 'month_no')
+        ->orderBy('month_no')
+        ->get();
+
+    // JOB APPLICATION MONTHLY
+    $jobs = \App\Models\JobCareerApplication::select(
+        DB::raw('COUNT(id) as count'),
+        DB::raw('MONTHNAME(created_at) as month'),
+        DB::raw('MONTH(created_at) as month_no')
+    )
+        ->groupBy('month', 'month_no')
+        ->orderBy('month_no')
+        ->get();
+    // BOOKING APPLICATION MONTHLY
+    $booking = \App\Models\Booking::select(
+        DB::raw('COUNT(id) as count'),
+        DB::raw('MONTHNAME(created_at) as month'),
+        DB::raw('MONTH(created_at) as month_no')
+    )
+        ->groupBy('month', 'month_no')
+        ->orderBy('month_no')
+        ->get();
+    // DAILY APPOINTMENT COUNT FOR CURRENT MONTH
+    $dailyAppointments = \App\Models\Appointment::select(
+        DB::raw('COUNT(id) as count'),
+        DB::raw('DAY(created_at) as day')
+    )
+        ->whereMonth('created_at', now()->month)
+        ->whereYear('created_at', now()->year)
+        ->groupBy('day')
+        ->orderBy('day')
+        ->get();
+
+
+    // Extract labels (from one dataset — they are all sorted the same)
+    $months = $appointment->pluck('month');
+    // extract days + counts
+    $days = $dailyAppointments->pluck('day');
+    $dailyAppointmentData = $dailyAppointments->pluck('count');
+
+    return view('admin.pages.dashboard', [
+        'months' => $months,
+        'contactData' => $contact->pluck('count'),
+        'appointmentData' => $appointment->pluck('count'),
+        'jobData' => $jobs->pluck('count'),
+        'bookingData' => $booking->pluck('count'),
+        'totalLeads' => $totalLeads,
+        'appointmentLeads' => $appointmentLeads,
+        'applicationLeads' => $applicationLeads,
+        'doctorCount' => $doctorCount,
+        'days' => $days,
+        'dailyAppointmentData' => $dailyAppointmentData,
+        'doctors' => $doctors,
+        'users' => $users
+    ]);
 })->middleware('auth')->name('dashboard');
 
 
@@ -236,6 +309,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/tests', [TestController::class, 'store'])->name('admin.tests.store');
     Route::put('/tests/{test}', [TestController::class, 'update'])->name('admin.tests.update');
     Route::delete('/tests/{test}', [TestController::class, 'destroy'])->name('admin.tests.destroy');
+    Route::post('/tests/delete-selected', [TestController::class, 'deleteSelected'])
+        ->name('tests.delete-selected');
 
     // ────────────── PARAMETERS ──────────────
 
@@ -247,6 +322,8 @@ Route::middleware('auth')->group(function () {
         ->name('admin.parameters.update');
     Route::delete('/parameters/{parameter}', [ParameterController::class, 'destroy'])
         ->name('admin.parameters.destroy');
+    Route::post('/parameters/delete-selected', [ParameterController::class, 'deleteSelected'])
+        ->name('parameters.delete-selected');
 
     // ────────────── Health Risks ──────────────
     Route::get('/health-risks', [HealthRiskController::class, 'index'])
@@ -260,6 +337,8 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/health-risks/{healthRisk}', [HealthRiskController::class, 'destroy'])
         ->name('health-risks.destroy');
+    Route::post('/health-risks/delete-selected', [HealthRiskController::class, 'deleteSelected'])
+        ->name('health-risks.delete-selected');
 
 
     // ────────────── Health Package/ sub parameter ──────────────
@@ -275,7 +354,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin-subparameters/{subparameter}', [SubparameterController::class, 'destroy'])
         ->name('admin-subparameters.destroy');
 
-
+    Route::post('/admin-subparameters/delete-selected', [SubparameterController::class, 'deleteSelected'])
+        ->name('admin-subparameters.delete-selected');
 
     // ────────────── faqs for the health packages ──────────────
 

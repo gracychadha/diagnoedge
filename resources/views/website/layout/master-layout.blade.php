@@ -68,8 +68,14 @@
                 /* Optional: Slightly smaller button */
             }
         }
+        input:read-only{
+            background: #dde7dd;
+        }
+        input[readonly]:hover{
+            background: #dde7dd;
+        }
     </style>
-
+    @stack('styles')
 </head>
 
 <body>

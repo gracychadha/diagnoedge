@@ -18,14 +18,14 @@ class ParameterController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title'       => 'required|string|max:255|unique:parameters,title',
-            'price'       => 'required|numeric|min:0',
-            'status'      => 'required|in:active,inactive',
+            'title' => 'required|string|max:255|unique:parameters,title',
+            'price' => 'required|numeric|min:0',
+            'status' => 'required|in:active,inactive',
             'description' => 'nullable|string',
-            'overview'    => 'nullable|string',
-            'detail_id'   => 'nullable|array',
+            'overview' => 'nullable|string',
+            'detail_id' => 'nullable|array',
             'detail_id.*' => 'integer|exists:tests,id',
-            'icon'        => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
         ]);
 
         // Generate slug
@@ -48,14 +48,14 @@ class ParameterController extends Controller
     public function update(Request $request, Parameter $parameter)
     {
         $validated = $request->validate([
-            'title'       => 'required|string|max:255|unique:parameters,title,' . $parameter->id,
-            'price'       => 'required|numeric|min:0',
-            'status'      => 'required|in:active,inactive',
+            'title' => 'required|string|max:255|unique:parameters,title,' . $parameter->id,
+            'price' => 'required|numeric|min:0',
+            'status' => 'required|in:active,inactive',
             'description' => 'nullable|string',
-            'overview'    => 'nullable|string',
-            'detail_id'   => 'nullable|array',
+            'overview' => 'nullable|string',
+            'detail_id' => 'nullable|array',
             'detail_id.*' => 'integer|exists:tests,id',
-            'icon'        => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,svg+xml|max:2048',
         ]);
 
         // Update slug only when title changes
@@ -90,5 +90,15 @@ class ParameterController extends Controller
         $parameter->delete();
 
         return back()->with('success', 'Parameter deleted successfully!');
+    }
+    public function deleteSelected(Request $request)
+    {
+        if (!$request->ids || count($request->ids) == 0) {
+            return response()->json(['error' => true, 'message' => 'No IDs received']);
+        }
+
+        Parameter::whereIn('id', $request->ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 }

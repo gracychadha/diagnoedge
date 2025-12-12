@@ -13,10 +13,20 @@
             </div>
 
             <div class="form-head d-flex mb-4 align-items-center justify-content-between">
-                <h4 class="mb-0">Manage Health Risks</h4>
-                <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addModal">
-                    + Add Health Risk
-                </button>
+                <div class="input-group search-area d-inline-flex me-2">
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <div class="input-group-append">
+                        <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addModal">
+                        + Add Health Risk
+                    </button>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
+
+                </div>
+
             </div>
 
             @if(session('success'))
@@ -40,7 +50,15 @@
                                 <table class="table table-striped">
                                     <thead class="">
                                         <tr>
-                                            <th>#</th>
+                                            <th>
+                                                <div class="checkbox text-end align-self-center">
+                                                    <div class="form-check custom-checkbox ">
+                                                        <input type="checkbox" class="form-check-input" id="checkAll"
+                                                            required="">
+                                                        <label class="form-check-label" for="checkAll"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
                                             <th>Icon</th>
                                             <th>Title</th>
                                             {{-- <th>Slug</th> --}}
@@ -52,7 +70,14 @@
                                     <tbody>
                                         @forelse($healthRisks as $risk)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
+                                                <td><div class="checkbox text-end align-self-center ms-2">
+                                                  
+                                                        <div class="form-check custom-checkbox ">
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $risk->id }}"
+                                                                required="">
+                                                            <label class="form-check-label" for="checkbox"></label>
+                                                        </div>
+                                                    </div></td>
                                                 <td>
                                                     @if($risk->icon)
                                                         <img src="{{ asset('storage/' . $risk->icon) }}" width="40"
@@ -167,7 +192,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Health Risk</button>
+                        <button type="submit" class="btn btn-primary">Save </button>
                     </div>
                 </div>
             </form>
@@ -353,27 +378,63 @@
                 }
             });
 
-            // Delete confirmation
-            $(document).on('click', '.delete-risk', function () {
-                const id = $(this).data('id');
-                Swal.fire({
-                    title: 'Delete?',
-                    text: "This health risk will be permanently deleted!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        const form = document.createElement('form');
-                        form.method = 'POST';
-                        form.action = `/health-risks/${id}`;
-                        form.innerHTML = '@csrf @method("DELETE")';
-                        document.body.appendChild(form);
-                        form.submit();
-                    }
-                });
-            });
+
         });
+        // DELETE SELECTED
+        $('.deleteSelected').click(function () {
+
+            let selected = [];
+
+            $(".checkItem:checked").each(function () {
+                selected.push($(this).val());
+            });
+
+            console.log("Selected IDs:", selected); // debug
+
+            if (selected.length === 0) {
+                Swal.fire("Oops!", "Please select at least one Package.", "warning");
+                return;
+            }
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Selected Package will be deleted permanently!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete selected!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "/health-risks/delete-selected",
+
+                        type: "POST",
+                        data: {
+                            ids: selected,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+                            Swal.fire("Deleted!", "Selected Package removed.", "success");
+
+                            selected.forEach(id => {
+                                $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                    $(this).remove();
+                                });
+                            });
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.responseText);
+                            Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                        }
+                    });
+
+                }
+            });
+
+        });
+
     </script>
 @endpush

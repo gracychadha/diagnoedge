@@ -13,13 +13,19 @@
             </div>
 
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
-                <div class="input-group search-area w-25">
-                    <input type="text" class="form-control" placeholder="Search parameters...">
-                    <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
+                <div class="input-group search-area d-inline-flex me-2">
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <div class="input-group-append">
+                        <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+                    </div>
                 </div>
-                <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addParameterModal">
-                    + Add Parameter
-                </button>
+                <div>
+                    <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addParameterModal">
+                        + Add Parameter
+                    </button>
+                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete Selected</a>
+
+                </div>
             </div>
 
             @if(session('success'))
@@ -38,7 +44,15 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>
+                                                <div class="checkbox text-end align-self-center">
+                                                    <div class="form-check custom-checkbox ">
+                                                        <input type="checkbox" class="form-check-input" id="checkAll"
+                                                            required="">
+                                                        <label class="form-check-label" for="checkAll"></label>
+                                                    </div>
+                                                </div>
+                                            </th>
                                             <th>Icon</th>
                                             <th>Title</th>
                                             <th>Price</th>
@@ -49,7 +63,16 @@
                                     <tbody>
                                         @forelse($parameters as $param)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
+                                                <td>
+                                                     <div class="checkbox text-end align-self-center ms-2">
+                                                  
+                                                        <div class="form-check custom-checkbox ">
+                                                            <input type="checkbox" class="form-check-input checkItem"  value="{{ $param->id }}"
+                                                                required="">
+                                                            <label class="form-check-label" for="checkbox"></label>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                                 <td>
                                                     @if($param->icon)
                                                         <img src="{{ $param->icon ? asset('storage/' . $param->icon) : asset('assets/images/default.webp') }}"
@@ -375,5 +398,62 @@
                 }
             });
         });
+        // DELETE SELECTED
+        $('.deleteSelected').click(function () {
+
+            let selected = [];
+
+            $(".checkItem:checked").each(function () {
+                selected.push($(this).val());
+            });
+
+            console.log("Selected IDs:", selected); // debug
+
+            if (selected.length === 0) {
+                Swal.fire("Oops!", "Please select at least one parameter.", "warning");
+                return;
+            }
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Selected parameter will be deleted permanently!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete selected!"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "/parameters/delete-selected",
+
+                        type: "POST",
+                        data: {
+                            ids: selected,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function (response) {
+                            Swal.fire("Deleted!", "Selected test removed.", "success");
+
+                            selected.forEach(id => {
+                                $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
+                                    $(this).remove();
+                                });
+                            });
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.responseText);
+                            Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
     </script>
 @endpush

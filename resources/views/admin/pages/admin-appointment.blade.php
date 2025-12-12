@@ -153,22 +153,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <div class="form-floating">
-                                                    <select class="form-select" id="choosedoctor" name="choosedoctor"
-                                                        aria-label="Choose Doctor">
-                                                        <option value="" disabled selected>Choose Doctor</option>
-
-                                                        <option value="Dr. Catherine Denuve">Dr. Catherine Denuve</option>
-                                                        <option value="Dr. Laurence Olivier">Dr. Laurence Olivier</option>
-                                                        <option value="Dr. Susan Hopkins">Dr. Susan Hopkins</option>
-                                                    </select>
-                                                    <label for="choosedoctor"><i class="fa-solid fa-user-doctor"></i> Choose
-                                                        Doctor</label>
-                                                </div>
-                                            </div>
-                                        </div> --}}
+                                      
                                         
                                         <div class="col-md-6 col-12">
                                             <div class="form-group">

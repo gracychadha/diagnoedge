@@ -18,6 +18,9 @@ class PermissionSeeder extends Seeder
             
             // Appointment Permissions
             ['name' => 'view-appointments', 'guard_name' => 'web'],
+            // for application
+            ['name' => 'view-applications', 'guard_name' => 'web'],
+
             
             // Booking Leads Permissions
             ['name' => 'view-booking-leads', 'guard_name' => 'web'],
