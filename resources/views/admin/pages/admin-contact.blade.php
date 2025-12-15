@@ -12,9 +12,9 @@
             </div>
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="contactSearch"  class="form-control" placeholder="Search here">
                     <div class="input-group-append">
-                        <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+                        <button type="button" id="searchBtn" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
                 </div>
                 <div class="ms-auto">
@@ -45,7 +45,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="contactTableBody">
                                         @foreach($contact as $lead)
                                             <tr>
                                                 <td>
@@ -211,8 +211,8 @@
 @endsection
 @push('scripts')
 <script>
-      $(document).ready(function () {
-            $('.viewContact').click(function () {
+    $(document).on("click" , "viewContact" , function(){
+      
                 let id = $(this).data('id');
 
                 $.ajax({
@@ -229,7 +229,8 @@
                     }
                 });
             });
-            $('.editContact').click(function () {
+             $(document).on( "click", ".viewContact" ,function (){
+                
                 let id = $(this).data('id');
 
                 $.ajax({
@@ -247,7 +248,7 @@
                     }
                 });
             });
-            $('#updateContactForm').submit(function (e) {
+               $('#updateContactForm').submit(function (e) {
                 e.preventDefault();
 
                 let formData = new FormData(this);
@@ -269,7 +270,8 @@
                 });
 
             });
-            $('.deleteApp').click(function () {
+            $(document).on("click" , ".deleteApp" , function(){
+                
 
                 let id = $(this).data("id");
                 let row = $(this).closest("tr");
@@ -307,7 +309,8 @@
                 });
 
             });
-        });
+           
+    
 
         // SELECT ALL
     $("#checkAll").on("change", function () {
@@ -367,6 +370,73 @@
         });
 
     });
+
+
+    // search functionality
+
+const searchInput = document.getElementById('contactSearch');
+const tableBody = document.getElementById('contactTableBody');
+
+searchInput.addEventListener('keyup', function () {
+
+    let keyword = this.value.trim();
+
+    fetch(`/contacts/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                            <td>${highlight(item.fullname, keyword)}</td>
+                            <td class="text-primary">${highlight(item.email, keyword)}</td>
+                            <td>${highlight(item.phone, keyword)}</td>
+                            <td>
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="viewContact btn btn-sm btn-info light">
+                                   <i class="fa fa-eye"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="editContact btn btn-sm btn-warning light">
+                                   <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteContact btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="5" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
 
 
 </script>

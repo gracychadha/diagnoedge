@@ -14,7 +14,7 @@
 
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="testSearch" class="form-control" placeholder="Search here">
                     <div class="input-group-append">
                         <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
@@ -60,7 +60,7 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="testTableBody">
                                         @forelse($parameters as $param)
                                             <tr>
                                                 <td>
@@ -365,6 +365,9 @@
             });
         });
 
+
+        
+
         $(document).on('click', '.delete-param', function () {
             const id = $(this).data('id');
             Swal.fire({
@@ -453,7 +456,69 @@
             });
 
         });
+const searchInput = document.getElementById('testSearch');
+const tableBody = document.getElementById('testTableBody');
+        searchInput.addEventListener('keyup', function () {
 
+    let keyword = this.value.trim();
+
+    fetch(`/parameters/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                           <td>
+    <img src="${item.icon_url}" alt="img" width="50" class="rounded">
+</td>
+                            <td>${highlight(item.title, keyword)}</td>
+                            <td>${highlight(item.price, keyword)}</td>
+                            <td class="text-primary">${highlight(item.status, keyword)}</td>
+                           
+                            <td>
+                               
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="editApp btn btn-sm btn-warning light">
+                                   <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteContact btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="6" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
 
     </script>
 @endpush

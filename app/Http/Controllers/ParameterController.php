@@ -9,6 +9,33 @@ use Illuminate\Support\Facades\Storage;
 
 class ParameterController extends Controller
 {
+
+    // function for search
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $parameters = \App\Models\Parameter::where('title', 'LIKE', "%{$keyword}%")
+            ->orWhere('status', 'LIKE', "%{$keyword}%")
+            ->get()
+            ->map(function ($parameters) {
+                return [
+                    'id' => $parameters->id,
+                    'title' => $parameters->title,
+                    'status' => $parameters->status,
+                    'icon' => $parameters->icon,
+                    'price'=>$parameters->price,
+                    'icon_url' => $parameters->icon
+                        ? asset('storage/' . $parameters->icon)
+                        : asset('assets/images/no-image.png'),
+                ];
+            });
+
+        return response()->json([
+            'status' => true,
+            'data' => $parameters
+        ]);
+    }
     public function index()
     {
         $parameters = Parameter::latest()->get();

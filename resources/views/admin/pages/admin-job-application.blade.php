@@ -12,7 +12,7 @@
             </div>
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="jobSearch" class="form-control" placeholder="Search here">
                     <div class="input-group-append">
                         <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
@@ -49,7 +49,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="jobTableBody">
                                         @foreach($application as $applications)
                                             <tr>
                                                 <td>
@@ -240,12 +240,7 @@
 @endsection
 @push('scripts')
 <script>
-$(document).ready(function () {
-
-    /* -------------------------------------------------------------
-        VIEW APPLICATION
-    ------------------------------------------------------------- */
-    $('.viewApp').click(function () {
+     $(document).on('click', '.viewApp', function () {
         let id = $(this).data('id');
 
         $.ajax({
@@ -271,11 +266,7 @@ $(document).ready(function () {
             }
         });
     });
-
-    /* -------------------------------------------------------------
-        EDIT APPLICATION
-    ------------------------------------------------------------- */
-    $('.editApp').click(function () {
+    $(document).on('click', '.editApp', function () {
         let id = $(this).data('id');
 
         $.ajax({
@@ -299,11 +290,7 @@ $(document).ready(function () {
             }
         });
     });
-
-    /* -------------------------------------------------------------
-        UPDATE APPLICATION
-    ------------------------------------------------------------- */
-    $('#updateAppointmentForm').submit(function (e) {
+      $('#updateAppointmentForm').submit(function (e) {
         e.preventDefault();
 
         let formData = new FormData(this);
@@ -325,10 +312,8 @@ $(document).ready(function () {
         });
     });
 
-    /* -------------------------------------------------------------
-        DELETE SINGLE APPLICATION
-    ------------------------------------------------------------- */
-    $('.deleteContact').click(function () {
+$(document).on('click' , '.deleteContact' , function (){
+   
         let id = $(this).data("id");
         let row = $(this).closest("tr");
 
@@ -360,16 +345,21 @@ $(document).ready(function () {
         });
     });
 
+$(document).ready(function () {
+
+  
+  
+
     /* -------------------------------------------------------------
-        SELECT ALL CHECKBOX
+        DELETE SINGLE APPLICATION
     ------------------------------------------------------------- */
+    
+ 
     $("#checkAll").on("change", function () {
         $(".checkItem").prop("checked", $(this).prop("checked"));
     });
 
-    /* -------------------------------------------------------------
-        DELETE SELECTED
-    ------------------------------------------------------------- */
+  
     $('.deleteSelected').click(function () {
 
         let selected = [];
@@ -423,6 +413,75 @@ $(document).ready(function () {
     });
 
 });
+
+
+    // search functionality
+
+const searchInput = document.getElementById('jobSearch');
+const tableBody = document.getElementById('jobTableBody');
+searchInput.addEventListener('keyup', function () {
+
+    let keyword = this.value.trim();
+
+    fetch(`/applications/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                            <td>${highlight(item.fullname, keyword)}</td>
+                           
+                            <td>${highlight(item.job_title, keyword)}</td>
+                            <td>${highlight(item.phone, keyword)}</td>
+                           <td>
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="viewApp btn btn-sm btn-info light">
+                                   <i class="fa fa-eye"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="editApp btn btn-sm btn-warning light">
+                                   <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteContact btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="4" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
+
+
 </script>
 
 @endpush

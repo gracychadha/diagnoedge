@@ -115,6 +115,9 @@
                                     @can('manage-gallery')
                                         <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
                                     @endcan
+                                    @can('manage-gallery')
+                                        <li><a href="{{ route('faqs.index') }}">Faq</a></li>
+                                    @endcan
                                     @can('manage-testimonials')
                                         <li><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
                                     @endcan

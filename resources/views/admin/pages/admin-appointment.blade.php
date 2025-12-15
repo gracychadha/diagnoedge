@@ -12,11 +12,13 @@
             </div>
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="appointmentSearch"  class="form-control" placeholder="Search here">
                     <div class="input-group-append">
-                        <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+                        <button type="button" id="searchBtn" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
                 </div>
+                
+
                 <div class="ms-auto">
                     {{-- <a href="javascript:void(0);" class="btn btn-primary btn-rounded add-appointment" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">+ Book Appointment</a> --}}
@@ -31,7 +33,7 @@
                         <div class="card-body p-0">
                             <div class="table-responsive">
 
-                                <table id="example5" class="table table-striped patient-list mb-4 dataTablesCard fs-14">
+                                <table id="example5" class="table table-striped patient-list mb-4 dataTablesCard fs-14 display" id="example3" style="min-width: 845px">
                                     <thead>
                                         <tr>
                                             <th>
@@ -49,7 +51,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="appointmentTableBody">
                                         @foreach($appointments as $appointment)
                                             <tr>
                                                 <td>
@@ -287,12 +289,7 @@
                                         <input type="number" name="phone" class="form-control" id="edit_phone1">
                                     </div>
                                 </div>
-                                {{-- <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <label class="col-form-label">Choose Doctor:</label>
-                                        <input type="text" name="choosedoctor" class="form-control" id="edit_choosedoctor">
-                                    </div>
-                                </div> --}}
+                              
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Select Department:</label>
@@ -332,115 +329,80 @@
 @endsection
 @push('scripts')
 <script>
-     $(document).ready(function () {
+  
 
-            $('.viewApp').click(function () {
-                let id = $(this).data('id');
+        $(document).on('click', '.deleteContact', function () {
+    let id = $(this).data("id");
+    let row = $(this).closest("tr");
 
-                $.ajax({
-                    url: "/appointment/view/" + id,
-                    type: "GET",
-                    success: function (res) {
-                        $('#a_name').text(res.fullname);
-                        $('#a_email').text(res.email);
-                        $('#a_phone').text(res.phone);
-                        $('#a_doctor').text(res.choosedoctor);
-                        $('#a_selectdepartment').text(res.selectdepartment);
-                        $('#a_appointmentdate').text(res.appointmentdate);
-                        $('#a_message').html(res.message);
-
-                        $('#viewAppointment').modal('show');
-                    }
-                });
+    Swal.fire({
+        title: "Are you sure?",
+        text: "This Appointment will be permanently deleted!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "/appointment/delete/" + id,
+                type: "DELETE",
+                data: {
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function () {
+                    Swal.fire("Deleted!", "Appointment removed.", "success");
+                    row.fadeOut(400, function () {
+                        $(this).remove();
+                    });
+                }
             });
-            $('.editApp').click(function () {
-                let id = $(this).data('id');
-
-                $.ajax({
-                    url: "/appointment/view/" + id,
-                    type: "GET",
-                    success: function (res) {
-                        $('#edit_id').val(res.id);
-                        $('#edit_fullname').val(res.fullname);
-                        $('#edit_email').val(res.email);
-                        $('#edit_phone1').val(res.phone);
-                        // $('#edit_choosedoctor').val(res.choosedoctor);
-                        $('#edit_selectdepartment').val(res.selectdepartment);
-                        $('#edit_appointmentdate').val(res.appointmentdate);
-                        $('#edit_message').val(res.message);
-
-                        $('#editAppointment').modal('show');
-                    }
-                });
-            });
-            $('#updateAppointmentForm').submit(function (e) {
-                e.preventDefault();
-
-                let formData = new FormData(this);
-
-                $.ajax({
-                    url: "/appointment/update",
-                    type: "POST",
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function (response) {
-                        Swal.fire("Updated!", "Appointment updated successfully!", "success");
-                        $('#editAppointment').modal('hide');
-                        location.reload();
-                    }
-                });
-
-            });
-            $('.deleteContact').click(function () {
-
-                let id = $(this).data("id");
-                let row = $(this).closest("tr");
-
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "This Appointment will be permanently deleted!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#d33",
-                    cancelButtonColor: "#3085d6",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-
-                    if (result.isConfirmed) {
-
-                        $.ajax({
-                            url: "{{ url('/appointment/delete') }}/" + id,
-                            type: "DELETE",
-                            data: {
-                                _token: "{{ csrf_token() }}"
-                            },
-                            success: function (response) {
-
-                                Swal.fire("Deleted!", "Appointment Query removed successfully.", "success");
-
-                                // remove row
-                                row.fadeOut(600, function () {
-                                    $(this).remove();
-                                });
-                            }
-                        });
-
-                    }
-                });
-
-            });
-      $("#checkAll").on("change", function () {
-    $(".checkItem").prop("checked", $(this).prop("checked"));
+        }
+    });
 });
 
-// for multiple #3085d6
+$(document).on('click', '.editApp', function () {
+    let id = $(this).data('id');
 
+    $.ajax({
+        url: "/appointment/view/" + id,
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            
+            $('#edit_id').val(res.id);
+            $('#edit_fullname').val(res.fullname);
+            $('#edit_email').val(res.email);
+            $('#edit_phone1').val(res.phone);
+           
+            $('#edit_selectdepartment').val(res.selectdepartment);
+            $('#edit_appointmentdate').val(res.appointmentdate);
+            $('#edit_message').val(res.message);
 
-        });
+            $('#editAppointment').modal('show');
+        }
+    });
+});
+$(document).on('click', '.viewApp', function () {
+    let id = $(this).data('id');
+
+    $.ajax({
+        url: "/appointment/view/" + id,
+        type: "GET",
+        success: function (res) {
+            $('#a_name').text(res.fullname);
+            $('#a_email').text(res.email);
+            $('#a_phone').text(res.phone);
+            $('#a_selectdepartment').text(res.selectdepartment);
+            $('#a_appointmentdate').text(res.appointmentdate);
+            $('#a_message').html(res.message);
+
+            $('#viewAppointment').modal('show');
+        }
+    });
+});
+
     
 $(document).ready(function () {
 
@@ -458,7 +420,7 @@ $(document).ready(function () {
             selected.push($(this).val());
         });
 
-        console.log("Selected IDs:", selected); // debug
+      
 
         if (selected.length === 0) {
             Swal.fire("Oops!", "Please select at least one appointment.", "warning");
@@ -507,7 +469,69 @@ $(document).ready(function () {
 
 });
 
- 
+const searchInput = document.getElementById('appointmentSearch');
+const tableBody = document.getElementById('appointmentTableBody');
+
+searchInput.addEventListener('keyup', function () {
+
+    let keyword = this.value.trim();
+
+    fetch(`/appointments/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                            <td>${highlight(item.fullname, keyword)}</td>
+                            <td class="text-primary">${highlight(item.email, keyword)}</td>
+                            <td>${highlight(item.phone, keyword)}</td>
+                            <td>
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="viewApp btn btn-sm btn-info light">
+                                   <i class="fa fa-eye"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="editApp btn btn-sm btn-warning light">
+                                   <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteContact btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="5" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
 
 
 </script>

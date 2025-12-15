@@ -12,6 +12,26 @@ use Exception;
 
 class AppointmentController extends Controller
 {
+
+    // search function
+
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $appointments = \App\Models\Appointment::where('fullname', 'LIKE', "%$keyword%")
+            ->orWhere('email', 'LIKE', "%$keyword%")
+            ->orWhere('phone', 'LIKE', "%$keyword%")
+            ->get();
+        // return json
+        return response()->json([
+            "status" => true,
+            "data" => $appointments
+        ]);
+
+        // return view('admin.pages.partials.appointment-rows', compact('appointments'));
+    }
+
     // TO FETCH ALL THE DATA OF APPOINTMENT
     public function index()
     {

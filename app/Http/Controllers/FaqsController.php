@@ -9,6 +9,29 @@ use Illuminate\Http\Request;
 
 class FaqsController extends Controller
 {
+    // function to search
+     public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $faqs = \App\Models\FaqsPackage::where('title', 'LIKE', "%{$keyword}%")
+            ->orWhere('status', 'LIKE', "%{$keyword}%")
+            ->get()
+            ->map(function ($faqs) {
+                return [
+                    'id' => $faqs->id,
+                    'question' => $faqs->question,
+                    'status' => $faqs->status,
+                   
+                   
+                ];
+            });
+
+        return response()->json([
+            'status' => true,
+            'data' => $faqs
+        ]);
+    }
     public function index()
     {
         $faqs = Faqspackage::with(['parameter', 'subparameter'])->latest()->get();

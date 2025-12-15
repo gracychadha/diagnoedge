@@ -723,6 +723,20 @@ Route::middleware('auth')->group(function () {
 
     Route::put('/general-setting', [CaptchaSettingController::class, 'update'])
         ->name('general-setting.update');
+
+
+
+
+
+    Route::get('/appointments/search', [AppointmentController::class, 'search']);
+    Route::get('/contacts/search', [ContactController::class, 'search']);
+    Route::get('/applications/search', [JobCareerApplicationController::class, 'search']);
+    Route::get('/booking-lead/search', [BookingController::class, 'search']);
+    Route::get('/tests/search', [TestController::class, 'search']);
+    Route::get('/parameters/search', [ParameterController::class, 'search']);
+    Route::get('/admin-subparameters/search', [SubparameterController::class, 'search']);
+    Route::get('/health-risks/search', [HealthRiskController::class, 'search']);
+
 });
 
 

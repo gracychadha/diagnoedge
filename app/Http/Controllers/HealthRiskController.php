@@ -9,6 +9,30 @@ use Illuminate\Support\Facades\Storage;
 
 class HealthRiskController extends Controller
 {
+
+    // function for search
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $healthRisks = \App\Models\HealthRisk::where('title', 'LIKE', "%{$keyword}%")
+            ->orWhere('status', 'LIKE', "%{$keyword}%")
+            ->get()
+            ->map(function ($healthRisks) {
+                return [
+                    'id' => $healthRisks->id,
+                    'title' => $healthRisks->title,
+                    'status' => $healthRisks->status,
+                   
+                   
+                ];
+            });
+
+        return response()->json([
+            'status' => true,
+            'data' => $healthRisks
+        ]);
+    }
     /**
      * Display listing of health risks
      */
@@ -24,12 +48,12 @@ class HealthRiskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'         => 'required|string|max:255',
-            'parameter_id'  => 'required|array',
-            'parameter_id.*'=> 'exists:parameters,id',
-            'icon'          => 'required|image|mimes:png,jpg,jpeg,webp|max:2048',
-            'status'        => 'required|in:active,inactive',
-            'description'   => 'nullable|string',
+            'title' => 'required|string|max:255',
+            'parameter_id' => 'required|array',
+            'parameter_id.*' => 'exists:parameters,id',
+            'icon' => 'required|image|mimes:png,jpg,jpeg,webp|max:2048',
+            'status' => 'required|in:active,inactive',
+            'description' => 'nullable|string',
         ]);
 
         $data = $request->all();
@@ -52,12 +76,12 @@ class HealthRiskController extends Controller
     public function update(Request $request, HealthRisk $healthRisk)
     {
         $request->validate([
-            'title'         => 'required|string|max:255',
-            'parameter_id'  => 'required|array',
-            'parameter_id.*'=> 'exists:parameters,id',
-            'icon'          => 'nullable|image|mimes:png,jpg,jpeg,webp|max:2048',
-            'status'        => 'required|in:active,inactive',
-            'description'   => 'nullable|string',
+            'title' => 'required|string|max:255',
+            'parameter_id' => 'required|array',
+            'parameter_id.*' => 'exists:parameters,id',
+            'icon' => 'nullable|image|mimes:png,jpg,jpeg,webp|max:2048',
+            'status' => 'required|in:active,inactive',
+            'description' => 'nullable|string',
         ]);
 
         $data = $request->all();
@@ -90,7 +114,7 @@ class HealthRiskController extends Controller
 
         return back()->with('success', 'Health Risk deleted successfully!');
     }
-     public function deleteSelected(Request $request)
+    public function deleteSelected(Request $request)
     {
         if (!$request->ids || count($request->ids) == 0) {
             return response()->json(['error' => true, 'message' => 'No IDs received']);

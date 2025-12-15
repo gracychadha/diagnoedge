@@ -773,7 +773,7 @@
                             <!-- faq image start -->
                             <div class="faq-image wow fadeInUp" data-wow-delay=".3s">
                                 <figure class="image-anime">
-                                    <img src="assets/images/faqs/faqs-1-1.jpg" alt="faq image one">
+                                    <img src="images/faq/FAQ.png" alt="faq">
                                 </figure>
                             </div>
                             <!-- faq image end -->

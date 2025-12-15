@@ -8,7 +8,23 @@ use Illuminate\Http\Request;
 
 class JobCareerApplicationController extends Controller
 {
+    // search function
 
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $application = \App\Models\JobCareerApplication::where('fullname', 'LIKE', "%$keyword%")
+            ->orWhere('email', 'LIKE', "%$keyword%")
+            ->orWhere('phone', 'LIKE', "%$keyword%")
+            ->get();
+            return response()->json([
+                "status"=>true,
+                "data"=>$application
+            ]);
+
+        // return view('admin.pages.partials.job-application-row', compact('application'));
+    }
     // TO FETCH ALL THE DATA OF Career Application
     public function index()
     {
@@ -25,7 +41,7 @@ class JobCareerApplicationController extends Controller
                 'required',
                 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'
             ],
-            'email' =>[
+            'email' => [
                 'required',
                 'regex:/^[^<>{}()*$!;:=\[\]]+$/'
             ],
@@ -38,7 +54,7 @@ class JobCareerApplicationController extends Controller
                 'max:5000',
                 'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'
             ],
-            'details' =>[
+            'details' => [
                 'nullable',
                 'max:5000',
                 'regex:/^(?!.*(<|>|script|onload|onclick|javascript:)).*$/i'

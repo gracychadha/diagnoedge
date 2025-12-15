@@ -7,12 +7,12 @@
             <div class="page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Appointment</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Booking Leads</a></li>
                 </ol>
             </div>
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="bookingSearch" class="form-control" placeholder="Search here">
                     <div class="input-group-append">
                         <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
@@ -46,7 +46,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="bookingTableBody">
                                         @forelse($bookings as $booking)
                                             <tr>
                                                  <td>
@@ -207,7 +207,62 @@
 
         });
 
+// search functionality
 
+const searchInput = document.getElementById('bookingSearch');
+const tableBody = document.getElementById('bookingTableBody');
+searchInput.addEventListener('keyup', function () {
+
+    let keyword = this.value.trim();
+
+    fetch(`/booking-lead/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                            <td>${highlight(item.name, keyword)}</td>
+                           
+                            <td>${highlight(item.mobile, keyword)}</td>
+                            <td>
+                              
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteBook btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="4" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
 
 
     </script>

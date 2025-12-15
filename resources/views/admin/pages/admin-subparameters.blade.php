@@ -17,7 +17,7 @@
             <!-- Header -->
             <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
                 <div class="input-group search-area d-inline-flex me-2">
-                    <input type="text" class="form-control" placeholder="Search here">
+                    <input type="text" id="testSearch" class="form-control" placeholder="Search here">
                     <div class="input-group-append">
                         <button type="button" class="input-group-text"><i class="flaticon-381-search-2"></i></button>
                     </div>
@@ -58,7 +58,7 @@
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="testTableBody">
                                 @forelse($subparameters as $index => $sub)
                                     <tr>
                                         <td>
@@ -277,7 +277,6 @@
 
 
         <!-- Edit Modal -->
-        <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $sub->id }}">
             <div class="modal-dialog modal-lg">
                 <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
@@ -430,5 +429,67 @@
             });
 
         });
+
+        const searchInput = document.getElementById('testSearch');
+const tableBody = document.getElementById('testTableBody');
+        searchInput.addEventListener('keyup', function () {
+
+    let keyword = this.value.trim();
+
+    fetch(`/admin-subparameters/search?keyword=${keyword}`)
+        .then(res => res.json())
+        .then(res => {
+
+            let html = '';
+
+            if (res.data.length > 0) {
+
+                res.data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="checkItem" value="${item.id}">
+                            </td>
+                         
+                            <td>${highlight(item.title, keyword)}</td>
+                            <td>${highlight(item.price, keyword)}</td>
+                            <td class="text-primary">${highlight(item.status, keyword)}</td>
+                           
+                            <td>
+                               
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="editApp btn btn-sm btn-warning light">
+                                   <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="javascript:void(0)" data-id="${item.id}" 
+                                   class="deleteContact btn btn-sm btn-danger light">
+                                   <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="6" class="text-center text-danger">
+                            No related search
+                        </td>
+                    </tr>
+                `;
+            }
+
+            tableBody.innerHTML = html;
+        });
+});
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, `<mark>$1</mark>`);
+}
     </script>
 @endpush

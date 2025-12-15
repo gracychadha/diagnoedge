@@ -7,6 +7,25 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+
+
+    // search function
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $contact = \App\Models\Contact::where('fullname', 'LIKE', "%$keyword%")
+            ->orWhere('email', 'LIKE', "%$keyword%")
+            ->orWhere('phone', 'LIKE', "%$keyword%")
+            ->get();
+            return response()->json([
+                "status"=> true,
+                "data"=>$contact
+            ]);
+
+        // return view('admin.pages.partials.contact-rows', compact('contact'));
+    }
+
     // Total Count
     public function countLead()
     {

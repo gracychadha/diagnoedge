@@ -7,6 +7,24 @@ use App\Models\Booking;
 
 class BookingController extends Controller
 {
+    // TO SEARCH 
+
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $bookings = \App\Models\Booking::where('name', 'LIKE', "%$keyword%")
+           
+            ->orWhere('mobile', 'LIKE', "%$keyword%")
+            ->get();
+
+            return response()->json([
+                "status"=>true,
+                "data"=>$bookings
+            ]);
+
+        // return view('admin.pages.partials.booking-rows', compact('bookings'));
+    }
     // TO FETCH ALL THE DATA OF BOOKING FORM
     public function index()
     {
