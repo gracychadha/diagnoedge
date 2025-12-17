@@ -30,7 +30,7 @@
         <div class="card">
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-striped" id="galleryTable">
+                    <table class="table table-striped bg-theme" id="galleryTable">
                         <thead>
                             <tr>
                                 <th>#</th>

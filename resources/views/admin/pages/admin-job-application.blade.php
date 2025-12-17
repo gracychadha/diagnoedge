@@ -464,7 +464,7 @@ searchInput.addEventListener('keyup', function () {
             } else {
                 html = `
                     <tr>
-                        <td colspan="4" class="text-center text-danger">
+                        <td colspan="5" class="text-center text-danger">
                             No related search
                         </td>
                     </tr>

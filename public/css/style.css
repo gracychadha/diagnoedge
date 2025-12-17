@@ -41579,5 +41579,8 @@ font-size: 16px;
             background: #36c95f;
             color:white;
         }
- 
+ .bg-theme th{
+  background: #36c95f;
+            color:white  !important;
+ }
 /*# sourceMappingURL=style.css.map */

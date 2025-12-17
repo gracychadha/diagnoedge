@@ -15,7 +15,8 @@ class JobCareerApplicationController extends Controller
         $keyword = $request->keyword;
 
         $application = \App\Models\JobCareerApplication::where('fullname', 'LIKE', "%$keyword%")
-            ->orWhere('email', 'LIKE', "%$keyword%")
+            
+            ->orWhere('job_title', 'LIKE', "%$keyword%")
             ->orWhere('phone', 'LIKE', "%$keyword%")
             ->get();
             return response()->json([

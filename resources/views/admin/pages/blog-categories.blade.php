@@ -38,7 +38,7 @@
         <div class="card">
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-striped" id="categoryTable">
+                    <table class="table table-striped bg-theme" id="categoryTable">
                         <thead>
                             <tr>
                                 <th>#</th>

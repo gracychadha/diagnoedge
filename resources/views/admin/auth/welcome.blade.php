@@ -28,7 +28,9 @@
     
 	<!-- Clockpicker -->
     <link href="vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-    
+    <!-- Datatable -->
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="vendor/datatables/css/responsive.bootstrap.min.css" rel="stylesheet">
 	<!-- asColorpicker -->
     <link href="vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
     
@@ -136,6 +138,8 @@
     
 	<!-- Material color picker init -->
     <script src="js/plugins-init/material-date-picker-init.js"></script>
+        <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="vendor/datatables/js/dataTables.responsive.min.js"></script>
 </body>
 
 </html>

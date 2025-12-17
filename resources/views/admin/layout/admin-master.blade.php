@@ -31,6 +31,8 @@
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
     {{-- data tables --}}
+    	<!-- Datatable -->
+	<link href="{{ asset('vendor/datatables/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- CSS (optional but recommended for styling) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -90,7 +92,8 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
 
     <!-- Datatable -->
-    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
     {{-- for the push script of the pages --}}
     @stack('scripts')
     <script>
