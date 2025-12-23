@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -20,7 +19,7 @@ class SearchController extends Controller
         // Search packages
         $packages = \App\Models\Package::where('status', 'active')
             ->whereRaw('LOWER(title) LIKE ?', ["%{$keyword}%"])
-            ->select('id', 'title', 'slug', \DB::raw("'package' as type"))
+            ->select('id', 'image', 'title', 'slug', \DB::raw("'package' as type"))
             ->get()
             ->map(function ($item) {
                 $item->url = route('package-details', $item->slug);
@@ -32,7 +31,7 @@ class SearchController extends Controller
         // Search healthRisks
         $healthRisks = \App\Models\HealthRisk::where('status', 'active')
             ->whereRaw('LOWER(title) LIKE ?', ["%{$keyword}%"])
-            ->select('id', 'title', 'slug', \DB::raw("'healthrisk' as type"))
+            ->select('id', 'title','icon', 'slug', \DB::raw("'healthrisk' as type"))
             ->get()
             ->map(function ($item) {
                 $item->url = route('healthrisk', $item->slug);

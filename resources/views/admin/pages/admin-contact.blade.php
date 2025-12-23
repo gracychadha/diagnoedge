@@ -97,7 +97,7 @@
         {{-- for view Appointment --}}
         <div class="modal fade" id="viewContact" tabindex="-1" aria-labelledby="viewContactLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="viewContactLabel">View Contact Lead</h5>
@@ -145,7 +145,7 @@
         </div>
         {{-- for edit Appointment --}}
         <div class="modal fade" id="editContact" tabindex="-1" aria-labelledby="editContact" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editContactLabel">Edit Contact</h5>

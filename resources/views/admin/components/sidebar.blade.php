@@ -21,7 +21,7 @@
             @can('view-applications')
                 <li><a href="{{ route('admin-applications.index') }}" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-menu"></i>
-                        <span class="nav-text">Applications</span>
+                        <span class="nav-text">Job Applications</span>
                     </a>
                 </li>
             @endcan
@@ -52,10 +52,6 @@
                         @can('manage-tests')
                             <li><a href="{{ route('admin.pages.test') }}"> Sub-parameter | Test</a></li>
                         @endcan
-
-
-
-
                         @can('manage-parameters')
                             <li><a href="{{ route('admin.pages.parameter') }}">Parameter</a></li>
                         @endcan
@@ -72,6 +68,17 @@
                     </ul>
                 </li>
             @endcanany
+            {{-- for test checkup --}}
+
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-folder-1"></i>
+                    <span class="nav-text">Popular Test</span>
+                </a>
+                <ul aria-expanded="false">
+                        <li><a href="{{ route('admin-popularTest.index') }}">Popular Test</a></li>
+                   
+                </ul>
+            </li>
 
             {{-- CMS --}}
             @canany(['manage-ads', 'manage-blog-categories', 'manage-blogs', 'manage-slider', 'manage-about', 'manage-why-choose-us', 'manage-accreditations', 'manage-gallery', 'manage-testimonials', 'manage-know-us', 'manage-counter', 'manage-what-makes-different', 'manage-partners', 'manage-partner-images', 'manage-why-partners', 'manage-corporate-benefits', 'manage-corporate-services', 'manage-job-career', 'manage-privacy-policy', 'manage-terms-conditions'])

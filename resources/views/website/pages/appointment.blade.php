@@ -141,8 +141,8 @@
                                                         <option value="" disabled selected>Select Package | Test</option>
 
                                                         @forelse($packages as $package)
-                                                            <option value="{{ Str::limit($package->title, 22) }}">
-                                                               {{ Str::limit($package->title, 25) }}
+                                                            <option value="{{ $package->title }}">
+                                                               {{ $package->title }}
                                                             </option>
                                                         @empty
                                                             <option value="" disabled>No active tests/packages found</option>

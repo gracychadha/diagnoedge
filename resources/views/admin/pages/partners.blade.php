@@ -84,7 +84,7 @@
 
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog custom-modal">
         <form action="{{ route('partners.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-content">
@@ -120,7 +120,7 @@
 <!-- Edit Modals -->
 @foreach($partners as $partner)
 <div class="modal fade" id="edit{{ $partner->id }}">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog custom-modal">
         <form action="{{ route('partners.update', $partner) }}" method="POST" enctype="multipart/form-data">
             @csrf @method('PUT')
             <div class="modal-content">

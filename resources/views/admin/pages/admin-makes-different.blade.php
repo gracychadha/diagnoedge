@@ -29,11 +29,11 @@
                     <div class="card border shadow-sm h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0"><i class="fas fa-info-circle"></i> About What makes us different Section</h5>
-                            <div class="form-check form-switch">
+                            {{-- <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" name="is_active" value="1" 
                                        {{ old('is_active', $AboutMakes->is_active) ? 'checked' : '' }}>
                                 <label class="form-check-label">Enable Section</label>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="card-body">
 

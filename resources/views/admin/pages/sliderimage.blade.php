@@ -84,7 +84,7 @@
 
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog custom-modal">
         <form action="{{ route('sliderimage.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-content">
@@ -120,7 +120,7 @@
 <!-- Edit Modals -->
 @foreach($sliderImages as $sliderImage)
 <div class="modal fade" id="edit{{ $sliderImage->id }}">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog custom-modal">
         <form action="{{ route('sliderimage.update', $sliderImage) }}" method="POST" enctype="multipart/form-data">
             @csrf @method('PUT')
             <div class="modal-content">
@@ -129,7 +129,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="text-center mb-4">
+                    <div class=" mb-4">
                         <img src="{{ asset('storage/' . $sliderImage->image) }}" class="img-fluid rounded border" style="max-height: 120px;">
                     </div>
                     <div class="row g-3">

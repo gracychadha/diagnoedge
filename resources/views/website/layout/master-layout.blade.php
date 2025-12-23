@@ -68,10 +68,12 @@
                 /* Optional: Slightly smaller button */
             }
         }
-        input:read-only{
+
+        input:read-only {
             background: #dde7dd;
         }
-        input[readonly]:hover{
+
+        input[readonly]:hover {
             background: #dde7dd;
         }
     </style>
@@ -401,8 +403,13 @@
                     if (data.results.length > 0) {
                         data.results.forEach(item => {
                             output += `
-                              <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item">
-        ${item.title}
+                              <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item bg-light" style="font-size:16px;">
+                                <img 
+                                src="storage/${item.icon}" 
+                                alt="${item.title}" 
+                                style="width:40px;height:40px;object-fit:cover;border-radius:6px; border: 1px solid grey; margin-right:10px;"
+                            >
+    ${item.title}
     </a>`;
                         });
                     } else {

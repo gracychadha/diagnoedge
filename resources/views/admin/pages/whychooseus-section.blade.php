@@ -31,13 +31,13 @@
                         <h4 class="mb-0">Why Choose Us Section</h4>
 
                         <!-- FIXED: Added name="is_active" -->
-                        <div class="form-check form-switch">
+                        {{-- <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" name="is_active" id="statusSwitch"
                                 {{ old('is_active', $section->is_active) ? 'checked' : '' }}>
                             <label class="form-check-label fw-bold" for="statusSwitch">
                                 {{ $section->is_active ? 'Active' : 'Inactive' }}
                             </label>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="card-body">

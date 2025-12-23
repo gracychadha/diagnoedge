@@ -90,7 +90,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('faqs.store') }}" method="POST">
                 @csrf
                 <div class="modal-content">
@@ -128,7 +128,7 @@
     @foreach($faqs as $faq)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $faq->id }}" tabindex="-1">
-            <div class="modal-dialog modal-centered">
+            <div class="modal-dialog modal-centered custom-modal">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -145,6 +145,10 @@
 
                         </tr>
                         <tr>
+                            <th>Answer</th>
+                            <td colspan="3"> {!! $faq->answer !!}</td>
+                        </tr>
+                        <tr>
                             <th>Status :</th>
                             <td colspan="3">
                                 <span class="badge bg-{{ $faq->status == 'active' ? 'success' : 'danger' }}">
@@ -156,13 +160,7 @@
 
                     </table>
 
-                    <!-- Answer Section -->
-                    <div class="p-3">
-                        <p><strong>Answer:</strong></p>
-                        <div class="border p-3 rounded ">
-                            {!! $faq->answer !!}
-                        </div>
-                    </div>
+                   
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -177,7 +175,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $faq->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('faqs.update', $faq) }}" method="POST">
                     @csrf @method('PUT')
                     <div class="modal-content">

@@ -142,7 +142,7 @@
 
     <!-- ADD MODAL -->
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('health-risks.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -203,7 +203,7 @@
     @foreach($healthRisks as $risk)
         <!-- VIEW MODAL -->
         <div class="modal fade" id="viewModal{{ $risk->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5>Health Risk Details</h5>
@@ -212,10 +212,17 @@
 
                     <table class="table table-bordered table-striped mb-0">
                         <tr>
+                            
+                            <th>Icon :</th>
+                            <td >
+                                @if($risk->icon)
+                                    <img src="{{ asset('storage/' . $risk->icon) }}" width="100" class="rounded">
+                                @else
+                                    <em class="text-muted">No icon</em>
+                                @endif
+                            </td>
                             <th width="180">Title :</th>
                             <td>{{ $risk->title }}</td>
-                            <th width="180">Slug :</th>
-                            <td><code class="text-primary">{{ $risk->slug }}</code></td>
                         </tr>
                         <tr>
                             <th>Status :</th>
@@ -227,16 +234,7 @@
                             <th>Created :</th>
                             <td>{{ $risk->created_at->format('d M Y, h:i A') }}</td>
                         </tr>
-                        <tr>
-                            <th>Icon :</th>
-                            <td colspan="3">
-                                @if($risk->icon)
-                                    <img src="{{ asset('storage/' . $risk->icon) }}" width="100" class="rounded">
-                                @else
-                                    <em class="text-muted">No icon</em>
-                                @endif
-                            </td>
-                        </tr>
+                        
                         <tr>
                             <th>Related Parameters :</th>
                             <td colspan="3">
@@ -250,14 +248,13 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td colspan="3"> {!! $risk->description ?: '<em class="text-muted">No description.</em>' !!}</td>
+                        </tr>
                     </table>
 
-                    <div class="p-3">
-                        <p><strong>Description:</strong></p>
-                        <div class="border p-3 rounded bg-light">
-                            {!! $risk->description ?: '<em class="text-muted">No description.</em>' !!}
-                        </div>
-                    </div>
+                  
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -268,7 +265,7 @@
 
         <!-- EDIT MODAL -->
         <div class="modal fade" id="editModal{{ $risk->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('health-risks.update', $risk) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

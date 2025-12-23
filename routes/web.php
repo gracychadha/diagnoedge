@@ -45,6 +45,7 @@ use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\JobCareerApplicationController;
+use App\Http\Controllers\PopularTestController;
 
 
 
@@ -204,9 +205,9 @@ Route::post('/store', [ContactController::class, 'store'])->name('contact-us.sto
 // for booking
 Route::post('/book-test', [BookingController::class, 'store'])->name('book.test');
 
-// +++++++++++++++++++++++++++++++++++++++++++++++
+
 // ALL THE ROUTES FOR BACKEND DASHBOARD
-// +++++++++++++++++++++++++++++++++++++++++++++++
+
 
 
 
@@ -697,6 +698,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/applications/delete/{id}', [JobCareerApplicationController::class, 'delete']);
     Route::post('/applications/delete-selected', [JobCareerApplicationController::class, 'deleteSelected'])
         ->name('applications.delete-selected');
+
+
+    // FOR POPULAR TEST
+    Route::post('/popularTest/store', [PopularTestController::class, 'store'])->name('admin-popularTest.store');
+    Route::get('/admin-popularTest', [PopularTestController::class, 'index'])->name('admin-popularTest.index');
+    Route::get('/popularTest/view/{id}', [PopularTestController::class, 'view']);
+    Route::post('/popularTest/update', [PopularTestController::class, 'update']);
+    Route::delete('/popularTest/delete/{id}', [PopularTestController::class, 'delete']);
+
+
+
+
     // ────────────── Website Setting ──────────────
 
     Route::get('/website-setting', [WebsiteSetting::class, 'index'])

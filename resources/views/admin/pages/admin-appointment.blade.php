@@ -196,7 +196,7 @@
         {{-- for view Appointment --}}
         <div class="modal fade" id="viewAppointment" tabindex="-1" aria-labelledby="viewAppointmentLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="viewAppointmentLabel">View Appointment</h5>
@@ -215,23 +215,25 @@
                                     Email
                                 </th>
                                 <td id="a_email"></td>
-                            </tr>
+                           </tr>
                             <tr>
                                 <th>
                                     Phone :
                                 </th>
+                                
                                 <td id="a_phone"></td>
+                                 
+                               
                                 <th>
                                     Package :
                                 </th>
-                                <td id="a_selectdepartment"></td>
-                            </tr>
+                                <td id="a_selectdepartment" ></td>
+                           </tr>
                             <tr>
-                               
                                 <th>
                                     Appointment Date :
                                 </th>
-                                <td id="a_appointmentdate"  colspan="3"></td>
+                                <td id="a_appointmentdate" colspan="3" ></td>
 
                             </tr>
                             <tr>
@@ -253,7 +255,7 @@
         </div>
         {{-- for edit Appointment --}}
         <div class="modal fade" id="editAppointment" tabindex="-1" aria-labelledby="editAppointment" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editAppointmentLabel">Edit Appointment</h5>
@@ -286,7 +288,7 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Phone:</label>
-                                        <input type="number" name="phone" class="form-control" id="edit_phone1">
+                                        <input type="text" name="phone" class="form-control" id="edit_phone1">
                                     </div>
                                 </div>
                               
@@ -303,7 +305,7 @@
                                     <div class="form-group">
                                         <label class="col-form-label">Appointment Date</label>
                                         <input type="date" name="appointmentdate" class="form-control"
-                                            id="edit_appointmentdate">
+                                            id="edit_appointmentdate" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
@@ -369,7 +371,6 @@ $(document).on('click', '.editApp', function () {
         url: "/appointment/view/" + id,
         type: "GET",
         success: function (res) {
-            console.log(res);
             
             $('#edit_id').val(res.id);
             $('#edit_fullname').val(res.fullname);

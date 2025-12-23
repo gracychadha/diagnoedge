@@ -27,14 +27,14 @@
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">About Section – "Know Us Better"</h4>
-                <div class="form-check form-switch">
+                {{-- <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" name="is_active" id="statusSwitch"
                            value="1" {{ old('is_active', $section->is_active) ? 'checked' : '' }}>
                     <label class="form-check-label fw-bold text-{{ $section->is_active ? 'success' : 'danger' }}"
                            for="statusSwitch">
                         {{ $section->is_active ? 'Active' : 'Inactive' }}
                     </label>
-                </div>
+                </div> --}}
             </div>
 
             <div class="card-body">

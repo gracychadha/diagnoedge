@@ -131,7 +131,7 @@
                                                 @if($test->icon)
                                                     <img src="{{ asset('storage/' . $test->icon) }}" width="50"
                                                         alt="{{ $test->title }}">
-                                                    <span>Blood Test At Home</span>
+                                                    <span>{{ $test->title }}</span>
                                                 @else
                                                     <div class="bg-light rounded-circle border d-flex align-items-center justify-content-center flex-shrink-0"
                                                         style="width:50px;height:50px;">

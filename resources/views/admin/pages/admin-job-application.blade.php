@@ -102,7 +102,7 @@
         {{-- for view Appointment --}}
         <div class="modal fade" id="viewAppointment" tabindex="-1" aria-labelledby="viewAppointmentLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="viewAppointmentLabel">View Application</h5>
@@ -163,7 +163,7 @@
         </div>
         {{-- for edit Appointment --}}
         <div class="modal fade" id="editAppointment" tabindex="-1" aria-labelledby="editAppointment" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog custom-modal" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editAppointmentLabel">Edit Application</h5>
@@ -196,7 +196,7 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="col-form-label">Phone:</label>
-                                        <input type="number" name="phone" class="form-control" id="edit_phone1">
+                                        <input type="text" name="phone" class="form-control" id="edit_phone1">
                                     </div>
                                 </div>
                                
@@ -350,9 +350,7 @@ $(document).ready(function () {
   
   
 
-    /* -------------------------------------------------------------
-        DELETE SINGLE APPLICATION
-    ------------------------------------------------------------- */
+    /* single delete*/
     
  
     $("#checkAll").on("change", function () {

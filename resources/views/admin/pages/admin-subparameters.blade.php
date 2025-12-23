@@ -126,7 +126,7 @@
 
     {{-- ADD MODAL --}}
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('admin-subparameters.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -191,7 +191,7 @@
     @foreach($subparameters as $sub)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $sub->id }}" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-centered">
+            <div class="modal-dialog custom-modal modal-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -204,10 +204,9 @@
 
                         <tr>
                             <th>Title :</th>
-                            <td>{{ $sub->title }}</td>
+                            <td colspan="3">{{ $sub->title }}</td>
 
-                            <th>Slug :</th>
-                            <td><code>{{ $sub->slug ?? '—' }}</code></td>
+                           
                         </tr>
 
                         <tr>
@@ -248,24 +247,22 @@
                             <th>Image :</th>
                             <td colspan="3">
                                 @if($sub->image)
-                                    <img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded" style="max-height:300px;">
+                                    <img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded" style="max-height:150px;">
                                 @else
                                     <em class="text-muted">No image uploaded</em>
                                 @endif
                             </td>
                         </tr>
+                         @if($sub->description)
+                        <tr>
+                            <th>Description</th>
+                            <td colspan="3">{!! $sub->description !!}</td>
+                        </tr>
+                          @endif
 
                     </table>
 
-                    <!-- Extra Sections -->
-                    <div class="p-3">
-                        @if($sub->description)
-                            <p><strong>Description:</strong></p>
-                            <div class="border p-3 rounded mb-3 bg-light">
-                                {!! $sub->description !!}
-                            </div>
-                        @endif
-                    </div>
+                   
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -278,7 +275,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $sub->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

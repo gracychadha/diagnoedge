@@ -104,7 +104,7 @@
 
     <!-- ADD MODAL -->
     <div class="modal fade" id="addJobModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('jobcareer.store') }}" method="POST">
                 @csrf
                 <div class="modal-content">
@@ -177,7 +177,7 @@
     {{-- VIEW MODAL FOR EACH JOB --}}
     @foreach($jobs as $job)
         <div class="modal fade" id="viewModal{{ $job->id }}" tabindex="-1">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <div class="modal-content">
                     <div class="modal-header ">
                         <h5 class="modal-title">Job Opening Details</h5>
@@ -245,7 +245,7 @@
     {{-- EDIT MODAL FOR EACH JOB --}}
     @foreach($jobs as $job)
         <div class="modal fade" id="editModal{{ $job->id }}" tabindex="-1">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('jobcareer.update', $job) }}" method="POST">
                     @csrf @method('PUT')
                     <div class="modal-content">

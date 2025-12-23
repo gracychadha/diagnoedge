@@ -13,11 +13,8 @@
             </ol>
         </div>
 
-        <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-between">
-            <div class="input-group search-area w-25">
-                <input type="text" id="searchInput" class="form-control" placeholder="Search categories...">
-                <span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
-            </div>
+        <div class="form-head d-flex mb-3 mb-md-4 align-items-center justify-content-end">
+           
             <button class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#addModal">
                 + Add Category
             </button>

@@ -105,7 +105,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('testimonials.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -153,7 +153,7 @@
     @foreach($testimonials as $testimonial)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $testimonial->id }}" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-centered">
+            <div class="modal-dialog custom-modal modal-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -218,7 +218,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $testimonial->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('testimonials.update', $testimonial) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">

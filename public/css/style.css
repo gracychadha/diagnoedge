@@ -41583,4 +41583,7 @@ font-size: 16px;
   background: #36c95f;
             color:white  !important;
  }
+ .custom-modal{
+    max-width:800px;
+ }
 /*# sourceMappingURL=style.css.map */

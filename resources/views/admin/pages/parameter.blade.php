@@ -41,7 +41,7 @@
                     <div class="card">
                         <div class="card-body p-0">
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-striped" id="example5"> 
                                     <thead>
                                         <tr>
                                             <th>
@@ -128,7 +128,7 @@
 
     <!-- ADD MODAL -->
     <div class="modal fade" id="addParameterModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('admin.parameters.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -193,16 +193,16 @@
     <!-- VIEW MODAL -->
     @foreach($parameters as $param)
         <div class="modal fade" id="viewModal{{ $param->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Parameter Details</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <table class="table table-bordered mb-0">
+                    <table class="table table-bordered table-striped mb-0">
                         <tr>
                             <th>Icon:</th>
-                            <td colspan="3">
+                            <td >
                                 @if($param->icon)
                                     <img src="{{ $param->icon ? asset('storage/' . $param->icon) : asset('assets/images/default.webp') }}"
                                         width="80" class="rounded border">
@@ -210,12 +210,10 @@
                                     <em class="text-muted">No icon</em>
                                 @endif
                             </td>
-                        </tr>
-                        <tr>
+                       
                             <th>Title:</th>
                             <td>{{ $param->title }}</td>
-                            <th>Slug:</th>
-                            <td><code>{{ $param->slug }}</code></td>
+                           
                         </tr>
                         <tr>
                             <th>Price:</th>
@@ -229,11 +227,10 @@
                         </tr>
                         <tr>
                             <th>Created:</th>
-                            <td colspan="3">{{ $param->created_at->format('d M Y, h:i A') }}</td>
-                        </tr>
-                        <tr>
+                            <td>{{ $param->created_at->format('d M Y, h:i A') }}</td>
+                       
                             <th>Related Tests:</th>
-                            <td colspan="3">
+                            <td >
                                 @php
                                     $ids = collect($param->detail_id ?? []);
                                     $tests = \App\Models\Test::whereIn('id', $ids)->get();
@@ -247,17 +244,17 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>Description</th>
+                          
+                            <td colspan="3">{!! $param->description ?: '<em class="text-muted">No description</em>' !!}</td>
+                        </tr>
+                        <tr>  
+                            <th>Overview</th>
+                              <td colspan="3">{!! $param->overview ?: '<em class="text-muted">No overview</em>' !!}</td>
+                        </tr>
                     </table>
-                    <div class="p-3">
-                        <p><strong>Description:</strong></p>
-                        <div class="border p-3 rounded mb-3">
-                            {!! $param->description ?: '<em class="text-muted">No description</em>' !!}
-                        </div>
-                        <p><strong>Overview:</strong></p>
-                        <div class="border p-3 rounded">
-                            {!! $param->overview ?: '<em class="text-muted">No overview</em>' !!}
-                        </div>
-                    </div>
+                   
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -269,7 +266,7 @@
     <!-- EDIT MODAL -->
     @foreach($parameters as $param)
         <div class="modal fade" id="editModal{{ $param->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('admin.parameters.update', $param) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">
