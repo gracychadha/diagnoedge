@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\PopularTests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PopularTestController extends Controller
 {
-     // to fetch data 
+    // to fetch data 
 
     public function index()
     {
@@ -28,24 +30,29 @@ class PopularTestController extends Controller
         // Validation
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'status' => 'required|in:active,inactive',
+
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'status' => 'required|in:Active,Inactive',
             'description' => 'required|string|max:5000',
             'overview' => 'required|string|max:5000',
             'price' => 'required|string|max:5000',
         ]);
 
-        // Upload image
+        $slug = Str::slug($request->title);
+        $count = PopularTests::where('slug', 'LIKE', "{$slug}%")->count();
+        if ($count > 0) {
+            $slug = $slug . '-' . ($count + 1);
+        }
+        // Handle image upload
         $imageName = null;
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads'), $imageName);
+            $imageName = $request->file('image')->store('popular', 'public');
         }
 
         // Store in DB
         PopularTests::create([
             'title' => $request->title,
+            'slug' => $slug,
             'image' => $imageName,
             'status' => $request->status,
             'description' => $request->description,
@@ -57,9 +64,23 @@ class PopularTestController extends Controller
     }
     public function update(Request $request)
     {
-        $PopularTest = PopularTests::find($request->id);
+        $PopularTest = PopularTests::findOrFail($request->id);
 
         $PopularTest->title = $request->title;
+
+        if ($PopularTest->isDirty('title')) {
+            $slug = Str::slug($request->title);
+            $count = PopularTests::where('slug', 'LIKE', "{$slug}%")
+                ->where('id', '!=', $PopularTest->id)
+                ->count();
+
+            if ($count > 0) {
+                $slug = $slug . '-' . ($count + 1);
+            }
+
+            $PopularTest->slug = $slug;
+        }
+
         $PopularTest->status = $request->status;
         $PopularTest->description = $request->description;
         $PopularTest->overview = $request->overview;
@@ -67,12 +88,11 @@ class PopularTestController extends Controller
 
         if ($request->hasFile('image')) {
 
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads'), $imageName);
+            if ($PopularTest->image && Storage::disk('public')->exists($PopularTest->image)) {
+                Storage::disk('public')->delete($PopularTest->image);
+            }
 
-            // update new image
-            $PopularTest->image = $imageName;
+            $PopularTest->image = $request->file('image')->store('popular', 'public');
         }
 
         $PopularTest->save();
@@ -80,13 +100,14 @@ class PopularTestController extends Controller
         return response()->json(['success' => true]);
     }
 
+
     public function delete($id)
     {
         $PopularTest = PopularTests::findOrFail($id);
 
         // delete old image
-        if ($PopularTest->image && file_exists(public_path('uploads/' . $PopularTest->image))) {
-            unlink(public_path('uploads/' . $PopularTest->image));
+        if ($PopularTest->image && file_exists(public_path('storage/' . $PopularTest->image))) {
+            unlink(public_path('storage/' . $PopularTest->image));
         }
 
         $PopularTest->delete();

@@ -1,7 +1,7 @@
 {{-- resources/views/admin/pages/admin-subparameters.blade.php --}}
 @extends("admin.layout.admin-master")
 
-@section("title", "Health Packages / Sub Parameters | Diagnoedge")
+@section("title", " Test Packages | Diagnoedge")
 
 @section("content")
     <div class="content-body">
@@ -40,7 +40,7 @@
             <div class="card">
                 <div class="card-body p-0">
                     <div class="table-responsive">
-                        <table class="table table-striped bg-themepa" id="packageTable">
+                        <table class="table table-striped bg-theme" id="packageTable">
                             <thead>
                                 <tr>
                                     <th>
@@ -247,7 +247,7 @@
                             <th>Image :</th>
                             <td colspan="3">
                                 @if($sub->image)
-                                    <img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded" style="max-height:150px;">
+                                    <img src="{{ Storage::url($sub->image) }}" class="img-fluid rounded" style="max-height:100px;">
                                 @else
                                     <em class="text-muted">No image uploaded</em>
                                 @endif
@@ -276,12 +276,14 @@
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $sub->id }}">
             <div class="modal-dialog custom-modal">
-                <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
-                    @csrf @method('PUT')
-                    <div class="modal-content">
+               <div class="modal-content">
                         <div class="modal-header">
-                            <h5>Edit: {{ $sub->title }}</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                            <h5>Edit {{ $sub->title }}</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
+                          <form action="{{ route('admin-subparameters.update', $sub) }}" method="POST" enctype="multipart/form-data">
+                    @csrf @method('PUT')
+                   
                         <div class="modal-body">
                             <div class="row g-3">
                                 <div class="col-md-6"><label>Title *</label><input type="text" name="title"
@@ -342,7 +344,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Package</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -365,7 +367,9 @@
                 e.preventDefault();
                 var form = $(this).closest('form');
                 Swal.fire({
-                    title: 'Delete?', text: "This cannot be undone!", icon: 'warning',
+                    title: 'Delete?',
+                     text: "This Package will be permanently  deleted!",
+                      icon: 'warning',
                     showCancelButton: true, confirmButtonText: 'Yes, delete!'
                 }).then((result) => { if (result.isConfirmed) form.submit(); });
             });

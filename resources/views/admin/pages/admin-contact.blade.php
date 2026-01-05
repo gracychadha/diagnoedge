@@ -68,12 +68,12 @@
                                                 <td>
                                                     <span class="me-3">
                                                         <a href="javascript:void(0);" data-id="{{ $lead->id }}"
-                                                            class="viewContact btn btn-sm btn-info light"><i class=" fa fa-eye fs-18"></i></a>
+                                                            class="viewContactbtn btn btn-sm btn-info light"><i class=" fa fa-eye fs-18"></i></a>
                                                     </span>
                                                   <span class="me-3">
                                                      <a href="javascript:void(0);" 
    data-id="{{ $lead->id }}" 
-   class="editContact btn btn-sm btn-warning light"><i class="fa fa-pencil fs-18" ></i></a>
+   class="editContactbtn btn btn-sm btn-warning light"><i class="fa fa-pencil fs-18" ></i></a>
                                                   </span>
 
                                                     <span>
@@ -86,7 +86,7 @@
                                         @endforeach
 
                                     </tbody>
-                                </table>
+                                </table> 
                             </div>
                         </div>
                     </div>
@@ -211,44 +211,53 @@
 @endsection
 @push('scripts')
 <script>
-    $(document).on("click" , "viewContact" , function(){
-      
-                let id = $(this).data('id');
+    // VIEW CONTACT
+$(document).on("click", ".viewContactbtn", function () {
 
-                $.ajax({
-                    url: "/contacts/view/" + id,
-                    type: "GET",
-                    success: function (res) {
-                        $('#c_name').text(res.fullname);
-                        $('#c_email').text(res.email);
-                        $('#c_phone').text(res.phone);
-                        $('#c_subject').text(res.subject);
-                        $('#c_message').html(res.message);
+    let id = $(this).data("id");
 
-                        $('#viewContact').modal('show');
-                    }
-                });
-            });
-             $(document).on( "click", ".viewContact" ,function (){
-                
-                let id = $(this).data('id');
+    $.ajax({
+        url: "/contacts/view/" + id,
+        type: "GET",
+        success: function (res) {
 
-                $.ajax({
-                    url: "/contacts/view/" + id,
-                    type: "GET",
-                    success: function (res) {
-                        $('#edit_id').val(res.id);
-                        $('#edit_fullname').val(res.fullname);
-                        $('#edit_email').val(res.email);
-                        $('#edit_mobile').val(res.phone);
-                        $('#edit_subject').val(res.subject);
-                        $('#edit_message').val(res.message);
+            $('#c_name').text(res.fullname);
+            $('#c_email').text(res.email);
+            $('#c_phone').text(res.phone);
+            $('#c_subject').text(res.subject);
+            $('#c_message').html(res.message);
 
-                        $('#editContact').modal('show');
-                    }
-                });
-            });
-               $('#updateContactForm').submit(function (e) {
+            let viewModal = new bootstrap.Modal(document.getElementById('viewContact'));
+            viewModal.show();
+        }
+    });
+});
+
+
+// EDIT CONTACT
+$(document).on("click", ".editContactbtn", function () {
+
+    let id = $(this).data("id");
+
+    $.ajax({
+        url: "/contacts/view/" + id,
+        type: "GET",
+        success: function (res) {
+
+            $('#edit_id').val(res.id);
+            $('#edit_fullname').val(res.fullname);
+            $('#edit_email').val(res.email);
+            $('#edit_mobile').val(res.phone);
+            $('#edit_subject').val(res.subject);
+            $('#edit_message').val(res.message);
+
+            let editModal = new bootstrap.Modal(document.getElementById('editContact'));
+            editModal.show();
+        }
+    });
+});
+
+    $('#updateContactForm').submit(function (e) {
                 e.preventDefault();
 
                 let formData = new FormData(this);

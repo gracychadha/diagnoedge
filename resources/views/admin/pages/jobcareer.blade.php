@@ -181,10 +181,11 @@
                 <div class="modal-content">
                     <div class="modal-header ">
                         <h5 class="modal-title">Job Opening Details</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
                     </div>
-                    <div class="modal-body">
-                        <table class="table table-bordered table-striped mb-4">
+                    <div class="modal-body p-0">
+                        <table class="table table-bordered table-striped ">
                             <tr>
                                 <th width="25%">Job Title</th>
                                 <td colspan="3"><strong>{{ $job->title }}</strong></td>
@@ -223,16 +224,13 @@
                                 <th>Created On</th>
                                 <td colspan="3">{{ $job->created_at->format('d M Y, h:i A') }}</td>
                             </tr>
+                            <tr>
+                                <th>Description :</th>
+                                <td colspan="3"> {!! $job->description !!}</td>
+                            </tr>
                         </table>
 
-                        @if($job->description)
-                            <div class="mt-4">
-                                <h6><strong>Description:</strong></h6>
-                                <div class="border p-3 rounded bg-light">
-                                    {!! $job->description !!}
-                                </div>
-                            </div>
-                        @endif
+                       
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -255,20 +253,34 @@
                         </div>
                         <div class="modal-body">
                             <div class="row g-3">
-                                <div class="col-md-6"><input type="text" name="title" value="{{ old('title', $job->title) }}"
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Job Title:</label>
+                                    <input type="text" name="title" value="{{ old('title', $job->title) }}"
+                                        class="form-control" required>
+                                    </div>
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Job Type:</label>
+                                    <input type="text" name="type" value="{{ old('type', $job->type) }}"
                                         class="form-control" required></div>
-                                <div class="col-md-6"><input type="text" name="type" value="{{ old('type', $job->type) }}"
-                                        class="form-control" required></div>
-                                <div class="col-md-6"><input type="text" name="location"
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Job Location:</label>
+                                    <input type="text" name="location"
                                         value="{{ old('location', $job->location) }}" class="form-control" required></div>
-                                <div class="col-md-6"><input type="text" name="salary_range"
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Salary Range:</label>
+                                    <input type="text" name="salary_range"
                                         value="{{ old('salary_range', $job->salary_range) }}" class="form-control"></div>
-                                <div class="col-md-6"><input type="text" name="experience"
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Job Experience:</label>
+                                    <input type="text" name="experience"
                                         value="{{ old('experience', $job->experience) }}" class="form-control" required></div>
-                                <div class="col-md-6"><input type="text" name="qualification"
+                                <div class="col-md-6">
+                                    <label class="col-form-label">Job Qualification:</label>
+                                    <input type="text" name="qualification"
                                         value="{{ old('qualification', $job->qualification) }}" class="form-control" required>
                                 </div>
                                 <div class="col-12">
+                                    <label class="col-form-label">Job Description:</label>
                                     <textarea name="description"
                                         class="summernote">{!! old('description', $job->description) !!}</textarea>
                                 </div>

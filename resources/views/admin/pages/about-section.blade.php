@@ -215,7 +215,7 @@
 
                             <div class="text-end mt-4">
                                 <button type="submit" class="btn btn-success btn-lg px-5">
-                                    <i class="fas fa-save me-2"></i>Update About Section
+                                    <i class="fas fa-save me-2"></i>Update 
                                 </button>
                             </div>
                         </form>

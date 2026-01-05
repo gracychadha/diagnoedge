@@ -235,7 +235,7 @@
 
                 Swal.fire({
                     title: 'Delete Image?',
-                    text: "This cannot be undone!",
+                    text: "This Gallery image will be permanently deleted !",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',

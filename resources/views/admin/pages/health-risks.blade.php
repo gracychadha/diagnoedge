@@ -119,8 +119,14 @@
                                                     <button class="btn btn-sm btn-warning light me-1" data-bs-toggle="modal"
                                                         data-bs-target="#editModal{{ $risk->id }}"><i
                                                             class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-sm btn-danger light delete-risk"
-                                                        data-id="{{ $risk->id }}"><i class="fas fa-trash"></i></button>
+                                                         <form action="{{ route('health-risks.destroy', $risk) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger light delete-btn"
+                                                    title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
                                                 </td>
                                             </tr>
                                         @empty
@@ -266,13 +272,13 @@
         <!-- EDIT MODAL -->
         <div class="modal fade" id="editModal{{ $risk->id }}">
             <div class="modal-dialog custom-modal">
-                <form action="{{ route('health-risks.update', $risk) }}" method="POST" enctype="multipart/form-data">
-                    @csrf @method('PUT')
-                    <div class="modal-content">
+                 <div class="modal-content">
                         <div class="modal-header">
                             <h5>Edit: {{ $risk->title }}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
+                        </div> <form action="{{ route('health-risks.update', $risk) }}" method="POST" enctype="multipart/form-data">
+                    @csrf @method('PUT')
+                  
                         <div class="modal-body">
                             <div class="row g-3">
                                 <div class="col-md-8">
@@ -327,7 +333,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Risk</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -389,13 +395,13 @@
             console.log("Selected IDs:", selected); // debug
 
             if (selected.length === 0) {
-                Swal.fire("Oops!", "Please select at least one Package.", "warning");
+                Swal.fire("Oops!", "Please select at least one Health Risk.", "warning");
                 return;
             }
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Package will be deleted permanently!",
+                text: "Selected Health Risk will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -414,7 +420,7 @@
                             _token: "{{ csrf_token() }}"
                         },
                         success: function (response) {
-                            Swal.fire("Deleted!", "Selected Package removed.", "success");
+                            Swal.fire("Deleted!", "Selected Health Risk removed.", "success");
 
                             selected.forEach(id => {
                                 $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
@@ -494,5 +500,19 @@ function highlight(text, keyword) {
     const regex = new RegExp(`(${keyword})`, 'gi');
     return text.replace(regex, `<mark>$1</mark>`);
 }
+
+
+$(function (){
+ $('.delete-btn').click(function (e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                Swal.fire({
+                    title: 'Delete?',
+                     text: "This Health Risk will be permanently  deleted!",
+                      icon: 'warning',
+                    showCancelButton: true, confirmButtonText: 'Yes, delete!'
+                }).then((result) => { if (result.isConfirmed) form.submit(); });
+            });
+});
     </script>
 @endpush

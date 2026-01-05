@@ -61,7 +61,7 @@
                                         <td>{{ $blog->author }}</td>
                                         {{-- <td>
                                             @foreach($blog->categories as $cat)
-                                                <span class="badge bg-info me-1">{{ $cat->name }}</span>
+                                            <span class="badge bg-info me-1">{{ $cat->name }}</span>
                                             @endforeach
                                         </td> --}}
                                         <td>{{ $blog->published_at?->format('d M Y') ?? '—' }}</td>
@@ -74,7 +74,7 @@
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-info light" data-bs-toggle="modal"
                                                 data-bs-target="#view{{ $blog->id }}">
-                                               <i class="fa fa-eye"></i>
+                                                <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-sm btn-warning light" data-bs-toggle="modal"
                                                 data-bs-target="#edit{{ $blog->id }}">
@@ -82,8 +82,8 @@
                                             </button>
                                             <form action="{{ route('blogs.destroy', $blog) }}" method="POST" class="d-inline">
                                                 @csrf @method('DELETE')
-                                                <button type="submit"
-                                                    class="btn btn-sm btn-danger light delete-btn"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-sm btn-danger light delete-btn"><i
+                                                        class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -104,7 +104,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -160,7 +160,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Blog</button>
+                        <button type="submit" class="btn btn-primary">Save </button>
                     </div>
                 </div>
             </form>
@@ -171,7 +171,7 @@
     @foreach($blogs as $blog)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $blog->id }}" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-centered">
+            <div class="modal-dialog custom-modal modal-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
@@ -218,22 +218,20 @@
                             <td colspan="3">
                                 @if($blog->image)
                                     <img src="{{ asset('storage/' . $blog->image) }}" class="img-fluid rounded"
-                                        style="max-height:200px;">
+                                        style="max-height:100px;">
                                 @else
                                     <em class="text-muted">No image uploaded</em>
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+<th>Description :</th>
+<td colspan="3">{!! $blog->description !!}</td>
+                        </tr>
 
                     </table>
 
-                    <!-- Description -->
-                    <div class="p-3">
-                        <p><strong>Description:</strong></p>
-                        <div class="border p-3 rounded bg-light">
-                            {!! $blog->description !!}
-                        </div>
-                    </div>
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -246,7 +244,7 @@
 
         <!-- Edit Modal -->
         <div class="modal fade" id="edit{{ $blog->id }}">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog custom-modal">
                 <form action="{{ route('blogs.update', $blog) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">
@@ -307,7 +305,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Blog</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -336,7 +334,7 @@
                 let form = $(this).closest('form');
                 Swal.fire({
                     title: 'Delete Blog?',
-                    text: "This action cannot be undone!",
+                    text: "This Blog will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonText: 'Yes, delete it!'

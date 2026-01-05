@@ -311,7 +311,7 @@
                                 <div class="col-xl-12">
                                     <div class="form-group">
                                         <label class="col-form-label">Message :</label>
-                                        <textarea class="form-control" name="message" id="edit_message"></textarea>
+                                        <textarea class="form-control" name="message" id="edit_message" readonly></textarea>
                                     </div>
                                 </div>
 
@@ -331,6 +331,8 @@
 @endsection
 @push('scripts')
 <script>
+
+    
   
 
         $(document).on('click', '.deleteContact', function () {

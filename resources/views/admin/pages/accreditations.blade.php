@@ -111,7 +111,7 @@
 
                         <div class="mt-5 text-center">
                             <button type="submit" class="btn btn-primary btn-lg px-5">
-                                Update All Accreditations
+                                Update 
                             </button>
                         </div>
                     </form>

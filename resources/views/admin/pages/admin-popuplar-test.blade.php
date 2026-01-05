@@ -29,6 +29,7 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="table-responsive">
+
 						<table id="example5"
 							class="table shadow-hover doctor-list table-bordered mb-4 dataTablesCard fs-14">
 							<thead>
@@ -61,20 +62,20 @@
 											</div>
 										</td>
 										<td>
-											<img alt="" src="{{ asset('uploads/' . $test->image) }}" height="43" width="43"
+											<img alt="" src="{{ asset('storage/' . $test->image) }}" height="43" width="43"
 												class="rounded-circle ms-4">
 										</td>
 
 
-										<td>{{ $test->fullname }}
+										<td>{{ $test->title }}
 										</td>
 
 										<td>
 											<div class="d-flex align-items-center">
-												@if($test->status == 1)
-													<span class="text-success font-w600">Available</span>
+												@if($test->status == 'Active')
+													<span class="text-success font-w600">Active</span>
 												@else
-													<span class="text-danger font-w600">Unavailable</span>
+													<span class="text-danger font-w600">Inactive</span>
 												@endif
 											</div>
 										</td>
@@ -109,7 +110,7 @@
 			</div>
 		</div>
 	</div>
-	{{-- ADD DOCTOR MODAL --}}
+	{{-- ADD MODAL --}}
 	<div class="modal fade" id="addAppointment" tabindex="-1" aria-labelledby="addAppointment" aria-hidden="true">
 		<div class="modal-dialog custom-modal" role="document">
 			<div class="modal-content">
@@ -129,6 +130,16 @@
 								confirmButtonText: 'OK',
 							});
 						</script>
+
+					@endif
+					@if($errors->any())
+						<div class="alert alert-danger">
+							<ul class="mb-0">
+								@foreach($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
 					@endif
 					<form action="{{ url('/popularTest/store') }}" method="POST" enctype="multipart/form-data">
 						@csrf
@@ -136,7 +147,8 @@
 							<div class="col-xl-6">
 								<div class="form-group">
 									<label class="col-form-label">Test Title:</label>
-									<input type="text" name="title" class="form-control" id="name1" placeholder="Title of Test">
+									<input type="text" name="title" class="form-control" id="name1"
+										placeholder="Title of Test">
 								</div>
 							</div>
 							<div class="col-xl-6">
@@ -144,24 +156,25 @@
 								<small>Only png | jpeg | jpg files allowed.</small>
 								<input type="file" name="image" class="form-control">
 							</div>
-							
+
 							<div class="col-xl-12">
 								<div class="form-group">
 									<label class="col-form-label">Description:</label>
-									<input type="text" name="description" class="form-control" id="add_description" placeholder="This is about Test">
+									<textarea name="description" class="form-control" id="add_description"
+										placeholder="This is about Test"></textarea>
 								</div>
 							</div>
 							<div class="col-xl-12">
 								<div class="form-group">
 									<label class="col-form-label">Overview:</label>
-									<input type="text" name="overview" class="form-control" id="add_overview"	placeholder="This is overview of Test">
+									<textarea name="overview" class="form-control" id="add_overview"
+										placeholder="This is overview of Test"></textarea>
 								</div>
 							</div>
 							<div class="col-xl-6">
 								<div class="">
 									<label class="col-form-label">Price:</label>
-									<input type="text" name="number" class="form-control" id=""
-										placeholder="1200.00">
+									<input type="text" name="price" class="form-control" id="" placeholder="1200.00">
 								</div>
 							</div>
 							<div class="col-xl-6">
@@ -186,20 +199,20 @@
 		</div>
 	</div>
 
-	{{-- VIEW DOCTOR MODAL --}}
+	{{-- VIEW MODAL --}}
 	<div class="modal fade" id="viewAppointment" tabindex="-1">
-		<div class="modal-dialog modal-lg modal-centered">
+		<div class="modal-dialog custom-modal modal-centered">
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<h5 class="modal-title">View Doctor</h5>
+					<h5 class="modal-title">View Popular Test</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 
 				<table class="table table-bordered table-striped mb-0">
 					<tr>
-						<th>Name :</th>
-						<td id="v_name"></td>
+						<th>Title :</th>
+						<td id="v_title"></td>
 
 						<th>Image :</th>
 						<td>
@@ -211,16 +224,16 @@
 						<th>Status :</th>
 						<td id="v_status"></td>
 
-						<th>Designation :</th>
-						<td id="v_designation"></td>
+						<th>Description :</th>
+						<td id="v_description"></td>
 					</tr>
 
 					<tr>
-						<th>Specialization :</th>
-						<td id="v_specialization"></td>
+						<th>Overview :</th>
+						<td id="v_overview"></td>
 
-						<th>No. of Appointments :</th>
-						<td id="v_appointments">0</td>
+						<th>Price :</th>
+						<td id="v_price"></td>
 					</tr>
 				</table>
 
@@ -234,15 +247,16 @@
 
 	{{-- EDIT DOCTOR MODAL--}}
 	<div class="modal fade" id="editAppointment" tabindex="-1">
-		<div class="modal-dialog modal-lg modal-centered">
+		<div class="modal-dialog custom-modal modal-centered">
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<h5 class="modal-title">Edit Doctor Details </h5>
+					<h5 class="modal-title">Edit Popular Test Details </h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 
-				<form id="editDoctorForm" enctype="multipart/form-data">
+				<form id="editDoctorForm" method="POST" enctype="multipart/form-data">
+
 					@csrf
 					<input type="hidden" id="edit_id" name="id">
 
@@ -250,8 +264,8 @@
 						<div class="row">
 
 							<div class="col-xl-6">
-								<label>Name</label>
-								<input type="text" id="edit_fullname" name="fullname" class="form-control">
+								<label>Title</label>
+								<input type="text" id="edit_title" name="title" class="form-control">
 							</div>
 
 							<div class="col-xl-6">
@@ -263,20 +277,24 @@
 							<div class="col-xl-6">
 								<label>Status</label>
 								<select id="edit_status" name="status" class="form-control">
-									<option value="1">Available</option>
-									<option value="0">Unavailable</option>
+									<option value="Active">Active</option>
+									<option value="Inactive">Inactive</option>
 								</select>
 							</div>
-
 							<div class="col-xl-6">
-								<label>Designation</label>
-								<input type="text" id="edit_designation" name="designation" class="form-control">
+								<label>Price</label>
+								<input type="number" id="edit_price" name="price" class="form-control">
+							</div>
+							<div class="col-xl-12">
+								<label>Description</label>
+								<textarea name="description" id="edit_description" class="form-control"></textarea>
+							</div>
+							<div class="col-xl-12">
+								<label>Overview</label>
+								<textarea name="overview" id="edit_overview" class="form-control"></textarea>
 							</div>
 
-							<div class="col-xl-6">
-								<label>Specialization</label>
-								<input type="text" id="edit_specialization" name="specialization" class="form-control">
-							</div>
+
 
 						</div>
 					</div>
@@ -294,39 +312,47 @@
 @endsection
 @push('scripts')
 	<script>
-		$(function () {
-            $('#add_description, #add_overview').summernote({
-                placeholder: 'Write here...',
-                tabsize: 2,
-                height: 100
-            });
+		// Sync Summernote content to the underlying textarea BEFORE form submits
+		$('#addAppointment form').on('submit', function () {
+			// Get HTML content from Summernote and set it to the textarea
+			$('textarea#add_description').val($('#add_description').summernote('code'));
+			$('textarea#add_overview').val($('#add_overview').summernote('code'));
+		});
 
-            $('[id^="edit_description_"], [id^="edit_overview_"]').summernote({
-                placeholder: 'Write here...',
-                tabsize: 2,
-                height: 200
-            });
-        });
+
+		$(function () {
+			$('#add_description, #add_overview').summernote({
+				placeholder: 'Write here...',
+				tabsize: 2,
+				height: 100
+			});
+
+			$('#edit_description, #edit_overview').summernote({
+				placeholder: 'Write here...',
+				tabsize: 2,
+				height: 200
+			});
+		});
 		$(document).on('click', '.viewDoctor', function () {
 
 			var id = $(this).data('id');
 
 			$.ajax({
-				url: "{{ url('/doctors/view') }}/" + id,
+				url: "{{ url('/popularTest/view') }}/" + id,
 				type: "GET",
-				success: function (doctor) {
+				success: function (PopularTest) {
 
 					// Fill modal data
-					$('#v_name').text(doctor.fullname);
-					$('#v_status').text(doctor.status == 1 ? 'Available' : 'Unavailable');
-					$('#v_designation').text(doctor.designation);
-					$('#v_specialization').text(doctor.specialization);
+					$('#v_title').text(PopularTest.title);
+					$('#v_status').text(PopularTest.status == 'Active' ? 'Active' : 'Inactive');
+					$('#v_description').html(PopularTest.description);
+					$('#v_overview').html(PopularTest.overview);
 
 					// Image
-					$('#v_image').attr('src', '/uploads/' + doctor.image);
+					$('#v_image').attr('src', '/storage/' + PopularTest.image);
 
 					// If you have appointment count
-					$('#v_appointments').text(doctor.appointments ?? 0);
+					$('#v_price').text(PopularTest.price);
 
 					// Open modal
 					$('#viewAppointment').modal('show');
@@ -339,17 +365,19 @@
 			var id = $(this).data('id');
 
 			$.ajax({
-				url: "{{ url('/doctors/view') }}/" + id,
+				url: "{{ url('/popularTest/view') }}/" + id,
 				type: "GET",
-				success: function (doctor) {
+				success: function (popularTest) {
 
-					$('#edit_id').val(doctor.id);
-					$('#edit_fullname').val(doctor.fullname);
-					$('#edit_status').val(doctor.status);
-					$('#edit_designation').val(doctor.designation);
-					$('#edit_specialization').val(doctor.specialization);
+					$('#edit_id').val(popularTest.id);
+					$('#edit_title').val(popularTest.title);
+					$('#edit_status').val(popularTest.status);
+					$('#edit_price').val(popularTest.price);
+					$('#edit_description').summernote('code', popularTest.description || '');
+					$('#edit_overview').summernote('code', popularTest.overview || '');
 
-					$('#edit_preview').attr('src', '/uploads/' + doctor.image);
+
+					$('#edit_preview').attr('src', '/storage/' + popularTest.image);
 
 					$('#editAppointment').modal('show');
 				}
@@ -358,17 +386,20 @@
 		$('#editDoctorForm').on('submit', function (e) {
 			e.preventDefault();
 
+			$('#edit_description').val($('#edit_description').summernote('code'));
+			$('#edit_overview').val($('#edit_overview').summernote('code'));
+
 			let formData = new FormData(this);
 
 			$.ajax({
 				type: "POST",
-				url: "{{ url('/doctors/update') }}",
+				url: "{{ url('/popularTest/update') }}",
 				data: formData,
 				contentType: false,
 				processData: false,
 
 				success: function (response) {
-					Swal.fire("Updated!", "Doctor updated successfully!", "success");
+					Swal.fire("Updated!", "Test updated successfully!", "success");
 					$('#editAppointment').modal('hide');
 					location.reload();
 				}
@@ -382,7 +413,7 @@
 
 			Swal.fire({
 				title: "Are you sure?",
-				text: "This doctor will be permanently deleted!",
+				text: "This Popular Test will be permanently deleted!",
 				icon: "warning",
 				showCancelButton: true,
 				confirmButtonColor: "#d33",
@@ -393,14 +424,14 @@
 				if (result.isConfirmed) {
 
 					$.ajax({
-						url: "{{ url('/doctors/delete') }}/" + id,
+						url: "{{ url('/popularTest/delete') }}/" + id,
 						type: "DELETE",
 						data: {
 							_token: "{{ csrf_token() }}"
 						},
 						success: function (response) {
 
-							Swal.fire("Deleted!", "Doctor removed successfully.", "success");
+							Swal.fire("Deleted!", "Popular Test removed successfully.", "success");
 
 							// remove row
 							row.fadeOut(600, function () {
@@ -433,13 +464,13 @@
 				console.log("Selected IDs:", selected); // debug
 
 				if (selected.length === 0) {
-					Swal.fire("Oops!", "Please select at least one doctors.", "warning");
+					Swal.fire("Oops!", "Please select at least one Popular Test.", "warning");
 					return;
 				}
 
 				Swal.fire({
 					title: "Are you sure?",
-					text: "Selected doctor will be deleted permanently!",
+					text: "Selected Popular Test will be deleted permanently!",
 					icon: "warning",
 					showCancelButton: true,
 					confirmButtonColor: "#d33",
@@ -450,7 +481,7 @@
 					if (result.isConfirmed) {
 
 						$.ajax({
-							url: "/doctors/delete-selected",
+							url: "/popularTest/delete-selected",
 
 							type: "POST",
 							data: {
@@ -458,7 +489,7 @@
 								_token: "{{ csrf_token() }}"
 							},
 							success: function (response) {
-								Swal.fire("Deleted!", "Selected doctor removed.", "success");
+								Swal.fire("Deleted!", "Selected Popular Test removed.", "success");
 
 								selected.forEach(id => {
 									$(`input[value='${id}']`).closest("tr").fadeOut(500, function () {

@@ -142,7 +142,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Testimonial</button>
+                        <button type="submit" class="btn btn-primary">Save </button>
                     </div>
                 </div>
             </form>
@@ -288,7 +288,7 @@
                 let form = $(this).closest('form');
                 Swal.fire({
                     title: 'Delete Testimonial?',
-                    text: "This cannot be undone!",
+                    text: "This testimonial will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',

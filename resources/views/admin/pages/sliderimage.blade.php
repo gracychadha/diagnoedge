@@ -1,5 +1,5 @@
 @extends("admin.layout.admin-master")
-@section("title", "Slider Images | YourAppName")
+@section("title", "Slider Images | Diagnoedge")
 
 @section("content")
 <div class="content-body">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Slider Image</button>
+                    <button type="submit" class="btn btn-primary">Save </button>
                 </div>
             </div>
         </form>
@@ -148,7 +148,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Update Slider Image</button>
+                    <button type="submit" class="btn btn-primary">Update </button>
                 </div>
             </div>
         </form>
@@ -174,7 +174,7 @@ $(function() {
         let form = $(this).closest('form');
         Swal.fire({
             title: 'Delete Slider Image?',
-            text: "This image will be removed permanently!",
+            text: "This slider will be  permanently deleted!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

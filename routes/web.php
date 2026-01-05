@@ -43,6 +43,8 @@ use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SeoPageController;
 use App\Http\Controllers\SearchController;
 use App\Models\Parameter;
+use App\Models\Test;
+use App\Models\PopularTests;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\JobCareerApplicationController;
 use App\Http\Controllers\PopularTestController;
@@ -94,6 +96,20 @@ Route::get('/package/{slug}', function ($slug) {
 
     return view('website.pages.package-detail', compact('package'));
 })->name('parameter-detail');
+// for test details
+Route::get('/test/{slug}', function ($slug) {
+
+    $PopularTest = PopularTests::where('slug', $slug)
+        ->orWhere(function ($q) use ($slug) {
+            $q->whereNull('slug')
+                ->where('title', 'LIKE', "%{$slug}%");
+        })
+        ->where('status', 'active')
+        ->firstOrFail();
+
+    return view('website.pages.test-details', compact('PopularTest'));
+})->name('test-detail');
+
 
 
 //health risk
@@ -706,6 +722,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/popularTest/view/{id}', [PopularTestController::class, 'view']);
     Route::post('/popularTest/update', [PopularTestController::class, 'update']);
     Route::delete('/popularTest/delete/{id}', [PopularTestController::class, 'delete']);
+    Route::post('/popularTest/delete-selected', [PopularTestController::class, 'deleteSelected']);
 
 
 

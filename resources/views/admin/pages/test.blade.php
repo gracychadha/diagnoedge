@@ -152,7 +152,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addTestModal">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog custom-modal">
             <form action="{{ route('admin.tests.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-content">
@@ -183,7 +183,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save Test</button>
+                        <button type="submit" class="btn btn-primary">Save </button>
                     </div>
                 </div>
             </form>
@@ -274,7 +274,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Test</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -301,7 +301,7 @@
 
                 Swal.fire({
                     title: 'Delete Test?',
-                    text: "This action cannot be undone!",
+                    text: "This Test will be permanently deleted !",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
