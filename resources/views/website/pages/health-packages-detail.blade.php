@@ -143,10 +143,10 @@
                                         <div class="swiper-slide">
                                             <div class="border rounded-3 p-3 d-flex align-items-center gap-2"
                                                 style="border-color:#1c5a80 !important;">
+
                                                 @if($test->icon)
                                                     <img src="{{ asset('storage/' . $test->icon) }}" width="50"
                                                         alt="{{ $test->title }}">
-                                                    <span>{{ $test->title }}</span>
                                                 @else
                                                     <div class="bg-light rounded-circle border d-flex align-items-center justify-content-center flex-shrink-0"
                                                         style="width:50px;height:50px;">
@@ -154,7 +154,9 @@
                                                     </div>
                                                 @endif
 
+                                                <span class="fw-600">{{ $test->title }}</span>
                                             </div>
+
                                         </div>
                                     @empty
                                         <div class="swiper-slide">
@@ -252,8 +254,9 @@
                                         Book any blood test or health checkup<br>
                                         and get tested at the comfort of your home
                                     </p>
-                                    <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}" class="theme-button style-1 w-100">
-                                        <span data-text="Get  Instant Call Back">Get  Instant Call Back</span>
+                                    <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}"
+                                        class="theme-button style-1 w-100">
+                                        <span data-text="Get  Instant Call Back">Get Instant Call Back</span>
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
