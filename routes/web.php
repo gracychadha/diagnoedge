@@ -225,15 +225,6 @@ Route::post('/book-test', [BookingController::class, 'store'])->name('book.test'
 // ALL THE ROUTES FOR BACKEND DASHBOARD
 
 
-
-
-
-
-
-
-
-
-
 Route::get('/dashboard', function () {
 
     $totalLeads = \App\Models\Contact::count();
