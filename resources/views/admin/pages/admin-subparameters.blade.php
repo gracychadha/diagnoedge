@@ -59,6 +59,15 @@
                                 </tr>
                             </thead>
                             <tbody id="testTableBody">
+                                @if ($errors->any())
+<div class="alert alert-danger">
+    <ul class="mb-0">
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
                                 @forelse($subparameters as $index => $sub)
                                     <tr>
                                         <td>
@@ -173,8 +182,11 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label>Description</label>
-                                <textarea name="description" class="summernote"></textarea>
+                                   <label>Overview PDF</label>
+    <input type="file" name="overview_pdf" class="form-control" accept="application/pdf">
+    <small class="text-muted">Upload package overview in PDF format</small>
+                                {{-- <label>Description</label>
+                                <textarea name="description" class="summernote"></textarea> --}}
                             </div>
                         </div>
                     </div>
@@ -253,10 +265,16 @@
                                 @endif
                             </td>
                         </tr>
-                         @if($sub->description)
+                         @if($sub->overview_pdf)
                         <tr>
-                            <th>Description</th>
-                            <td colspan="3">{!! $sub->description !!}</td>
+                            <th>PDF</th>
+                            <td colspan="3">
+                                <a href="{{ Storage::url($sub->overview_pdf) }}" target="_blank" class="btn btn-sm btn-info">
+                                    View Overview PDF
+                                </a>
+                            </td>
+                            {{-- <th>Description</th>
+                            <td colspan="3">{!! $sub->description !!}</td> --}}
                         </tr>
                           @endif
 
@@ -294,7 +312,7 @@
                                 <!-- FIXED: Main Parameters -->
                                 <div class="col-md-6">
                                     <label>Main Parameters <span class="text-danger">*</span></label>
-                                    <select name="parameter_id[]" multiple class="form-control" style="height:200px;" required>
+                                    <select name="parameter_id[]" multiple class="form-control" style="height:200px;">
                                         @foreach($parameters as $p)
                                             <option value="{{ $p->id }}" {{ is_array($sub->parameter_id) && in_array($p->id, $sub->parameter_id) ? 'selected' : '' }}>
                                                 {{ $p->title }}
@@ -337,8 +355,19 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <label>Description</label>
-                                    <textarea name="description" class="summernote">{{ $sub->description }}</textarea>
+                                     <label>Overview PDF</label>
+    <input type="file" name="overview_pdf" class="form-control" accept="application/pdf">
+
+    @if($sub->overview_pdf)
+        <div class="mt-2">
+            <a href="{{ Storage::url($sub->overview_pdf) }}" target="_blank"
+               class="btn btn-sm btn-info">
+               View Current PDF
+            </a>
+        </div>
+    @endif  
+                                    {{-- <label>Description</label>
+                                    <textarea name="description" class="summernote">{{ $sub->description }}</textarea> --}}
                                 </div>
                             </div>
                         </div>

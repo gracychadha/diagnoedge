@@ -20,11 +20,11 @@ class AccreditationController extends Controller
         $request->validate([
             'title1' => 'required|string|max:255',
             'icon1' => 'nullable|image|mimes:jpg,png,svg|max:2048',
-            'title2' => 'required|string|max:255',
+            'title2' => 'nullable|string|max:255',
             'icon2' => 'nullable|image|mimes:jpg,png,svg|max:2048',
-            'title3' => 'required|string|max:255',
+            'title3' => 'nullable|string|max:255',
             'icon3' => 'nullable|image|mimes:jpg,png,svg|max:2048',
-            'title4' => 'required|string|max:255',
+            'title4' => 'nullable|string|max:255',
             'icon4' => 'nullable|image|mimes:jpg,png,svg|max:2048',
         ]);
 

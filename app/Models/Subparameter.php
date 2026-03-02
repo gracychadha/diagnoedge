@@ -15,7 +15,8 @@ class Subparameter extends Model
         'price',
         'image',
         'description',
-        'status'
+        'status',
+        'overview_pdf'
     ];
 
     protected $casts = [

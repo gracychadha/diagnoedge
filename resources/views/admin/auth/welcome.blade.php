@@ -37,18 +37,23 @@
 	<!-- Material color picker -->
     <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
      <style>
-        .DZ-theme-btn.DZ-bt-buy-now{
+        .DZ-theme-btn.DZ-bt-buy-now {
             display: none;
         }
-        .DZ-theme-btn.DZ-bt-support-now{
+
+        .DZ-theme-btn.DZ-bt-support-now {
             display: none;
         }
-        .sidebar-right .sidebar-right-trigger{
+
+        .sidebar-right .sidebar-right-trigger {
             display: none !important;
         }
-        .dz-demo-panel .dz-demo-trigger{
+
+        .dz-demo-panel .dz-demo-trigger {
             display: none !important;
         }
+
+      
     </style>
 </head>
 

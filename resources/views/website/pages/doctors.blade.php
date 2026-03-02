@@ -12,14 +12,14 @@
                         <div class="breadcrumb-content">
                             <!-- breadcrumb title start -->
                             <div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s">
-                                <h1>Doctor</h1>
+                                <h1>Doctor &amp; Team</h1>
                             </div>
                             <!-- breadcrumb title end -->
                             <!-- nav start -->
                             <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Doctor</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Doctor &amp; Team</li>
                                 </ol>
                             </nav>
                             <!-- nav end -->
@@ -44,7 +44,7 @@
                         <!-- section title area start -->
                         <div class="section-title-area">
                             <div class="section-title">
-                                <span class="sub-title">Our Doctor</span>
+                                <span class="sub-title">Our Doctors &amp; Team</span>
                                 <h2>Meet Our expert Eye Specialists</h2>
                             </div>
                             <div class="section-title-content">
@@ -100,7 +100,7 @@
                         </div>
                         @empty
                         <div class="text-center w-100 py-5">
-                                <h4>No Doctor images to show</h4>
+                                <h4>No Doctor's or team images to show</h4>
                             </div>
                     @endforelse
                     

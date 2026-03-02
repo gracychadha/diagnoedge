@@ -50,7 +50,7 @@
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Include the reCAPTCHA script (site key in env) -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <style>
         .iti {
@@ -75,6 +75,10 @@
 
         input[readonly]:hover {
             background: #dde7dd;
+        }
+
+        #carousel-slider {
+            max-height: 400px;
         }
     </style>
     @stack('styles')
@@ -136,57 +140,50 @@
 
 <!-- jQuery (already included) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-
-{{-- for the push script of the pages --}}
-@stack('scripts')
 <script>
-    window.footerCaptcha = function () {
+    function footerCaptcha() {
         const btn = document.getElementById('bookingSubmit1');
         if (btn) btn.disabled = false;
-    };
+    }
 
-    // INTEL FLAG SCRIPT FOR PHONE ID
+    function popupCaptcha() {
+        const btn = document.getElementById('bookingSubmit');
+        if (btn) btn.disabled = false;
+    }
+
+    function headerCaptcha() {
+        console.log("HEADER CAPTCHA SUCCESS");
+        const btn = document.getElementById('HeaderBookingSubmit');
+        if (btn) btn.disabled = false;
+    }
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
-        const input = document.querySelector("#mobile1");
-        iti1 = window.intlTelInput(input, {
-            initialCountry: "auto",
-            nationalMode: false,
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            geoIpLookup: function (callback) {
-                fetch('https://ipapi.co/json')
-                    .then(response => response.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback('us'));
-            }
-        });
 
-        // Apply z-index to flag container
-        const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-        if (flagContainer) {
-            flagContainer.style.zIndex = '9999';
-        }
+        // Apply intl-tel-input to ALL phone inputs automatically
+        document.querySelectorAll('input[type="tel"]').forEach(input => {
 
-        // Apply z-index to the dropdown country list
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                const countryList = document.querySelector('.iti__country-list');
-                if (countryList) {
-                    countryList.style.zIndex = '9999';
-                }
+            const iti = window.intlTelInput(input, {
+                initialCountry: "in", // works on localhost
+                separateDialCode: true,
+                nationalMode: false,
+                utilsScript:
+                    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
             });
+
+            // Convert number before submit
+            const form = input.closest("form");
+
+            if (form) {
+                form.addEventListener("submit", function () {
+                    input.value = iti.getNumber();
+                });
+            }
+
         });
 
-        // Observe changes in the DOM so that dropdown gets z-index when created
-        observer.observe(document.body, { childList: true, subtree: true });
     });
-
-    document.getElementById("bookingForm1").addEventListener("submit", function (e) {
-        document.querySelector("#mobile1").value = iti1.getNumber();
-    });
-
-
-   
 
 
 
@@ -201,10 +198,100 @@
         s0.parentNode.insertBefore(s1, s0);
     })();
 
+    function autoSearch(inputId, resultId) {
+        document.getElementById(inputId).addEventListener('keyup', function () {
+
+            let keyword = this.value.toLowerCase();
+
+            if (keyword.length < 2) {
+                document.getElementById(resultId).innerHTML = '';
+                return;
+            }
+
+            fetch(`/search-all?keyword=` + keyword)
+                .then(res => res.json())
+                .then(data => {
+                    let output = "";
+
+                    if (data.results.length > 0) {
+                        data.results.forEach(item => {
+                            output += `
+                                                                                  <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item bg-light" style="font-size:16px;">
+                                                                                    <img 
+                                                                                    src="storage/${item.icon}" 
+                                                                                    alt="${item.title}" 
+                                                                                    style="width:40px;height:40px;object-fit:cover;border-radius:6px; border: 1px solid grey; margin-right:10px;"
+                                                                                >
+                                                        ${item.title}
+                                                        </a>`;
+                        });
+                    } else {
+                        output = `<div class="p-2 text-danger">No related option found</div>`;
+                    }
+
+                    document.getElementById(resultId).innerHTML = output;
+                });
+        });
+    }
+    autoSearch('already_know', 'searchResult');
+    autoSearch('already_know2', 'searchResult2');
+
+    // PRODUCT SWIPER
+    var productSwiper = new Swiper(".myProductSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        observer: true,
+        observeParents: true,
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            1200: { slidesPerView: 4 },
+            992: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            576: { slidesPerView: 1 },
+            0: { slidesPerView: 1 },
+        }
+    });
 
 
-
-
+    // GALLERY SWIPER
+    var gallerySwiper = new Swiper(".myGallerySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        observer: true,
+        observeParents: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            320: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            991: { slidesPerView: 3 }
+        }
+    });
 </script>
+@stack('scripts')
+
 
 </html>

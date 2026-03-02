@@ -59,7 +59,7 @@
                         <div class="sticky-top" style="top: 100px;">
                             <div class="list-group rounded-4 overflow-hidden smooth-card mb-4">
                                 <a href="#title" class="list-group-item list-group-item-action py-3 nav-item">Test
-                                   Packages</a>
+                                    Packages</a>
                                 <a href="#detail" class="list-group-item list-group-item-action py-3 nav-item">Test
                                     Details</a>
                                 <a href="#overview"
@@ -113,9 +113,9 @@
                                     ->get();
 
                                 // Fetch FAQs from packages_faqs table
-                               $faqs = \App\Models\FaqsPackage::where('parameter_id', $package->id)
-        ->with('parameter') 
-        ->get();
+                                $faqs = \App\Models\FaqsPackage::where('parameter_id', $package->id)
+                                    ->with('parameter')
+                                    ->get();
                             @endphp
 
                             <h3 class="text-center fw-bold mb-4">{{ $package->title }}</h3>
@@ -208,8 +208,8 @@
                                 style="border-width:2px;">
                                 <h4 class="fw-semibold mb-3">{{ $package->title }}</h4>
                                 <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
-                                   <i class="fas fa-rupee-sign text-success"></i>
-                                <span class="fs-3 fw-bold">{{ number_format((float)$package->price) }}</span>
+                                    <i class="fas fa-rupee-sign text-success"></i>
+                                    <span class="fs-3 fw-bold">{{ number_format((float) $package->price) }}</span>
                                 </div>
                                 <a href="#" class="theme-button style-1 w-100">
                                     <span data-text="Add to Cart">Add to Cart</span>
@@ -227,8 +227,9 @@
                                         Book any blood test or health checkup<br>
                                         and get tested at the comfort of your home
                                     </p>
-                                     <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}" class="theme-button style-1 w-100">
-                                        <span data-text="Get  Instant Call Back">Get  Instant Call Back</span>
+                                    <a href="tel:{{ str_replace(' ', '', $settings->phone1 ?? '+91 90909 90909') }}"
+                                        class="theme-button style-1 w-100">
+                                        <span data-text="Get  Instant Call Back">Get Instant Call Back</span>
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>

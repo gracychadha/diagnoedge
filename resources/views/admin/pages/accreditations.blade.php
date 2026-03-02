@@ -40,7 +40,7 @@
                             <div class="col-lg-6">
                                 <label class="form-label">Title 1</label>
                                 <input type="text" name="title1" placeholder="Enter title"
-                                    value="{{ old('title1', $section->title1) }}" class="form-control" required>
+                                    value="{{ old('title1', $section->title1) }}" class="form-control" >
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Icon 1 (Image/SVG)</label>
@@ -58,7 +58,7 @@
                             <div class="col-lg-6">
                                 <label class="form-label">Title 2</label>
                                 <input type="text" name="title2" placeholder="Enter title"
-                                    value="{{ old('title2', $section->title2) }}" class="form-control" required>
+                                    value="{{ old('title2', $section->title2) }}" class="form-control" >
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Icon 2 (Image/SVG)</label>
@@ -76,7 +76,7 @@
                             <div class="col-lg-6">
                                 <label class="form-label">Title 3</label>
                                 <input type="text" name="title3" placeholder="Enter title"
-                                    value="{{ old('title3', $section->title3) }}" class="form-control" required>
+                                    value="{{ old('title3', $section->title3) }}" class="form-control" >
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Icon 3 (Image/SVG)</label>
@@ -94,7 +94,7 @@
                             <div class="col-lg-6">
                                 <label class="form-label">Title 4</label>
                                 <input type="text" name="title4" placeholder="Enter title"
-                                    value="{{ old('title4', $section->title4) }}" class="form-control" required>
+                                    value="{{ old('title4', $section->title4) }}" class="form-control" >
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Icon 4 (Image/SVG)</label>

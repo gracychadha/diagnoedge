@@ -22,9 +22,9 @@ class SubparameterController extends Controller
                     'id' => $subparameters->id,
                     'title' => $subparameters->title,
                     'status' => $subparameters->status,
-                    
+
                     'price' => $subparameters->price,
-                    
+
                 ];
             });
 
@@ -45,16 +45,25 @@ class SubparameterController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255|unique:subparameters,title',
-            'parameter_id' => 'required|array|min:1',
+            'parameter_id' => 'nullable|array',
             'parameter_id.*' => 'exists:parameters,id',
+
             'price' => 'nullable|numeric|min:0',
+
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+
+            // ✅ PDF validation
+            'overview_pdf' => 'nullable|mimes:pdf|max:5120',
+
             'test_ids' => 'nullable|array',
             'test_ids.*' => 'exists:tests,id',
+
+            // ✅ overview nullable
             'description' => 'nullable|string',
+
             'status' => 'required|in:active,inactive',
         ]);
-
+// dd($request->all());
         $data = $request->only([
             'title',
             'parameter_id',
@@ -64,8 +73,16 @@ class SubparameterController extends Controller
             'status'
         ]);
 
+        // Image upload
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('subparameters', 'public');
+            $data['image'] = $request->file('image')
+                ->store('subparameters/images', 'public');
+        }
+
+        // ✅ PDF upload
+        if ($request->hasFile('overview_pdf')) {
+            $data['overview_pdf'] = $request->file('overview_pdf')
+                ->store('subparameters/pdfs', 'public');
         }
 
         Subparameter::create($data);
@@ -82,13 +99,22 @@ class SubparameterController extends Controller
                 'max:255',
                 Rule::unique('subparameters', 'title')->ignore($subparameter->id),
             ],
-            'parameter_id' => 'required|array|min:1',
+
+            'parameter_id' => 'nullable|array',
             'parameter_id.*' => 'exists:parameters,id',
+
             'price' => 'nullable|numeric|min:0',
+
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+
+            // ✅ PDF validation
+            'overview_pdf' => 'nullable|mimes:pdf|max:5120',
+
             'test_ids' => 'nullable|array',
             'test_ids.*' => 'exists:tests,id',
+
             'description' => 'nullable|string',
+
             'status' => 'required|in:active,inactive',
         ]);
 
@@ -101,13 +127,41 @@ class SubparameterController extends Controller
             'status'
         ]);
 
-        // Handle image update
+        /*
+        |--------------------------------------------------------------------------
+        | IMAGE UPDATE
+        |--------------------------------------------------------------------------
+        */
         if ($request->hasFile('image')) {
-            // Delete old image
-            if ($subparameter->image && Storage::disk('public')->exists($subparameter->image)) {
+
+            if (
+                $subparameter->image &&
+                Storage::disk('public')->exists($subparameter->image)
+            ) {
                 Storage::disk('public')->delete($subparameter->image);
             }
-            $data['image'] = $request->file('image')->store('subparameters', 'public');
+
+            $data['image'] = $request->file('image')
+                ->store('subparameters/images', 'public');
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | PDF UPDATE
+        |--------------------------------------------------------------------------
+        */
+        if ($request->hasFile('overview_pdf')) {
+
+            // delete old pdf
+            if (
+                $subparameter->overview_pdf &&
+                Storage::disk('public')->exists($subparameter->overview_pdf)
+            ) {
+                Storage::disk('public')->delete($subparameter->overview_pdf);
+            }
+
+            $data['overview_pdf'] = $request->file('overview_pdf')
+                ->store('subparameters/pdfs', 'public');
         }
 
         $subparameter->update($data);
@@ -117,9 +171,20 @@ class SubparameterController extends Controller
 
     public function destroy(Subparameter $subparameter)
     {
-        // Delete image from storage
-        if ($subparameter->image && Storage::disk('public')->exists($subparameter->image)) {
+        // delete image
+        if (
+            $subparameter->image &&
+            Storage::disk('public')->exists($subparameter->image)
+        ) {
             Storage::disk('public')->delete($subparameter->image);
+        }
+
+        // ✅ delete pdf
+        if (
+            $subparameter->overview_pdf &&
+            Storage::disk('public')->exists($subparameter->overview_pdf)
+        ) {
+            Storage::disk('public')->delete($subparameter->overview_pdf);
         }
 
         $subparameter->delete();
