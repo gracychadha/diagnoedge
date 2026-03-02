@@ -123,7 +123,7 @@
                                     </li>
                                     <li>
                                         <a href="{{ route('doctors') }}"><i class="fa-solid fa-chevron-right"></i>
-                                            Doctors</a>
+                                            Doctors &amp; Team</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('our-partners') }}"><i class="fa-solid fa-chevron-right"></i>

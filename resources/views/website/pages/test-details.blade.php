@@ -148,7 +148,7 @@
 
                         <!-- Included Parameters (Dynamic + Clickable) -->
                         <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
-                            <h2 class="h4 fw-bold mb-4">{{ $PopularTest->title }}'s Description</h2>
+                            <h2 class="h4 fw-bold mb-4">{{ $PopularTest->title }}'s Dummy Report</h2>
 
                            <p class="lead text-muted">
                                 {!! $PopularTest->description ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}

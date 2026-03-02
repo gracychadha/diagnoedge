@@ -31,8 +31,8 @@
     <!-- Style Css -->
     <link class="main-css" href="{{ asset('css/style.css') }}" rel="stylesheet" />
     {{-- data tables --}}
-    	<!-- Datatable -->
-	<link href="{{ asset('vendor/datatables/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="{{ asset('vendor/datatables/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <!-- CSS (optional but recommended for styling) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -43,18 +43,23 @@
     {{-- for the push style of the pages --}}
     @stack('style')
     <style>
-        .DZ-theme-btn.DZ-bt-buy-now{
+        .DZ-theme-btn.DZ-bt-buy-now {
             display: none;
         }
-        .DZ-theme-btn.DZ-bt-support-now{
+
+        .DZ-theme-btn.DZ-bt-support-now {
             display: none;
         }
-        .sidebar-right .sidebar-right-trigger{
+
+        .sidebar-right .sidebar-right-trigger {
             display: none !important;
         }
-        .dz-demo-panel .dz-demo-trigger{
+
+        .dz-demo-panel .dz-demo-trigger {
             display: none !important;
         }
+
+        
     </style>
 </head>
 
@@ -87,13 +92,14 @@
     <script src="{{ asset('js/custom.min.js') }}"></script>
     <script src="{{ asset('js/deznav-init.js') }}"></script>
     <script src="{{ asset('js/demo.js') }}"></script>
-    {{-- <script src="{{ asset('js/styleSwitcher.js') }}"></script> --}}
+    {{--
+    <script src="{{ asset('js/styleSwitcher.js') }}"></script> --}}
     {{-- summernote js --}}
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-bs4.min.js"></script>
 
     <!-- Datatable -->
-     <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-	<script src="{{ asset('vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
     {{-- for the push script of the pages --}}
     @stack('scripts')
     <script>
@@ -205,7 +211,7 @@
             var slug = generateSlug(title);
             $('#edit_slug').val(slug);
         });
-      
+
         // FOR PACKAGES CRUD 
         $(document).on('click', '.viewPackage', function () {
             var id = $(this).data(id);
@@ -228,7 +234,7 @@
 
 
 
-    
+
         $(document).on('click', '.viewSeoSetting', function () {
 
             var id = $(this).data('id');

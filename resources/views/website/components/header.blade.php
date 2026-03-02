@@ -221,13 +221,13 @@
                             </form>
                         </div>
                         <!-- header cart -->
-                        <div class="header-cart">
+                        {{-- <div class="header-cart">
                             <a href="#">
                                 cart
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span>02</span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- header top right end -->
                 </div>
@@ -268,7 +268,7 @@
                                             <a href="{{ route('about-us') }}">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('doctors') }}">Doctors</a>
+                                            <a href="{{ route('doctors') }}">Doctors &amp; Team </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('our-partners') }}">Our Partner</a>

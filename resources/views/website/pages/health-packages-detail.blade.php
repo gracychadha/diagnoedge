@@ -170,10 +170,36 @@
 
                         <!-- Overview -->
                         <section id="overview" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
-                            <h2 class="h4 fw-bold mb-4">Overview</h2>
-                            <p class="lead text-muted">
-                                {!! $package->overview ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
-                            </p>
+
+                            <h2 class="h4 fw-bold mb-4">Dummy Report</h2>
+
+                            @if(!empty($package->overview_pdf))
+
+                                {{-- ✅ PDF VIEWER --}}
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="{{ Storage::url($package->overview_pdf) }}" width="100%" height="900"
+                                        style="border:1px solid #e5e5e5; border-radius:10px;" allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                {{-- Optional Download Button --}}
+                                <div class="mt-3">
+                                    <a href="{{ Storage::url($package->overview_pdf) }}" target="_blank"
+                                        class="btn btn-primary">
+                                        Download Overview PDF
+                                    </a>
+                                </div>
+
+                            @else
+
+                                                {{-- ✅ DESCRIPTION FALLBACK --}}
+                                                <p class="lead text-muted">
+                                                    {!! $package->description
+                                ?? 'A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.' !!}
+                                                </p>
+
+                            @endif
+
                         </section>
 
                         <!-- Included Parameters (Dynamic + Clickable) -->
@@ -241,7 +267,7 @@
                                 </div>
 
                                 <a href="#" class="theme-button style-1 w-100">
-                                    <span data-text="Add to Cart">Add to Cart</span>
+                                    <span data-text="Book Now">Book Now</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>

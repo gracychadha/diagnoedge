@@ -40,7 +40,7 @@
 
                             <div id="alertBox"></div>
 
-                            <form id="bookingForm" method="POST" action="{{ route('book.test') }}">
+                            <form id="bookingForm3" method="POST" action="{{ route('book.test') }}">
                                 @csrf
 
                                 <div class="form-group position-relative ">
@@ -123,7 +123,7 @@
                             <div class="carousel-inner">
                                 @forelse($sliders as $key => $slide)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                        <img src="{{ asset('storage/' . $slide->image) }}" class="d-block w-100"
+                                        <img id="carousel-slider" src="{{ asset('storage/' . $slide->image) }}" class="d-block w-100"
                                             alt="Slider Image">
                                     </div>
                                 @empty
@@ -147,9 +147,39 @@
                     <!-- RIGHT: CARD -->
                     <div class="col-xl-3 col-lg-4 col-md-12 col-12">
                         <div class="card p-2 shadow-lg border-0 rounded-4 h-100 align-items-center justify-content-center">
-                            <h3 class="text-center mb-3 fw-bold text-success">Book a Test Online</h3>
+                            <h3 class="text-center mb-3 fw-bold text-success">Request a Callback </h3>
+                            {{-- <h3 class="text-center mb-3 fw-bold text-success">Book a Test Online</h3> --}}
 
-                            <div class="mb-2">
+                            <form id="bookingFormPopup" method="POST" action="{{ route('book.test') }}">
+                                @csrf
+                                <div id="alertBox3"></div>
+                                <div class="form-group position-relative ">
+                                    <span class="popupicon"><i class="fa fa-user"></i></span>
+                                    <input class="form-control" style="padding-left: 45px;" type="text" id="name3"
+                                        name="name" placeholder="Enter Name" required>
+                                </div>
+
+                                <div class="form-group position-relative ">
+
+                                    <input class="form-control " style="padding-left : 55px !important;" type="tel"
+                                        id="mobile3" name="mobile" placeholder="Enter Mobile No." required>
+                                </div>
+
+
+                                <input type="hidden" name="source" value="modal_homepage">
+
+                                <div class="form-group ">
+                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                                        data-callback="headerCaptcha"></div>
+                                </div>
+                                <button type="submit" id="HeaderBookingSubmit" class="theme-button style-1 w-100" disabled>
+                                    <span data-text="Submit">Submit</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+
+                            </form>
+                            {{-- <div class="mb-2">
                                 <p class=" mb-2">If you Already Know What Test to Take</p>
                                 <div class="input-group">
                                     <span class="input-group-text bg-white border-end-0 d-flex align-items-center">
@@ -179,7 +209,7 @@
                             <div class="text-center mt-2">
                                 <small class="fw-bold text-success"><i class="fa fa-clock"></i> Get reports in 24–48
                                     hours</small>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -193,17 +223,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h5 class="text-center pt-10 pb-10">Tru Health Packages</h5>
+                            <h5 class="text-center pt-10 pb-10">DiagnoEdge Health Packages</h5>
                         </div>
                         <div class="pricing-tabs">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For
-                                        Male</button>
+                                    {{-- <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For
+                                        Male</button> --}}
                                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">Tru
                                         Health Packages</button>
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For
-                                        Female</button>
+                                    {{-- <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For
+                                        Female</button> --}}
                                 </div>
                             </nav>
                         </div>
@@ -230,10 +260,10 @@
                                                     href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
                                                     <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
                                                         class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
-                                                <span
+                                                {{-- <span
                                                     class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
                                                     {{ rand(15, 50) }}
-                                                </span>
+                                                </span> --}}
                                             </div>
                                             <div class="p-3">
                                                 <a
@@ -280,101 +310,7 @@
                         </div>
                     </div>
 
-                    {{-- Male Tab--}}
-                    <div class="tab-pane fade" id="nav-male-THP">
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                @forelse($packages as $pkg)
-                                    <div class="swiper-slide">
-                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                            <div class="position-relative">
-                                                <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test1.jpg') }}"
-                                                    class="img-fluid w-100" alt="{{ $pkg->title }}">
-                                                <span
-                                                    class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">
-                                                    M
-                                                </span>
-                                            </div>
-                                            <div class="p-3">
-                                                <a
-                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                                    <h6 class="title-card mb-1">
-                                                        {{ Str::limit($pkg->title, 60) }}
-                                                    </h6>
-                                                </a>
-                                                <p class="text-muted small mb-2">
-                                                    <span class="badge bg-light text-dark border">
-                                                        {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile |
-                                                        {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }}
-                                                        Parameters
-                                                    </span>
-                                                </p>
-                                                <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) ($pkg->price ?? 0)) }}
-                                                </p>
-                                                <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                                    <span data-text="Add to Cart">Add to Cart</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @empty
-                                    <div class="swiper-slide text-center py- py-5 text-muted w-100">No male packages</div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
 
-                    {{-- Female Tab --}}
-                    <div class="tab-pane fade" id="nav-female-THP">
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                @forelse($packages as $pkg)
-                                    <div class="swiper-slide">
-                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                            <div class="position-relative">
-                                                <a
-                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                                    <img src="{{ $pkg->image ? asset('storage/' . $pkg->image) : asset('assets/images/product/test.jpg') }}"
-                                                        class="img-fluid w-100" alt="{{ $pkg->title }}"></a>
-                                                <span
-                                                    class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">
-                                                    F
-                                                </span>
-                                            </div>
-                                            <div class="p-3">
-                                                <a
-                                                    href="{{ route('health-package.detail', $pkg->slug ?? Str::slug($pkg->title)) }}">
-                                                    <h6 class="title-card mb-1">
-                                                        {{ Str::limit($pkg->title, 60) }}
-                                                    </h6>
-                                                </a>
-                                                <p class="text-muted small mb-2">
-                                                    <span class="badge bg-light text-dark border">
-                                                        {{ is_array($pkg->test_ids) ? count($pkg->test_ids) : 0 }} Profile |
-                                                        {{ (is_array($pkg->parameter_id) ? count($pkg->parameter_id) : 0)  }}
-                                                        Parameters
-                                                    </span>
-                                                </p>
-                                                <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) ($pkg->price ?? 0)) }}
-                                                </p>
-                                                <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                                    <span data-text="Add to Cart">Add to Cart</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @empty
-                                    <div class="swiper-slide text-center py-5 text-muted w-100">No female packages</div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -391,15 +327,15 @@
                         <div class="pricing-tabs">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link" id="nav-male-TP-tab" data-bs-toggle="tab"
+                                    {{-- <button class="nav-link" id="nav-male-TP-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-male-TP" type="button" role="tab" aria-controls="nav-male-TP"
-                                        aria-selected="false">For Male</button>
+                                        aria-selected="false">For Male</button> --}}
                                     <button class="nav-link active" id="nav-TP-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-TP" type="button" role="tab" aria-controls="nav-TP"
                                         aria-selected="true">Popular Test Packages</button>
-                                    <button class="nav-link" id="nav-female-TP-tab" data-bs-toggle="tab"
+                                    {{-- <button class="nav-link" id="nav-female-TP-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-female-TP" type="button" role="tab"
-                                        aria-controls="nav-female-TP" aria-selected="false">For Female</button>
+                                        aria-controls="nav-female-TP" aria-selected="false">For Female</button> --}}
                                 </div>
                             </nav>
                         </div>
@@ -429,16 +365,15 @@
                                                         class="w-100" alt="{{ $package->title }}"></a>
 
                                                 <!-- Discount badge (optional) -->
-                                                <span
+                                                {{-- <span
                                                     class="position-absolute top-0 end-0 m-2 bg-success text-white rounded-circle px-2 py-1 small fw-bold">
                                                     {{ rand(10, 40) }}
-                                                </span>
+                                                </span> --}}
                                             </div>
 
                                             <div class="p-3">
-                                                <a 
-                                                    href="{{ route('test-detail', $package->slug ?? Str::slug($package->title)) }}"
-                                                   >
+                                                <a
+                                                    href="{{ route('test-detail', $package->slug ?? Str::slug($package->title)) }}">
                                                     <h6 class="title-card mb-3">
                                                         {{ Str::limit($package->title, 60) }}
                                                     </h6>
@@ -477,107 +412,7 @@
                         </div>
                     </div>
 
-                    {{-- Male Tab --}}
-                    <div class="tab-pane fade" id="nav-male-TP" role="tabpanel" aria-labelledby="nav-male-TP-tab">
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                @forelse($packages as $package)
-                                    <div class="swiper-slide">
-                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                            <div class="position-relative text-center py-4 bg-light">
-                                                <a
-                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"><img
-                                                        src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                        width="80" height="80" class="rounded-circle border p-3 shadow-sm"
-                                                        alt="{{ $package->title }}"></a>
-                                                <span
-                                                    class="position-absolute top-0 end-0 m-2 bg-primary text-white rounded-circle px-2 py-1 small fw-bold">M</span>
-                                            </div>
-                                            <div class="p-3">
-                                                <a
-                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
-                                                    <h6 class="title-card mb-1">{{ Str::limit($package->title, 60) }}</h6>
-                                                </a>
-                                                @if($package->detail_id && is_array($package->detail_id))
-                                                    <p class="text-muted small mb-2">
-                                                        <span
-                                                            class="badge bg-light text-dark border">{{ count($package->detail_id) }}
-                                                            Tests</span>
-                                                    </p>
-                                                @endif
-                                                <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) $package->price) }}
-                                                </p>
-                                                <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"
-                                                    class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @empty
-                                    <div class="swiper-slide">
-                                        <div class="text-center py-5 w-100">
-                                            <p class="text-muted">No packages</p>
-                                        </div>
-                                    </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
 
-                    {{-- Female Tab --}}
-                    <div class="tab-pane fade" id="nav-female-TP" role="tabpanel" aria-labelledby="nav-female-TP-tab">
-                        <div class="swiper myProductSwiper pb-20">
-                            <div class="swiper-wrapper">
-                                @forelse($packages as $package)
-                                    <div class="swiper-slide">
-                                        <div class="lab-test-card shadow border-0 rounded-4 overflow-hidden bg-white">
-                                            <div class="position-relative text-center py-4 bg-light">
-                                                <a
-                                                    href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
-                                                    <img src="{{ $package->icon ? asset('storage/' . $package->icon) : asset('assets/images/default.webp') }}"
-                                                        width="80" height="80" class="rounded-circle border p-3 shadow-sm"
-                                                        alt="{{ $package->title }}"></a>
-                                                <span
-                                                    class="position-absolute top-0 end-0 m-2 bg-danger text-white rounded-circle px-2 py-1 small fw-bold">F</span>
-                                            </div>
-                                            <div class="p-3">
-                                                <h6 class="title-card mb-1">{{ Str::limit($package->title, 60) }}</h6>
-                                                @if($package->detail_id && is_array($package->detail_id))
-                                                    <a
-                                                        href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}">
-                                                        <p class="text-muted small mb-2">
-                                                            <span
-                                                                class="badge bg-light text-dark border">{{ count($package->detail_id) }}
-                                                                Tests</span>
-                                                        </p>
-                                                    </a>
-                                                @endif
-                                                <hr class="my-2">
-                                                <p class="fw-semibold fs-6 mb-3">Rs.
-                                                    {{ number_format((float) $package->price) }}
-                                                </p>
-                                                <a href="{{ route('parameter-detail', $package->slug ?? Str::slug($package->title)) }}"
-                                                    class="theme-button style-1">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
-                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @empty
-                                    <div class="swiper-slide">
-                                        <div class="text-center py-5 w-100">
-                                            <p class="text-muted">No packages</p>
-                                        </div>
-                                    </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -749,12 +584,12 @@
         <!-- about section end -->
 
 
-        <!-- marquee ticker section start -->
-        @include("website.components.sticker")
-        <!-- marquee ticker section end -->
+
 
         @php
-            $faqs = \App\Models\Faq::where('status', 'active')->get();
+            $faqs = \App\Models\Faq::where('status', 'active')
+                ->limit(5)
+                ->get();
         @endphp
         <!-- faq section start -->
         <section class="faq-section-1 mb-5 pt-50 md-pt-30">
@@ -858,19 +693,21 @@
                                 {!! App\Models\WhyChooseUsSection::first()?->description_1 ?? 'DiagnoEdge Labs has been a trusted name in diagnostics for over a decade.' !!}
                             </div>
 
-                            @if(App\Models\WhyChooseUsSection::first()?->description_2)
-                                <div class=" lh-lg">
-                                    {!! App\Models\WhyChooseUsSection::first()?->description_2 !!}
-                                </div>
-                            @else
-                                <p>no data to show</p>
-                            @endif
+
 
                         </div>
                     </div>
 
                     <!-- Right Side - Cards -->
                     <div class="col-lg-6 custom-padding--md-20">
+
+                        @if(App\Models\WhyChooseUsSection::first()?->description_2)
+                            <div class=" lh-lg">
+                                {!! App\Models\WhyChooseUsSection::first()?->description_2 !!}
+                            </div>
+                        @else
+                            <p>no data to show</p>
+                        @endif
                         @php
                             $section = App\Models\WhyChooseUsSection::first();
                         @endphp
@@ -1143,372 +980,101 @@
 {{-- SCRIPT ADD THERE ONLY FOR APPOINTMENT BLADE --}}
 @push('scripts')
 
-
     <script>
-    
-    //      $(document).ready(function () {
-    //     setTimeout(function () {
-    //         $("#bookingModal").modal("show");
-    //     }, 3000);
-    // });
-        // search
-    function autoSearch(inputId, resultId) {
-        document.getElementById(inputId).addEventListener('keyup', function () {
-
-            let keyword = this.value.toLowerCase();
-
-            if (keyword.length < 2) {
-                document.getElementById(resultId).innerHTML = '';
-                return;
-            }
-
-            fetch(`/search-all?keyword=` + keyword)
-                .then(res => res.json())
-                .then(data => {
-                    let output = "";
-
-                    if (data.results.length > 0) {
-                        data.results.forEach(item => {
-                            output += `
-                              <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item bg-light" style="font-size:16px;">
-                                <img 
-                                src="storage/${item.icon}" 
-                                alt="${item.title}" 
-                                style="width:40px;height:40px;object-fit:cover;border-radius:6px; border: 1px solid grey; margin-right:10px;"
-                            >
-    ${item.title}
-    </a>`;
-                        });
-                    } else {
-                        output = `<div class="p-2 text-danger">No related option found</div>`;
-                    }
-
-                    document.getElementById(resultId).innerHTML = output;
-                });
-        });
-    }
-    autoSearch('already_know', 'searchResult');
-    autoSearch('already_know2', 'searchResult2');
-   
-        // SWIPER  FOR PRODUCT
-        var swiper = new Swiper(".myProductSwiper", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                1200: { // desktops
-                    slidesPerView: 4,
-                },
-                992: { // laptops & tablets landscape
-                    slidesPerView: 3,
-                },
-                768: { // tablets portrait
-                    slidesPerView: 2,
-                },
-                576: { // mobile large
-                    slidesPerView: 1,
-                },
-                0: { // mobile small
-                    slidesPerView: 1,
-                },
-            },
-
-        });
-
-
-        // gallery swiper
-        var swiper = new Swiper(".myGallerySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 25,
-            loop: true,
-
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-
-            breakpoints: {
-                320: { slidesPerView: 1 },
-                576: { slidesPerView: 2 },
-                991: { slidesPerView: 3 }
-            }
-        });
-
-
-
-
-
-
-        window.footerCaptcha = function () {
-            const btn = document.getElementById('bookingSubmit1');
-            if (btn) btn.disabled = false;
-        };
-        let iti1;
-        // INTEL FLAG SCRIPT FOR PHONE ID
-        document.addEventListener('DOMContentLoaded', function () {
-            const input = document.querySelector("#mobile1");
-            iti1 = window.intlTelInput(input, {
-                initialCountry: "auto",
-                nationalMode: false,
-                separateDialCode: true,
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                geoIpLookup: function (callback) {
-                    fetch('https://ipapi.co/json')
-                        .then(response => response.json())
-                        .then(data => callback(data.country_code))
-                        .catch(() => callback('us'));
-                }
-            });
-
-            // Apply z-index to flag container
-            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-            if (flagContainer) {
-                flagContainer.style.zIndex = '9999';
-            }
-
-            // Apply z-index to the dropdown country list
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const countryList = document.querySelector('.iti__country-list');
-                    if (countryList) {
-                        countryList.style.zIndex = '9999';
-                    }
-                });
-            });
-
-            // Observe changes in the DOM so that dropdown gets z-index when created
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
-
-        document.getElementById("bookingForm1").addEventListener("submit", function (e) {
-            document.querySelector("#mobile1").value = iti1.getNumber();
-        });
-         // INTEL FLAG SCRIPT FOR PHONE ID
-
-          window.popupCaptcha = function () {
-            const btn = document.getElementById('bookingSubmit');
-            if (btn) btn.disabled = false;
-        };
-         let iti;
-        document.addEventListener('DOMContentLoaded', function () {
-            const input = document.querySelector("#mobile");
-            iti1 = window.intlTelInput(input, {
-                initialCountry: "auto",
-                nationalMode: false,
-                separateDialCode: true,
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                geoIpLookup: function (callback) {
-                    fetch('https://ipapi.co/json')
-                        .then(response => response.json())
-                        .then(data => callback(data.country_code))
-                        .catch(() => callback('us'));
-                }
-            });
-
-            // Apply z-index to flag container
-            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-            if (flagContainer) {
-                flagContainer.style.zIndex = '9999';
-            }
-
-            // Apply z-index to the dropdown country list
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const countryList = document.querySelector('.iti__country-list');
-                    if (countryList) {
-                        countryList.style.zIndex = '9999';
-                    }
-                });
-            });
-
-            // Observe changes in the DOM so that dropdown gets z-index when created
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const input = document.querySelector("#mobile");
-            iti1 = window.intlTelInput(input, {
-                initialCountry: "auto",
-                nationalMode: false,
-                separateDialCode: true,
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                geoIpLookup: function (callback) {
-                    fetch('https://ipapi.co/json')
-                        .then(response => response.json())
-                        .then(data => callback(data.country_code))
-                        .catch(() => callback('us'));
-                }
-            });
-
-            // Apply z-index to flag container
-            const flagContainer = input.parentElement.querySelector('.iti__flag-container');
-            if (flagContainer) {
-                flagContainer.style.zIndex = '9999';
-            }
-
-            // Apply z-index to the dropdown country list
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const countryList = document.querySelector('.iti__country-list');
-                    if (countryList) {
-                        countryList.style.zIndex = '9999';
-                    }
-                });
-            });
-
-            // Observe changes in the DOM so that dropdown gets z-index when created
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
-
-        document.getElementById("bookingForm1").addEventListener("submit", function (e) {
-            document.querySelector("#mobile").value = iti1.getNumber();
-        });
-
-
-        // form submission for footer popup
         document.addEventListener('DOMContentLoaded', function () {
 
-            const modal = document.getElementById('popupCallModal');
-            const closeBtn = document.getElementById('popupClose');
-            const form = document.getElementById('bookingForm1');
-            const submitBtn = document.getElementById('bookingSubmit1');
-            const alertBox = document.getElementById('alertBox1');
+            function initBookingForm(formId, buttonId, mobileId) {
 
-            function closeBookingModal() {
+                const form = document.getElementById(formId);
+                if (!form) return;
 
-                // Close Bootstrap modal properly
-                let modalInstance = bootstrap.Modal.getInstance(modal);
-                if (!modalInstance) {
-                    modalInstance = new bootstrap.Modal(modal);
-                }
-                modalInstance.hide();
+                const submitBtn = document.getElementById(buttonId);
+                const mobileInput = document.getElementById(mobileId);
 
-                // Reset form
-                form.reset();
+                // intl tel input
+                const iti = window.intlTelInput(mobileInput, {
+                    initialCountry: "in",
+                    separateDialCode: true,
+                    nationalMode: false,
+                    utilsScript:
+                        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+                });
 
-                // Reset captcha
-                if (window.grecaptcha) grecaptcha.reset();
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-                // Disable submit
-                submitBtn.disabled = true;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = "Submitting...";
 
-                // Clear alerts
-                alertBox.innerHTML = '';
+                    mobileInput.value = iti.getNumber();
 
+                    const formData = new FormData(form);
 
-                // Reset captcha
-                if (window.grecaptcha) grecaptcha.reset();
-
-                // Disable submit button again
-                submitBtn.disabled = true;
-
-                // Clear messages
-                alertBox.innerHTML = '';
-
-                // Re-enable page scroll
-                document.body.style.overflow = 'auto';
-            }
-
-            function openBookingModal() {
-
-                document.body.style.overflow = 'hidden';
-            }
-
-            closeBtn.addEventListener('click', closeBookingModal);
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) closeBookingModal();
-            });
-
-            const isHomepage = ['/', '/home', '/index', ''].includes(window.location.pathname);
-            if (isHomepage) setTimeout(openBookingModal, 5000);
-
-            // AJAX SUBMIT
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Submitting...';
-
-                // intlTelInput update
-                if (iti1) {
-                    form.querySelector('#mobile').value = iti1.getNumber();
-                }
-
-                const formData = new FormData(form);
-
-                fetch(form.action, {
-                    method: "POST",
-                    headers: {
-                        "Accept": "application/json",
-                        "X-Requested-With": "XMLHttpRequest"
-                    },
-                    body: formData
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        submitBtn.innerHTML = 'Submit';
-                        alertBox.innerHTML = '';
-
-                        if (data.success) {
-
-                            // Show success message briefly before closing
-                            alertBox.innerHTML = `<div class="alert-success">${data.message}</div>`;
-
-                            // Close modal immediately after short delay (optional)
-                            setTimeout(() => {
-                                closeBookingModal();
-                            }, 1000);
-
-                        } else {
-                            let html = `<div class="alert-error"><ul>`;
-                            if (data.errors) {
-                                Object.values(data.errors).flat().forEach(err => html += `<li>${err}</li>`);
-                            } else {
-                                html += `<li>${data.message || 'An error occurred'}</li>`;
-                            }
-                            html += `</ul></div>`;
-                            alertBox.innerHTML = html;
-
-                            if (window.grecaptcha) grecaptcha.reset();
-                            submitBtn.disabled = true;
-                        }
+                    fetch(form.action, {
+                        method: "POST",
+                        headers: {
+                            "Accept": "application/json",
+                            "X-Requested-With": "XMLHttpRequest"
+                        },
+                        body: formData
                     })
-                    .catch(err => {
-                        console.error(err);
-                        submitBtn.innerHTML = 'Submit';
-                        alertBox.innerHTML = `<div class="alert-error">An error occurred. Please try again.</div>`;
-                        if (window.grecaptcha) grecaptcha.reset();
-                        submitBtn.disabled = true;
-                    });
-            });
+                        .then(res => res.json())
+                        .then(data => {
+
+                            submitBtn.innerHTML = "Submit";
+
+                            if (data.success) {
+
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Success",
+                                    text: data.message
+                                });
+
+                                form.reset();
+                                submitBtn.disabled = true;
+
+                                if (window.grecaptcha) grecaptcha.reset();
+
+                            } else {
+
+                                let errorMsg = data.message || "Something went wrong";
+
+                                if (data.errors) {
+                                    errorMsg = Object.values(data.errors).flat().join("\n");
+                                }
+
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Error",
+                                    text: errorMsg
+                                });
+
+                                submitBtn.disabled = false;
+
+                                if (window.grecaptcha) grecaptcha.reset();
+                            }
+                        })
+                        .catch(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = "Submit";
+
+                            Swal.fire({
+                                icon: "error",
+                                title: "Server Error",
+                                text: "Please try again."
+                            });
+                        });
+
+                });
+            }
+
+            // ✅ initialize all 3 forms
+            initBookingForm('bookingForm1', 'bookingSubmit1', 'mobile1'); // footer
+            initBookingForm('bookingForm3', 'bookingSubmit', 'mobile');   // popup modal
+            initBookingForm('bookingFormPopup', 'HeaderBookingSubmit', 'mobile3'); // header
 
         });
-
-
-
-
     </script>
 
 @endpush
