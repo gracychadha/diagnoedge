@@ -44,7 +44,7 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Load required libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     {{-- sweetalert --}}
@@ -87,8 +87,7 @@
 <body>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
 
     {{-- header start --}}
     @include("website.components.header")
@@ -103,119 +102,97 @@
     @include("website.components.footer")
     {{-- footer end --}}
 
-</body>
 
 
 
 
 
-<!-- jQuery -->
-<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-<!-- bootstrap js -->
-<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-<!-- jquery meanmenu js -->
-<script src="{{ asset('assets/js/jquery.meanmenu.min.js') }}"></script>
-<!-- swiper js -->
-<script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
-<!-- wow Js -->
-<script src="{{ asset('assets/js/validate.min.js') }}"></script>
-<!-- validate js -->
-<script src="{{ asset('assets/js/validate.min.js') }}"></script>
-<!-- ajax form Js -->
-<script src="{{ asset('assets/js/ajax-form.js') }}"></script>
-<!-- image comparision js -->
-<script src="{{ asset('assets/js/jquery.event.move.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.twentytwenty.js') }}"></script>
-<!-- appear Js -->
-<script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
-<!-- magnific Js -->
-<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-<!-- SmoothScroll Js -->
-<script src="{{ asset('assets/js/SmoothScroll.js') }}"></script>
-<!-- main Js -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- jquery meanmenu js -->
+    <script src="{{ asset('assets/js/jquery.meanmenu.min.js') }}"></script>
+    <!-- swiper js -->
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <!-- wow Js -->
+    <script src="{{ asset('assets/js/validate.min.js') }}"></script>
+    <!-- validate js -->
+    <script src="{{ asset('assets/js/validate.min.js') }}"></script>
+    <!-- ajax form Js -->
+    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
+    <!-- image comparision js -->
+    <script src="{{ asset('assets/js/jquery.event.move.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.twentytwenty.js') }}"></script>
+    <!-- appear Js -->
+    <script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
+    <!-- magnific Js -->
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- SmoothScroll Js -->
+    <script src="{{ asset('assets/js/SmoothScroll.js') }}"></script>
+    <!-- main Js -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-<!-- jQuery (already included) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script>
-    function footerCaptcha() {
-        const btn = document.getElementById('bookingSubmit1');
-        if (btn) btn.disabled = false;
-    }
+    <!-- jQuery (already included) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        function footerCaptcha() {
+            const btn = document.getElementById('bookingSubmit1');
+            if (btn) btn.disabled = false;
+        }
 
-    function popupCaptcha() {
-        const btn = document.getElementById('bookingSubmit');
-        if (btn) btn.disabled = false;
-    }
+        function popupCaptcha() {
+            const btn = document.getElementById('bookingSubmit');
+            if (btn) btn.disabled = false;
+        }
 
-    function headerCaptcha() {
-        console.log("HEADER CAPTCHA SUCCESS");
-        const btn = document.getElementById('HeaderBookingSubmit');
-        if (btn) btn.disabled = false;
-    }
-</script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // Apply intl-tel-input to ALL phone inputs automatically
-        document.querySelectorAll('input[type="tel"]').forEach(input => {
-
-            const iti = window.intlTelInput(input, {
-                initialCountry: "in", // works on localhost
-                separateDialCode: true,
-                nationalMode: false,
-                utilsScript:
-                    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
-            });
-
-            // Convert number before submit
-            const form = input.closest("form");
-
-            if (form) {
-                form.addEventListener("submit", function () {
-                    input.value = iti.getNumber();
-                });
-            }
-
-        });
-
-    });
+        function headerCaptcha() {
+            console.log("HEADER CAPTCHA SUCCESS");
+            const btn = document.getElementById('HeaderBookingSubmit');
+            if (btn) btn.disabled = false;
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
 
 
 
-    // Start of Tawk.to Script
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
 
-    function autoSearch(inputId, resultId) {
-        document.getElementById(inputId).addEventListener('keyup', function () {
+        // Start of Tawk.to Script
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/691db177832c61195c8c7908/1jadvqflg';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
 
-            let keyword = this.value.toLowerCase();
+        function autoSearch(inputId, resultId) {
+            document.getElementById(inputId).addEventListener('keyup', function () {
 
-            if (keyword.length < 2) {
-                document.getElementById(resultId).innerHTML = '';
-                return;
-            }
+                let keyword = this.value.toLowerCase();
 
-            fetch(`/search-all?keyword=` + keyword)
-                .then(res => res.json())
-                .then(data => {
-                    let output = "";
+                if (keyword.length < 2) {
+                    document.getElementById(resultId).innerHTML = '';
+                    return;
+                }
 
-                    if (data.results.length > 0) {
-                        data.results.forEach(item => {
-                            output += `
+                fetch(`/search-all?keyword=` + keyword)
+                    .then(res => res.json())
+                    .then(data => {
+                        let output = "";
+
+                        if (data.results.length > 0) {
+                            data.results.forEach(item => {
+                                output += `
                                                                                   <a href="${item.url}" class="p-2 w-100 d-block border-bottom result-item bg-light" style="font-size:16px;">
                                                                                     <img 
                                                                                     src="storage/${item.icon}" 
@@ -224,74 +201,24 @@
                                                                                 >
                                                         ${item.title}
                                                         </a>`;
-                        });
-                    } else {
-                        output = `<div class="p-2 text-danger">No related option found</div>`;
-                    }
+                            });
+                        } else {
+                            output = `<div class="p-2 text-danger">No related option found</div>`;
+                        }
 
-                    document.getElementById(resultId).innerHTML = output;
-                });
-        });
-    }
-    autoSearch('already_know', 'searchResult');
-    autoSearch('already_know2', 'searchResult2');
-
-    // PRODUCT SWIPER
-    var productSwiper = new Swiper(".myProductSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        observer: true,
-        observeParents: true,
-        loop: true,
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            1200: { slidesPerView: 4 },
-            992: { slidesPerView: 3 },
-            768: { slidesPerView: 2 },
-            576: { slidesPerView: 1 },
-            0: { slidesPerView: 1 },
+                        document.getElementById(resultId).innerHTML = output;
+                    });
+            });
         }
-    });
+        autoSearch('already_know', 'searchResult');
+        autoSearch('already_know2', 'searchResult2');
 
 
-    // GALLERY SWIPER
-    var gallerySwiper = new Swiper(".myGallerySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 25,
-        observer: true,
-        observeParents: true,
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            320: { slidesPerView: 1 },
-            576: { slidesPerView: 2 },
-            991: { slidesPerView: 3 }
-        }
-    });
-</script>
-@stack('scripts')
+    </script>
+   
+    @stack('scripts')
 
+
+</body>
 
 </html>
