@@ -305,7 +305,7 @@
 
                                                 <h5 class="fs-16 mb-1 font-w600">
                                                     <a class="text-black" href="#">
-                                                        Dr. {{ $doctor->fullname ?: 'No Name' }}
+                                                         {{ $doctor->fullname ?: 'No Name' }}
                                                     </a>
                                                 </h5>
 

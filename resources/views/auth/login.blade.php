@@ -55,8 +55,10 @@
 
         <!-- Cloudflare Turnstile CAPTCHA -->
         <div class="mb-4">
-            <div class="cf-turnstile" data-sitekey="{{ env('TURNSTILE_SITEKEY') }}" data-callback="onCaptchaSuccess">
-            </div>
+           <div class="cf-turnstile"
+     data-sitekey="{{ config('services.turnstile.sitekey') }}"
+     data-callback="onCaptchaSuccess">
+</div>
 
         </div>
 

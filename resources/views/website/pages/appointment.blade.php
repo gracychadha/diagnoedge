@@ -181,7 +181,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"
                                                     data-callback="appointmentCaptcha">
                                                 </div>
                                             </div>
