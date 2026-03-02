@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group position-relative ">
-
+                                    {{-- <span class="popupicon"><i class="fa fa-phone"></i></span> --}}
                                     <input class="form-control " style="padding-left : 55px !important;" type="tel"
                                         id="mobile" name="mobile" placeholder="Enter Mobile No." required>
                                 </div>
@@ -123,8 +123,8 @@
                             <div class="carousel-inner">
                                 @forelse($sliders as $key => $slide)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                        <img id="carousel-slider" src="{{ asset('storage/' . $slide->image) }}" class="d-block w-100"
-                                            alt="Slider Image">
+                                        <img id="carousel-slider" src="{{ asset('storage/' . $slide->image) }}"
+                                            class="d-block w-100" alt="Slider Image">
                                     </div>
                                 @empty
                                     {{-- fallback default slides --}}
@@ -160,8 +160,8 @@
                                 </div>
 
                                 <div class="form-group position-relative ">
-
-                                    <input class="form-control " style="padding-left : 55px !important;" type="tel"
+                                    <span class="popupicon"><i class="fa fa-phone"></i></span>
+                                    <input class="form-control " style="padding-left : 45px !important;" type="tel"
                                         id="mobile3" name="mobile" placeholder="Enter Mobile No." required>
                                 </div>
 
@@ -979,8 +979,87 @@
 @endsection
 {{-- SCRIPT ADD THERE ONLY FOR APPOINTMENT BLADE --}}
 @push('scripts')
-
     <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+
+        //     window.phoneInstances = {};
+
+        //     document.querySelectorAll('input[type="tel"]').forEach((input, index) => {
+
+        //         // prevent double init
+        //         if (input.classList.contains('iti-initialized')) return;
+
+        //         const iti = window.intlTelInput(input, {
+        //             initialCountry: "auto",
+        //             separateDialCode: true,
+        //             nationalMode: false,
+        //             utilsScript:
+        //                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+        //             geoIpLookup: function (callback) {
+        //                 fetch('https://ipapi.co/json')
+        //                     .then(res => res.json())
+        //                     .then(data => callback(data.country_code))
+        //                     .catch(() => callback('in'));
+        //             }
+        //         });
+
+        //         input.classList.add('iti-initialized');
+
+        //         // store instance globally
+        //         window.phoneInstances[input.id] = iti;
+
+        //         // auto convert number on submit
+        //         const form = input.closest("form");
+        //         if (form) {
+        //             form.addEventListener("submit", function () {
+        //                 input.value = iti.getNumber();
+        //             });
+        //         }
+
+        //     });
+
+        // });
+
+        // PRODUCT SWIPER
+        document.addEventListener("DOMContentLoaded", function () {
+
+            new Swiper(".myProductSwiper", {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    1200: { slidesPerView: 4 },
+                    992: { slidesPerView: 3 },
+                    768: { slidesPerView: 2 },
+                    576: { slidesPerView: 1 }
+                }
+            });
+
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+
+            new Swiper(".myGallerySwiper", {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    1200: { slidesPerView: 4 },
+                    992: { slidesPerView: 3 },
+                    768: { slidesPerView: 2 },
+                    576: { slidesPerView: 1 }
+                }
+            });
+
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
 
             function initBookingForm(formId, buttonId, mobileId) {
@@ -991,14 +1070,6 @@
                 const submitBtn = document.getElementById(buttonId);
                 const mobileInput = document.getElementById(mobileId);
 
-                // intl tel input
-                const iti = window.intlTelInput(mobileInput, {
-                    initialCountry: "in",
-                    separateDialCode: true,
-                    nationalMode: false,
-                    utilsScript:
-                        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
-                });
 
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
@@ -1006,7 +1077,10 @@
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = "Submitting...";
 
-                    mobileInput.value = iti.getNumber();
+                    if (window.phoneInstances[mobileId]) {
+                        mobileInput.value =
+                            window.phoneInstances[mobileId].getNumber();
+                    }
 
                     const formData = new FormData(form);
 
