@@ -230,7 +230,7 @@
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     {{-- <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-male-THP">For
                                         Male</button> --}}
-                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">Tru
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-THP">DiagnoEdge
                                         Health Packages</button>
                                     {{-- <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-female-THP">For
                                         Female</button> --}}
@@ -250,7 +250,7 @@
 
                     {{-- All Tru Health Packages --}}
                     <div class="tab-pane fade active show" id="nav-THP">
-                        <div class="swiper myProductSwiper pb-20 p-sm-10">
+                        <div class="swiper myHealthSwiper pb-20 p-sm-10">
                             <div class="swiper-wrapper">
                                 @forelse($packages as $pkg)
                                     <div class="swiper-slide">
@@ -293,7 +293,7 @@
                                                     Rs. {{ number_format((float) ($pkg->price ?? 0)) }}
                                                 </p>
                                                 <a href="{{ route('appointment') }}" class="theme-button style-1">
-                                                    <span data-text="Add to Cart">Add to Cart</span>
+                                                    <span data-text="Buy Now">Buy Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
                                             </div>
@@ -320,7 +320,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h5 class="text-center pt-10 pb-10">Popular Test Packages</h5>
+                            <h5 class="text-center pt-10 pb-10">Popular Tests</h5>
                         </div>
 
                         <!-- pricing tabs start -->
@@ -332,7 +332,7 @@
                                         aria-selected="false">For Male</button> --}}
                                     <button class="nav-link active" id="nav-TP-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-TP" type="button" role="tab" aria-controls="nav-TP"
-                                        aria-selected="true">Popular Test Packages</button>
+                                        aria-selected="true">Popular Tests</button>
                                     {{-- <button class="nav-link" id="nav-female-TP-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-female-TP" type="button" role="tab"
                                         aria-controls="nav-female-TP" aria-selected="false">For Female</button> --}}
@@ -394,8 +394,8 @@
                                                 </p>
 
                                                 <a href="{{ route('test-detail', $package->slug ?? Str::slug($package->title)) }}"
-                                                    class="theme-button style-1" aria-label="Add To Cart">
-                                                    <span data-text="Add To Cart">Add To Cart</span>
+                                                    class="theme-button style-1" aria-label="Buy Now">
+                                                    <span data-text="Buy Now">Buy Now</span>
                                                     <i class="fa-solid fa-arrow-right"></i>
                                                 </a>
                                             </div>
@@ -808,32 +808,20 @@
 
                         <!-- Add Swiper container -->
                         <div class="swiper myGallerySwiper">
+
                             <div class="swiper-wrapper">
 
                                 @forelse ($gallery as $gal)
                                     <div class="swiper-slide">
-                                        <div class="photo-gallery">
-                                            <div class="photo-gallery-image">
-                                                <figure class="image-anime">
-                                                    <img src="{{ asset('storage/' . $gal->image) }}" alt="">
-                                                </figure>
-                                            </div>
-                                            <div class="photo-gallery-icon">
-                                                <a class="photo-popup" href="{{ asset('storage/' . $gal->image) }}">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </a>
-                                            </div>
+                                        <div class="gallery-card">
+                                            <img src="{{ asset('storage/' . $gal->image) }}" alt="gallery">
                                         </div>
                                     </div>
                                 @empty
-                                    <div class="text-center w-100 py-5">
-                                        <h4>No gallery images to show</h4>
+                                    <div class="swiper-slide text-center">
+                                        <h4>No gallery images</h4>
                                     </div>
                                 @endforelse
-
-
-
-
 
                             </div>
 
@@ -846,7 +834,7 @@
             </div>
         </section>
         <!-- portfolio section end -->
-
+        
 
         <section class="accredit-sec py-5" style="background:#e6f5e9;">
             <div class="container">
@@ -1023,6 +1011,23 @@
         // PRODUCT SWIPER
         document.addEventListener("DOMContentLoaded", function () {
 
+            new Swiper(".myHealthSwiper", {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    0: { slidesPerView: 1 },
+                    576: { slidesPerView: 2 },
+                    768: { slidesPerView: 2 },
+                    992: { slidesPerView: 3 },
+                    1200: { slidesPerView: 4 }
+                }
+            });
+
             new Swiper(".myProductSwiper", {
                 slidesPerView: 4,
                 spaceBetween: 30,
@@ -1032,10 +1037,11 @@
                     disableOnInteraction: false,
                 },
                 breakpoints: {
-                    1200: { slidesPerView: 4 },
-                    992: { slidesPerView: 3 },
+                    0: { slidesPerView: 1 },
+                    576: { slidesPerView: 2 },
                     768: { slidesPerView: 2 },
-                    576: { slidesPerView: 1 }
+                    992: { slidesPerView: 3 },
+                    1200: { slidesPerView: 4 }
                 }
             });
 
@@ -1043,23 +1049,29 @@
         document.addEventListener("DOMContentLoaded", function () {
 
             new Swiper(".myGallerySwiper", {
+
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 25,
                 loop: true,
+                speed: 700,
+
                 autoplay: {
-                    delay: 3500,
-                    disableOnInteraction: false,
+                    delay: 3000,
+                    disableOnInteraction: false
                 },
+
+              
+
                 breakpoints: {
-                    1200: { slidesPerView: 4 },
-                    992: { slidesPerView: 3 },
-                    768: { slidesPerView: 2 },
-                    576: { slidesPerView: 1 }
+                    0: { slidesPerView: 1 },
+                    576: { slidesPerView: 2 },
+                    768: { slidesPerView: 3 },
+                    1200: { slidesPerView: 4 }
                 }
+
             });
 
         });
-
         document.addEventListener('DOMContentLoaded', function () {
 
             function initBookingForm(formId, buttonId, mobileId) {
