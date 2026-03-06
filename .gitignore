@@ -19,3 +19,9 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# Laravel storage (keep folder but ignore files)
+/storage/*.key
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
