@@ -153,7 +153,7 @@
                         <section id="detail" class="bg-white rounded-4 p-5 smooth-card mb-5 shadow">
                             <h2 class="h4 fw-bold mb-4">Detail</h2>
                             <p class="lead text-muted">
-                                {!! $package->detail ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
+                                {!! $package->description ?? '<p>A comprehensive health package designed to give you complete insight into your health with advanced diagnostic tests.</p>' !!}
                             </p>
 
                         </section>
@@ -212,7 +212,7 @@
                                     <span class="fs-3 fw-bold">{{ number_format((float) $package->price) }}</span>
                                 </div>
                                 <a href="#" class="theme-button style-1 w-100">
-                                    <span data-text="Add to Cart">Add to Cart</span>
+                                    <span data-text="Book Now">Book Now</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
