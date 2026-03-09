@@ -223,17 +223,19 @@
 					<tr>
 						<th>Status :</th>
 						<td id="v_status"></td>
-
+						<th>Price :</th>
+						<td id="v_price"></td>
+					</tr>
+					<tr>
 						<th>Description :</th>
-						<td id="v_description"></td>
+						<td colspan="3" id="v_description"></td>
 					</tr>
 
 					<tr>
 						<th>Overview :</th>
-						<td id="v_overview"></td>
+						<td colspan="3" id="v_overview"></td>
 
-						<th>Price :</th>
-						<td id="v_price"></td>
+
 					</tr>
 				</table>
 
