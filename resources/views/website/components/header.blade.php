@@ -194,7 +194,7 @@
                                         'info@diagnoedgelabs.com' }}</p>
                                 </li>
                                 <li>
-                                    <p><i class="fa-solid fa-clock"></i> Mon - Fri 8:00 - 6:30</p>
+                                    <p><i class="fa-solid fa-clock"></i> Mon - Sun 8:00 - 8:00Pm</p>
                                 </li>
                             </ul>
                         </div>

@@ -183,14 +183,9 @@
                             <div class="widget-opening-hours">
                                 <ul class="opening-list">
                                     <li>
-                                        <p>Monday - Friday: <span class="time">8:00am - 4:00pm</span></p>
+                                        <p>Monday - Sunday: <span class="time">8:00am - 8:00pm</span></p>
                                     </li>
-                                    <li>
-                                        <p>Saturday: <span class="time">8:00am - 12:00pm</span></p>
-                                    </li>
-                                    <li>
-                                        <p>Sunday: <span class="time">8:00am - 10:00am</span></p>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             <!-- widget opening hours end -->

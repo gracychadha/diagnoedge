@@ -222,9 +222,9 @@
                 {{-- Tru Health Packages Section --}}
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+                        {{-- <div class="col-lg-12">
                             <h5 class="text-center pt-10 pb-10">DiagnoEdge Health Packages</h5>
-                        </div>
+                        </div> --}}
                         <div class="pricing-tabs">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -319,9 +319,9 @@
             <div class="container pt-30 md-pt-10">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+                        {{-- <div class="col-lg-12">
                             <h5 class="text-center pt-10 pb-10">Popular Tests</h5>
-                        </div>
+                        </div> --}}
 
                         <!-- pricing tabs start -->
                         <div class="pricing-tabs">

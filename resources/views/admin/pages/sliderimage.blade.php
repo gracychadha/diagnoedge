@@ -97,7 +97,7 @@
                         <div class="col-md-8">
                             <label>Slider Image <span class="text-danger">*</span></label>
                             <input type="file" name="image" class="form-control" accept="image/*" required>
-                            <small class="text-muted">Best size: 1920x1080px | PNG, JPG</small> <!-- Adjust size as needed -->
+                            <small class="text-muted">Best size: 1400x505px | PNG, JPG</small> <!-- Adjust size as needed -->
                         </div>
                         <div class="col-md-4">
                             <label>Status</label>
